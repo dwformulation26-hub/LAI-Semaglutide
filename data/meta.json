@@ -2,7 +2,7 @@
   "last_run": {
     "initial_seed": "2026-09-02T00:00:00Z",
     "initial_discovery_test": "2026-09-02T00:00:00Z",
-    "daily_scan": "2026-09-04T21:07:40Z",
+    "daily_scan": "2026-09-05T21:08:13Z",
     "weekly_sweep": null,
     "qc_tier2": null,
     "qc_tier3": null
@@ -17,6 +17,11 @@
   },
   "source_health": {
     "fiercepharma.com": { "last_success": null, "status": "blocked" },
-    "prnewswire.com": { "last_success": null, "status": "blocked" }
+    "prnewswire.com": { "last_success": null, "status": "blocked" },
+    "mdtoday.co.kr": { "last_success": null, "status": "blocked" },
+    "hankyung.com": { "last_success": null, "status": "blocked" },
+    "kr.acrofan.com": { "last_success": null, "status": "blocked" },
+    "kmpnews.co.kr": { "last_success": null, "status": "blocked" },
+    "thevc.kr": { "last_success": null, "status": "blocked" }
   }
 }

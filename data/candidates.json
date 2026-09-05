@@ -325,6 +325,46 @@
       "status": "pending",
       "created_date": "2026-09-02",
       "resolution": null
+    },
+    {
+      "id": "cand-2026-09-05-001",
+      "detected_name": "Korea BioNC (한국비엔씨) + ProAptec (프로앱텍)",
+      "detected_aliases": [
+        "Korea BioNC",
+        "Korea B&C",
+        "한국비엔씨",
+        "256840",
+        "ProAptec",
+        "프로앱텍"
+      ],
+      "entity_type_guess": ["company", "asset"],
+      "evidence": [
+        {
+          "source": {
+            "name": "한국경제 (Hankyung)",
+            "url": "https://www.hankyung.com/article/202602118729P",
+            "tier": 2
+          },
+          "snippet": "Korea BioNC reported animal-model results for its GLP-1/GIP/GCG triple-agonist–albumin conjugate obesity candidate (co-developed with ProAptec), claiming efficacy on par with Mounjaro (tirzepatide). Fetch of hankyung.com was EGRESS_BLOCKED this run, so this is based on search-result metadata only, not the full article text; date inferred from the article's URL ID (202602118729P -> 2026-02-11) and not independently confirmed.",
+          "date": "2026-02-11"
+        },
+        {
+          "source": {
+            "name": "메디데일리투데이 (mdtoday.co.kr)",
+            "url": "https://www.mdtoday.co.kr/news/view/1065581756347305",
+            "tier": 2
+          },
+          "snippet": "Korea BioNC and ProAptec jointly filed a use patent for a GLP-1/GIP/GCG triple-agonist + albumin-conjugate candidate targeting roughly once-every-3-weeks dosing for obesity/diabetes, combining ProAptec's multi-action peptide platform with albumin-conjugation (click chemistry) technology. Fetch of mdtoday.co.kr was EGRESS_BLOCKED this run; exact publish date not confirmed, could not be verified beyond search-result title/summary.",
+          "date": "2026-02-11"
+        }
+      ],
+      "fuzzy_match": {
+        "closest_umbrella_id": "daewon-pharmus-quadagonist",
+        "score": 0.2
+      },
+      "status": "pending",
+      "created_date": "2026-09-05",
+      "resolution": null
     }
   ]
 }
