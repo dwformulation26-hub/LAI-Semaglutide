@@ -2,16 +2,16 @@
   "last_run": {
     "initial_seed": "2026-09-02T00:00:00Z",
     "initial_discovery_test": "2026-09-02T00:00:00Z",
-    "daily_scan": "2026-09-05T21:08:13Z",
+    "daily_scan": "2026-09-06T21:10:20Z",
     "weekly_sweep": null,
     "qc_tier2": null,
     "qc_tier3": null
   },
   "coverage": {
     "daily_scan": {
-      "umbrellas_checked": 5,
+      "umbrellas_checked": 37,
       "umbrellas_total": 37,
-      "skipped_throttled": 32,
+      "skipped_throttled": 0,
       "skipped_budget_exhausted": 0
     }
   },
@@ -22,6 +22,8 @@
     "hankyung.com": { "last_success": null, "status": "blocked" },
     "kr.acrofan.com": { "last_success": null, "status": "blocked" },
     "kmpnews.co.kr": { "last_success": null, "status": "blocked" },
-    "thevc.kr": { "last_success": null, "status": "blocked" }
+    "thevc.kr": { "last_success": null, "status": "blocked" },
+    "dailypharm.com": { "last_success": null, "status": "blocked" },
+    "managedhealthcareexecutive.com": { "last_success": null, "status": "blocked" }
   }
 }

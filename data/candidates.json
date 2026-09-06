@@ -365,6 +365,36 @@
       "status": "pending",
       "created_date": "2026-09-05",
       "resolution": null
+    },
+    {
+      "id": "cand-2026-09-06-001",
+      "detected_name": "Mapi Pharma – Cariprazine Depot",
+      "detected_aliases": [
+        "Mapi Pharma",
+        "Cariprazine Depot",
+        "Once-Monthly Cariprazine Depot"
+      ],
+      "entity_type_guess": [
+        "asset"
+      ],
+      "evidence": [
+        {
+          "source": {
+            "name": "GlobeNewswire (Mapi Pharma company release)",
+            "url": "https://www.globenewswire.com/news-release/2026/08/12/3343633/0/en/mapi-pharma-announces-initial-phase-i-iia-clinical-results-supporting-continued-development-of-once-monthly-cariprazine-depot.html",
+            "tier": 2
+          },
+          "snippet": "Mapi Pharma announced initial Phase I/IIa clinical results supporting continued development of a once-monthly Cariprazine Depot (an atypical-antipsychotic long-acting injectable), a third distinct LAI depot asset from Mapi Pharma alongside its already-tracked GA Depot (glatiramer acetate) and Semaglutide Depot programs. No dedicated umbrella file currently covers this asset.",
+          "date": "2026-08-12"
+        }
+      ],
+      "fuzzy_match": {
+        "closest_umbrella_id": "mapi-pharma-semaglutide",
+        "score": 0.55
+      },
+      "status": "pending",
+      "created_date": "2026-09-06",
+      "resolution": null
     }
   ]
 }
