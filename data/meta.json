@@ -2,7 +2,7 @@
   "last_run": {
     "initial_seed": "2026-09-02T00:00:00Z",
     "initial_discovery_test": "2026-09-02T00:00:00Z",
-    "daily_scan": "2026-09-07T07:05:50Z",
+    "daily_scan": "2026-09-07T21:12:00Z",
     "weekly_sweep": "2026-09-07T07:05:50Z",
     "qc_tier2": "2026-09-07T07:05:50Z",
     "qc_tier3": null
@@ -12,7 +12,8 @@
       "umbrellas_checked": 5,
       "umbrellas_total": 37,
       "skipped_throttled": 32,
-      "skipped_budget_exhausted": 0
+      "skipped_budget_exhausted": 0,
+      "notes": "Checked umbrellas due under the quiet-umbrella throttle (last_updated <21 days old): ascendis-transcon-novo, ascletis-asc30, astrazeneca-zoladex, owlbio-kyungdong-xtina, peptron-pt403. All 5 returned only news already logged in finding_history -- no new findings this run. Track B1 wire skim (4 bounded term-based searches, EN+KR) surfaced no new candidate meeting the named-entity + technical-claim + Tier-1/2-source bar; one G2GBio ADA2026 mention fuzzy-matched to the existing samsung-bioepis-g2gbio-gb7001 umbrella and was confirmed as already logged (f-2026-06-08-001), not new."
     },
     "weekly_sweep": {
       "source_categories_checked": 6,
