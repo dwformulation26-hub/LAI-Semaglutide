@@ -18,10 +18,12 @@ The invocation (the scheduled routine's prompt, or what the person asked) tells 
 | Mode | Trigger | Runs |
 |---|---|---|
 | **Daily scan** | "run daily LAI scan", "run today's LAI tracking", or no mode specified | Track A + Track B1 + QC Tier 0/1 |
-| **Weekly sweep** | "run weekly LAI sweep", "Monday LAI compile" | Track B2 + QC Tier 2 (and Track A/B1 too, if the daily scan hasn't already run today) |
+| **Weekly sweep** | "run weekly LAI sweep", "Sunday LAI compile" | Track B2 + QC Tier 2 (and Track A/B1 too, if the daily scan hasn't already run today) |
 | **Full audit** | Only when explicitly requested — "run a full LAI audit/re-verification" | QC Tier 3 only. Never self-trigger this — see QC section |
 
 If it's ambiguous which mode was meant, default to **Daily scan** — it's the cheapest and safest default.
+
+**Automated schedule (as of 2026-09-07):** Weekly sweep also fires on its own every Sunday at 9:00 AM KST, via the "LAI Tracker — Weekly Sweep" cloud routine (separate from the daily "LAI Tracker — Daily Scan" routine, which fires every day). Both are scheduled cloud routines, not something this file controls directly — check them with the `RemoteTrigger` tool if a run needs to be inspected or the schedule needs to change.
 
 ## Search budget discipline
 
@@ -153,6 +155,14 @@ After a Daily scan or Weekly sweep, draft one bundled digest of what changed thi
   "candidates": [ /* new Track B1/B2 candidates from this run */ ]
 }
 ```
+
+**Writing the `leadIn`: this is a headline, not a summary.** Its job is to catch attention and earn the scroll down to the full list — not to account for everything that happened this run. Keep it short, one sentence.
+
+The reader is not you: they don't know what an "umbrella" is, don't care that this was a "sweep" or a "wire skim," and a raw coverage fraction like "37/37" or "5 umbrellas due for a check" reads as an internal ops metric, not news. Those are all terms this skill uses for its *own* bookkeeping (Track A/B mechanics, `meta.json` coverage) — they belong in the commit message and `source_health`, never in the digest.
+
+**When there's more than one finding, don't try to fold all of them into the sentence.** Pick the single most compelling one (two, at most, and only if both are genuinely strong) and lead with that — the rest are already listed in full right below, so the headline isn't the reader's only chance to see them. Trying to cram every item in produces a run-on that reads like a status report, not a headline. Judge "most compelling" the way a news editor would: a regulatory filing or trial readout beats a financing note; a new company entering the space beats a routine update to one already tracked; a new candidate is worth leading with only when there's no real finding that outranks it.
+
+Write it the way you'd tell a colleague the one thing worth knowing today, and only mention that a run was quiet in plain terms ("no new developments today") without exposing the count of things checked. If nothing at all happened, a short plain sentence saying so is fine — don't manufacture drama, but don't narrate the scan process either.
 
 **Every entry in all three arrays uses the exact same shape** — the digest deliberately gives every item identical visual weight, not one highlighted story with extra sections and the rest as footnotes:
 
