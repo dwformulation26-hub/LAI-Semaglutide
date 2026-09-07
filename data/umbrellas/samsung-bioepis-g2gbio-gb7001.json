@@ -89,6 +89,30 @@
         "tier": 2
       },
       "confidence": "unverified"
+    },
+    {
+      "id": "f-2024-12-10-001",
+      "date": "2024-12-10",
+      "type": "regulatory",
+      "summary": "Discovered via weekly patent sweep, not previously logged: G2GBio was granted Korean patent KR102792620B1 for a sustained-release microsphere pharmaceutical composition containing tirzepatide (application filed 2024-06-03, published 2024-12-10) — an initial-burst-inhibiting biodegradable-polymer formulation for diabetes/obesity/NASH/hypertension. Indicates a tirzepatide-based microsphere asset in G2GBio's pipeline distinct from the tracked semaglutide GB-7001 program.",
+      "source": {
+        "name": "Google Patents record (KR102792620B1)",
+        "url": "https://patents.google.com/patent/KR102792620B1/en",
+        "tier": 1
+      },
+      "confidence": "unverified"
+    },
+    {
+      "id": "f-2026-05-18-001",
+      "date": "2026-05-18",
+      "type": "regulatory",
+      "summary": "G2GBio announced registration of a US patent for its semaglutide sustained-release microsphere technology, with a priority date of 2020-02-14 — reported as the earliest priority date among semaglutide biodegradable-microsphere patents registered in the US. The technology is now patent-registered in 7 countries total.",
+      "source": {
+        "name": "Newspim, corroborated by Biospectator and eToday",
+        "url": "https://www.newspim.com/news/view/20260518000550",
+        "tier": 2
+      },
+      "confidence": "confirmed"
     }
   ]
 }

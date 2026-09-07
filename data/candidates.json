@@ -386,6 +386,15 @@
           },
           "snippet": "Mapi Pharma announced initial Phase I/IIa clinical results supporting continued development of a once-monthly Cariprazine Depot (an atypical-antipsychotic long-acting injectable), a third distinct LAI depot asset from Mapi Pharma alongside its already-tracked GA Depot (glatiramer acetate) and Semaglutide Depot programs. No dedicated umbrella file currently covers this asset.",
           "date": "2026-08-12"
+        },
+        {
+          "source": {
+            "name": "Justia Patents (official US patent record)",
+            "url": "https://patents.justia.com/patent/11931357",
+            "tier": 1
+          },
+          "snippet": "US11,931,357 (issued 2024-03-19) and US12,251,380, both assigned to Mapi Pharma Ltd. and filed 2023-02-14 (claiming benefit of a provisional filed 2022-03-17), claim depot systems (in-situ implant, subcutaneous/IM) providing prolonged release of active agent for at least 4 weeks, dosed roughly monthly to quarterly -- corroborating patent-level evidence for the once-monthly Cariprazine Depot program. Found via weekly patent sweep.",
+          "date": "2024-03-19"
         }
       ],
       "fuzzy_match": {
@@ -394,6 +403,38 @@
       },
       "status": "pending",
       "created_date": "2026-09-06",
+      "resolution": null
+    },
+    {
+      "id": "cand-2026-09-07-001",
+      "detected_name": "Precision Antibiotics (DTU spinout)",
+      "detected_aliases": [
+        "Precision Antibiotics",
+        "CarboCell G/C",
+        "CarboCell AntiBiotics",
+        "CCAB"
+      ],
+      "entity_type_guess": [
+        "company",
+        "platform"
+      ],
+      "evidence": [
+        {
+          "source": {
+            "name": "Technical University of Denmark (DTU) official news page",
+            "url": "https://www.dtu.dk",
+            "tier": 1
+          },
+          "snippet": "\"A surgical strike in the battle against infections\" (dtu.dk, May 2026): Precision Antibiotics, a DTU spinout, is developing an injectable drug depot (product family referenced elsewhere as 'CarboCell G/C') delivering a combination of two existing antibiotics (gentamicin + clindamycin) locally into bone/soft tissue after e.g. a bone fracture, sustaining high local concentrations over several weeks to address biofilm infections resistant to systemic treatment. Raised DKK 60 million (~$8-9M) to fund first-in-human Phase 1 trials expected to start 2027. Related to a Novo Nordisk Foundation grant referencing 'CarboCell AntiBiotics (CCAB)', led by Anders Elias Hansen at DTU. Direct fetch of dtu.dk was EGRESS_BLOCKED this run; content is from search-engine snippet only, not independently re-verified by full-page read. SCOPE CAVEAT FOR REVIEWER: this is a local antibiotic depot for post-fracture bone/soft-tissue infection, not a systemic chronic-disease LAI (not GLP-1/antipsychotic/hormone-class) -- fits 'depot drug delivery tech' broadly but sits at the edge of the tracker's usual peptide/protein-LAI focus, flagging for a scope call rather than assuming inclusion.",
+          "date": "2026-05-01"
+        }
+      ],
+      "fuzzy_match": {
+        "closest_umbrella_id": "camurus-cam2056",
+        "score": 0.1
+      },
+      "status": "pending",
+      "created_date": "2026-09-07",
       "resolution": null
     }
   ]

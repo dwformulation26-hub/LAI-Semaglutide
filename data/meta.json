@@ -2,17 +2,30 @@
   "last_run": {
     "initial_seed": "2026-09-02T00:00:00Z",
     "initial_discovery_test": "2026-09-02T00:00:00Z",
-    "daily_scan": "2026-09-06T21:10:20Z",
-    "weekly_sweep": null,
-    "qc_tier2": null,
+    "daily_scan": "2026-09-07T07:05:50Z",
+    "weekly_sweep": "2026-09-07T07:05:50Z",
+    "qc_tier2": "2026-09-07T07:05:50Z",
     "qc_tier3": null
   },
   "coverage": {
     "daily_scan": {
-      "umbrellas_checked": 37,
+      "umbrellas_checked": 5,
       "umbrellas_total": 37,
-      "skipped_throttled": 0,
+      "skipped_throttled": 32,
       "skipped_budget_exhausted": 0
+    },
+    "weekly_sweep": {
+      "source_categories_checked": 6,
+      "source_categories_total": 6,
+      "notes": "Conference accepted-abstract indices (ADA/ASCO/AAN/ObesityWeek/JPM), KIPRIS/USPTO/WIPO patent filings, KOSDAQ tech-listing pipeline, university tech-transfer, VC/deal databases, clinicaltrials.gov new-registration feed -- all checked. Conference indices mostly not yet published this far ahead of each event; ObesityWeek 2026 abstract titles due to post by 2026-10-19, worth a re-check next weekly sweep."
+    },
+    "qc_tier2": {
+      "findings_sampled": 8,
+      "findings_total": 129,
+      "match": 5,
+      "mismatch": 0,
+      "unreachable": 3,
+      "dedup_sweep": "completed -- no true duplicate umbrellas or candidates found; all near-identical alias matches are legitimate same-parent-company multi-asset umbrellas (e.g. Alkermes, Camurus, InventageLab, Mapi Pharma, Peptron each have 2-3 separate umbrella files by design)"
     }
   },
   "source_health": {
@@ -24,6 +37,21 @@
     "kmpnews.co.kr": { "last_success": null, "status": "blocked" },
     "thevc.kr": { "last_success": null, "status": "blocked" },
     "dailypharm.com": { "last_success": null, "status": "blocked" },
-    "managedhealthcareexecutive.com": { "last_success": null, "status": "blocked" }
+    "managedhealthcareexecutive.com": { "last_success": null, "status": "blocked" },
+    "ir.indivior.com": { "last_success": null, "status": "blocked" },
+    "koreabiomed.com": { "last_success": null, "status": "blocked" },
+    "thebell.co.kr": { "last_success": null, "status": "blocked" },
+    "ipsen.com": { "last_success": null, "status": "blocked" },
+    "camurus.com": { "last_success": null, "status": "blocked" },
+    "businesswire.com": { "last_success": null, "status": "blocked" },
+    "globenewswire.com": { "last_success": null, "status": "blocked" },
+    "patents.google.com": { "last_success": null, "status": "blocked" },
+    "controlledreleasesociety.org": { "last_success": null, "status": "blocked" },
+    "obesityweek.org": { "last_success": null, "status": "blocked" },
+    "newspim.com": { "last_success": null, "status": "blocked" },
+    "pharm.edaily.co.kr": { "last_success": null, "status": "blocked" },
+    "blog.linknovate.com": { "last_success": null, "status": "blocked" },
+    "dtu.dk": { "last_success": null, "status": "blocked" },
+    "clinicaltrials.gov": { "last_success": null, "status": "blocked" }
   }
 }

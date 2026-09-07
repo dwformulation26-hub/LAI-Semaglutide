@@ -53,6 +53,18 @@
         "tier": 2
       },
       "confidence": "unverified"
+    },
+    {
+      "id": "f-2024-05-17-001",
+      "date": "2024-05-17",
+      "type": "regulatory",
+      "summary": "Discovered via weekly patent sweep, not previously logged: Aul Bio filed Korean patent application KR20240167410A for microspheres containing tirzepatide. Suggests Aul Bio may be developing a second, tirzepatide-based microsphere candidate on its Xtina/ExTenna platform, distinct from the tracked semaglutide-based AUL009 asset.",
+      "source": {
+        "name": "Google Patents record (KR20240167410A)",
+        "url": "https://patents.google.com/patent/KR20240167410A/en",
+        "tier": 1
+      },
+      "confidence": "unverified"
     }
   ]
 }
