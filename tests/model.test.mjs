@@ -17,7 +17,10 @@ async function sourcePayload() {
 }
 
 test("normalizes active combined studies without promoting planned phases", () => {
-  assert.equal(normalizeStage("Phase I/IIa — recruiting"), "Phase 2");
+  // A combined Phase I/II design defaults to Phase 1 until there's language showing
+  // the "II" portion is itself underway (see the dedicated combo test below) -- merely
+  // "recruiting" for the combined protocol doesn't mean the Phase 2 portion has begun.
+  assert.equal(normalizeStage("Phase I/IIa — recruiting"), "Phase 1");
   assert.equal(normalizeStage("Phase 2b in preparation following positive Phase 1b"), "Phase 1");
   assert.equal(normalizeStage("Phase 1 IND filed; dosing targeted in 2026"), "IND filed");
 });
@@ -55,8 +58,21 @@ test("requires the Phase 1/2 combo check to respect future-intent language, like
     normalizeStage("Preclinical. Remains listed at preclinical stage despite the company's stated intent to advance into Phase 1/2."),
     "Preclinical"
   );
-  // An actual active combined-phase trial must still match.
-  assert.equal(normalizeStage("Phase I/IIa — recruiting (started Aug 9, 2026)"), "Phase 2");
+});
+
+test("buckets a combined Phase I/II design as Phase 1 until the II portion is actually underway", () => {
+  // Design decision (not a bug fix): a trial that "just started recruiting" for a
+  // combined Phase I/II protocol shouldn't rank the same as a program with a
+  // completed, separate Phase 1 and its own distinct Phase 2 already underway --
+  // so a bare combo mention defaults to Phase 1 regardless of "recruiting" language.
+  assert.equal(normalizeStage("Phase I/IIa — recruiting (started Aug 9, 2026)"), "Phase 1");
+  assert.equal(normalizeStage("Phase 1/2a trial ongoing since Q1 2026"), "Phase 1");
+  // Only promotes to Phase 2 once the "2"/"II" portion specifically is shown as active.
+  assert.equal(
+    normalizeStage("Phase I/IIa study; Phase 1 portion complete, Phase 2a expansion cohort now dosing"),
+    "Phase 2"
+  );
+  assert.equal(normalizeStage("Phase 1/2a trial; dose-expansion started Q3 2026"), "Phase 2");
 });
 
 test("prepares the complete repository snapshot and identifies the development leader", async () => {
@@ -69,7 +85,7 @@ test("prepares the complete repository snapshot and identifies the development l
   assert.ok(data.findings.length >= 126, `expected at least 126 findings, got ${data.findings.length}`);
   assert.ok(data.pendingCandidates.length >= 9, `expected at least 9 pending candidates, got ${data.pendingCandidates.length}`);
   assert.equal(data.leader.id, "mapi-pharma-semaglutide");
-  assert.equal(data.leader.stageLabel, "Phase 2");
+  assert.equal(data.leader.stageLabel, "Phase 1");
 });
 
 test("flags stale or never-run monitoring types against their expected cadence", () => {

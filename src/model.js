@@ -71,8 +71,19 @@ export function normalizeStage(stageText = "") {
   const combo = text.match(new RegExp(`phase\\s*${phase1Num}\\s*\\/\\s*${phase2Num}\\w*`));
   if (combo) {
     const start = Math.max(0, combo.index - 32);
-    const end = Math.min(text.length, combo.index + combo[0].length + 42);
-    if (!futureWords.test(text.slice(start, end))) return "Phase 2";
+    const end = Math.min(text.length, combo.index + combo[0].length + 60);
+    const window = text.slice(start, end);
+    if (!futureWords.test(window)) {
+      // A combined Phase I/II design only counts as reaching Phase 2 once there's
+      // language showing the "2"/"II" portion is itself underway -- otherwise a trial
+      // that "just started recruiting" for the combined study would rank the same as
+      // one that already ran a full, separate Phase 2. Default to Phase 1 until then.
+      // Searches the whole text, not just the window around the combo match -- "Phase
+      // 2a is now dosing" naturally sits further from "Phase I/II" than the futureWords
+      // check above needs to look, since it's describing a separate, later event.
+      const phase2Underway = /(?:phase\s*(?:ii|2)\w*|expansion(?:\s*cohort)?|dose[- ]expansion).{0,40}?(?:enrolling|dosing|dosed|underway|begun|started|initiated|ongoing)/.test(text);
+      return phase2Underway ? "Phase 2" : "Phase 1";
+    }
   }
   if (new RegExp(`(?:positive|completed|following positive)\\s+phase\\s*${phase1Num}\\w*`).test(text)) return "Phase 1";
 
