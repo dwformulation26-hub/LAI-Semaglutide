@@ -17,6 +17,8 @@
   ],
   "current_status": {
     "stage": "Approved & marketed (US); wholly owned Alkermes product; patent settlement licenses Teva to launch a generic starting Jan 15, 2027 (2 yrs ahead of 2029 patent expiry); a separate Amneal authorized-generic supply agreement was terminated in July 2026",
+    "stage_label": "Approved / marketed",
+    "stage_evidence": "Approved and marketed in the US; Teva's generic license doesn't start until Jan 2027.",
     "dosing_target": "Monthly (intramuscular)",
     "partner": "None (wholly owned); Teva licensed for future generic entry (2027); Amneal authorized-generic supply deal terminated 2026",
     "data_point": "Q2 2026 net sales $124.5M (vs $121.7M PY); Q1 2026 net sales $112.4M; FY2026 guidance $460-480M",

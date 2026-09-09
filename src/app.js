@@ -207,9 +207,13 @@ function renderStatistics(data) {
   clear($("#evidence-chart")).append(wrap);
 }
 
-function stageBadge(stage, lang) {
+function stageBadge(stage, lang, inferred) {
   const element = node("span", "stage-badge", stageLabelText(stage, lang));
   element.style.setProperty("--stage-color", STAGE_COLORS[stage]);
+  if (inferred) {
+    element.title = t(lang, "programs.stageInferredTitle");
+    element.append(node("sup", "stage-badge-flag", "†"));
+  }
   return element;
 }
 
@@ -284,7 +288,7 @@ function renderPrograms() {
       programNameCell(record, findings.length, expanded, lang),
       tableCell(t(lang, "programs.col.origin"), originLabelText(record.origin, lang)),
       tableCell(t(lang, "programs.col.technology"), familyLabelText(record.technology_family, lang)),
-      tableCell(t(lang, "programs.col.stage"), stageBadge(record.stageLabel, lang)),
+      tableCell(t(lang, "programs.col.stage"), stageBadge(record.stageLabel, lang, record.stageInferred)),
       tableCell(t(lang, "programs.col.status"), truncate(record.current_status?.stage, 190)),
       tableCell(t(lang, "programs.col.updated"), formatDate(record.current_status?.last_updated, true, lang))
     );

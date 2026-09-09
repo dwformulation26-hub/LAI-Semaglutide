@@ -15,6 +15,8 @@
   ],
   "current_status": {
     "stage": "Approved & marketed; originally approved for adult GHD (2020) and pediatric GHD (2023), expanded Feb 27, 2026 to three additional pediatric indications (idiopathic short stature, small-for-gestational-age without catch-up growth, Noonan syndrome growth failure); a further supplemental application for Turner syndrome is pending with a US decision expected later in 2026",
+    "stage_label": "Approved / marketed",
+    "stage_evidence": "Approved and marketed for adult and pediatric GHD, expanded to further pediatric indications Feb 2026.",
     "dosing_target": "Once-weekly subcutaneous injection (albumin-binding, non-covalent, long-acting somatropin analog)",
     "partner": null,
     "data_point": "REAL8 Phase 3 basket study: at week 52, once-weekly somapacitan showed comparable annualized height velocity to daily somatropin across ISS (10.2 vs 10.5 cm/yr), SGA (11.0 vs ~9.4-11.1 cm/yr across daily-dose arms), and Noonan syndrome (10.4 vs 9.2 cm/yr); FDA approved all three indications Feb 27, 2026",

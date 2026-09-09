@@ -195,12 +195,20 @@ export function interpretLeader(leader, developmentPrograms, now = Date.now(), l
 export function prepareDatabase(payload, lang = "en") {
   const records = (payload.records ?? []).map((record) => {
     const names = splitName(record.canonical_name);
-    const stageLabel = normalizeStage(record.current_status?.stage);
+    // stage_label is the controlled value the scan skill is required to assign
+    // directly (see SKILL.md's "Stage scoring" section) -- it's authoritative and used
+    // as-is. normalizeStage() only runs as a defensive fallback for a record that
+    // predates that requirement or somehow shipped without it; stageInferred marks
+    // that case so the UI can flag it rather than silently presenting a guess as fact.
+    const declaredLabel = record.current_status?.stage_label;
+    const stageInferred = !(declaredLabel in STAGES);
+    const stageLabel = stageInferred ? normalizeStage(record.current_status?.stage) : declaredLabel;
     return {
       ...record,
       ...names,
       stageLabel,
       stageOrder: STAGES[stageLabel],
+      stageInferred,
       isSemaglutide: isSemaglutideProgram(record),
       isOurProduct: record.id === OUR_PRODUCT_ID
     };

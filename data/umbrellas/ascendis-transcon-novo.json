@@ -16,6 +16,8 @@
   ],
   "current_status": {
     "stage": "Preclinical/IND-enabling; Ascendis expects at least two new chemical entities (including the Novo Nordisk TransCon GLP-1 program and an internally developed candidate) to enter clinical trials in 2026",
+    "stage_label": "Preclinical",
+    "stage_evidence": "Preclinical/IND-enabling; Ascendis expects clinical entry in 2026 but trials have not started.",
     "dosing_target": "Monthly",
     "partner": "Novo Nordisk",
     "data_point": "No clinical efficacy data yet reported for the lead TransCon GLP-1 receptor agonist candidate as of Sept 2026",

@@ -1,6 +1,7 @@
 import { cp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { STAGES } from "../src/model.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const output = path.join(root, "dist");
@@ -13,6 +14,7 @@ const requiredFields = [
   "current_status",
   "finding_history"
 ];
+const validStageLabels = Object.keys(STAGES);
 
 async function readJson(filePath) {
   return JSON.parse(await readFile(filePath, "utf8"));
@@ -31,6 +33,16 @@ for (const fileName of umbrellaFiles) {
   }
   if (!Array.isArray(record.finding_history)) {
     throw new Error(`${fileName}: finding_history must be an array`);
+  }
+  // stage_label is the controlled field the scan skill must assign directly (see
+  // SKILL.md's "Stage scoring" section) -- this is a hard build failure, not a
+  // warning, precisely so an un-assigned or invalid value can never silently reach
+  // production and fall back to guessing the stage from prose.
+  const stageLabel = record.current_status?.stage_label;
+  if (!validStageLabels.includes(stageLabel)) {
+    throw new Error(
+      `${fileName}: current_status.stage_label is ${JSON.stringify(stageLabel)}, must be one of ${validStageLabels.join(", ")}`
+    );
   }
   records.push(record);
 }

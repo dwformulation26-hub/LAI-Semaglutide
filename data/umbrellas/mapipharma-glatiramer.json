@@ -16,6 +16,8 @@
   ],
   "current_status": {
     "stage": "US: FDA issued a Complete Response Letter for the RMS indication NDA in March 2024; no confirmed resubmission reported yet. EU: reported (single-source, unverified) to be under regulatory review in Germany for RMS, with potential EU launch targeted 2027. Phase III PPMS study initiation planned for 2026 following Israeli Ministry of Health GMP approval of Mapi's manufacturing facility.",
+    "stage_label": "Filed / review",
+    "stage_evidence": "FDA issued a Complete Response Letter for the RMS NDA (Mar 2024) and it's reported under regulatory review in Germany -- a filed/under-review status, not an active trial phase.",
     "dosing_target": "Once monthly (intramuscular)",
     "partner": "Viatris (exclusive license to commercialize GA Depot for relapsing forms of MS, RMS)",
     "data_point": "AAN 2026 (Apr): Phase 3 RMS EDSS stable 2.6->2.5 at 1 year, 96.4% of GA Depot patients had no EDSS increase vs 91.6% on placebo (n=1,016); Phase 2a PPMS EDSS stable 5.1->4.9 over ~3 years (n=30)",

@@ -14,6 +14,8 @@
   ],
   "current_status": {
     "stage": "Phase I/IIa — recruiting (started Aug 9, 2026)",
+    "stage_label": "Phase 1",
+    "stage_evidence": "Phase I/IIa combined trial recruiting since Aug 9, 2026; the Phase 2a portion hasn't been reported as separately active yet, so per the combined-phase rule this stays at Phase 1.",
     "dosing_target": "Monthly",
     "partner": "None disclosed for the semaglutide asset specifically; company is actively seeking a development/commercialization partner",
     "data_point": "NCT07563699 — dose-escalation Phase I/IIa study of Semaglutide Depot in type-2 diabetes, 24 participants, single site (Tel Aviv, Israel), est. primary completion May 2028",

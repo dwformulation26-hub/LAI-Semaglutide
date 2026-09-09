@@ -29,6 +29,7 @@ Use these exact string values — never invent a variant, even one that reads mo
 | `finding.confidence` | `confirmed`, `unverified` |
 | `source.tier` | `1`, `2`, `3` (integer) |
 | `candidate.status` | `pending`, `promoted`, `merged`, `rejected`, `snoozed` |
+| `current_status.stage_label` | `Research`, `Preclinical`, `IND filed`, `Phase 1`, `Phase 2`, `Phase 3`, `Filed / review`, `Approved / marketed` — see the dedicated section below, this one has real teeth (the build fails without it) |
 
 Dates are always `YYYY-MM-DD`. Timestamps (in `meta.json` only) are full ISO 8601 UTC: `YYYY-MM-DDTHH:MM:SSZ`.
 
@@ -52,6 +53,8 @@ IDs must be deterministic and collision-checked before writing — never just in
   "aliases": ["Peptron", "펩트론", "PT403", "SmartDepot", "087010"],
   "current_status": {
     "stage": "Partnered w/ Lilly",
+    "stage_label": "Phase 1",
+    "stage_evidence": "Phase 1 IND cleared and first patient dosed per the Aug 30 finding -- MFDS clearance letter directly cited.",
     "dosing_target": "Monthly",
     "partner": "Eli Lilly",
     "data_point": "~30% body-weight reduction at week 4 (ADA 2026)",
@@ -73,6 +76,7 @@ IDs must be deterministic and collision-checked before writing — never just in
 
 Notes:
 - `current_status` fields are only overwritten when a new finding actually addresses them — don't null out `partner` just because today's finding didn't mention it.
+- `stage` is free-text, human-readable color (what you'd say out loud). `stage_label` is the controlled bucket the dashboard actually uses to sort, color, and rank programs — the two must describe the same reality, but only `stage_label` is machine-read. `stage_evidence` is one sentence, in your own words, naming the specific fact from the source that justifies `stage_label` — required every time `stage_label` changes, optional (but nice) otherwise. See the skill's "Stage scoring" section for the strict rules on when and how `stage_label` may change — this is not a field to set casually the way `stage`'s prose is; `scripts/build.mjs` fails the build if it's missing or not one of the eight listed values.
 - `finding_history` is append-only. Never edit or remove a past entry, even to "clean it up" — if something logged earlier turns out wrong, append a new finding correcting it (this preserves the audit trail; git history plus this append-only log together are the record of what was known when).
 - Staleness (`days_since_last_finding`) is computed by the app from `current_status.last_updated` at render time. Do not store it — a stored value goes stale itself.
 - `last_checked` is updated by Track A every time it actually queries this umbrella's aliases, regardless of whether anything new turned up — it's what powers the quiet-umbrella throttle in the skill (checking a consistently quiet umbrella every 3rd day instead of daily). This is deliberately separate from `last_updated`, which only moves when a real finding lands. A missing `last_checked` means "never checked under the throttle rule" — treat it as due for a check, not as quiet.

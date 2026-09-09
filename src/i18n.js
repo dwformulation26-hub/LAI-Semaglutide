@@ -107,6 +107,7 @@ const STRINGS = {
     "programs.findingCount": "{count} finding{plural}",
     "programs.originKorea": "Korea",
     "programs.originGlobal": "Global",
+    "programs.stageInferredTitle": "Stage guessed from free text, not directly assigned by the scan skill — worth double-checking against the reported status below.",
 
     "evidence.confirmed": "Confirmed",
     "evidence.unverified": "Unverified",
@@ -250,6 +251,7 @@ const STRINGS = {
     "programs.findingCount": "{count}건의 근거",
     "programs.originKorea": "한국",
     "programs.originGlobal": "글로벌",
+    "programs.stageInferredTitle": "본문에서 자동 추정한 단계입니다 — 스캔 스킬이 직접 지정하지 않았으므로 아래 보고된 상태와 대조해 확인하는 것이 좋습니다.",
 
     "evidence.confirmed": "확정",
     "evidence.unverified": "미확인",

@@ -20,6 +20,8 @@
   ],
   "current_status": {
     "stage": "Preclinical (GLP tox completed end-2025); Phase 1 IND for IVL3021 targeted in 2026",
+    "stage_label": "Preclinical",
+    "stage_evidence": "GLP tox completed end-2025; Phase 1 IND for IVL3021 is only targeted for 2026, not yet filed.",
     "dosing_target": "Monthly (IVL3021, semaglutide); ~2 months (IVL3024, tirzepatide)",
     "partner": "Yuhan Corporation (유한양행 — co-development/commercialization deal for semaglutide-class LAI, signed Jan 5, 2024); Boehringer Ingelheim (LAI peptide formulation co-development, signed Sept 19, 2024)",
     "data_point": "IVL3024 (tirzepatide) maintained stable drug exposure for 2 months in minipigs with no initial burst; IVL3021 (semaglutide) showed dose-dependent weight loss in obese rats and sustained weight control after switching from Wegovy (ADA 2026 poster data)",

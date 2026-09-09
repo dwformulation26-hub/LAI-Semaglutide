@@ -219,6 +219,7 @@ td strong, td span { display: block; }
 td strong { font-size: .75rem; }
 td span { margin-top: .15rem; color: var(--muted); font-size: .66rem; }
 .stage-badge { display: inline-flex; min-height: 24px; align-items: center; padding: .15rem .45rem; border-radius: 99px; color: var(--stage-color); background: color-mix(in srgb, var(--stage-color) 12%, white); font-size: .61rem; font-weight: 800; white-space: nowrap; }
+.stage-badge-flag { margin-left: .15rem; cursor: help; }
 .empty-state { padding: 3rem 1rem; color: var(--muted); text-align: center; }
 
 .candidate-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: .75rem; }

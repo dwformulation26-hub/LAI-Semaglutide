@@ -75,6 +75,39 @@ test("buckets a combined Phase I/II design as Phase 1 until the II portion is ac
   assert.equal(normalizeStage("Phase 1/2a trial; dose-expansion started Q3 2026"), "Phase 2");
 });
 
+test("prefers a declared stage_label over guessing from prose, and flags it when it has to guess", () => {
+  const declared = prepareDatabase({
+    records: [{
+      id: "x", canonical_name: "X – Y", origin: "Global", technology_family: "other",
+      // The free-text stage would normalize to "Phase 3" on its own -- stage_label must win.
+      current_status: { stage: "Phase 3 pivotal trial dosing", stage_label: "Phase 1" },
+      finding_history: []
+    }]
+  }).records[0];
+  assert.equal(declared.stageLabel, "Phase 1");
+  assert.equal(declared.stageInferred, false);
+
+  const missing = prepareDatabase({
+    records: [{
+      id: "x", canonical_name: "X – Y", origin: "Global", technology_family: "other",
+      current_status: { stage: "Phase 3 pivotal trial dosing" }, // no stage_label at all
+      finding_history: []
+    }]
+  }).records[0];
+  assert.equal(missing.stageLabel, "Phase 3");
+  assert.equal(missing.stageInferred, true);
+
+  const invalid = prepareDatabase({
+    records: [{
+      id: "x", canonical_name: "X – Y", origin: "Global", technology_family: "other",
+      current_status: { stage: "Preclinical", stage_label: "Phase 2.5" }, // not one of the eight values
+      finding_history: []
+    }]
+  }).records[0];
+  assert.equal(invalid.stageLabel, "Preclinical");
+  assert.equal(invalid.stageInferred, true);
+});
+
 test("prepares the complete repository snapshot and identifies the development leader", async () => {
   const data = prepareDatabase(await sourcePayload());
   // records.length only changes when an umbrella is promoted (a manual, admin-only action),

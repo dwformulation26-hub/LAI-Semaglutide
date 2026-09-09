@@ -16,6 +16,8 @@
   ],
   "current_status": {
     "stage": "Approved; established global alternative to Lupron Depot for advanced prostate cancer, using Atrigel in-situ forming (NMP/PLGA solvent-exchange) technology rather than pre-formed microspheres. No generic Eligard has been FDA-approved as of Sept 2026.",
+    "stage_label": "Approved / marketed",
+    "stage_evidence": "Approved global alternative to Lupron Depot; no generic Eligard approved as of Sept 2026.",
     "dosing_target": "Flexible 1-, 3-, 4-, or 6-month subcutaneous depot",
     "partner": null,
     "data_point": "Feb 2025: FDA-approved prescribing information revised (Warnings & Precautions, Dosage & Administration sections updated)",

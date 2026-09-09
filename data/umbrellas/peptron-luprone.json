@@ -19,6 +19,8 @@
   ],
   "current_status": {
     "stage": "Approved and commercialized in Korea — Korea's first commercialized generic (follow-on) of Takeda's Leuplin (leuprorelin), built on Peptron's SmartDepot PLGA-microsphere platform. Distributed domestically by LG Chem under a 2023 agreement running through 2034, first for prostate cancer, later extended to central precocious puberty (launched Oct 2025). Serves as Peptron's proof-of-concept commercial validation for SmartDepot ahead of its Eli Lilly peptide-discovery collaboration. Naming note: this batch's seed hint used 'Luprone' — every Tier 1/2 source found (Korea Biomedical Review, PR Newswire, LG Chem) spells the commercial brand 'Leupone'; the umbrella id is kept as originally assigned ('peptron-luprone') but canonical_name/aliases use the verified spelling.",
+    "stage_label": "Approved / marketed",
+    "stage_evidence": "Approved and commercialized in Korea as the first commercialized generic follow-on of Leuplin.",
     "dosing_target": "Monthly (1-month) sustained-release subcutaneous/IM leuprorelin injection, thinner-needle micronized formulation",
     "partner": "LG Chem (exclusive domestic distribution/marketing)",
     "data_point": "Apr 2026: Peptron filed for market approval of Leupone (PT105) in Mexico, its first Latin American regulatory filing for the product",

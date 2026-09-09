@@ -21,6 +21,8 @@
   ],
   "current_status": {
     "stage": "Phase 1 IND filed in Korea (April 2026); first-patient dosing targeted within 2026",
+    "stage_label": "IND filed",
+    "stage_evidence": "Phase 1 IND filed in Korea (April 2026); first-patient dosing not yet begun, targeted within 2026.",
     "dosing_target": "Monthly",
     "partner": "TionLab Therapeutics",
     "data_point": "Semaglutide loaded at ~20% density in microspheres; delivered in a 1 mL injection volume",

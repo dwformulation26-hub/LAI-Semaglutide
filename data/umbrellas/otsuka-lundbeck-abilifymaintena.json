@@ -19,6 +19,8 @@
   ],
   "current_status": {
     "stage": "Approved; Asimtufii (once-every-2-months) commercial growth offsetting Maintena (monthly) generic/patent erosion",
+    "stage_label": "Approved / marketed",
+    "stage_evidence": "Both Maintena and Asimtufii are approved and marketed; Asimtufii is growing while Maintena faces generic erosion.",
     "dosing_target": "Monthly (Maintena) / Once every 2 months (Asimtufii)",
     "partner": "Lundbeck (co-development/co-commercialization)",
     "data_point": "H1 FY2026 (Jan-Jun 2026) combined Abilify Maintena/Asimtufii sales ¥149.5B, +19.2% YoY, driven by North America prescription growth (single-source, unverified)",

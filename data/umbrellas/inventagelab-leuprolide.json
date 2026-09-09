@@ -19,6 +19,8 @@
   ],
   "current_status": {
     "stage": "Preclinical. As of the most recently checked InventageLab pipeline page (Sept 2026), IVL3008 (3-month leuprolide) remains listed at preclinical stage for prostate cancer and precocious puberty; no clinicaltrials.gov registration for IVL3008 was found despite the company's 2024 stated intent to advance into Phase 1/2. No material public progress beyond the June 2024 EACR nonclinical data disclosure was identified. This is a separate umbrella from InventageLab's semaglutide asset and its CNS (aripiprazole/donepezil) LAI assets, which use the same IVL-DrugFluidic microfluidic manufacturing platform but are distinct drug programs.",
+    "stage_label": "Preclinical",
+    "stage_evidence": "InventageLab's own pipeline page (checked Sept 2026) lists IVL3008 at preclinical stage; no clinicaltrials.gov registration found despite a 2024 stated intent to advance into Phase 1/2.",
     "dosing_target": "1-month (PLGA) and 3-month (PLA) formulations historically studied; current active pipeline entries are IVL3008 (3-month) and IVL3016 (6-month)",
     "partner": null,
     "data_point": "Nonclinical data (single-dose animal studies) showed leuprolide release maintaining castration-level testosterone (≤0.5 ng/mL) with initial burst release reduced to 0.14–7.65% versus commercial comparator products",

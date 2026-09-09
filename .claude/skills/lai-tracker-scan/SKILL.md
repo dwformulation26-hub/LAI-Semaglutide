@@ -109,6 +109,24 @@ Apply this consistently — it's what keeps "confirmed" meaning something over t
 
 **Rule:** log a material claim as "confirmed" only with either one Tier 1 source, or two *independent* Tier 2 sources (not two articles both quoting the same PR Newswire release — that's one source wearing two hats). Anything short of that gets logged as "unverified," visibly, not silently rounded up to confirmed.
 
+## Stage scoring — how a finding may change `current_status.stage_label`
+
+This section exists because the dashboard used to *infer* a program's development stage from the free-text `stage` description with a regex parser, and that parser was wrong four separate times in one review — roman numerals swallowed into the wrong phase, "IND submitted" not recognized as equivalent to "IND filed," a combined Phase I/II design counted as an active Phase 2 the moment it started recruiting. A parser guessing at prose will always have another edge case. The fix isn't a better parser — it's that **you assign the stage directly, the same way you already assign `technology_family` or `finding.type`, instead of leaving it to be reverse-engineered later.**
+
+`current_status.stage_label` must always be exactly one of: `Research`, `Preclinical`, `IND filed`, `Phase 1`, `Phase 2`, `Phase 3`, `Filed / review`, `Approved / marketed`. `scripts/build.mjs` fails the build if it's missing or isn't one of these eight — this is a hard stop, not a style preference. `stage` stays as free-text color; `stage_label` is what the dashboard actually sorts, colors, and ranks programs by.
+
+**When you may advance `stage_label` to a higher bucket:**
+
+- Only when the source **explicitly and unambiguously states the current status** in a way that maps cleanly onto one of the eight buckets — never infer it from adjacent or contextual language, and never advance on a source's forward-looking language ("targeted," "planned," "expects to," "intends to," "aims to") no matter how confident it sounds.
+- Only with the **same Tier 1/2 confirmation bar as a "confirmed" finding** (one Tier 1 source, or two independent Tier 2 sources). A Tier 3 or single-unverified-Tier-2 source can update the free-text `stage` description, but must never move `stage_label` forward on its own.
+- **"IND filed" vs "Phase 1":** an IND submitted or filed but not yet cleared, or cleared but dosing not yet begun, is `IND filed` — not `Phase 1`. Only move to `Phase 1` once the source explicitly says dosing or enrollment has actually started.
+- **Combined-phase designs (e.g. "Phase I/IIa"):** default to the *lower* bucket (`Phase 1`) even if the combined protocol is actively recruiting. Only advance to `Phase 2` once the source explicitly shows the higher portion itself is active — an expansion cohort dosing, a dose-expansion stage started, not merely that the joint-phase trial exists or is enrolling.
+- If a finding's evidence is genuinely ambiguous against these rules, **do not guess** — leave `stage_label` at its current value, update `stage`'s prose if useful, and add a one-line note under `stage_evidence` flagging the ambiguity for the admin instead of silently picking a bucket.
+
+**Demotions** (discontinued, paused, failed, clinical hold) need the same confirmation bar as an advance, and there's no dedicated bucket for "discontinued" in the eight values yet — keep the last accurate `stage_label`, but make the discontinuation unmistakable in `stage`'s text and flag it for the admin rather than leaving it to blend in as if the program were still progressing normally.
+
+**Every time you change `stage_label`, write `stage_evidence`** — one sentence, in your own words, naming the specific fact from the source that justifies the new bucket (e.g. `"Phase 1 IND cleared and first patient dosed per the Aug 30 MFDS clearance letter."`). This is what lets a future review (human or otherwise) check your work without re-deriving it from scratch. Never invent a ninth value if nothing seems to fit cleanly — that has never actually happened across the 37 tracked umbrellas; if it ever does, keep the closest-fitting existing value and flag the mismatch instead of coining a new one.
+
 ## Calendar-aware bursts
 
 Weight extra search effort around known disclosure clusters, since that's where yield concentrates: ADA (June), ObesityWeek (November), JPM Healthcare Conference (January), ASCO (June), AAN (April). Daily cadence shouldn't structurally miss anything, but it's worth spending more of the search budget in these windows than in a quiet month.
@@ -196,3 +214,5 @@ If there's nothing in any of the three arrays, the script prints a message and w
 - Never do a deep multi-query dive on any umbrella before every umbrella has had its first-pass query — breadth before depth.
 - Never edit the app's interface/UI code, or the email digest template/renderer.
 - Never log a claim as "confirmed" without meeting the Tier 1/Tier 2 source rule.
+- Never advance `current_status.stage_label` without meeting that same Tier 1/Tier 2 bar, without the source explicitly (not inferentially) stating the current status, or without writing `stage_evidence` explaining why.
+- Never leave `stage_label` unset or set it to anything outside the eight controlled values — the build fails on this by design; don't work around it, fix the value.
