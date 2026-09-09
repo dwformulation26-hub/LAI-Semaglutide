@@ -28,8 +28,8 @@
     "dosing_target": "Monthly",
     "partner": "Samsung Bioepis / Epis NexLab (full license on long-acting semaglutide asset + option on a 2nd asset + first-negotiation rights on 3 more undisclosed assets); Boehringer Ingelheim (separate LAI peptide formulation collaboration since Jan 2025, expanded July 2026); Celltrion (MOU for InnoBioLAMP antibody SC platform)",
     "data_point": "InnoLAMP: <5% initial drug burst in first 24h; serum concentrations maintained beyond 28 days in rodent models across semaglutide, tirzepatide, and retatrutide",
-    "last_updated": "2026-03-16",
-    "last_checked": "2026-09-06"
+    "last_updated": "2026-09-08",
+    "last_checked": "2026-09-09"
   },
   "finding_history": [
     {
@@ -112,6 +112,18 @@
       "source": {
         "name": "Newspim, corroborated by Biospectator and eToday",
         "url": "https://www.newspim.com/news/view/20260518000550",
+        "tier": 2
+      },
+      "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-09-08-001",
+      "date": "2026-09-08",
+      "type": "trial_data_readout",
+      "summary": "G2GBio reported consistent Phase 1 pharmacokinetic results across three countries (Korea, Canada, Indonesia) for GB-5001, its once-monthly long-acting donepezil injectable for Alzheimer's/dementia -- a separate asset from the tracked GB-7001 semaglutide program. Single-dose PK across 70/140/280mg was dose-proportional; population-PK steady-state simulation showed 140mg approximating oral Aricept 5mg and 280mg approximating oral Aricept 10mg. Company said it will pursue partnership discussions and follow-on development toward pivotal trials. Exact publish date/time of the 280mg steady-state detail (from a related TheBioNews article) not independently re-verified beyond search-result snippets.",
+      "source": {
+        "name": "Money Today (머니투데이), corroborated by TheBioNews",
+        "url": "https://www.mt.co.kr/thebio/2026/09/08/2026090808284832855",
         "tier": 2
       },
       "confidence": "confirmed"

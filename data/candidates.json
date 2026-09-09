@@ -436,6 +436,69 @@
       "status": "pending",
       "created_date": "2026-09-07",
       "resolution": null
+    },
+    {
+      "id": "cand-2026-09-09-001",
+      "detected_name": "QL Biopharm (Zhitai Biopharmaceutical)",
+      "detected_aliases": [
+        "QL Biopharm",
+        "Zhitai Biopharmaceutical",
+        "质肽生物医药",
+        "Zhitai Bio",
+        "zovaglutide",
+        "ZT002"
+      ],
+      "entity_type_guess": [
+        "company",
+        "asset"
+      ],
+      "evidence": [
+        {
+          "source": {
+            "name": "Endpoints News",
+            "url": "https://endpoints.news/china-obesity-biotech-ql-biopharm-gets-72m-including-support-from-orbimed/",
+            "tier": 2
+          },
+          "snippet": "Beijing-based QL Biopharm raised over RMB 500M (~$72M) in a Series C led by OrbiMed (with 5Y Capital, Apricot Capital, Huagai Capital, Qiming Venture Partners, TigerYeah Capital, Lanchi Ventures, TF Capital), announced March 2, 2026. Lead candidate zovaglutide (ZT002) is a GLP-1 receptor agonist injection designed for monthly dosing -- potentially the first monthly GLP-1 peptide to reach market -- now in a China Phase 3 obesity trial (first patient dosed January 2026) after Phase II data showed 13.8% weight loss by week 24 without reaching a plateau.",
+          "date": "2026-03-02"
+        }
+      ],
+      "fuzzy_match": {
+        "closest_umbrella_id": "mapi-pharma-semaglutide",
+        "score": 0.2
+      },
+      "status": "pending",
+      "created_date": "2026-09-09",
+      "resolution": null
+    },
+    {
+      "id": "cand-2026-09-09-002",
+      "detected_name": "GSK - Felcorekibart",
+      "detected_aliases": [
+        "Felcorekibart",
+        "펠코레키바트"
+      ],
+      "entity_type_guess": [
+        "asset"
+      ],
+      "evidence": [
+        {
+          "source": {
+            "name": "Edaily (이데일리)",
+            "url": "https://www.edaily.co.kr/News/Read?newsId=01994246645577824",
+            "tier": 2
+          },
+          "snippet": "GSK is advancing felcorekibart, a long-acting engineered antibody originally developed by a China-founded biotech GSK acquired roughly two years ago, registering 6 new Phase 3 trials (2 COPD, 2 asthma, 2 CRSwNP). Corroborated by a TipRanks wire piece on the same COPD Phase 3 program. SCOPE CAVEAT FOR REVIEWER: this is a half-life-extended monoclonal antibody for respiratory disease (COPD/asthma/CRSwNP), not a depot/microsphere/peptide-LAI in the tracker's usual sense. It fits the 'molecular_engineering' technology_family loosely (durability via protein engineering, same broad category as GX-H9's hyFc or Metsera's engineered peptide) but is a therapeutic-area outlier versus the rest of the registry -- flagging for an explicit in/out-of-scope call rather than assuming inclusion.",
+          "date": "2026-09-08"
+        }
+      ],
+      "fuzzy_match": {
+        "closest_umbrella_id": null,
+        "score": 0.0
+      },
+      "status": "pending",
+      "created_date": "2026-09-09",
+      "resolution": null
     }
   ]
 }
