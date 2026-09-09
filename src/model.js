@@ -56,7 +56,7 @@ export const FINDING_LABELS = {
 export function normalizeStage(stageText = "") {
   const text = String(stageText).toLowerCase();
   if (/\bapproved\b|\bmarketed\b|commercially launched/.test(text)) return "Approved / marketed";
-  if (text.includes("ind filed") || text.includes("ind application")) return "IND filed";
+  if (/\bind\b.{0,20}(?:filed|submitted|application)|(?:filed|submitted)\s+(?:an?\s+)?ind\b/.test(text)) return "IND filed";
   if (/phase\s*(?:i|1)\s*\/\s*(?:ii|2)\w*/.test(text)) return "Phase 2";
   if (/(?:positive|completed|following positive)\s+phase\s*(?:i|1)\w*/.test(text)) return "Phase 1";
 

@@ -22,6 +22,15 @@ test("normalizes active combined studies without promoting planned phases", () =
   assert.equal(normalizeStage("Phase 1 IND filed; dosing targeted in 2026"), "IND filed");
 });
 
+test("recognizes IND-submitted phrasing as filed, not an active trial", () => {
+  // Regression: "Phase 1 IND submitted ... pending approval" was matching the bare
+  // "Phase 1" pattern (only "ind filed"/"ind application" were recognized), which
+  // misclassified a still-pending IND as an active Phase 1 trial.
+  assert.equal(normalizeStage("Phase 1 IND submitted to Korea's MFDS (Aug 25, 2026), pending approval"), "IND filed");
+  assert.equal(normalizeStage("Company filed an IND for the program in Q3"), "IND filed");
+  assert.equal(normalizeStage("IND application submitted; Phase 1 dosing targeted in 2026"), "IND filed");
+});
+
 test("prepares the complete repository snapshot and identifies the development leader", async () => {
   const data = prepareDatabase(await sourcePayload());
   // records.length only changes when an umbrella is promoted (a manual, admin-only action),
