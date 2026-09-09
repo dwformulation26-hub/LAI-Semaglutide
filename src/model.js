@@ -57,15 +57,30 @@ export function normalizeStage(stageText = "") {
   const text = String(stageText).toLowerCase();
   if (/\bapproved\b|\bmarketed\b|commercially launched/.test(text)) return "Approved / marketed";
   if (/\bind\b.{0,20}(?:filed|submitted|application)|(?:filed|submitted)\s+(?:an?\s+)?ind\b/.test(text)) return "IND filed";
-  if (/phase\s*(?:i|1)\s*\/\s*(?:ii|2)\w*/.test(text)) return "Phase 2";
-  if (/(?:positive|completed|following positive)\s+phase\s*(?:i|1)\w*/.test(text)) return "Phase 1";
+
+  // Roman-numeral phase mentions are matched with a negative lookahead (e.g. "i(?!i)")
+  // so "Phase II"/"Phase III" can never be swallowed by the "Phase 1"/"Phase 2" patterns
+  // as if the trailing numerals were just an arbitrary word-character suffix (they'd
+  // otherwise register as "Phase 1"/"Phase 2" purely because "ii"/"iii" start with "i").
+  // Sub-stage suffixes like "1b"/"ib"/"iia" still match fine, since the lookahead only
+  // blocks a *roman-numeral* character immediately following, not any word character.
+  const phase1Num = "(?:i(?!i)|1)";
+  const phase2Num = "(?:ii(?!i)|2)";
+  const futureWords = /target|plan|prepar|expect|intend|intent|aim|advanc(?:e|ing)?\s*(?:into|toward)/;
+
+  const combo = text.match(new RegExp(`phase\\s*${phase1Num}\\s*\\/\\s*${phase2Num}\\w*`));
+  if (combo) {
+    const start = Math.max(0, combo.index - 32);
+    const end = Math.min(text.length, combo.index + combo[0].length + 42);
+    if (!futureWords.test(text.slice(start, end))) return "Phase 2";
+  }
+  if (new RegExp(`(?:positive|completed|following positive)\\s+phase\\s*${phase1Num}\\w*`).test(text)) return "Phase 1";
 
   const patterns = [
     ["Phase 3", /phase\s*(?:iii|3)\w*|pivotal(?:-stage)?/g],
-    ["Phase 2", /phase\s*(?:ii|2)\w*/g],
-    ["Phase 1", /phase\s*(?:i|1)\w*/g]
+    ["Phase 2", new RegExp(`phase\\s*${phase2Num}\\w*`, "g")],
+    ["Phase 1", new RegExp(`phase\\s*${phase1Num}\\w*`, "g")]
   ];
-  const futureWords = /target|plan|prepar|expect|intend|aim|advanc(?:e|ing) toward/;
   for (const [label, pattern] of patterns) {
     for (const match of text.matchAll(pattern)) {
       const start = Math.max(0, (match.index ?? 0) - 32);

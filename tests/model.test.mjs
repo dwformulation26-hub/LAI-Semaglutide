@@ -31,6 +31,34 @@ test("recognizes IND-submitted phrasing as filed, not an active trial", () => {
   assert.equal(normalizeStage("IND application submitted; Phase 1 dosing targeted in 2026"), "IND filed");
 });
 
+test("never lets a roman-numeral Phase II/III mention register as Phase 1/2", () => {
+  // Regression: /phase\s*(?:i|1)\w*/ let the greedy \w* swallow extra roman-numeral
+  // letters, so "Phase II" and "Phase III" both matched as if they were "Phase 1" --
+  // and the "positive/completed + phase 1" shortcut fired on "positive Phase II" and
+  // returned early, before the real "Global Phase III ... dosed" mention downstream
+  // ever got a chance to match the (correctly ordered) Phase 3 pattern.
+  assert.equal(
+    normalizeStage("Global Phase III (pivotal trials, first participant dosed Aug 2026); formulation completed positive Phase II 24-week study"),
+    "Phase 3"
+  );
+  // Sub-stage suffixes on roman numerals must still resolve correctly -- the fix only
+  // blocks a *roman-numeral* character right after i/ii, not any word character.
+  assert.equal(normalizeStage("Phase Ib dose-escalation ongoing"), "Phase 1");
+  assert.equal(normalizeStage("Phase IIa fully enrolled"), "Phase 2");
+});
+
+test("requires the Phase 1/2 combo check to respect future-intent language, like every other phase check", () => {
+  // Regression: this was the one phase check with no futureWords guard at all, so
+  // "stated intent to advance into Phase 1/2" overrode an explicit, twice-repeated
+  // "Preclinical" elsewhere in the same text.
+  assert.equal(
+    normalizeStage("Preclinical. Remains listed at preclinical stage despite the company's stated intent to advance into Phase 1/2."),
+    "Preclinical"
+  );
+  // An actual active combined-phase trial must still match.
+  assert.equal(normalizeStage("Phase I/IIa — recruiting (started Aug 9, 2026)"), "Phase 2");
+});
+
 test("prepares the complete repository snapshot and identifies the development leader", async () => {
   const data = prepareDatabase(await sourcePayload());
   // records.length only changes when an umbrella is promoted (a manual, admin-only action),
