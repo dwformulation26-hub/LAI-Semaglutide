@@ -499,6 +499,48 @@
       "status": "pending",
       "created_date": "2026-09-09",
       "resolution": null
+    },
+    {
+      "id": "cand-2026-09-10-001",
+      "detected_name": "CSPC Pharmaceutical Group – SYH2082 (AstraZeneca-partnered)",
+      "detected_aliases": [
+        "CSPC Pharmaceutical Group",
+        "CSPC Pharmaceuticals",
+        "SYH2082",
+        "LiquidGel"
+      ],
+      "entity_type_guess": [
+        "company",
+        "platform",
+        "asset"
+      ],
+      "evidence": [
+        {
+          "source": {
+            "name": "AstraZeneca press release (company IR)",
+            "url": "https://www.astrazeneca.com/media-centre/press-releases/2026/astrazeneca-agrees-obesity-and-t2d-deal-with-cspc.html",
+            "tier": 1
+          },
+          "snippet": "AstraZeneca announced Jan 30, 2026 it will receive exclusive global rights outside China to CSPC's once-monthly injectable weight-management portfolio: lead clinical-ready asset SYH2082, a long-acting GLP-1R/GIPR agonist entering Phase I, plus three preclinical programmes, built on CSPC's AI-driven peptide discovery platform and proprietary 'LiquidGel' once-monthly dosing technology. CSPC receives $1.2B upfront plus up to $3.5B in development/regulatory milestones (plus commercial milestones/royalties); CSPC leads development through Phase I for all four programmes, then AstraZeneca takes over ex-China development/commercialization. CSPC retains China/Taiwan/HK/Macau rights with an AZ co-commercialization option post-approval. Deal expected to close Q2 2026. NOTE FOR REVIEWER: CSPC already has a separate pending candidate in this pipeline (cand-2026-09-02-007, CSPC ZhongQi Pharmaceutical Technology / SYHX2008, a long-acting octreotide for acromegaly) -- this is a different asset/subsidiary of the same corporate parent, surfaced independently via this run's wire skim, not a duplicate of that entry.",
+          "date": "2026-01-30"
+        },
+        {
+          "source": {
+            "name": "Pharmaceutical Technology",
+            "url": "https://www.pharmaceutical-technology.com/news/astrazeneca-signs-4-7bn-weight-loss-drug-deal-with-cspc/",
+            "tier": 2
+          },
+          "snippet": "Corroborates deal terms: AstraZeneca signs deal worth up to $4.7bn total ($1.2B upfront + up to $3.5B milestones) with CSPC for once-monthly GLP-1R/GIPR agonist SYH2082 and three preclinical obesity/metabolic programmes.",
+          "date": "2026-01-30"
+        }
+      ],
+      "fuzzy_match": {
+        "closest_umbrella_id": null,
+        "score": 0.0
+      },
+      "status": "pending",
+      "created_date": "2026-09-10",
+      "resolution": null
     }
   ]
 }

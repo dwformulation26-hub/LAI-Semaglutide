@@ -2,18 +2,18 @@
   "last_run": {
     "initial_seed": "2026-09-02T00:00:00Z",
     "initial_discovery_test": "2026-09-02T00:00:00Z",
-    "daily_scan": "2026-09-09T21:12:00Z",
+    "daily_scan": "2026-09-10T08:10:32Z",
     "weekly_sweep": "2026-09-07T07:05:50Z",
     "qc_tier2": "2026-09-07T07:05:50Z",
     "qc_tier3": null
   },
   "coverage": {
     "daily_scan": {
-      "umbrellas_checked": 36,
+      "umbrellas_checked": 4,
       "umbrellas_total": 37,
-      "skipped_throttled": 1,
+      "skipped_throttled": 33,
       "skipped_budget_exhausted": 0,
-      "notes": "Breadth-first pass across all 36 umbrellas due for a check this run (one query per umbrella's single most distinctive alias, per the search-budget-discipline rule) -- only astrazeneca-zoladex was throttled (21+ days quiet, last checked 2026-09-08, within the 2-day quiet window). All 36 queries returned only news already present in each umbrella's finding_history, with one exception: samsung-bioepis-g2gbio-gb7001 got a new finding logged for GB-5001 (a separate donepezil LAI asset from the tracked GB-7001 semaglutide program) -- consistent 3-country Phase 1 PK data reported 2026-09-08, just outside this run's freshness window so treated as a late item rather than a headline. Track B1 wire skim (6 bounded EN+KR term-based searches) surfaced two new Track B candidates written to candidates.json: QL Biopharm/zovaglutide (Beijing-based monthly-GLP-1, China Phase 3, Series C financing dated 2026-03-02 -- also outside the freshness window, logged as a late/backfill candidate) and GSK's felcorekibart (long-acting engineered antibody, Phase 3 respiratory trials, flagged for an explicit scope call since it sits outside the tracker's usual peptide/depot focus)."
+      "notes": "Prior run (2026-09-09) reset last_checked to 2026-09-09 on 36/37 umbrellas, so today the 21+-day-quiet throttle correctly skipped all 33 of those still within the 2-day quiet window (checked every 3rd day, not daily). Only 4 umbrellas were due regardless of throttle (last_updated <21 days ago): ascletis-asc30 (alias ASC30), owlbio-kyungdong-xtina (alias AUL009), peptron-pt403 (alias PT403), samsung-bioepis-g2gbio-gb7001 (alias GB-7001) -- one query per alias, breadth-first. No genuinely new-since-yesterday news on any of the 4; astrazeneca-zoladex remained throttled (last checked 2026-09-08, gap still within the 2-day window). One backfill finding logged: a 2025-09-09 Ascletis Phase Ib press release (75-day observed half-life for the ASC30 depot maintenance formulation, ULAP platform) turned up via the ASC30 alias query but was never previously logged -- appended to ascletis-asc30.json finding_history as historical color, well outside the freshness window so excluded from the digest headline. Track B1 wire skim (6 bounded EN+KR term-based searches covering 'long-acting injectable', 'depot/microsphere', 'sustained-release', and Korean equivalents) surfaced one new Track B candidate: CSPC Pharmaceutical Group's SYH2082 (long-acting GLP-1R/GIPR agonist, Phase I, licensed to AstraZeneca for $1.2B upfront + up to $3.5B milestones on CSPC's 'LiquidGel' once-monthly platform) -- announced 2026-01-30, also a backfill discovery (CSPC already has an unrelated pending candidate, cand-2026-09-02-007, for a different asset/subsidiary -- noted in the new entry to avoid read-as-duplicate confusion). A Pepgene/PG004 mention surfaced in the Korean wire skim but lacked a concrete technical claim beyond a bare pipeline-page reference (all direct fetches to pepgene.net were EGRESS_BLOCKED) -- did not meet the entity+claim+source bar, not logged as a candidate."
     },
     "weekly_sweep": {
       "source_categories_checked": 6,
@@ -30,6 +30,11 @@
     }
   },
   "source_health": {
+    "clinicaltrialsarena.com": { "last_success": null, "status": "blocked" },
+    "marketscreener.com": { "last_success": null, "status": "blocked" },
+    "itiger.com": { "last_success": null, "status": "blocked" },
+    "pepgene.net": { "last_success": null, "status": "blocked" },
+    "astrazeneca.com": { "last_success": null, "status": "blocked" },
     "fiercepharma.com": { "last_success": null, "status": "blocked" },
     "prnewswire.com": { "last_success": null, "status": "blocked" },
     "mdtoday.co.kr": { "last_success": null, "status": "blocked" },

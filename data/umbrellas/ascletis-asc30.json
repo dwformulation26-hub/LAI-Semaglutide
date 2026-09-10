@@ -25,7 +25,7 @@
     "partner": null,
     "data_point": "Oral ASC30 Phase III (AURORA) targets ~4,600 patients, 72-week treatment, topline expected Q3 2028. SC depot Phase II (n=65, 24 weeks): Formulation A1 gave placebo-adjusted weight loss of 7.5% at week 16 and 5.8% at week 24 (4 months after last dose) with 3 monthly 400mg doses and no weekly lead-in.",
     "last_updated": "2026-08-30",
-    "last_checked": "2026-09-09"
+    "last_checked": "2026-09-10"
   },
   "finding_history": [
     {
@@ -61,6 +61,18 @@
         "name": "Ascletis press release via PR Newswire",
         "url": "https://www.prnewswire.com/news-releases/ascletis-announces-first-participant-dosed-in-a-global-phase-iii-clinical-program-of-once-daily-oral-small-molecule-glp-1-receptor-agonist-asc30-for-chronic-weight-management-302864376.html",
         "tier": 1
+      },
+      "confidence": "confirmed"
+    },
+    {
+      "id": "f-2025-09-09-001",
+      "date": "2025-09-09",
+      "type": "trial_data_readout",
+      "summary": "Discovered via this run's search, not previously logged: Ascletis' ultra-long-acting subcutaneous depot maintenance formulation of ASC30 (Phase Ib study NCT06679959) demonstrated an observed half-life of 75 days in participants with obesity -- after a single 100mg SC dose in 8 participants, median Tmax was 17 days and time to 50% of Cmax was ~75 days -- supporting a once-quarterly maintenance dosing regimen built on Ascletis' Ultra-Long-Acting Platform (ULAP). This Phase Ib readout predates and underlies the later Phase II 24-week topline already in this file (f-2026-06-01-001).",
+      "source": {
+        "name": "Ascletis press release via PR Newswire, corroborated by Clinical Trials Arena",
+        "url": "https://www.prnewswire.com/news-releases/ascletis-announces-ultra-long-acting-subcutaneous-depot-maintenance-formulation-of-small-molecule-glp-1r-agonist-asc30-demonstrated-an-observed-half-life-of-75-days-in-participants-with-obesity-302550420.html",
+        "tier": 2
       },
       "confidence": "confirmed"
     }
