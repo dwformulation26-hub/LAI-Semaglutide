@@ -127,6 +127,18 @@
         "tier": 2
       },
       "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-07-21-001",
+      "date": "2026-07-21",
+      "type": "deal_partnership",
+      "summary": "Discovered via this run's wire skim, not previously logged: G2GBio signed a contract with medical/bio AI startup SpiderCore to build an AI-based R&D platform for long-acting injectable formulation development -- training models on accumulated microsphere formulation and process data to automate formulation-combination search and process analysis. G2GBio's stated goals are 2x+ faster development and 50%+ lower cost, with platform rollout to the research floor targeted within two years. A tooling/process partnership, not a new drug asset or deal partner for GB-7001 itself.",
+      "source": {
+        "name": "Newspim, corroborated by TheBioNews",
+        "url": "https://www.newspim.com/news/view/20260721000595",
+        "tier": 2
+      },
+      "confidence": "confirmed"
     }
   ]
 }
