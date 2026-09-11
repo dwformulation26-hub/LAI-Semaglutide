@@ -19,6 +19,8 @@
     "stage": "Preclinical/formulation research; Phase 1 for lead obesity candidate targeted 2027",
     "stage_label": "Preclinical",
     "stage_evidence": "Preclinical/formulation research; Phase 1 for the lead obesity candidate is only targeted for 2027.",
+    "molecule_class": [],
+    "molecule_evidence": "A single Korean-language trade source says both semaglutide and tirzepatide are under consideration for DKF-MB501; no source names either for the candidate itself. Ambiguous, so left unassigned.",
     "dosing_target": "Monthly, extending toward quarterly",
     "partner": "None disclosed; company states it is pursuing a licensing/technology-export deal within 2026",
     "data_point": "DK-LADS is a microsphere-based DDS platform ('extends drug half-life, minimizes blood concentration fluctuations'); lead obesity candidate DKF-MB501 targets 3+ months of effect from a single injection",

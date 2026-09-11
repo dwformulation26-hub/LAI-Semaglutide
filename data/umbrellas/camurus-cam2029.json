@@ -20,6 +20,10 @@
     "stage": "Approved & commercially launched in EU (as Oczyesa, first launched Germany Nov 2025) and UK; US NDA under second FDA review after two manufacturing/cGMP-related Complete Response Letters (CRLs) — second resubmission accepted Jul 17, 2026, PDUFA target action date Dec 18, 2026",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Approved and commercially launched in EU/UK as Oczyesa; a separate US NDA under second FDA review doesn't change the primary approval status.",
+    "molecule_class": [
+      "non_incretin"
+    ],
+    "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
     "dosing_target": "Once-monthly self-administered subcutaneous depot via prefilled FluidCrystal autoinjector pen",
     "partner": null,
     "data_point": "US FDA CRL #2 issued Jun 10, 2026 (manufacturing/facility-related, explicitly not efficacy/safety); resubmission accepted for review Jul 17, 2026 with PDUFA target action date of Dec 18, 2026",

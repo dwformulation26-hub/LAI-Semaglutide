@@ -19,6 +19,10 @@
     "stage": "Approved and commercialized across Europe and select Asian/African markets since the 1980s under a long-running Debiopharm (owner/developer)–Ipsen (commercialization) partnership extended through 2034. Indicated for prostate cancer, endometriosis, uterine fibroids, central precocious puberty, and early-stage hormone-responsive breast cancer.",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Approved and commercialized across Europe and select Asian/African markets since the 1980s.",
+    "molecule_class": [
+      "non_incretin"
+    ],
+    "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
     "dosing_target": "1-, 3-, or 6-month IM depot",
     "partner": "Debiopharm (co-development/manufacturing) and Ipsen (commercialization)",
     "data_point": "FY2025: Decapeptyl cited by Ipsen among products facing increased European and Chinese competition/pricing pressure, tempering growth versus the rest of Ipsen's non-Somatuline portfolio (which grew 14.2% overall)",

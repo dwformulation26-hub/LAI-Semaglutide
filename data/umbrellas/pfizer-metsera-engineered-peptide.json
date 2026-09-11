@@ -21,6 +21,10 @@
     "stage": "Phase 3 (VESPER-6 and related pivotal trials initiated 2026, ~10 planned Phase 3 studies) for the lead ultra-long-acting monthly GLP-1 asset; two other, separate ex-Metsera/adjacent programs (oral peptide MET-224o and GIPR antagonist PF-07976016) were discontinued in Pfizer's August 2026 pipeline clearout",
     "stage_label": "Phase 3",
     "stage_evidence": "Phase 3 VESPER-6 and related pivotal trials initiated in 2026 for the lead ultra-long-acting monthly GLP-1 asset.",
+    "molecule_class": [
+      "other_incretin"
+    ],
+    "molecule_evidence": "Berobenatide / PF-08653944 is an ultra-long-acting monthly GLP-1 new chemical entity.",
     "dosing_target": "Monthly (also weekly-dose arm studied)",
     "partner": null,
     "data_point": "Phase 2b VESPER-1 (weekly dosing): 14.1% placebo-adjusted weight loss at week 28, no plateau. Phase 2b VESPER-3 (monthly dosing): 10%/12.3% placebo-adjusted weight loss at week 28 across two cohorts, presented at ADA 2026 (June 6, 2026).",

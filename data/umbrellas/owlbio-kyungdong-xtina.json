@@ -25,6 +25,10 @@
     "stage": "Phase 1 IND filed with Korea's Ministry of Food and Drug Safety (as of ~Sept 2026); human PK/safety data already presented",
     "stage_label": "IND filed",
     "stage_evidence": "Phase 1 IND filed with Korea's MFDS (as of ~Sept 2026); human PK/safety data already presented but dosing under this IND not yet begun.",
+    "molecule_class": [
+      "semaglutide"
+    ],
+    "molecule_evidence": "AUL009 is a once-monthly semaglutide microparticle injection (ADA 2026 late-breaker). A separate KR patent for tirzepatide microspheres exists but names no program.",
     "dosing_target": "Monthly",
     "partner": "Kyungdong Pharmaceutical (lead developer) / Aul Bio (platform provider)",
     "data_point": "Single dose maintained stable blood concentration for 30+ days; suppressed initial burst release, reducing early GI side effects; compatible with 27-gauge ultrafine needle",

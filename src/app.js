@@ -1,9 +1,9 @@
-import { FAMILY_LABELS, FAMILY_COLORS, FINDING_LABELS, STAGE_COLORS, STAGES, formatDate, prepareDatabase, safeUrl, truncate } from "./model.js";
-import { DEFAULT_LANG, LANGS, familyLabelText, findingLabelText, originLabelText, stageLabelText, t } from "./i18n.js";
+import { FAMILY_LABELS, FAMILY_COLORS, FINDING_LABELS, MOLECULE_COLORS, MOLECULE_ORDER, SCORED_CLASSES, SCORE_WEIGHTS, STAGE_COLORS, STAGES, formatDate, interpretLeader, prepareDatabase, safeUrl, truncate } from "./model.js";
+import { DEFAULT_LANG, LANGS, familyLabelText, findingLabelText, moleculeLabelText, originLabelText, stageLabelText, t } from "./i18n.js";
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
-const state = { data: null, rawPayload: null, lang: DEFAULT_LANG, programQuery: "", stage: "all", expandedPrograms: new Set() };
+const state = { data: null, rawPayload: null, lang: DEFAULT_LANG, programQuery: "", stage: "all", molecule: "all", classView: "semaglutide", expandedPrograms: new Set() };
 
 function node(tag, className = "", text) {
   const element = document.createElement(tag);
@@ -80,31 +80,114 @@ function renderHeader(data) {
   $("#footer-status").textContent = t(lang, "footer.snapshot", { date: displayDate });
 }
 
-function renderOverview(data) {
+// Overview is a launch pad, not a dead end: clicking a program there opens that exact
+// umbrella in the directory below. Filters are cleared only when they would hide the
+// target, so a deliberate filter survives a click on something it already shows.
+function focusProgram(id) {
+  const record = state.data.records.find((entry) => entry.id === id);
+  if (!record) return;
+
+  const hidden = !filteredPrograms().some((entry) => entry.id === id);
+  if (hidden) {
+    state.molecule = "all";
+    state.stage = "all";
+    state.programQuery = "";
+    $("#molecule-filter").value = "all";
+    $("#stage-filter").value = "all";
+    $("#program-search").value = "";
+  }
+
+  state.expandedPrograms.add(id);
+  renderPrograms();
+
+  const row = document.getElementById(`program-${id}`);
+  if (!row) return;
+  row.scrollIntoView({ behavior: "smooth", block: "center" });
+  row.classList.add("is-target");
+  setTimeout(() => row.classList.remove("is-target"), 2200);
+  const toggle = row.querySelector(".row-toggle");
+  if (toggle) toggle.focus({ preventScroll: true });
+}
+
+function programLink(record, className, build) {
+  const button = node("button", className);
+  button.type = "button";
+  button.title = t(state.lang, "overview.openRecord", { program: record.program });
+  build(button);
+  button.addEventListener("click", () => focusProgram(record.id));
+  return button;
+}
+
+function renderClassPicker(data) {
   const lang = state.lang;
-  const programs = [...data.semaglutidePrograms].sort((a, b) =>
-    b.stageOrder - a.stageOrder || String(b.current_status?.last_updated ?? "").localeCompare(String(a.current_status?.last_updated ?? ""))
-  );
-  $("#race-caption").textContent = t(lang, "overview.raceCaption", { count: programs.length });
+  const picker = clear($("#class-picker"));
+  MOLECULE_ORDER.forEach((key) => {
+    const group = data.groupFor(key);
+    const chip = node("button", "class-chip");
+    chip.type = "button";
+    chip.style.setProperty("--tone", MOLECULE_COLORS[key]);
+    chip.setAttribute("aria-pressed", String(state.classView === key));
+    chip.append(node("i", ""), node("span", "", moleculeLabelText(key, lang)), node("b", "", String(group.members.length)));
+    chip.addEventListener("click", () => {
+      if (state.classView === key) return;
+      state.classView = key;
+      renderOverview(state.data);
+    });
+    picker.append(chip);
+  });
+}
+
+function renderRace(data) {
+  const lang = state.lang;
+  const group = data.groupFor(state.classView);
+  const label = moleculeLabelText(state.classView, lang);
+  const programs = group.members;
+
+  $("#race-caption").textContent = programs.length
+    ? t(lang, "overview.classCaption", { count: programs.length, molecule: label })
+    : t(lang, "overview.classEmpty", { molecule: label });
+
+  const empty = $("#class-empty");
+  clear(empty);
+  empty.hidden = programs.length > 0 && group.scored;
+  if (!programs.length) {
+    empty.append(node("strong", "", t(lang, "overview.classEmpty", { molecule: label })), node("span", "", t(lang, "overview.classEmptyDetail")));
+  } else if (!group.scored) {
+    empty.append(node("strong", "", moleculeLabelText(state.classView, lang)), node("span", "", t(lang, "overview.unscoredNote")));
+  }
+
   const chart = clear($("#race-chart"));
-  programs.forEach((program) => {
+  programs.slice(0, 12).forEach((program) => {
     const row = node("div", `race-row${program.isOurProduct ? " ours" : ""}`);
-    const name = node("div", "race-name");
-    name.append(node("strong", "", `${truncate(program.program, 38)}${program.isOurProduct ? " ★" : ""}`), node("span", "", program.company));
+    const name = programLink(program, "race-name", (button) => {
+      button.append(node("strong", "", `${truncate(program.program, 38)}${program.isOurProduct ? " \u2605" : ""}`), node("span", "", program.company));
+    });
     const track = node("div", "race-track");
     const bar = node("div", "race-bar", stageLabelText(program.stageLabel, lang));
     bar.style.width = `${Math.max(7, Math.min(100, (Math.max(program.stageOrder, .35) / 6) * 100))}%`;
     bar.style.background = program.isOurProduct ? "#178665" : STAGE_COLORS[program.stageLabel];
+    if (group.scored) bar.append(node("span", "race-score", String(program.score.total)));
     track.append(bar);
     row.append(name, track);
     chart.append(row);
   });
 
-  $("#leader-company").textContent = data.leader.company;
-  $("#leader-program").textContent = data.leader.program;
-  $("#leader-stage").textContent = stageLabelText(data.leader.stageLabel, lang);
-  $("#leader-summary").textContent = truncate(data.leader.current_status?.stage, 330);
-  $("#leader-interpretation").textContent = data.leaderNote;
+  // The leader panel follows the selected class rather than being fixed to semaglutide.
+  const ranked = programs.filter((record) => record.stageLabel !== "Approved / marketed");
+  const leader = ranked[0] ?? programs[0] ?? data.leader;
+  const leaderHead = clear($("#leader-company"));
+  leaderHead.append(programLink(leader, "leader-link", (button) => button.append(document.createTextNode(leader.company))));
+  const leaderProgram = clear($("#leader-program"));
+  leaderProgram.append(programLink(leader, "leader-link leader-link-sub", (button) => button.append(document.createTextNode(leader.program))));
+  $("#leader-stage").textContent = stageLabelText(leader.stageLabel, lang);
+  $("#leader-summary").textContent = truncate(leader.current_status?.stage, 330);
+  $("#leader-interpretation").textContent = interpretLeader(leader, ranked, Date.now(), lang);
+}
+
+function renderOverview(data) {
+  const lang = state.lang;
+  renderClassPicker(data);
+  renderRace(data);
 
   const conditions = [
     ["01", t(lang, "conditions.tracked.label"), data.records.length, t(lang, "conditions.tracked.badge"), "blue", t(lang, "conditions.tracked.detail", { count: data.findings.length }), "#367fd0"],
@@ -162,7 +245,7 @@ function renderStatistics(data) {
   const korean = data.records.filter((record) => record.origin === "KR").length;
   const values = [
     [data.records.length, t(lang, "statistics.programsTracked"), t(lang, "statistics.programsTrackedDetail", { korean, global: data.records.length - korean })],
-    [data.semaglutidePrograms.length, t(lang, "statistics.semaglutideLinked"), t(lang, "statistics.semaglutideLinkedDetail")],
+    [data.records.filter((record) => record.isScored).length, t(lang, "statistics.semaglutideLinked"), t(lang, "statistics.semaglutideLinkedDetail")],
     [data.findings.length, t(lang, "statistics.historicalFindings"), t(lang, "statistics.historicalFindingsDetail")],
     [confirmed, t(lang, "statistics.confirmedEvidence"), t(lang, "statistics.confirmedEvidenceDetail", { count: data.findings.length - confirmed })]
   ];
@@ -187,6 +270,36 @@ function renderStatistics(data) {
     track.append(bar);
     row.append(node("span", "", familyLabelText(family, lang)), track, node("strong", "", String(count)));
     chart.append(row);
+  });
+
+  // Same bar idiom as the technology chart, so the two read as one family of charts.
+  const moleculeChart = clear($("#molecule-chart"));
+  const groupCounts = data.moleculeGroups.map((group) => [group.key, group.members.length]);
+  if (data.needsMoleculeReview.length) groupCounts.push(["unassigned", data.needsMoleculeReview.length]);
+  const moleculeMax = Math.max(...groupCounts.map(([, count]) => count), 1);
+  groupCounts.forEach(([key, count]) => {
+    const row = node("div", "family-row");
+    const track = node("div", "family-track");
+    const bar = node("div", "family-bar");
+    bar.style.width = `${count / moleculeMax * 100}%`;
+    bar.style.background = MOLECULE_COLORS[key];
+    track.append(bar);
+    row.append(node("span", "", moleculeLabelText(key, lang)), track, node("strong", "", String(count)));
+    moleculeChart.append(row);
+  });
+
+  const scoreChart = clear($("#score-chart"));
+  [
+    [SCORE_WEIGHTS.stage, t(lang, "statistics.scoreStage"), t(lang, "statistics.scoreStageDetail")],
+    [SCORE_WEIGHTS.momentum, t(lang, "statistics.scoreMomentum"), t(lang, "statistics.scoreMomentumDetail")],
+    [SCORE_WEIGHTS.evidence, t(lang, "statistics.scoreEvidence"), t(lang, "statistics.scoreEvidenceDetail")],
+    [SCORE_WEIGHTS.dosing, t(lang, "statistics.scoreDosing"), t(lang, "statistics.scoreDosingDetail")]
+  ].forEach(([weight, name, detail]) => {
+    const row = node("div", "score-row");
+    const copy = node("div", "");
+    copy.append(node("span", "", name), node("small", "", detail));
+    row.append(node("strong", "", String(weight)), copy);
+    scoreChart.append(row);
   });
 
   const percent = data.findings.length ? Math.round(confirmed / data.findings.length * 100) : 0;
@@ -225,12 +338,48 @@ function tableCell(label, content, secondary) {
   return cell;
 }
 
+function moleculeCell(record, lang) {
+  const cell = node("td");
+  cell.dataset.label = t(lang, "programs.col.molecule");
+  const tags = node("div", "mol-tags");
+  const keys = record.needsMoleculeReview ? ["unassigned"] : record.molecules;
+  keys.forEach((key) => {
+    const tag = node("span", "mol-tag", key === "unassigned" ? t(lang, "programs.moleculeReview") : moleculeLabelText(key, lang));
+    tag.style.setProperty("--tone", MOLECULE_COLORS[key]);
+    if (key === "unassigned" && record.moleculeEvidence) tag.title = record.moleculeEvidence;
+    tags.append(tag);
+  });
+  cell.append(tags);
+  return cell;
+}
+
+function scoreCell(record, lang) {
+  const cell = node("td");
+  cell.dataset.label = t(lang, "programs.col.score");
+  if (!record.isScored) {
+    cell.append(node("span", "score-unscored", t(lang, "programs.unscored")));
+    return cell;
+  }
+  const value = node("strong", "score-value", String(record.score.total));
+  value.title = t(lang, "programs.scoreBreakdown", {
+    stage: record.score.stage, momentum: record.score.momentum, evidence: record.score.evidence, dosing: record.score.dosing
+  });
+  cell.append(value);
+  return cell;
+}
+
 function filteredPrograms() {
   const query = state.programQuery.trim().toLowerCase();
   return [...state.data.records]
     .filter((record) => state.stage === "all" || record.stageLabel === state.stage)
+    .filter((record) => state.molecule === "all"
+      || (state.molecule === "unassigned" ? record.needsMoleculeReview : record.molecules.includes(state.molecule)))
     .filter((record) => !query || [record.canonical_name, record.technology_family, record.current_status?.stage].join(" ").toLowerCase().includes(query))
-    .sort((a, b) => b.stageOrder - a.stageOrder || String(b.current_status?.last_updated ?? "").localeCompare(String(a.current_status?.last_updated ?? "")));
+    .sort((a, b) => {
+      if (a.isScored !== b.isScored) return a.isScored ? -1 : 1;
+      if (a.isScored) return b.score.total - a.score.total || String(b.current_status?.last_updated ?? "").localeCompare(String(a.current_status?.last_updated ?? ""));
+      return b.stageOrder - a.stageOrder || String(b.current_status?.last_updated ?? "").localeCompare(String(a.current_status?.last_updated ?? ""));
+    });
 }
 
 function toggleExpand(id) {
@@ -284,8 +433,11 @@ function renderPrograms() {
     const findings = state.data.findings.filter((finding) => finding.recordId === record.id);
     const expanded = state.expandedPrograms.has(record.id);
     const row = node("tr", "program-row");
+    row.id = `program-${record.id}`;
     row.append(
       programNameCell(record, findings.length, expanded, lang),
+      moleculeCell(record, lang),
+      scoreCell(record, lang),
       tableCell(t(lang, "programs.col.origin"), originLabelText(record.origin, lang)),
       tableCell(t(lang, "programs.col.technology"), familyLabelText(record.technology_family, lang)),
       tableCell(t(lang, "programs.col.stage"), stageBadge(record.stageLabel, lang, record.stageInferred)),
@@ -297,13 +449,32 @@ function renderPrograms() {
     const detailRow = node("tr", "evidence-row");
     detailRow.hidden = !expanded;
     const detailCell = node("td");
-    detailCell.colSpan = 6;
+    detailCell.colSpan = 8;
     const list = node("div", "evidence-list");
     if (findings.length) findings.forEach((finding) => list.append(evidenceItem(finding, lang)));
     else list.append(node("div", "empty-state", t(lang, "evidence.empty")));
     detailCell.append(list);
     detailRow.append(detailCell);
     body.append(detailRow);
+  });
+}
+
+function renderMoleculeReview(data) {
+  const lang = state.lang;
+  const container = clear($("#molecule-review"));
+  if (!data.needsMoleculeReview.length) {
+    container.append(node("div", "empty-state panel", t(lang, "review.moleculeEmpty")));
+    return;
+  }
+  data.needsMoleculeReview.forEach((record) => {
+    const card = node("article", "candidate-card");
+    card.append(badge(t(lang, "review.moleculeBadge"), "amber"), node("h3", "", record.canonical_name));
+    card.append(node("p", "", record.moleculeEvidence || truncate(record.current_status?.stage, 260)));
+    const footer = node("footer");
+    footer.append(node("span", "", `${originLabelText(record.origin, lang)} · ${stageLabelText(record.stageLabel, lang)}`));
+    footer.append(node("span", "", formatDate(record.current_status?.last_updated, true, lang)));
+    card.append(footer);
+    container.append(card);
   });
 }
 
@@ -336,6 +507,24 @@ function downloadCsv(fileName, headers, rows) {
 }
 
 function populateFilters(data, lang) {
+  const moleculeSelect = $("#molecule-filter");
+  const currentMolecule = moleculeSelect.value;
+  clear(moleculeSelect);
+  const allMolecules = node("option", "", t(lang, "programs.allMolecules"));
+  allMolecules.value = "all";
+  moleculeSelect.append(allMolecules);
+  data.moleculeGroups.filter((group) => group.members.length).forEach((group) => {
+    const option = node("option", "", `${moleculeLabelText(group.key, lang)} (${group.members.length})`);
+    option.value = group.key;
+    moleculeSelect.append(option);
+  });
+  if (data.needsMoleculeReview.length) {
+    const option = node("option", "", `${moleculeLabelText("unassigned", lang)} (${data.needsMoleculeReview.length})`);
+    option.value = "unassigned";
+    moleculeSelect.append(option);
+  }
+  moleculeSelect.value = [...moleculeSelect.options].some((option) => option.value === currentMolecule) ? currentMolecule : "all";
+
   const select = $("#stage-filter");
   const current = select.value;
   clear(select);
@@ -351,9 +540,9 @@ function populateFilters(data, lang) {
 // CSV export always uses the English label maps, independent of the UI language,
 // so the exported file stays a stable, consistently-formatted interop artifact.
 function exportProgramsWithEvidence() {
-  const headers = ["Program", "Origin", "Technology", "Normalized stage", "Reported status", "Dosing target", "Program updated", "Finding date", "Finding type", "Finding summary", "Confidence", "Source", "Tier", "URL"];
+  const headers = ["Program", "Molecule class", "Competitive score", "Origin", "Technology", "Normalized stage", "Reported status", "Dosing target", "Program updated", "Finding date", "Finding type", "Finding summary", "Confidence", "Source", "Tier", "URL"];
   const rows = filteredPrograms().flatMap((record) => {
-    const base = [record.canonical_name, record.origin, FAMILY_LABELS[record.technology_family] ?? record.technology_family, record.stageLabel, record.current_status?.stage, record.current_status?.dosing_target, record.current_status?.last_updated];
+    const base = [record.canonical_name, record.molecules.join("; "), record.isScored ? record.score.total : "", record.origin, FAMILY_LABELS[record.technology_family] ?? record.technology_family, record.stageLabel, record.current_status?.stage, record.current_status?.dosing_target, record.current_status?.last_updated];
     const findings = state.data.findings.filter((finding) => finding.recordId === record.id);
     if (!findings.length) return [[...base, "", "", "", "", "", "", ""]];
     return findings.map((finding) => [...base, finding.date, FINDING_LABELS[finding.type] ?? finding.type, finding.summary, finding.confidence, finding.sourceName, finding.sourceTier, finding.sourceUrl]);
@@ -364,6 +553,7 @@ function exportProgramsWithEvidence() {
 function bindEvents() {
   $("#program-search").addEventListener("input", (event) => { state.programQuery = event.target.value; renderPrograms(); });
   $("#stage-filter").addEventListener("change", (event) => { state.stage = event.target.value; renderPrograms(); });
+  $("#molecule-filter").addEventListener("change", (event) => { state.molecule = event.target.value; renderPrograms(); });
   $("#program-export").addEventListener("click", exportProgramsWithEvidence);
 }
 
@@ -394,6 +584,7 @@ function renderAll(data) {
   renderStatistics(data);
   populateFilters(data, state.lang);
   renderPrograms();
+  renderMoleculeReview(data);
   renderCandidates(data);
 }
 

@@ -19,6 +19,10 @@
     "stage": "Phase 1 (SLIM-1) fully enrolled and dosed as of Aug 2026 (this supersedes an earlier note that the program was only 'advancing toward' Phase 1); topline results expected November 2026",
     "stage_label": "Phase 1",
     "stage_evidence": "Phase 1 SLIM-1 study fully enrolled and dosed as of Aug 2026; topline results expected November 2026.",
+    "molecule_class": [
+      "semaglutide"
+    ],
+    "molecule_evidence": "SLIM-1 evaluates a miniature semaglutide implant against weekly Wegovy.",
     "dosing_target": "Every 6-12 months",
     "partner": "Novo Nordisk (non-exclusive evaluation agreement, no exclusivity over NPM-139 or NanoPortal)",
     "data_point": "SLIM-1: open-label, active-controlled Phase 1 (n=20; 10 on low-dose NPM-139 implant, 10 on starting-dose Wegovy 0.25mg/week) over 4 weeks, evaluating safety, PK and tolerability of the miniature semaglutide implant vs. weekly Wegovy injections",

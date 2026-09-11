@@ -3,7 +3,7 @@ import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
-import { assessRunHealth, interpretLeader, normalizeStage, prepareDatabase, safeUrl } from "../src/model.js";
+import { MOLECULE_ORDER, assessRunHealth, competitiveScore, interpretLeader, moleculeClasses, normalizeStage, prepareDatabase, safeUrl } from "../src/model.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -119,6 +119,71 @@ test("prepares the complete repository snapshot and identifies the development l
   assert.ok(data.pendingCandidates.length >= 9, `expected at least 9 pending candidates, got ${data.pendingCandidates.length}`);
   assert.equal(data.leader.id, "mapi-pharma-semaglutide");
   assert.equal(data.leader.stageLabel, "Phase 1");
+});
+
+test("reads molecule_class from the record instead of inferring it from text", () => {
+  // The regression this guards: the old isSemaglutideProgram() matched any mention of a
+  // molecule anywhere in the record, including comparator arms and explicit denials.
+  const comparatorOnly = {
+    id: "x", canonical_name: "Example – PRT-9999",
+    current_status: {
+      stage_label: "Preclinical",
+      molecule_class: ["other_incretin"],
+      data_point: "combined with semaglutide, 26.8% at day 14 vs 28.8% for tirzepatide monotherapy"
+    },
+    finding_history: [{ date: "2026-01-01", summary: "the Lilly collaboration does NOT include tirzepatide" }]
+  };
+  assert.deepEqual(moleculeClasses(comparatorOnly), ["other_incretin"]);
+
+  // An empty array is legal and distinct from a missing field; both mean "unresolved".
+  assert.deepEqual(moleculeClasses({ current_status: { molecule_class: [] } }), []);
+  assert.deepEqual(moleculeClasses({ current_status: {} }), []);
+
+  // Unknown values are dropped rather than silently rendered as a seventh class.
+  assert.deepEqual(moleculeClasses({ current_status: { molecule_class: ["semaglutide", "cagrisema"] } }), ["semaglutide"]);
+});
+
+test("groups every record into its declared classes and flags the unresolved ones", async () => {
+  const data = prepareDatabase(await sourcePayload());
+  const grouped = new Set();
+  for (const group of data.moleculeGroups) {
+    assert.ok(MOLECULE_ORDER.includes(group.key), `unexpected group ${group.key}`);
+    group.members.forEach((record) => grouped.add(record.id));
+  }
+  data.needsMoleculeReview.forEach((record) => {
+    assert.deepEqual(record.molecules, [], `${record.id} is in the review queue but carries classes`);
+    grouped.add(record.id);
+  });
+  // Every record lands somewhere: on at least one board, or in the review queue.
+  assert.equal(grouped.size, data.records.length);
+
+  // A record declaring two classes appears on both boards but exists once in the registry.
+  const dual = data.records.find((record) => record.molecules.length > 1);
+  assert.ok(dual, "expected at least one multi-class record");
+  const boards = data.moleculeGroups.filter((g) => g.members.some((m) => m.id === dual.id));
+  assert.equal(boards.length, dual.molecules.length);
+  assert.equal(data.records.filter((r) => r.id === dual.id).length, 1);
+});
+
+test("scores competitively from declared fields only, and never scores the platform set", () => {
+  const now = Date.parse("2026-09-11T00:00:00Z");
+  const strong = competitiveScore({
+    current_status: { stage_label: "Phase 3", last_updated: "2026-09-05", dosing_target: "Monthly" },
+    finding_history: [{ date: "2026-09-05", source: { tier: 1 } }]
+  }, now);
+  assert.equal(strong.total, strong.stage + strong.momentum + strong.evidence + strong.dosing);
+  assert.equal(strong.stage, 32);      // Phase 3 is 5 of 7 steps -> round(5/7*45)
+  assert.equal(strong.momentum, 25);   // 6 days old
+  assert.equal(strong.evidence, 18);   // Tier 1
+  assert.equal(strong.dosing, 12);     // monthly
+
+  const stale = competitiveScore({
+    current_status: { stage_label: "Phase 3", last_updated: "2024-01-01", dosing_target: "Once daily oral" },
+    finding_history: [{ date: "2024-01-01", source: { tier: 3 } }]
+  }, now);
+  assert.equal(stale.momentum, 0);
+  assert.equal(stale.dosing, 0);
+  assert.ok(stale.total < strong.total, "a stale record must not outrank a fresh one at the same stage");
 });
 
 test("flags stale or never-run monitoring types against their expected cadence", () => {

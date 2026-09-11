@@ -30,6 +30,7 @@ Use these exact string values — never invent a variant, even one that reads mo
 | `source.tier` | `1`, `2`, `3` (integer) |
 | `candidate.status` | `pending`, `promoted`, `merged`, `rejected`, `snoozed` |
 | `current_status.stage_label` | `Research`, `Preclinical`, `IND filed`, `Phase 1`, `Phase 2`, `Phase 3`, `Filed / review`, `Approved / marketed` — see the dedicated section below, this one has real teeth (the build fails without it) |
+| `current_status.molecule_class` (array) | `semaglutide`, `tirzepatide`, `retatrutide`, `amylin`, `other_incretin`, `non_incretin` — see the dedicated section below; the build fails on a missing field or an unknown value, and an empty array is legal and means "ambiguous, left for review" |
 
 Dates are always `YYYY-MM-DD`. Timestamps (in `meta.json` only) are full ISO 8601 UTC: `YYYY-MM-DDTHH:MM:SSZ`.
 
@@ -55,6 +56,8 @@ IDs must be deterministic and collision-checked before writing — never just in
     "stage": "Partnered w/ Lilly",
     "stage_label": "Phase 1",
     "stage_evidence": "Phase 1 IND cleared and first patient dosed per the Aug 30 finding -- MFDS clearance letter directly cited.",
+    "molecule_class": ["semaglutide"],
+    "molecule_evidence": "PT403 is SmartDepot PLGA semaglutide. The Lilly collaboration explicitly does NOT include tirzepatide.",
     "dosing_target": "Monthly",
     "partner": "Eli Lilly",
     "data_point": "~30% body-weight reduction at week 4 (ADA 2026)",
@@ -77,6 +80,11 @@ IDs must be deterministic and collision-checked before writing — never just in
 Notes:
 - `current_status` fields are only overwritten when a new finding actually addresses them — don't null out `partner` just because today's finding didn't mention it.
 - `stage` is free-text, human-readable color (what you'd say out loud). `stage_label` is the controlled bucket the dashboard actually uses to sort, color, and rank programs — the two must describe the same reality, but only `stage_label` is machine-read. `stage_evidence` is one sentence, in your own words, naming the specific fact from the source that justifies `stage_label` — required every time `stage_label` changes, optional (but nice) otherwise. See the skill's "Stage scoring" section for the strict rules on when and how `stage_label` may change — this is not a field to set casually the way `stage`'s prose is; `scripts/build.mjs` fails the build if it's missing or not one of the eight listed values.
+- `molecule_class` is the set of molecules this program **formulates**, and `molecule_evidence` is one sentence naming the fact behind that. It is assigned at write time under the same rules as `stage_label` — see the skill's "Molecule classification" section. Three things about it matter more than the field name:
+  - **It records what a program formulates, never what it is measured against.** Rival molecule names enter a record through comparator arms, analyst commentary and outright denials, and all three look identical to a text search. Peptron's own record says the Lilly collaboration does *not* include tirzepatide; a pattern match would tag it tirzepatide anyway. This field exists precisely so nothing downstream has to guess.
+  - **An empty array is a legal, meaningful value.** It means the run found the evidence genuinely ambiguous and declined to pick. Those records surface in the dashboard's review queue for the admin. `molecule_evidence` is still required and should say what was ambiguous.
+  - **A program may hold more than one class**, and several do. InventageLab formulates semaglutide and tirzepatide as separate assets; G2GBio's platform data covers three. Such a record appears on every matching board but remains a single file with a single finding history.
+
 - `finding_history` is append-only. Never edit or remove a past entry, even to "clean it up" — if something logged earlier turns out wrong, append a new finding correcting it (this preserves the audit trail; git history plus this append-only log together are the record of what was known when).
 - Staleness (`days_since_last_finding`) is computed by the app from `current_status.last_updated` at render time. Do not store it — a stored value goes stale itself.
 - `last_checked` is updated by Track A every time it actually queries this umbrella's aliases, regardless of whether anything new turned up — it's what powers the quiet-umbrella throttle in the skill (checking a consistently quiet umbrella every 3rd day instead of daily). This is deliberately separate from `last_updated`, which only moves when a real finding lands. A missing `last_checked` means "never checked under the throttle rule" — treat it as due for a check, not as quiet.

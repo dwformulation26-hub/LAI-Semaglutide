@@ -341,3 +341,68 @@ main > footer span:first-child { color: var(--ink); font-weight: 800; letter-spa
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* ---- molecule classes ---------------------------------------------------- */
+
+.class-picker { display: flex; flex-wrap: wrap; gap: .35rem; padding: .15rem 1.2rem .55rem; }
+.class-chip {
+  display: inline-flex; align-items: center; gap: .4rem; min-height: 27px;
+  padding: .2rem .6rem; border: 1px solid var(--line-strong); border-radius: 99px;
+  background: var(--panel); color: var(--muted);
+  font-size: .66rem; font-weight: 700; white-space: nowrap; cursor: pointer;
+}
+.class-chip:hover { border-color: var(--faint); }
+.class-chip i { width: .5rem; height: .5rem; flex: 0 0 auto; border-radius: 50%; background: var(--tone, var(--faint)); }
+.class-chip b { font-weight: 700; opacity: .55; }
+.class-chip[aria-pressed="true"] {
+  border-color: var(--tone, var(--ink));
+  color: var(--tone, var(--ink));
+  background: color-mix(in srgb, var(--tone, var(--ink)) 10%, white);
+}
+.class-chip[aria-pressed="true"] b { opacity: .75; }
+
+.class-empty { padding: .2rem 1.2rem 1.2rem; }
+.class-empty[hidden] { display: none; }
+.class-empty strong { display: block; font-size: .78rem; }
+.class-empty span { display: block; margin-top: .3rem; color: var(--muted); font-size: .72rem; }
+
+.stats-grid-molecule { margin-top: .85rem; grid-template-columns: .65fr 1.35fr; }
+
+.score-chart { display: grid; gap: .7rem; padding: .25rem 1.2rem 1.2rem; }
+.score-row { display: grid; grid-template-columns: 2.2rem 1fr; align-items: baseline; gap: .75rem; }
+.score-row strong { font: 750 1.2rem/1 "Manrope", "Noto Sans KR", sans-serif; color: var(--green); letter-spacing: -.03em; }
+.score-row span { display: block; font-size: .73rem; font-weight: 700; }
+.score-row small { display: block; margin-top: .1rem; color: var(--muted); font-size: .66rem; }
+
+.mol-tags { display: flex; flex-wrap: wrap; gap: .25rem; }
+.mol-tag {
+  display: inline-flex; align-items: center; min-height: 22px; padding: .1rem .42rem;
+  border-radius: 99px; font-size: .6rem; font-weight: 800; white-space: nowrap;
+  color: var(--tone); background: color-mix(in srgb, var(--tone) 12%, white);
+}
+.score-value { font: 750 .95rem/1 "Manrope", "Noto Sans KR", sans-serif; letter-spacing: -.02em; }
+.score-unscored { color: var(--faint); font-size: .68rem; font-weight: 600; }
+
+.race-score { margin-left: .5rem; color: rgba(255,255,255,.78); font-size: .62rem; font-weight: 700; }
+
+@media (max-width: 1080px) {
+  .stats-grid-molecule { grid-template-columns: 1fr; }
+}
+
+/* clickable overview -> directory */
+.race-name {
+  display: block; width: 100%; padding: 0; border: 0; border-radius: .35rem;
+  background: none; color: inherit; font: inherit; text-align: left; cursor: pointer;
+}
+.race-name:hover strong { color: var(--blue); text-decoration: underline; text-underline-offset: 2px; }
+.race-row.ours .race-name:hover strong { color: var(--green); }
+.leader-link {
+  display: inline; padding: 0; border: 0; background: none;
+  color: inherit; font: inherit; text-align: left; cursor: pointer;
+}
+.leader-link:hover { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
+.program-row.is-target > td { background: color-mix(in srgb, var(--blue) 9%, white); }
+.program-row.is-target > td:first-child { box-shadow: inset 3px 0 0 var(--blue); }
+@media (prefers-reduced-motion: no-preference) {
+  .program-row > td { transition: background .45s ease; }
+}

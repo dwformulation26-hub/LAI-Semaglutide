@@ -18,6 +18,10 @@
     "stage": "Preclinical (long-acting GIPR-antagonist antibody; first application of Proteina's antibody-discovery platform to an antibody drug candidate)",
     "stage_label": "Preclinical",
     "stage_evidence": "Stated as preclinical; first application of Proteina's antibody-discovery platform to an antibody drug candidate.",
+    "molecule_class": [
+      "other_incretin"
+    ],
+    "molecule_evidence": "Long-acting GIPR-antagonist antibody. Semaglutide and tirzepatide appear in its data only as comparator arms.",
     "dosing_target": "Potential 3-6 month dosing interval (based on preclinical PK half-life, not yet clinically confirmed)",
     "partner": null,
     "data_point": "Preclinical: 20.3-day PK half-life in animal models; combined with semaglutide, extended weight reduction to 26.8% at day 14 vs. 16.8% for semaglutide alone and 28.8% for tirzepatide monotherapy; no organ toxicity observed at day 26",

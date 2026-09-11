@@ -30,6 +30,7 @@ If it's ambiguous which mode was meant, default to **Daily scan** — it's the c
 A real run hit its session search cap partway through a Daily scan, covering only 2 of 37 umbrellas before running out — a good chunk of that budget went to redundant re-phrasings of the same query for a single umbrella instead of covering everyone. These rules exist because that happened, not as theory:
 
 - **Breadth before depth.** On a Daily scan, do one pass across every umbrella first — one query per umbrella using its single most distinctive alias (usually the drug code or ticker, not the generic company name) — before spending any further budget going deeper on the ones that showed something promising. This guarantees every umbrella gets at least one check even if the budget runs out later, instead of exhausting the budget on the first few while the rest get zero attention.
+- **Cap the aliases queried per record per run, and order them by distinctiveness.** Query the drug code and ticker first, the platform name next, and generic company or molecule names last. Naming four molecule classes adds low-specificity terms that many records share, and without a cap those quietly eat the breadth pass. The alias table is 245 strings across 41 records, so an uncapped full pass is 245 searches.
 - **One query per alias, two absolute max.** If the first query for an alias comes back with nothing new, move on — don't try three more phrasings hunting for something. A quiet result is a valid result, not a reason to keep searching.
 - **Don't retry a domain that just told you no.** If a fetch returns `EGRESS_BLOCKED` or a similar hard error, don't try that same domain again this run — note it under `source_health` (see below) and move on. Retrying a blocked domain burns a tool call for a result you already know.
 - **Track B1's wire skim is a fixed, bounded pass** — a handful of term-based searches, not a per-umbrella sweep. Don't let it balloon into checking specific companies; that's Track A's job.
@@ -75,9 +76,21 @@ A known company's deal can surface a brand-new partner organization. Log the dea
 
 ## Track B1 — daily wire skim (daily, cheap)
 
-Skim fast wires (PR Newswire, BusinessWire, GlobeNewswire, general trade press) for LAI-adjacent terms that are **not tied to any known company name**: "long-acting injectable," "depot," "sustained-release," "microsphere," and similar. This is deliberately not company-scoped — a brand-new entrant's debut deal or data readout breaks here first, before it has any brand recognition to search for by name.
+Skim fast wires (PR Newswire, BusinessWire, GlobeNewswire, general trade press) for LAI-adjacent terms that are **not tied to any known company name**: "long-acting injectable," "depot," "sustained-release," "microsphere," and similar, plus the four named molecules — "semaglutide," "tirzepatide," "retatrutide," "amylin" — and their Korean equivalents queried separately. This is deliberately not company-scoped — a brand-new entrant's debut deal or data readout breaks here first, before it has any brand recognition to search for by name.
 
 Anything found feeds the same candidate pipeline as Track B2 below (see Source tiering and Candidate pipeline).
+
+## Primary sources available to every track
+
+**clinicaltrials.gov and Google Patents are not B2-only.** Both are primary documents that routinely predate any press release, so restricting them to the Sunday sweep means finding things up to six days late. Track A may pair a due record's most distinctive alias with either source as one of its capped queries; Track B1 may query them by term with no company name attached; B2 continues its deeper sweep.
+
+**Reach them through domain-scoped search, not direct fetch.** Both domains are blocked by the network policy — the gateway answers 403 to CONNECT — while search returns their content fine. A direct fetch is a bonus where the environment allows it and must never be the only route tried. Record them under `source_health` as reachable-via-search rather than flatly blocked, so a long blocked list does not read as a degrading tracker when it is working.
+
+**They carry different kinds of fact, so they get different permissions:**
+
+- **clinicaltrials.gov may advance `stage_label`.** It states recruitment status explicitly, which is what the stage rules require. The existing caution still applies: a study registered as not-yet-recruiting is `IND filed`, not `Phase 1`.
+- **Google Patents may never advance `stage_label`.** A filing is intent and IP position, not clinical progress. It can establish a candidate, support a `molecule_class`, and evidence a `technology_family`, but it cannot move a program forward.
+- **Patents carry their priority date, not their publication date.** An application publishes roughly eighteen months after priority, so a filing surfacing today describes work from a year and a half ago. Log it with the real priority date, which puts it outside the freshness window and into the digest's discovered-late note rather than the headline.
 
 ## Track B2 — weekly structural sweep (weekly, heavier)
 
@@ -126,6 +139,25 @@ This section exists because the dashboard used to *infer* a program's developmen
 **Demotions** (discontinued, paused, failed, clinical hold) need the same confirmation bar as an advance, and there's no dedicated bucket for "discontinued" in the eight values yet — keep the last accurate `stage_label`, but make the discontinuation unmistakable in `stage`'s text and flag it for the admin rather than leaving it to blend in as if the program were still progressing normally.
 
 **Every time you change `stage_label`, write `stage_evidence`** — one sentence, in your own words, naming the specific fact from the source that justifies the new bucket (e.g. `"Phase 1 IND cleared and first patient dosed per the Aug 30 MFDS clearance letter."`). This is what lets a future review (human or otherwise) check your work without re-deriving it from scratch. Never invent a ninth value if nothing seems to fit cleanly — that has never actually happened across the 37 tracked umbrellas; if it ever does, keep the closest-fitting existing value and flag the mismatch instead of coining a new one.
+
+## Molecule classification — how `current_status.molecule_class` is assigned
+
+This is the same discipline as stage scoring above, and it exists for the same reason. The dashboard used to recover a program's molecule by pattern-matching the record's canonical name, every alias, the status data point and the full text of every finding ever logged. That cannot distinguish a molecule a program *formulates* from one it is merely *measured against*, and with four named molecules the distinction stops being academic.
+
+`molecule_class` is an array, and every value must be one of: `semaglutide`, `tirzepatide`, `retatrutide`, `amylin`, `other_incretin`, `non_incretin`. `scripts/build.mjs` fails the build on a missing field or an unknown value.
+
+**Four tests, in order. Each has a named exit; none of them is a guess.**
+
+1. **Does this program formulate it?** Not: compare against it, license a platform that could carry it, or mention it. A rival molecule named in a comparator arm, an analyst note, or an explicit denial is **not** a class. Peptron's own record states the Lilly collaboration does *not* include tirzepatide. Proteina's preclinical table names both semaglutide and tirzepatide purely as comparator arms for a GIPR antagonist. Camurus's Lilly licence was expanded to amylin agonists, and the record says that expansion is separate from CAM2056 itself. All three would be mis-tagged by any text rule.
+2. **Does it meet the Tier 1/Tier 2 bar?** The same confirmation rule as a "confirmed" finding. If not, leave the class unset and update prose only.
+3. **Does it map cleanly onto one of the six?** Never coin a seventh value. If nothing fits, that is what `other_incretin` and `non_incretin` are for.
+4. **All three passed?** Assign the class and write `molecule_evidence` — one sentence, in your own words, naming the fact that justifies it.
+
+**When the evidence is genuinely ambiguous, write an empty array.** That is a legal value meaning "the run declined to pick", and those records surface in the dashboard's review queue for the admin. `molecule_evidence` is still required and should say what was ambiguous. Dongkook is the standing example: one Korean-language trade source says both semaglutide and tirzepatide are under consideration for DKF-MB501, and no source names either for the candidate itself.
+
+**A program may legitimately hold more than one class.** InventageLab formulates semaglutide (IVL3021) and tirzepatide (IVL3024) as separate assets; G2GBio's InnoLAMP platform data covers semaglutide, tirzepatide and retatrutide. Such a record appears on every matching board while remaining one file with one finding history — it is never duplicated.
+
+**Platform breadth is not a class claim.** A platform stated to work with a molecule, without a named asset or data for it, does not earn that class. Adocia's AdoXLong is stated to work with GIP, amylin and dual or triple agonists, but only its semaglutide application is named, so only `semaglutide` is claimed.
 
 ## Calendar-aware bursts
 
@@ -216,3 +248,6 @@ If there's nothing in any of the three arrays, the script prints a message and w
 - Never log a claim as "confirmed" without meeting the Tier 1/Tier 2 source rule.
 - Never advance `current_status.stage_label` without meeting that same Tier 1/Tier 2 bar, without the source explicitly (not inferentially) stating the current status, or without writing `stage_evidence` explaining why.
 - Never leave `stage_label` unset or set it to anything outside the eight controlled values — the build fails on this by design; don't work around it, fix the value.
+- Never assign a `molecule_class` for a molecule the program does not formulate — a comparator arm, a platform's stated breadth, or an explicit denial is never a class.
+- Never guess a `molecule_class` to avoid an empty array; an empty array is the correct answer when the evidence is ambiguous, and `molecule_evidence` is required either way.
+- Never advance `stage_label` on a patent filing, and never log a patent under its publication date when a priority date is available.

@@ -18,6 +18,10 @@
     "stage": "Approved; long-established market leader (US/Global) in GnRH-agonist depot therapy for advanced prostate cancer, endometriosis, uterine fibroids, central precocious puberty, and (off-label) gender-affirming care. No FDA-approved generic of the depot (microsphere) formulation exists as of Sept 2026.",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Long-established, currently marketed GnRH-agonist depot for prostate cancer et al.; no FDA-approved generic depot exists as of Sept 2026.",
+    "molecule_class": [
+      "non_incretin"
+    ],
+    "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
     "dosing_target": "1-, 3-, 4-, or 6-month IM depot injection (Canada gained a 6-month/45mg option in Nov 2025)",
     "partner": "Takeda (historical drug-substance manufacturing partner; subject of 2019–2023 supply-breach litigation)",
     "data_point": "Nov 2025: Health Canada approved a new 6-month, 45mg Lupron Depot strength, AbbVie's fourth Canadian dosing option",

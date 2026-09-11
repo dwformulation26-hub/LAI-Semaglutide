@@ -22,6 +22,10 @@
     "stage": "Approved & marketed (US/UK/Global); Indivior entered an all-stock merger-of-equals agreement with Supernus Pharmaceuticals (announced Aug 3, 2026), combined company to trade as Supernus, expected to close Q4 2026",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Approved and marketed in US/UK/Global; the Supernus merger is a corporate event, not a development-stage change.",
+    "molecule_class": [
+      "non_incretin"
+    ],
+    "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
     "dosing_target": "Monthly (subcutaneous depot)",
     "partner": "Tolmar (Atrigel depot manufacturing); pending merger partner Supernus Pharmaceuticals",
     "data_point": "Q2 2026: SUBLOCADE net revenue $253M (+21% YoY), record 32,816 new patient starts, ~76% share of US LAI OUD category; >500,000 patients treated since 2018 launch",

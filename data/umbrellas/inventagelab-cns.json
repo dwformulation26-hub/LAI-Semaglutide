@@ -21,6 +21,10 @@
     "stage": "Donepezil LAI (IVL3003) is the confirmed active CNS asset — Phase 1 completed with topline PK/PD results presented at AAN 2026, partnered with Chong Kun Dang. Note: an aripiprazole CNS asset is referenced in some secondary/aggregator sources under the code 'IVL3002', but InventageLab's own official pipeline page (checked Sept 2026) lists IVL3002 as a hair-loss (not aripiprazole) candidate partnered with Daewoong, and lists no active aripiprazole program — this could not be independently verified and is flagged as unresolved rather than logged as a finding.",
     "stage_label": "Phase 1",
     "stage_evidence": "Donepezil LAI (IVL3003) Phase 1 completed with topline PK/PD results presented at AAN 2026.",
+    "molecule_class": [
+      "non_incretin"
+    ],
+    "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
     "dosing_target": "Once monthly (IVL3003, donepezil, IVL-DrugFluidic microsphere)",
     "partner": "Chong Kun Dang (co-development/commercialization of IVL3003 donepezil LAI)",
     "data_point": "Phase 1 topline (AAN 2026, presented Apr 18 2026): plasma drug concentration stable >4 weeks vs. daily oral comparator; dose-proportional systemic exposure; acetylcholinesterase inhibition comparable to repeated oral donepezil (Aricept) dosing",

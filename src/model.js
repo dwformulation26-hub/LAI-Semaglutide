@@ -44,6 +44,44 @@ export const FAMILY_COLORS = {
   other: "#70736f"
 };
 
+// Molecule classes are declared per record in current_status.molecule_class, the same
+// way stage_label is -- assigned at write time by the scan, with an evidence sentence,
+// never inferred here from record text. The order below is the order the dashboard
+// presents them in: the four named molecules, then the two catch-all buckets.
+export const MOLECULE_ORDER = [
+  "semaglutide",
+  "tirzepatide",
+  "retatrutide",
+  "amylin",
+  "other_incretin",
+  "non_incretin"
+];
+
+export const MOLECULE_LABELS = {
+  semaglutide: "Semaglutide",
+  tirzepatide: "Tirzepatide",
+  retatrutide: "Retatrutide",
+  amylin: "Amylin",
+  other_incretin: "Other incretin",
+  non_incretin: "Non-incretin LAI",
+  unassigned: "Needs review"
+};
+
+export const MOLECULE_COLORS = {
+  semaglutide: "#178665",
+  tirzepatide: "#dc6336",
+  retatrutide: "#6d5dad",
+  amylin: "#d86698",
+  other_incretin: "#367fd0",
+  non_incretin: "#91949a",
+  unassigned: "#a87504"
+};
+
+// Non-incretin programs are tracked and searched in full, but deliberately left out of
+// the competitive score: ranking a decades-old leuprolide depot against an IND-stage
+// obesity program would put approved products permanently on top of every board.
+export const SCORED_CLASSES = new Set(["semaglutide", "tirzepatide", "retatrutide", "amylin", "other_incretin"]);
+
 export const FINDING_LABELS = {
   trial_data_readout: "Clinical / data",
   regulatory: "Regulatory",
@@ -111,19 +149,40 @@ export function splitName(canonicalName = "") {
     : { company: String(canonicalName).trim(), program: String(canonicalName).trim() };
 }
 
-export function isSemaglutideProgram(record) {
+// Replaces the old isSemaglutideProgram() text matcher. That function decided a
+// program's molecule by pattern-matching the canonical name, every alias, the status
+// data point and the full text of every finding ever logged -- so a rival molecule
+// named in a comparator arm, an analyst note, or an explicit denial ("the Lilly
+// collaboration does NOT include tirzepatide") all read as a match. Here the value is
+// simply read back from what the scan declared.
+export function moleculeClasses(record) {
+  const declared = record.current_status?.molecule_class;
+  if (!Array.isArray(declared) || !declared.length) return [];
+  return declared.filter((value) => MOLECULE_ORDER.includes(value));
+}
+
+// Deterministic, computed at render, never stored: a saved score is a number that ages
+// on its own and that a scan run could quietly edit. Every input is a field the record
+// already declares, so any row's total can be re-derived by hand from the registry.
+export const SCORE_WEIGHTS = { stage: 45, momentum: 25, evidence: 18, dosing: 12 };
+
+export function competitiveScore(record, now = Date.now()) {
   const status = record.current_status ?? {};
-  const text = [
-    record.canonical_name ?? "",
-    ...(record.aliases ?? []),
-    status.data_point ?? "",
-    ...(record.finding_history ?? []).map((finding) => finding.summary ?? "")
-  ].join(" ").toLowerCase();
-  if (!text.includes("semaglutide")) return false;
-  return [
-    /semaglutide.{0,55}(?:depot|implant|asset|candidate|microparticle|microsphere|lai|injectable)/,
-    /(?:depot|implant|asset|candidate|microparticle|microsphere|lai|injectable|once-monthly|plga).{0,55}semaglutide/
-  ].some((pattern) => pattern.test(text));
+
+  const order = STAGES[status.stage_label];
+  const stage = Number.isFinite(order) ? Math.round((order / 7) * SCORE_WEIGHTS.stage) : 0;
+
+  const age = daysSince(status.last_updated, now);
+  const momentum = age === null ? 0 : age <= 14 ? 25 : age <= 30 ? 21 : age <= 60 ? 16 : age <= 90 ? 11 : age <= 180 ? 6 : 0;
+
+  const latest = [...(record.finding_history ?? [])].sort((a, b) => String(b.date).localeCompare(String(a.date)))[0];
+  const tier = latest?.source?.tier;
+  const evidence = tier === 1 ? 18 : tier === 2 ? 12 : tier === 3 ? 5 : 0;
+
+  const dosing = String(status.dosing_target ?? "").toLowerCase();
+  const interval = /month|quarter|every 6|every 3/.test(dosing) ? 12 : /week/.test(dosing) ? 5 : 0;
+
+  return { total: stage + momentum + evidence + interval, stage, momentum, evidence, dosing: interval };
 }
 
 export function safeUrl(value) {
@@ -203,13 +262,20 @@ export function prepareDatabase(payload, lang = "en") {
     const declaredLabel = record.current_status?.stage_label;
     const stageInferred = !(declaredLabel in STAGES);
     const stageLabel = stageInferred ? normalizeStage(record.current_status?.stage) : declaredLabel;
+    const molecules = moleculeClasses(record);
     return {
       ...record,
       ...names,
       stageLabel,
       stageOrder: STAGES[stageLabel],
       stageInferred,
-      isSemaglutide: isSemaglutideProgram(record),
+      molecules,
+      moleculeEvidence: record.current_status?.molecule_evidence ?? "",
+      // A record the scan could not resolve carries no class at all, rather than a
+      // guessed one. It stays in the registry and surfaces in the review queue.
+      needsMoleculeReview: molecules.length === 0,
+      score: competitiveScore(record),
+      isScored: molecules.some((value) => SCORED_CLASSES.has(value)),
       isOurProduct: record.id === OUR_PRODUCT_ID
     };
   });
@@ -226,7 +292,18 @@ export function prepareDatabase(payload, lang = "en") {
     timestamp: Date.parse(`${String(finding.date ?? "").slice(0, 10)}T00:00:00Z`) || 0
   }))).sort((a, b) => b.timestamp - a.timestamp || String(b.id).localeCompare(String(a.id)));
 
-  const semaglutidePrograms = records.filter((record) => record.isSemaglutide);
+  // One ranked board per class. A program formulating two molecules appears on both
+  // boards, which is correct -- InventageLab really is a separate competitor on each.
+  const moleculeGroups = MOLECULE_ORDER.map((key) => {
+    const members = records
+      .filter((record) => record.molecules.includes(key))
+      .sort((a, b) => b.score.total - a.score.total || String(b.current_status?.last_updated ?? "").localeCompare(String(a.current_status?.last_updated ?? "")));
+    return { key, scored: SCORED_CLASSES.has(key), members };
+  });
+
+  const groupFor = (key) => moleculeGroups.find((group) => group.key === key);
+  const needsMoleculeReview = records.filter((record) => record.needsMoleculeReview);
+  const semaglutidePrograms = groupFor("semaglutide").members;
   const developmentPrograms = semaglutidePrograms.filter((record) => record.stageLabel !== "Approved / marketed");
   const leader = [...developmentPrograms].sort((a, b) =>
     b.stageOrder - a.stageOrder || String(b.current_status?.last_updated ?? "").localeCompare(String(a.current_status?.last_updated ?? ""))
@@ -241,6 +318,9 @@ export function prepareDatabase(payload, lang = "en") {
   return {
     records,
     findings,
+    moleculeGroups,
+    groupFor,
+    needsMoleculeReview,
     semaglutidePrograms,
     leader,
     leaderNote,

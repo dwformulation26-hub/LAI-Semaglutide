@@ -20,6 +20,10 @@
     "stage": "Approved & marketed; original pediatric growth hormone deficiency (GHD) indication (approved 2021) expanded to adult GHD (FDA approved Jul 28, 2025), with broader adult dosing ranges commercially available in the US since Oct 22, 2025",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Approved for pediatric GHD (2021) and adult GHD (FDA approved Jul 28, 2025), commercially available.",
+    "molecule_class": [
+      "non_incretin"
+    ],
+    "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
     "dosing_target": "Once-weekly subcutaneous injection (TransCon prodrug releasing native, unmodified hGH)",
     "partner": null,
     "data_point": "Q2 2026: SKYTROFA revenue of EUR 55M, over 20,000 unique patients enrolled, remaining the best-selling long-acting growth hormone in the US by brand value; commercially available or via named-patient programs in more than 30 countries, with full commercial launches planned in 10 additional countries by year-end 2026 (Ascendis Q2 2026 results, Aug 13, 2026)",

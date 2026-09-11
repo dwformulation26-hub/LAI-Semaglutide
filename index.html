@@ -59,7 +59,7 @@
 
     <section class="page-head" aria-labelledby="page-title">
       <div>
-        <p class="eyebrow" data-i18n="page.eyebrow">SEMAGLUTIDE LAI · COMPETITIVE INTELLIGENCE</p>
+        <p class="eyebrow" data-i18n="page.eyebrow">INCRETIN LAI · COMPETITIVE INTELLIGENCE</p>
         <h1 id="page-title" data-i18n="page.title">Long Acting Injection Intelligence Tracker</h1>
         <p data-i18n="page.subtitle">Development maturity, recent evidence and the full historical record—kept separate and traceable.</p>
       </div>
@@ -73,8 +73,10 @@
       </div>
       <div class="hero-grid">
         <article class="panel race-panel">
-          <div class="panel-head"><div><h3 data-i18n="overview.programsTitle">Direct semaglutide programs</h3><p id="race-caption">Loading programs…</p></div><span class="public-pill" data-i18n="overview.publicEvidence">Public evidence</span></div>
+          <div class="panel-head"><div><h3 data-i18n="overview.programsTitle">Development race by molecule class</h3><p id="race-caption">Loading programs…</p></div><span class="public-pill" data-i18n="overview.publicEvidence">Public evidence</span></div>
+          <div id="class-picker" class="class-picker" role="group" aria-label="Choose molecule class" data-i18n-aria-label="overview.classPickerAria"></div>
           <div id="race-chart" class="race-chart" aria-label="Development stage comparison"></div>
+          <div id="class-empty" class="class-empty" hidden></div>
           <div class="stage-axis" aria-hidden="true"><span data-i18n="overview.stageAxis.research">Research</span><span data-i18n="overview.stageAxis.ind">IND</span><span data-i18n="overview.stageAxis.phase1">Phase 1</span><span data-i18n="overview.stageAxis.phase2">Phase 2</span><span data-i18n="overview.stageAxis.phase3">Phase 3</span><span data-i18n="overview.stageAxis.filed">Filed</span></div>
         </article>
         <article class="panel leader-panel">
@@ -111,6 +113,10 @@
         <article class="panel"><div class="panel-head"><div><h3 data-i18n="statistics.familiesTitle">Technologies by approach</h3><p data-i18n="statistics.familiesSubtitle">All tracked umbrella records</p></div></div><div id="family-chart" class="family-chart"></div></article>
         <article class="panel evidence-panel"><div class="panel-head"><div><h3 data-i18n="statistics.evidenceTitle">Evidence confidence</h3><p data-i18n="statistics.evidenceSubtitle">All historical findings</p></div></div><div id="evidence-chart"></div></article>
       </div>
+      <div class="stats-grid stats-grid-molecule">
+        <article class="panel"><div class="panel-head"><div><h3 data-i18n="statistics.moleculeTitle">Programs by molecule class</h3><p data-i18n="statistics.moleculeSubtitle">Declared per record, not inferred</p></div></div><div id="molecule-chart" class="family-chart"></div></article>
+        <article class="panel"><div class="panel-head"><div><h3 data-i18n="statistics.scoreTitle">How the competitive score is built</h3><p data-i18n="statistics.scoreSubtitle">Computed at render from declared fields</p></div></div><div id="score-chart" class="score-chart"></div></article>
+      </div>
     </section>
 
     <section id="programs" class="anchor-section" aria-labelledby="programs-title">
@@ -120,10 +126,11 @@
       </div>
       <div class="toolbar panel">
         <label class="search-field"><span class="sr-only" data-i18n="programs.searchSr">Search programs</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.15A7.5 7.5 0 1 1 4 11.5a7.5 7.5 0 0 1 15 0Z"/></svg><input id="program-search" type="search" placeholder="Search company, program or technology" data-i18n-placeholder="programs.searchPlaceholder"></label>
+        <select id="molecule-filter" aria-label="Filter programs by molecule class" data-i18n-aria-label="programs.moleculeFilterAria"><option value="all" data-i18n="programs.allMolecules">All molecule classes</option></select>
         <select id="stage-filter" aria-label="Filter programs by stage" data-i18n-aria-label="programs.stageFilterAria"><option value="all" data-i18n="programs.allStages">All stages</option></select>
         <button id="program-export" class="button" type="button" data-i18n="programs.export">Export CSV</button>
       </div>
-      <div class="table-shell panel"><table><thead><tr><th data-i18n="programs.col.program">Program</th><th data-i18n="programs.col.origin">Origin</th><th data-i18n="programs.col.technology">Technology</th><th data-i18n="programs.col.stage">Stage</th><th data-i18n="programs.col.status">Reported status</th><th data-i18n="programs.col.updated">Updated</th></tr></thead><tbody id="program-table"></tbody></table><div id="program-empty" class="empty-state" hidden data-i18n="programs.empty">No programs match these filters.</div></div>
+      <div class="table-shell panel"><table><thead><tr><th data-i18n="programs.col.program">Program</th><th data-i18n="programs.col.molecule">Molecule class</th><th data-i18n="programs.col.score">Score</th><th data-i18n="programs.col.origin">Origin</th><th data-i18n="programs.col.technology">Technology</th><th data-i18n="programs.col.stage">Stage</th><th data-i18n="programs.col.status">Reported status</th><th data-i18n="programs.col.updated">Updated</th></tr></thead><tbody id="program-table"></tbody></table><div id="program-empty" class="empty-state" hidden data-i18n="programs.empty">No programs match these filters.</div></div>
     </section>
 
     <section id="review" class="anchor-section" aria-labelledby="review-title">
@@ -131,6 +138,9 @@
         <div><p class="eyebrow" data-i18n="review.eyebrow">PENDING REVIEW</p><h2 id="review-title" data-i18n="review.title">Candidate queue</h2></div>
         <p data-i18n="review.subtitle">Discoveries remain separate until an analyst accepts, merges or rejects them.</p>
       </div>
+      <div class="conditions-head"><div><p class="eyebrow" data-i18n="review.moleculeBadge">Needs review</p><h2 data-i18n="review.moleculeTitle">Molecule class unresolved</h2></div><p data-i18n="review.moleculeIntro">The scan leaves the class unset when sources conflict, and surfaces the record here instead of picking a bucket.</p></div>
+      <div id="molecule-review" class="candidate-grid"></div>
+      <div class="conditions-head"><div><p class="eyebrow" data-i18n="review.eyebrow">PENDING REVIEW</p><h2 data-i18n="review.title">Candidate queue</h2></div><p data-i18n="review.subtitle">Discoveries remain separate until an analyst accepts, merges or rejects them.</p></div>
       <div id="candidate-list" class="candidate-grid"></div>
     </section>
 

@@ -25,6 +25,10 @@
     "stage": "Phase 3 completed in China (2023, via I-Mab-linked partner) with primary endpoint met; China NMPA accepted the BLA for pediatric growth hormone deficiency in Dec 2024 and it remains under review as of Sep 2026; Korea Phase 2 complete with orphan drug designation but launch timing undecided; co-developer Genexine disclosed severe financial distress in early 2025",
     "stage_label": "Phase 3",
     "stage_evidence": "Phase 3 completed in China (2023) with primary endpoint met; BLA accepted and under active NMPA review.",
+    "molecule_class": [
+      "non_incretin"
+    ],
+    "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
     "dosing_target": "Once-weekly subcutaneous injection (hyFc fusion protein, extended half-life vs. daily rhGH)",
     "partner": "Handok (Korea, co-development); TJ Biopharma / Jumpcan Pharmaceutical (China development, manufacturing & commercialization)",
     "data_point": "China Phase 3 (CTJ101PGHD301): annualized height velocity 10.76 cm/yr for eftansomatropin alfa vs. 10.28 cm/yr for Norditropin at week 52, non-inferior (p<0.0001); China NMPA BLA accepted for review Dec 9, 2024",

@@ -1,7 +1,7 @@
 import { cp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { STAGES } from "../src/model.js";
+import { MOLECULE_ORDER, STAGES } from "../src/model.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const output = path.join(root, "dist");
@@ -42,6 +42,29 @@ for (const fileName of umbrellaFiles) {
   if (!validStageLabels.includes(stageLabel)) {
     throw new Error(
       `${fileName}: current_status.stage_label is ${JSON.stringify(stageLabel)}, must be one of ${validStageLabels.join(", ")}`
+    );
+  }
+  // molecule_class gets the same treatment as stage_label, and for the same reason: it
+  // used to be recovered by pattern-matching the record's text at render time, which
+  // cannot tell a molecule the program formulates from one it is merely measured
+  // against. The field must be present and every value must be known -- but an EMPTY
+  // array is deliberately legal, and means the scan found the evidence genuinely
+  // ambiguous and declined to guess. Those records surface in the review queue.
+  const moleculeClass = record.current_status?.molecule_class;
+  if (!Array.isArray(moleculeClass)) {
+    throw new Error(
+      `${fileName}: current_status.molecule_class is missing or not an array. Use [] to mean "evidence was ambiguous, left for admin review".`
+    );
+  }
+  const unknown = moleculeClass.filter((value) => !MOLECULE_ORDER.includes(value));
+  if (unknown.length) {
+    throw new Error(
+      `${fileName}: current_status.molecule_class contains ${unknown.map((v) => JSON.stringify(v)).join(", ")}, must be one of ${MOLECULE_ORDER.join(", ")}`
+    );
+  }
+  if (!record.current_status?.molecule_evidence) {
+    throw new Error(
+      `${fileName}: current_status.molecule_evidence is required — one sentence naming the fact behind the class, or behind leaving it unassigned.`
     );
   }
   records.push(record);

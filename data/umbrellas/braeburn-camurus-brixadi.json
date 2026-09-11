@@ -21,6 +21,10 @@
     "stage": "Approved & marketed — US (Brixadi, commercialized by Braeburn under exclusive license from Camurus) and EU/global (same molecule marketed by Camurus directly as Buvidal); unconfirmed press reports since Sept 2025 that Camurus is in talks to acquire Braeburn and reclaim full US rights",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Approved and marketed in the US (Brixadi) and EU/global (Buvidal).",
+    "molecule_class": [
+      "non_incretin"
+    ],
+    "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
     "dosing_target": "Weekly or monthly (subcutaneous depot)",
     "partner": "Braeburn (exclusive US license since 2014 agreement); Camurus is platform owner/EU-global marketer",
     "data_point": "Q2 2026: Brixadi royalties to Camurus SEK 127M (+42% YoY, +20% QoQ); Brixadi held ~32% share of US LAI buprenorphine equivalized units in Q1 2026, vs 26% a year earlier",

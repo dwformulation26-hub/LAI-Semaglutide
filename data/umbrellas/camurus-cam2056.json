@@ -19,6 +19,10 @@
     "stage": "Phase 2b in preparation (H2 2026 start), following positive Phase 1b and FDA Type B meeting",
     "stage_label": "Phase 1",
     "stage_evidence": "Positive Phase 1b and an FDA Type B meeting completed; Phase 2b is only in preparation, not yet started.",
+    "molecule_class": [
+      "semaglutide"
+    ],
+    "molecule_evidence": "CAM2056 is a once-monthly subcutaneous semaglutide FluidCrystal depot. The Lilly platform licence was expanded to amylin receptor agonists in June 2026, but the record states that expansion is separate from CAM2056 itself, so it does not make this an amylin program.",
     "dosing_target": "Monthly",
     "partner": "Eli Lilly (FluidCrystal platform licensing collaboration, expanded June 2026 to include amylin receptor agonists; separate from CAM2056 itself)",
     "data_point": "Phase 1b (n=80, overweight/obesity): CAM2056 produced faster and greater body-weight, A1C and fasting-glucose reductions than weekly Wegovy®, dose-dependently, with comparable safety/tolerability (topline Nov 10, 2025)",
