@@ -70,7 +70,7 @@ IDs must be deterministic and collision-checked before writing — never just in
       "date": "2026-08-30",
       "type": "trial_data_readout",
       "summary": "One or two sentences, plain language.",
-      "source": { "name": "ADA 2026 roundup", "url": "https://...", "tier": 2 },
+      "source": { "name": "ADA 2026 roundup", "publication": "Korea Biomedical Review", "url": "https://...", "tier": 2 },
       "confidence": "confirmed"
     }
   ]
@@ -84,6 +84,8 @@ Notes:
   - **It records what a program formulates, never what it is measured against.** Rival molecule names enter a record through comparator arms, analyst commentary and outright denials, and all three look identical to a text search. Peptron's own record says the Lilly collaboration does *not* include tirzepatide; a pattern match would tag it tirzepatide anyway. This field exists precisely so nothing downstream has to guess.
   - **An empty array is a legal, meaningful value.** It means the run found the evidence genuinely ambiguous and declined to pick. Those records surface in the dashboard's review queue for the admin. `molecule_evidence` is still required and should say what was ambiguous.
   - **A program may hold more than one class**, and several do. InventageLab formulates semaglutide and tirzepatide as separate assets; G2GBio's platform data covers three. Such a record appears on every matching board but remains a single file with a single finding history.
+
+- `source.publication` is the outlet on its own — "Fierce Biotech", not "Fierce Biotech – \"Pfizer axes ex-Metsera obesity asset\"". It is optional but write it whenever the outlet is clear. `source.name` is free-text and in practice holds a mix of publication, article title and corroboration clauses, which is fine for the record but unusable as a label; the digest needs a short outlet name and falls back to cutting `name` at the first dash, comma, slash or bracket when `publication` is absent.
 
 - `finding_history` is append-only. Never edit or remove a past entry, even to "clean it up" — if something logged earlier turns out wrong, append a new finding correcting it (this preserves the audit trail; git history plus this append-only log together are the record of what was known when).
 - Staleness (`days_since_last_finding`) is computed by the app from `current_status.last_updated` at render time. Do not store it — a stored value goes stale itself.
@@ -132,6 +134,6 @@ Notes:
 }
 ```
 
-`source_health.status` is `ok`, `stale`, or `blocked` — `blocked` means a fetch returned a hard network error (e.g. `EGRESS_BLOCKED`) rather than just finding nothing; `stale` means it hasn't been checked recently, not that it failed. Never silently leave a failed source as `ok`.
+`source_health.status` is `ok`, `stale`, `search_only`, or `blocked` — `blocked` means a fetch returned a hard network error (e.g. `EGRESS_BLOCKED`) rather than just finding nothing; `stale` means it hasn't been checked recently, not that it failed. `search_only` means direct fetch is refused by the network policy but the domain's content is reachable through domain-scoped search and is still contributing findings — clinicaltrials.gov and patents.google.com are both in this state, and recording them as `blocked` would make a working tracker look like a degrading one. Never silently leave a failed source as `ok`.
 
 `coverage` is what makes an incomplete run visible instead of indistinguishable from a full one. `skipped_throttled` counts umbrellas deliberately skipped under the quiet-umbrella rule (expected, healthy); `skipped_budget_exhausted` counts umbrellas that never got checked because the run ran out of search budget first (not healthy — if this is ever nonzero, the run was materially incomplete and that should be obvious from this field alone, not something someone has to dig through logs to discover).

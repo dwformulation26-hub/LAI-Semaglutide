@@ -202,9 +202,18 @@ After a Daily scan or Weekly sweep, draft one bundled digest of what changed thi
   "leadIn": "One short sentence summarizing the run — findings + late items + candidates, in your own words.",
   "findings": [ /* one entry per finding inside the freshness window this run */ ],
   "lateItems": [ /* real findings logged this run but dated outside the freshness window (see above) */ ],
-  "candidates": [ /* new Track B1/B2 candidates from this run */ ]
+  "candidates": [ /* new Track B1/B2 candidates from this run */ ],
+  "coverage": [ /* one row per molecule class, in MOLECULE_ORDER -- see below */ ]
 }
 ```
+
+**`coverage` is what stops the tagged layout from implying a class was dropped.** The digest tags each row with its molecule class rather than splitting into one section per class, because on 96 of 111 recorded dates there was exactly one finding and six fixed sections would render five empty headings almost every day. The cost of tagging is that a class with no news is simply absent, so the coverage strip carries it instead: one compact row per class, always all six, at the foot of the digest.
+
+Each row is `{ key, label, programs, daysSinceCheck, daysSinceNews }`:
+- `programs` — how many records declare that class.
+- `daysSinceCheck` — days since Track A last actually queried a record in that class, from `current_status.last_checked`. This is the coverage claim.
+- `daysSinceNews` — days since the newest finding in that class, from `last_updated`. This is the news.
+- Keep them separate. Under the quiet-umbrella throttle they diverge a lot, and collapsing them into one number would overstate what the run did. Use `null` for a class with no records or no finding yet.
 
 **Writing the `leadIn`: this is a headline, not a summary.** Its job is to catch attention and earn the scroll down to the full list — not to account for everything that happened this run. Keep it short, one sentence.
 
@@ -223,7 +232,18 @@ Write it the way you'd tell a colleague the one thing worth knowing today, and o
 | `sourceUrl`, `sourceName` | The finding's or candidate evidence's `source` object | Direct |
 | `summary` | — | **Synthesized, but only lightly.** One short 1–2 sentence summary of what happened and why it's worth noting — not a verbatim dump of the finding's full `summary` field, and not split across separate "why/impact/watch next" fields. `**bold**` the single most important clause if one stands out; don't force it. |
 
-There is no `type`, `confidence`, `stageChange`, or evidence-tier badge in the digest — those live in the registry and the dashboard, not here. Keep `summary` genuinely short; if you find yourself writing more than two sentences, that belongs in the umbrella's `finding_history`, not the digest row.
+**Two fields are declared per item, both by the run that read the source, never re-derived from the summary afterwards:**
+
+| Field | What it carries |
+|---|---|
+| `molecules` | The record's `molecule_class`, copied. Renders as the outline tags on the row. |
+| `stageChange` | The new `stage_label`, but **only** when this finding is what moved the program — the same moment `stage_evidence` gets written. Otherwise `null`. Renders as the one filled dark marker, and sorts that row to the top. |
+
+Also pass `sourcePublication` (the outlet on its own) when the finding's source carries it, so the row's label is a clean outlet name instead of a cut-down article title.
+
+**Row order is handled by the renderer, not by you** — `orderItems()` sorts stage changes first, then by molecule class in the fixed order, then newest date, then headline. Supply the items in any order; don't try to pre-sort them.
+
+There is no `type`, `confidence`, or evidence-tier badge in the digest — those live in the registry and the dashboard, not here. Keep `summary` genuinely short; if you find yourself writing more than two sentences, that belongs in the umbrella's `finding_history`, not the digest row.
 
 **2. Run the renderer:**
 
