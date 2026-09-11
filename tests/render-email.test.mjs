@@ -179,3 +179,16 @@ test("links the dashboard button at the current domain, and lets the environment
   assert.match(out.html, /https:\/\/lai-semaglutide\.vercel\.app\//);
   assert.doesNotMatch(out.html, /\{\{DASHBOARD_URL\}\}/);
 });
+
+test("the footer states only what stays true whether the digest is drafted or sent", () => {
+  const out = renderDigest({
+    runDate: "2026-09-11", leadIn: "x",
+    findings: [{ headline: "H", date: "2026-09-11", molecules: ["semaglutide"], summary: "s", sourceUrl: "https://e.com", sourceName: "E" }]
+  }, templateHtml);
+  // The old wording promised the digest was "never sent without a human reviewing it
+  // first", which stops being a claim the system can stand behind the moment sending is
+  // ever automated. Approval of the send is the part that holds either way.
+  assert.doesNotMatch(out.html, /never sent/);
+  assert.match(out.html, /A person approves each send/);
+  assert.match(out.html, /public sources/);
+});
