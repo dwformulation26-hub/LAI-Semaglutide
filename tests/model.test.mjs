@@ -3,7 +3,7 @@ import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
-import { assessRunHealth, interpretLeader, normalizeStage, prepareDatabase, safeUrl } from "../src/model.js";
+import { CANDIDATE_STATUSES, assessRunHealth, interpretLeader, normalizeStage, prepareDatabase, safeUrl } from "../src/model.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -150,4 +150,69 @@ test("accepts only web source links", () => {
   assert.match(safeUrl("https://example.com/source"), /^https:/);
   assert.equal(safeUrl("javascript:alert(1)"), null);
   assert.equal(safeUrl("not a url"), null);
+});
+
+test("sorts escalated candidates above routine ones regardless of recency", () => {
+  // The point of the escalation ladder (scan skill, Track B3) is that a candidate which
+  // cleared the promotion bar cannot be buried by newer arrivals -- so status outranks
+  // every recency tiebreak in the review queue.
+  const data = prepareDatabase({
+    records: [],
+    candidates: [
+      { id: "cand-b", detected_name: "Fresh Pending", status: "pending", created_date: "2026-09-10",
+        evidence: [{ source: { name: "x", url: "https://example.com/b", tier: 1 }, date: "2026-09-10" }] },
+      { id: "cand-a", detected_name: "Escalated", status: "ready_for_promotion", created_date: "2026-08-01",
+        promotion_bar: { cleared: ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"], unmet: [], evidence: "IND cleared and dosing started." },
+        evidence: [{ source: { name: "x", url: "https://example.com/a", tier: 1 }, date: "2026-09-01" }] },
+      { id: "cand-c", detected_name: "Gone Quiet", status: "stalled", created_date: "2026-07-01",
+        evidence: [{ source: { name: "x", url: "https://example.com/c", tier: 2 }, date: "2026-07-01" }] },
+      { id: "cand-d", detected_name: "Thin Signal", status: "watch", created_date: "2026-08-15", evidence: [] },
+      { id: "cand-e", detected_name: "Already Handled", status: "promoted", created_date: "2026-08-20", evidence: [],
+        resolution: { action: "promoted", umbrella_id: "somewhere", date: "2026-08-21" } }
+    ],
+    meta: {}
+  });
+
+  assert.deepEqual(data.pendingCandidates.map((candidate) => candidate.id), ["cand-a", "cand-b", "cand-c"]);
+  assert.deepEqual(data.readyCandidates.map((candidate) => candidate.id), ["cand-a"]);
+  assert.deepEqual(data.watchCandidates.map((candidate) => candidate.id), ["cand-d"]);
+  assert.deepEqual(data.pendingCandidates.filter((candidate) => candidate.status === "stalled").map((candidate) => candidate.id), ["cand-c"]);
+  // A resolved candidate leaves the queue entirely -- it is no longer anyone's decision.
+  assert.equal(data.pendingCandidates.some((candidate) => candidate.id === "cand-e"), false);
+});
+
+test("derives candidate waiting time and follow-up counts at render time", () => {
+  // days_pending is deliberately never stored (see data-schema.md) -- a stored age is
+  // wrong the day after it's written, which is exactly how a forgotten candidate hides.
+  const data = prepareDatabase({
+    records: [],
+    candidates: [
+      { id: "cand-f", detected_name: "Tracked", status: "pending", created_date: "2026-01-01",
+        follow_up: { last_checked: "2026-01-20", checks_run: 4 },
+        promotion_bar: { cleared: ["named_entity", "technical_claim"], unmet: ["confirmed_source", "second_dated_event"], evidence: "Still a single Tier 3 mention." },
+        evidence: [{ source: { name: "x", url: "https://example.com/f", tier: 3 }, date: "2026-01-05" }] }
+    ],
+    meta: {}
+  });
+  const candidate = data.pendingCandidates[0];
+  assert.equal(candidate.followUpChecks, 4);
+  assert.deepEqual(candidate.unmetConditions, ["confirmed_source", "second_dated_event"]);
+  assert.ok(candidate.daysPending > 0);
+  assert.ok(candidate.daysPending >= candidate.daysSinceEvidence);
+});
+
+test("keeps every stored candidate status inside the controlled vocabulary", async () => {
+  // scripts/build.mjs fails the build on an unknown status for the same reason it fails
+  // on a bad stage_label: an unrecognized value would drop the candidate out of the
+  // review queue silently instead of loudly.
+  const { candidates } = await sourcePayload();
+  for (const candidate of candidates) {
+    assert.ok(
+      CANDIDATE_STATUSES.includes(candidate.status),
+      `${candidate.id} has uncontrolled status ${JSON.stringify(candidate.status)}`
+    );
+    if (candidate.status === "ready_for_promotion") {
+      assert.ok(candidate.promotion_bar?.evidence, `${candidate.id} is escalated with no written rationale`);
+    }
+  }
 });

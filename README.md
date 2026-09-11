@@ -9,15 +9,21 @@ This repository contains the tracked data and a Vercel-native dashboard. Data is
 The interface keeps three conditions distinct:
 
 1. Tracked intelligence accepted into the umbrella record
-2. Candidate entities pending analyst review
+2. Candidate entities pending analyst review, ordered by escalation level
 3. Daily/weekly monitoring and quality-control status from `meta.json`
+
+## Candidate escalation
+
+A discovered entity is not a one-time report. Every scan re-checks the unresolved candidates in `candidates.json`, appends new evidence to them, and scores them against a fixed four-condition promotion bar (named entity, technical claim, confirmed source, and a second dated event). A candidate that clears all four moves to `ready_for_promotion`: it sorts to the top of the review queue, is counted separately on the dashboard, and leads the digest email on every run until an analyst resolves it. A candidate that goes 30+ days without new evidence moves to `stalled` and is flagged for reject-or-snooze instead of aging silently.
+
+Promotion itself stays manual. The scan proposes and escalates; creating, merging, rejecting and snoozing are admin actions taken by hand. `scripts/build.mjs` fails the build on a candidate status outside the controlled list, or on an escalated candidate with no written rationale.
 
 ## Structure
 
 ```
 data/
   umbrellas/    one JSON file per tracked entity (company/platform/asset)
-  candidates.json   pending entities discovered but not yet reviewed
+  candidates.json   discovered entities with their evidence, follow-up record and escalation status
   meta.json     last-run timestamps and source health
 src/            browser application and data-normalization logic
 scripts/        dependency-free static build + email digest renderer
