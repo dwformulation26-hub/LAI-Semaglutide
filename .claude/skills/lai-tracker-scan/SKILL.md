@@ -18,12 +18,16 @@ The invocation (the scheduled routine's prompt, or what the person asked) tells 
 | Mode | Trigger | Runs |
 |---|---|---|
 | **Daily scan** | "run daily LAI scan", "run today's LAI tracking", or no mode specified | Track A + Track B1 + Track B3 (cheap pass) + QC Tier 0/1 |
-| **Weekly sweep** | "run weekly LAI sweep", "Sunday LAI compile" | Track B2 + Track B3 (deep pass) + QC Tier 2 (and Track A/B1 too, if the daily scan hasn't already run today) |
+| **Weekly sweep** | "run weekly LAI sweep", "Monday LAI compile" | Track B2 + Track B3 (deep pass) + QC Tier 2 (and Track A/B1 too, if the daily scan hasn't already run today) |
 | **Full audit** | Only when explicitly requested — "run a full LAI audit/re-verification" | QC Tier 3 only. Never self-trigger this — see QC section |
 
 If it's ambiguous which mode was meant, default to **Daily scan** — it's the cheapest and safest default.
 
-**Automated schedule (as of 2026-09-07):** Weekly sweep also fires on its own every Sunday at 9:00 AM KST, via the "LAI Tracker — Weekly Sweep" cloud routine (separate from the daily "LAI Tracker — Daily Scan" routine, which fires every day). Both are scheduled cloud routines, not something this file controls directly — check them with the `RemoteTrigger` tool if a run needs to be inspected or the schedule needs to change.
+**Automated schedule (as of 2026-09-11): weekdays only.** The "LAI Tracker — Daily Scan" routine fires Monday to Friday at 6:00 AM KST, and the "LAI Tracker — Weekly Sweep" routine fires Monday at 9:00 AM KST. Nothing runs on Saturday or Sunday by design.
+
+Both are scheduled cloud routines, not something this file controls — they were created through the API and can only be edited by their owner in the Routines UI. Note the two are expressed in UTC and the daily one crosses midnight: `0 21 * * 0-4` fires at 21:00 UTC Sunday through Thursday, which is 6:00 AM KST Monday through Friday. Getting the day mask wrong by one is the easy mistake here.
+
+Monday's sweep fires three hours after Monday's daily scan, so `last_run.daily_scan` is already from today and the sweep correctly skips Track A/B1 rather than repeating them.
 
 ## Search budget discipline
 
@@ -42,8 +46,16 @@ The whole point of a *daily* scan is that the dashboard and the email digest alw
 
 **Window definition:** `window_start` = the timestamp of the last successful `daily_scan` run, from `meta.json.last_run.daily_scan`. If that's null (first run, or the last run never completed), fall back to `last_run.weekly_sweep` if it's more recent than 24h ago; if neither exists, default `window_start` to 24 hours before now. Letting the window stretch back to the last real run — instead of a hard 24h cutoff — means a skipped day or a long weekend widens the net instead of silently losing whatever aged past exactly 24h.
 
+**Monday covers the weekend, and this is the mechanism that makes it work.** Because the runs are weekdays only, Monday's `window_start` is Friday's run, so the window is roughly 72 hours rather than 24. Three consequences, none of them anomalies to correct for:
+
+- **Saturday and Sunday news is inside the window**, so it is a normal headline finding. It does not belong in the discovered-late note — that is for genuinely old material, not for news the schedule chose not to look at yet.
+- **Nothing throttles on a Monday.** The quiet-umbrella rule skips a record only when `last_checked` is within the last 2 days; after a weekend every `last_checked` is 3 days old, so every due record gets queried. That is intended: Monday is the widest run of the week.
+- **Budget accordingly.** More records due and a wider window on the same search budget makes breadth-first non-negotiable on a Monday. Do one distinctive-alias pass across every due record before any second query anywhere, and record the coverage honestly in `meta.json` if the budget runs out.
+
+Use the search tool's recency filter to match the actual window, not a reflexive "past day" — on a Monday, "past day" silently discards two thirds of what the run exists to catch.
+
 **Applying it:**
-- When searching, prefer the search tool's own recency filter (e.g. "past day") scoped to roughly this window where available — this also helps the search-budget discipline above by not pulling back stale results to begin with.
+- When searching, prefer the search tool's own recency filter scoped to roughly this window where available (a Monday needs "past week", not "past day" — see the weekend note above) — this also helps the search-budget discipline above by not pulling back stale results to begin with.
 - For every finding (Track A) or candidate (Track B1), compare its actual publish/event date (the finding's `date` field, or the candidate evidence's `date`) against `window_start`.
   - **Within the window:** log normally. This is what belongs in the digest's headline "what's new" section — a punctual update.
   - **Older than the window (real news, just discovered late):** still log it — append-only history means real information is never dropped just because it arrived late (see "Writing to the data file" below). But keep it out of the digest's headline list; if it's material enough to mention, put it in a clearly separate "discovered late" note carrying its actual original date, so the digest never implies something is fresher than it is.
