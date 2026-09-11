@@ -337,7 +337,10 @@
         "ProAptec",
         "프로앱텍"
       ],
-      "entity_type_guess": ["company", "asset"],
+      "entity_type_guess": [
+        "company",
+        "asset"
+      ],
       "evidence": [
         {
           "source": {
@@ -494,7 +497,7 @@
       ],
       "fuzzy_match": {
         "closest_umbrella_id": null,
-        "score": 0.0
+        "score": 0
       },
       "status": "pending",
       "created_date": "2026-09-09",
@@ -536,10 +539,81 @@
       ],
       "fuzzy_match": {
         "closest_umbrella_id": null,
-        "score": 0.0
+        "score": 0
+      },
+      "status": "promoted",
+      "created_date": "2026-09-10",
+      "resolution": {
+        "action": "promoted",
+        "umbrella_id": "cspc-syh2082",
+        "date": "2026-09-11"
+      }
+    },
+    {
+      "id": "cand-2026-09-11-001",
+      "detected_name": "Appel Sauce Studios LLC (Stanford University hydrogel depot licence)",
+      "detected_aliases": [
+        "Appel Sauce Studios",
+        "Appel Sauce Studios LLC",
+        "Stanford PNP hydrogel",
+        "PNP hydrogel depot"
+      ],
+      "entity_type_guess": [
+        "company",
+        "platform"
+      ],
+      "evidence": [
+        {
+          "source": {
+            "name": "Advanced Therapeutics (Wiley) - d Aquino et al.",
+            "url": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/adtp.202500329",
+            "tier": 2
+          },
+          "snippet": "Peer-reviewed report of long-acting hydrogel-based depot formulations of tirzepatide and semaglutide. The PNP hydrogel uses hydrophobically modified HPMC-C12 with PEG-PLA nanoparticles; a single injection sustained exposure over 42 days in animals, which the authors map to a once-every-four-months human therapy. Appel Sauce Studios LLC holds a global exclusive licence to the Stanford technology and a named inventor is a co-founder and advisor. Corporate footprint not yet independently verified: no company pipeline page, financing or clinical registration found this sweep.",
+          "date": "2026-01-01"
+        }
+      ],
+      "fuzzy_match": {
+        "closest_umbrella_id": null,
+        "score": 0
       },
       "status": "pending",
-      "created_date": "2026-09-10",
+      "created_date": "2026-09-11",
+      "resolution": null
+    },
+    {
+      "id": "cand-2026-09-11-002",
+      "detected_name": "Jiangsu Hengrui - Ribupatide (HRS9531) / Kailera KAI-9531",
+      "detected_aliases": [
+        "Jiangsu Hengrui",
+        "Hengrui Pharma",
+        "恒瑞医药",
+        "Ribupatide",
+        "HRS9531",
+        "Kailera Therapeutics",
+        "KAI-9531"
+      ],
+      "entity_type_guess": [
+        "company",
+        "asset"
+      ],
+      "evidence": [
+        {
+          "source": {
+            "name": "pharmaphorum",
+            "url": "https://pharmaphorum.com/news/hengrui-file-obesity-shot-china-after-phase-3-win",
+            "tier": 2
+          },
+          "snippet": "Ribupatide (HRS9531) is a GLP-1/GIP dual receptor agonist with positive Phase 2 obesity data at 1, 2 and 4mg and an NMPA filing accepted in China for long-term weight management; partnered outside Greater China with Kailera Therapeutics as KAI-9531. FLAGGED FOR REVIEWER: surfaced while checking a secondary claim that Hengrui was developing monthly formulations, which this sweep could NOT confirm. Every source found describes once-weekly subcutaneous injection plus a once-daily oral tablet, so on current evidence this does not meet the long-acting-injectable bar and is queued for an explicit reject-with-reason rather than promotion.",
+          "date": "2026-07-01"
+        }
+      ],
+      "fuzzy_match": {
+        "closest_umbrella_id": "cspc-syh2082",
+        "score": 0.22
+      },
+      "status": "pending",
+      "created_date": "2026-09-11",
       "resolution": null
     }
   ]

@@ -3,9 +3,10 @@
     "initial_seed": "2026-09-02T00:00:00Z",
     "initial_discovery_test": "2026-09-02T00:00:00Z",
     "daily_scan": "2026-09-10T21:07:58Z",
-    "weekly_sweep": "2026-09-07T07:05:50Z",
+    "weekly_sweep": "2026-09-11T06:40:00Z",
     "qc_tier2": "2026-09-07T07:05:50Z",
-    "qc_tier3": null
+    "qc_tier3": null,
+    "baseline_class_sweep": "2026-09-11T06:40:00Z"
   },
   "coverage": {
     "daily_scan": {
@@ -18,7 +19,7 @@
     "weekly_sweep": {
       "source_categories_checked": 6,
       "source_categories_total": 6,
-      "notes": "Conference accepted-abstract indices (ADA/ASCO/AAN/ObesityWeek/JPM), KIPRIS/USPTO/WIPO patent filings, KOSDAQ tech-listing pipeline, university tech-transfer, VC/deal databases, clinicaltrials.gov new-registration feed -- all checked. Conference indices mostly not yet published this far ahead of each event; ObesityWeek 2026 abstract titles due to post by 2026-10-19, worth a re-check next weekly sweep."
+      "notes": "Baseline deep discovery sweep across all six molecule classes, run once to seed the tracker ahead of the molecule-class change. 17 searches: clinicaltrials.gov and Google Patents scoped per class, plus wires, Korean-language trade press and deal coverage. Four new umbrellas promoted by the admin in conversation (cspc-syh2082, zealand-petrelintide, lilly-eloralintide, adocia-adoxlong), taking the registry from 37 to 41 records. cand-2026-09-10-001 resolved as promoted into cspc-syh2082. Two new candidates queued (cand-2026-09-11-001 Appel Sauce Studios/Stanford hydrogel; cand-2026-09-11-002 Jiangsu Hengrui ribupatide, flagged as probably failing the LAI bar since every source says once-weekly). Amylin was the thinnest class before this sweep and gained two of the four new records. Not logged: a Korean trade summary that Peptron has filed PT403 patents in about 20 countries targeting 2030 approval -- no publication date could be pinned, so it was left out rather than dated to the sweep."
     },
     "qc_tier2": {
       "findings_sampled": 8,
@@ -30,34 +31,123 @@
     }
   },
   "source_health": {
-    "clinicaltrialsarena.com": { "last_success": null, "status": "blocked" },
-    "marketscreener.com": { "last_success": null, "status": "blocked" },
-    "itiger.com": { "last_success": null, "status": "blocked" },
-    "pepgene.net": { "last_success": null, "status": "blocked" },
-    "astrazeneca.com": { "last_success": null, "status": "blocked" },
-    "fiercepharma.com": { "last_success": null, "status": "blocked" },
-    "prnewswire.com": { "last_success": null, "status": "blocked" },
-    "mdtoday.co.kr": { "last_success": null, "status": "blocked" },
-    "hankyung.com": { "last_success": null, "status": "blocked" },
-    "kr.acrofan.com": { "last_success": null, "status": "blocked" },
-    "kmpnews.co.kr": { "last_success": null, "status": "blocked" },
-    "thevc.kr": { "last_success": null, "status": "blocked" },
-    "dailypharm.com": { "last_success": null, "status": "blocked" },
-    "managedhealthcareexecutive.com": { "last_success": null, "status": "blocked" },
-    "ir.indivior.com": { "last_success": null, "status": "blocked" },
-    "koreabiomed.com": { "last_success": null, "status": "blocked" },
-    "thebell.co.kr": { "last_success": null, "status": "blocked" },
-    "ipsen.com": { "last_success": null, "status": "blocked" },
-    "camurus.com": { "last_success": null, "status": "blocked" },
-    "businesswire.com": { "last_success": null, "status": "blocked" },
-    "globenewswire.com": { "last_success": null, "status": "blocked" },
-    "patents.google.com": { "last_success": null, "status": "blocked" },
-    "controlledreleasesociety.org": { "last_success": null, "status": "blocked" },
-    "obesityweek.org": { "last_success": null, "status": "blocked" },
-    "newspim.com": { "last_success": null, "status": "blocked" },
-    "pharm.edaily.co.kr": { "last_success": null, "status": "blocked" },
-    "blog.linknovate.com": { "last_success": null, "status": "blocked" },
-    "dtu.dk": { "last_success": null, "status": "blocked" },
-    "clinicaltrials.gov": { "last_success": null, "status": "blocked" }
+    "clinicaltrialsarena.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "marketscreener.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "itiger.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "pepgene.net": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "astrazeneca.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "fiercepharma.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "prnewswire.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "mdtoday.co.kr": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "hankyung.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "kr.acrofan.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "kmpnews.co.kr": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "thevc.kr": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "dailypharm.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "managedhealthcareexecutive.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "ir.indivior.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "koreabiomed.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "thebell.co.kr": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "ipsen.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "camurus.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "businesswire.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "globenewswire.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "patents.google.com": {
+      "last_success": "2026-09-11T06:40:00Z",
+      "status": "ok",
+      "note": "Direct fetch blocked by network policy (gateway 403 on CONNECT); reached via domain-scoped search, which returned current filings including KR20240167410A."
+    },
+    "controlledreleasesociety.org": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "obesityweek.org": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "newspim.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "pharm.edaily.co.kr": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "blog.linknovate.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "dtu.dk": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "clinicaltrials.gov": {
+      "last_success": "2026-09-11T06:40:00Z",
+      "status": "ok",
+      "note": "Direct fetch blocked by network policy (gateway 403 on CONNECT); reached via domain-scoped search, which returned current registrations including NCT07563699."
+    }
   }
 }

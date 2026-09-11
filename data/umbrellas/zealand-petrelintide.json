@@ -1,0 +1,69 @@
+{
+  "id": "zealand-petrelintide",
+  "canonical_name": "Zealand Pharma – Petrelintide (Roche collaboration)",
+  "origin": "Global",
+  "entity_type": [
+    "company",
+    "asset"
+  ],
+  "technology_family": "molecular_engineering",
+  "aliases": [
+    "Zealand Pharma",
+    "Petrelintide",
+    "ZP8396",
+    "ZEAL",
+    "Roche petrelintide"
+  ],
+  "current_status": {
+    "stage": "Phase 2 complete with positive topline (Mar 2026). Zealand and Roche formally endorsed advancing to Phase 3 on Apr 29 2026 with initiation planned for H2 2026; no source confirms a Phase 3 trial has started.",
+    "stage_label": "Phase 2",
+    "stage_evidence": "The April 2026 announcement endorses advancing to Phase 3 with initiation planned for H2 2026, which is forward-looking; the label stays at Phase 2 until a source states the Phase 3 trial is underway.",
+    "molecule_class": [
+      "amylin"
+    ],
+    "molecule_evidence": "Petrelintide is a long-acting amylin analog dosed once weekly, which places it in the amylin class rather than the general incretin bucket.",
+    "dosing_target": "Once weekly (subcutaneous); not a depot formulation",
+    "partner": "Roche (exclusive collaboration and licence signed Mar 12 2025; $1.6B upfront, 50/50 profit share on monotherapy and on the fixed-dose combination with Roche's CT-388)",
+    "data_point": "Phase 2: double-digit weight loss with placebo-like tolerability — nausea 16.7% with 80% of events mild, vomiting below detectable levels, diarrhoea 1.0%, constipation 2.3%",
+    "last_updated": "2026-04-29",
+    "last_checked": "2026-09-11"
+  },
+  "finding_history": [
+    {
+      "id": "f-2025-03-12-001",
+      "date": "2025-03-12",
+      "type": "deal_partnership",
+      "summary": "Roche entered an exclusive collaboration and licensing agreement with Zealand Pharma to co-develop and co-commercialise petrelintide, both as a standalone therapy and as a fixed-dose combination with Roche's lead incretin asset CT-388, on a 50/50 profit share with $1.6B upfront.",
+      "source": {
+        "name": "Roche press release (company IR)",
+        "url": "https://www.roche.com/media/releases/med-cor-2025-03-12",
+        "tier": 1
+      },
+      "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-03-05-001",
+      "date": "2026-03-05",
+      "type": "trial_data_readout",
+      "summary": "Zealand reported positive Phase 2 topline for petrelintide: double-digit weight loss with a tolerability profile close to placebo, including nausea in 16.7% of participants with 80% of those events mild, and vomiting below detectable levels.",
+      "source": {
+        "name": "Zealand Pharma release via GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/03/05/3250569/0/en/Zealand-Pharma-announces-positive-Phase-2-results-for-petrelintide-an-amylin-analog-with-potential-to-redefine-the-weight-management-experience-for-people-living-with-overweight-an.html",
+        "tier": 2
+      },
+      "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-04-29-001",
+      "date": "2026-04-29",
+      "type": "regulatory",
+      "summary": "Zealand and Roche announced formal endorsement to advance petrelintide into Phase 3 for chronic weight management, with initiation planned for the second half of 2026.",
+      "source": {
+        "name": "Zealand Pharma release via GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/04/29/3284133/0/en/zealand-pharma-and-roche-to-advance-petrelintide-an-amylin-analog-to-phase-3-trials-for-chronic-weight-management.html",
+        "tier": 2
+      },
+      "confidence": "confirmed"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "adocia-adoxlong",
+  "canonical_name": "Adocia – AdoXLong™ (monthly semaglutide) / AdoGel®",
+  "origin": "Global",
+  "entity_type": [
+    "company",
+    "platform"
+  ],
+  "technology_family": "molecular_engineering",
+  "aliases": [
+    "Adocia",
+    "Adocia SA",
+    "AdoXLong",
+    "AdoGel",
+    "BioChaperone",
+    "ADOC.PA"
+  ],
+  "current_status": {
+    "stage": "Preclinical. AdoXLong patent filed Nov 12 2025 with semaglutide as the first application, supported by preliminary in vitro and in vivo results the company describes as compatible with once-monthly injection. Adocia also runs AdoGel, a separate hydrogel depot platform.",
+    "stage_label": "Preclinical",
+    "stage_evidence": "The November 2025 announcement reports preliminary in vitro and in vivo results behind a patent filing, with no clinical study stated, which is squarely preclinical.",
+    "molecule_class": [
+      "semaglutide"
+    ],
+    "molecule_evidence": "AdoXLong's first named application is a long-acting semaglutide formulation moving weekly dosing to monthly. The platform is stated to work with GIP, amylin and dual or triple agonists too, but those are platform scope rather than named assets, so they are not claimed as classes here.",
+    "dosing_target": "Monthly (AdoXLong Sema); AdoGel described as 1 to 3 months",
+    "partner": null,
+    "data_point": "AdoXLong is a chemical modification of acylated peptides intended to extend duration of action to at least one month; patent application filed Nov 2025 seeking worldwide protection to 2046 if granted",
+    "last_updated": "2025-11-12",
+    "last_checked": "2026-09-11"
+  },
+  "finding_history": [
+    {
+      "id": "f-2024-10-14-001",
+      "date": "2024-10-14",
+      "type": "regulatory",
+      "summary": "Adocia announced patenting of stable combinations of GLP-1 and amylin analogs for obesity and diabetes using its BioChaperone platform.",
+      "source": {
+        "name": "Adocia release via BusinessWire",
+        "url": "https://www.businesswire.com/news/home/20241014065229/en/ADOCIA-Announces-Patenting-Stable-Combinations-of-GLP-1-and-Amylin-Analogs-for-the-Treatment-of-Obesity-and-Diabetes-Using-Its-BioChaperone-Platform",
+        "tier": 2
+      },
+      "confidence": "unverified"
+    },
+    {
+      "id": "f-2025-11-12-001",
+      "date": "2025-11-12",
+      "type": "regulatory",
+      "summary": "Adocia filed a patent for AdoXLong, a long-acting peptide platform for diabetes and obesity, with semaglutide as the first application. The company reported preliminary in vitro and in vivo results it considers compatible with a once-monthly injection, and is seeking worldwide protection to 2046.",
+      "source": {
+        "name": "Adocia release via BusinessWire",
+        "url": "https://www.businesswire.com/news/home/20251111539253/en/ADOCIA-Announces-Filing-of-Patent-for-New-Long-Acting-Peptides-Platform-in-Diabetes-and-Obesity---AdoXLong---and-Provides-an-Update-on-its-BioChaperone-Platform",
+        "tier": 2
+      },
+      "confidence": "confirmed"
+    }
+  ]
+}

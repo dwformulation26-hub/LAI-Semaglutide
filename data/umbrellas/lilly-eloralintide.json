@@ -1,0 +1,44 @@
+{
+  "id": "lilly-eloralintide",
+  "canonical_name": "Eli Lilly – Eloralintide (LY3841136)",
+  "origin": "Global",
+  "entity_type": [
+    "company",
+    "asset"
+  ],
+  "technology_family": "molecular_engineering",
+  "aliases": [
+    "Eli Lilly",
+    "Eloralintide",
+    "LY3841136",
+    "LLY"
+  ],
+  "current_status": {
+    "stage": "Phase 2 complete and positive, reported Nov 6 2025 at ObesityWeek 2025 and published simultaneously in The Lancet. Lilly stated an intent to begin Phase 3 monotherapy studies; no source confirms a Phase 3 trial has started. A separate Phase 2 of eloralintide alone or combined with tirzepatide is running in adults with obesity and type 2 diabetes.",
+    "stage_label": "Phase 2",
+    "stage_evidence": "The Nov 2025 readout is an explicit Phase 2 result; the accompanying Phase 3 statement is an intent to initiate, which under the forward-looking rule cannot advance the label.",
+    "molecule_class": [
+      "amylin"
+    ],
+    "molecule_evidence": "Eloralintide is described by Lilly as a selective amylin receptor agonist, which places it in the amylin class.",
+    "dosing_target": "Once weekly (subcutaneous); not a depot formulation",
+    "partner": null,
+    "data_point": "Phase 2 (n=263, 48 weeks): mean weight reduction 9.5% to 20.1% across arms versus 0.4% on placebo, with mild to moderate nausea and fatigue the most common adverse events",
+    "last_updated": "2025-11-06",
+    "last_checked": "2026-09-11"
+  },
+  "finding_history": [
+    {
+      "id": "f-2025-11-06-001",
+      "date": "2025-11-06",
+      "type": "trial_data_readout",
+      "summary": "Lilly reported that eloralintide, a once-weekly selective amylin receptor agonist, met its primary endpoint in a 263-participant Phase 2 study, with mean weight reductions of 9.5% to 20.1% at 48 weeks against 0.4% on placebo. Results were presented at ObesityWeek 2025 and published simultaneously in The Lancet.",
+      "source": {
+        "name": "Eli Lilly press release (company IR)",
+        "url": "https://lilly.gcs-web.com/news-releases/news-release-details/lillys-selective-amylin-agonist-eloralintide-demonstrated",
+        "tier": 1
+      },
+      "confidence": "confirmed"
+    }
+  ]
+}

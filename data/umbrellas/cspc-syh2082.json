@@ -1,0 +1,47 @@
+{
+  "id": "cspc-syh2082",
+  "canonical_name": "CSPC Pharmaceutical Group – SYH2082 (LiquidGel™)",
+  "origin": "Global",
+  "entity_type": [
+    "company",
+    "platform",
+    "asset"
+  ],
+  "technology_family": "other",
+  "aliases": [
+    "CSPC Pharmaceutical Group",
+    "CSPC Pharmaceuticals",
+    "石药集团",
+    "SYH2082",
+    "LiquidGel",
+    "1093.HK"
+  ],
+  "current_status": {
+    "stage": "Clinical-ready per AstraZeneca's Jan 30 2026 deal announcement, entering Phase I. CSPC leads development through Phase I for all four licensed programmes, after which AstraZeneca takes over ex-China development and commercialisation. Technology family recorded as 'other': LiquidGel is described only as an injectable depot system for once-monthly peptide dosing, and no source states a mechanism that maps cleanly onto the six controlled families.",
+    "stage_label": "Preclinical",
+    "stage_evidence": "AstraZeneca's release calls SYH2082 clinical-ready and says it is entering Phase I; that is forward-looking language and no source states a trial has begun, so the label stays at Preclinical rather than advancing on intent.",
+    "molecule_class": [
+      "other_incretin"
+    ],
+    "molecule_evidence": "SYH2082 is a long-acting GLP-1 receptor and GIP receptor dual agonist new chemical entity, not a depot formulation of tirzepatide, so it sits in the other-incretin bucket rather than a named-molecule class.",
+    "dosing_target": "Monthly",
+    "partner": "AstraZeneca (exclusive rights outside China; CSPC retains China, Taiwan, Hong Kong and Macau with an AZ co-commercialisation option post-approval)",
+    "data_point": "$1.2B upfront plus up to $3.5B development and regulatory milestones across eight obesity and T2D programmes; commercial milestones and royalties take the headline ceiling to roughly $18.5B",
+    "last_updated": "2026-01-30",
+    "last_checked": "2026-09-11"
+  },
+  "finding_history": [
+    {
+      "id": "f-2026-01-30-001",
+      "date": "2026-01-30",
+      "type": "deal_partnership",
+      "summary": "AstraZeneca took exclusive rights outside China to CSPC's once-monthly injectable weight-management portfolio, led by SYH2082, a long-acting GLP-1/GIP dual agonist built on CSPC's proprietary LiquidGel once-monthly dosing technology, plus three preclinical programmes. CSPC receives $1.2B upfront and up to $3.5B in development and regulatory milestones, with commercial milestones and royalties on top.",
+      "source": {
+        "name": "AstraZeneca press release (company IR)",
+        "url": "https://www.astrazeneca.com/media-centre/press-releases/2026/astrazeneca-agrees-obesity-and-t2d-deal-with-cspc.html",
+        "tier": 1
+      },
+      "confidence": "confirmed"
+    }
+  ]
+}
