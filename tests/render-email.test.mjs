@@ -169,3 +169,13 @@ test("omits the coverage block entirely when no coverage is supplied", () => {
   assert.doesNotMatch(out.html, /COVERAGE &middot;/);
   assert.doesNotMatch(out.html, /\{\{/, "no unfilled template tokens may survive");
 });
+
+test("links the dashboard button at the current domain, and lets the environment override it", () => {
+  const base = { runDate: "2026-09-11", leadIn: "x", findings: [{ headline: "H", date: "2026-09-11", molecules: ["semaglutide"], summary: "s", sourceUrl: "https://e.com", sourceName: "E" }] };
+  const out = renderDigest(base, templateHtml);
+  // Regression: this was pinned to lai-tracker.vercel.app, which outlived the project
+  // rename, so every digest sent readers to a dead host.
+  assert.doesNotMatch(out.html, /lai-tracker\.vercel\.app/);
+  assert.match(out.html, /https:\/\/lai-semaglutide\.vercel\.app\//);
+  assert.doesNotMatch(out.html, /\{\{DASHBOARD_URL\}\}/);
+});

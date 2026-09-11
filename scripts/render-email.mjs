@@ -4,7 +4,10 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const templatePath = path.join(root, "email", "templates", "daily-digest.html");
-const dashboardUrl = "https://lai-tracker.vercel.app/";
+// The deployed dashboard. Overridable by environment so the domain can change without
+// a code edit -- this was hardcoded to a stale hostname (lai-tracker.vercel.app) that
+// silently outlived the project rename, and every digest kept linking to it.
+const dashboardUrl = process.env.LAI_DASHBOARD_URL ?? "https://lai-semaglutide.vercel.app/";
 
 function escapeHtml(value) {
   return String(value ?? "")
