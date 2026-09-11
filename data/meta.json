@@ -2,7 +2,7 @@
   "last_run": {
     "initial_seed": "2026-09-02T00:00:00Z",
     "initial_discovery_test": "2026-09-02T00:00:00Z",
-    "daily_scan": "2026-09-10T21:07:58Z",
+    "daily_scan": "2026-09-11T07:20:00Z",
     "weekly_sweep": "2026-09-11T06:40:00Z",
     "qc_tier2": "2026-09-07T07:05:50Z",
     "qc_tier3": null,
@@ -10,11 +10,11 @@
   },
   "coverage": {
     "daily_scan": {
-      "umbrellas_checked": 4,
-      "umbrellas_total": 37,
-      "skipped_throttled": 33,
+      "umbrellas_checked": 5,
+      "umbrellas_total": 41,
+      "skipped_throttled": 36,
       "skipped_budget_exhausted": 0,
-      "notes": "Second daily-scan run on 2026-09-10 (earlier same-day run at 08:10:32Z already covered the day's 4 due umbrellas; this run's freshness window is therefore only ~13h, back to that run). Same 4 umbrellas were due regardless of throttle (last_updated <21 days ago): ascletis-asc30 (alias ASC30), owlbio-kyungdong-xtina (alias AUL009), peptron-pt403 (alias PT403), samsung-bioepis-g2gbio-gb7001 (alias GB-7001) -- one query per alias (two for AUL009, which returned no signal either time), breadth-first. astrazeneca-zoladex remained throttled (last checked 2026-09-08, gap still within the 2-day window). No genuinely new-since-last-run news on any of the 4 due umbrellas. Track B1 wire skim (6 bounded EN+KR term-based searches plus 2 bounded follow-ups on named entities surfaced by the KR search) turned up one backfill finding -- a 2026-07-21 G2GBio x SpiderCore AI-R&D-platform partnership (confirmed via 2 independent Tier-2 KR outlets) -- appended to samsung-bioepis-g2gbio-gb7001.json finding_history; well outside the freshness window so excluded from the digest headline. Both entities involved (SpiderCore, and separately Samchundang Pharmaceutical, surfaced by the same KR search) already have pending Track B candidates from the 2026-09-02 run (cand-2026-09-02-003, cand-2026-09-02-002), so no new candidates were added -- this run only filled in G2GBio's own finding_history, which had been missing the SpiderCore deal itself. A Hyumedix (휴메딕스) x HLB Pharmaceutical x G2GBio mention surfaced in the KR search but the results mixed old (2021) partnership coverage with an unclear-dated recent equity-investment mention -- did not meet a clean entity+claim+date bar within the 2-query cap, not logged as a candidate."
+      "notes": "First run on the six-class schema, and a one-off: the admin authorised sending the digest to a single named recipient instead of drafting it, which is a departure from the standing draft-only rule and does not carry forward. Window opened at the 2026-09-10T21:07:58Z run, so roughly 10 hours. Track A checked the 5 due records one query each on the most distinctive alias (ASC30, Zoladex, AUL009, PT403, GB-7001); 36 throttled under the quiet rule, including the 4 records promoted in yesterday baseline sweep. One new finding: Ascletis started a U.S. Phase I of ASC36 oral tablets on 2026-09-08, its fourth Phase I of the year and distinct from the two injectable ASC36 studies already logged on 2026-08-10. Dated before the window, so logged and sent as a discovered-late item rather than a headline. Typed trial_data_readout to match the existing ASC36 finding rather than introducing drift. No stage_label change: the record sits at Phase 3 on ASC30 and an oral ASC36 Phase I start does not move that. The other 4 due records were quiet -- every result returned was already in their histories."
     },
     "weekly_sweep": {
       "source_categories_checked": 6,
