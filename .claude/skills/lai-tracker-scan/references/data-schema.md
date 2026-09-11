@@ -28,7 +28,7 @@ Use these exact string values — never invent a variant, even one that reads mo
 | `finding.type` | `deal_partnership`, `financing_investor`, `regulatory`, `trial_data_readout`, `manufacturing_capacity`, `market_reaction` |
 | `finding.confidence` | `confirmed`, `unverified` |
 | `source.tier` | `1`, `2`, `3` (integer) |
-| `candidate.status` | `pending`, `promoted`, `merged`, `rejected`, `snoozed` |
+| `candidate.status` | `watch`, `pending`, `ready_for_promotion`, `stalled`, `promoted`, `merged`, `rejected`, `snoozed` — see the escalation ladder below; the build fails on anything outside this list |
 | `current_status.stage_label` | `Research`, `Preclinical`, `IND filed`, `Phase 1`, `Phase 2`, `Phase 3`, `Filed / review`, `Approved / marketed` — see the dedicated section below, this one has real teeth (the build fails without it) |
 | `current_status.molecule_class` (array) | `semaglutide`, `tirzepatide`, `retatrutide`, `amylin`, `other_incretin`, `non_incretin` — see the dedicated section below; the build fails on a missing field or an unknown value, and an empty array is legal and means "ambiguous, left for review" |
 
@@ -105,12 +105,52 @@ Notes:
   "fuzzy_match": { "closest_umbrella_id": "g2gbio-gb7001", "score": 0.42 },
   "status": "pending",
   "created_date": "2026-09-01",
+  "follow_up": {
+    "last_checked": "2026-09-14",
+    "checks_run": 2,
+    "near_bar": true
+  },
+  "promotion_bar": {
+    "cleared": ["named_entity", "technical_claim", "confirmed_source"],
+    "unmet": ["second_dated_event"],
+    "evidence": "IND clearance confirmed by the MFDS disclosure, but all evidence still traces to the single 2026-09-01 announcement."
+  },
   "resolution": null
 }
 ```
 
 - `fuzzy_match.score` is 0–1; include it even when the closest match is weak — a low score is still useful context for whoever reviews the candidate.
+- `evidence` is **append-only**, exactly like an umbrella's `finding_history`. A follow-up check that finds something new appends an entry; it never rewrites or replaces an existing one. This is what turns a candidate from a one-time snapshot into a record of how the signal built up (or didn't).
 - `resolution` stays `null` until the admin acts on it, then becomes e.g. `{ "action": "promoted", "umbrella_id": "example-biosciences", "date": "2026-09-05" }` or `{ "action": "rejected", "reason": "duplicate of existing umbrella", "date": "2026-09-05" }`. Rejected candidates are never deleted — the reason feeds the query-tuning feedback loop.
+
+### `follow_up` — the re-check bookkeeping
+
+This is the candidate-side mirror of an umbrella's `current_status.last_checked`, and it exists for the same reason: without it, nothing can tell a candidate that was re-checked and is genuinely quiet apart from one that has simply been forgotten.
+
+- `last_checked` — the date Track B3 last re-searched this candidate, whether or not anything new turned up. A missing value means "never followed up", which is due for a check, not quiet.
+- `checks_run` — integer count of completed follow-up checks, incremented on every re-search. This is what the stall rule counts against, so a candidate can't be declared stalled before it has actually been looked at several times.
+- `near_bar` — boolean, set by the weekly deep pass: true when the candidate clears every promotion-bar condition but one. The cheap daily pass uses this to decide the handful of candidates worth spending a search on before the next weekly sweep.
+
+`days_pending` is never stored — the app computes it at render time from `created_date`, the same way it computes `days_since_last_finding`. A stored age is wrong the day after it's written.
+
+### `promotion_bar` — why a candidate is or isn't ready
+
+Written by Track B3 on every follow-up check, and the direct analogue of `stage_evidence` on an umbrella: the point is that a future reviewer can see *why* the escalation level is what it is without re-deriving it from the evidence list.
+
+- `cleared` and `unmet` partition the four condition keys — `named_entity`, `technical_claim`, `confirmed_source`, `second_dated_event`. Every key appears in exactly one of the two arrays. Condition definitions live in the skill's Track B3 section, not here.
+- `evidence` — one sentence, in your own words, naming the specific fact that moved (or is still missing). Required whenever `status` changes.
+- When `unmet` is empty and `fuzzy_match.score` is below the merge threshold, `status` becomes `ready_for_promotion`. Those two facts together are the entire promotion rule; no separate numeric score is stored or invented.
+
+### Escalation ladder (`status` for an unresolved candidate)
+
+| Status | Meaning | Re-check cadence | Surfaced where |
+|---|---|---|---|
+| `watch` | Thin signal — a named entity with no concrete technical claim yet. The lower-priority queue. | Monthly (every 4th weekly sweep) | Dashboard watch count only, never the digest |
+| `pending` | Cleared the creation bar, tracking toward the promotion bar | Weekly deep pass; daily if `near_bar` | Candidate queue, digest when first created |
+| `ready_for_promotion` | Cleared all four promotion conditions and is not a merge case | Every run, until the admin resolves it | Top of the candidate queue, and leads the digest every run |
+| `stalled` | 30+ days old with no new evidence across 3+ follow-up checks | Monthly, same as `watch` | Candidate queue, flagged for reject-or-snooze |
+
+`promoted`, `merged`, `rejected` and `snoozed` are terminal and admin-only — Track B3 never writes them, and never re-checks a candidate carrying one.
 
 ## `meta.json`
 
@@ -123,7 +163,8 @@ Notes:
     "qc_tier3": null
   },
   "coverage": {
-    "daily_scan": { "umbrellas_checked": 37, "umbrellas_total": 37, "skipped_throttled": 0, "skipped_budget_exhausted": 0 }
+    "daily_scan": { "umbrellas_checked": 37, "umbrellas_total": 37, "skipped_throttled": 0, "skipped_budget_exhausted": 0 },
+    "candidate_follow_up": { "unresolved_total": 15, "rechecked": 2, "escalated": 1, "stalled": 0, "aged": 15 }
   },
   "source_health": {
     "dart": { "last_success": "2026-09-02T06:00:00Z", "status": "ok" },
@@ -135,5 +176,7 @@ Notes:
 ```
 
 `source_health.status` is `ok`, `stale`, `search_only`, or `blocked` — `blocked` means a fetch returned a hard network error (e.g. `EGRESS_BLOCKED`) rather than just finding nothing; `stale` means it hasn't been checked recently, not that it failed. `search_only` means direct fetch is refused by the network policy but the domain's content is reachable through domain-scoped search and is still contributing findings — clinicaltrials.gov and patents.google.com are both in this state, and recording them as `blocked` would make a working tracker look like a degrading one. Never silently leave a failed source as `ok`.
+
+`coverage.candidate_follow_up` is the Track B3 equivalent, and it exists for the same reason: `aged` should equal `unresolved_total` on every run, because aging is free date math that cannot be skipped, while `rechecked` is expected to be small on a daily run (at most 2) and large on a weekly sweep. `escalated` and `stalled` count status moves written this run. A run where `aged` falls short of `unresolved_total` means candidates were silently skipped, which is the exact failure this field is here to expose.
 
 `coverage` is what makes an incomplete run visible instead of indistinguishable from a full one. `skipped_throttled` counts umbrellas deliberately skipped under the quiet-umbrella rule (expected, healthy); `skipped_budget_exhausted` counts umbrellas that never got checked because the run ran out of search budget first (not healthy — if this is ever nonzero, the run was materially incomplete and that should be obvious from this field alone, not something someone has to dig through logs to discover).

@@ -224,6 +224,9 @@ td span { margin-top: .15rem; color: var(--muted); font-size: .66rem; }
 
 .candidate-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: .75rem; }
 .candidate-card { display: flex; min-height: 200px; flex-direction: column; padding: 1rem; border: 1px solid var(--line); border-radius: .75rem; background: var(--panel); }
+.candidate-card.is-escalated { border-color: var(--orange); box-shadow: 0 0 0 1px var(--orange) inset; }
+.candidate-unmet { margin: .5rem 0 0 !important; color: var(--faint) !important; font-size: .68rem !important; }
+.candidate-watch-note { grid-column: 1 / -1; padding: .7rem 1rem; border: 1px dashed var(--line); border-radius: .75rem; color: var(--muted); font-size: .72rem; }
 .candidate-card h3 { margin: .8rem 0 .4rem; font: 700 .94rem/1.25 "Manrope", "Noto Sans KR", sans-serif; }
 .candidate-card p { margin: 0; color: var(--muted); font-size: .74rem; }
 .candidate-card footer { display: flex; align-items: end; justify-content: space-between; gap: .7rem; margin-top: auto; padding: 1rem 0 0; border: 0; color: var(--faint); font-size: .64rem; }

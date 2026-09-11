@@ -1,4 +1,4 @@
-import { FAMILY_LABELS, FAMILY_COLORS, FINDING_LABELS, MOLECULE_COLORS, MOLECULE_ORDER, SCORED_CLASSES, SCORE_WEIGHTS, STAGE_COLORS, STAGES, formatDate, interpretLeader, prepareDatabase, safeUrl, truncate } from "./model.js";
+import { CANDIDATE_TONES, FAMILY_COLORS, FAMILY_LABELS, FINDING_LABELS, MOLECULE_COLORS, MOLECULE_ORDER, SCORED_CLASSES, SCORE_WEIGHTS, STAGES, STAGE_COLORS, formatDate, interpretLeader, prepareDatabase, safeUrl, truncate } from "./model.js";
 import { DEFAULT_LANG, LANGS, familyLabelText, findingLabelText, moleculeLabelText, originLabelText, stageLabelText, t } from "./i18n.js";
 
 const $ = (selector, root = document) => root.querySelector(selector);
@@ -191,7 +191,15 @@ function renderOverview(data) {
 
   const conditions = [
     ["01", t(lang, "conditions.tracked.label"), data.records.length, t(lang, "conditions.tracked.badge"), "blue", t(lang, "conditions.tracked.detail", { count: data.findings.length }), "#367fd0"],
-    ["02", t(lang, "conditions.pending.label"), data.pendingCandidates.length, t(lang, "conditions.pending.badge"), "amber", t(lang, "conditions.pending.detail"), "#e4a11b"],
+    ["02", t(lang, "conditions.pending.label"), data.pendingCandidates.length,
+      data.readyCandidates.length
+        ? t(lang, "conditions.pending.badgeEscalated", { count: data.readyCandidates.length })
+        : t(lang, "conditions.pending.badge"),
+      data.readyCandidates.length ? "orange" : "amber",
+      data.readyCandidates.length
+        ? t(lang, "conditions.pending.detailEscalated", { count: data.readyCandidates.length })
+        : t(lang, "conditions.pending.detail"),
+      data.readyCandidates.length ? "#ee7443" : "#e4a11b"],
     ["03", t(lang, "conditions.monitoring.label"), `${data.health.healthyCount}/${data.health.total}`, data.health.allHealthy ? t(lang, "conditions.monitoring.badgeActive") : t(lang, "conditions.monitoring.badgeAttention"), data.health.allHealthy ? "green" : "orange", data.health.summary, "#2bb98a"]
   ];
   const container = clear($("#tracking-conditions"));
@@ -228,7 +236,9 @@ function renderIntelligence(data) {
   const items = [
     [t(lang, "readout.leadLabel"), `${data.leader.company} · ${stageLabelText(data.leader.stageLabel, lang)}`],
     [t(lang, "readout.volumeLabel"), t(lang, "readout.volumeValue", { count: recent.length, topType: topType ? t(lang, "readout.volumeTopType", { label: findingLabelText(topType, lang) }) : "" })],
-    [t(lang, "readout.attentionLabel"), t(lang, "readout.attentionValue", { count: data.pendingCandidates.length })],
+    [t(lang, "readout.attentionLabel"), data.readyCandidates.length
+      ? t(lang, "readout.attentionEscalated", { ready: data.readyCandidates.length, count: data.pendingCandidates.length })
+      : t(lang, "readout.attentionValue", { count: data.pendingCandidates.length })],
     [t(lang, "readout.monitoringLabel"), data.health.summary]
   ];
   const readout = clear($("#readout"));
@@ -482,18 +492,46 @@ function renderCandidates(data) {
   const lang = state.lang;
   const container = clear($("#candidate-list"));
   data.pendingCandidates.forEach((candidate) => {
-    const card = node("article", "candidate-card");
-    card.append(badge(t(lang, "review.pendingBadge"), "amber"), node("h3", "", candidate.detected_name ?? "Unnamed candidate"));
+    const escalated = candidate.status === "ready_for_promotion";
+    const card = node("article", `candidate-card${escalated ? " is-escalated" : ""}`);
+    card.append(
+      badge(t(lang, `review.status.${candidate.status}`), CANDIDATE_TONES[candidate.status] ?? "amber"),
+      node("h3", "", candidate.detected_name ?? "Unnamed candidate")
+    );
     const evidence = [...(candidate.evidence ?? [])].sort((a, b) => String(b.date).localeCompare(String(a.date)))[0];
-    card.append(node("p", "", truncate(evidence?.snippet ?? t(lang, "review.noEvidence"), 260)));
+    // For an escalated or stalled candidate the written promotion_bar rationale is the
+    // thing the admin has to act on, so it outranks the raw evidence snippet on the card.
+    const rationale = candidate.promotion_bar?.evidence;
+    card.append(node("p", "", truncate(
+      (escalated || candidate.status === "stalled") && rationale
+        ? rationale
+        : evidence?.snippet ?? t(lang, "review.noEvidence"),
+      260
+    )));
+    const unmet = candidate.unmetConditions ?? [];
+    if (!escalated && !candidate.assessed) {
+      card.append(node("p", "candidate-unmet", t(lang, "review.unassessed")));
+    } else if (!escalated && unmet.length) {
+      card.append(node("p", "candidate-unmet", t(lang, "review.unmet", {
+        list: unmet.map((key) => t(lang, `review.condition.${key}`)).join(", ")
+      })));
+    }
     const footer = node("footer");
     const score = Number(candidate.fuzzy_match?.score);
-    footer.append(node("span", "", Number.isFinite(score) ? t(lang, "review.matchScore", { score: score.toFixed(2) }) : t(lang, "review.noMatchScore")));
+    const trail = [
+      t(lang, "review.waiting", { days: candidate.daysPending ?? 0 }),
+      t(lang, "review.checks", { count: candidate.followUpChecks ?? 0 })
+    ];
+    if (Number.isFinite(score)) trail.push(t(lang, "review.matchScore", { score: score.toFixed(2) }));
+    footer.append(node("span", "", trail.join(" · ")));
     const url = safeUrl(evidence?.source?.url);
     if (url) { const link = node("a", "", t(lang, "review.reviewSource")); link.href = url; link.target = "_blank"; link.rel = "noopener noreferrer"; footer.append(link); }
     card.append(footer);
     container.append(card);
   });
+  if (data.watchCandidates.length) {
+    container.append(node("div", "candidate-watch-note", t(lang, "review.watchNote", { count: data.watchCandidates.length })));
+  }
   if (!data.pendingCandidates.length) container.append(node("div", "empty-state panel", t(lang, "review.empty")));
 }
 

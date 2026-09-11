@@ -24,6 +24,30 @@ export const STAGE_COLORS = {
   "Approved / marketed": "#70736f"
 };
 
+// Candidate lifecycle, mirroring the escalation ladder in the scan skill's Track B3
+// section. REVIEW_ORDER decides queue position, so an escalated candidate can never be
+// pushed below routine ones by recency. Terminal statuses (promoted/merged/rejected/
+// snoozed) are admin-written and drop out of the queue entirely.
+export const CANDIDATE_STATUSES = [
+  "watch",
+  "pending",
+  "ready_for_promotion",
+  "stalled",
+  "promoted",
+  "merged",
+  "rejected",
+  "snoozed"
+];
+
+const REVIEW_ORDER = { ready_for_promotion: 0, pending: 1, stalled: 2 };
+
+export const CANDIDATE_TONES = {
+  ready_for_promotion: "orange",
+  pending: "amber",
+  stalled: "violet",
+  watch: "blue"
+};
+
 export const FAMILY_LABELS = {
   plga_microsphere: "PLGA microsphere",
   lipid_liquid_crystal_depot: "Lipid liquid-crystal depot",
@@ -310,7 +334,33 @@ export function prepareDatabase(payload, lang = "en") {
   )[0] ?? records[0];
 
   const candidates = payload.candidates ?? [];
-  const pendingCandidates = candidates.filter((candidate) => candidate.status === "pending");
+  const candidateAge = (candidate) => {
+    const dates = (candidate.evidence ?? []).map((item) => item.date).filter(Boolean).sort();
+    return {
+      ...candidate,
+      daysPending: daysSince(candidate.created_date, Date.now()),
+      daysSinceEvidence: daysSince(dates.at(-1) ?? candidate.created_date, Date.now()),
+      followUpChecks: candidate.follow_up?.checks_run ?? 0,
+      // A candidate written before Track B3 existed has no promotion_bar at all. An empty
+      // unmet list would read as "nothing missing" -- i.e. promotable -- so the absence of
+      // an assessment is carried explicitly instead.
+      assessed: Boolean(candidate.promotion_bar),
+      unmetConditions: candidate.promotion_bar?.unmet ?? []
+    };
+  };
+  // The review queue is every unresolved candidate except the thin-signal watch list,
+  // ordered by escalation level first and only then by how long it has been waiting --
+  // the whole point of escalation is that it cannot be buried by newer arrivals.
+  const pendingCandidates = candidates
+    .filter((candidate) => candidate.status in REVIEW_ORDER)
+    .map(candidateAge)
+    .sort((a, b) =>
+      REVIEW_ORDER[a.status] - REVIEW_ORDER[b.status] ||
+      b.daysSinceEvidence - a.daysSinceEvidence ||
+      String(a.id).localeCompare(String(b.id))
+    );
+  const readyCandidates = pendingCandidates.filter((candidate) => candidate.status === "ready_for_promotion");
+  const watchCandidates = candidates.filter((candidate) => candidate.status === "watch").map(candidateAge);
   const runStatus = payload.meta?.last_run ?? {};
   const health = assessRunHealth(runStatus, Date.now(), lang);
   const leaderNote = interpretLeader(leader, developmentPrograms, Date.now(), lang);
@@ -326,6 +376,8 @@ export function prepareDatabase(payload, lang = "en") {
     leaderNote,
     candidates,
     pendingCandidates,
+    readyCandidates,
+    watchCandidates,
     runStatus,
     health,
     latestDataDate: payload.latest_data_date,

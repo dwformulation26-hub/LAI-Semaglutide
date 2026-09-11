@@ -1,7 +1,7 @@
 import { cp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { MOLECULE_ORDER, STAGES } from "../src/model.js";
+import { CANDIDATE_STATUSES, MOLECULE_ORDER, STAGES } from "../src/model.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const output = path.join(root, "dist");
@@ -74,6 +74,22 @@ const candidatePayload = await readJson(path.join(root, "data", "candidates.json
 const meta = await readJson(path.join(root, "data", "meta.json"));
 const candidates = Array.isArray(candidatePayload.candidates) ? candidatePayload.candidates : [];
 
+// candidate.status drives the escalation ladder (see the scan skill's Track B3 section):
+// an unknown value would silently drop a candidate out of the review queue instead of
+// showing up as an error, so it fails the build for the same reason stage_label does.
+for (const candidate of candidates) {
+  if (!CANDIDATE_STATUSES.includes(candidate.status)) {
+    throw new Error(
+      `candidates.json: ${candidate.id ?? "(candidate with no id)"} has status ${JSON.stringify(candidate.status)}, must be one of ${CANDIDATE_STATUSES.join(", ")}`
+    );
+  }
+  if (candidate.status === "ready_for_promotion" && !candidate.promotion_bar?.evidence) {
+    throw new Error(
+      `candidates.json: ${candidate.id} is ready_for_promotion but has no promotion_bar.evidence explaining why`
+    );
+  }
+}
+
 const dateValues = records.flatMap((record) => [
   record.current_status?.last_updated,
   ...record.finding_history.map((finding) => finding.date)
@@ -108,4 +124,5 @@ await Promise.all([
 ]);
 
 const findingCount = records.reduce((total, record) => total + record.finding_history.length, 0);
-console.log(`Built Vercel dashboard with ${records.length} records, ${findingCount} findings, and ${candidates.length} candidates.`);
+const escalatedCount = candidates.filter((candidate) => candidate.status === "ready_for_promotion").length;
+console.log(`Built Vercel dashboard with ${records.length} records, ${findingCount} findings, and ${candidates.length} candidates (${escalatedCount} ready for promotion).`);
