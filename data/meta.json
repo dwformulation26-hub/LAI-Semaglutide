@@ -2,7 +2,7 @@
   "last_run": {
     "initial_seed": "2026-09-02T00:00:00Z",
     "initial_discovery_test": "2026-09-02T00:00:00Z",
-    "daily_scan": "2026-09-13T07:00:00Z",
+    "daily_scan": "2026-09-13T21:09:00Z",
     "weekly_sweep": "2026-09-13T07:45:00Z",
     "qc_tier2": "2026-09-13T07:50:00Z",
     "qc_tier3": null,
@@ -10,11 +10,11 @@
   },
   "coverage": {
     "daily_scan": {
-      "umbrellas_checked": 36,
+      "umbrellas_checked": 4,
       "umbrellas_total": 41,
-      "skipped_throttled": 5,
+      "skipped_throttled": 37,
       "skipped_budget_exhausted": 0,
-      "notes": "Weekly sweep's own last_run.daily_scan was not from today's UTC date, so Track A and Track B1 were run alongside Track B2/B3/QC2 per the skill's fallback rule, to avoid a day going uncovered. Track A: breadth-first single-alias pass across all 36 due records (5 throttled under the quiet-umbrella rule: adocia-adoxlong, astrazeneca-zoladex, cspc-syh2082, lilly-eloralintide, zealand-petrelintide). Only one genuinely new item surfaced: Ipsen's H1 2026 results (2026-07-30) noting Somatuline's continued resilience despite generic competition -- logged under ipsen-somatuline, dated before this run but after that record's prior last_updated, so it is real-but-late information rather than a headline. Every other due record was quiet this cycle (most recent discoverable news already predated or matched each record's existing last_updated). One date-hallucination near-miss caught and corrected in-flight: a search summary initially mis-dated an Ascletis ASC30 PR Newswire release as 2026-09-09 when the release itself is dated 2025-09-09; verified and excluded. Track B1 (8 English + 4 Korean fixed-term wire skim, 12/12 queries): no candidate cleared the full bar; two sub-threshold discoveries (Viking Therapeutics amylin/calcitonin dual agonist, Tier 2 single source; iBio amylin receptor antibody, Tier 3 only) were left out of candidates.json for now because neither agent could pin down a confirmable publish date or a stronger source this pass -- flagged here for next sweep rather than logged with an invented date."
+      "notes": "Second daily-scan pass today: this run's window_start (07:00 UTC) is itself from this same UTC date's earlier combined Daily+Weekly run, so only the 4 records not yet 21+ days quiet were due under the quiet-umbrella throttle (ascletis-asc30, owlbio-kyungdong-xtina, peptron-pt403, samsung-bioepis-g2gbio-gb7001); the other 37 were checked within the last 2 days and quiet 21+, so correctly throttled rather than budget-exhausted. Breadth-first single-alias pass across all 4 due records: all quiet within the freshness window, but one real-but-late item surfaced for peptron-pt403 (a 2025-01-23 Australian patent grant for PT403, discovered via this run's alias search, unverified single Tier-2 source, koreabiomed.com search-snippet only) -- logged as a late finding, kept out of the digest headline. Track B1 (8 English + 4 Korean fixed-term wire skim, 12/12 queries, plus 2 follow-up queries to pin down dates on one lead): one new candidate cleared the creation bar and was queued -- cand-2026-09-13-002, CSPC Pharmaceutical Group's SYH9017 (Semaglutide Long-Acting Injection, once-monthly gel-depot, NMPA CTA ~2024-12-20 and US FDA CTA ~2026-06-08) -- but its fuzzy match to the already-promoted cspc-syh2082 scores 0.6 (>= 0.55 merge threshold), so per the mechanical rule it was queued as 'pending' with a merge flag rather than escalated, same pattern as the existing cand-2026-09-02-007. 'Berobenatide' (Pfizer's INN for its already-tracked pfizer-metsera-engineered-peptide asset PF-3944/MET-097i) surfaced repeatedly in the wire skim but is not a new entity -- no action taken, out of Track A's lane for a throttled umbrella this run."
     },
     "weekly_sweep": {
       "source_categories_checked": 6,
@@ -30,11 +30,12 @@
       "dedup_sweep": "completed -- no true duplicate umbrellas or candidates found; all near-identical alias/name collisions are legitimate same-parent-company multi-asset umbrellas (Alkermes, Ascendis Pharma, Camurus incl. Braeburn-Camurus-Brixadi, InventageLab, Ipsen, Mapi Pharma, Novo Nordisk, Peptron each have 2-3 separate umbrella files by design). Candidate-list fuzzy-dedup also checked: several candidate pairs score 0.5-0.79 on generic legal-suffix similarity alone (e.g. \"... Pharmaceutical Technology Co., Ltd.\") but are confirmed distinct real-world companies, not duplicates -- one genuine registry-growth case was caught and handled under candidate_follow_up instead (cand-2026-09-02-007 vs the newly-promoted cspc-syh2082, same corporate parent, different asset)."
     },
     "candidate_follow_up": {
-      "unresolved_total": 17,
-      "rechecked": 16,
-      "escalated": 5,
+      "unresolved_total": 18,
+      "rechecked": 0,
+      "escalated": 0,
       "stalled": 0,
-      "aged": 17
+      "aged": 18,
+      "notes": "Cheap daily B3 pass only: pure date-math aging across all 18 unresolved candidates (16 pre-existing + cand-2026-09-13-001 Prolynx and cand-2026-09-13-002 CSPC/SYH9017, both created this run). No re-search needed -- every pre-existing candidate's follow_up.last_checked was already today's date from this morning's Weekly-sweep deep pass, so none were 7+ days stale. Stall rule checked and not triggered (oldest unresolved candidate is 11 days old; stall requires 30+)."
     }
   },
   "source_health": {
@@ -181,6 +182,18 @@
       "status": "blocked"
     },
     "barchart.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "tipranks.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "e-cspc.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "irasia.com": {
       "last_success": null,
       "status": "blocked"
     }

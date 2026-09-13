@@ -90,6 +90,18 @@
         "tier": 2
       },
       "confidence": "confirmed"
+    },
+    {
+      "id": "f-2025-01-23-001",
+      "date": "2025-01-23",
+      "type": "regulatory",
+      "summary": "Discovered via this run's alias search, not previously logged: Peptron secured an Australian patent for its long-acting semaglutide injection, covering PT403 and similar formulations, giving Peptron exclusive rights in Australia until June 22, 2042 -- the first country to complete registration among patent applications filed in 20+ countries including Korea, the US, Europe, and Japan. Real information, discovered well after the fact -- kept out of the digest's headline list.",
+      "source": {
+        "name": "Korea Biomedical Review (search-index summary only; direct fetch of koreabiomed.com is EGRESS_BLOCKED, so the publish date is not independently re-verified beyond the search engine's own metadata)",
+        "url": "https://www.koreabiomed.com/news/articleView.html?idxno=26427",
+        "tier": 2
+      },
+      "confidence": "unverified"
     }
   ]
 }

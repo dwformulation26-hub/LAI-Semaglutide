@@ -816,6 +816,63 @@
       "status": "pending",
       "created_date": "2026-09-13",
       "resolution": null
+    },
+    {
+      "id": "cand-2026-09-13-002",
+      "detected_name": "CSPC Pharmaceutical Group -- Semaglutide Long-Acting Injection (SYH9017)",
+      "detected_aliases": [
+        "CSPC Pharmaceutical Group",
+        "CSPC Pharmaceuticals",
+        "石药集团",
+        "SYH9017"
+      ],
+      "entity_type_guess": [
+        "asset"
+      ],
+      "evidence": [
+        {
+          "source": {
+            "name": "CSPC Pharmaceutical Group Limited (company IR announcement, via IRAsia HKEX filing)",
+            "publication": "CSPC Pharmaceutical Group",
+            "url": "https://doc.irasia.com/listco/hk/cspc/announcement/a241220.pdf",
+            "tier": 1
+          },
+          "snippet": "CSPC voluntary announcement that its independently-developed Semaglutide Long-Acting Injection (SYH9017), a once-monthly GLP-1 receptor agonist using a subcutaneous gel-depot delivery technology, obtained NMPA (China) clinical trial approval. Direct fetch of doc.irasia.com was EGRESS_BLOCKED this run; date inferred from the filing's own announcement-ID convention (a241220 -> 2024-12-20) and corroborated by the matching en.e-cspc.com company news-page title, not independently re-verified by full-page read.",
+          "date": "2024-12-20"
+        },
+        {
+          "source": {
+            "name": "CSPC Pharmaceutical Group Limited (company IR site, e-cspc.com)",
+            "publication": "CSPC Pharmaceutical Group",
+            "url": "https://en.e-cspc.com/news/semaglutide-long-acting-injection-(syh9017)-obtains-clinical-trial-approval.html",
+            "tier": 1
+          },
+          "snippet": "Company news page confirming SYH9017 (Semaglutide Long-Acting Injection) obtained clinical trial approval. Direct fetch of en.e-cspc.com was EGRESS_BLOCKED this run; content is from search-index title/summary only.",
+          "date": "2024-12-20"
+        },
+        {
+          "source": {
+            "name": "TipRanks / Globe and Mail (TipRanks wire)",
+            "publication": "TipRanks",
+            "url": "https://www.tipranks.com/news/company-announcements/cspc-wins-u-s-fda-nod-for-once-monthly-semaglutide-trial",
+            "tier": 2
+          },
+          "snippet": "CSPC Pharmaceutical Group's SYH9017, a once-monthly semaglutide GLP-1 injection, received US FDA approval to begin clinical trials targeting weight management in overweight/obese adults (with potential type 2 diabetes and cardiovascular indications). Reported ~2026-06-08; direct fetch of tipranks.com was EGRESS_BLOCKED this run, date inferred from search-result source dates rather than an independently re-verified full-page read.",
+          "date": "2026-06-08"
+        }
+      ],
+      "fuzzy_match": {
+        "closest_umbrella_id": "cspc-syh2082",
+        "score": 0.6
+      },
+      "status": "pending",
+      "created_date": "2026-09-13",
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
+        "unmet": [],
+        "evidence": "Mechanically clears the bar: a Tier 1 company-IR source (own HKEX announcement / e-cspc.com news page) confirms the claim, and two distinct stage-bearing regulatory events (NMPA China CTA ~2024-12-20, US FDA CTA ~2026-06-08) clear second_dated_event on their own. However, SYH9017 is a semaglutide-monoagonist gel-depot asset from the same corporate parent (CSPC Pharmaceutical Group) as the already-promoted cspc-syh2082 (SYH2082, a distinct GLP-1R/GIPR dual-agonist LiquidGel asset licensed to AstraZeneca) -- fuzzy match against the grown alias table scores 0.6 (>= the 0.55 merge threshold), so per the mechanical merge-case rule this must NOT be escalated to ready_for_promotion. Flagging for an admin merge/new-sibling-umbrella decision, same pattern as cand-2026-09-02-007 (CSPC ZhongQi/SYHX2008)."
+      },
+      "resolution": null
     }
   ]
 }
