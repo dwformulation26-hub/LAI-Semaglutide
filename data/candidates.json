@@ -40,6 +40,16 @@
       },
       "status": "pending",
       "created_date": "2026-09-02",
+      "follow_up": {
+        "last_checked": "2026-09-13",
+        "checks_run": 1,
+        "near_bar": true
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim", "confirmed_source"],
+        "unmet": ["second_dated_event"],
+        "evidence": "The Dec 2025 Moderna licensing deal is a single dated event and not itself stage-bearing (a deal/partnership, not an IND/trial/regulatory/approval event). This week's follow-up found references to further 2026 dosing data and an ADA poster but could not pin down citable URLs this pass, so a second confirmed dated event is still needed before promotion."
+      },
       "resolution": null
     },
     {
@@ -70,6 +80,16 @@
       },
       "status": "pending",
       "created_date": "2026-09-02",
+      "follow_up": {
+        "last_checked": "2026-09-13",
+        "checks_run": 1,
+        "near_bar": false
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim"],
+        "unmet": ["confirmed_source", "second_dated_event"],
+        "evidence": "Only a single company disclosure event (2026-01-15) is on record; this week's follow-up found additional outlets (Dailypharm, mdtoday) but they are same-day syndication of the same original reveal, not independent corroboration or a new dated event."
+      },
       "resolution": null
     },
     {
@@ -102,6 +122,16 @@
       },
       "status": "pending",
       "created_date": "2026-09-02",
+      "follow_up": {
+        "last_checked": "2026-09-13",
+        "checks_run": 1,
+        "near_bar": true
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim", "confirmed_source"],
+        "unmet": ["second_dated_event"],
+        "evidence": "A second outlet (eToday) independently corroborates the same 2026-07-21 G2GBio/SpiderCore AI-platform contract, clearing confirmed_source, but no second distinct date has surfaced. SCOPE CAVEAT: SpiderCore is a KAIST-founded AI/software vendor selling an R&D tool to G2GBio, not itself a drug or delivery-technology developer -- recommend an explicit admin scope call on whether this belongs in the registry at all, independent of the promotion bar."
+      },
       "resolution": null
     },
     {
@@ -129,10 +159,20 @@
       ],
       "fuzzy_match": {
         "closest_umbrella_id": "pfizer-metsera-engineered-peptide",
-        "score": 0.28
+        "score": 0.15
       },
       "status": "pending",
       "created_date": "2026-09-02",
+      "follow_up": {
+        "last_checked": "2026-09-13",
+        "checks_run": 1,
+        "near_bar": false
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim"],
+        "unmet": ["confirmed_source", "second_dated_event"],
+        "evidence": "Only a single tier-2 source (MedCity News, 2026-01-08) is on record. This week's follow-up found reports of an FDA IND clearance/first-patient-dosed event (~2026-01-23) and a Series A second closing to $197M (~2026-02-24), which if confirmed would clear both remaining conditions (the IND/dosing event is itself stage-bearing), but citable URLs could not be pinned down this pass -- follow up next sweep. Also clarifies ALV-100 was licensed from Gmax Biopharm (China), unrelated to Pfizer/Metsera lineage; fuzzy_match score lowered accordingly."
+      },
       "resolution": null
     },
     {
@@ -171,8 +211,18 @@
         "closest_umbrella_id": "alkermes-aristada",
         "score": 0.15
       },
-      "status": "pending",
+      "status": "ready_for_promotion",
       "created_date": "2026-09-02",
+      "follow_up": {
+        "last_checked": "2026-09-13",
+        "checks_run": 1,
+        "near_bar": false
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
+        "unmet": [],
+        "evidence": "The existing Tier 1 clinicaltrials.gov Phase 2/3 registration (NCT07722728, first posted 2026-07-23) is itself a stage-bearing event, which alone clears confirmed_source and second_dated_event under the promotion-bar rule; no new evidence needed this cycle. Fuzzy match to alkermes-aristada is low (0.15) -- not a merge case."
+      },
       "resolution": null
     },
     {
@@ -212,8 +262,18 @@
         "closest_umbrella_id": "alkermes-aristada",
         "score": 0.15
       },
-      "status": "pending",
+      "status": "ready_for_promotion",
       "created_date": "2026-09-02",
+      "follow_up": {
+        "last_checked": "2026-09-13",
+        "checks_run": 1,
+        "near_bar": false
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
+        "unmet": [],
+        "evidence": "The existing Tier 1 clinicaltrials.gov Phase 1 registration (NCT07484204, first posted 2026-03-20) is itself a stage-bearing event, clearing confirmed_source and second_dated_event alone. A Tier 3 IND-clearance claim was re-surfaced this cycle via the same original single outlet (IBMI) rather than a genuinely independent second source, so it was not counted toward the bar -- the escalation rests on the Tier 1 trial registration alone."
+      },
       "resolution": null
     },
     {
@@ -249,11 +309,21 @@
         }
       ],
       "fuzzy_match": {
-        "closest_umbrella_id": "novartis-sandostatin",
-        "score": 0.35
+        "closest_umbrella_id": "cspc-syh2082",
+        "score": 0.58
       },
       "status": "pending",
       "created_date": "2026-09-02",
+      "follow_up": {
+        "last_checked": "2026-09-13",
+        "checks_run": 1,
+        "near_bar": false
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
+        "unmet": [],
+        "evidence": "Mechanically clears the bar on its own evidence (Tier 1 clinicaltrials.gov Phase III registration, NCT07623824, is itself stage-bearing). However, this week's follow-up confirmed CSPC ZhongQi Pharmaceutical Technology (Shijiazhuang) Co., Ltd. is formally a subsidiary of CSPC Pharmaceutical Group Limited (1093.HK) -- the same corporate parent as the already-promoted cspc-syh2082 umbrella. Re-running the fuzzy match against the grown alias table now scores 0.58 (>= the 0.55 merge threshold), so per the mechanical merge-case rule this must NOT be escalated to ready_for_promotion -- flagging for an admin merge/new-sibling-umbrella decision instead. Note this is a different drug asset (SYHX2008, octreotide for acromegaly) from cspc-syh2082's own asset (SYH2082, GLP-1R/GIPR agonist), so the admin may reasonably decide 'new sibling umbrella under the same parent' rather than a true merge -- but the score crosses the mechanical threshold either way, so this run does not auto-escalate it."
+      },
       "resolution": null
     },
     {
@@ -292,8 +362,18 @@
         "closest_umbrella_id": "alkermes-vivitrol",
         "score": 0.4
       },
-      "status": "pending",
+      "status": "ready_for_promotion",
       "created_date": "2026-09-02",
+      "follow_up": {
+        "last_checked": "2026-09-13",
+        "checks_run": 1,
+        "near_bar": false
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
+        "unmet": [],
+        "evidence": "The existing Tier 1 clinicaltrials.gov Phase 1 registration (NCT07269873, first posted 2025-12-08) is itself stage-bearing, clearing confirmed_source and second_dated_event alone. A possible NIDA methamphetamine-use-disorder grant was mentioned in this cycle's follow-up but its date could not be confirmed, so it was not counted toward the bar. Fuzzy match to alkermes-vivitrol (0.4) reflects the shared naltrexone/opioid-antagonist space but a different delivery technology (implant pellet vs PLGA microsphere) -- not a merge case."
+      },
       "resolution": null
     },
     {
@@ -322,8 +402,18 @@
         "closest_umbrella_id": "peptron-luprone",
         "score": 0.4
       },
-      "status": "pending",
+      "status": "ready_for_promotion",
       "created_date": "2026-09-02",
+      "follow_up": {
+        "last_checked": "2026-09-13",
+        "checks_run": 1,
+        "near_bar": false
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
+        "unmet": [],
+        "evidence": "The existing Tier 1 clinicaltrials.gov Phase Ia registration (NCT07793162, first posted 2026-08-28) is itself stage-bearing, clearing confirmed_source and second_dated_event alone. This cycle's follow-up found a possible second HHK001 trial record (NCT07755956) that has not yet been independently verified, so it was not added as evidence; worth confirming next sweep. Fuzzy match to peptron-luprone (0.4) reflects the shared leuprorelin-microsphere space, not a merge case."
+      },
       "resolution": null
     },
     {
@@ -367,6 +457,16 @@
       },
       "status": "pending",
       "created_date": "2026-09-05",
+      "follow_up": {
+        "last_checked": "2026-09-13",
+        "checks_run": 1,
+        "near_bar": false
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim"],
+        "unmet": ["confirmed_source", "second_dated_event"],
+        "evidence": "Both cited outlets (Hankyung, mdtoday.co.kr) remain EGRESS_BLOCKED for direct verification; this cycle's follow-up surfaced additional search-snippet-only references to a 2025-09-08 patent filing and a 2025-11-17 efficacy claim, but none could be independently confirmed beyond snippets from the same blocked domains, so neither the source nor the dated-event condition is being upgraded on this basis. All underlying claims remain self-reported animal-model results."
+      },
       "resolution": null
     },
     {
@@ -406,6 +506,16 @@
       },
       "status": "pending",
       "created_date": "2026-09-06",
+      "follow_up": {
+        "last_checked": "2026-09-13",
+        "checks_run": 1,
+        "near_bar": false
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim", "second_dated_event"],
+        "unmet": ["confirmed_source"],
+        "evidence": "A first-patient-recruited release (2025-09-17) and initial Phase I/IIa results (2026-08-12) give two distinct dated events, but both are Mapi Pharma's own self-published releases -- no independent third-party corroboration found. MERGE CASE: fuzzy_match to mapi-pharma-semaglutide sits at the 0.55 merge threshold (same company/depot platform, different molecule/indication -- cariprazine antipsychotic vs semaglutide/glatiramer), so per the mechanical rule this cannot be escalated to ready_for_promotion regardless; flagging for an admin merge-vs-new-sibling-umbrella decision."
+      },
       "resolution": null
     },
     {
@@ -438,6 +548,16 @@
       },
       "status": "pending",
       "created_date": "2026-09-07",
+      "follow_up": {
+        "last_checked": "2026-09-13",
+        "checks_run": 1,
+        "near_bar": false
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim"],
+        "unmet": ["confirmed_source", "second_dated_event"],
+        "evidence": "The sole source (dtu.dk) remains EGRESS_BLOCKED and unverified beyond a search snippet. This cycle's follow-up found a possible second, independent source -- a peer-reviewed Journal of Bone and Joint Infection paper (2025) with pig-model data -- but could not pin down a citable URL this pass; confirming it next sweep would likely clear both remaining conditions. SCOPE CAVEAT STILL APPLIES regardless of bar status: this is a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI -- recommend an explicit admin scope call before any promotion."
+      },
       "resolution": null
     },
     {
@@ -472,6 +592,16 @@
       },
       "status": "pending",
       "created_date": "2026-09-09",
+      "follow_up": {
+        "last_checked": "2026-09-13",
+        "checks_run": 1,
+        "near_bar": true
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim", "second_dated_event"],
+        "unmet": ["confirmed_source"],
+        "evidence": "The Endpoints News report itself already describes a stage-bearing event (Phase 3 'HORIZON-1' first-patient-dosed, ~2026-01-16), which alone clears second_dated_event. Only a single Tier 2 outlet is on record, though; this cycle's follow-up found likely independent corroboration (Fierce Biotech, BioSpace, BioWorld, PRNewswire on EASD 2025 data and the Phase 3 dosing start) but could not confirm citable URLs this pass -- one confirmed independent source next sweep would clear the bar."
+      },
       "resolution": null
     },
     {
@@ -499,8 +629,18 @@
         "closest_umbrella_id": null,
         "score": 0
       },
-      "status": "pending",
+      "status": "ready_for_promotion",
       "created_date": "2026-09-09",
+      "follow_up": {
+        "last_checked": "2026-09-13",
+        "checks_run": 1,
+        "near_bar": false
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
+        "unmet": [],
+        "evidence": "Two independent Tier 2 outlets (Edaily, TipRanks/Globe and Mail) corroborate the same trial-registration event, which is itself stage-bearing, clearing all four conditions on the original evidence alone; this cycle's follow-up further confirmed three separate new Phase 3 registrations (PERSIST COPD-1, COPD-2, ASTHMA-1). SCOPE CAVEAT STILL APPLIES: felcorekibart is a systemic half-life-extended monoclonal antibody for respiratory disease (COPD/asthma/CRSwNP), not a depot/microsphere/peptide-LAI delivery asset -- recommend an explicit in/out-of-scope admin call before promotion regardless of the bar being mechanically cleared."
+      },
       "resolution": null
     },
     {
@@ -579,6 +719,16 @@
       },
       "status": "pending",
       "created_date": "2026-09-11",
+      "follow_up": {
+        "last_checked": "2026-09-13",
+        "checks_run": 1,
+        "near_bar": true
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim", "confirmed_source"],
+        "unmet": ["second_dated_event"],
+        "evidence": "This cycle's follow-up found the same underlying study also appeared as a 2025-07 bioRxiv preprint before its 2026 peer-reviewed publication -- but a preprint-then-journal republication of one static academic result doesn't count as the entity showing up twice in the world. Still no company pipeline page, financing, or clinical trial registration found for Appel Sauce Studios as of this sweep; a first commercial/company-level signal is what would actually clear this condition."
+      },
       "resolution": null
     },
     {
@@ -614,6 +764,57 @@
       },
       "status": "pending",
       "created_date": "2026-09-11",
+      "follow_up": {
+        "last_checked": "2026-09-13",
+        "checks_run": 1,
+        "near_bar": false
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "confirmed_source", "second_dated_event"],
+        "unmet": ["technical_claim"],
+        "evidence": "This cycle's follow-up re-confirmed across every available source through mid-2026 (KaiNETIC Phase 3 randomization, ADA 86th Scientific Sessions data) that ribupatide/HRS9531/KAI-9531 is once-weekly subcutaneous (plus a once-daily oral tablet) only -- no monthly, depot, or otherwise long-acting formulation exists in any source found. The 'technical_claim' condition is marked unmet because the concrete claim needed here is specifically a long-acting/depot mechanism, which the evidence does not support. Recommend the admin close this as reject-with-reason ('does not meet the LAI/depot bar') rather than continuing to track it."
+      },
+      "resolution": null
+    },
+    {
+      "id": "cand-2026-09-13-001",
+      "detected_name": "Prolynx",
+      "detected_aliases": [
+        "Prolynx",
+        "ProLynx"
+      ],
+      "entity_type_guess": [
+        "company",
+        "platform"
+      ],
+      "evidence": [
+        {
+          "source": {
+            "name": "Prolynx Series A financing announcement",
+            "publication": "BioSpace",
+            "url": "https://www.biospace.com/press-releases/prolynx-secures-70-million-series-a-to-advance-portfolio-of-ultra-long-acting-obesity-candidates-and-appoints-chris-boulton-as-chief-executive-officer",
+            "tier": 2
+          },
+          "snippet": "Prolynx closed a $70M Series A (co-led by 5AM Ventures and OrbiMed, with Monograph Capital) and appointed Chris Boulton (ex-Amgen obesity marketing lead) as CEO, announced 2025-12-11. Proprietary tunable-release chemical linker conjugates drug to a microsphere-hydrogel carrier, enabling monthly/quarterly dosing; pipeline covers extended-duration incretin and non-incretin obesity/metabolic candidates toward IND-enabling studies and clinical proof-of-concept. Platform previously had oncology (ADC-linker) clinical proof-of-concept.",
+          "date": "2025-12-11"
+        },
+        {
+          "source": {
+            "name": "BioPharma Dive",
+            "publication": "BioPharma Dive",
+            "url": "https://www.biopharmadive.com/news/prolynx-obesity-drugs-biotech-startup-series-a/807611/",
+            "tier": 2
+          },
+          "snippet": "Independent corroboration of the same $70M Series A and long-acting obesity-drug pipeline, published the same week.",
+          "date": "2025-12-11"
+        }
+      ],
+      "fuzzy_match": {
+        "closest_umbrella_id": "adocia-adoxlong",
+        "score": 0.15
+      },
+      "status": "pending",
+      "created_date": "2026-09-13",
       "resolution": null
     }
   ]

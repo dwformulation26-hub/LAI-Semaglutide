@@ -26,8 +26,8 @@
     "dosing_target": "Monthly (28-day) deep subcutaneous injection",
     "partner": null,
     "data_point": "Somatuline FY2025 sales grew 4.3% at constant exchange rates, well below the rest of Ipsen's portfolio (ex-Somatuline: +14.2%); FY2026 guidance again cites generic lanreotide production challenges as a tailwind for Somatuline (Ipsen FY2025 results, Feb 12, 2026; Q1 2026 update, Apr 23, 2026)",
-    "last_updated": "2026-04-23",
-    "last_checked": "2026-09-09"
+    "last_updated": "2026-07-30",
+    "last_checked": "2026-09-13"
   },
   "finding_history": [
     {
@@ -62,6 +62,19 @@
       "source": {
         "name": "Ipsen Q1 2026 sales press release",
         "url": "https://www.ipsen.com/press-release/ipsen-delivers-strong-sales-in-the-first-quarter-of-2026-and-confirms-its-full-year-guidance-3279554/",
+        "tier": 1
+      },
+      "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-07-30-001",
+      "date": "2026-07-30",
+      "type": "market_reaction",
+      "summary": "Ipsen's H1 2026 results (total group sales €2,190.2M, +20.4% reported / +23.5% constant-currency) noted Somatuline maintaining stronger-than-expected demand despite ongoing generic lanreotide competition.",
+      "source": {
+        "name": "Ipsen H1 2026 press release",
+        "publication": "Ipsen (company IR)",
+        "url": "https://www.ipsen.com/wp-content/uploads/2026/07/Ipsen-PR_HY-2026_30072026.pdf",
         "tier": 1
       },
       "confidence": "confirmed"

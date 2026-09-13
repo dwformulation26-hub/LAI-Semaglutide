@@ -2,32 +2,39 @@
   "last_run": {
     "initial_seed": "2026-09-02T00:00:00Z",
     "initial_discovery_test": "2026-09-02T00:00:00Z",
-    "daily_scan": "2026-09-11T07:20:00Z",
-    "weekly_sweep": "2026-09-11T06:40:00Z",
-    "qc_tier2": "2026-09-07T07:05:50Z",
+    "daily_scan": "2026-09-13T07:00:00Z",
+    "weekly_sweep": "2026-09-13T07:45:00Z",
+    "qc_tier2": "2026-09-13T07:50:00Z",
     "qc_tier3": null,
     "baseline_class_sweep": "2026-09-11T06:40:00Z"
   },
   "coverage": {
     "daily_scan": {
-      "umbrellas_checked": 5,
+      "umbrellas_checked": 36,
       "umbrellas_total": 41,
-      "skipped_throttled": 36,
+      "skipped_throttled": 5,
       "skipped_budget_exhausted": 0,
-      "notes": "First run on the six-class schema, and a one-off: the admin authorised sending the digest to a single named recipient instead of drafting it, which is a departure from the standing draft-only rule and does not carry forward. Window opened at the 2026-09-10T21:07:58Z run, so roughly 10 hours. Track A checked the 5 due records one query each on the most distinctive alias (ASC30, Zoladex, AUL009, PT403, GB-7001); 36 throttled under the quiet rule, including the 4 records promoted in yesterday baseline sweep. One new finding: Ascletis started a U.S. Phase I of ASC36 oral tablets on 2026-09-08, its fourth Phase I of the year and distinct from the two injectable ASC36 studies already logged on 2026-08-10. Dated before the window, so logged and sent as a discovered-late item rather than a headline. Typed trial_data_readout to match the existing ASC36 finding rather than introducing drift. No stage_label change: the record sits at Phase 3 on ASC30 and an oral ASC36 Phase I start does not move that. The other 4 due records were quiet -- every result returned was already in their histories."
+      "notes": "Weekly sweep's own last_run.daily_scan was not from today's UTC date, so Track A and Track B1 were run alongside Track B2/B3/QC2 per the skill's fallback rule, to avoid a day going uncovered. Track A: breadth-first single-alias pass across all 36 due records (5 throttled under the quiet-umbrella rule: adocia-adoxlong, astrazeneca-zoladex, cspc-syh2082, lilly-eloralintide, zealand-petrelintide). Only one genuinely new item surfaced: Ipsen's H1 2026 results (2026-07-30) noting Somatuline's continued resilience despite generic competition -- logged under ipsen-somatuline, dated before this run but after that record's prior last_updated, so it is real-but-late information rather than a headline. Every other due record was quiet this cycle (most recent discoverable news already predated or matched each record's existing last_updated). One date-hallucination near-miss caught and corrected in-flight: a search summary initially mis-dated an Ascletis ASC30 PR Newswire release as 2026-09-09 when the release itself is dated 2025-09-09; verified and excluded. Track B1 (8 English + 4 Korean fixed-term wire skim, 12/12 queries): no candidate cleared the full bar; two sub-threshold discoveries (Viking Therapeutics amylin/calcitonin dual agonist, Tier 2 single source; iBio amylin receptor antibody, Tier 3 only) were left out of candidates.json for now because neither agent could pin down a confirmable publish date or a stronger source this pass -- flagged here for next sweep rather than logged with an invented date."
     },
     "weekly_sweep": {
       "source_categories_checked": 6,
       "source_categories_total": 6,
-      "notes": "Baseline deep discovery sweep across all six molecule classes, run once to seed the tracker ahead of the molecule-class change. 17 searches: clinicaltrials.gov and Google Patents scoped per class, plus wires, Korean-language trade press and deal coverage. Four new umbrellas promoted by the admin in conversation (cspc-syh2082, zealand-petrelintide, lilly-eloralintide, adocia-adoxlong), taking the registry from 37 to 41 records. cand-2026-09-10-001 resolved as promoted into cspc-syh2082. Two new candidates queued (cand-2026-09-11-001 Appel Sauce Studios/Stanford hydrogel; cand-2026-09-11-002 Jiangsu Hengrui ribupatide, flagged as probably failing the LAI bar since every source says once-weekly). Amylin was the thinnest class before this sweep and gained two of the four new records. Not logged: a Korean trade summary that Peptron has filed PT403 patents in about 20 countries targeting 2030 approval -- no publication date could be pinned, so it was left out rather than dated to the sweep."
+      "notes": "Track B2 structural sweep across all 6 categories (conference abstract indices, KIPRIS/USPTO/WIPO patent filings, KOSDAQ tech-listing pipeline, clinicaltrials.gov new-registration feed by mechanism/title, university tech-transfer, VC/deal databases), ~30 queries. Conference indices and the KOSDAQ pipeline were quiet as expected for September (off-season). Two existing-umbrella items the sweep turned up (a G2GBio semaglutide-patent priority-date item, and Mapi Pharma's NCT07563699 registration) were checked against the actual umbrella files and found already logged from a prior run -- not re-added, avoiding a duplicate finding. One new candidate cleared the creation bar and was queued: cand-2026-09-13-001 Prolynx ($70M Series A, tunable-release linker + microsphere-hydrogel depot platform targeting monthly/quarterly incretin dosing, corroborated by two independent Tier 2 outlets). A second lead (Persist AI, an AI/robotics formulation-screening vendor rather than a drug developer) did not clear the bar on sourcing/specificity and was left out rather than logged as a thin candidate. Track B3 weekly deep pass covered all 16 previously-unresolved candidates (one query each, see coverage.candidate_follow_up) -- five escalated to ready_for_promotion on their own previously-logged evidence (each already had a Tier-1 stage-bearing event, e.g. a clinicaltrials.gov trial registration, which alone clears the promotion bar): cand-2026-09-02-005 (Bostal/B2227), cand-2026-09-02-006 (Anxo/AX251), cand-2026-09-02-008 (BioCorRx/BICX104), cand-2026-09-02-009 (Zhuhai Huahaikang/HHK001), cand-2026-09-09-002 (GSK/felcorekibart -- flagged with a standing scope caveat, systemic respiratory mAb not a depot/LAI asset). One re-fuzzy-match caught a registry-growth case per the skill's own worked example: cand-2026-09-02-007 (CSPC ZhongQi/SYHX2008) now scores 0.58 against the newly-promoted cspc-syh2082 (same CSPC Pharmaceutical Group parent, different asset) -- flagged as a merge case rather than escalated, per the mechanical >=0.55 rule."
     },
     "qc_tier2": {
       "findings_sampled": 8,
-      "findings_total": 129,
-      "match": 5,
+      "findings_total": 144,
+      "match": 8,
       "mismatch": 0,
-      "unreachable": 3,
-      "dedup_sweep": "completed -- no true duplicate umbrellas or candidates found; all near-identical alias matches are legitimate same-parent-company multi-asset umbrellas (e.g. Alkermes, Camurus, InventageLab, Mapi Pharma, Peptron each have 2-3 separate umbrella files by design)"
+      "unreachable": 0,
+      "dedup_sweep": "completed -- no true duplicate umbrellas or candidates found; all near-identical alias/name collisions are legitimate same-parent-company multi-asset umbrellas (Alkermes, Ascendis Pharma, Camurus incl. Braeburn-Camurus-Brixadi, InventageLab, Ipsen, Mapi Pharma, Novo Nordisk, Peptron each have 2-3 separate umbrella files by design). Candidate-list fuzzy-dedup also checked: several candidate pairs score 0.5-0.79 on generic legal-suffix similarity alone (e.g. \"... Pharmaceutical Technology Co., Ltd.\") but are confirmed distinct real-world companies, not duplicates -- one genuine registry-growth case was caught and handled under candidate_follow_up instead (cand-2026-09-02-007 vs the newly-promoted cspc-syh2082, same corporate parent, different asset)."
+    },
+    "candidate_follow_up": {
+      "unresolved_total": 17,
+      "rechecked": 16,
+      "escalated": 5,
+      "stalled": 0,
+      "aged": 17
     }
   },
   "source_health": {
@@ -116,9 +123,9 @@
       "status": "blocked"
     },
     "patents.google.com": {
-      "last_success": "2026-09-11T06:40:00Z",
+      "last_success": "2026-09-13T07:45:00Z",
       "status": "search_only",
-      "note": "Direct fetch blocked by network policy (gateway 403 on CONNECT); reached via domain-scoped search, which returned current filings including KR20240167410A."
+      "note": "Direct fetch blocked by network policy (gateway 403 on CONNECT); reached via domain-scoped search this run too (WebFetch attempts to patents.google.com were EGRESS_BLOCKED, but WebSearch continued to surface current filing data)."
     },
     "controlledreleasesociety.org": {
       "last_success": null,
@@ -145,9 +152,37 @@
       "status": "blocked"
     },
     "clinicaltrials.gov": {
-      "last_success": "2026-09-11T06:40:00Z",
+      "last_success": "2026-09-13T07:45:00Z",
       "status": "search_only",
-      "note": "Direct fetch blocked by network policy (gateway 403 on CONNECT); reached via domain-scoped search, which returned current registrations including NCT07563699."
+      "note": "Direct fetch blocked by network policy (gateway 403 on CONNECT); reached via domain-scoped search, which returned current registrations this run too (e.g. NCT07722728, NCT07484204, NCT07793162, NCT07623824)."
+    },
+    "drugs.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "pbs.gov.au": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "en.sedaily.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "tevapharm.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "ir.tevapharm.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "v.daum.net": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "barchart.com": {
+      "last_success": null,
+      "status": "blocked"
     }
   }
 }
