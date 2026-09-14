@@ -18,16 +18,31 @@ The invocation (the scheduled routine's prompt, or what the person asked) tells 
 | Mode | Trigger | Runs |
 |---|---|---|
 | **Daily scan** | "run daily LAI scan", "run today's LAI tracking", or no mode specified | Track A + Track B1 + Track B3 (cheap pass) + QC Tier 0/1 |
-| **Weekly sweep** | "run weekly LAI sweep", "Monday LAI compile" | Track B2 + Track B3 (deep pass) + QC Tier 2 (and Track A/B1 too, if the daily scan hasn't already run today) |
+| **Weekly sweep** | "run weekly LAI sweep", "Sunday LAI sweep" | Track B2 + Track B3 (deep pass) + QC Tier 2, plus Track A/B1 whenever `last_run.daily_scan` is more than 12 hours old — true on every scheduled Sunday run, since no daily scan runs on weekends |
 | **Full audit** | Only when explicitly requested — "run a full LAI audit/re-verification" | QC Tier 3 only. Never self-trigger this — see QC section |
 
 If it's ambiguous which mode was meant, default to **Daily scan** — it's the cheapest and safest default.
 
-**Automated schedule (as of 2026-09-11): weekdays only.** The "LAI Tracker — Daily Scan" routine fires Monday to Friday at 6:00 AM KST, and the "LAI Tracker — Weekly Sweep" routine fires Monday at 9:00 AM KST. Nothing runs on Saturday or Sunday by design.
+## Schedule and time zone — everything is KST
 
-Both are scheduled cloud routines, not something this file controls — they were created through the API and can only be edited by their owner in the Routines UI. Note the two are expressed in UTC and the daily one crosses midnight: `0 21 * * 0-4` fires at 21:00 UTC Sunday through Thursday, which is 6:00 AM KST Monday through Friday. Getting the day mask wrong by one is the easy mistake here.
+**Automated schedule (as of 2026-09-14), stated in KST, the only time zone this tracker reasons in:**
 
-Monday's sweep fires three hours after Monday's daily scan, so `last_run.daily_scan` is already from today and the sweep correctly skips Track A/B1 rather than repeating them.
+| Routine | Fires (KST) | Cron as stored (UTC) |
+|---|---|---|
+| LAI Tracker - Daily Scan | Monday to Friday, 06:00 KST | `0 21 * * 0-4` |
+| LAI Tracker - Weekly Sweep | Sunday, 09:00 KST | `0 0 * * 0` |
+
+Nothing runs on Saturday. The routine scheduler only accepts cron in UTC, so the stored expressions are translations of the KST times above, and that translation is the only place UTC appears. The daily one crosses midnight: 06:00 KST Monday is 21:00 UTC Sunday, which is why its day mask is `0-4` and not `1-5` — getting that mask wrong by one is the easy mistake. Both routines can be inspected and edited with the `RemoteTrigger` tool, and their exact prompts are kept in [references/routine-prompts.md](references/routine-prompts.md), which must be updated whenever a routine changes.
+
+**Every date and time this skill reads, compares or writes is KST (Asia/Seoul, UTC+9, no daylight saving):**
+
+- Start every run with `TZ=Asia/Seoul date '+%Y-%m-%dT%H:%M:%S+09:00'` and use that one value as "now" for the whole run. Never estimate, round or invent a run time: the next run's freshness window is computed from it, and a timestamp six hours off silently narrows or widens that window.
+- **Timestamps** (`meta.json` only) are ISO 8601 with the KST offset, e.g. `2026-09-15T06:04:12+09:00`. Values written before 2026-09-14 end in `Z` (UTC); they are still correct instants, so compare timestamps as instants, never as strings or by their date prefix.
+- **Run-bookkeeping dates** — `current_status.last_checked`, `current_status.last_updated`, a candidate's `created_date` and `follow_up.last_checked`, and the digest's `runDate` — are the KST calendar date of the run, from `TZ=Asia/Seoul date +%F`. The cloud sandbox clock is UTC, so a bare `date` at 06:00 KST returns *yesterday*; always set `TZ`.
+- **Day counts** — the quiet-umbrella throttle, the stall rule's 30+ days, and the digest coverage strip's `daysSinceCheck` and `daysSinceNews` — are differences between KST calendar dates.
+- **Source event dates** (`finding.date`, a candidate's `evidence.date`, patent priority dates) are the date as the source publishes it. Never shift them by a time zone: they record when something happened in the world, not when a run saw it.
+
+**How the week is covered.** The Sunday sweep is the only run between Friday 06:00 and Monday 06:00, so it runs Track A and B1 itself and writes `last_run.daily_scan` as well as `last_run.weekly_sweep`. That splits the weekend cleanly: Sunday's window reaches back to Friday's daily scan (about 51 hours, covering Friday, Saturday and Sunday morning), and Monday's reaches back to Sunday's sweep (about 21 hours). A weekly sweep started by hand within 12 hours of a daily scan skips Track A/B1 rather than repeating them.
 
 ## Search budget discipline
 
@@ -38,7 +53,7 @@ A real run hit its session search cap partway through a Daily scan, covering onl
 - **One query per alias, two absolute max.** If the first query for an alias comes back with nothing new, move on — don't try three more phrasings hunting for something. A quiet result is a valid result, not a reason to keep searching.
 - **Don't retry a domain that just told you no.** If a fetch returns `EGRESS_BLOCKED` or a similar hard error, don't try that same domain again this run — note it under `source_health` (see below) and move on. Retrying a blocked domain burns a tool call for a result you already know.
 - **Track B1's wire skim is a fixed, bounded pass** — a handful of term-based searches, not a per-umbrella sweep. Don't let it balloon into checking specific companies; that's Track A's job.
-- **Track B3's daily pass spends at most 2 searches, and its weekly pass one query per pending candidate.** Follow-up must never crowd out Track A's first-pass coverage of the 37 umbrellas — if budget is tight, the umbrellas come first and the follow-up queue waits for the weekly deep pass. Date math costs nothing and always runs.
+- **Track B3's daily pass spends at most 2 searches, and its weekly pass one query per pending candidate.** Follow-up must never crowd out Track A's first-pass coverage of every due umbrella — if budget is tight, the umbrellas come first and the follow-up queue waits for the weekly deep pass. Date math costs nothing and always runs.
 
 ## Freshness window — Track A and Track B1 only
 
@@ -46,17 +61,18 @@ The whole point of a *daily* scan is that the dashboard and the email digest alw
 
 **Window definition:** `window_start` = the timestamp of the last successful `daily_scan` run, from `meta.json.last_run.daily_scan`. If that's null (first run, or the last run never completed), fall back to `last_run.weekly_sweep` if it's more recent than 24h ago; if neither exists, default `window_start` to 24 hours before now. Letting the window stretch back to the last real run — instead of a hard 24h cutoff — means a skipped day or a long weekend widens the net instead of silently losing whatever aged past exactly 24h.
 
-**Monday covers the weekend, and this is the mechanism that makes it work.** Because the runs are weekdays only, Monday's `window_start` is Friday's run, so the window is roughly 72 hours rather than 24. Three consequences, none of them anomalies to correct for:
+**The weekend sits inside the Sunday and Monday windows, and this is the mechanism that makes it work.** Because `window_start` is the last real run rather than a fixed 24 hours back, Sunday's sweep reaches back to Friday's daily scan and Monday's daily scan reaches back to Sunday's sweep (see "How the week is covered" above). Three consequences, none of them anomalies to correct for:
 
-- **Saturday and Sunday news is inside the window**, so it is a normal headline finding. It does not belong in the discovered-late note — that is for genuinely old material, not for news the schedule chose not to look at yet.
-- **Nothing throttles on a Monday.** The quiet-umbrella rule skips a record only when `last_checked` is within the last 2 days; after a weekend every `last_checked` is 3 days old, so every due record gets queried. That is intended: Monday is the widest run of the week.
-- **Budget accordingly.** More records due and a wider window on the same search budget makes breadth-first non-negotiable on a Monday. Do one distinctive-alias pass across every due record before any second query anywhere, and record the coverage honestly in `meta.json` if the budget runs out.
+- **Friday, Saturday and Sunday-morning news is inside Sunday's window**, so it is a normal headline finding in Sunday's digest. It does not belong in the discovered-late note — that is for genuinely old material, not for news the schedule chose not to look at yet.
+- **Sunday throttles the quiet records Friday checked, and Monday picks them up.** Their weekend news still counts as headline on Monday because a throttled record's window starts at its own last check (see "Applying it" below).
+- **Budget accordingly.** On Sunday, Track A/B1 share one search budget with B2, B3's deep pass and QC Tier 2. Do the breadth-first Track A pass before any B2 query, and record coverage honestly in `meta.json` if the budget runs out.
 
-Use the search tool's recency filter to match the actual window, not a reflexive "past day" — on a Monday, "past day" silently discards two thirds of what the run exists to catch.
+Use the search tool's recency filter to match the actual window, not a reflexive "past day" — on a Sunday, "past day" silently discards most of what the run exists to catch.
 
 **Applying it:**
-- When searching, prefer the search tool's own recency filter scoped to roughly this window where available (a Monday needs "past week", not "past day" — see the weekend note above) — this also helps the search-budget discipline above by not pulling back stale results to begin with.
+- When searching, prefer the search tool's own recency filter scoped to roughly this window where available (a Sunday needs "past week", not "past day" — see the weekend note above) — this also helps the search-budget discipline above by not pulling back stale results to begin with.
 - For every finding (Track A) or candidate (Track B1), compare its actual publish/event date (the finding's `date` field, or the candidate evidence's `date`) against `window_start`.
+- **A throttled record's window starts at its own last check.** The quiet-umbrella throttle means some records were not queried on the previous run, so news about them from the skipped days was never seen. For a Track A record, compare against the earlier of `window_start` and 00:00 KST on that record's previous `last_checked` date. Without this, a record checked Friday, throttled Sunday and checked Monday would push its Saturday news into the discovered-late note.
   - **Within the window:** log normally. This is what belongs in the digest's headline "what's new" section — a punctual update.
   - **Older than the window (real news, just discovered late):** still log it — append-only history means real information is never dropped just because it arrived late (see "Writing to the data file" below). But keep it out of the digest's headline list; if it's material enough to mention, put it in a clearly separate "discovered late" note carrying its actual original date, so the digest never implies something is fresher than it is.
 - This gate applies to Track A findings and Track B1 candidates only. Track B2's weekly structural sources (conference abstracts, patent filings, etc.) refresh on their own slower cadence by design — applying a 24h window there would filter out almost everything B2 exists to catch.
@@ -66,7 +82,7 @@ Use the search tool's recency filter to match the actual window, not a reflexive
 Checking every umbrella every single day is wasteful once an umbrella has demonstrated it's genuinely quiet — most of a Daily scan's budget otherwise goes to companies with no news, over and over, forever. To cut that without losing real coverage:
 
 - Every umbrella's `current_status` carries a `last_checked` date (see the schema), updated every time Track A checks it — whether or not anything new was found. This is separate from `last_updated`, which only changes when a real finding lands.
-- Before checking an umbrella, compute days since `last_updated`. If it's been 21+ days with no new finding, and `last_checked` shows it was already checked within the last 2 days, **skip it this run** — check umbrellas like this every 3rd day instead of daily.
+- Before checking an umbrella, compute days since `last_updated`. If it's been 21+ days with no new finding, and `last_checked` is no more than 2 KST calendar days before today (a record checked Monday is skipped Tuesday and Wednesday and checked again Thursday), **skip it this run** — check umbrellas like this every 3rd day instead of daily.
 - The moment a skipped umbrella produces a new finding, it goes back to being checked daily. This throttle is for consistently quiet umbrellas, not a standing exemption.
 - A missing `last_checked` (e.g. an umbrella seeded before this rule existed) means "never checked under this rule" — always check it, don't assume it's quiet.
 
@@ -89,7 +105,15 @@ A known company's deal can surface a brand-new partner organization. Log the dea
 
 ## Track B1 — daily wire skim (daily, cheap)
 
-Skim fast wires (PR Newswire, BusinessWire, GlobeNewswire, general trade press) for LAI-adjacent terms that are **not tied to any known company name**: "long-acting injectable," "depot," "sustained-release," "microsphere," and similar, plus the four named molecules — "semaglutide," "tirzepatide," "retatrutide," "amylin" — and their Korean equivalents queried separately. This is deliberately not company-scoped — a brand-new entrant's debut deal or data readout breaks here first, before it has any brand recognition to search for by name.
+Skim fast wires (PR Newswire, BusinessWire, GlobeNewswire, general trade press) for LAI-adjacent terms that are **not tied to any known company name**. This is deliberately not company-scoped — a brand-new entrant's debut deal or data readout breaks here first, before it has any brand recognition to search for by name.
+
+**Programs surface under development codes before they surface under molecule names.** Every semaglutide LAI program on this tracker was first reported by its code — PT403, GB-7001, AUL009, IVL3021, SYH9017, CAM2056, NPM-139 — while a query for "semaglutide long-acting" mostly returns market commentary instead of the article that names the code. A skim that only searches generic molecule names misses exactly the programs it exists to find, and the admin's own manual searches have confirmed that gap. So B1 has three fixed parts, all driven by [references/class-watchlist.md](references/class-watchlist.md):
+
+1. **Class queries (fixed, every run).** Run the watchlist's daily query rows exactly as written, one per search: English and Korean rows for each of the four named molecules, plus its cross-class rows. They are phrased around dosing interval and formulation ("once-monthly formulation," 월 1회, 개량신약, 미립구) because that is how these programs are actually reported. In the 2026-09-14 gap test, "long-acting depot news" phrasing returned no programs, and neither did a Korean spelling the trade press doesn't use. Never improvise a spelling: 터제파타이드 and 티르제파타이드 are the same molecule but return different result sets. The watchlist's Sunday-only rows (alternate spellings, Chinese, conference abstracts) belong to the Sunday sweep's Track B2.
+2. **Code harvest (every result, no extra searches).** Read every result title and snippet from parts 1 and 3 (a code query often names the same company's sibling codes: querying AUL016 is how AUL018 was found). Look for development codes, meaning a letter prefix followed by digits with or without a hyphen or space (`GB-7001`, `IVL3024`, `HRS9531`, `SYH 9017`), and for product or platform names that appear in the same sentence as a class term, a parent-molecule identifier from the watchlist, or an LAI qualifier. Resolve each one: a parent-molecule identifier (the originator's own code, INN or brand for the molecule, listed in the watchlist) is not a new program, so ignore it; a code already in the alias table or in an unresolved candidate's `detected_aliases` is already tracked; anything else is **unknown**. Normalize before comparing — case, hyphens and spaces don't make a code new (`GB7001` is `GB-7001`).
+3. **Code queries (bounded).** Query unknown codes one at a time, at most 3 per run, and feed each through the candidate pipeline. An unknown code that co-occurs with a class term and an LAI qualifier but lacks a Tier 1/2 source becomes a `watch` candidate carrying the code in `detected_aliases`, so Track B3 keeps following it instead of it being forgotten. Then query up to 4 rows from the watchlist's rotation list, using each row's query exactly, resuming after the row whose `key` is stored in `coverage.daily_scan.watchlist_cursor` and wrapping at the end; the Sunday sweep queries the whole list.
+
+Part 3 never outranks Track A's breadth pass. Record what the run did under `coverage.daily_scan`: `codes_harvested`, `codes_unknown`, `codes_queried`, and the updated `watchlist_cursor` (the `key` of the last rotation row queried). Runs never edit the watchlist file itself — a code worth adding permanently is proposed in the run report, and the admin adds it.
 
 Anything found feeds the same candidate pipeline as Track B2 below (see Source tiering and Candidate pipeline).
 
@@ -109,10 +133,13 @@ Anything found feeds the same candidate pipeline as Track B2 below (see Source t
 
 These sources don't refresh daily, so checking them daily would just re-read unchanged data — that's why this runs weekly instead:
 
-- Full conference **accepted-abstract indices** for ADA, ASCO, AAN, ObesityWeek, JPM Healthcare Conference — the actual abstract index, not news coverage about the conference
-- Patent filings: **KIPRIS** (Korea), USPTO/WIPO (global), filtered to sustained-release/depot CPC classes — patents often post before any press release exists
+- Full conference **accepted-abstract indices** for ADA, EASD, ObesityWeek, ASCO, AAN, JPM Healthcare Conference — the actual abstract index, not news coverage about the conference
+- Patent filings: **KIPRIS** (Korea), USPTO/WIPO (global), filtered to sustained-release/depot CPC classes — patents often post before any press release exists. Also one Google Patents query per named molecule, paired with a depot or sustained-release term
+- **Every row of the watchlist's rotation list**, one query each — the full rotation the daily scan only samples
+- **The watchlist's Sunday-only query rows** — alternate Korean spellings, Chinese and conference-abstract rows
+- **Code harvest applies to every B2 result**, exactly as in Track B1 part 2, and unknown codes go through the same bounded resolution
 - The **KOSDAQ 기술특례상장** (tech-special listing) pipeline — a company entering this pipeline is a strong watch signal even with no other news yet
-- clinicaltrials.gov **new-registration feed**, scanned by intervention/title text, not company name — a new entrant may have no brand recognition to search for
+- clinicaltrials.gov **new-registration feed**, scanned by intervention/title text, not company name — a new entrant may have no brand recognition to search for. For the named molecules, run only the watchlist's one clinicaltrials.gov row per molecule: the 2026-09-14 gap test found this source low-yield for long-acting incretin and amylin programs (it returned weekly trials), so don't expand it
 - University tech-transfer / spin-off announcements
 - VC/deal databases for seed/Series A rounds tagged drug-delivery/LAI
 
@@ -203,7 +230,7 @@ This section exists because the dashboard used to *infer* a program's developmen
 
 **Demotions** (discontinued, paused, failed, clinical hold) need the same confirmation bar as an advance, and there's no dedicated bucket for "discontinued" in the eight values yet — keep the last accurate `stage_label`, but make the discontinuation unmistakable in `stage`'s text and flag it for the admin rather than leaving it to blend in as if the program were still progressing normally.
 
-**Every time you change `stage_label`, write `stage_evidence`** — one sentence, in your own words, naming the specific fact from the source that justifies the new bucket (e.g. `"Phase 1 IND cleared and first patient dosed per the Aug 30 MFDS clearance letter."`). This is what lets a future review (human or otherwise) check your work without re-deriving it from scratch. Never invent a ninth value if nothing seems to fit cleanly — that has never actually happened across the 37 tracked umbrellas; if it ever does, keep the closest-fitting existing value and flag the mismatch instead of coining a new one.
+**Every time you change `stage_label`, write `stage_evidence`** — one sentence, in your own words, naming the specific fact from the source that justifies the new bucket (e.g. `"Phase 1 IND cleared and first patient dosed per the Aug 30 MFDS clearance letter."`). This is what lets a future review (human or otherwise) check your work without re-deriving it from scratch. Never invent a ninth value if nothing seems to fit cleanly — that has never actually happened across the registry; if it ever does, keep the closest-fitting existing value and flag the mismatch instead of coining a new one.
 
 ## Molecule classification — how `current_status.molecule_class` is assigned
 
@@ -226,7 +253,7 @@ This is the same discipline as stage scoring above, and it exists for the same r
 
 ## Calendar-aware bursts
 
-Weight extra search effort around known disclosure clusters, since that's where yield concentrates: ADA (June), ObesityWeek (November), JPM Healthcare Conference (January), ASCO (June), AAN (April). Daily cadence shouldn't structurally miss anything, but it's worth spending more of the search budget in these windows than in a quiet month.
+Weight extra search effort around known disclosure clusters, since that's where yield concentrates: ADA (June), EASD (autumn, usually September), ObesityWeek (November), JPM Healthcare Conference (January), ASCO (June), AAN (April). Daily cadence shouldn't structurally miss anything, but it's worth spending more of the search budget in these windows than in a quiet month.
 
 ## QC strategy — the goldilocks tiers
 
@@ -249,17 +276,18 @@ Two things matter more than the field names themselves, because they're what act
 - **Never invent a variant of a controlled value.** If `technology_family` doesn't cleanly fit one of the listed values, use `other` and add a one-line note — don't coin a new tag that reads more naturally in the moment. A schema only prevents naming drift if every run treats it as fixed, not as a starting suggestion.
 - **Never write outside your own file's lane.** Track A only ever touches the specific umbrella files it found findings for. Track B, follow-up included, only ever touches `candidates.json` — B3 updating a candidate's evidence never also writes that evidence into an umbrella file, however strong the match looks. Don't "helpfully" fix something you notice in an unrelated umbrella file while you're in there — flag it instead, or handle it under the mode that owns it.
 
-Update `meta.json`'s `last_run` and `source_health` at the end of every run, even a run that found nothing — an absent update is indistinguishable from a job that silently failed, which is exactly the failure mode this field exists to catch. Also record coverage: how many umbrellas were actually checked this run versus skipped (throttled quiet ones, or ones never reached because the search budget ran out) — a run that only covered 2 of 37 umbrellas needs to be visible as incomplete, not indistinguishable from a full run that just happened to find little. Record follow-up coverage the same way, under `coverage.candidate_follow_up` — how many unresolved candidates exist, how many Track B3 actually re-checked this run, and how many it escalated or stalled. A run that escalated nothing because it re-checked nothing must be distinguishable from a run that re-checked the whole queue and found nothing ready. If any domain returned `EGRESS_BLOCKED` this run, log it under `source_health` with status `blocked` so a pattern of unreachable sources shows up over time instead of silently degrading source quality run after run.
+Update `meta.json`'s `last_run` and `source_health` at the end of every run, even a run that found nothing, using the run's single KST "now" value (see "Schedule and time zone") — an absent update is indistinguishable from a job that silently failed, which is exactly the failure mode this field exists to catch. Also record coverage: how many umbrellas were actually checked this run versus skipped (throttled quiet ones, or ones never reached because the search budget ran out) — a run that only covered 2 of 37 umbrellas needs to be visible as incomplete, not indistinguishable from a full run that just happened to find little. Record follow-up coverage the same way, under `coverage.candidate_follow_up` — how many unresolved candidates exist, how many Track B3 actually re-checked this run, and how many it escalated or stalled. A run that escalated nothing because it re-checked nothing must be distinguishable from a run that re-checked the whole queue and found nothing ready. If any domain returned `EGRESS_BLOCKED` this run, log it under `source_health` with status `blocked` so a pattern of unreachable sources shows up over time instead of silently degrading source quality run after run.
 
 Commit to the GitHub repo with a clear message describing what changed and why (e.g. "Track A: 2 new findings for peptron-pt403, inventagelab-ivl3021" or "Weekly sweep: 3 new candidates"). Never touch the app's interface/UI code from this skill — if a run seems to require a UI change, stop and flag it instead of making it.
 
 **The commit only counts once it is on `main`.** Vercel builds production from `main`, and nothing else: a run whose commit lands on any other branch produces a *preview* deployment, so the dashboard keeps serving the last state of `main` while the run's own summary says it pushed successfully. That is the same silent-failure shape `meta.json`'s `last_run` exists to prevent, one layer further out — the data is committed, the deployment is green, and the dashboard is still stale.
 
-So finish every run by confirming where the commit actually landed:
+So publish to `main` explicitly, then confirm the commit actually landed there:
 
 ```bash
-git rev-parse --abbrev-ref HEAD        # which branch this run is on
-git branch -r --contains HEAD          # does origin/main contain it?
+git fetch origin main && git rebase origin/main          # pick up anything committed since checkout
+git push origin HEAD:main                                # works from a detached HEAD too
+git fetch origin main && git branch -r --contains HEAD   # origin/main must be listed
 ```
 
 - On `main`, with the push accepted: done, the dashboard rebuilds within the minute.
@@ -276,7 +304,7 @@ After a Daily scan or Weekly sweep, draft one bundled digest of what changed thi
 
 ```json
 {
-  "runDate": "2026-09-04",
+  "runDate": "2026-09-04",  /* KST calendar date of this run: TZ=Asia/Seoul date +%F */
   "leadIn": "One short sentence summarizing the run — findings + late items + candidates, in your own words.",
   "findings": [ /* one entry per finding inside the freshness window this run */ ],
   "lateItems": [ /* real findings logged this run but dated outside the freshness window (see above) */ ],

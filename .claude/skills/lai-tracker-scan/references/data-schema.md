@@ -32,7 +32,7 @@ Use these exact string values — never invent a variant, even one that reads mo
 | `current_status.stage_label` | `Research`, `Preclinical`, `IND filed`, `Phase 1`, `Phase 2`, `Phase 3`, `Filed / review`, `Approved / marketed` — see the dedicated section below, this one has real teeth (the build fails without it) |
 | `current_status.molecule_class` (array) | `semaglutide`, `tirzepatide`, `retatrutide`, `amylin`, `other_incretin`, `non_incretin` — see the dedicated section below; the build fails on a missing field or an unknown value, and an empty array is legal and means "ambiguous, left for review" |
 
-Dates are always `YYYY-MM-DD`. Timestamps (in `meta.json` only) are full ISO 8601 UTC: `YYYY-MM-DDTHH:MM:SSZ`.
+Dates are always `YYYY-MM-DD`, and every date this tracker generates about its own runs (`last_checked`, `last_updated`, `created_date`, `follow_up.last_checked`) is the KST calendar date from `TZ=Asia/Seoul date +%F`. Source event dates (`finding.date`, `evidence.date`) are recorded as the source publishes them, never shifted. Timestamps (in `meta.json` only) are ISO 8601 with the KST offset: `YYYY-MM-DDTHH:MM:SS+09:00`. Timestamps written before 2026-09-14 end in `Z` (UTC) and remain valid instants; compare timestamps as instants, never as strings. See the skill's "Schedule and time zone" section.
 
 ## ID generation rules
 
@@ -157,19 +157,19 @@ Written by Track B3 on every follow-up check, and the direct analogue of `stage_
 ```json
 {
   "last_run": {
-    "daily_scan": "2026-09-02T06:00:00Z",
-    "weekly_sweep": "2026-09-01T06:00:00Z",
-    "qc_tier2": "2026-09-01T06:10:00Z",
+    "daily_scan": "2026-09-15T06:04:12+09:00",
+    "weekly_sweep": "2026-09-13T09:05:40+09:00",
+    "qc_tier2": "2026-09-13T09:31:02+09:00",
     "qc_tier3": null
   },
   "coverage": {
-    "daily_scan": { "umbrellas_checked": 37, "umbrellas_total": 37, "skipped_throttled": 0, "skipped_budget_exhausted": 0 },
+    "daily_scan": { "umbrellas_checked": 41, "umbrellas_total": 41, "skipped_throttled": 0, "skipped_budget_exhausted": 0, "codes_harvested": 6, "codes_unknown": 1, "codes_queried": 5, "watchlist_cursor": "aul016" },
     "candidate_follow_up": { "unresolved_total": 15, "rechecked": 2, "escalated": 1, "stalled": 0, "aged": 15 }
   },
   "source_health": {
-    "dart": { "last_success": "2026-09-02T06:00:00Z", "status": "ok" },
-    "clinicaltrials_gov": { "last_success": "2026-09-02T06:00:00Z", "status": "ok" },
-    "kipris": { "last_success": "2026-08-26T06:00:00Z", "status": "stale" },
+    "dart": { "last_success": "2026-09-15T06:04:12+09:00", "status": "ok" },
+    "clinicaltrials.gov": { "last_success": "2026-09-15T06:04:12+09:00", "status": "search_only" },
+    "kipris": { "last_success": "2026-09-06T09:12:00+09:00", "status": "stale" },
     "koreabiomed.com": { "last_success": null, "status": "blocked" }
   }
 }
