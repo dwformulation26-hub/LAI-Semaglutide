@@ -15,6 +15,8 @@
     "Kyungdong Pharm",
     "경동제약",
     "AUL009",
+    "AUL016",
+    "AUL018",
     "Xtina",
     "Xtina™",
     "엑스티나",
@@ -26,9 +28,10 @@
     "stage_label": "IND filed",
     "stage_evidence": "Phase 1 IND filed with Korea's MFDS (as of ~Sept 2026); human PK/safety data already presented but dosing under this IND not yet begun.",
     "molecule_class": [
-      "semaglutide"
+      "semaglutide",
+      "tirzepatide"
     ],
-    "molecule_evidence": "AUL009 is a once-monthly semaglutide microparticle injection (ADA 2026 late-breaker). A separate KR patent for tirzepatide microspheres exists but names no program.",
+    "molecule_evidence": "AUL009 is a once-monthly semaglutide microparticle injection (ADA 2026 late-breaker), and AUL018 is an every-3-months semaglutide microsphere in a government-funded project running to Phase 1 (Asia Economy, 2026-08-06). Tirzepatide was added 2026-09-14 (admin) because Aul Bio now names a tirzepatide program, AUL016, a microsphere on the same ExTenna platform, confirmed by two independent Tier 2 outlets (Bio Spectator; Herald Business, 2026-06-16).",
     "dosing_target": "Monthly",
     "partner": "Kyungdong Pharmaceutical (lead developer) / Aul Bio (platform provider)",
     "data_point": "Single dose maintained stable blood concentration for 30+ days; suppressed initial burst release, reducing early GI side effects; compatible with 27-gauge ultrafine needle",
