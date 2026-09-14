@@ -3,7 +3,7 @@ import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
-import { CANDIDATE_STATUSES, MOLECULE_ORDER, assessRunHealth, competitiveScore, interpretLeader, moleculeClasses, normalizeStage, prepareDatabase, safeUrl } from "../src/model.js";
+import { CANDIDATE_STATUSES, MOLECULE_ORDER, assessRunHealth, competitiveScore, interpretLeader, moleculeClasses, normalizeStage, orderPrograms, prepareDatabase, safeUrl } from "../src/model.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -141,6 +141,34 @@ test("reads molecule_class from the record instead of inferring it from text", (
 
   // Unknown values are dropped rather than silently rendered as a seventh class.
   assert.deepEqual(moleculeClasses({ current_status: { molecule_class: ["semaglutide", "cagrisema"] } }), ["semaglutide"]);
+});
+
+test("orders a class board by maturity first, with score breaking ties within a stage", () => {
+  // Regression: the race chart ranked by competitive score alone, which blends in news
+  // recency, so an IND-filed program with fresh news sat above Phase 1 programs and the
+  // bars zigzagged down the chart.
+  const program = (company, stageOrder, total, last_updated = "2026-01-01") =>
+    ({ company, stageOrder, score: { total }, current_status: { last_updated } });
+  const board = [
+    program("Preclinical Co", 1, 55),
+    program("Fresh IND Co", 2, 62),
+    program("Phase One C", 3, 60),
+    program("Phase One A", 3, 65, "2026-08-01"),
+    program("Phase One B", 3, 65, "2026-09-01")
+  ];
+  const names = (list) => list.map((item) => item.company);
+
+  assert.deepEqual(names(orderPrograms(board)), ["Phase One B", "Phase One A", "Phase One C", "Fresh IND Co", "Preclinical Co"]);
+  assert.deepEqual(names(orderPrograms(board, "score")), ["Phase One B", "Phase One A", "Fresh IND Co", "Phase One C", "Preclinical Co"]);
+  assert.deepEqual(names(board), ["Preclinical Co", "Fresh IND Co", "Phase One C", "Phase One A", "Phase One B"], "ordering must not mutate the board it was given");
+});
+
+test("every live class board reads in non-increasing stage order under maturity", async () => {
+  const data = prepareDatabase(await sourcePayload());
+  for (const group of data.moleculeGroups) {
+    const stages = orderPrograms(group.members).map((record) => record.stageOrder);
+    assert.deepEqual(stages, [...stages].sort((a, b) => b - a), `${group.key} board is out of stage order`);
+  }
 });
 
 test("groups every record into its declared classes and flags the unresolved ones", async () => {

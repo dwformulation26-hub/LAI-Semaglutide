@@ -106,6 +106,25 @@ export const MOLECULE_COLORS = {
 // obesity program would put approved products permanently on top of every board.
 export const SCORED_CLASSES = new Set(["semaglutide", "tirzepatide", "retatrutide", "amylin", "other_incretin"]);
 
+// The two orders a class board can be read in. Maturity is the default: a race chart is
+// read top to bottom as "who is furthest along", and the competitive score blends in news
+// recency, so ranking by score alone let an IND-filed program with fresh news sit above
+// programs already dosing in Phase 1 and made the bars zigzag down the chart.
+export const RACE_ORDERS = ["maturity", "score"];
+
+const byNewestUpdate = (a, b) => String(b.current_status?.last_updated ?? "").localeCompare(String(a.current_status?.last_updated ?? ""));
+
+// Pure: returns a new array. Maturity is declared stage first, with competitive score
+// breaking ties inside a stage; score is the score-first ranking. Both fall back to the
+// newest update and then company name, so the same records always read in the same order.
+export function orderPrograms(programs, order = "maturity") {
+  const byScore = (a, b) => b.score.total - a.score.total;
+  const byCompany = (a, b) => String(a.company ?? "").localeCompare(String(b.company ?? ""));
+  return [...programs].sort(order === "score"
+    ? (a, b) => byScore(a, b) || byNewestUpdate(a, b) || byCompany(a, b)
+    : (a, b) => b.stageOrder - a.stageOrder || byScore(a, b) || byNewestUpdate(a, b) || byCompany(a, b));
+}
+
 export const FINDING_LABELS = {
   trial_data_readout: "Clinical / data",
   regulatory: "Regulatory",
@@ -319,9 +338,7 @@ export function prepareDatabase(payload, lang = "en") {
   // One ranked board per class. A program formulating two molecules appears on both
   // boards, which is correct -- InventageLab really is a separate competitor on each.
   const moleculeGroups = MOLECULE_ORDER.map((key) => {
-    const members = records
-      .filter((record) => record.molecules.includes(key))
-      .sort((a, b) => b.score.total - a.score.total || String(b.current_status?.last_updated ?? "").localeCompare(String(a.current_status?.last_updated ?? "")));
+    const members = orderPrograms(records.filter((record) => record.molecules.includes(key)), "score");
     return { key, scored: SCORED_CLASSES.has(key), members };
   });
 

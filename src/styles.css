@@ -388,6 +388,16 @@ main > footer span:first-child { color: var(--ink); font-weight: 800; letter-spa
 
 .race-score { margin-left: .5rem; color: rgba(255,255,255,.78); font-size: .62rem; font-weight: 700; }
 
+.panel-head-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: end; gap: .45rem; }
+.race-order { display: inline-flex; padding: 2px; border: 1px solid var(--line-strong); border-radius: 99px; background: var(--panel); }
+.race-order[hidden] { display: none; }
+.race-order-option {
+  min-height: 23px; padding: .15rem .65rem; border: 0; border-radius: 99px;
+  background: none; color: var(--muted); font-size: .64rem; font-weight: 700; white-space: nowrap; cursor: pointer;
+}
+.race-order-option:hover { color: var(--ink); }
+.race-order-option[aria-pressed="true"] { background: var(--ink); color: #fff; }
+
 @media (max-width: 1080px) {
   .stats-grid-molecule { grid-template-columns: 1fr; }
 }

@@ -1,9 +1,9 @@
-import { CANDIDATE_TONES, FAMILY_COLORS, FAMILY_LABELS, FINDING_LABELS, MOLECULE_COLORS, MOLECULE_ORDER, SCORED_CLASSES, SCORE_WEIGHTS, STAGES, STAGE_COLORS, formatDate, interpretLeader, prepareDatabase, safeUrl, truncate } from "./model.js";
+import { CANDIDATE_TONES, FAMILY_COLORS, FAMILY_LABELS, FINDING_LABELS, MOLECULE_COLORS, MOLECULE_ORDER, RACE_ORDERS, SCORED_CLASSES, SCORE_WEIGHTS, STAGES, STAGE_COLORS, formatDate, interpretLeader, orderPrograms, prepareDatabase, safeUrl, truncate } from "./model.js";
 import { DEFAULT_LANG, LANGS, familyLabelText, findingLabelText, moleculeLabelText, originLabelText, stageLabelText, t } from "./i18n.js";
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
-const state = { data: null, rawPayload: null, lang: DEFAULT_LANG, programQuery: "", stage: "all", molecule: "all", classView: "semaglutide", expandedPrograms: new Set() };
+const state = { data: null, rawPayload: null, lang: DEFAULT_LANG, programQuery: "", stage: "all", molecule: "all", classView: "semaglutide", raceOrder: storedRaceOrder(), expandedPrograms: new Set() };
 
 function node(tag, className = "", text) {
   const element = document.createElement(tag);
@@ -40,6 +40,15 @@ function getStoredLang() {
     return LANGS.includes(stored) ? stored : DEFAULT_LANG;
   } catch {
     return DEFAULT_LANG;
+  }
+}
+
+function storedRaceOrder() {
+  try {
+    const stored = localStorage.getItem("lai-race-order");
+    return RACE_ORDERS.includes(stored) ? stored : "maturity";
+  } catch {
+    return "maturity";
   }
 }
 
@@ -137,14 +146,36 @@ function renderClassPicker(data) {
   });
 }
 
+function renderRaceOrder(group) {
+  const lang = state.lang;
+  const control = clear($("#race-order"));
+  // An unscored board (non-incretin) has no score to rank by, so it always reads in
+  // maturity order and the switch is hidden rather than left doing nothing.
+  control.hidden = !group.scored || !group.members.length;
+  RACE_ORDERS.forEach((order) => {
+    const button = node("button", "race-order-option", t(lang, `overview.order.${order}`));
+    button.type = "button";
+    button.setAttribute("aria-pressed", String(state.raceOrder === order));
+    button.addEventListener("click", () => {
+      if (state.raceOrder === order) return;
+      state.raceOrder = order;
+      try { localStorage.setItem("lai-race-order", order); } catch { /* private mode or blocked storage */ }
+      renderRace(state.data);
+    });
+    control.append(button);
+  });
+}
+
 function renderRace(data) {
   const lang = state.lang;
   const group = data.groupFor(state.classView);
   const label = moleculeLabelText(state.classView, lang);
-  const programs = group.members;
+  const order = group.scored ? state.raceOrder : "maturity";
+  const programs = orderPrograms(group.members, order);
+  renderRaceOrder(group);
 
   $("#race-caption").textContent = programs.length
-    ? t(lang, "overview.classCaption", { count: programs.length, molecule: label })
+    ? t(lang, `overview.classCaption.${order}`, { count: programs.length, molecule: label })
     : t(lang, "overview.classEmpty", { molecule: label });
 
   const empty = $("#class-empty");
@@ -172,7 +203,8 @@ function renderRace(data) {
     chart.append(row);
   });
 
-  // The leader panel follows the selected class rather than being fixed to semaglutide.
+  // The leader panel follows the selected class and order rather than being fixed to
+  // semaglutide: under maturity it is the most advanced program still in development.
   const ranked = programs.filter((record) => record.stageLabel !== "Approved / marketed");
   const leader = ranked[0] ?? programs[0] ?? data.leader;
   const leaderHead = clear($("#leader-company"));
