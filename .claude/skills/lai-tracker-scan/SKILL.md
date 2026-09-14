@@ -253,6 +253,19 @@ Update `meta.json`'s `last_run` and `source_health` at the end of every run, eve
 
 Commit to the GitHub repo with a clear message describing what changed and why (e.g. "Track A: 2 new findings for peptron-pt403, inventagelab-ivl3021" or "Weekly sweep: 3 new candidates"). Never touch the app's interface/UI code from this skill — if a run seems to require a UI change, stop and flag it instead of making it.
 
+**The commit only counts once it is on `main`.** Vercel builds production from `main`, and nothing else: a run whose commit lands on any other branch produces a *preview* deployment, so the dashboard keeps serving the last state of `main` while the run's own summary says it pushed successfully. That is the same silent-failure shape `meta.json`'s `last_run` exists to prevent, one layer further out — the data is committed, the deployment is green, and the dashboard is still stale.
+
+So finish every run by confirming where the commit actually landed:
+
+```bash
+git rev-parse --abbrev-ref HEAD        # which branch this run is on
+git branch -r --contains HEAD          # does origin/main contain it?
+```
+
+- On `main`, with the push accepted: done, the dashboard rebuilds within the minute.
+- On any other branch: **say so at the top of the run report** — name the branch, say production will not update until it is merged to `main`, and say it plainly enough that it reads as a problem, not as a routine note about where the work went. A scheduled run normally has no reason to be on a side branch; when it is, that is an environment or routine misconfiguration (typically an output branch set on the routine), and the admin is the only one who can fix it. Never treat it as normal, and never bury it under the findings.
+- Never work around it from here: don't rewrite history on `main`, don't change `vercel.json` or any deployment setting to point production at a side branch, and don't open a PR and call the run finished. Report it and stop — that's the whole job at that point.
+
 ## Email digest
 
 After a Daily scan or Weekly sweep, draft one bundled digest of what changed this run as a **Gmail draft**, not a sent email. This mirrors the promotion boundary above: drafting is this skill's job, sending is a decision only the admin makes, every time — there is no standing authorization to send mail unattended. If a future admin decision changes this policy, it will be written here explicitly; until then, draft-only is the rule, not a placeholder.
