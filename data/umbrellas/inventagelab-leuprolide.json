@@ -19,15 +19,20 @@
   ],
   "current_status": {
     "stage": "Preclinical. As of the most recently checked InventageLab pipeline page (Sept 2026), IVL3008 (3-month leuprolide) remains listed at preclinical stage for prostate cancer and precocious puberty; no clinicaltrials.gov registration for IVL3008 was found despite the company's 2024 stated intent to advance into Phase 1/2. No material public progress beyond the June 2024 EACR nonclinical data disclosure was identified. This is a separate umbrella from InventageLab's semaglutide asset and its CNS (aripiprazole/donepezil) LAI assets, which use the same IVL-DrugFluidic microfluidic manufacturing platform but are distinct drug programs.",
+    "stage_ko": "전임상. 가장 최근 확인한 인벤티지랩 파이프라인 페이지(2026년 9월) 기준으로 IVL3008(3개월 류프로렐린)은 전립선암 및 성조숙증 대상 전임상 단계로 기재돼 있다. 회사가 2024년에 임상 1/2상 진입 의향을 밝혔음에도 clinicaltrials.gov에서 IVL3008 등록은 확인되지 않았다. 2024년 6월 EACR 비임상 데이터 공개 이후 의미 있는 공개 진전은 확인되지 않았다. 이 umbrella는 인벤티지랩의 세마글루타이드 자산 및 CNS(아리피프라졸/도네페질) LAI 자산과 별개로, 이들 자산은 동일한 IVL-DrugFluidic 미세유체 제조 플랫폼을 사용하지만 서로 다른 약물 프로그램이다.",
     "stage_label": "Preclinical",
     "stage_evidence": "InventageLab's own pipeline page (checked Sept 2026) lists IVL3008 at preclinical stage; no clinicaltrials.gov registration found despite a 2024 stated intent to advance into Phase 1/2.",
+    "stage_evidence_ko": "인벤티지랩 자체 파이프라인 페이지(2026년 9월 확인)는 IVL3008을 전임상 단계로 기재하고 있다. 2024년 임상 1/2상 진입 의향을 밝혔음에도 clinicaltrials.gov 등록은 확인되지 않았다.",
     "molecule_class": [
       "non_incretin"
     ],
     "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
+    "molecule_evidence_ko": "탑재 약물이 인크레틴·비만 펩타이드 영역 밖에 있어 전달 플랫폼 근거로 추적한다.",
     "dosing_target": "1-month (PLGA) and 3-month (PLA) formulations historically studied; current active pipeline entries are IVL3008 (3-month) and IVL3016 (6-month)",
+    "dosing_target_ko": "과거 1개월(PLGA) 및 3개월(PLA) 제형을 연구했으며, 현재 활성 파이프라인 항목은 IVL3008(3개월)과 IVL3016(6개월)이다",
     "partner": null,
     "data_point": "Nonclinical data (single-dose animal studies) showed leuprolide release maintaining castration-level testosterone (≤0.5 ng/mL) with initial burst release reduced to 0.14–7.65% versus commercial comparator products",
+    "data_point_ko": "비임상 데이터(단회 투여 동물 시험)에서 류프로렐린 방출이 거세 수준 테스토스테론(≤0.5 ng/mL)을 유지했으며, 초기 과다 방출(burst)은 상용 대조 제품 대비 0.14–7.65%로 감소했다",
     "last_updated": "2024-06-13",
     "last_checked": "2026-09-13"
   },
@@ -37,6 +42,7 @@
       "date": "2024-06-13",
       "type": "trial_data_readout",
       "summary": "InventageLab presented nonclinical (preclinical) research at the European Association for Cancer Research (EACR) annual meeting in Rotterdam (2024-06-11) on two leuprolide-based, IVL-DrugFluidic-manufactured long-acting injectable candidates: IVL3008 (3-month) and IVL3016 (6-month), for prostate cancer. Data showed stable drug release maintaining testosterone at chemical-castration levels (≤0.5 ng/mL), with a dramatically reduced initial burst release (0.14–7.65% vs. existing commercial products) — a common failure mode for PLGA microsphere depots. The 6-month formulation was said to use half the active ingredient of competitor products. Company stated intent at the time was to advance IVL3008 into Phase 1/2 clinical trials and pursue global licensing partnerships.",
+      "summary_ko": "인벤티지랩은 로테르담에서 열린 유럽암연구학회(EACR) 연례 학술대회(2024-06-11)에서 IVL-DrugFluidic 방식으로 제조한 류프로렐린 기반 장기지속형 주사제 후보물질 2종, IVL3008(3개월)과 IVL3016(6개월)의 전립선암 대상 비임상(전임상) 연구 결과를 발표했다. 데이터는 테스토스테론을 화학적 거세 수준(≤0.5 ng/mL)으로 유지하는 안정적인 약물 방출을 보여줬으며, PLGA 미립구 데포의 흔한 실패 요인인 초기 과다 방출(burst)이 크게 줄었다(기존 상용 제품 대비 0.14–7.65%). 6개월 제형은 경쟁 제품의 절반 수준의 유효성분을 사용한다고 소개됐다. 당시 회사는 IVL3008을 임상 1/2상에 진입시키고 글로벌 라이선스 파트너십을 추진하겠다는 의향을 밝혔다.",
       "source": {
         "name": "Edaily Pharm (팜이데일리)",
         "url": "https://pharm.edaily.co.kr/news/read?newsId=02548566638921392",

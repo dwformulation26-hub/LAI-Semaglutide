@@ -17,15 +17,21 @@
   ],
   "current_status": {
     "stage": "Approved & marketed (US); wholly owned Alkermes product; patent settlement licenses Teva to launch a generic starting Jan 15, 2027 (2 yrs ahead of 2029 patent expiry); a separate Amneal authorized-generic supply agreement was terminated in July 2026",
+    "stage_ko": "승인 및 시판(미국); Alkermes가 단독 보유한 제품; 특허 합의에 따라 Teva는 2027년 1월 15일부터 제네릭을 출시할 수 있는 라이선스를 받았으며(2029년 특허 만료보다 2년 앞섬), 별도의 Amneal 위임 제네릭 공급 계약은 2026년 7월 해지됐다",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Approved and marketed in the US; Teva's generic license doesn't start until Jan 2027.",
+    "stage_evidence_ko": "미국에서 승인 및 시판 중이며, Teva의 제네릭 라이선스는 2027년 1월에야 시작된다.",
     "molecule_class": [
       "non_incretin"
     ],
     "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
+    "molecule_evidence_ko": "탑재 약물이 인크레틴 및 비만 펩타이드 영역 밖에 있어, 전달 플랫폼 근거로 추적한다.",
     "dosing_target": "Monthly (intramuscular)",
+    "dosing_target_ko": "월 1회(근육 주사)",
     "partner": "None (wholly owned); Teva licensed for future generic entry (2027); Amneal authorized-generic supply deal terminated 2026",
+    "partner_ko": "없음(단독 보유); Teva는 향후 제네릭 진입 라이선스 보유(2027년); Amneal 위임 제네릭 공급 계약 2026년 해지",
     "data_point": "Q2 2026 net sales $124.5M (vs $121.7M PY); Q1 2026 net sales $112.4M; FY2026 guidance $460-480M",
+    "data_point_ko": "2026년 2분기 순매출 $124.5M(전년 동기 $121.7M); 2026년 1분기 순매출 $112.4M; FY2026 가이던스 $460-480M",
     "last_updated": "2026-07-28",
     "last_checked": "2026-09-13"
   },
@@ -35,6 +41,7 @@
       "date": "2023-08-30",
       "type": "deal_partnership",
       "summary": "Alkermes settled patent litigation with Teva over Vivitrol (US Patent 7,919,499), granting Teva a license to market a generic version of Vivitrol in the US beginning January 15, 2027 (or earlier under customary circumstances) — roughly two years before the patent's 2029 expiry. Ends litigation Alkermes filed in 2020.",
+      "summary_ko": "Alkermes가 Vivitrol 관련 특허 소송(미국 특허 7,919,499)에서 Teva와 합의해, Teva에 2027년 1월 15일(또는 통상적인 사유 발생 시 그 이전)부터 미국에서 Vivitrol 제네릭을 판매할 수 있는 라이선스를 부여했다. 이는 2029년 특허 만료보다 약 2년 앞선 시점이다. 이로써 Alkermes가 2020년 제기한 소송이 종결됐다.",
       "source": {
         "name": "Alkermes press release (PR Newswire)",
         "url": "https://www.prnewswire.com/news-releases/alkermes-announces-settlement-with-teva-related-to-vivitrol-patent-litigation-301913126.html",
@@ -47,6 +54,7 @@
       "date": "2026-05-05",
       "type": "market_reaction",
       "summary": "Q1 2026 results: Vivitrol net sales $112.4M; full-year 2026 Vivitrol guidance reaffirmed at $460M-$480M. Overall Alkermes revenue beat estimates, aided by the recent Avadel (LUMRYZ) acquisition.",
+      "summary_ko": "2026년 1분기 실적: Vivitrol 순매출 $112.4M, 2026년 연간 Vivitrol 가이던스 $460M-$480M 재확인. Alkermes 전체 매출은 최근 Avadel(LUMRYZ) 인수에 힘입어 예상치를 웃돌았다.",
       "source": {
         "name": "Alkermes Q1 2026 earnings materials",
         "url": "https://investor.alkermes.com/static-files/61b5fbcf-74e9-4b92-9d7d-92fce21779b8",
@@ -59,6 +67,7 @@
       "date": "2026-07-06",
       "type": "deal_partnership",
       "summary": "Alkermes and Amneal Pharmaceuticals terminated their Authorized Generic Product Supply Agreement for Vivitrol (originally signed Sept 9, 2025) after Amneal notified Alkermes it did not intend to order any batches. No penalties or further obligations remain between the parties.",
+      "summary_ko": "Alkermes와 Amneal Pharmaceuticals가 Vivitrol 위임 제네릭 제품 공급 계약(2025년 9월 9일 체결)을 해지했다. Amneal이 어떤 배치도 주문할 의사가 없다고 Alkermes에 통보한 데 따른 것이다. 양사 간 위약금이나 추가 의무는 남아 있지 않다.",
       "source": {
         "name": "Alkermes 8-K (SEC)",
         "url": "https://www.sec.gov/Archives/edgar/data/1520262/000119312526298004/alks-20260706.htm",
@@ -71,6 +80,7 @@
       "date": "2026-07-28",
       "type": "market_reaction",
       "summary": "Q2 2026 results: Vivitrol net sales $124.5M (vs $121.7M prior-year period), aided by alcohol-dependence demand growth and ~$4M favorable gross-to-net patient-mix adjustments; total proprietary net sales $411.7M vs $307.2M PY; full-year 2026 Vivitrol guidance of $460M-$480M reaffirmed.",
+      "summary_ko": "2026년 2분기 실적: Vivitrol 순매출은 $124.5M(전년 동기 $121.7M)로, 알코올 의존증 수요 증가와 약 $4M의 유리한 gross-to-net 환자 구성 조정에 힘입었다. 자체 제품 총 순매출은 $411.7M(전년 동기 $307.2M)이며, 2026년 연간 Vivitrol 가이던스 $460M-$480M를 재확인했다.",
       "source": {
         "name": "Alkermes Q2 2026 earnings materials",
         "url": "https://investor.alkermes.com/static-files/b632dac1-81e9-409c-9d1b-dd8580e2edd8",

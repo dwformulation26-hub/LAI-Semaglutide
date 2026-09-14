@@ -22,6 +22,7 @@
             "tier": 1
           },
           "snippet": "Nanexa AB (Nasdaq First North Growth Market: NANEXA), Uppsala, Sweden, granted Moderna a license and option agreement for PharmaShell-based products: USD 3 million upfront, up to USD 500 million in development/commercial milestones plus tiered royalties. PharmaShell uses atomic layer deposition (ALD) to coat drug particles for tailored, long-acting (1-3 month) release, terminal sterilization, and room-temperature stability. Release notes existing collaboration agreements with Novo Nordisk and AstraZeneca.",
+          "snippet_ko": "스웨덴 웁살라 소재 Nanexa AB(Nasdaq First North Growth Market: NANEXA)는 Moderna에 PharmaShell 기반 제품에 대한 기술이전(라이선스) 및 옵션 계약을 부여했다. 계약금 USD 3 million, 개발/상업화 마일스톤 최대 USD 500 million에 단계별 로열티가 더해지는 조건이다. PharmaShell은 원자층 증착(ALD)으로 약물 입자를 코팅해 맞춤형 장기 지속(1-3개월) 방출, 최종 멸균, 상온 안정성을 구현한다. 보도자료는 Novo Nordisk 및 AstraZeneca와의 기존 공동 개발 계약도 언급했다.",
           "date": "2025-12-10"
         },
         {
@@ -31,6 +32,7 @@
             "tier": 2
           },
           "snippet": "Moderna taps Nanexa to improve delivery of injectable therapies in a back-loaded $500M pact, to develop long-acting versions of Moderna's mRNA-based compounds.",
+          "snippet_ko": "Moderna는 대가가 후반부에 집중된 $500M 규모 계약으로 주사제 전달 개선을 위해 Nanexa와 손잡았으며, 이는 Moderna의 mRNA 기반 화합물의 장기지속형 버전을 개발하기 위한 것이다.",
           "date": "2025-12-10"
         }
       ],
@@ -48,7 +50,8 @@
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "The Dec 2025 Moderna licensing deal is a single dated event and not itself stage-bearing (a deal/partnership, not an IND/trial/regulatory/approval event). This week's follow-up found references to further 2026 dosing data and an ADA poster but could not pin down citable URLs this pass, so a second confirmed dated event is still needed before promotion."
+        "evidence": "The Dec 2025 Moderna licensing deal is a single dated event and not itself stage-bearing (a deal/partnership, not an IND/trial/regulatory/approval event). This week's follow-up found references to further 2026 dosing data and an ADA poster but could not pin down citable URLs this pass, so a second confirmed dated event is still needed before promotion.",
+        "evidence_ko": "2025년 12월 Moderna 기술이전 계약은 단일 날짜 이벤트이며 그 자체로 개발 단계를 나타내지 않는다(IND/임상/규제/승인 이벤트가 아닌 계약/파트너십). 이번 주 후속 조사에서 2026년 추가 투여 데이터와 ADA 포스터에 대한 언급을 찾았으나 이번 조사에서는 인용 가능한 URL을 확정하지 못해, 승격 전에 확인된 두 번째 날짜 이벤트가 여전히 필요하다."
       },
       "resolution": null
     },
@@ -71,6 +74,7 @@
             "tier": 2
           },
           "snippet": "Samchundang has four LAI products nearing commercialization (two microsphere-, two liposome-based, in development since 2017). Octreotide (acromegaly) monthly microsphere formulation is in final clinical stage with 2026 FDA submission targeted; US and Canada supply/partner contracts already signed. Leuprorelin (prostate cancer) has a four-interval lineup (1/3/4/6-month) with particle size matched to the originator (23-gauge needle compatible) and commercial-scale batches validated (3,000/6,000/10,000 units); a partner has requested a term sheet.",
+          "snippet_ko": "삼천당제약은 상업화에 근접한 LAI 제품 4종(미립구 기반 2종, 리포좀 기반 2종, 2017년부터 개발)을 보유하고 있다. 옥트레오타이드(말단비대증) 월 1회 미립구 제형은 최종 임상 단계에 있으며 2026년 FDA 제출을 목표로 하고, 미국 및 캐나다 공급/파트너 계약은 이미 체결됐다. 류프로렐린(전립선암)은 오리지널 제품과 입자 크기를 맞춘(23게이지 바늘 호환) 4가지 투여 간격(1/3/4/6개월) 라인업을 갖췄으며 상업 규모 배치(3,000/6,000/10,000 유닛)가 검증됐다. 한 파트너가 텀시트를 요청했다.",
           "date": "2026-01-15"
         }
       ],
@@ -88,7 +92,8 @@
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim"],
         "unmet": ["confirmed_source", "second_dated_event"],
-        "evidence": "Only a single company disclosure event (2026-01-15) is on record; this week's follow-up found additional outlets (Dailypharm, mdtoday) but they are same-day syndication of the same original reveal, not independent corroboration or a new dated event."
+        "evidence": "Only a single company disclosure event (2026-01-15) is on record; this week's follow-up found additional outlets (Dailypharm, mdtoday) but they are same-day syndication of the same original reveal, not independent corroboration or a new dated event.",
+        "evidence_ko": "기록된 것은 회사 공개 이벤트 1건(2026-01-15)뿐이다. 이번 주 후속 조사에서 추가 매체(Dailypharm, mdtoday)를 찾았으나 동일한 최초 공개 내용을 같은 날 전재한 것으로, 독립적인 교차 확인이나 새로운 날짜 이벤트가 아니다."
       },
       "resolution": null
     },
@@ -113,6 +118,7 @@
             "tier": 2
           },
           "snippet": "G2GBio (existing tracked umbrella samsung-bioepis-g2gbio-gb7001) and SpiderCore, a KAIST-founded AI deep-tech startup, signed a contract to build an agentic-AI R&D platform for long-acting injectable microparticle development -- integrating G2GBio's internal research data with public literature/patents to auto-propose formulation and process conditions, targeting 2x faster development and 50% lower cost within two years, eventually extending to G2GBio's CDMO business.",
+          "snippet_ko": "지투지바이오(기존 추적 엄브렐라 samsung-bioepis-g2gbio-gb7001)와 KAIST 창업 AI 딥테크 스타트업 스파이더코어는 장기지속형 주사제 미세입자 개발을 위한 에이전틱 AI R&D 플랫폼 구축 계약을 체결했다. 지투지바이오의 내부 연구 데이터를 공개 문헌/특허와 통합해 제형 및 공정 조건을 자동 제안하는 방식으로, 2년 이내 개발 속도 2배 향상과 비용 50% 절감을 목표로 하며 향후 지투지바이오의 CDMO 사업으로 확장할 계획이다.",
           "date": "2026-07-21"
         }
       ],
@@ -130,7 +136,8 @@
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "A second outlet (eToday) independently corroborates the same 2026-07-21 G2GBio/SpiderCore AI-platform contract, clearing confirmed_source, but no second distinct date has surfaced. SCOPE CAVEAT: SpiderCore is a KAIST-founded AI/software vendor selling an R&D tool to G2GBio, not itself a drug or delivery-technology developer -- recommend an explicit admin scope call on whether this belongs in the registry at all, independent of the promotion bar."
+        "evidence": "A second outlet (eToday) independently corroborates the same 2026-07-21 G2GBio/SpiderCore AI-platform contract, clearing confirmed_source, but no second distinct date has surfaced. SCOPE CAVEAT: SpiderCore is a KAIST-founded AI/software vendor selling an R&D tool to G2GBio, not itself a drug or delivery-technology developer -- recommend an explicit admin scope call on whether this belongs in the registry at all, independent of the promotion bar.",
+        "evidence_ko": "두 번째 매체(eToday)가 동일한 2026-07-21 지투지바이오/스파이더코어 AI 플랫폼 계약을 독립적으로 교차 확인해 confirmed_source(확인된 출처) 조건은 충족했으나, 두 번째 별개 날짜는 나타나지 않았다. 범위 관련 유의사항: 스파이더코어는 지투지바이오에 R&D 도구를 판매하는 KAIST 창업 AI/소프트웨어 업체로, 그 자체가 약물 또는 전달 기술 개발사가 아니다. 승격 기준과는 별개로 이 후보가 레지스트리에 포함돼야 하는지 여부에 대해 관리자의 명시적인 범위 판단을 권고한다."
       },
       "resolution": null
     },
@@ -154,6 +161,7 @@
             "tier": 2
           },
           "snippet": "Alveus Therapeutics (Philadelphia/Copenhagen), incubated by New Rhein Healthcare Investors, launched with $159.8M Series A (New Rhein, Andera Partners, Omega Funds, Sanofi Capital, Kurma Partners, Avego BioScience Capital). Lead candidate ALV-100 is a fusion protein activating GLP-1 while blocking GIP, engineered for durability with a quarterly-dosing target (vs. monthly for Amgen's MariTide). Pipeline also includes ALV-200, a peptide selectively activating amylin receptor 3 for satiety/lean-mass preservation, planned for clinical entry mid-2027.",
+          "snippet_ko": "New Rhein Healthcare Investors가 인큐베이팅한 Alveus Therapeutics(필라델피아/코펜하겐)는 $159.8M 규모 시리즈 A(New Rhein, Andera Partners, Omega Funds, Sanofi Capital, Kurma Partners, Avego BioScience Capital)로 출범했다. 주력 후보 ALV-100은 GLP-1을 활성화하면서 GIP를 차단하는 융합 단백질로, 3개월 1회 투여 목표(Amgen MariTide의 월 1회 대비)에 맞춰 지속성을 높이도록 설계됐다. 파이프라인에는 포만감 및 제지방량 보존을 위해 아밀린 수용체 3을 선택적으로 활성화하는 펩타이드 ALV-200도 포함되며, 2027년 중반 임상 진입이 계획돼 있다.",
           "date": "2026-01-08"
         }
       ],
@@ -171,7 +179,8 @@
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim"],
         "unmet": ["confirmed_source", "second_dated_event"],
-        "evidence": "Only a single tier-2 source (MedCity News, 2026-01-08) is on record. This week's follow-up found reports of an FDA IND clearance/first-patient-dosed event (~2026-01-23) and a Series A second closing to $197M (~2026-02-24), which if confirmed would clear both remaining conditions (the IND/dosing event is itself stage-bearing), but citable URLs could not be pinned down this pass -- follow up next sweep. Also clarifies ALV-100 was licensed from Gmax Biopharm (China), unrelated to Pfizer/Metsera lineage; fuzzy_match score lowered accordingly."
+        "evidence": "Only a single tier-2 source (MedCity News, 2026-01-08) is on record. This week's follow-up found reports of an FDA IND clearance/first-patient-dosed event (~2026-01-23) and a Series A second closing to $197M (~2026-02-24), which if confirmed would clear both remaining conditions (the IND/dosing event is itself stage-bearing), but citable URLs could not be pinned down this pass -- follow up next sweep. Also clarifies ALV-100 was licensed from Gmax Biopharm (China), unrelated to Pfizer/Metsera lineage; fuzzy_match score lowered accordingly.",
+        "evidence_ko": "기록된 것은 단일 Tier 2 출처(MedCity News, 2026-01-08)뿐이다. 이번 주 후속 조사에서 FDA IND 승인/첫 환자 투여 이벤트(~2026-01-23)와 시리즈 A 2차 클로징으로 $197M 도달(~2026-02-24)에 대한 보도를 찾았으며, 확인될 경우 남은 두 조건을 모두 충족하게 되나(IND/투여 이벤트는 그 자체로 개발 단계를 나타냄) 이번 조사에서는 인용 가능한 URL을 확정하지 못했다. 다음 스윕에서 후속 확인이 필요하다. 또한 ALV-100은 Gmax Biopharm(중국)에서 도입한 것으로 Pfizer/Metsera 계열과 무관함이 확인돼, fuzzy_match 점수를 그에 맞게 낮췄다."
       },
       "resolution": null
     },
@@ -195,6 +204,7 @@
             "tier": 1
           },
           "snippet": "Phase 2/3 open-label study (NCT07722728) evaluating PK, safety and tolerability of B2227 Extended-Release Injectable Suspension (subcutaneous, single-dose 30/70/150 mg) versus Vraylar (cariprazine) in schizophrenia patients; lead sponsor is Bostal Drug Delivery Co., Ltd. First posted 2026-07-23.",
+          "snippet_ko": "조현병 환자를 대상으로 B2227 서방형 주사용 현탁액(피하, 단회 투여 30/70/150 mg)의 PK, 안전성, 내약성을 Vraylar(카리프라진)와 비교 평가하는 임상 2/3상 공개 라벨 시험(NCT07722728)이다. 주 스폰서는 Bostal Drug Delivery Co., Ltd이며, 최초 게시일은 2026-07-23이다.",
           "date": "2026-07-23"
         },
         {
@@ -204,6 +214,7 @@
             "tier": 1
           },
           "snippet": "Company describes itself as a global pharmaceutical company (China/US operations) specializing in 505(b)(2) drug delivery, including oral modified-release, solubilization, and injectable (conventional, lyophilized, and long-acting) formulations.",
+          "snippet_ko": "회사는 스스로를 경구 조절 방출, 가용화, 주사제(일반, 동결건조, 장기지속형) 제형을 포함한 505(b)(2) 약물 전달에 특화된 글로벌 제약사(중국/미국 사업)로 소개하고 있다.",
           "date": "2026-09-02"
         }
       ],
@@ -221,7 +232,8 @@
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
         "unmet": [],
-        "evidence": "The existing Tier 1 clinicaltrials.gov Phase 2/3 registration (NCT07722728, first posted 2026-07-23) is itself a stage-bearing event, which alone clears confirmed_source and second_dated_event under the promotion-bar rule; no new evidence needed this cycle. Fuzzy match to alkermes-aristada is low (0.15) -- not a merge case."
+        "evidence": "The existing Tier 1 clinicaltrials.gov Phase 2/3 registration (NCT07722728, first posted 2026-07-23) is itself a stage-bearing event, which alone clears confirmed_source and second_dated_event under the promotion-bar rule; no new evidence needed this cycle. Fuzzy match to alkermes-aristada is low (0.15) -- not a merge case.",
+        "evidence_ko": "기존 Tier 1 clinicaltrials.gov 임상 2/3상 등록(NCT07722728, 최초 게시 2026-07-23)은 그 자체로 개발 단계를 나타내는 이벤트이며, 승격 기준 규칙에 따라 이것만으로 confirmed_source(확인된 출처)와 second_dated_event(두 번째 날짜 이벤트)를 충족한다. 이번 주기에는 새로운 근거가 필요하지 않다. alkermes-aristada와의 퍼지 매칭 점수는 낮아(0.15) 병합 사례가 아니다."
       },
       "resolution": {
         "action": "promoted",
@@ -250,6 +262,7 @@
             "tier": 1
           },
           "snippet": "Phase 1 open-label, multicenter, dose-escalation study (NCT07484204) of AX251 long-acting injectable (cariprazine LAI, single-dose 45/90/135/180 mg) in schizophrenia patients; lead sponsor is Anxo Pharmaceutical Co., Ltd. First posted 2026-03-20.",
+          "snippet_ko": "조현병 환자를 대상으로 AX251 장기지속형 주사제(카리프라진 LAI, 단회 투여 45/90/135/180 mg)를 평가하는 임상 1상 공개 라벨, 다기관, 용량 증량 시험(NCT07484204)이다. 주 스폰서는 Anxo Pharmaceutical Co., Ltd.이며, 최초 게시일은 2026-03-20이다.",
           "date": "2026-03-20"
         },
         {
@@ -259,6 +272,7 @@
             "tier": 3
           },
           "snippet": "Indexed article reports Anxo Pharmaceutical received FDA IND clearance for AX251, described as a long-acting injectable reformulation of an existing oral drug using Anxo's proprietary NanoCIP nanocrystal injectable platform.",
+          "snippet_ko": "색인된 기사는 Anxo Pharmaceutical이 AX251에 대해 FDA IND 승인을 받았다고 보도했으며, AX251은 Anxo의 독자적인 NanoCIP 나노결정 주사제 플랫폼을 활용해 기존 경구약을 장기지속형 주사제로 재제형화한 것으로 설명됐다.",
           "date": "2026-09-02",
           "verification_note": "Read from a search-engine summary only; the page refused a direct fetch. The date is the day a run found the article, not its publish date.",
           "date_basis": "inferred"
@@ -278,7 +292,8 @@
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
         "unmet": [],
-        "evidence": "The existing Tier 1 clinicaltrials.gov Phase 1 registration (NCT07484204, first posted 2026-03-20) is itself a stage-bearing event, clearing confirmed_source and second_dated_event alone. A Tier 3 IND-clearance claim was re-surfaced this cycle via the same original single outlet (IBMI) rather than a genuinely independent second source, so it was not counted toward the bar -- the escalation rests on the Tier 1 trial registration alone."
+        "evidence": "The existing Tier 1 clinicaltrials.gov Phase 1 registration (NCT07484204, first posted 2026-03-20) is itself a stage-bearing event, clearing confirmed_source and second_dated_event alone. A Tier 3 IND-clearance claim was re-surfaced this cycle via the same original single outlet (IBMI) rather than a genuinely independent second source, so it was not counted toward the bar -- the escalation rests on the Tier 1 trial registration alone.",
+        "evidence_ko": "기존 Tier 1 clinicaltrials.gov 임상 1상 등록(NCT07484204, 최초 게시 2026-03-20)은 그 자체로 개발 단계를 나타내는 이벤트로, 이것만으로 confirmed_source(확인된 출처)와 second_dated_event(두 번째 날짜 이벤트)를 충족한다. Tier 3 수준의 IND 승인 주장이 이번 주기에 다시 나타났으나 진정한 독립 제2 출처가 아닌 동일한 최초 단일 매체(IBMI)를 통한 것이어서 기준 충족에 반영하지 않았다. 에스컬레이션은 Tier 1 임상 등록에만 근거한다."
       },
       "resolution": {
         "action": "promoted",
@@ -306,6 +321,7 @@
             "tier": 1
           },
           "snippet": "Phase III randomized, open-label, positive-controlled superiority trial (NCT07623824) of SYHX2008 (octreotide long-acting injection, subcutaneous, monthly) versus Sandostatin LAR (intramuscular) in acromegaly; lead sponsor CSPC ZhongQi Pharmaceutical Technology Co., Ltd. First posted 2026-06-03, 154 planned participants.",
+          "snippet_ko": "말단비대증 환자를 대상으로 SYHX2008(옥트레오타이드 장기지속형 주사, 피하, 월 1회)을 Sandostatin LAR(근육)와 비교하는 임상 3상 무작위배정, 공개 라벨, 활성 대조 우월성 시험(NCT07623824)이다. 주 스폰서는 CSPC ZhongQi Pharmaceutical Technology Co., Ltd.이다. 최초 게시일은 2026-06-03이며, 계획된 참여자는 154명이다.",
           "date": "2026-06-03"
         },
         {
@@ -315,6 +331,7 @@
             "tier": 2
           },
           "snippet": "CSPC Pharmaceutical Group received US FDA clearance to begin US clinical trials of SYHX2008, a once-monthly long-acting octreotide injection for acromegaly and gastroenteropancreatic neuroendocrine tumors, designed for subcutaneous self-administration; already in Phase III trials in China against existing octreotide microsphere products. Dated June 19, 2026.",
+          "snippet_ko": "CSPC Pharmaceutical Group은 말단비대증 및 위장췌장 신경내분비종양 치료용 월 1회 장기지속형 옥트레오타이드 주사제 SYHX2008의 미국 임상시험 개시에 대해 미국 FDA 승인을 받았다. SYHX2008은 피하 자가 투여용으로 설계됐으며, 중국에서는 이미 기존 옥트레오타이드 미립구 제품과 비교하는 임상 3상이 진행 중이다. 날짜는 2026년 6월 19일이다.",
           "date": "2026-06-19"
         }
       ],
@@ -332,7 +349,8 @@
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
         "unmet": [],
-        "evidence": "Mechanically clears the bar on its own evidence (Tier 1 clinicaltrials.gov Phase III registration, NCT07623824, is itself stage-bearing). However, this week's follow-up confirmed CSPC ZhongQi Pharmaceutical Technology (Shijiazhuang) Co., Ltd. is formally a subsidiary of CSPC Pharmaceutical Group Limited (1093.HK) -- the same corporate parent as the already-promoted cspc-syh2082 umbrella. Re-running the fuzzy match against the grown alias table now scores 0.58 (>= the 0.55 merge threshold), so per the mechanical merge-case rule this must NOT be escalated to ready_for_promotion -- flagging for an admin merge/new-sibling-umbrella decision instead. Note this is a different drug asset (SYHX2008, octreotide for acromegaly) from cspc-syh2082's own asset (SYH2082, GLP-1R/GIPR agonist), so the admin may reasonably decide 'new sibling umbrella under the same parent' rather than a true merge -- but the score crosses the mechanical threshold either way, so this run does not auto-escalate it."
+        "evidence": "Mechanically clears the bar on its own evidence (Tier 1 clinicaltrials.gov Phase III registration, NCT07623824, is itself stage-bearing). However, this week's follow-up confirmed CSPC ZhongQi Pharmaceutical Technology (Shijiazhuang) Co., Ltd. is formally a subsidiary of CSPC Pharmaceutical Group Limited (1093.HK) -- the same corporate parent as the already-promoted cspc-syh2082 umbrella. Re-running the fuzzy match against the grown alias table now scores 0.58 (>= the 0.55 merge threshold), so per the mechanical merge-case rule this must NOT be escalated to ready_for_promotion -- flagging for an admin merge/new-sibling-umbrella decision instead. Note this is a different drug asset (SYHX2008, octreotide for acromegaly) from cspc-syh2082's own asset (SYH2082, GLP-1R/GIPR agonist), so the admin may reasonably decide 'new sibling umbrella under the same parent' rather than a true merge -- but the score crosses the mechanical threshold either way, so this run does not auto-escalate it.",
+        "evidence_ko": "자체 근거만으로 기계적으로 기준을 충족한다(Tier 1 clinicaltrials.gov 임상 3상 등록 NCT07623824는 그 자체로 개발 단계를 나타내는 이벤트). 그러나 이번 주 후속 조사에서 CSPC ZhongQi Pharmaceutical Technology (Shijiazhuang) Co., Ltd.가 공식적으로 CSPC Pharmaceutical Group Limited(1093.HK)의 자회사이며, 이미 승격된 cspc-syh2082 엄브렐라와 동일한 모회사를 두고 있음이 확인됐다. 확장된 별칭 테이블로 퍼지 매칭을 재실행한 결과 점수가 0.58(병합 임계값 0.55 이상)로 나타나, 기계적 병합 사례 규칙에 따라 ready_for_promotion으로 에스컬레이션해서는 안 되며, 대신 관리자의 병합/신규 자매 엄브렐라 결정을 위해 플래그를 지정한다. 이는 cspc-syh2082의 자산(SYH2082, GLP-1R/GIPR 작용제)과는 다른 약물 자산(SYHX2008, 말단비대증 대상 옥트레오타이드)이므로 관리자가 실제 병합이 아닌 '동일 모회사 아래 신규 자매 엄브렐라'로 합리적으로 결정할 수도 있으나, 어느 경우든 점수가 기계적 임계값을 넘으므로 이번 실행에서는 자동 에스컬레이션하지 않는다."
       },
       "resolution": null
     },
@@ -356,6 +374,7 @@
             "tier": 1
           },
           "snippet": "Phase 1 sequential-dose-cohort PK/safety study (NCT07269873) of BICX104, a subcutaneous implantable biodegradable naltrexone pellet (997.5 mg NTX base anhydrous, target ≥1 ng/mL for 3 months) with or without bupropion, compared to Vivitrol (naltrexone IM depot injection); lead sponsor BioCorRx Pharmaceuticals Inc. First posted 2025-12-08.",
+          "snippet_ko": "BICX104의 임상 1상 순차 용량 코호트 PK/안전성 시험(NCT07269873)이다. BICX104는 부프로피온 병용 또는 단독의 피하 이식형 생분해성 날트렉손 펠릿(무수 NTX 염기 997.5 mg, 3개월간 ≥1 ng/mL 목표)으로, Vivitrol(날트렉손 IM 데포 주사)과 비교한다. 주 스폰서는 BioCorRx Pharmaceuticals Inc.이며, 최초 게시일은 2025-12-08이다.",
           "date": "2025-12-08"
         },
         {
@@ -365,6 +384,7 @@
             "tier": 2
           },
           "snippet": "BioCorRx Inc. (OTCQB: BICX) submitted an FDA expanded-access application for BICX104, a biodegradable long-acting subcutaneous naltrexone pellet delivering therapeutic levels for 84 days — three times the duration of the 28-day marketed Vivitrol depot injection. Dated August 15, 2023.",
+          "snippet_ko": "BioCorRx Inc.(OTCQB: BICX)는 84일간 치료 농도를 전달하는 생분해성 장기지속형 피하 날트렉손 펠릿 BICX104에 대해 FDA 확대 접근 신청서를 제출했다. 이는 시판 중인 28일 지속 Vivitrol 데포 주사의 3배에 해당하는 기간이다. 날짜는 2023년 8월 15일이다.",
           "date": "2023-08-15"
         }
       ],
@@ -382,7 +402,8 @@
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
         "unmet": [],
-        "evidence": "The existing Tier 1 clinicaltrials.gov Phase 1 registration (NCT07269873, first posted 2025-12-08) is itself stage-bearing, clearing confirmed_source and second_dated_event alone. A possible NIDA methamphetamine-use-disorder grant was mentioned in this cycle's follow-up but its date could not be confirmed, so it was not counted toward the bar. Fuzzy match to alkermes-vivitrol (0.4) reflects the shared naltrexone/opioid-antagonist space but a different delivery technology (implant pellet vs PLGA microsphere) -- not a merge case."
+        "evidence": "The existing Tier 1 clinicaltrials.gov Phase 1 registration (NCT07269873, first posted 2025-12-08) is itself stage-bearing, clearing confirmed_source and second_dated_event alone. A possible NIDA methamphetamine-use-disorder grant was mentioned in this cycle's follow-up but its date could not be confirmed, so it was not counted toward the bar. Fuzzy match to alkermes-vivitrol (0.4) reflects the shared naltrexone/opioid-antagonist space but a different delivery technology (implant pellet vs PLGA microsphere) -- not a merge case.",
+        "evidence_ko": "기존 Tier 1 clinicaltrials.gov 임상 1상 등록(NCT07269873, 최초 게시 2025-12-08)은 그 자체로 개발 단계를 나타내는 이벤트로, 이것만으로 confirmed_source(확인된 출처)와 second_dated_event(두 번째 날짜 이벤트)를 충족한다. 이번 주기 후속 조사에서 NIDA 메스암페타민 사용 장애 연구비 가능성이 언급됐으나 날짜를 확인할 수 없어 기준 충족에 반영하지 않았다. alkermes-vivitrol과의 퍼지 매칭(0.4)은 날트렉손/오피오이드 길항제 영역을 공유하는 데 따른 것이나, 전달 기술이 달라(임플란트 펠릿 vs PLGA 미립구) 병합 사례가 아니다."
       },
       "resolution": {
         "action": "promoted",
@@ -409,6 +430,7 @@
             "tier": 1
           },
           "snippet": "Phase Ia, single-center, randomized, open-label trial (NCT07793162) comparing HHK001 (an improved leuprorelin acetate microsphere-for-injection formulation, GnRH agonist) versus Enantone (leuprorelin acetate microspheres) in endometriosis patients, single 3.75 mg subcutaneous dose. Sponsored by Third Xiangya Hospital of Central South University, with industry collaborator Zhuhai Huahaikang Pharmaceutical Technology Co., Ltd. First posted 2026-08-28.",
+          "snippet_ko": "자궁내막증 환자를 대상으로 HHK001(개선된 류프로렐린 아세테이트 주사용 미립구 제형, GnRH 작용제)을 Enantone(류프로렐린 아세테이트 미립구)과 비교하는 임상 1a상 단일기관, 무작위배정, 공개 라벨 시험(NCT07793162)으로, 3.75 mg을 단회 피하 투여한다. 스폰서는 Third Xiangya Hospital of Central South University이며, 산업계 협력사는 Zhuhai Huahaikang Pharmaceutical Technology Co., Ltd.이다. 최초 게시일은 2026-08-28이다.",
           "date": "2026-08-28"
         }
       ],
@@ -426,7 +448,8 @@
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
         "unmet": [],
-        "evidence": "The existing Tier 1 clinicaltrials.gov Phase Ia registration (NCT07793162, first posted 2026-08-28) is itself stage-bearing, clearing confirmed_source and second_dated_event alone. This cycle's follow-up found a possible second HHK001 trial record (NCT07755956) that has not yet been independently verified, so it was not added as evidence; worth confirming next sweep. Fuzzy match to peptron-luprone (0.4) reflects the shared leuprorelin-microsphere space, not a merge case."
+        "evidence": "The existing Tier 1 clinicaltrials.gov Phase Ia registration (NCT07793162, first posted 2026-08-28) is itself stage-bearing, clearing confirmed_source and second_dated_event alone. This cycle's follow-up found a possible second HHK001 trial record (NCT07755956) that has not yet been independently verified, so it was not added as evidence; worth confirming next sweep. Fuzzy match to peptron-luprone (0.4) reflects the shared leuprorelin-microsphere space, not a merge case.",
+        "evidence_ko": "기존 Tier 1 clinicaltrials.gov 임상 1a상 등록(NCT07793162, 최초 게시 2026-08-28)은 그 자체로 개발 단계를 나타내는 이벤트로, 이것만으로 confirmed_source(확인된 출처)와 second_dated_event(두 번째 날짜 이벤트)를 충족한다. 이번 주기 후속 조사에서 HHK001의 두 번째 임상 기록 가능성(NCT07755956)을 찾았으나 아직 독립적으로 검증되지 않아 근거로 추가하지 않았으며, 다음 스윕에서 확인할 필요가 있다. peptron-luprone과의 퍼지 매칭(0.4)은 류프로렐린 미립구 영역을 공유하는 데 따른 것으로, 병합 사례가 아니다."
       },
       "resolution": {
         "action": "promoted",
@@ -457,6 +480,7 @@
             "tier": 2
           },
           "snippet": "Korea BioNC reported animal-model results for its GLP-1/GIP/GCG triple-agonist–albumin conjugate obesity candidate (co-developed with ProAptec), claiming efficacy on par with Mounjaro (tirzepatide).",
+          "snippet_ko": "한국비엔씨는 프로앱텍과 공동 개발 중인 GLP-1/GIP/GCG 삼중 작용제–알부민 결합체 비만 후보물질의 동물모델 결과를 발표하며, Mounjaro(터제파타이드)에 필적하는 효능을 주장했다.",
           "date": "2026-02-11",
           "verification_note": "Read from search-result metadata only (hankyung.com refused a direct fetch). The date comes from the article's URL ID (202602118729P) and was not confirmed on the page.",
           "date_basis": "inferred"
@@ -468,6 +492,7 @@
             "tier": 2
           },
           "snippet": "Korea BioNC and ProAptec jointly filed a use patent for a GLP-1/GIP/GCG triple-agonist + albumin-conjugate candidate targeting roughly once-every-3-weeks dosing for obesity/diabetes, combining ProAptec's multi-action peptide platform with albumin-conjugation (click chemistry) technology.",
+          "snippet_ko": "한국비엔씨와 프로앱텍은 비만/당뇨병 치료에서 약 3주 1회 투여를 목표로 하는 GLP-1/GIP/GCG 삼중 작용제 + 알부민 결합체 후보물질에 대한 용도 특허를 공동 출원했다. 이 후보물질은 프로앱텍의 다중 작용 펩타이드 플랫폼과 알부민 결합(클릭 화학) 기술을 결합한 것이다.",
           "date": "2026-02-11",
           "verification_note": "Read from the search-result title and summary only (mdtoday.co.kr refused a direct fetch); the publish date was not confirmed.",
           "date_basis": "inferred"
@@ -487,7 +512,8 @@
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim"],
         "unmet": ["confirmed_source", "second_dated_event"],
-        "evidence": "Both cited outlets (Hankyung, mdtoday.co.kr) remain EGRESS_BLOCKED for direct verification; this cycle's follow-up surfaced additional search-snippet-only references to a 2025-09-08 patent filing and a 2025-11-17 efficacy claim, but none could be independently confirmed beyond snippets from the same blocked domains, so neither the source nor the dated-event condition is being upgraded on this basis. All underlying claims remain self-reported animal-model results."
+        "evidence": "Both cited outlets (Hankyung, mdtoday.co.kr) remain EGRESS_BLOCKED for direct verification; this cycle's follow-up surfaced additional search-snippet-only references to a 2025-09-08 patent filing and a 2025-11-17 efficacy claim, but none could be independently confirmed beyond snippets from the same blocked domains, so neither the source nor the dated-event condition is being upgraded on this basis. All underlying claims remain self-reported animal-model results.",
+        "evidence_ko": "인용된 두 매체(Hankyung, mdtoday.co.kr)는 여전히 직접 검증이 EGRESS_BLOCKED 상태다. 이번 주기 후속 조사에서 2025-09-08 특허 출원과 2025-11-17 효능 주장에 대한 검색 스니펫 수준의 추가 언급이 나타났으나, 모두 동일하게 차단된 도메인의 스니펫 외에는 독립적으로 확인할 수 없어 이를 근거로 출처 조건이나 날짜 이벤트 조건을 상향하지 않는다. 모든 기저 주장은 여전히 자체 보고된 동물모델 결과다."
       },
       "resolution": null
     },
@@ -510,6 +536,7 @@
             "tier": 2
           },
           "snippet": "Mapi Pharma announced initial Phase I/IIa clinical results supporting continued development of a once-monthly Cariprazine Depot (an atypical-antipsychotic long-acting injectable), a third distinct LAI depot asset from Mapi Pharma alongside its already-tracked GA Depot (glatiramer acetate) and Semaglutide Depot programs. No dedicated umbrella file currently covers this asset.",
+          "snippet_ko": "Mapi Pharma는 월 1회 Cariprazine Depot(비정형 항정신병 장기지속형 주사제)의 개발 지속을 뒷받침하는 임상 1/2a상 초기 결과를 발표했다. 이는 이미 추적 중인 GA Depot(글라티라머아세테이트) 및 Semaglutide Depot 프로그램에 이은 Mapi Pharma의 세 번째 별개 LAI 데포 자산이다. 현재 이 자산을 다루는 전용 엄브렐라 파일은 없다.",
           "date": "2026-08-12"
         },
         {
@@ -519,6 +546,7 @@
             "tier": 1
           },
           "snippet": "US11,931,357 (issued 2024-03-19) and US12,251,380, both assigned to Mapi Pharma Ltd. and filed 2023-02-14 (claiming benefit of a provisional filed 2022-03-17), claim depot systems (in-situ implant, subcutaneous/IM) providing prolonged release of active agent for at least 4 weeks, dosed roughly monthly to quarterly -- corroborating patent-level evidence for the once-monthly Cariprazine Depot program. Found via weekly patent sweep.",
+          "snippet_ko": "US11,931,357(2024-03-19 등록)과 US12,251,380은 모두 Mapi Pharma Ltd.에 양도됐으며 2023-02-14에 출원됐다(2022-03-17 출원 가출원의 우선권 주장). 두 특허는 최소 4주간 활성 성분의 지속 방출을 제공하며 대략 월 1회에서 3개월 1회 투여되는 데포 시스템(인시투 임플란트, 피하/IM)을 청구하고 있어, 월 1회 Cariprazine Depot 프로그램에 대한 특허 수준의 뒷받침 근거가 된다. 주간 특허 스윕을 통해 발견했다.",
           "date": "2024-03-19"
         }
       ],
@@ -536,7 +564,8 @@
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "second_dated_event"],
         "unmet": ["confirmed_source"],
-        "evidence": "A first-patient-recruited release (2025-09-17) and initial Phase I/IIa results (2026-08-12) give two distinct dated events, but both are Mapi Pharma's own self-published releases -- no independent third-party corroboration found. MERGE CASE: fuzzy_match to mapi-pharma-semaglutide sits at the 0.55 merge threshold (same company/depot platform, different molecule/indication -- cariprazine antipsychotic vs semaglutide/glatiramer), so per the mechanical rule this cannot be escalated to ready_for_promotion regardless; flagging for an admin merge-vs-new-sibling-umbrella decision."
+        "evidence": "A first-patient-recruited release (2025-09-17) and initial Phase I/IIa results (2026-08-12) give two distinct dated events, but both are Mapi Pharma's own self-published releases -- no independent third-party corroboration found. MERGE CASE: fuzzy_match to mapi-pharma-semaglutide sits at the 0.55 merge threshold (same company/depot platform, different molecule/indication -- cariprazine antipsychotic vs semaglutide/glatiramer), so per the mechanical rule this cannot be escalated to ready_for_promotion regardless; flagging for an admin merge-vs-new-sibling-umbrella decision.",
+        "evidence_ko": "첫 환자 모집 보도자료(2025-09-17)와 임상 1/2a상 초기 결과(2026-08-12)로 두 개의 별개 날짜 이벤트가 있으나, 둘 다 Mapi Pharma가 자체 발표한 보도자료이며 독립적인 제3자 교차 확인은 찾지 못했다. 병합 사례: mapi-pharma-semaglutide와의 fuzzy_match가 병합 임계값 0.55에 해당해(동일 회사/데포 플랫폼, 분자/적응증은 상이 — 카리프라진 항정신병제 vs 세마글루타이드/글라티라머), 기계적 규칙에 따라 어떤 경우든 ready_for_promotion으로 에스컬레이션할 수 없다. 관리자의 병합 vs 신규 자매 엄브렐라 결정을 위해 플래그를 지정한다."
       },
       "resolution": null
     },
@@ -561,6 +590,7 @@
             "tier": 1
           },
           "snippet": "\"A surgical strike in the battle against infections\" (dtu.dk, May 2026): Precision Antibiotics, a DTU spinout, is developing an injectable drug depot (product family referenced elsewhere as 'CarboCell G/C') delivering a combination of two existing antibiotics (gentamicin + clindamycin) locally into bone/soft tissue after e.g. a bone fracture, sustaining high local concentrations over several weeks to address biofilm infections resistant to systemic treatment. Raised DKK 60 million (~$8-9M) to fund first-in-human Phase 1 trials expected to start 2027. Related to a Novo Nordisk Foundation grant referencing 'CarboCell AntiBiotics (CCAB)', led by Anders Elias Hansen at DTU.",
+          "snippet_ko": "\"감염과의 전쟁에서의 외과적 정밀 타격\"(dtu.dk, 2026년 5월): DTU 스핀아웃 Precision Antibiotics는 기존 항생제 2종(겐타마이신 + 클린다마이신)의 조합을 예컨대 골절 이후 뼈/연조직에 국소 전달하는 주사형 약물 데포(다른 곳에서는 'CarboCell G/C' 제품군으로 언급)를 개발 중이며, 수 주에 걸쳐 높은 국소 농도를 유지해 전신 치료에 내성을 보이는 바이오필름 감염에 대응한다. 2027년 시작 예정인 최초 인체 대상 임상 1상 자금으로 DKK 60 million(~$8-9M)을 조달했다. DTU의 Anders Elias Hansen이 이끄는 'CarboCell AntiBiotics (CCAB)'를 언급한 Novo Nordisk Foundation 연구비와 관련이 있다.",
           "date": "2026-05-01",
           "verification_note": "Read from a search-engine snippet only (dtu.dk refused a direct fetch); the source gives the month, not the day. Scope note: a local antibiotic depot for post-fracture bone and soft-tissue infection, not a systemic chronic-disease LAI.",
           "date_basis": "inferred"
@@ -580,7 +610,8 @@
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim"],
         "unmet": ["confirmed_source", "second_dated_event"],
-        "evidence": "The sole source (dtu.dk) remains EGRESS_BLOCKED and unverified beyond a search snippet. This cycle's follow-up found a possible second, independent source -- a peer-reviewed Journal of Bone and Joint Infection paper (2025) with pig-model data -- but could not pin down a citable URL this pass; confirming it next sweep would likely clear both remaining conditions. SCOPE CAVEAT STILL APPLIES regardless of bar status: this is a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI -- recommend an explicit admin scope call before any promotion."
+        "evidence": "The sole source (dtu.dk) remains EGRESS_BLOCKED and unverified beyond a search snippet. This cycle's follow-up found a possible second, independent source -- a peer-reviewed Journal of Bone and Joint Infection paper (2025) with pig-model data -- but could not pin down a citable URL this pass; confirming it next sweep would likely clear both remaining conditions. SCOPE CAVEAT STILL APPLIES regardless of bar status: this is a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI -- recommend an explicit admin scope call before any promotion.",
+        "evidence_ko": "유일한 출처(dtu.dk)는 여전히 EGRESS_BLOCKED 상태로, 검색 스니펫 외에는 검증되지 않았다. 이번 주기 후속 조사에서 돼지 모델 데이터를 담은 동료 심사 논문(Journal of Bone and Joint Infection, 2025)이라는 독립적인 제2 출처 가능성을 찾았으나 이번 조사에서는 인용 가능한 URL을 확정하지 못했다. 다음 스윕에서 이를 확인하면 남은 두 조건을 모두 충족할 가능성이 크다. 기준 충족 여부와 관계없이 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포이므로, 승격 전에 관리자의 명시적인 범위 판단을 권고한다."
       },
       "resolution": null
     },
@@ -607,6 +638,7 @@
             "tier": 2
           },
           "snippet": "Beijing-based QL Biopharm raised over RMB 500M (~$72M) in a Series C led by OrbiMed (with 5Y Capital, Apricot Capital, Huagai Capital, Qiming Venture Partners, TigerYeah Capital, Lanchi Ventures, TF Capital), announced March 2, 2026. Lead candidate zovaglutide (ZT002) is a GLP-1 receptor agonist injection designed for monthly dosing -- potentially the first monthly GLP-1 peptide to reach market -- now in a China Phase 3 obesity trial (first patient dosed January 2026) after Phase II data showed 13.8% weight loss by week 24 without reaching a plateau.",
+          "snippet_ko": "베이징 소재 QL Biopharm은 OrbiMed가 주도하고 5Y Capital, Apricot Capital, Huagai Capital, Qiming Venture Partners, TigerYeah Capital, Lanchi Ventures, TF Capital이 참여한 시리즈 C에서 RMB 500M(~$72M) 이상을 조달했다고 2026년 3월 2일 발표했다. 주력 후보 zovaglutide(ZT002)는 월 1회 투여용으로 설계된 GLP-1 수용체 작용제 주사제로, 시장에 출시되는 최초의 월 1회 GLP-1 펩타이드가 될 가능성이 있다. 임상 2상에서 24주차까지 정체기 없이 13.8% 체중 감소를 보인 데이터에 이어 현재 중국에서 비만 임상 3상(2026년 1월 첫 환자 투여)을 진행 중이다.",
           "date": "2026-03-02"
         }
       ],
@@ -624,7 +656,8 @@
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "second_dated_event"],
         "unmet": ["confirmed_source"],
-        "evidence": "The Endpoints News report itself already describes a stage-bearing event (Phase 3 'HORIZON-1' first-patient-dosed, ~2026-01-16), which alone clears second_dated_event. Only a single Tier 2 outlet is on record, though; this cycle's follow-up found likely independent corroboration (Fierce Biotech, BioSpace, BioWorld, PRNewswire on EASD 2025 data and the Phase 3 dosing start) but could not confirm citable URLs this pass -- one confirmed independent source next sweep would clear the bar."
+        "evidence": "The Endpoints News report itself already describes a stage-bearing event (Phase 3 'HORIZON-1' first-patient-dosed, ~2026-01-16), which alone clears second_dated_event. Only a single Tier 2 outlet is on record, though; this cycle's follow-up found likely independent corroboration (Fierce Biotech, BioSpace, BioWorld, PRNewswire on EASD 2025 data and the Phase 3 dosing start) but could not confirm citable URLs this pass -- one confirmed independent source next sweep would clear the bar.",
+        "evidence_ko": "Endpoints News 보도 자체가 이미 개발 단계를 나타내는 이벤트(임상 3상 'HORIZON-1' 첫 환자 투여, ~2026-01-16)를 기술하고 있어 이것만으로 second_dated_event(두 번째 날짜 이벤트)를 충족한다. 다만 기록된 것은 단일 Tier 2 매체뿐이다. 이번 주기 후속 조사에서 독립적인 교차 확인일 가능성이 높은 보도(EASD 2025 데이터 및 임상 3상 투여 개시에 관한 Fierce Biotech, BioSpace, BioWorld, PRNewswire)를 찾았으나 이번 조사에서는 인용 가능한 URL을 확인하지 못했다. 다음 스윕에서 확인된 독립 출처 1건이 나오면 기준을 충족하게 된다."
       },
       "resolution": null
     },
@@ -646,6 +679,7 @@
             "tier": 2
           },
           "snippet": "GSK is advancing felcorekibart, a long-acting engineered antibody originally developed by a China-founded biotech GSK acquired roughly two years ago, registering 6 new Phase 3 trials (2 COPD, 2 asthma, 2 CRSwNP). Corroborated by a TipRanks wire piece on the same COPD Phase 3 program.",
+          "snippet_ko": "GSK는 약 2년 전 인수한 중국 창업 바이오텍이 원래 개발한 장기지속형 엔지니어링 항체 felcorekibart의 개발을 진행 중이며, 신규 임상 3상 6건(COPD 2건, 천식 2건, CRSwNP 2건)을 등록했다. 동일한 COPD 임상 3상 프로그램에 관한 TipRanks 통신 기사로 교차 확인됐다.",
           "date": "2026-09-08",
           "verification_note": "Scope note: a half-life-extended monoclonal antibody for respiratory disease, not a depot, microsphere or peptide LAI."
         }
@@ -664,7 +698,8 @@
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
         "unmet": [],
-        "evidence": "Two independent Tier 2 outlets (Edaily, TipRanks/Globe and Mail) corroborate the same trial-registration event, which is itself stage-bearing, clearing all four conditions on the original evidence alone; this cycle's follow-up further confirmed three separate new Phase 3 registrations (PERSIST COPD-1, COPD-2, ASTHMA-1). SCOPE CAVEAT STILL APPLIES: felcorekibart is a systemic half-life-extended monoclonal antibody for respiratory disease (COPD/asthma/CRSwNP), not a depot/microsphere/peptide-LAI delivery asset -- recommend an explicit in/out-of-scope admin call before promotion regardless of the bar being mechanically cleared."
+        "evidence": "Two independent Tier 2 outlets (Edaily, TipRanks/Globe and Mail) corroborate the same trial-registration event, which is itself stage-bearing, clearing all four conditions on the original evidence alone; this cycle's follow-up further confirmed three separate new Phase 3 registrations (PERSIST COPD-1, COPD-2, ASTHMA-1). SCOPE CAVEAT STILL APPLIES: felcorekibart is a systemic half-life-extended monoclonal antibody for respiratory disease (COPD/asthma/CRSwNP), not a depot/microsphere/peptide-LAI delivery asset -- recommend an explicit in/out-of-scope admin call before promotion regardless of the bar being mechanically cleared.",
+        "evidence_ko": "독립적인 Tier 2 매체 2곳(Edaily, TipRanks/Globe and Mail)이 그 자체로 개발 단계를 나타내는 동일한 임상 등록 이벤트를 교차 확인해, 최초 근거만으로 네 가지 조건을 모두 충족한다. 이번 주기 후속 조사에서는 별도의 신규 임상 3상 등록 3건(PERSIST COPD-1, COPD-2, ASTHMA-1)을 추가로 확인했다. 범위 관련 유의사항은 여전히 적용된다: felcorekibart는 호흡기 질환(COPD/천식/CRSwNP)을 위한 전신 반감기 연장 단클론 항체로, 데포/미립구/펩타이드 LAI 전달 자산이 아니므로 기준이 기계적으로 충족된 것과 관계없이 승격 전에 관리자의 명시적인 범위 포함/제외 판단을 권고한다."
       },
       "resolution": null
     },
@@ -690,6 +725,7 @@
             "tier": 1
           },
           "snippet": "AstraZeneca announced Jan 30, 2026 it will receive exclusive global rights outside China to CSPC's once-monthly injectable weight-management portfolio: lead clinical-ready asset SYH2082, a long-acting GLP-1R/GIPR agonist entering Phase I, plus three preclinical programmes, built on CSPC's AI-driven peptide discovery platform and proprietary 'LiquidGel' once-monthly dosing technology. CSPC receives $1.2B upfront plus up to $3.5B in development/regulatory milestones (plus commercial milestones/royalties); CSPC leads development through Phase I for all four programmes, then AstraZeneca takes over ex-China development/commercialization. CSPC retains China/Taiwan/HK/Macau rights with an AZ co-commercialization option post-approval. Deal expected to close Q2 2026.",
+          "snippet_ko": "AstraZeneca는 2026년 1월 30일 CSPC의 월 1회 주사형 체중 관리 포트폴리오에 대한 중국 외 글로벌 독점 권리를 확보할 것이라고 발표했다. 포트폴리오는 임상 1상에 진입하는 장기지속형 GLP-1R/GIPR 작용제인 임상 준비 완료 주력 자산 SYH2082와 전임상 프로그램 3건으로 구성되며, CSPC의 AI 기반 펩타이드 발굴 플랫폼과 독자적인 'LiquidGel' 월 1회 투여 기술을 기반으로 한다. CSPC는 계약금 $1.2B와 최대 $3.5B의 개발/허가 마일스톤(상업화 마일스톤/로열티 별도)을 받는다. CSPC는 4개 프로그램 모두 임상 1상까지 개발을 주도하고, 이후 AstraZeneca가 중국 외 개발/상업화를 맡는다. CSPC는 중국/대만/홍콩/마카오 권리를 보유하며, AZ는 승인 후 공동 판매 옵션을 갖는다. 계약은 2026년 2분기에 종결될 예정이다.",
           "date": "2026-01-30",
           "verification_note": "CSPC has a separate candidate for a different asset from the same parent: cand-2026-09-02-007, SYHX2008 long-acting octreotide."
         },
@@ -700,6 +736,7 @@
             "tier": 2
           },
           "snippet": "Corroborates deal terms: AstraZeneca signs deal worth up to $4.7bn total ($1.2B upfront + up to $3.5B milestones) with CSPC for once-monthly GLP-1R/GIPR agonist SYH2082 and three preclinical obesity/metabolic programmes.",
+          "snippet_ko": "계약 조건 교차 확인: AstraZeneca는 월 1회 GLP-1R/GIPR 작용제 SYH2082와 전임상 비만/대사 프로그램 3건에 대해 CSPC와 총 최대 $4.7bn(계약금 $1.2B + 최대 $3.5B 마일스톤) 규모의 계약을 체결했다.",
           "date": "2026-01-30"
         }
       ],
@@ -736,6 +773,7 @@
             "tier": 2
           },
           "snippet": "Peer-reviewed report of long-acting hydrogel-based depot formulations of tirzepatide and semaglutide. The PNP hydrogel uses hydrophobically modified HPMC-C12 with PEG-PLA nanoparticles; a single injection sustained exposure over 42 days in animals, which the authors map to a once-every-four-months human therapy. Appel Sauce Studios LLC holds a global exclusive licence to the Stanford technology and a named inventor is a co-founder and advisor. Corporate footprint not yet independently verified: no company pipeline page, financing or clinical registration found this sweep.",
+          "snippet_ko": "터제파타이드와 세마글루타이드의 장기지속형 하이드로겔 기반 데포 제형에 관한 동료 심사 보고다. PNP 하이드로겔은 소수성 개질 HPMC-C12와 PEG-PLA 나노입자를 사용하며, 동물에서 단회 주사로 42일간 노출이 유지됐고 저자들은 이를 사람에서 4개월 1회 치료에 대응시켰다. Appel Sauce Studios LLC는 해당 Stanford 기술에 대한 글로벌 독점 라이선스를 보유하고 있으며, 명시된 발명자 중 한 명이 공동 창업자이자 자문역이다. 회사 실체는 아직 독립적으로 검증되지 않았다: 이번 스윕에서 회사 파이프라인 페이지, 자금 조달, 임상 등록을 찾지 못했다.",
           "date": "2026-01-01"
         }
       ],
@@ -753,7 +791,8 @@
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This cycle's follow-up found the same underlying study also appeared as a 2025-07 bioRxiv preprint before its 2026 peer-reviewed publication -- but a preprint-then-journal republication of one static academic result doesn't count as the entity showing up twice in the world. Still no company pipeline page, financing, or clinical trial registration found for Appel Sauce Studios as of this sweep; a first commercial/company-level signal is what would actually clear this condition."
+        "evidence": "This cycle's follow-up found the same underlying study also appeared as a 2025-07 bioRxiv preprint before its 2026 peer-reviewed publication -- but a preprint-then-journal republication of one static academic result doesn't count as the entity showing up twice in the world. Still no company pipeline page, financing, or clinical trial registration found for Appel Sauce Studios as of this sweep; a first commercial/company-level signal is what would actually clear this condition.",
+        "evidence_ko": "이번 주기 후속 조사에서 동일한 기저 연구가 2026년 동료 심사 논문으로 출판되기 전에 2025-07 bioRxiv 프리프린트로도 공개됐음을 확인했으나, 하나의 정적인 학술 결과가 프리프린트에서 저널로 재출판된 것은 해당 주체가 실제로 두 차례 등장한 것으로 간주되지 않는다. 이번 스윕 기준으로 Appel Sauce Studios의 회사 파이프라인 페이지, 자금 조달, 임상시험 등록은 여전히 찾지 못했으며, 이 조건을 실제로 충족하려면 첫 상업/회사 차원의 신호가 필요하다."
       },
       "resolution": null
     },
@@ -781,6 +820,7 @@
             "tier": 2
           },
           "snippet": "Ribupatide (HRS9531) is a GLP-1/GIP dual receptor agonist with positive Phase 2 obesity data at 1, 2 and 4mg and an NMPA filing accepted in China for long-term weight management; partnered outside Greater China with Kailera Therapeutics as KAI-9531.",
+          "snippet_ko": "Ribupatide(HRS9531)는 GLP-1/GIP 이중 수용체 작용제로, 1, 2, 4mg 용량에서 긍정적인 비만 임상 2상 데이터를 확보했으며 중국에서 장기 체중 관리 적응증으로 NMPA 신청이 접수됐다. 중화권 외 지역에서는 Kailera Therapeutics와 KAI-9531로 파트너십을 맺었다.",
           "date": "2026-07-01",
           "verification_note": "Found while checking an unconfirmed claim that Hengrui had monthly formulations. Every source found describes once-weekly injection and a once-daily tablet, so it does not meet the long-acting bar on current evidence."
         }
@@ -799,7 +839,8 @@
       "promotion_bar": {
         "cleared": ["named_entity", "confirmed_source", "second_dated_event"],
         "unmet": ["technical_claim"],
-        "evidence": "This cycle's follow-up re-confirmed across every available source through mid-2026 (KaiNETIC Phase 3 randomization, ADA 86th Scientific Sessions data) that ribupatide/HRS9531/KAI-9531 is once-weekly subcutaneous (plus a once-daily oral tablet) only -- no monthly, depot, or otherwise long-acting formulation exists in any source found. The 'technical_claim' condition is marked unmet because the concrete claim needed here is specifically a long-acting/depot mechanism, which the evidence does not support. Recommend the admin close this as reject-with-reason ('does not meet the LAI/depot bar') rather than continuing to track it."
+        "evidence": "This cycle's follow-up re-confirmed across every available source through mid-2026 (KaiNETIC Phase 3 randomization, ADA 86th Scientific Sessions data) that ribupatide/HRS9531/KAI-9531 is once-weekly subcutaneous (plus a once-daily oral tablet) only -- no monthly, depot, or otherwise long-acting formulation exists in any source found. The 'technical_claim' condition is marked unmet because the concrete claim needed here is specifically a long-acting/depot mechanism, which the evidence does not support. Recommend the admin close this as reject-with-reason ('does not meet the LAI/depot bar') rather than continuing to track it.",
+        "evidence_ko": "이번 주기 후속 조사에서 2026년 중반까지의 모든 가용 출처(KaiNETIC 임상 3상 무작위배정, ADA 제86차 Scientific Sessions 데이터)를 통해 ribupatide/HRS9531/KAI-9531이 주 1회 피하 주사(및 1일 1회 경구 정제)로만 존재함을 재확인했다. 확인된 어떤 출처에도 월 1회, 데포 또는 기타 장기지속형 제형은 존재하지 않는다. 여기서 필요한 구체적 근거는 특히 장기지속/데포 메커니즘인데 근거가 이를 뒷받침하지 않으므로 'technical_claim'(구체적 기술 근거) 조건은 미충족으로 표시했다. 추적을 계속하기보다 관리자가 사유를 명시한 거절('LAI/데포 기준 미충족')로 종결할 것을 권고한다."
       },
       "resolution": null
     },
@@ -823,6 +864,7 @@
             "tier": 2
           },
           "snippet": "Prolynx closed a $70M Series A (co-led by 5AM Ventures and OrbiMed, with Monograph Capital) and appointed Chris Boulton (ex-Amgen obesity marketing lead) as CEO, announced 2025-12-11. Proprietary tunable-release chemical linker conjugates drug to a microsphere-hydrogel carrier, enabling monthly/quarterly dosing; pipeline covers extended-duration incretin and non-incretin obesity/metabolic candidates toward IND-enabling studies and clinical proof-of-concept. Platform previously had oncology (ADC-linker) clinical proof-of-concept.",
+          "snippet_ko": "Prolynx는 $70M 규모 시리즈 A(5AM Ventures와 OrbiMed 공동 주도, Monograph Capital 참여)를 마감하고 Chris Boulton(전 Amgen 비만 마케팅 책임자)을 CEO로 선임했다고 2025-12-11 발표했다. 독자적인 방출 조절형 화학 링커가 약물을 미립구-하이드로겔 담체에 결합해 월 1회/3개월 1회 투여를 가능하게 한다. 파이프라인은 IND 지원 연구와 임상 개념증명을 목표로 하는 지속 기간 연장형 인크레틴 및 비인크레틴 비만/대사 후보물질을 포함한다. 해당 플랫폼은 이전에 종양(ADC 링커) 분야에서 임상 개념증명을 확보한 바 있다.",
           "date": "2025-12-11"
         },
         {
@@ -833,6 +875,7 @@
             "tier": 2
           },
           "snippet": "Independent corroboration of the same $70M Series A and long-acting obesity-drug pipeline, published the same week.",
+          "snippet_ko": "같은 주에 게재된, 동일한 $70M 시리즈 A와 장기지속형 비만 치료제 파이프라인에 대한 독립적인 교차 확인이다.",
           "date": "2025-12-11"
         }
       ],
@@ -850,7 +893,8 @@
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "Two independent Tier 2 reports confirm the December 2025 Series A and the linker-plus-microsphere-hydrogel platform, but that financing is the only dated event and it is not stage-bearing."
+        "evidence": "Two independent Tier 2 reports confirm the December 2025 Series A and the linker-plus-microsphere-hydrogel platform, but that financing is the only dated event and it is not stage-bearing.",
+        "evidence_ko": "독립적인 Tier 2 보도 2건이 2025년 12월 시리즈 A와 링커-미립구-하이드로겔 플랫폼을 확인했으나, 해당 자금 조달이 유일한 날짜 이벤트이며 개발 단계를 나타내는 이벤트가 아니다."
       },
       "resolution": null
     },
@@ -875,6 +919,7 @@
             "tier": 1
           },
           "snippet": "CSPC voluntary announcement that its independently-developed Semaglutide Long-Acting Injection (SYH9017), a once-monthly GLP-1 receptor agonist using a subcutaneous gel-depot delivery technology, obtained NMPA (China) clinical trial approval.",
+          "snippet_ko": "CSPC는 자발적 공시를 통해 자체 개발한 세마글루타이드 장기지속형 주사제(SYH9017)가 NMPA(중국) 임상시험 승인을 받았다고 밝혔다. SYH9017은 피하 겔-데포 전달 기술을 적용한 월 1회 GLP-1 수용체 작용제다.",
           "date": "2024-12-20",
           "verification_note": "Read from a search-engine summary only (doc.irasia.com refused a direct fetch). The date comes from the announcement ID (a241220) and matches the title on the company news page.",
           "date_basis": "inferred"
@@ -887,6 +932,7 @@
             "tier": 1
           },
           "snippet": "Company news page confirming SYH9017 (Semaglutide Long-Acting Injection) obtained clinical trial approval.",
+          "snippet_ko": "SYH9017(세마글루타이드 장기지속형 주사제)이 임상시험 승인을 받았음을 확인하는 회사 뉴스 페이지다.",
           "date": "2024-12-20",
           "verification_note": "Read from the search-index title and summary only (en.e-cspc.com refused a direct fetch); dated to match the HKEX announcement.",
           "date_basis": "inferred"
@@ -899,6 +945,7 @@
             "tier": 2
           },
           "snippet": "CSPC Pharmaceutical Group's SYH9017, a once-monthly semaglutide GLP-1 injection, received US FDA approval to begin clinical trials targeting weight management in overweight/obese adults (with potential type 2 diabetes and cardiovascular indications).",
+          "snippet_ko": "CSPC Pharmaceutical Group의 월 1회 세마글루타이드 GLP-1 주사제 SYH9017은 과체중/비만 성인의 체중 관리를 목표로 하는 임상시험 개시에 대해 미국 FDA 승인을 받았다(제2형 당뇨병 및 심혈관 적응증 가능성 포함).",
           "date": "2026-06-08",
           "verification_note": "Read from a search-engine summary only (tipranks.com refused a direct fetch); the date comes from the search result, not the page.",
           "date_basis": "inferred"
@@ -918,7 +965,8 @@
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
         "unmet": [],
-        "evidence": "Mechanically clears the bar: a Tier 1 company-IR source (own HKEX announcement / e-cspc.com news page) confirms the claim, and two distinct stage-bearing regulatory events (NMPA China CTA ~2024-12-20, US FDA CTA ~2026-06-08) clear second_dated_event on their own. However, SYH9017 is a semaglutide-monoagonist gel-depot asset from the same corporate parent (CSPC Pharmaceutical Group) as the already-promoted cspc-syh2082 (SYH2082, a distinct GLP-1R/GIPR dual-agonist LiquidGel asset licensed to AstraZeneca) -- fuzzy match against the grown alias table scores 0.6 (>= the 0.55 merge threshold), so per the mechanical merge-case rule this must NOT be escalated to ready_for_promotion. Flagging for an admin merge/new-sibling-umbrella decision, same pattern as cand-2026-09-02-007 (CSPC ZhongQi/SYHX2008)."
+        "evidence": "Mechanically clears the bar: a Tier 1 company-IR source (own HKEX announcement / e-cspc.com news page) confirms the claim, and two distinct stage-bearing regulatory events (NMPA China CTA ~2024-12-20, US FDA CTA ~2026-06-08) clear second_dated_event on their own. However, SYH9017 is a semaglutide-monoagonist gel-depot asset from the same corporate parent (CSPC Pharmaceutical Group) as the already-promoted cspc-syh2082 (SYH2082, a distinct GLP-1R/GIPR dual-agonist LiquidGel asset licensed to AstraZeneca) -- fuzzy match against the grown alias table scores 0.6 (>= the 0.55 merge threshold), so per the mechanical merge-case rule this must NOT be escalated to ready_for_promotion. Flagging for an admin merge/new-sibling-umbrella decision, same pattern as cand-2026-09-02-007 (CSPC ZhongQi/SYHX2008).",
+        "evidence_ko": "기계적으로 기준을 충족한다: Tier 1 회사 IR 출처(자체 HKEX 공시 / e-cspc.com 뉴스 페이지)가 주장을 확인하며, 개발 단계를 나타내는 별개의 규제 이벤트 2건(NMPA 중국 CTA ~2024-12-20, 미국 FDA CTA ~2026-06-08)만으로 second_dated_event(두 번째 날짜 이벤트)를 충족한다. 그러나 SYH9017은 이미 승격된 cspc-syh2082(AstraZeneca에 기술이전된 별개의 GLP-1R/GIPR 이중 작용제 LiquidGel 자산 SYH2082)와 동일한 모회사(CSPC Pharmaceutical Group)의 세마글루타이드 단일 작용제 겔-데포 자산이며, 확장된 별칭 테이블 기준 퍼지 매칭 점수가 0.6(병합 임계값 0.55 이상)으로 나타나 기계적 병합 사례 규칙에 따라 ready_for_promotion으로 에스컬레이션해서는 안 된다. cand-2026-09-02-007(CSPC ZhongQi/SYHX2008)과 같은 패턴으로, 관리자의 병합/신규 자매 엄브렐라 결정을 위해 플래그를 지정한다."
       },
       "resolution": null
     }

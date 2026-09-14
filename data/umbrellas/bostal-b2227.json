@@ -15,15 +15,20 @@
   ],
   "current_status": {
     "stage": "Phase 2/3 PK study against oral Vraylar registered (NCT07722728, first posted Jul 23 2026) and not yet recruiting at the last registry update. The delivery platform for B2227 is not disclosed; Bostal runs microsphere (Zpheres), in-situ gel (Geleepot) and nanocrystal (Kriztols) LAI platforms, so technology_family stays 'other' until one is named.",
+    "stage_ko": "경구 Vraylar 대비 임상 2/3상 PK 시험이 등록됐으며(NCT07722728, 2026년 7월 23일 최초 게시), 마지막 등록 정보 업데이트 시점에 모집 전이었다. B2227의 전달 플랫폼은 공개되지 않았다. Bostal은 미립구(Zpheres), 인시투 겔(Geleepot), 나노결정(Kriztols) LAI 플랫폼을 운영하므로, 플랫폼이 명시될 때까지 technology_family는 'other'로 유지한다.",
     "stage_label": "IND filed",
     "stage_evidence": "ClinicalTrials.gov lists the Phase 2/3 study of B2227 as not yet recruiting (estimated start Aug 2026), and a registered study that is not yet recruiting is bucketed as IND filed.",
+    "stage_evidence_ko": "ClinicalTrials.gov에는 B2227 임상 2/3상이 모집 전(예상 개시 2026년 8월)으로 등재돼 있으며, 등록됐으나 모집 전인 시험은 IND 신청으로 분류한다.",
     "molecule_class": [
       "non_incretin"
     ],
     "molecule_evidence": "B2227 is an extended-release injectable suspension of cariprazine, an antipsychotic, per its ClinicalTrials.gov registration.",
+    "molecule_evidence_ko": "ClinicalTrials.gov 등록 정보에 따르면 B2227은 항정신병약물 카리프라진의 서방형 주사용 현탁액이다.",
     "dosing_target": "Not disclosed (single-dose PK study at 30, 70 and 150 mg SC)",
+    "dosing_target_ko": "미공개(30, 70, 150 mg 피하(SC) 단회 투여 PK 시험)",
     "partner": null,
     "data_point": "Phase 2/3 PK, safety and tolerability study against Vraylar capsules in schizophrenia; estimated completion Dec 2027.",
+    "data_point_ko": "조현병 환자 대상 Vraylar 캡슐 대비 임상 2/3상 PK, 안전성 및 내약성 시험. 예상 완료 2027년 12월.",
     "last_updated": "2026-07-23",
     "last_checked": "2026-09-14"
   },
@@ -33,6 +38,7 @@
       "date": "2026-07-23",
       "type": "regulatory",
       "summary": "Bostal Drug Delivery registered a Phase 2/3 study (NCT07722728) comparing the pharmacokinetics, safety and tolerability of single subcutaneous doses of B2227 extended-release injectable suspension (30, 70 or 150 mg) with oral Vraylar (cariprazine) in people with schizophrenia.",
+      "summary_ko": "Bostal Drug Delivery는 조현병 환자에서 B2227 서방형 주사용 현탁액 단회 피하 투여(30, 70 또는 150 mg)와 경구 Vraylar(카리프라진)의 약동학, 안전성 및 내약성을 비교하는 임상 2/3상 시험(NCT07722728)을 등록했다.",
       "source": {
         "name": "ClinicalTrials.gov NCT07722728",
         "publication": "ClinicalTrials.gov",

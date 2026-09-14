@@ -16,15 +16,21 @@
   ],
   "current_status": {
     "stage": "Approved; long-established market leader (US/Global) in GnRH-agonist depot therapy for advanced prostate cancer, endometriosis, uterine fibroids, central precocious puberty, and (off-label) gender-affirming care. No FDA-approved generic of the depot (microsphere) formulation exists as of Sept 2026.",
+    "stage_ko": "승인 완료. 진행성 전립선암, 자궁내막증, 자궁근종, 중추성 성조숙증, (허가 외) 성별 확정 치료에 쓰이는 GnRH 작용제 데포 요법 분야에서 오랫동안 시장을 선도해 온 제품이다(미국/글로벌). 2026년 9월 기준 데포(미립구) 제형의 FDA 승인 제네릭은 없다.",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Long-established, currently marketed GnRH-agonist depot for prostate cancer et al.; no FDA-approved generic depot exists as of Sept 2026.",
+    "stage_evidence_ko": "전립선암 등에 오래전부터 시판 중인 GnRH 작용제 데포이며, 2026년 9월 기준 FDA 승인 제네릭 데포는 없다.",
     "molecule_class": [
       "non_incretin"
     ],
     "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
+    "molecule_evidence_ko": "탑재 약물이 인크레틴·비만 펩타이드 영역 밖에 있어 전달 플랫폼 근거로 추적한다.",
     "dosing_target": "1-, 3-, 4-, or 6-month IM depot injection (Canada gained a 6-month/45mg option in Nov 2025)",
+    "dosing_target_ko": "1개월, 3개월, 4개월 또는 6개월 근육(IM) 데포 주사(캐나다는 2025년 11월 6개월/45mg 옵션 추가)",
     "partner": "Takeda (historical drug-substance manufacturing partner; subject of 2019–2023 supply-breach litigation)",
+    "partner_ko": "Takeda(과거 원료의약품 제조 파트너; 2019–2023년 공급 계약 위반 소송 당사자)",
     "data_point": "Nov 2025: Health Canada approved a new 6-month, 45mg Lupron Depot strength, AbbVie's fourth Canadian dosing option",
+    "data_point_ko": "2025년 11월: Health Canada가 새로운 6개월 45mg Lupron Depot 용량을 승인했으며, 이는 AbbVie의 캐나다 내 네 번째 투여 옵션이다",
     "last_updated": "2025-11-17",
     "last_checked": "2026-09-13"
   },
@@ -34,6 +40,7 @@
       "date": "2023-09-05",
       "type": "manufacturing_capacity",
       "summary": "Delaware Court of Chancery (Vice Chancellor Glasscock) largely upheld AbbVie's damages claim (~$480.6M sought) against Takeda for breaching the Lupron drug-substance supply agreement after a 2019 FDA-flagged quality shutdown at Takeda's Japan plant caused a multi-year Lupron Depot shortage; the parties later settled at roughly $448M. This underlying manufacturing dependency is the root cause repeatedly cited for AbbVie's recurring Lupron Depot supply gaps.",
+      "summary_ko": "델라웨어 형평법원(Vice Chancellor Glasscock)은 2019년 FDA가 지적한 품질 문제로 Takeda 일본 공장이 가동 중단돼 수년간 Lupron Depot 공급 부족이 발생한 것과 관련해, Lupron 원료의약품 공급 계약을 위반한 Takeda를 상대로 한 AbbVie의 손해배상 청구(약 $480.6M 청구)를 대부분 인용했다. 양측은 이후 약 $448M에 합의했다. 이러한 제조 의존성은 AbbVie의 반복적인 Lupron Depot 공급 공백의 근본 원인으로 거듭 지목된다.",
       "source": {
         "name": "Fierce Pharma",
         "url": "https://www.fiercepharma.com/pharma/abbvie-scores-480m-damages-after-takeda-breached-supply-contract-cancer-drug-lupron-report",
@@ -46,6 +53,7 @@
       "date": "2025-11-17",
       "type": "regulatory",
       "summary": "AbbVie announced Health Canada approval of a new 6-month, 45mg Lupron Depot (leuprolide acetate for extended-release injectable suspension) strength for advanced prostate cancer, adding to the existing 7.5mg (1-month), 22.5mg (3-month), and 30mg (4-month) options. Lupron Depot has been approved in Canada since 1989.",
+      "summary_ko": "AbbVie는 Health Canada가 진행성 전립선암 치료용 Lupron Depot(류프로렐린 아세테이트 서방형 주사용 현탁액)의 새로운 6개월 45mg 용량을 승인했다고 발표했다. 기존 7.5mg(1개월), 22.5mg(3개월), 30mg(4개월) 옵션에 추가되는 것이다. Lupron Depot은 1989년부터 캐나다에서 승인돼 왔다.",
       "source": {
         "name": "AbbVie Canada press release (via Newswire.ca)",
         "url": "https://www.newswire.ca/news-releases/lupron-depot-r-new-strength-receives-health-canada-approval-for-the-treatment-of-advanced-prostate-cancer-817541619.html",

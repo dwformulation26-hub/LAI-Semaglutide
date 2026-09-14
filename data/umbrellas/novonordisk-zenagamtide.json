@@ -15,15 +15,20 @@
   ],
   "current_status": {
     "stage": "Phase 3 underway in obesity/overweight (AMAZE 1, started Feb 24, 2026, NCT07339423, ~1,150 participants, primary completion June 2029); positive Phase 2 in type 2 diabetes with Phase 3 T2D program planned to start H2 2026",
+    "stage_ko": "비만/과체중 대상 임상 3상 진행 중(AMAZE 1, 2026년 2월 24일 개시, NCT07339423, 약 1,150명, 1차 완료 2029년 6월). 제2형 당뇨병 대상 임상 2상에서 긍정적 결과를 얻었으며 제2형 당뇨병 임상 3상 프로그램은 2026년 H2 개시 예정이다.",
     "stage_label": "Phase 3",
     "stage_evidence": "Phase 3 AMAZE 1 trial underway in obesity/overweight, started Feb 24, 2026.",
+    "stage_evidence_ko": "비만/과체중 대상 임상 3상 AMAZE 1 시험이 2026년 2월 24일 개시돼 진행 중이다.",
     "molecule_class": [
       "amylin"
     ],
     "molecule_evidence": "Amycretin is a unimolecular GLP-1/amylin receptor co-agonist per the ADA 2026 Phase 2 readout, so it sits in the amylin class the way tirzepatide sits in its own rather than under a general bucket.",
+    "molecule_evidence_ko": "ADA 2026 임상 2상 발표에 따르면 아미크레틴은 단일 분자 GLP-1/아밀린 수용체 공동 작용제이므로, 터제파타이드가 일반 분류가 아닌 자체 분류에 속하는 것처럼 아밀린 분류에 속한다.",
     "dosing_target": "Weekly (subcutaneous) and once-daily (oral); not yet a true depot/LAI formulation",
+    "dosing_target_ko": "주 1회(피하) 및 1일 1회(경구). 아직 진정한 데포/LAI 제형은 아니다.",
     "partner": null,
     "data_point": "Phase 2 T2D dose-finding study (n=262, doses 0.4-40mg SC vs placebo, 36 weeks): met primary A1C endpoint across all doses and key secondary weight endpoint (doses ≥1.5mg); weight loss up to 14.6% at 40mg vs 2.1% placebo at week 36. Earlier Phase 1b/2a obesity data (Jan 2025): 22% weight loss with weekly SC amycretin at 36 weeks; oral Phase 1: 13.1% weight loss at 12 weeks.",
+    "data_point_ko": "제2형 당뇨병 임상 2상 용량 탐색 시험(n=262, 0.4-40mg 피하(SC) vs 위약, 36주): 모든 용량에서 1차 A1C 평가변수를, 1.5mg 이상(≥1.5mg) 용량에서 주요 2차 체중 평가변수를 충족했다. 36주차 체중 감소는 40mg에서 최대 14.6%, 위약 2.1%였다. 앞선 비만 대상 임상 1b/2a상 데이터(2025년 1월): 주 1회 피하(SC) 아미크레틴 36주 22% 체중 감소, 경구 임상 1상: 12주 13.1% 체중 감소.",
     "last_updated": "2026-06-01",
     "last_checked": "2026-09-13"
   },
@@ -33,6 +38,7 @@
       "date": "2025-06-12",
       "type": "regulatory",
       "summary": "Novo Nordisk announced it would advance amycretin (both subcutaneous and oral formulations) into Phase 3 for adults with overweight or obesity, based on end-of-Phase-2 regulatory feedback and early-phase data (published in The Lancet) showing up to 22% weight loss (weekly SC, 36 weeks) and 13.1% weight loss (oral, 12 weeks). Phase 3 program targeted to start Q1 2026.",
+      "summary_ko": "Novo Nordisk는 임상 2상 종료 시점 규제 피드백과, The Lancet에 게재된 초기 임상 데이터(주 1회 피하 36주 최대 22% 체중 감소, 경구 12주 13.1% 체중 감소)를 근거로 과체중 또는 비만 성인 대상 아미크레틴(피하 및 경구 제형 모두)의 임상 3상 진입을 발표했다. 임상 3상 프로그램은 2026년 1분기 개시를 목표로 했다.",
       "source": {
         "name": "Novo Nordisk press release via PR Newswire",
         "url": "https://www.prnewswire.com/news-releases/novo-nordisk-advances-early-stage-obesity-medication-amycretin-to-phase-3-clinical-development-based-on-early-phase-clinical-trial-results-in-people-with-obesity-or-excess-weight-published-in-the-lancet-302487500.html",
@@ -45,6 +51,7 @@
       "date": "2026-02-24",
       "type": "trial_data_readout",
       "summary": "Novo Nordisk's Phase 3 obesity trial for amycretin (AMAZE 1, NCT07339423) began, targeting ~1,150 participants with week-84 body-weight change as the primary endpoint; primary completion expected June 2029.",
+      "summary_ko": "Novo Nordisk의 아미크레틴 비만 임상 3상(AMAZE 1, NCT07339423)이 개시됐다. 약 1,150명을 목표로 하며 84주차 체중 변화를 1차 평가변수로 한다. 1차 완료는 2029년 6월로 예상된다.",
       "source": {
         "name": "ClinicalTrials.gov – NCT07339423",
         "url": "https://clinicaltrials.gov/study/NCT07339423",
@@ -57,6 +64,7 @@
       "date": "2026-06-01",
       "type": "trial_data_readout",
       "summary": "Novo Nordisk presented positive Phase 2 dose-finding data for zenagamtide (amycretin), a unimolecular GLP-1/amylin receptor co-agonist, in adults with type 2 diabetes at ADA 2026. The trial met its primary A1C endpoint across all doses and its key secondary body-weight endpoint at doses of 1.5mg and above, with weight reductions up to 14.6% (40mg dose) vs. 2.1% for placebo at week 36, alongside significant A1C reductions. Novo Nordisk plans to start Phase 3 development in T2D in H2 2026.",
+      "summary_ko": "Novo Nordisk는 ADA 2026에서 제2형 당뇨병 성인 대상 단일 분자 GLP-1/아밀린 수용체 공동 작용제 zenagamtide(아미크레틴)의 긍정적 임상 2상 용량 탐색 데이터를 발표했다. 시험은 모든 용량에서 1차 A1C 평가변수를, 1.5mg 이상 용량에서 주요 2차 체중 평가변수를 충족했으며, 36주차 체중 감소는 최대 14.6%(40mg 용량)로 위약 2.1% 대비 컸고 A1C도 유의하게 감소했다. Novo Nordisk는 2026년 H2 제2형 당뇨병 대상 임상 3상 개발을 시작할 계획이다.",
       "source": {
         "name": "Novo Nordisk press release via PR Newswire",
         "url": "https://www.prnewswire.com/news-releases/novo-nordisks-investigational-zenagamtide-shows-significant-a1c-reductions-with-up-to-14-6-weight-loss-in-adults-with-type-2-diabetespresented-at-ada-2026--302793124.html",

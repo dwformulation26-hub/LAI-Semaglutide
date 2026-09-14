@@ -16,15 +16,21 @@
   ],
   "current_status": {
     "stage": "Phase 2 complete with positive topline (Mar 2026). Zealand and Roche formally endorsed advancing to Phase 3 on Apr 29 2026 with initiation planned for H2 2026; no source confirms a Phase 3 trial has started.",
+    "stage_ko": "임상 2상을 완료하고 긍정적 톱라인을 발표했다(2026년 3월). Zealand와 Roche는 2026년 4월 29일 임상 3상 진입을 공식 추인했으며 개시는 2026년 H2로 계획돼 있다. 임상 3상 시험이 시작됐다고 확인한 출처는 없다.",
     "stage_label": "Phase 2",
     "stage_evidence": "The April 2026 announcement endorses advancing to Phase 3 with initiation planned for H2 2026, which is forward-looking; the label stays at Phase 2 until a source states the Phase 3 trial is underway.",
+    "stage_evidence_ko": "2026년 4월 발표는 2026년 H2 개시 계획과 함께 임상 3상 진입을 추인한 것으로 미래 계획에 해당한다. 임상 3상 시험이 진행 중이라고 명시한 출처가 나올 때까지 단계 표시는 임상 2상으로 유지한다.",
     "molecule_class": [
       "amylin"
     ],
     "molecule_evidence": "Petrelintide is a long-acting amylin analog dosed once weekly, which places it in the amylin class rather than the general incretin bucket.",
+    "molecule_evidence_ko": "페트렐린타이드는 주 1회 투여하는 장기지속형 아밀린 유사체로, 일반 인크레틴 분류가 아닌 아밀린 계열에 속한다.",
     "dosing_target": "Once weekly (subcutaneous); not a depot formulation",
+    "dosing_target_ko": "주 1회(피하); 데포 제형 아님",
     "partner": "Roche (exclusive collaboration and licence signed Mar 12 2025; $1.6B upfront, 50/50 profit share on monotherapy and on the fixed-dose combination with Roche's CT-388)",
+    "partner_ko": "Roche(2025년 3월 12일 독점 공동 개발 및 라이선스 계약 체결; 계약금 $1.6B, 단독요법 및 Roche의 CT-388과의 고정용량 복합제에 대해 50/50 이익 분배)",
     "data_point": "Phase 2: double-digit weight loss with placebo-like tolerability — nausea 16.7% with 80% of events mild, vomiting below detectable levels, diarrhoea 1.0%, constipation 2.3%",
+    "data_point_ko": "임상 2상: 위약 수준의 내약성과 함께 두 자릿수 체중 감소 — 오심 16.7%(이 중 80%가 경증), 구토는 검출 한계 미만, 설사 1.0%, 변비 2.3%",
     "last_updated": "2026-04-29",
     "last_checked": "2026-09-11"
   },
@@ -34,6 +40,7 @@
       "date": "2025-03-12",
       "type": "deal_partnership",
       "summary": "Roche entered an exclusive collaboration and licensing agreement with Zealand Pharma to co-develop and co-commercialise petrelintide, both as a standalone therapy and as a fixed-dose combination with Roche's lead incretin asset CT-388, on a 50/50 profit share with $1.6B upfront.",
+      "summary_ko": "Roche는 Zealand Pharma와 독점 공동 개발 및 기술이전(라이선스) 계약을 체결하고, 페트렐린타이드를 단독요법과 Roche의 선도 인크레틴 자산 CT-388과의 고정용량 복합제로 공동 개발·공동 상업화하기로 했다. 이익은 50/50으로 분배하며 계약금은 $1.6B다.",
       "source": {
         "name": "Roche press release (company IR)",
         "url": "https://www.roche.com/media/releases/med-cor-2025-03-12",
@@ -46,6 +53,7 @@
       "date": "2026-03-05",
       "type": "trial_data_readout",
       "summary": "Zealand reported positive Phase 2 topline for petrelintide: double-digit weight loss with a tolerability profile close to placebo, including nausea in 16.7% of participants with 80% of those events mild, and vomiting below detectable levels.",
+      "summary_ko": "Zealand는 페트렐린타이드의 긍정적인 임상 2상 톱라인을 발표했다. 두 자릿수 체중 감소와 함께 위약에 가까운 내약성 프로파일을 보였으며, 참가자의 16.7%에서 오심이 나타났고 이 중 80%는 경증이었으며 구토는 검출 한계 미만이었다.",
       "source": {
         "name": "Zealand Pharma release via GlobeNewswire",
         "url": "https://www.globenewswire.com/news-release/2026/03/05/3250569/0/en/Zealand-Pharma-announces-positive-Phase-2-results-for-petrelintide-an-amylin-analog-with-potential-to-redefine-the-weight-management-experience-for-people-living-with-overweight-an.html",
@@ -58,6 +66,7 @@
       "date": "2026-04-29",
       "type": "regulatory",
       "summary": "Zealand and Roche announced formal endorsement to advance petrelintide into Phase 3 for chronic weight management, with initiation planned for the second half of 2026.",
+      "summary_ko": "Zealand와 Roche는 만성 체중 관리를 위한 페트렐린타이드의 임상 3상 진입을 공식 추인했으며, 개시는 2026년 하반기로 계획돼 있다고 발표했다.",
       "source": {
         "name": "Zealand Pharma release via GlobeNewswire",
         "url": "https://www.globenewswire.com/news-release/2026/04/29/3284133/0/en/zealand-pharma-and-roche-to-advance-petrelintide-an-amylin-analog-to-phase-3-trials-for-chronic-weight-management.html",

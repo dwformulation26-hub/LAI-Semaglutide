@@ -73,6 +73,7 @@ const STRINGS = {
     "intelligence.subtitle": "Six recent findings; open the original source for context.",
     "intelligence.readoutEyebrow": "TODAY'S READOUT",
     "intelligence.source": "Source ↗",
+    "content.englishOriginal": "English original",
 
     "readout.leadLabel": "Development lead",
     "readout.volumeLabel": "30-day signal volume",
@@ -266,6 +267,7 @@ const STRINGS = {
     "intelligence.subtitle": "최근 발견 6건 · 원문 출처를 열어 맥락을 확인하세요.",
     "intelligence.readoutEyebrow": "오늘의 요약",
     "intelligence.source": "출처 ↗",
+    "content.englishOriginal": "영문 원문",
 
     "readout.leadLabel": "개발 선두",
     "readout.volumeLabel": "30일간 시그널 볼륨",

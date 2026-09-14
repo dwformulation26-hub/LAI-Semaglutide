@@ -17,15 +17,20 @@
   ],
   "current_status": {
     "stage": "Approved; mature commercial franchise with modest YoY revenue decline, no imminent generic competition",
+    "stage_ko": "승인; 전년 대비 매출이 소폭 감소한 성숙 상업 프랜차이즈이며, 임박한 제네릭 경쟁은 없음",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Mature, currently marketed commercial franchise with no imminent generic competition.",
+    "stage_evidence_ko": "현재 시판 중인 성숙 상업 프랜차이즈로, 임박한 제네릭 경쟁은 없다.",
     "molecule_class": [
       "non_incretin"
     ],
     "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
+    "molecule_evidence_ko": "탑재 약물이 인크레틴 및 비만 펩타이드 영역 밖에 있어 전달 플랫폼 근거로 추적한다.",
     "dosing_target": "Monthly / Every 6 weeks / Every 2 months (aripiprazole lauroxil, dose-dependent)",
+    "dosing_target_ko": "월 1회 / 6주 1회 / 2개월 1회(아리피프라졸 라우록실, 용량에 따라 다름)",
     "partner": null,
     "data_point": "Q2 2026 ARISTADA net sales $96.7M (incl. ~$4M favorable gross-to-net), down 4.5% YoY; FY2026 guidance $365-385M",
+    "data_point_ko": "2026년 2분기 ARISTADA 순매출 $96.7M(약 $4M의 유리한 총매출-순매출 조정 포함), 전년 대비 4.5% 감소; FY2026 가이던스 $365-385M",
     "last_updated": "2026-07-28",
     "last_checked": "2026-09-13"
   },
@@ -35,6 +40,7 @@
       "date": "2018-06-29",
       "type": "regulatory",
       "summary": "FDA approved Aristada Initio (aripiprazole lauroxil), a single-day initiation regimen used with a single 30 mg oral aripiprazole dose to start patients on any Aristada maintenance dose, replacing the prior 3-week oral overlap requirement.",
+      "summary_ko": "FDA는 Aristada Initio(아리피프라졸 라우록실)를 승인했다. 이는 경구 아리피프라졸 30 mg 1회 투여와 함께 사용해 모든 Aristada 유지 용량으로 투여를 시작하는 1일 개시 요법으로, 기존의 3주 경구 병용 요건을 대체한다.",
       "source": {
         "name": "Alkermes plc investor relations press release",
         "url": "https://investor.alkermes.com/news-releases/news-release-details/fda-approves-aristada-initiotm-initiation-aristadar",
@@ -47,6 +53,7 @@
       "date": "2024-05-02",
       "type": "manufacturing_capacity",
       "summary": "Alkermes completed the $91M sale of its Athlone, Ireland development/manufacturing facility to Novo Nordisk, with a subcontracting transition arrangement through end of 2025; Aristada and Aristada Initio commercial manufacturing is consolidated at Alkermes' Wilmington, Ohio facility.",
+      "summary_ko": "Alkermes는 아일랜드 애슬론 개발/생산 시설을 Novo Nordisk에 $91M에 매각하는 거래를 완료했으며, 2025년 말까지 하도급 전환 계약을 유지한다. Aristada와 Aristada Initio의 상업 생산은 오하이오주 윌밍턴에 있는 Alkermes 시설로 통합됐다.",
       "source": {
         "name": "Alkermes plc investor relations press release",
         "url": "https://investor.alkermes.com/news-releases/news-release-details/alkermes-plc-completes-sale-athlone-ireland-facility-novo/",
@@ -59,6 +66,7 @@
       "date": "2026-07-28",
       "type": "market_reaction",
       "summary": "Alkermes Q2 2026 results: ARISTADA product family revenue was $96.7 million (down 4.5% YoY, including ~$4M favorable gross-to-net adjustments); full-year 2026 ARISTADA guidance maintained at $365-385 million, amid broader company revenue growth driven by LUMRYZ post-Avadel acquisition.",
+      "summary_ko": "Alkermes 2026년 2분기 실적: ARISTADA 제품군 매출은 $96.7 million(전년 대비 4.5% 감소, 약 $4M의 유리한 총매출-순매출 조정 포함)이었다. 2026년 연간 ARISTADA 가이던스는 $365-385 million으로 유지됐으며, 회사 전체 매출은 Avadel 인수 후 LUMRYZ에 힘입어 성장했다.",
       "source": {
         "name": "Alkermes plc Q2 2026 financial results press release",
         "url": "https://investor.alkermes.com/news-releases/news-release-details/alkermes-plc-reports-second-quarter-2026-financial-results",
@@ -71,6 +79,7 @@
       "date": "2026-06-11",
       "type": "regulatory",
       "summary": "As of mid-2026, no generic version of Aristada has been approved by the FDA and no active ANDA/Paragraph IV litigation was identified; estimated generic launch date based on current patents/exclusivities is April 2039.",
+      "summary_ko": "2026년 중반 기준 FDA가 승인한 Aristada 제네릭은 없으며, 진행 중인 ANDA/Paragraph IV 소송도 확인되지 않았다. 현재 특허/독점권 기준 추정 제네릭 출시일은 2039년 4월이다.",
       "source": {
         "name": "Drugs.com generic-availability tracker",
         "url": "https://www.drugs.com/availability/generic-aristada.html",

@@ -14,15 +14,21 @@
   ],
   "current_status": {
     "stage": "Phase I/IIa — recruiting (started Aug 9, 2026)",
+    "stage_ko": "임상 1/2a상 — 모집 중(2026년 8월 9일 개시)",
     "stage_label": "Phase 1",
     "stage_evidence": "Phase I/IIa combined trial recruiting since Aug 9, 2026; the Phase 2a portion hasn't been reported as separately active yet, so per the combined-phase rule this stays at Phase 1.",
+    "stage_evidence_ko": "임상 1/2a상 통합 시험이 2026년 8월 9일부터 모집 중이다. 임상 2a상 부분이 별도로 진행 중이라는 보고는 아직 없어, 통합 단계 규칙에 따라 임상 1상으로 유지한다.",
     "molecule_class": [
       "semaglutide"
     ],
     "molecule_evidence": "NCT07563699 is a dose-escalation study of Semaglutide Depot.",
+    "molecule_evidence_ko": "NCT07563699는 Semaglutide Depot의 용량 증량 연구이다.",
     "dosing_target": "Monthly",
+    "dosing_target_ko": "월 1회",
     "partner": "None disclosed for the semaglutide asset specifically; company is actively seeking a development/commercialization partner",
+    "partner_ko": "세마글루타이드 자산에 대해서는 공개된 파트너가 없으며, 회사가 개발/상업화 파트너를 적극적으로 찾고 있다",
     "data_point": "NCT07563699 — dose-escalation Phase I/IIa study of Semaglutide Depot in type-2 diabetes, 24 participants, single site (Tel Aviv, Israel), est. primary completion May 2028",
+    "data_point_ko": "NCT07563699 — 제2형 당뇨병 환자 대상 Semaglutide Depot 용량 증량 임상 1/2a상, 참가자 24명, 단일 기관(이스라엘 텔아비브), 1차 완료 예상 2028년 5월",
     "last_updated": "2026-08-09",
     "last_checked": "2026-09-13"
   },
@@ -32,6 +38,7 @@
       "date": "2026-08-09",
       "type": "trial_data_readout",
       "summary": "Mapi Pharma began patient recruitment for a Phase I/IIa, multicenter, open-label, dose-escalation study of 'Semaglutide Depot' in type-2 diabetes (NCT07563699). The trial evaluates safety, tolerability, PK, and efficacy of a monthly-injection long-acting semaglutide depot versus standard weekly dosing; 24-participant target enrollment, site in Tel Aviv, Israel, estimated primary completion May 2028. This directly resolves the prior 'possibly deprioritized' flag on this program — it is active and has just entered human dosing, not shelved.",
+      "summary_ko": "Mapi Pharma가 제2형 당뇨병 환자를 대상으로 'Semaglutide Depot'의 임상 1/2a상 다기관 공개 라벨 용량 증량 연구(NCT07563699) 환자 모집을 시작했다. 이 시험은 월 1회 주사하는 장기지속형 세마글루타이드 데포의 안전성, 내약성, PK, 유효성을 표준 주 1회 투여와 비교 평가한다. 목표 등록 참가자는 24명, 시험기관은 이스라엘 텔아비브, 1차 완료 예상 시점은 2028년 5월이다. 이로써 이 프로그램에 붙어 있던 기존 '우선순위 하향 가능성' 표시가 직접 해소됐다. 프로그램은 보류되지 않고 진행 중이며, 막 인체 투여 단계에 진입했다.",
       "source": {
         "name": "ClinicalTrials.gov",
         "url": "https://clinicaltrials.gov/study/NCT07563699",
@@ -44,6 +51,7 @@
       "date": "2026-06-01",
       "type": "deal_partnership",
       "summary": "In a press release announcing participation in ASCO and ADA 2026, Mapi Pharma listed its GLP-1 depot programs (semaglutide and tirzepatide) among pipeline programs and indicated the company was seeking partners for its semaglutide depot asset as one of the more advanced candidates in its long-acting depot portfolio. Note: subsequent 2026 Mapi press coverage (cariprazine depot Phase I/IIa results in August, glatiramer acetate depot MS data at AAN in April) did not mention the semaglutide program, consistent with a company that discloses assets selectively by conference rather than the program having been shelved — the August ClinicalTrials.gov listing (finding f-2026-08-09-001) confirms it remains active.",
+      "summary_ko": "Mapi Pharma는 ASCO 및 ADA 2026 참가를 알리는 보도자료에서 GLP-1 데포 프로그램(세마글루타이드 및 터제파타이드)을 파이프라인 프로그램으로 소개하고, 장기지속형 데포 포트폴리오 중 비교적 앞선 후보물질인 세마글루타이드 데포 자산의 파트너를 찾고 있다고 밝혔다. 참고: 이후 2026년 Mapi 관련 보도(8월 카리프라진 데포 임상 1/2a상 결과, 4월 AAN에서의 글라티라머아세테이트 데포 MS 데이터)는 세마글루타이드 프로그램을 언급하지 않았는데, 이는 프로그램이 보류됐다기보다 학회별로 자산을 선별 공개하는 회사의 방식과 일치한다. 8월 ClinicalTrials.gov 등재(발견 사항 f-2026-08-09-001)가 프로그램이 여전히 진행 중임을 확인한다.",
       "source": {
         "name": "GlobeNewswire (Mapi Pharma company release)",
         "url": "https://www.globenewswire.com/news-release/2026/06/01/3304425/0/en/Mapi-Pharma-to-Participate-in-the-ASCO-Annual-Meeting-and-ADA-2026-Scientific-Sessions.html",

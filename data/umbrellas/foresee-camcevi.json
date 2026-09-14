@@ -20,15 +20,21 @@
   ],
   "current_status": {
     "stage": "Approved (US, Canada, EU, Taiwan, Israel, UK) 42mg/6-month; FDA-approved Aug 2025 as Camcevi ETM 21mg/3-month; EU 21mg/3-month strength has a positive CHMP opinion (Mar 2026) with European Commission decision expected Q2 2026 — final EC approval not independently confirmed as of this research. Separately, Foresee's FP-001 42mg (leuprolide mesylate, same SIF-ADAGIO platform, 6-month dosing) completed its pivotal Phase 3 Casppian study (LPLV May 27 2026) in pediatric central precocious puberty and met its primary endpoint; company intends to seek NDA submission by mid-2026.",
+    "stage_ko": "미국·캐나다·EU·대만·이스라엘·영국에서 42mg/6개월 제형이 승인됐다. 2025년 8월 FDA가 Camcevi ETM 21mg/3개월 제형을 승인했다. EU 21mg/3개월 제형은 CHMP 긍정 의견(2026년 3월)을 받았으며 유럽연합 집행위원회(EC) 결정은 2026년 2분기로 예상됐다. 이번 조사 시점까지 EC 최종 승인은 독립적으로 확인되지 않았다. 이와 별도로 Foresee의 FP-001 42mg(류프로렐린 메실산염, 동일한 SIF-ADAGIO 플랫폼, 6개월 투여)은 소아 중추성 성조숙증 대상 허가용 임상(피보탈) 3상 Casppian 시험을 완료(LPLV 2026년 5월 27일)하고 1차 평가변수를 충족했다. 회사는 2026년 중반까지 신약허가신청(NDA) 제출을 추진할 계획이다.",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Camcevi is approved in US/Canada/EU/Taiwan/Israel/UK; the umbrella's primary asset is commercially approved even though a related FP-001 asset is still pre-NDA.",
+    "stage_evidence_ko": "Camcevi는 미국/캐나다/EU/대만/이스라엘/영국에서 승인됐다. 관련 자산인 FP-001은 아직 NDA 제출 전 단계이지만, 이 항목의 핵심 자산은 상업적으로 승인된 상태다.",
     "molecule_class": [
       "non_incretin"
     ],
     "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
+    "molecule_evidence_ko": "탑재 약물이 인크레틴 및 비만 펩타이드 영역 밖에 있어 전달 플랫폼 근거로 추적한다.",
     "dosing_target": "3-month (21mg) or 6-month (42mg) subcutaneous, ready-to-use pre-filled syringe (no on-site mixing)",
+    "dosing_target_ko": "3개월(21mg) 또는 6개월(42mg) 피하 투여, 즉시 사용 가능한 사전충전주사기(현장 혼합 불필요)",
     "partner": "Accord BioPharma / Accord Healthcare (Intas Pharmaceuticals' specialty division) — exclusive US and EU commercialization",
+    "partner_ko": "Accord BioPharma / Accord Healthcare(Intas Pharmaceuticals의 스페셜티 사업부) — 미국 및 EU 독점 상업화",
     "data_point": "Phase 3 data supporting the 21mg/3-month FDA approval showed 97.9% of 144 enrolled advanced prostate cancer patients achieving the primary efficacy endpoint. FP-001 (CPP indication) Casppian Phase 3 topline (confirmed May 27 2026): 94% of patients achieved LH suppression below threshold at Week 24 (p=0.0005), vs. 80% pre-specified success criterion.",
+    "data_point_ko": "21mg/3개월 제형의 FDA 승인을 뒷받침한 임상 3상 데이터에서 등록된 진행성 전립선암 환자 144명 중 97.9%가 1차 유효성 평가변수를 달성했다. FP-001(CPP 적응증) Casppian 임상 3상 톱라인(2026년 5월 27일 확인): 24주차에 환자의 94%가 기준치 미만의 LH 억제를 달성했으며(p=0.0005), 사전 설정된 성공 기준은 80%였다.",
     "last_updated": "2026-05-27",
     "last_checked": "2026-09-13"
   },
@@ -38,6 +44,7 @@
       "date": "2023-08-29",
       "type": "regulatory",
       "summary": "Foresee announced FDA Orange Book listing of new US patent (No. 11,717,555 B2, 'Pharmaceutical Compositions Having a Selected Release Duration', issued 2023-08-08), extending Camcevi's US patent protection to January 1, 2039 and bringing total Orange Book-listed Camcevi patents from three to four. The patent also covers other LHRH products in Foresee's SIF pipeline. [Technology-family note: the seed hint's 'ProGel' name could not be substantiated — 'ProGel' is an unrelated Australian oral-delivery company. Foresee's verified platform is 'Stabilized Injectable Formulation (SIF)' (Camcevi's variant: SIF-ADAGIO). Per the FDA label, Camcevi is formulated in N-methyl-2-pyrrolidone (NMP) + poly(d,l-lactide), which precipitates into a solid depot after subcutaneous injection — an in-situ solvent-exchange mechanism, the same class as Eligard/Atrigel — so 'in_situ_forming_depot' was chosen over 'plga_microsphere'.]",
+      "summary_ko": "Foresee는 신규 미국 특허(No. 11,717,555 B2, 'Pharmaceutical Compositions Having a Selected Release Duration', 2023-08-08 등록)가 FDA Orange Book에 등재됐다고 발표했다. 이로써 Camcevi의 미국 특허 보호 기간이 2039년 1월 1일까지 연장되고, Orange Book에 등재된 Camcevi 특허는 3건에서 4건으로 늘었다. 이 특허는 Foresee의 SIF 파이프라인 내 다른 LHRH 제품도 포괄한다. [기술 계열 참고: 시드 힌트의 'ProGel' 명칭은 입증할 수 없었다 — 'ProGel'은 무관한 호주 경구 전달 기업이다. Foresee의 확인된 플랫폼은 'Stabilized Injectable Formulation (SIF)'(Camcevi의 변형: SIF-ADAGIO)이다. FDA 라벨에 따르면 Camcevi는 N-메틸-2-피롤리돈(NMP)과 폴리(d,l-락타이드)로 제형화돼 피하 주사 후 고형 데포로 침전된다. 이는 Eligard/Atrigel과 같은 계열의 체내 용매 교환 메커니즘이므로 'plga_microsphere' 대신 'in_situ_forming_depot'으로 분류했다.]",
       "source": {
         "name": "Foresee Pharmaceuticals newsroom (PR Newswire release)",
         "url": "https://www.foreseepharma.com/en/news/category/press_releases/foresee_pharmaceuticals_announces_fda_orange_book_listing_of_new_u_s__patent_for_camcevi___extending_patent_protection_to_2039",
@@ -50,6 +57,7 @@
       "date": "2024-08-09",
       "type": "trial_data_readout",
       "summary": "Foresee publicly disclosed four proprietary SIF long-acting-injectable delivery sub-platforms: SIF-ADAGIO (Camcevi's mechanism, also being applied to FP-014, a subcutaneous triptorelin LAI with 3- and 6-month dosing), SIF-LEGATO (lipid-based, high drug-loading, early neurology use), SIF-DUO (solution-based, early psychiatry LAI programs), and SIF-MEZZO (still in development/optimization).",
+      "summary_ko": "Foresee는 자체 SIF 장기지속형 주사제 전달 하위 플랫폼 4종을 공개했다. SIF-ADAGIO(Camcevi의 메커니즘으로, 3개월 및 6개월 투여의 피하 트립토렐린 LAI인 FP-014에도 적용 중), SIF-LEGATO(지질 기반, 고함량 약물 탑재, 초기 신경계 용도), SIF-DUO(용액 기반, 초기 정신과 LAI 프로그램), SIF-MEZZO(아직 개발/최적화 단계)다.",
       "source": {
         "name": "PR Newswire (Foresee Pharmaceuticals release)",
         "url": "https://www.prnewswire.com/news-releases/foresee-pharmaceuticals-announces-several-new-developments-related-to-its-sif-long-acting-injectable-lai-technologies--solidifying-its-position-as-a-leader-in-complex-long-acting-injectable-products-302218850.html",
@@ -62,6 +70,7 @@
       "date": "2025-08-28",
       "type": "regulatory",
       "summary": "Foresee announced FDA approval (approval date 2025-08-25) of CAMCEVI ETM — a ready-to-use 21mg, 3-month leuprolide mesylate LAI for advanced prostate cancer — exclusively licensed to Accord BioPharma for US commercialization pending a CMS J-code.",
+      "summary_ko": "Foresee는 진행성 전립선암 치료용 즉시 사용형 21mg, 3개월 류프로렐린 메실산염 LAI인 CAMCEVI ETM의 FDA 승인(승인일 2025-08-25)을 발표했다. 미국 상업화는 Accord BioPharma에 독점 라이선스됐으며, CMS J-code 부여를 기다리고 있다.",
       "source": {
         "name": "PR Newswire (Foresee Pharmaceuticals release)",
         "url": "https://www.prnewswire.com/news-releases/foresee-pharmaceuticals-announces-fda-approval-of-camcevi-etm-for-the-treatment-of-advanced-prostate-cancer-302541714.html",
@@ -74,6 +83,7 @@
       "date": "2026-03-06",
       "type": "regulatory",
       "summary": "CHMP issued a positive opinion recommending an extension of Camcevi's EU marketing authorization to add a 21mg, 3-month ready-to-use strength for advanced prostate cancer, complementing the already-launched (2025) 42mg/6-month strength. Final European Commission decision was expected in Q2 2026; EC approval itself was not independently confirmed by this research as of Sept 2026.",
+      "summary_ko": "CHMP는 진행성 전립선암 치료용 즉시 사용형 21mg, 3개월 제형을 추가하는 Camcevi의 EU 판매허가 확대를 권고하는 긍정 의견을 냈다. 이는 이미 출시된(2025년) 42mg/6개월 제형을 보완한다. 유럽연합 집행위원회(EC)의 최종 결정은 2026년 2분기로 예상됐으나, 2026년 9월 기준 이번 조사에서 EC 승인 자체는 독립적으로 확인되지 않았다.",
       "source": {
         "name": "PR Newswire (Foresee Pharmaceuticals release)",
         "url": "https://www.prnewswire.com/news-releases/foresee-pharmaceuticals-welcomes-positive-chmp-opinion-recommending-approval-of-camcevi-21mg-3-month-strength-in-the-european-union-for-advanced-prostate-cancer-302706567.html",
@@ -86,6 +96,7 @@
       "date": "2026-05-27",
       "type": "trial_data_readout",
       "summary": "Foresee announced completion (Last Patient Last Visit) of the pivotal Phase 3 Casppian study of FP-001 42mg (leuprolide mesylate, the same SIF-ADAGIO LAI platform as Camcevi, dosed every 6 months) in pediatric central precocious puberty, confirming topline results first reported Dec 2025: 94% of patients achieved LH suppression below threshold at Week 24 (vs. 80% pre-specified success criterion; p=0.0005), no safety concerns identified. The Casppian study was accepted for presentation at the Endocrine Society's ENDO 2026 conference as a potential new 6-month CPP treatment option; company intends to engage global regulators on an NDA submission by mid-2026.",
+      "summary_ko": "Foresee는 소아 중추성 성조숙증 대상 FP-001 42mg(Camcevi와 동일한 SIF-ADAGIO LAI 플랫폼의 류프로렐린 메실산염, 6개월 1회 투여)의 허가용 임상(피보탈) 3상 Casppian 시험 완료(Last Patient Last Visit)를 발표하고, 2025년 12월 처음 보고한 톱라인 결과를 확인했다. 24주차에 환자의 94%가 기준치 미만의 LH 억제를 달성했으며(사전 설정 성공 기준 80%, p=0.0005), 안전성 우려는 확인되지 않았다. Casppian 시험은 새로운 6개월 CPP 치료 옵션 후보로서 Endocrine Society의 ENDO 2026 학회 발표에 채택됐다. 회사는 2026년 중반까지 NDA 제출과 관련해 글로벌 규제기관과 협의할 계획이다.",
       "source": {
         "name": "PR Newswire (Foresee Pharmaceuticals release)",
         "url": "https://www.prnewswire.com/news-releases/foresee-pharmaceuticals-announces-completion-of-casppian-phase-3-study-with-last-patient-last-visit-and-confirms-topline-results-94-of-patients-achieve-lh-suppression-with-6-month-dosing-interval-of-leuprolide-mesylate-also-the-acceptance-o-876374774.html",

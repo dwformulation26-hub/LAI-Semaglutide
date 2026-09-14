@@ -20,16 +20,21 @@
   ],
   "current_status": {
     "stage": "Once-monthly SC depot of ASC30 completed a U.S. Phase II 24-week study (positive topline Jun 2026); once-monthly injectable amylin agonist ASC36 and the ASC36_35 co-formulation in U.S. Phase I since Aug 2026; once-monthly triple agonist ASC37 selected for clinical development. The oral ASC30 tablet (Phase III AURORA program) and oral ASC36 (Phase I) are outside the tracker's long-acting scope.",
+    "stage_ko": "ASC30 월 1회 피하(SC) 데포는 미국 임상 2상 24주 시험을 완료했다(2026년 6월 긍정적 톱라인 결과). 월 1회 주사형 아밀린 작용제 ASC36과 공동 제형 ASC36_35는 2026년 8월부터 미국 임상 1상을 진행 중이며, 월 1회 삼중 작용제 ASC37은 임상 개발 후보로 선정됐다. 경구용 ASC30 정제(임상 3상 AURORA 프로그램)와 경구용 ASC36(임상 1상)은 트래커의 장기지속형 범위 밖이다.",
     "stage_label": "Phase 2",
     "stage_evidence": "Stage follows the long-acting assets only: the once-monthly SC depot of ASC30 completed a U.S. Phase II 24-week study with positive topline results (Ascletis release, Jun 1 2026). The Phase III AURORA trials are for the once-daily oral tablet, which is out of scope.",
+    "stage_evidence_ko": "개발 단계는 장기지속형 자산만 기준으로 한다. ASC30 월 1회 피하(SC) 데포는 미국 임상 2상 24주 시험을 완료하고 긍정적 톱라인 결과를 발표했다(Ascletis 보도자료, 2026년 6월 1일). 임상 3상 AURORA 시험은 범위 밖인 1일 1회 경구 정제에 대한 것이다.",
     "molecule_class": [
       "other_incretin",
       "amylin"
     ],
     "molecule_evidence": "Two assets in one umbrella: ASC30 is a small-molecule GLP-1 agonist with an ultra-long-acting SC depot, and ASC36 is a once-monthly injectable amylin receptor agonist that began Phase 1 in Aug 2026. ASC37, a once-monthly SC GLP-1R/GIPR/GCGR triple peptide agonist selected for clinical development (Ascletis press releases, 2026), also sits in other_incretin (alias added 2026-09-14 by admin).",
+    "molecule_evidence_ko": "하나의 umbrella에 두 자산이 포함된다. ASC30은 초장기 지속형 피하(SC) 데포를 갖춘 소분자 GLP-1 작용제이고, ASC36은 2026년 8월 임상 1상에 진입한 월 1회 주사형 아밀린 수용체 작용제다. 임상 개발 후보로 선정된 월 1회 피하(SC) GLP-1R/GIPR/GCGR 삼중 펩타이드 작용제 ASC37(Ascletis 보도자료, 2026년)도 other_incretin에 함께 분류돼 있다(2026-09-14 관리자가 별칭 추가).",
     "dosing_target": "Once-monthly SC depot for ASC30, with once-quarterly maintenance under study; once-monthly SC for ASC36 and ASC37",
+    "dosing_target_ko": "ASC30은 월 1회 피하(SC) 데포이며 3개월 1회 유지 투여를 연구 중이다. ASC36과 ASC37은 월 1회 피하(SC) 투여다.",
     "partner": null,
     "data_point": "SC depot Phase II (n=65, 24 weeks): Formulation A1, three monthly 400 mg doses with no weekly lead-in, gave placebo-adjusted weight loss of 7.5% at week 16 and 5.8% at week 24. Phase Ib: observed half-life of about 75 days after a single 100 mg SC dose.",
+    "data_point_ko": "피하(SC) 데포 임상 2상(n=65, 24주): 주 1회 도입 투여 없이 400 mg을 월 1회씩 3회 투여한 Formulation A1은 16주차 위약 대비 체중 감소율 7.5%, 24주차 5.8%를 기록했다. 임상 1b상: 100 mg 피하(SC) 단회 투여 후 관찰된 반감기는 약 75일이었다.",
     "last_updated": "2026-09-08",
     "last_checked": "2026-09-13"
   },
@@ -39,6 +44,7 @@
       "date": "2026-06-01",
       "type": "trial_data_readout",
       "summary": "Ascletis announced positive topline results from a U.S. Phase II, 24-week study of its ultra-long-acting subcutaneous depot formulations of ASC30 (a small-molecule GLP-1R agonist, not a peptide) for obesity. Formulation A1, given as three monthly 400mg doses with no weekly lead-in injections, produced placebo-adjusted weight loss of 6.3% at week 12, 7.5% at week 16, and durable 5.8% at week 24 (16 weeks after the last dose); Formulation A2 failed to achieve therapeutic exposure. No discontinuations due to adverse events were reported.",
+      "summary_ko": "Ascletis는 비만 치료제로 개발 중인 ASC30(펩타이드가 아닌 소분자 GLP-1R 작용제)의 초장기 지속형 피하 데포 제형에 대한 미국 임상 2상 24주 시험에서 긍정적 톱라인 결과를 발표했다. 주 1회 도입 주사 없이 400mg을 월 1회씩 3회 투여한 Formulation A1은 12주차 6.3%, 16주차 7.5%의 위약 대비 체중 감소율을 보였고, 24주차(마지막 투여 16주 후)에도 5.8%가 유지됐다. Formulation A2는 치료 노출에 도달하지 못했다. 이상반응으로 인한 투약 중단은 보고되지 않았다.",
       "source": {
         "name": "Ascletis press release via PR Newswire",
         "url": "https://www.prnewswire.com/news-releases/ascletis-announces-positive-topline-results-from-us-phase-ii-24-week-study-for-its-ultra-long-acting-subcutaneous-depot-formulations-of-small-molecule-glp-1r-agonist-asc30-for-obesity-302709245.html",
@@ -51,6 +57,7 @@
       "date": "2026-08-10",
       "type": "trial_data_readout",
       "summary": "Ascletis initiated two U.S. Phase I studies for ASC36 (a once-monthly, injectable amylin receptor peptide agonist discovered via its AI-assisted structure-based drug discovery platform) and ASC36_35FDC, a fixed-dose co-formulation of ASC36 with GLP-1R/GIPR dual agonist ASC35, following FDA IND clearance. Preclinical head-to-head DIO rat data showed ASC36 monotherapy produced ~91% and ~32% greater relative body-weight reduction than petrelintide and eloralintide, respectively.",
+      "summary_ko": "Ascletis는 FDA IND 승인에 따라 ASC36(AI 기반 구조 기반 신약 발굴 플랫폼으로 발굴한 월 1회 주사형 아밀린 수용체 펩타이드 작용제)과, ASC36에 GLP-1R/GIPR 이중 작용제 ASC35를 결합한 고정용량 공동 제형 ASC36_35FDC에 대한 미국 임상 1상 시험 2건을 개시했다. 전임상 DIO 랫드 직접 비교 데이터에서 ASC36 단독요법은 페트렐린타이드 및 엘로랄린타이드 대비 각각 약 91%, 약 32% 더 큰 상대적 체중 감소를 나타냈다.",
       "source": {
         "name": "Ascletis press release via PR Newswire",
         "url": "https://www.prnewswire.com/news-releases/ascletis-submits-two-ind-applications-to-the-us-fda-for-the-treatment-of-obesity-asc36-once-monthly-injection-a-peptide-amylin-receptor-agonist-and-asc36_35-fdc-once-monthly-injection-a-co-formulation-of-asc36-plus-peptide-g-302818044.html",
@@ -63,6 +70,7 @@
       "date": "2026-08-30",
       "type": "regulatory",
       "summary": "Ascletis announced dosing of the first participant in its global Phase III clinical program (two pivotal trials, AURORA-1 and AURORA-2) for once-daily oral small-molecule GLP-1 receptor agonist ASC30 in chronic weight management, enrolling ~4,600 adults with obesity/overweight (with and without type 2 diabetes) over 72 weeks. Topline data expected Q3 2028; U.S. NDA submission expected by end of 2028, EU MAA submission expected early 2029.",
+      "summary_ko": "Ascletis는 체중 관리를 위한 1일 1회 경구 소분자 GLP-1 수용체 작용제 ASC30의 글로벌 임상 3상 프로그램(허가용 임상(피보탈) 2건, AURORA-1 및 AURORA-2)에서 첫 환자 투여를 발표했다. 비만/과체중 성인(제2형 당뇨병 동반 및 비동반) 약 4,600명을 72주간 등록한다. 톱라인 결과는 2028년 3분기로 예상되며, 미국 NDA 제출은 2028년 말까지, EU MAA 제출은 2029년 초로 예상된다.",
       "source": {
         "name": "Ascletis press release via PR Newswire",
         "url": "https://www.prnewswire.com/news-releases/ascletis-announces-first-participant-dosed-in-a-global-phase-iii-clinical-program-of-once-daily-oral-small-molecule-glp-1-receptor-agonist-asc30-for-chronic-weight-management-302864376.html",
@@ -75,6 +83,7 @@
       "date": "2025-09-09",
       "type": "trial_data_readout",
       "summary": "Ascletis' ultra-long-acting subcutaneous depot maintenance formulation of ASC30 (Phase Ib study NCT06679959) demonstrated an observed half-life of 75 days in participants with obesity -- after a single 100mg SC dose in 8 participants, median Tmax was 17 days and time to 50% of Cmax was ~75 days -- supporting a once-quarterly maintenance dosing regimen built on Ascletis' Ultra-Long-Acting Platform (ULAP). This Phase Ib readout predates and underlies the later Phase II 24-week topline already in this file (f-2026-06-01-001).",
+      "summary_ko": "Ascletis의 ASC30 초장기 지속형 피하 데포 유지 제형(임상 1b상 NCT06679959)은 비만 참가자에서 관찰 반감기 75일을 나타냈다. 참가자 8명에게 100mg을 피하(SC) 단회 투여한 결과 Tmax 중앙값은 17일, Cmax의 50%에 도달하는 시간은 약 75일로, Ascletis의 초장기 지속형 플랫폼(ULAP) 기반 3개월 1회 유지 투여 요법을 뒷받침했다. 이 임상 1b상 결과는 이 파일에 이미 있는 이후의 임상 2상 24주 톱라인(f-2026-06-01-001)보다 앞서며 그 근거가 됐다.",
       "source": {
         "name": "Ascletis press release via PR Newswire, corroborated by Clinical Trials Arena",
         "url": "https://www.prnewswire.com/news-releases/ascletis-announces-ultra-long-acting-subcutaneous-depot-maintenance-formulation-of-small-molecule-glp-1r-agonist-asc30-demonstrated-an-observed-half-life-of-75-days-in-participants-with-obesity-302550420.html",
@@ -88,6 +97,7 @@
       "date": "2026-09-08",
       "type": "trial_data_readout",
       "summary": "Ascletis initiated a U.S. Phase I study for ASC36 oral tablets in obesity, its fourth Phase I start of 2026 and distinct from the two injectable ASC36 studies begun in August. The oral formulation uses the company POTENT oral-transport technology, reporting 6-8% absolute oral bioavailability at steady state and up to 13.2% mean body-weight reduction from baseline after seven days of once-daily dosing in non-human primates.",
+      "summary_ko": "Ascletis는 비만을 대상으로 ASC36 경구 정제의 미국 임상 1상을 개시했다. 2026년 네 번째 임상 1상 착수로, 8월에 시작한 주사형 ASC36 시험 2건과는 별개다. 경구 제형은 회사의 POTENT 경구 전달 기술을 적용했으며, 비인간 영장류에서 정상상태 절대 경구 생체이용률 6-8%, 1일 1회 7일 투여 후 기저치 대비 최대 13.2%의 평균 체중 감소를 보고했다.",
       "source": {
         "name": "Ascletis company release via PR Newswire",
         "publication": "PR Newswire",

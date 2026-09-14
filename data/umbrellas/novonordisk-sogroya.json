@@ -15,15 +15,20 @@
   ],
   "current_status": {
     "stage": "Approved & marketed; originally approved for adult GHD (2020) and pediatric GHD (2023), expanded Feb 27, 2026 to three additional pediatric indications (idiopathic short stature, small-for-gestational-age without catch-up growth, Noonan syndrome growth failure); a further supplemental application for Turner syndrome is pending with a US decision expected later in 2026",
+    "stage_ko": "승인 및 시판. 당초 성인 GHD(2020년)와 소아 GHD(2023년)에 승인됐고, 2026년 2월 27일 소아 적응증 3건(특발성 저신장, 따라잡기 성장이 없는 부당경량아, 누난 증후군 성장 부전)으로 적응증이 확대됐다. 터너 증후군에 대한 추가 보충 신청은 계류 중이며 미국 결정은 2026년 후반 예상된다.",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Approved and marketed for adult and pediatric GHD, expanded to further pediatric indications Feb 2026.",
+    "stage_evidence_ko": "성인 및 소아 GHD에 승인돼 시판 중이며, 2026년 2월 추가 소아 적응증으로 확대됐다.",
     "molecule_class": [
       "non_incretin"
     ],
     "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
+    "molecule_evidence_ko": "탑재 약물이 인크레틴 및 비만 펩타이드 영역 밖에 있어 전달 플랫폼 근거로 추적한다.",
     "dosing_target": "Once-weekly subcutaneous injection (albumin-binding, non-covalent, long-acting somatropin analog)",
+    "dosing_target_ko": "주 1회 피하 주사(알부민 결합, 비공유결합, 장기지속형 소마트로핀 유사체)",
     "partner": null,
     "data_point": "REAL8 Phase 3 basket study: at week 52, once-weekly somapacitan showed comparable annualized height velocity to daily somatropin across ISS (10.2 vs 10.5 cm/yr), SGA (11.0 vs ~9.4-11.1 cm/yr across daily-dose arms), and Noonan syndrome (10.4 vs 9.2 cm/yr); FDA approved all three indications Feb 27, 2026",
+    "data_point_ko": "REAL8 임상 3상 바스켓 시험: 52주차 주 1회 소마파시탄은 1일 1회 소마트로핀과 비슷한 연간 키 성장 속도를 보였다. ISS(10.2 vs 10.5 cm/yr), SGA(11.0 vs 1일 투여 용량군별 약 9.4-11.1 cm/yr), 누난 증후군(10.4 vs 9.2 cm/yr). FDA는 2026년 2월 27일 3개 적응증을 모두 승인했다.",
     "last_updated": "2026-02-27",
     "last_checked": "2026-09-13"
   },
@@ -33,6 +38,7 @@
       "date": "2025-05-12",
       "type": "trial_data_readout",
       "summary": "Novo Nordisk presents REAL8 Phase 3 basket study results at the joint ESPE/ESE congress, showing once-weekly Sogroya (somapacitan) is efficacious and well tolerated versus daily growth hormone in children with idiopathic short stature, small-for-gestational-age short stature, and Noonan syndrome growth failure. The release confirms regulatory submissions for these three indications were filed with both FDA and EMA in April 2025.",
+      "summary_ko": "Novo Nordisk는 ESPE/ESE 공동 학회에서 REAL8 임상 3상 바스켓 시험 결과를 발표해, 특발성 저신장, 부당경량아 저신장, 누난 증후군 성장 부전 소아에서 주 1회 Sogroya(소마파시탄)가 1일 1회 성장호르몬 대비 유효하고 내약성이 양호함을 보였다. 보도자료는 이 3개 적응증에 대한 허가 신청이 2025년 4월 FDA와 EMA에 모두 제출됐음을 확인했다.",
       "source": {
         "name": "Novo Nordisk press release (GlobeNewswire)",
         "url": "https://www.globenewswire.com/news-release/2025/05/12/3078801/0/en/Novo-Nordisk-A-S-Once-weekly-Sogroya-somapacitan-is-an-efficacious-and-well-tolerated-long-acting-growth-hormone-in-children-with-growth-disorders-results-from-REAL8-phase-3-basket.html",
@@ -45,6 +51,7 @@
       "date": "2026-02-27",
       "type": "regulatory",
       "summary": "FDA approves Sogroya (somapacitan-beco) for three new pediatric indications in children 2.5 years and older: idiopathic short stature, short stature due to being small for gestational age without catch-up growth by age 2, and growth failure associated with Noonan syndrome — based on the REAL8 Phase 3 study. Novo Nordisk notes a separate supplemental application for Turner syndrome is under US review, with a decision expected later in 2026.",
+      "summary_ko": "FDA는 REAL8 임상 3상을 근거로 2.5세 이상 소아의 신규 적응증 3건(특발성 저신장, 2세까지 따라잡기 성장이 없는 부당경량아로 인한 저신장, 누난 증후군 관련 성장 부전)에 대해 Sogroya(소마파시탄-beco)를 승인했다. Novo Nordisk는 터너 증후군에 대한 별도의 보충 신청이 미국에서 심사 중이며 결정은 2026년 후반 예상된다고 밝혔다.",
       "source": {
         "name": "Novo Nordisk press release (PR Newswire)",
         "url": "https://www.prnewswire.com/news-releases/fda-approves-novo-nordisks-sogroya-as-the-first-and-only-once-weekly-long-acting-growth-hormone-for-three-additional-pediatric-indications-302699946.html",

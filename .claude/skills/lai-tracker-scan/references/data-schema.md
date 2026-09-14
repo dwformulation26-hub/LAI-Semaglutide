@@ -55,6 +55,7 @@ IDs must be deterministic and collision-checked before writing — never just in
   "aliases": ["Peptron", "펩트론", "PT403", "SmartDepot", "087010"],
   "current_status": {
     "stage": "Partnered w/ Lilly",
+    "stage_ko": "Lilly와 파트너십",
     "stage_label": "Phase 1",
     "stage_evidence": "Phase 1 IND cleared and first patient dosed per the Aug 30 finding -- MFDS clearance letter directly cited.",
     "molecule_class": ["semaglutide"],
@@ -71,6 +72,7 @@ IDs must be deterministic and collision-checked before writing — never just in
       "date": "2026-08-30",
       "type": "trial_data_readout",
       "summary": "One or two sentences, plain language.",
+      "summary_ko": "영문 요약의 한국어 번역.",
       "source": { "name": "ADA 2026 roundup", "publication": "Korea Biomedical Review", "url": "https://...", "tier": 2 },
       "confidence": "confirmed"
     }
@@ -94,6 +96,19 @@ Notes:
 - `finding_history` is append-only. Never edit or remove a past entry, even to "clean it up" — if something logged earlier turns out wrong, append a new finding correcting it (this preserves the audit trail; git history plus this append-only log together are the record of what was known when).
 - Staleness (`days_since_last_finding`) is computed by the app from `current_status.last_updated` at render time. Do not store it — a stored value goes stale itself.
 - `last_checked` is updated by Track A (with `node scripts/stamp.mjs checked`) every time it actually queries this umbrella's aliases, regardless of whether anything new turned up — it's what powers the quiet-umbrella throttle in the skill (checking a consistently quiet umbrella every 3rd day instead of daily). This is deliberately separate from `last_updated`, which only moves when a real finding lands. A missing `last_checked` means "never checked under the throttle rule" — treat it as due for a check, not as quiet.
+
+## Korean copy
+
+Every text field the dashboard shows has a Korean sibling named `<field>_ko`, placed right after it:
+
+| English field | Korean copy |
+|---|---|
+| finding `summary` | `summary_ko` |
+| `current_status.stage`, `stage_evidence`, `molecule_evidence`, `dosing_target`, `partner`, `data_point` | the same name plus `_ko` |
+| candidate evidence `snippet` | `snippet_ko` |
+| candidate `promotion_bar.evidence` | `promotion_bar.evidence_ko` |
+
+English is the source of truth; each Korean field is its translation under [ko-glossary.md](ko-glossary.md). A `null` or empty English field needs no Korean copy. `scripts/build.mjs` (through `scripts/ko-check.mjs`) fails when a Korean copy is missing, when a number or development code from the English is absent from it, or when a copy of four or more English words contains no Hangul. Not translated: `canonical_name`, `detected_name`, `aliases`, source names and `verification_note`. The email digest is English only. Adding or correcting the Korean copy of an old finding is allowed: it doesn't change the append-only English record.
 
 ## `candidate` object (an entry in the `candidates` array in `data/candidates.json`)
 

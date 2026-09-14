@@ -23,17 +23,23 @@
   ],
   "current_status": {
     "stage": "Research collaboration & license agreement signed (March 2026); preclinical",
+    "stage_ko": "공동연구 및 기술이전(라이선스) 계약 체결(2026년 3월), 전임상",
     "stage_label": "Preclinical",
     "stage_evidence": "Research collaboration and license agreement signed March 2026; preclinical stage.",
+    "stage_evidence_ko": "2026년 3월 공동연구 및 기술이전(라이선스) 계약을 체결했으며, 전임상 단계이다.",
     "molecule_class": [
       "semaglutide",
       "tirzepatide",
       "retatrutide"
     ],
     "molecule_evidence": "Licensed asset GB-7001 is long-acting semaglutide. InnoLAMP serum levels held beyond 28 days in rodents across semaglutide, tirzepatide and retatrutide.",
+    "molecule_evidence_ko": "기술이전된 자산 GB-7001은 장기지속형 세마글루타이드이다. InnoLAMP는 설치류에서 세마글루타이드, 터제파타이드, 레타트루타이드 전반에 걸쳐 혈중 농도를 28일 이상 유지했다.",
     "dosing_target": "Monthly",
+    "dosing_target_ko": "월 1회",
     "partner": "Samsung Bioepis / Epis NexLab (full license on long-acting semaglutide asset + option on a 2nd asset + first-negotiation rights on 3 more undisclosed assets); Boehringer Ingelheim (separate LAI peptide formulation collaboration since Jan 2025, expanded July 2026); Celltrion (MOU for InnoBioLAMP antibody SC platform)",
+    "partner_ko": "삼성바이오에피스 / 에피스넥스랩(장기지속형 세마글루타이드 자산 전체 라이선스 + 두 번째 자산 옵션 + 비공개 자산 3개 추가에 대한 우선협상권); Boehringer Ingelheim(2025년 1월부터 별도의 LAI 펩타이드 제형 공동 개발, 2026년 7월 확대); 셀트리온(InnoBioLAMP 항체 SC 플랫폼 MOU)",
     "data_point": "InnoLAMP: <5% initial drug burst in first 24h; serum concentrations maintained beyond 28 days in rodent models across semaglutide, tirzepatide, and retatrutide",
+    "data_point_ko": "InnoLAMP: 첫 24시간 초기 약물 방출(burst) 5% 미만; 설치류 모델에서 세마글루타이드, 터제파타이드, 레타트루타이드 전반에 걸쳐 혈중 농도 28일 이상 유지",
     "last_updated": "2026-09-08",
     "last_checked": "2026-09-13"
   },
@@ -43,6 +49,7 @@
       "date": "2025-08-14",
       "type": "financing_investor",
       "summary": "G2GBio debuted on KOSDAQ (ticker 456160) with IPO priced at the top of the range (₩58,000/share, ₩52.2B raised), drawing 810.6:1 institutional demand. Shares closed the first trading day up 61.7% at ₩93,800 (intraday high +69.3% at ₩98,200), giving a ₩503.3B market cap. Independently corroborated by a second outlet reporting a ~60% first-day gain.",
+      "summary_ko": "지투지바이오(G2GBio)가 공모가를 희망 범위 상단(주당 ₩58,000, ₩52.2B 조달)으로 확정하고 KOSDAQ(티커 456160)에 상장했으며, 기관 수요예측 경쟁률은 810.6:1을 기록했다. 상장 첫날 주가는 61.7% 오른 ₩93,800에 마감했고(장중 최고 +69.3%, ₩98,200), 시가총액은 ₩503.3B였다. 첫날 약 60% 상승을 보도한 두 번째 매체를 통해 독립적으로 확인됐다.",
       "source": {
         "name": "TheBell (corroborated by TheBioNews)",
         "url": "https://www.thebell.co.kr/free/content/ArticleView.asp?key=202508141703261200107231",
@@ -55,6 +62,7 @@
       "date": "2026-03-16",
       "type": "deal_partnership",
       "summary": "Samsung Bioepis and its R&D subsidiary Epis NexLab signed a research collaboration and license agreement with G2GBio: Samsung Bioepis obtains a full license for a novel long-acting semaglutide asset (GB-7001) plus an option to license a second G2GBio asset, and first-negotiation rights on three further undisclosed candidates. G2GBio will produce and supply the licensed substances; development costs are borne by Samsung Bioepis/Epis NexLab. Samsung Epis Holdings separately invested ₩20 billion in G2GBio convertible bonds.",
+      "summary_ko": "삼성바이오에피스와 R&D 자회사 에피스넥스랩이 지투지바이오(G2GBio)와 공동연구 및 기술이전(라이선스) 계약을 체결했다. 삼성바이오에피스는 신규 장기지속형 세마글루타이드 자산(GB-7001)에 대한 전체 라이선스와 지투지바이오의 두 번째 자산에 대한 라이선스 옵션, 비공개 후보물질 3개 추가에 대한 우선협상권을 확보했다. 지투지바이오는 기술이전 물질을 생산·공급하며, 개발 비용은 삼성바이오에피스/에피스넥스랩이 부담한다. 삼성에피스홀딩스는 별도로 지투지바이오 전환사채에 ₩20 billion을 투자했다.",
       "source": {
         "name": "BusinessWire (company release, corroborated by Dailypharm/e Today/DigitalToday/etnews)",
         "url": "https://www.businesswire.com/news/home/20260316253695/en/Samsung-Bioepis-and-Epis-NexLab-Sign-Research-Collaboration-and-License-Agreement-with-G2GBIO-to-Develop-Novel-Assets-Including-Long-acting-Semaglutide",
@@ -67,6 +75,7 @@
       "date": "2026-06-08",
       "type": "trial_data_readout",
       "summary": "G2GBio presented preclinical InnoLAMP data at ADA 2026, reporting less than 5% initial drug burst within 24 hours and serum concentrations maintained beyond 28 days in rodent models across semaglutide, tirzepatide, and retatrutide, including dual/triple-agonist formulations where high dosing volume typically complicates subcutaneous LAI development. Corroborated by two additional independent outlets covering the same ADA poster.",
+      "summary_ko": "지투지바이오가 ADA 2026에서 InnoLAMP 전임상 데이터를 발표했다. 24시간 이내 초기 약물 방출(burst)은 5% 미만이었으며, 설치류 모델에서 세마글루타이드, 터제파타이드, 레타트루타이드 전반에 걸쳐 혈중 농도가 28일 이상 유지됐다. 여기에는 높은 투여 부피가 통상 피하 LAI 개발을 어렵게 하는 이중/삼중 작용제 제형도 포함됐다. 같은 ADA 포스터를 다룬 독립 매체 2곳이 추가로 확인했다.",
       "source": {
         "name": "Korea Biomedical Review (corroborated by TheBioNews, Asia Business Daily)",
         "url": "https://www.koreabiomed.com/news/articleView.html?idxno=31960",
@@ -79,6 +88,7 @@
       "date": "2026-07-14",
       "type": "deal_partnership",
       "summary": "G2GBio and Boehringer Ingelheim signed a contract expanding their long-acting injectable collaboration to additional peptide formulations via InnoLAMP, building on an initial agreement from January 2025. Not semaglutide-specific — covers unspecified Boehringer peptide candidates.",
+      "summary_ko": "지투지바이오(G2GBio)와 Boehringer Ingelheim이 InnoLAMP를 활용한 장기지속형 주사제 공동 개발을 추가 펩타이드 제형으로 확대하는 계약을 체결했다. 2025년 1월 최초 계약을 기반으로 한 것이다. 세마글루타이드 전용이 아니며, 특정되지 않은 Boehringer 펩타이드 후보물질을 대상으로 한다.",
       "source": {
         "name": "Businesskorea",
         "url": "https://www.businesskorea.co.kr/news/articleView.html?idxno=247035",
@@ -91,6 +101,7 @@
       "date": "2026-08-01",
       "type": "deal_partnership",
       "summary": "G2GBio signed an MOU with Celltrion to co-develop an ultra-concentrated antibody subcutaneous injection using a new 'InnoBioLAMP' platform variant — applicable to antibodies, bispecifics, ADCs, and recombinant proteins. Company-level development, not a semaglutide/small-molecule LAI asset; exact announcement date approximate based on 'most recent' framing in source article.",
+      "summary_ko": "지투지바이오(G2GBio)가 셀트리온과 신규 'InnoBioLAMP' 플랫폼 변형을 활용한 초고농도 항체 피하 주사제 공동 개발을 위한 MOU를 체결했다. 이 플랫폼은 항체, 이중항체, ADC, 재조합 단백질에 적용할 수 있다. 회사 차원의 개발로, 세마글루타이드/저분자 LAI 자산은 아니다. 정확한 발표일은 원문 기사의 '가장 최근' 표현에 근거한 추정치이다.",
       "source": {
         "name": "e Today (이투데이)",
         "url": "https://www.etoday.co.kr/news/view/2610433",
@@ -103,6 +114,7 @@
       "date": "2024-12-10",
       "type": "regulatory",
       "summary": "G2GBio was granted Korean patent KR102792620B1 for a sustained-release microsphere pharmaceutical composition containing tirzepatide (application filed 2024-06-03, published 2024-12-10) — an initial-burst-inhibiting biodegradable-polymer formulation for diabetes/obesity/NASH/hypertension. Indicates a tirzepatide-based microsphere asset in G2GBio's pipeline distinct from the tracked semaglutide GB-7001 program.",
+      "summary_ko": "지투지바이오(G2GBio)가 터제파타이드를 함유한 서방형 미립구 약학 조성물에 대해 한국 특허 KR102792620B1을 등록했다(2024-06-03 출원, 2024-12-10 공개). 당뇨병/비만/NASH/고혈압을 겨냥한 초기 방출 억제형 생분해성 고분자 제형이다. 추적 중인 세마글루타이드 GB-7001 프로그램과 별개인 터제파타이드 기반 미립구 자산이 지투지바이오 파이프라인에 있음을 시사한다.",
       "source": {
         "name": "Google Patents record (KR102792620B1)",
         "url": "https://patents.google.com/patent/KR102792620B1/en",
@@ -116,6 +128,7 @@
       "date": "2026-05-18",
       "type": "regulatory",
       "summary": "G2GBio announced registration of a US patent for its semaglutide sustained-release microsphere technology, with a priority date of 2020-02-14 — reported as the earliest priority date among semaglutide biodegradable-microsphere patents registered in the US. The technology is now patent-registered in 7 countries total.",
+      "summary_ko": "지투지바이오(G2GBio)가 세마글루타이드 서방형 미립구 기술에 대한 미국 특허 등록을 발표했다. 우선일은 2020-02-14로, 미국에 등록된 세마글루타이드 생분해성 미립구 특허 중 가장 빠른 우선일인 것으로 보도됐다. 이 기술은 총 7개국에서 특허 등록됐다.",
       "source": {
         "name": "Newspim, corroborated by Biospectator and eToday",
         "url": "https://www.newspim.com/news/view/20260518000550",
@@ -128,6 +141,7 @@
       "date": "2026-09-08",
       "type": "trial_data_readout",
       "summary": "G2GBio reported consistent Phase 1 pharmacokinetic results across three countries (Korea, Canada, Indonesia) for GB-5001, its once-monthly long-acting donepezil injectable for Alzheimer's/dementia -- a separate asset from the tracked GB-7001 semaglutide program. Single-dose PK across 70/140/280mg was dose-proportional; population-PK steady-state simulation showed 140mg approximating oral Aricept 5mg and 280mg approximating oral Aricept 10mg. Company said it will pursue partnership discussions and follow-on development toward pivotal trials.",
+      "summary_ko": "지투지바이오(G2GBio)가 알츠하이머/치매 치료용 월 1회 장기지속형 도네페질 주사제 GB-5001에 대해 3개국(한국, 캐나다, 인도네시아)에서 일관된 임상 1상 약동학 결과를 보고했다. 추적 중인 GB-7001 세마글루타이드 프로그램과는 별개의 자산이다. 70/140/280mg 단회 투여 PK는 용량 비례적이었으며, 집단 PK 항정상태 시뮬레이션에서 140mg은 경구 Aricept 5mg, 280mg은 경구 Aricept 10mg에 근접했다. 회사는 파트너십 논의와 허가용 임상(피보탈)을 향한 후속 개발을 추진할 것이라고 밝혔다.",
       "source": {
         "name": "Money Today (머니투데이), corroborated by TheBioNews",
         "url": "https://www.mt.co.kr/thebio/2026/09/08/2026090808284832855",
@@ -141,6 +155,7 @@
       "date": "2026-07-21",
       "type": "deal_partnership",
       "summary": "G2GBio signed a contract with medical/bio AI startup SpiderCore to build an AI-based R&D platform for long-acting injectable formulation development -- training models on accumulated microsphere formulation and process data to automate formulation-combination search and process analysis. G2GBio's stated goals are 2x+ faster development and 50%+ lower cost, with platform rollout to the research floor targeted within two years. A tooling/process partnership, not a new drug asset or deal partner for GB-7001 itself.",
+      "summary_ko": "지투지바이오가 의료/바이오 AI 스타트업 스파이더코어와 장기지속형 주사제 제형 개발을 위한 AI 기반 R&D 플랫폼 구축 계약을 체결했다. 축적된 미립구 제형·공정 데이터로 모델을 학습시켜 제형 조합 탐색과 공정 분석을 자동화하는 방식이다. 지투지바이오가 밝힌 목표는 개발 속도 2배 이상 향상과 비용 50% 이상 절감이며, 2년 내 연구 현장에 플랫폼을 도입하는 것을 목표로 한다. 도구/공정 파트너십으로, 신규 의약품 자산이나 GB-7001 자체의 거래 파트너는 아니다.",
       "source": {
         "name": "Newspim, corroborated by TheBioNews",
         "url": "https://www.newspim.com/news/view/20260721000595",

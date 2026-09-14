@@ -2,6 +2,7 @@ import { cp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { CANDIDATE_STATUSES, MOLECULE_ORDER, STAGES } from "../src/model.js";
+import { checkAllKorean } from "./ko-check.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const output = path.join(root, "dist");
@@ -153,6 +154,10 @@ for (const candidate of candidates) {
   }
   if (UNRESOLVED_STATUSES.has(candidate.status)) problems.push(...checkUnresolvedCandidate(candidate));
 }
+
+// Every text field the dashboard shows carries a Korean copy, checked against its English
+// source: numbers and codes must survive translation (scripts/ko-check.mjs).
+problems.push(...checkAllKorean({ records, candidates }));
 
 // A weekly sweep drafts no email; it lists what it logged in digest_carryover for the next
 // weekday digest. An id that doesn't exist would silently drop out of that email.

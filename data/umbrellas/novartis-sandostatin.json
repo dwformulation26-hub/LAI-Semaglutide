@@ -17,15 +17,20 @@
   ],
   "current_status": {
     "stage": "Approved & marketed globally; long-standing market leader in acromegaly/carcinoid syndrome/NETs, now facing its first-ever US generic competition since October 2024",
+    "stage_ko": "전 세계 승인 및 시판. 말단비대증/카르시노이드 증후군/신경내분비종양(NETs) 분야의 오랜 시장 선도 제품으로, 2024년 10월부터 미국에서 처음으로 제네릭 경쟁에 직면했다.",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Approved and marketed globally, long-standing market leader in acromegaly/carcinoid/NETs.",
+    "stage_evidence_ko": "전 세계 승인 및 시판 중이며, 말단비대증/카르시노이드/NETs 분야의 오랜 시장 선도 제품이다.",
     "molecule_class": [
       "non_incretin"
     ],
     "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
+    "molecule_evidence_ko": "탑재 약물이 인크레틴 및 비만 펩타이드 영역 밖에 있어 전달 플랫폼 근거로 추적한다.",
     "dosing_target": "Monthly (28-day) IM depot injection",
+    "dosing_target_ko": "월 1회(28일) 근육(IM) 데포 주사",
     "partner": null,
     "data_point": "Sandostatin Group FY2025 net sales USD 1,213M, down 5% YoY (Q4 2025: USD 291M, -5% USD/-7% CER) amid continued US generic erosion (Novartis FY2025 results, Feb 4, 2026)",
+    "data_point_ko": "Sandostatin Group FY2025 순매출 USD 1,213M, 전년 대비 5% 감소(2025년 4분기: USD 291M, USD 기준 -5%/CER 기준 -7%), 미국 제네릭 잠식 지속(Novartis FY2025 실적, 2026년 2월 4일)",
     "last_updated": "2026-02-04",
     "last_checked": "2026-09-13"
   },
@@ -35,6 +40,7 @@
       "date": "2024-10-01",
       "type": "regulatory",
       "summary": "Teva Pharmaceuticals launches the first and only generic version of Sandostatin LAR Depot (octreotide acetate for injectable suspension) in the United States, ending Novartis's decades-long monopoly on the product. Teva's generic is priced 40-50% below brand ($3,000-$5,500/month vs. $6,700-$8,500).",
+      "summary_ko": "Teva Pharmaceuticals는 미국에서 Sandostatin LAR Depot(옥트레오타이드 아세테이트 주사용 현탁액)의 최초이자 유일한 제네릭을 출시해, 수십 년간 이어진 Novartis의 독점을 끝냈다. Teva 제네릭 가격은 오리지널 대비 40-50% 낮다(월 $3,000-$5,500 vs. $6,700-$8,500).",
       "source": {
         "name": "Teva Pharmaceuticals press release",
         "url": "https://www.tevapharm.com/news-and-media/latest-news/teva-announces-launch-of-the-first-and-only-generic-version-of-sandostatin-lar-depot-octreotide-acetate/",
@@ -47,6 +53,7 @@
       "date": "2025-01-31",
       "type": "market_reaction",
       "summary": "Novartis FY2024 full-year results report Sandostatin Group revenue of roughly USD 1.3B, slightly down for the year with Q4 2024 sales of USD 306M (-3%), attributed primarily to the new US generic entry.",
+      "summary_ko": "Novartis FY2024 연간 실적에서 Sandostatin Group 매출은 약 USD 1.3B로 연간 소폭 감소했으며, 2024년 4분기 매출은 USD 306M(-3%)였다. 주로 미국 신규 제네릭 진입에 따른 것으로 분석됐다.",
       "source": {
         "name": "Novartis FY2024 results / SEC Form 6-K",
         "url": "https://www.novartis.com/news/media-releases/novartis-continues-strong-momentum-sales-growth-margin-expansion-reaches-key-innovation-milestones-2024",
@@ -59,6 +66,7 @@
       "date": "2026-02-04",
       "type": "market_reaction",
       "summary": "Novartis FY2025 full-year results report Sandostatin Group net sales of USD 1,213M for FY2025, down 5% both in USD and at constant currency; Q4 2025 sales were USD 291M, down 5% (USD) / 7% (CER), continuing the post-generic-entry decline trend.",
+      "summary_ko": "Novartis FY2025 연간 실적에서 Sandostatin Group의 FY2025 순매출은 USD 1,213M으로 USD 기준과 고정환율 기준 모두 5% 감소했다. 2025년 4분기 매출은 USD 291M으로 5%(USD) / 7%(CER) 감소해 제네릭 진입 이후의 하락 추세가 이어졌다.",
       "source": {
         "name": "Novartis FY2025 results release",
         "url": "https://www.novartis.com/news/media-releases/novartis-delivered-high-single-digit-sales-growth-achieved-40-core-margin-and-further-advanced-pipeline-2025",

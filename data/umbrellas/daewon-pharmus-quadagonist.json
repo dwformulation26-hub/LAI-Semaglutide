@@ -18,15 +18,21 @@
   ],
   "current_status": {
     "stage": "Preclinical",
+    "stage_ko": "전임상",
     "stage_label": "Preclinical",
     "stage_evidence": "Stated as preclinical with no further public detail available.",
+    "stage_evidence_ko": "전임상 단계로 명시돼 있으며 추가로 공개된 세부 정보는 없다.",
     "molecule_class": [
       "other_incretin"
     ],
     "molecule_evidence": "GLP-1/GIP/GCG/Gastrin quadruple agonist, distinct from the GLP-1/GIP/GCG triple that retatrutide represents.",
+    "molecule_evidence_ko": "GLP-1/GIP/GCG/가스트린 4중 작용제로, 레타트루타이드가 해당하는 GLP-1/GIP/GCG 삼중 작용제와 구별된다.",
     "dosing_target": "Not yet established (preclinical)",
+    "dosing_target_ko": "미정(전임상)",
     "partner": "Pharmus Biosciences (co-development)",
+    "partner_ko": "파머스(공동 개발)",
     "data_point": "Diet-induced obese mouse model: >50% body-weight reduction vs. control at day 22; fasting blood glucose reduced to as low as 70 mg/dL vs. 223 mg/dL in control",
+    "data_point_ko": "식이 유도 비만 마우스 모델: 22일차에 대조군 대비 50% 이상 체중 감소; 공복 혈당은 대조군 223 mg/dL 대비 최저 70 mg/dL까지 감소",
     "last_updated": "2026-06-04",
     "last_checked": "2026-09-13"
   },
@@ -36,6 +42,7 @@
       "date": "2026-06-04",
       "type": "trial_data_readout",
       "summary": "Daewon Pharmaceutical announced it would present preclinical results, co-developed with Pharmus Biosciences, for a GLP-1/GIP/GCG/Gastrin quadruple agonist at ADA 2026 (New Orleans, June 5-8). In diet-induced obese mouse models, the candidate produced >50% body-weight reduction vs. control at day 22 and reduced fasting blood glucose to as low as 70 mg/dL (vs. 223 mg/dL in control); the program also targets pancreatic beta-cell protection and kidney function improvement via the added gastrin-receptor mechanism.",
+      "summary_ko": "대원제약은 파머스와 공동 개발한 GLP-1/GIP/GCG/가스트린 4중 작용제의 전임상 결과를 ADA 2026(뉴올리언스, 6월 5-8일)에서 발표할 예정이라고 밝혔다. 식이 유도 비만 마우스 모델에서 후보물질은 22일차에 대조군 대비 50% 이상의 체중 감소를 나타냈고, 공복 혈당을 최저 70 mg/dL(대조군 223 mg/dL)까지 낮췄다. 이 프로그램은 추가된 가스트린 수용체 기전을 통해 췌장 베타세포 보호와 신장 기능 개선도 목표로 한다.",
       "source": {
         "name": "Seoul Economic Daily – \"Daewon Pharmaceutical Hits Upper Limit on Quad-Action Obesity Drug Preclinical Data\"",
         "url": "https://en.sedaily.com/news/2026/06/05/daewon-pharmaceutical-hits-upper-limit-on-quad-action",
@@ -48,6 +55,7 @@
       "date": "2026-06-04",
       "type": "market_reaction",
       "summary": "Daewon Pharmaceutical shares hit the daily upper trading limit (up ~29.9% to KRW 11,240) on the day the quadruple-agonist ADA 2026 preclinical data announcement broke, before giving back gains — shares had fallen roughly 15% within days of the actual conference presentation.",
+      "summary_ko": "대원제약 주가는 4중 작용제 ADA 2026 전임상 데이터 발표 소식이 전해진 당일 상한가(약 29.9% 상승, KRW 11,240)를 기록했으나 이후 상승분을 반납했다 — 실제 학회 발표 후 며칠 만에 주가는 약 15% 하락했다.",
       "source": {
         "name": "The Asia Business Daily – \"Daewon Pharmaceutical's Quadruple Obesity Drug Shows 50% Weight Reduction in Preclinical Trials\"",
         "url": "https://www.asiae.co.kr/en/article/2026060409151378297",

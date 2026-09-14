@@ -19,15 +19,21 @@
   ],
   "current_status": {
     "stage": "Donepezil LAI (IVL3003) is the confirmed active CNS asset — Phase 1 completed with topline PK/PD results presented at AAN 2026, partnered with Chong Kun Dang. Note: an aripiprazole CNS asset is referenced in some secondary/aggregator sources under the code 'IVL3002', but InventageLab's own official pipeline page (checked Sept 2026) lists IVL3002 as a hair-loss (not aripiprazole) candidate partnered with Daewoong, and lists no active aripiprazole program — this could not be independently verified and is flagged as unresolved rather than logged as a finding.",
+    "stage_ko": "도네페질 LAI(IVL3003)가 확인된 활성 CNS 자산이다 — 임상 1상을 완료하고 AAN 2026에서 톱라인 PK/PD 결과를 발표했으며, 종근당과 파트너십을 맺고 있다. 참고: 일부 2차/애그리게이터 출처는 'IVL3002'라는 코드로 아리피프라졸 CNS 자산을 언급하지만, 인벤티지랩 공식 파이프라인 페이지(2026년 9월 확인)는 IVL3002를 대웅제약과 파트너십을 맺은 탈모(아리피프라졸 아님) 후보물질로 기재하고 있고 활성 아리피프라졸 프로그램은 기재하지 않았다 — 독립적으로 확인할 수 없어 finding으로 기록하지 않고 미해결 사항으로 표시했다.",
     "stage_label": "Phase 1",
     "stage_evidence": "Donepezil LAI (IVL3003) Phase 1 completed with topline PK/PD results presented at AAN 2026.",
+    "stage_evidence_ko": "도네페질 LAI(IVL3003)는 임상 1상을 완료하고 AAN 2026에서 톱라인 PK/PD 결과를 발표했다.",
     "molecule_class": [
       "non_incretin"
     ],
     "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
+    "molecule_evidence_ko": "탑재 약물이 인크레틴·비만 펩타이드 영역 밖에 있어 전달 플랫폼 근거로 추적한다.",
     "dosing_target": "Once monthly (IVL3003, donepezil, IVL-DrugFluidic microsphere)",
+    "dosing_target_ko": "월 1회(IVL3003, 도네페질, IVL-DrugFluidic 미립구)",
     "partner": "Chong Kun Dang (co-development/commercialization of IVL3003 donepezil LAI)",
+    "partner_ko": "종근당(IVL3003 도네페질 LAI 공동 개발/상업화)",
     "data_point": "Phase 1 topline (AAN 2026, presented Apr 18 2026): plasma drug concentration stable >4 weeks vs. daily oral comparator; dose-proportional systemic exposure; acetylcholinesterase inhibition comparable to repeated oral donepezil (Aricept) dosing",
+    "data_point_ko": "임상 1상 톱라인(AAN 2026, 2026년 4월 18일 발표): 매일 복용하는 경구 대조약 대비 혈장 약물 농도가 4주 넘게 안정적으로 유지됐고, 용량 비례적 전신 노출을 보였으며, 아세틸콜린에스테라아제 억제가 도네페질(Aricept) 경구 반복 투여와 비슷했다",
     "last_updated": "2026-04-18",
     "last_checked": "2026-09-13"
   },
@@ -37,6 +43,7 @@
       "date": "2022-10-14",
       "type": "deal_partnership",
       "summary": "InventageLab and Chong Kun Dang signed a contract to jointly develop and commercialize IVL3003, a once-monthly donepezil long-acting injectable for dementia, built on InventageLab's IVL-DrugFluidic platform. The partnership remains listed as active on InventageLab's official pipeline page as of this research pass.",
+      "summary_ko": "인벤티지랩과 종근당은 인벤티지랩의 IVL-DrugFluidic 플랫폼을 기반으로 한 월 1회 치매 치료용 도네페질 장기지속형 주사제 IVL3003을 공동 개발·상업화하는 계약을 체결했다. 이번 조사 시점 기준으로 이 파트너십은 인벤티지랩 공식 파이프라인 페이지에 여전히 활성 상태로 기재돼 있다.",
       "source": {
         "name": "InventageLab official pipeline page",
         "url": "https://www.inventagelab.com/en/pipeline.php",
@@ -49,6 +56,7 @@
       "date": "2026-03-25",
       "type": "trial_data_readout",
       "summary": "IVL3003 Phase 1 trial in Alzheimer's disease patients (n=73), conducted via Nucleus Network in Australia under HREC approval, ran from May 30 2023 through completion on March 25 2026.",
+      "summary_ko": "알츠하이머병 환자(n=73) 대상 IVL3003 임상 1상은 호주에서 HREC 승인하에 Nucleus Network를 통해 수행됐으며, 2023년 5월 30일부터 2026년 3월 25일 완료까지 진행됐다.",
       "source": {
         "name": "DementiaNews (Korea)",
         "url": "https://www.dementianews.co.kr/news/articleView.html?idxno=3762",
@@ -61,6 +69,7 @@
       "date": "2026-04-18",
       "type": "trial_data_readout",
       "summary": "InventageLab presented Phase 1 topline results for two CNS long-acting injectable candidates as posters at the American Academy of Neurology (AAN) 2026 annual meeting: IVL3003 (donepezil, dementia) showed plasma concentrations stable beyond 4 weeks with dose-proportional PK and AChE inhibition comparable to repeated Aricept dosing; IVL3004 (drug/alcohol addiction) showed sustained target plasma concentration without initial burst release and a favorable safety profile, at ~20% lower drug dose than existing commercial products.",
+      "summary_ko": "인벤티지랩은 미국신경학회(AAN) 2026 연례 학술대회에서 CNS 장기지속형 주사제 후보물질 2종의 임상 1상 톱라인 결과를 포스터로 발표했다. IVL3003(도네페질, 치매)은 혈장 농도가 4주 넘게 안정적으로 유지되고 용량 비례적 PK를 보였으며, 아세틸콜린에스테라아제(AChE) 억제가 Aricept 반복 투여와 비슷했다. IVL3004(약물/알코올 중독)는 초기 과다 방출(burst) 없이 목표 혈장 농도를 지속적으로 유지하고 양호한 안전성 프로파일을 보였으며, 기존 상용 제품보다 약물 용량이 약 20% 적었다.",
       "source": {
         "name": "Newsis",
         "url": "https://www.newsis.com/view/NISX20260420_0003597670",

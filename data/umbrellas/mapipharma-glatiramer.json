@@ -16,15 +16,21 @@
   ],
   "current_status": {
     "stage": "US: FDA issued a Complete Response Letter for the RMS indication NDA in March 2024; no confirmed resubmission reported yet. EU: reported (single-source, unverified) to be under regulatory review in Germany for RMS, with potential EU launch targeted 2027. Phase III PPMS study initiation planned for 2026 following Israeli Ministry of Health GMP approval of Mapi's manufacturing facility.",
+    "stage_ko": "미국: FDA는 2024년 3월 RMS 적응증 NDA에 대해 보완요구서한(CRL)을 발급했으며, 재제출은 아직 확인 보도되지 않았다. EU: 독일에서 RMS 적응증으로 허가 심사 중인 것으로 보도됐으며(단일 출처, 미검증), 2027년 EU 출시를 잠재적 목표로 하고 있다. Mapi의 제조시설이 이스라엘 보건부 GMP 승인을 받음에 따라 2026년 임상 3상 PPMS 연구 개시가 계획돼 있다.",
     "stage_label": "Filed / review",
     "stage_evidence": "FDA issued a Complete Response Letter for the RMS NDA (Mar 2024) and it's reported under regulatory review in Germany -- a filed/under-review status, not an active trial phase.",
+    "stage_evidence_ko": "FDA가 RMS NDA에 대해 보완요구서한(CRL)을 발급했고(2024년 3월), 독일에서 허가 심사 중인 것으로 보도됐다. 진행 중인 임상 단계가 아니라 허가 신청/심사 중 상태이다.",
     "molecule_class": [
       "non_incretin"
     ],
     "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
+    "molecule_evidence_ko": "탑재 약물이 인크레틴 및 비만 펩타이드 영역 밖에 있어, 전달 플랫폼 근거로 추적한다.",
     "dosing_target": "Once monthly (intramuscular)",
+    "dosing_target_ko": "월 1회(근육 주사)",
     "partner": "Viatris (exclusive license to commercialize GA Depot for relapsing forms of MS, RMS)",
+    "partner_ko": "Viatris(재발형 MS(RMS)에 대한 GA Depot 상업화 독점 라이선스)",
     "data_point": "AAN 2026 (Apr): Phase 3 RMS EDSS stable 2.6->2.5 at 1 year, 96.4% of GA Depot patients had no EDSS increase vs 91.6% on placebo (n=1,016); Phase 2a PPMS EDSS stable 5.1->4.9 over ~3 years (n=30)",
+    "data_point_ko": "AAN 2026(4월): 임상 3상 RMS에서 1년 시점 EDSS 2.6→2.5로 안정적, GA Depot 투여 환자의 96.4%가 EDSS 증가 없음(위약 91.6%)(n=1,016); 임상 2a상 PPMS에서 약 3년간 EDSS 5.1→4.9로 안정적(n=30)",
     "last_updated": "2026-04-22",
     "last_checked": "2026-09-13"
   },
@@ -34,6 +40,7 @@
       "date": "2024-03-11",
       "type": "regulatory",
       "summary": "FDA issued a Complete Response Letter for the GA Depot 40mg NDA (relapsing forms of MS indication); reason not publicly disclosed. Viatris and Mapi Pharma stated they were committed to addressing FDA's concerns and intended to resubmit. This followed positive Phase 3 topline data (30.1% ARR reduction vs placebo, p=0.0066, n=1,016) announced in Sept 2022.",
+      "summary_ko": "FDA가 GA Depot 40mg NDA(재발형 MS 적응증)에 대해 보완요구서한(CRL)을 발급했으며, 사유는 공개되지 않았다. Viatris와 Mapi Pharma는 FDA의 우려 사항을 해소하고 재제출할 계획이라고 밝혔다. 이는 2022년 9월 발표된 긍정적인 임상 3상 톱라인 데이터(위약 대비 ARR 30.1% 감소, p=0.0066, n=1,016)에 이은 것이다.",
       "source": {
         "name": "Viatris investor relations statement",
         "url": "https://investor.viatris.com/news-releases/news-release-details/viatris-and-mapi-pharma-statement-regarding-new-drug-application/",
@@ -46,6 +53,7 @@
       "date": "2026-02-03",
       "type": "trial_data_readout",
       "summary": "Mapi Pharma announced it would present new safety/efficacy data from its Phase II open-label PPMS study of GA Depot at ACTRIMS Forum 2026 (Feb 5-7, San Diego). The announcement also stated Mapi had recently received Israeli Ministry of Health GMP approval (mutually recognized by the EU), enabling initiation of a Phase III PPMS study in 2026 and potential RMS commercial launch (if approved) in 2027; this GMP/timeline claim has only a single Tier-2 source so far.",
+      "summary_ko": "Mapi Pharma가 ACTRIMS Forum 2026(2월 5~7일, 샌디에이고)에서 GA Depot의 PPMS 임상 2상 공개 라벨 연구의 새로운 안전성/유효성 데이터를 발표할 것이라고 밝혔다. 발표에 따르면 Mapi는 최근 이스라엘 보건부 GMP 승인(EU와 상호 인정)을 받아 2026년 임상 3상 PPMS 연구 개시와 2027년 RMS 상업 출시(승인 시)가 가능해졌다. 이 GMP/일정 주장은 현재까지 Tier-2 출처 1곳뿐이다.",
       "source": {
         "name": "GlobeNewswire (Mapi Pharma release)",
         "url": "https://www.globenewswire.com/news-release/2026/02/03/3231266/0/en/Mapi-Pharma-to-Present-New-Safety-and-Efficacy-Data-from-Glatiramer-Acetate-Depot-Long-Acting-Injection-Phase-II-Study-in-Patients-with-Primary-Progressive-Multiple-Sclerosis-PPMS-.html",
@@ -58,6 +66,7 @@
       "date": "2026-02-13",
       "type": "trial_data_readout",
       "summary": "Mapi Pharma announced a virtual KOL event (held March 3, 2026) to discuss GA Depot once-a-month dosing for primary progressive MS (PPMS).",
+      "summary_ko": "Mapi Pharma가 1차 진행형 MS(PPMS)에 대한 GA Depot 월 1회 투여를 논의하는 온라인 KOL 행사(2026년 3월 3일 개최)를 발표했다.",
       "source": {
         "name": "Mapi Pharma press releases page",
         "url": "https://mapi-pharma.com/news-events/press-releases/",
@@ -70,6 +79,7 @@
       "date": "2026-04-22",
       "type": "trial_data_readout",
       "summary": "At AAN 2026, Mapi Pharma presented pooled EDSS-stability analyses: in the Phase 3 RMS trial (n=1,016), mean EDSS was essentially unchanged from 2.6 at baseline to 2.5 at one year, with 96.4% of GA Depot patients showing no EDSS increase vs. 91.6% on placebo; in the Phase 2a open-label PPMS trial (n=30), EDSS was stable from 5.1 at baseline to 4.9 at ~3 years of follow-up (including similar stability among early discontinuers). Company press release confirmed the same presentations.",
+      "summary_ko": "Mapi Pharma가 AAN 2026에서 EDSS 안정성 통합 분석을 발표했다. 임상 3상 RMS 시험(n=1,016)에서 평균 EDSS는 기저치 2.6에서 1년 시점 2.5로 사실상 변화가 없었으며, GA Depot 투여 환자의 96.4%가 EDSS 증가를 보이지 않았다(위약 91.6%). 임상 2a상 공개 라벨 PPMS 시험(n=30)에서 EDSS는 기저치 5.1에서 약 3년 추적 시점 4.9로 안정적이었다(조기 중단자에서도 유사한 안정성). 회사 보도자료도 동일한 발표 내용을 확인했다.",
       "source": {
         "name": "BioSpace (Mapi Pharma press release)",
         "url": "https://www.biospace.com/press-releases/mapi-pharma-to-present-efficacy-edss-data-from-glatiramer-acetate-depot-long-acting-injection-studies-in-relapsing-forms-of-multiple-sclerosis-rms-and-primary-progressive-multiple-sclerosis-ppms-at-aan-2026",
@@ -82,6 +92,7 @@
       "date": "2026-04-22",
       "type": "regulatory",
       "summary": "Conference-recap coverage of the AAN 2026 presentation reported that GA Depot is under regulatory review in Germany for the relapsing MS indication, with a potential EU commercial launch targeted for 2027, and that a global Phase 3 PPMS study is being planned. This claim has only one Tier-2 source and was not corroborated by a Mapi Pharma or EMA/BfArM primary source.",
+      "summary_ko": "AAN 2026 발표에 대한 학회 리뷰 보도에 따르면 GA Depot은 재발형 MS 적응증으로 독일에서 허가 심사 중이며 2027년 EU 상업 출시를 잠재적 목표로 하고 있고, 글로벌 임상 3상 PPMS 연구가 계획되고 있다. 이 주장은 Tier-2 출처 1곳뿐이며, Mapi Pharma나 EMA/BfArM 1차 출처로 확인되지 않았다.",
       "source": {
         "name": "Multiple Sclerosis News Today",
         "url": "https://multiplesclerosisnewstoday.com/news-posts/2026/04/22/aan-2026-ga-depot-help-stabilize-disability-rms-ppms/",

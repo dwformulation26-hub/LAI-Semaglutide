@@ -15,15 +15,21 @@
   ],
   "current_status": {
     "stage": "Phase 1 recruiting (NCT07269873, started Mar 16 2026): BICX104 alone and with bupropion, compared with Vivitrol, funded by NIDA (U01DA059994). U.S. Patent 12,569,430 on the biodegradable naltrexone implant issued in Mar 2026.",
+    "stage_ko": "임상 1상 모집 중(NCT07269873, 2026년 3월 16일 개시): BICX104 단독 및 부프로피온 병용을 Vivitrol과 비교하며, NIDA(U01DA059994)의 자금 지원을 받는다. 생분해성 날트렉손 임플란트에 대한 미국 특허 12,569,430은 2026년 3월 등록됐다.",
     "stage_label": "Phase 1",
     "stage_evidence": "ClinicalTrials.gov lists NCT07269873 as recruiting with an actual start date of Mar 16 2026, following BioCorRx's Jan 14 2026 announcement that the study had been initiated.",
+    "stage_evidence_ko": "BioCorRx가 2026년 1월 14일 시험 개시를 발표한 이후, ClinicalTrials.gov에는 NCT07269873이 실제 개시일 2026년 3월 16일로 모집 중으로 등재돼 있다.",
     "molecule_class": [
       "non_incretin"
     ],
     "molecule_evidence": "BICX104 is a biodegradable subcutaneous naltrexone implant for substance use disorders, outside the incretin space.",
+    "molecule_evidence_ko": "BICX104는 물질 사용 장애 치료를 위한 생분해성 피하 날트렉손 임플란트로, 인크레틴 영역 밖에 있다.",
     "dosing_target": "About every 3 months (one implant targets naltrexone of at least 1 ng/mL for about 3 months)",
+    "dosing_target_ko": "약 3개월 1회(임플란트 1개로 약 3개월간 날트렉손 최소 1 ng/mL 유지 목표)",
     "partner": "National Institute on Drug Abuse (grant funding)",
+    "partner_ko": "미국 국립약물남용연구소(NIDA, 연구비 지원)",
     "data_point": "Phase 1 sequential-cohort PK and safety study of a 997.5 mg naltrexone implant, with or without bupropion, against Vivitrol.",
+    "data_point_ko": "997.5 mg 날트렉손 임플란트를 부프로피온 병용 또는 단독으로 Vivitrol과 비교하는 임상 1상 순차 코호트 PK 및 안전성 시험.",
     "last_updated": "2026-03-11",
     "last_checked": "2026-09-14"
   },
@@ -33,6 +39,7 @@
       "date": "2023-08-15",
       "type": "regulatory",
       "summary": "BioCorRx submitted an FDA expanded-access treatment protocol for BICX104, a biodegradable subcutaneous naltrexone pellet designed to deliver therapeutic levels for 84 days, three times the 28-day duration of Vivitrol.",
+      "summary_ko": "BioCorRx는 Vivitrol의 28일 지속 기간의 3배인 84일간 치료 농도를 전달하도록 설계된 생분해성 피하 날트렉손 펠릿 BICX104에 대해 FDA 확대 접근 치료 프로토콜을 제출했다.",
       "source": {
         "name": "BioCorRx press release via BioSpace",
         "publication": "BioSpace",
@@ -46,6 +53,7 @@
       "date": "2025-12-08",
       "type": "regulatory",
       "summary": "BioCorRx Pharmaceuticals registered a Phase 1 sequential-cohort PK and safety study (NCT07269873) of BICX104, a 997.5 mg biodegradable naltrexone implant targeting at least 1 ng/mL for three months, given with or without bupropion and compared with Vivitrol.",
+      "summary_ko": "BioCorRx Pharmaceuticals는 3개월간 최소 1 ng/mL를 목표로 하는 997.5 mg 생분해성 날트렉손 임플란트 BICX104를 부프로피온 병용 또는 단독 투여해 Vivitrol과 비교하는 임상 1상 순차 코호트 PK 및 안전성 시험(NCT07269873)을 등록했다.",
       "source": {
         "name": "ClinicalTrials.gov NCT07269873",
         "publication": "ClinicalTrials.gov",
@@ -59,6 +67,7 @@
       "date": "2026-01-14",
       "type": "trial_data_readout",
       "summary": "BioCorRx announced its subsidiary BioCorRx Pharmaceuticals had initiated the Phase 1 study of BICX104 with or without bupropion (NCT07269873), supported by NIDA award U01DA059994.",
+      "summary_ko": "BioCorRx는 자회사 BioCorRx Pharmaceuticals가 NIDA 연구비 U01DA059994의 지원을 받아 BICX104 단독 또는 부프로피온 병용 임상 1상(NCT07269873)을 개시했다고 발표했다.",
       "source": {
         "name": "BioCorRx press release",
         "publication": "BioCorRx",
@@ -72,6 +81,7 @@
       "date": "2026-03-11",
       "type": "regulatory",
       "summary": "The USPTO issued U.S. Patent No. 12,569,430, \"Biodegradable Implant Including Naltrexone\", covering the controlled-delivery implant technology behind BICX104.",
+      "summary_ko": "USPTO는 BICX104의 기반인 약물 방출 조절 임플란트 기술을 포괄하는 미국 특허 12,569,430호 '날트렉손을 포함하는 생분해성 임플란트(Biodegradable Implant Including Naltrexone)'를 등록했다.",
       "source": {
         "name": "BioCorRx press release",
         "publication": "BioCorRx",

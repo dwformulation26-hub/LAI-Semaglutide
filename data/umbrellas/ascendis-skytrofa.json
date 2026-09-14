@@ -18,15 +18,20 @@
   ],
   "current_status": {
     "stage": "Approved & marketed; original pediatric growth hormone deficiency (GHD) indication (approved 2021) expanded to adult GHD (FDA approved Jul 28, 2025), with broader adult dosing ranges commercially available in the US since Oct 22, 2025",
+    "stage_ko": "승인 및 시판. 기존 소아 성장호르몬 결핍증(GHD) 적응증(2021년 승인)이 성인 GHD로 확대됐으며(2025년 7월 28일 FDA 승인), 2025년 10월 22일부터 미국에서 더 넓은 성인 용량 범위로 상업적으로 공급되고 있다",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Approved for pediatric GHD (2021) and adult GHD (FDA approved Jul 28, 2025), commercially available.",
+    "stage_evidence_ko": "소아 GHD(2021년)와 성인 GHD(2025년 7월 28일 FDA 승인)에 대해 승인됐으며 상업적으로 공급 중이다.",
     "molecule_class": [
       "non_incretin"
     ],
     "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
+    "molecule_evidence_ko": "탑재 약물이 인크레틴 및 비만 펩타이드 영역 밖에 있어 전달 플랫폼 근거로 추적한다.",
     "dosing_target": "Once-weekly subcutaneous injection (TransCon prodrug releasing native, unmodified hGH)",
+    "dosing_target_ko": "주 1회 피하 주사(천연 비변형 hGH를 방출하는 TransCon 전구약물)",
     "partner": null,
     "data_point": "Q2 2026: SKYTROFA revenue of EUR 55M, over 20,000 unique patients enrolled, remaining the best-selling long-acting growth hormone in the US by brand value; commercially available or via named-patient programs in more than 30 countries, with full commercial launches planned in 10 additional countries by year-end 2026 (Ascendis Q2 2026 results, Aug 13, 2026)",
+    "data_point_ko": "2026년 2분기: SKYTROFA 매출 EUR 55M, 등록된 고유 환자 20,000명 이상, 브랜드 가치 기준 미국 내 최다 판매 장기지속형 성장호르몬 지위 유지. 30개국 이상에서 상업 판매 또는 지정환자 프로그램으로 공급 중이며, 2026년 말까지 10개국에서 추가로 정식 상업 출시 계획(Ascendis 2026년 2분기 실적, 2026년 8월 13일)",
     "last_updated": "2026-08-13",
     "last_checked": "2026-09-13"
   },
@@ -36,6 +41,7 @@
       "date": "2025-07-28",
       "type": "regulatory",
       "summary": "FDA approves SKYTROFA (lonapegsomatropin-tcgd) for once-weekly treatment of adults with growth hormone deficiency, expanding on the drug's original pediatric GHD indication (first approved 2021). Approval based on the Phase 3 foresiGHt trial comparing weekly TransCon hGH to placebo and daily somatropin.",
+      "summary_ko": "FDA가 성장호르몬 결핍증 성인의 주 1회 치료제로 SKYTROFA(로나페그소마트로핀-tcgd)를 승인해, 기존 소아 GHD 적응증(2021년 최초 승인)을 확대했다. 승인은 주 1회 TransCon hGH를 위약 및 1일 1회 소마트로핀과 비교한 임상 3상 foresiGHt 시험에 근거했다.",
       "source": {
         "name": "Ascendis Pharma press release (Investor Relations)",
         "url": "https://investors.ascendispharma.com/news-releases/news-release-details/fda-approves-skytrofar-lonapegsomatropin-tcgd-once-weekly",
@@ -48,6 +54,7 @@
       "date": "2025-10-22",
       "type": "regulatory",
       "summary": "Ascendis announces SKYTROFA is now commercially available in broader dosing ranges in the United States for the treatment of adults with growth hormone deficiency, operationalizing the July 2025 adult-GHD approval.",
+      "summary_ko": "Ascendis는 SKYTROFA가 성장호르몬 결핍증 성인 치료용으로 미국에서 더 넓은 용량 범위로 상업적으로 공급된다고 발표했다. 이는 2025년 7월 성인 GHD 승인을 실제 적용한 것이다.",
       "source": {
         "name": "Ascendis Pharma US press release",
         "url": "https://ascendispharma.us/press/skytrofa/",
@@ -60,6 +67,7 @@
       "date": "2026-08-13",
       "type": "market_reaction",
       "summary": "Ascendis Pharma's Q2 2026 financial results report SKYTROFA revenue of EUR 55M for the quarter, more than 20,000 unique patients enrolled, and continued status as the best-selling long-acting growth hormone in the US by brand value; the product is now commercially available or accessible via named-patient programs in over 30 countries, with 10 additional full commercial launches planned by year-end 2026.",
+      "summary_ko": "Ascendis Pharma의 2026년 2분기 실적에 따르면 SKYTROFA 분기 매출은 EUR 55M, 등록된 고유 환자는 20,000명 이상이며, 브랜드 가치 기준 미국 내 최다 판매 장기지속형 성장호르몬 지위를 유지했다. 제품은 현재 30개국 이상에서 상업 판매되거나 지정환자 프로그램으로 공급되고 있으며, 2026년 말까지 10개국에서 추가 정식 상업 출시가 계획돼 있다.",
       "source": {
         "name": "Ascendis Pharma Q2 2026 results press release",
         "url": "https://investors.ascendispharma.com/news-releases/news-release-details/ascendis-pharma-reports-second-quarter-2026-financial-results",

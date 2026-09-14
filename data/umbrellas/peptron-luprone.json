@@ -19,15 +19,21 @@
   ],
   "current_status": {
     "stage": "Approved and commercialized in Korea — Korea's first commercialized generic (follow-on) of Takeda's Leuplin (leuprorelin), built on Peptron's SmartDepot PLGA-microsphere platform. Distributed domestically by LG Chem under a 2023 agreement running through 2034, first for prostate cancer, later extended to central precocious puberty (launched Oct 2025). Serves as Peptron's proof-of-concept commercial validation for SmartDepot ahead of its Eli Lilly peptide-discovery collaboration. Naming note: this batch's seed hint used 'Luprone' — every Tier 1/2 source found (Korea Biomedical Review, PR Newswire, LG Chem) spells the commercial brand 'Leupone'; the umbrella id is kept as originally assigned ('peptron-luprone') but canonical_name/aliases use the verified spelling.",
+    "stage_ko": "국내 승인 및 상업화 완료 — Takeda Leuplin(류프로렐린)의 국내 첫 상업화 제네릭(후속 제품)으로, 펩트론의 SmartDepot PLGA 미립구 플랫폼을 기반으로 한다. 2034년까지 유효한 2023년 계약에 따라 LG화학이 국내 유통을 맡고 있으며, 처음에는 전립선암에 쓰였고 이후 중추성 성조숙증으로 확대됐다(2025년 10월 출시). Eli Lilly와의 펩타이드 발굴 공동 연구에 앞서 SmartDepot의 상업적 개념 검증 사례 역할을 한다. 명칭 참고: 이번 배치의 시드 힌트는 'Luprone'을 썼으나 확인된 모든 Tier 1/2 출처(Korea Biomedical Review, PR Newswire, LG화학)는 상업 브랜드를 'Leupone'으로 표기한다. umbrella id는 최초 부여된 대로('peptron-luprone') 유지하되 canonical_name/aliases에는 검증된 표기를 사용한다.",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Approved and commercialized in Korea as the first commercialized generic follow-on of Leuplin.",
+    "stage_evidence_ko": "국내에서 Leuplin의 첫 상업화 제네릭 후속 제품으로 승인·상업화됐다.",
     "molecule_class": [
       "non_incretin"
     ],
     "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
+    "molecule_evidence_ko": "탑재 약물이 인크레틴·비만 펩타이드 영역 밖에 있어 전달 플랫폼 근거로 추적한다.",
     "dosing_target": "Monthly (1-month) sustained-release subcutaneous/IM leuprorelin injection, thinner-needle micronized formulation",
+    "dosing_target_ko": "월 1회(1개월) 서방형 피하/근육 류프로렐린 주사제로, 미세화 공정으로 더 가는 바늘을 쓰는 제형이다",
     "partner": "LG Chem (exclusive domestic distribution/marketing)",
+    "partner_ko": "LG화학(국내 독점 유통·마케팅)",
     "data_point": "Apr 2026: Peptron filed for market approval of Leupone (PT105) in Mexico, its first Latin American regulatory filing for the product",
+    "data_point_ko": "2026년 4월: 펩트론이 멕시코에서 Leupone(PT105)의 시판 허가를 신청했으며, 이는 해당 제품의 첫 중남미 허가 신청이다",
     "last_updated": "2026-04-02",
     "last_checked": "2026-09-13"
   },
@@ -37,6 +43,7 @@
       "date": "2022-11-17",
       "type": "trial_data_readout",
       "summary": "Peptron announced that PT105, its once-monthly sustained-release leuprolide (leuprorelin), established bioequivalence with Takeda's Leuplin — the pharmacokinetic basis for Korea's first commercialized generic of Leuplin, built on Peptron's SmartDepot technology, for prostate cancer, breast cancer, endometriosis, and precocious puberty.",
+      "summary_ko": "펩트론은 월 1회 서방형 류프로렐린인 PT105가 Takeda Leuplin과 생물학적 동등성을 입증했다고 발표했다. 이는 펩트론의 SmartDepot 기술을 기반으로 전립선암, 유방암, 자궁내막증, 성조숙증을 대상으로 하는 국내 첫 상업화 Leuplin 제네릭의 약동학적 근거이다.",
       "source": {
         "name": "PR Newswire (Peptron release)",
         "url": "https://www.prnewswire.com/news-releases/peptrons-pt105-a-sustained-release-leuprolide-established-the-bioequivalence-with-takedas-leuplin-301687409.html",
@@ -49,6 +56,7 @@
       "date": "2023-11-13",
       "type": "deal_partnership",
       "summary": "LG Chem and Peptron signed a domestic distribution agreement for Leupone (PT105), a once-monthly sustained-release leuprorelin, running through 2034: Peptron manufactures at its Osong plant using SmartDepot technology, while LG Chem handles all domestic marketing, sales, and distribution. Peptron estimated the addressable Korean leuprorelin market at roughly 80 billion won (~$60.4M).",
+      "summary_ko": "LG화학과 펩트론은 월 1회 서방형 류프로렐린 Leupone(PT105)에 대해 2034년까지 유효한 국내 유통 계약을 체결했다. 펩트론은 오송 공장에서 SmartDepot 기술로 생산하고, LG화학은 국내 마케팅·영업·유통 전반을 담당한다. 펩트론은 국내 류프로렐린 시장 규모를 약 80 billion won(약 $60.4M)으로 추산했다.",
       "source": {
         "name": "Korea Biomedical Review",
         "url": "https://www.koreabiomed.com/news/articleView.html?idxno=22503",
@@ -61,6 +69,7 @@
       "date": "2025-10-27",
       "type": "regulatory",
       "summary": "LG Chem launched Leupone Injection (leuprorelin) for central precocious puberty in children, extending the product beyond its original prostate-cancer indication. The formulation combines Peptron's SmartDepot technology with a micronizing process enabling a thinner needle, and Peptron's bioequivalence/PK-equivalence study was described as the first such evaluation performed by any Leuplin follow-on developer.",
+      "summary_ko": "LG화학은 소아 중추성 성조숙증 치료제로 Leupone Injection(류프로렐린)을 출시하며 최초 적응증인 전립선암을 넘어 제품을 확대했다. 이 제형은 펩트론의 SmartDepot 기술에 더 가는 바늘을 가능케 하는 미세화 공정을 결합했으며, 펩트론의 생물학적 동등성/PK 동등성 시험은 Leuplin 후속 제품 개발사 가운데 처음 수행된 평가로 소개됐다.",
       "source": {
         "name": "Korea Biomedical Review",
         "url": "https://www.koreabiomed.com/news/articleView.html?idxno=29397",
@@ -73,6 +82,7 @@
       "date": "2025-12-16",
       "type": "manufacturing_capacity",
       "summary": "Peptron secured a construction permit for a new ~16,500 sqm, ~89 billion won (~$60M) manufacturing facility at Osong Bio Park, built to US FDA cGMP standards to scale up SmartDepot long-acting peptide production (prostate cancer, diabetes, obesity, Parkinson's pipeline programs). Peptron cited Leupone's demonstrated consistent batch-to-batch manufacturing reproducibility under GMP conditions as evidence the platform can scale.",
+      "summary_ko": "펩트론은 오송 바이오파크에 약 16,500 sqm 규모, 약 89 billion won(약 $60M)을 투입하는 신규 생산시설의 건축 허가를 확보했다. 이 시설은 SmartDepot 장기지속형 펩타이드 생산(전립선암, 당뇨병, 비만, 파킨슨병 파이프라인 프로그램)을 확대하기 위해 미국 FDA cGMP 기준으로 건설된다. 펩트론은 GMP 조건에서 Leupone의 일관된 배치 간 생산 재현성이 입증된 점을 플랫폼의 확장 가능성 근거로 제시했다.",
       "source": {
         "name": "Korea Biomedical Review",
         "url": "https://www.koreabiomed.com/news/articleView.html?idxno=29989",
@@ -85,6 +95,7 @@
       "date": "2026-04-02",
       "type": "regulatory",
       "summary": "Peptron filed for market approval of Leupone (leuprorelin, PT105) in Mexico, its first Latin American regulatory filing for the SmartDepot-based prostate cancer/precocious puberty product. Full commercialization is targeted from Q4 2026; Peptron is also preparing filings in other global markets and pursuing licensing deals. The Latin American leuprorelin market grew from $14.68M (2018) to $35.79M (2023).",
+      "summary_ko": "펩트론은 멕시코에서 Leupone(류프로렐린, PT105)의 시판 허가를 신청했다. SmartDepot 기반 전립선암/성조숙증 치료제의 첫 중남미 허가 신청이다. 본격 상업화는 2026년 4분기부터를 목표로 하며, 펩트론은 다른 글로벌 시장 허가 신청도 준비하고 라이선스 계약을 추진 중이다. 중남미 류프로렐린 시장은 $14.68M(2018년)에서 $35.79M(2023년)으로 성장했다.",
       "source": {
         "name": "TheBio (더바이오), corroborated by BioSpectator and eToday",
         "url": "https://www.thebionews.net/news/articleView.html?idxno=23321",

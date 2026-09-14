@@ -17,15 +17,21 @@
   ],
   "current_status": {
     "stage": "Approved and commercialized across Europe and select Asian/African markets since the 1980s under a long-running Debiopharm (owner/developer)–Ipsen (commercialization) partnership extended through 2034. Indicated for prostate cancer, endometriosis, uterine fibroids, central precocious puberty, and early-stage hormone-responsive breast cancer.",
+    "stage_ko": "1980년대부터 유럽 및 일부 아시아/아프리카 시장에서 승인·상업화됐으며, 2034년까지 연장된 Debiopharm(소유/개발)–Ipsen(상업화)의 장기 파트너십 하에 있다. 전립선암, 자궁내막증, 자궁근종, 중추성 성조숙증, 조기 호르몬 반응성 유방암 적응증을 보유하고 있다.",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Approved and commercialized across Europe and select Asian/African markets since the 1980s.",
+    "stage_evidence_ko": "1980년대부터 유럽 및 일부 아시아/아프리카 시장에서 승인·상업화됐다.",
     "molecule_class": [
       "non_incretin"
     ],
     "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
+    "molecule_evidence_ko": "탑재 약물이 인크레틴·비만 펩타이드 영역 밖에 있어 전달 플랫폼 근거로 추적한다.",
     "dosing_target": "1-, 3-, or 6-month IM depot",
+    "dosing_target_ko": "1개월, 3개월 또는 6개월 근육(IM) 데포",
     "partner": "Debiopharm (co-development/manufacturing) and Ipsen (commercialization)",
+    "partner_ko": "Debiopharm(공동 개발/제조) 및 Ipsen(상업화)",
     "data_point": "FY2025: Decapeptyl cited by Ipsen among products facing increased European and Chinese competition/pricing pressure, tempering growth versus the rest of Ipsen's non-Somatuline portfolio (which grew 14.2% overall)",
+    "data_point_ko": "FY2025: Ipsen은 Decapeptyl을 유럽과 중국에서 경쟁 및 가격 압박이 커진 제품 중 하나로 꼽았으며, 이로 인해 Ipsen의 Somatuline 외 나머지 포트폴리오(전체 14.2% 성장) 대비 성장세가 둔화됐다",
     "last_updated": "2026-02-12",
     "last_checked": "2026-09-13"
   },
@@ -35,6 +41,7 @@
       "date": "2019-06-12",
       "type": "deal_partnership",
       "summary": "Debiopharm and Ipsen extended their Decapeptyl (triptorelin pamoate) partnership — originally established in the 1980s — for a further 15 years through 2034, covering development, manufacturing, and distribution across Europe and select Asian and African markets, and committing to co-develop new formulations and explore additional indications. Decapeptyl generated €372.6M in sales in 2018 (+8.1% y/y) at the time of the announcement.",
+      "summary_ko": "Debiopharm과 Ipsen은 1980년대에 시작된 Decapeptyl(트립토렐린 파모에이트) 파트너십을 2034년까지 15년 더 연장했다. 연장 범위는 유럽 및 일부 아시아·아프리카 시장에서의 개발, 제조, 유통이며, 새로운 제형 공동 개발과 추가 적응증 탐색도 약속했다. 발표 당시 Decapeptyl의 2018년 매출은 €372.6M(전년 대비 +8.1%)이었다.",
       "source": {
         "name": "Ipsen press release",
         "url": "https://www.ipsen.com/press-release/debiopharm-and-ipsen-extend-their-strategic-decapeptyl-triptorelin-partnership-for-another-15-years/",
@@ -47,6 +54,7 @@
       "date": "2026-02-12",
       "type": "market_reaction",
       "summary": "Ipsen's FY2025 results announcement (2026-02-12) reported overall FY2025 sales growth of 10.9% (constant exchange rates), with all products excluding Somatuline growing 14.2% in aggregate; Decapeptyl was not broken out with specific figures in the release itself. Separately, third-party financial coverage of Ipsen's 2025 quarterly disclosures characterized Decapeptyl as facing increased competition and pricing pressure in Europe and China, with more modest growth (e.g. +2.2% in Q3 2025) than the broader portfolio.",
+      "summary_ko": "Ipsen의 FY2025 실적 발표(2026-02-12)에 따르면 FY2025 전체 매출은 고정환율 기준 10.9% 성장했으며, Somatuline을 제외한 전 제품은 합산 14.2% 성장했다. 발표 자료 자체에는 Decapeptyl의 구체적 수치가 따로 공개되지 않았다. 이와 별도로 Ipsen의 2025년 분기 공시를 다룬 제3자 금융 보도는 Decapeptyl이 유럽과 중국에서 경쟁 및 가격 압박이 커지고 있으며, 전체 포트폴리오보다 성장률이 낮다고(예: 2025년 3분기 +2.2%) 평가했다.",
       "source": {
         "name": "Ipsen FY2025 results press release",
         "url": "https://www.ipsen.com/press-release/ipsen-delivers-strong-results-in-2025-driven-by-solid-execution-across-all-therapeutic-areas-and-provides-2026-guidance-3236839/",

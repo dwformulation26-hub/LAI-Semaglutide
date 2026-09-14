@@ -20,15 +20,21 @@
   ],
   "current_status": {
     "stage": "Approved & marketed (US/UK/Global); Indivior entered an all-stock merger-of-equals agreement with Supernus Pharmaceuticals (announced Aug 3, 2026), combined company to trade as Supernus, expected to close Q4 2026",
+    "stage_ko": "승인 및 시판(미국/영국/글로벌); Indivior는 Supernus Pharmaceuticals와 전액 주식 교환 방식의 대등합병 계약을 체결했으며(2026년 8월 3일 발표), 합병 회사는 Supernus로 거래되고 2026년 4분기 완료 예정이다",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Approved and marketed in US/UK/Global; the Supernus merger is a corporate event, not a development-stage change.",
+    "stage_evidence_ko": "미국/영국/글로벌에서 승인 및 시판 중이다. Supernus 합병은 기업 이벤트로, 개발 단계 변화가 아니다.",
     "molecule_class": [
       "non_incretin"
     ],
     "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
+    "molecule_evidence_ko": "탑재 약물이 인크레틴 및 비만 펩타이드 영역 밖에 있어, 전달 플랫폼 근거로 추적한다.",
     "dosing_target": "Monthly (subcutaneous depot)",
+    "dosing_target_ko": "월 1회(피하 데포)",
     "partner": "Tolmar (Atrigel depot manufacturing); pending merger partner Supernus Pharmaceuticals",
+    "partner_ko": "Tolmar(Atrigel 데포 생산); 합병 추진 중인 파트너 Supernus Pharmaceuticals",
     "data_point": "Q2 2026: SUBLOCADE net revenue $253M (+21% YoY), record 32,816 new patient starts, ~76% share of US LAI OUD category; >500,000 patients treated since 2018 launch",
+    "data_point_ko": "2026년 2분기: SUBLOCADE 순매출 $253M(전년 대비 +21%), 신규 환자 투여 개시 사상 최대 32,816명, 미국 LAI 오피오이드 사용장애(OUD) 시장 점유율 약 76%; 2018년 출시 이후 누적 투여 환자 500,000명 이상",
     "last_updated": "2026-08-03",
     "last_checked": "2026-09-13"
   },
@@ -38,6 +44,7 @@
       "date": "2025-02-24",
       "type": "regulatory",
       "summary": "FDA approved label changes for Sublocade permitting a rapid-induction protocol (single 4mg transmucosal buprenorphine dose plus a 1-hour observation period, vs. the prior 7-day induction) and additional subcutaneous injection sites (abdomen, thigh, buttock, back of upper arm). A 729-patient study showed 66.4% second-injection retention with rapid induction vs 54.5% standard induction.",
+      "summary_ko": "FDA가 Sublocade의 라벨 변경을 승인해 신속 유도 프로토콜(기존 7일 유도 대비 경점막 부프레노르핀 4mg 단회 투여 후 1시간 관찰)과 추가 피하 주사 부위(복부, 허벅지, 둔부, 상완 후면)를 허용했다. 729명 대상 연구에서 두 번째 주사 유지율은 신속 유도 66.4%, 표준 유도 54.5%로 나타났다.",
       "source": {
         "name": "Indivior press release (also re-hosted via PR Newswire)",
         "url": "https://www.prnewswire.com/news-releases/indivior-announces-fda-approval-of-label-changes-for-sublocade-buprenorphine-extended-release-injection-302382920.html",
@@ -50,6 +57,7 @@
       "date": "2026-04-30",
       "type": "market_reaction",
       "summary": "Q1 2026 results: total SUBLOCADE net revenue $232M (+32% YoY; US revenue $218M, +33% YoY on 20% dispense volume growth); record ~31,800 new patient starts; SUBLOCADE held 76% share of the US LAI OUD category; full-year 2026 guidance raised.",
+      "summary_ko": "2026년 1분기 실적: SUBLOCADE 총 순매출 $232M(전년 대비 +32%; 미국 매출 $218M, 조제량 20% 증가에 힘입어 전년 대비 +33%), 신규 환자 투여 개시 사상 최대 약 31,800명, 미국 LAI OUD 시장 점유율 76%를 기록했으며, 2026년 연간 가이던스를 상향했다.",
       "source": {
         "name": "Indivior Q1 2026 results (GlobeNewswire)",
         "url": "https://www.globenewswire.com/news-release/2026/04/30/3284683/0/en/indivior-reports-first-quarter-2026-financial-results-and-raises-full-year-2026-guidance.html",
@@ -62,6 +70,7 @@
       "date": "2026-08-03",
       "type": "market_reaction",
       "summary": "Q2 2026 results: record SUBLOCADE net revenue $253M (+21% YoY), US dispense volume +18%, record 32,816 new patient starts; full-year 2026 guidance raised again (SUBLOCADE net revenue growth ~20% YoY, adjusted EBITDA growth ~68% YoY at midpoint).",
+      "summary_ko": "2026년 2분기 실적: SUBLOCADE 순매출 사상 최대 $253M(전년 대비 +21%), 미국 조제량 +18%, 신규 환자 투여 개시 사상 최대 32,816명을 기록했으며, 2026년 연간 가이던스를 재차 상향했다(중간값 기준 SUBLOCADE 순매출 성장률 전년 대비 약 20%, 조정 EBITDA 성장률 전년 대비 약 68%).",
       "source": {
         "name": "Indivior Q2 2026 results (GlobeNewswire)",
         "url": "https://www.globenewswire.com/news-release/2026/08/03/3337317/0/en/indivior-reports-second-quarter-2026-financial-results-and-raises-full-year-2026-guidance.html",
@@ -74,6 +83,7 @@
       "date": "2026-08-03",
       "type": "deal_partnership",
       "summary": "Indivior and Supernus Pharmaceuticals announced a definitive all-stock \"merger of equals\": Supernus holders receive 1.5401 Indivior shares each; Indivior shareholders also receive a one-time $1.0B special cash dividend pre-closing (financed via a $650M Citibank term loan plus cash on hand). Post-close ownership ~56.5% Indivior / ~43.5% Supernus; combined company to operate under the Supernus name with 11 CNS medicines led by SUBLOCADE (~$1B in trailing-12-month sales). Expected to close Q4 2026, subject to shareholder and regulatory approval.",
+      "summary_ko": "Indivior와 Supernus Pharmaceuticals가 전액 주식 교환 방식의 '대등합병' 확정 계약을 발표했다. Supernus 주주는 1주당 Indivior 주식 1.5401주를 받으며, Indivior 주주는 합병 완료 전 $1.0B 규모의 1회성 특별 현금배당도 받는다(Citibank 기간대출 $650M과 보유 현금으로 조달). 합병 후 지분은 Indivior 약 56.5% / Supernus 약 43.5%이며, 합병 회사는 SUBLOCADE(최근 12개월 매출 약 $1B)를 필두로 CNS 의약품 11종을 보유하고 Supernus 이름으로 운영된다. 주주 및 규제 승인을 전제로 2026년 4분기 완료 예정이다.",
       "source": {
         "name": "Supernus Pharmaceuticals and Indivior Pharmaceuticals to Merge (Indivior IR / Supernus IR)",
         "url": "https://ir.indivior.com/news-releases/news-release-details/supernus-pharmaceuticals-and-indivior-pharmaceuticals-merge",

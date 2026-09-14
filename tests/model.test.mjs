@@ -3,7 +3,7 @@ import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
-import { CANDIDATE_STATUSES, MOLECULE_ORDER, assessRunHealth, competitiveScore, interpretLeader, leadSentence, moleculeClasses, normalizeStage, orderPrograms, prepareDatabase, safeUrl } from "../src/model.js";
+import { CANDIDATE_STATUSES, MOLECULE_ORDER, assessRunHealth, competitiveScore, interpretLeader, leadSentence, localized, moleculeClasses, normalizeStage, orderPrograms, prepareDatabase, safeUrl } from "../src/model.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -339,4 +339,12 @@ test("keeps every stored candidate status inside the controlled vocabulary", asy
       assert.ok(candidate.promotion_bar?.evidence, `${candidate.id} is escalated with no written rationale`);
     }
   }
+});
+
+test("shows the Korean copy in Korean mode and falls back to English visibly", () => {
+  const finding = { summary: "Phase 1 started.", summary_ko: "임상 1상을 시작했다." };
+  assert.deepEqual(localized(finding, "summary", "en"), { text: "Phase 1 started.", fallback: false });
+  assert.deepEqual(localized(finding, "summary", "ko"), { text: "임상 1상을 시작했다.", fallback: false });
+  assert.deepEqual(localized({ summary: "Phase 1 started." }, "summary", "ko"), { text: "Phase 1 started.", fallback: true });
+  assert.deepEqual(localized({ partner: null }, "partner", "ko"), { text: "", fallback: false });
 });

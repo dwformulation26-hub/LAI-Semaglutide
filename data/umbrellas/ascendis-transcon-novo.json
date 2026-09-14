@@ -16,15 +16,21 @@
   ],
   "current_status": {
     "stage": "Preclinical/IND-enabling; Ascendis expects at least two new chemical entities (including the Novo Nordisk TransCon GLP-1 program and an internally developed candidate) to enter clinical trials in 2026",
+    "stage_ko": "전임상/IND 준비 단계. Ascendis는 Novo Nordisk TransCon GLP-1 프로그램과 자체 개발 후보를 포함해 최소 2개의 신규 화학물질이 2026년 임상에 진입할 것으로 예상한다.",
     "stage_label": "Preclinical",
     "stage_evidence": "Preclinical/IND-enabling; Ascendis expects clinical entry in 2026 but trials have not started.",
+    "stage_evidence_ko": "전임상/IND 준비 단계. Ascendis는 2026년 임상 진입을 예상하지만 시험은 아직 시작되지 않았다.",
     "molecule_class": [
       "other_incretin"
     ],
     "molecule_evidence": "TransCon GLP-1 receptor agonist, a new chemical entity, not one of the four named molecules.",
+    "molecule_evidence_ko": "TransCon GLP-1 수용체 작용제로, 신규 화학물질이며 지정된 4개 분자 중 하나가 아니다.",
     "dosing_target": "Monthly",
+    "dosing_target_ko": "월 1회",
     "partner": "Novo Nordisk",
+    "partner_ko": "Novo Nordisk",
     "data_point": "No clinical efficacy data yet reported for the lead TransCon GLP-1 receptor agonist candidate as of Sept 2026",
+    "data_point_ko": "2026년 9월 기준 선도 TransCon GLP-1 수용체 작용제 후보의 임상 유효성 데이터는 아직 보고되지 않았다.",
     "last_updated": "2026-08-20",
     "last_checked": "2026-09-13"
   },
@@ -34,6 +40,7 @@
       "date": "2024-11-07",
       "type": "deal_partnership",
       "summary": "Ascendis Pharma and Novo Nordisk signed a collaboration and license agreement for TransCon technology-based products in metabolic and cardiovascular disease. The lead program is a once-monthly GLP-1 receptor agonist candidate — a novel molecule engineered on Ascendis's TransCon prodrug/linker platform, not a reformulation of an existing semaglutide product — initially targeting obesity and type 2 diabetes. Deal terms: up to $285M in upfront/development/regulatory milestones for the lead program (including a $100M upfront fee) plus tiered royalties, and up to $77.5M in milestones for each additional program.",
+      "summary_ko": "Ascendis Pharma와 Novo Nordisk는 대사 및 심혈관 질환 분야 TransCon 기술 기반 제품에 대한 공동 개발 및 기술이전(라이선스) 계약을 체결했다. 선도 프로그램은 월 1회 GLP-1 수용체 작용제 후보로, 기존 세마글루타이드 제품의 재제형이 아니라 Ascendis의 TransCon 프로드럭/링커 플랫폼으로 설계된 신규 분자이며, 초기에는 비만과 제2형 당뇨병을 목표로 한다. 계약 조건: 선도 프로그램에 대해 계약금/개발/허가 마일스톤 최대 $285M($100M 계약금 포함)과 단계별 로열티, 추가 프로그램별 마일스톤 최대 $77.5M.",
       "source": {
         "name": "Ascendis Pharma press release",
         "url": "https://investors.ascendispharma.com/news-releases/news-release-details/ascendis-pharma-and-novo-nordisk-sign-collaboration-development",
@@ -46,6 +53,7 @@
       "date": "2026-08-20",
       "type": "trial_data_readout",
       "summary": "On its Q2 2026 earnings call, Ascendis said it expects at least two new chemical entities to enter clinical trials in 2026, including the TransCon GLP-1 program partnered with Novo Nordisk and an internally developed candidate, indicating the Novo Nordisk collaboration molecule is advancing toward its first clinical trial in 2026.",
+      "summary_ko": "Ascendis는 2026년 2분기 실적 발표에서 Novo Nordisk와 파트너십을 맺은 TransCon GLP-1 프로그램과 자체 개발 후보를 포함해 최소 2개의 신규 화학물질이 2026년 임상에 진입할 것으로 예상한다고 밝혔다. 이는 Novo Nordisk 협력 분자가 2026년 첫 임상시험을 향해 진전되고 있음을 시사한다.",
       "source": {
         "name": "Ascendis Pharma Q2 2026 earnings call transcript",
         "url": "https://www.fool.com/earnings/call-transcripts/2026/08/20/ascendis-pharma-asnd-q2-2026-earnings-call-transcript/",

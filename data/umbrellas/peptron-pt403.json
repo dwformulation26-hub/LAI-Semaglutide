@@ -18,15 +18,21 @@
   ],
   "current_status": {
     "stage": "Phase 1 IND submitted to Korea's MFDS (Aug 25, 2026), pending approval; non-exclusive research collaboration with Eli Lilly ongoing",
+    "stage_ko": "식약처에 임상 1상 IND 신청(2026년 8월 25일), 승인 대기 중이다. Eli Lilly와의 비독점 연구 협력은 진행 중이다.",
     "stage_label": "IND filed",
     "stage_evidence": "Phase 1 IND submitted to Korea's MFDS (Aug 25, 2026), pending approval -- not yet cleared or dosing.",
+    "stage_evidence_ko": "식약처에 임상 1상 IND 신청(2026년 8월 25일), 승인 대기 중이다. 아직 승인되거나 투여가 시작되지 않았다.",
     "molecule_class": [
       "semaglutide"
     ],
     "molecule_evidence": "PT403 is SmartDepot PLGA semaglutide. The Lilly collaboration explicitly does NOT include tirzepatide.",
+    "molecule_evidence_ko": "PT403은 SmartDepot PLGA 세마글루타이드다. Lilly 협력에는 터제파타이드가 명시적으로 포함되지 않는다.",
     "dosing_target": "Monthly",
+    "dosing_target_ko": "월 1회",
     "partner": "Eli Lilly (non-exclusive worldwide license for internal R&D use of SmartDepot; evaluation period extended Dec 2025 to up to 24 months)",
+    "partner_ko": "Eli Lilly(SmartDepot 내부 R&D 용도의 비독점 글로벌 라이선스, 평가 기간은 2025년 12월 최대 24개월로 연장)",
     "data_point": "~30% body-weight reduction at week 4 in obese-mouse model; Phase 1 human data showed no vomiting/nausea in 16 healthy adults vs. weekly semaglutide (ADA 2026)",
+    "data_point_ko": "비만 마우스 모델에서 4주차 약 30% 체중 감소, 임상 1상 인체 데이터에서 건강한 성인 16명 대상 주 1회 세마글루타이드 대비 구토/메스꺼움 없음(ADA 2026)",
     "last_updated": "2026-08-25",
     "last_checked": "2026-09-13"
   },
@@ -36,6 +42,7 @@
       "date": "2026-06-09",
       "type": "trial_data_readout",
       "summary": "Peptron presented PT403 (SmartDepot PLGA semaglutide) data at ADA 2026: ~30% body-weight reduction at week 4 in an obese-mouse model, outperforming daily and every-3-day semaglutide comparators, plus Phase 1 human safety data showing no vomiting or nausea in 16 healthy adults versus weekly semaglutide (only mild injection-site reactions). Independently corroborated by a second outlet reporting the same ~30% figure and 'excellent' early human safety/tolerability results.",
+      "summary_ko": "펩트론은 ADA 2026에서 PT403(SmartDepot PLGA 세마글루타이드) 데이터를 발표했다. 비만 마우스 모델에서 4주차 약 30% 체중 감소를 보여 1일 1회 및 3일 1회 세마글루타이드 대조약을 앞섰으며, 임상 1상 인체 안전성 데이터에서는 건강한 성인 16명에서 주 1회 세마글루타이드 대비 구토나 메스꺼움이 없었다(경미한 주사 부위 반응만 있음). 같은 약 30% 수치와 '우수한' 초기 인체 안전성·내약성 결과를 보도한 두 번째 매체가 이를 독립적으로 뒷받침했다.",
       "source": {
         "name": "Korea Biomedical Review (corroborated by 전국인력신문/kjob.news)",
         "url": "https://www.koreabiomed.com/news/articleView.html?idxno=31960",
@@ -48,6 +55,7 @@
       "date": "2026-06-09",
       "type": "market_reaction",
       "summary": "Peptron shares rose 11.3% ahead of ADA 2026 data, fell ~5% after Eli Lilly announced a separate deal with Camurus, then recovered 6.3% by the conference's final day, closing at 245,000 won ($161).",
+      "summary_ko": "펩트론 주가는 ADA 2026 데이터 발표를 앞두고 11.3% 상승했다가 Eli Lilly가 Camurus와의 별도 계약을 발표한 뒤 약 5% 하락했고, 학회 마지막 날까지 6.3% 회복해 245,000원($161)에 마감했다.",
       "source": {
         "name": "Korea Biomedical Review",
         "url": "https://www.koreabiomed.com/news/articleView.html?idxno=31960",
@@ -60,6 +68,7 @@
       "date": "2026-07-10",
       "type": "deal_partnership",
       "summary": "Peptron shares fell 29.94% to the daily lower limit (111,600 won) after CEO Choi Ho-il clarified the Eli Lilly joint research covers next-gen obesity/diabetes and CNS candidates but does NOT include tirzepatide, disappointing investors. CEO stated the Lilly collaboration \"remains on track\" with no change in direction; the evaluation period was extended in December 2025 to up to 24 months total. Peptron aims to submit a PT403 IND within 2026 and start construction of its second production facility by September 2026.",
+      "summary_ko": "펩트론 주가는 최호일 대표가 Eli Lilly 공동 연구가 차세대 비만/당뇨 및 CNS 후보물질을 대상으로 하며 터제파타이드는 포함하지 않는다고 밝히자 투자자 실망으로 29.94% 급락해 하한가(111,600원)를 기록했다. 대표는 Lilly 협력이 '순조롭게 진행 중'이며 방향 변화는 없다고 밝혔고, 평가 기간은 2025년 12월 총 최대 24개월로 연장됐다. 펩트론은 2026년 내 PT403 IND 제출과 2026년 9월까지 제2 생산시설 착공을 목표로 하고 있다.",
       "source": {
         "name": "Korea Biomedical Review",
         "url": "https://www.koreabiomed.com/news/articleView.html?idxno=32386",
@@ -72,6 +81,7 @@
       "date": "2025-12-16",
       "type": "manufacturing_capacity",
       "summary": "Peptron won a construction permit for a second, $60 million (₩89 billion) FDA cGMP-standard plant at Osong Bio Park (~16,500 sqm) to scale production of long-acting peptide drugs, citing its approved once-monthly prostate cancer drug Leupone as proof of manufacturing scalability, ahead of pipeline programs in diabetes, obesity, and Parkinson's disease.",
+      "summary_ko": "펩트론은 장기지속형 펩타이드 의약품 생산 확대를 위해 오송 바이오파크(약 16,500 sqm)에 $60 million(₩89 billion) 규모의 FDA cGMP 기준 제2공장 건축 허가를 받았다. 회사는 당뇨, 비만, 파킨슨병 파이프라인 프로그램에 앞서, 승인된 월 1회 전립선암 치료제 Leupone을 제조 확장성의 근거로 제시했다.",
       "source": {
         "name": "Korea Biomedical Review",
         "url": "https://www.koreabiomed.com/news/articleView.html?idxno=29989",
@@ -84,6 +94,7 @@
       "date": "2026-08-25",
       "type": "regulatory",
       "summary": "Peptron submitted a Phase 1 IND to Korea's MFDS for PT403 (once-monthly SmartDepot semaglutide). The trial will enroll 22 healthy adults for a single subcutaneous dose to evaluate safety, tolerability, and PK, run at Chungnam National University Hospital as a randomized, placebo-controlled, double-blind, active-reference, parallel-group, staged dose-escalation study across 3 cohorts, with a Safety Review Committee gating each subsequent dose group.",
+      "summary_ko": "펩트론은 PT403(월 1회 SmartDepot 세마글루타이드)의 임상 1상 IND를 식약처에 신청했다. 시험은 건강한 성인 22명을 등록해 단회 피하 투여 후 안전성, 내약성, PK를 평가하며, 충남대학교병원에서 무작위배정, 위약대조, 이중맹검, 활성 참조약, 평행군, 3개 코호트 단계적 용량 증량 시험으로 진행된다. 안전성검토위원회가 각 후속 용량군 진행 여부를 결정한다.",
       "source": {
         "name": "eToday (이투데이), corroborated by TheBio (더바이오) and MediPana",
         "url": "https://www.etoday.co.kr/news/view/2618057",
@@ -96,6 +107,7 @@
       "date": "2025-01-23",
       "type": "regulatory",
       "summary": "Peptron secured an Australian patent for its long-acting semaglutide injection, covering PT403 and similar formulations, giving Peptron exclusive rights in Australia until June 22, 2042 -- the first country to complete registration among patent applications filed in 20+ countries including Korea, the US, Europe, and Japan.",
+      "summary_ko": "펩트론은 PT403 및 유사 제형을 포괄하는 장기지속형 세마글루타이드 주사제에 대한 호주 특허를 확보해 2042년 6월 22일까지 호주 내 독점권을 갖게 됐다. 한국, 미국, 유럽, 일본 등 20개국 이상에 출원한 특허 가운데 등록을 완료한 첫 국가다.",
       "source": {
         "name": "Korea Biomedical Review",
         "url": "https://www.koreabiomed.com/news/articleView.html?idxno=26427",

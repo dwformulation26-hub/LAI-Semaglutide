@@ -17,13 +17,19 @@
   ],
   "current_status": {
     "stage": "Preclinical/formulation research; Phase 1 for lead obesity candidate targeted 2027",
+    "stage_ko": "전임상/제형 연구 단계; 선도 비만 후보물질의 임상 1상은 2027년 목표",
     "stage_label": "Preclinical",
     "stage_evidence": "Preclinical/formulation research; Phase 1 for the lead obesity candidate is only targeted for 2027.",
+    "stage_evidence_ko": "전임상/제형 연구 단계다. 선도 비만 후보물질의 임상 1상은 2027년을 목표로 하고 있을 뿐이다.",
     "molecule_class": [],
     "molecule_evidence": "A single Korean-language trade source says both semaglutide and tirzepatide are under consideration for DKF-MB501; no source names either for the candidate itself. Ambiguous, so left unassigned.",
+    "molecule_evidence_ko": "국문 전문지 단일 출처는 DKF-MB501에 세마글루타이드와 터제파타이드가 모두 검토되고 있다고 전했으나, 후보물질 자체에 대해 둘 중 하나를 명시한 출처는 없다. 모호하므로 미지정으로 남겼다.",
     "dosing_target": "Monthly, extending toward quarterly",
+    "dosing_target_ko": "월 1회, 3개월 1회로 연장 추진",
     "partner": "None disclosed; company states it is pursuing a licensing/technology-export deal within 2026",
+    "partner_ko": "공개된 파트너 없음; 회사는 2026년 내 기술이전(라이선스)/기술수출 계약을 추진 중이라고 밝혔다",
     "data_point": "DK-LADS is a microsphere-based DDS platform ('extends drug half-life, minimizes blood concentration fluctuations'); lead obesity candidate DKF-MB501 targets 3+ months of effect from a single injection",
+    "data_point_ko": "DK-LADS는 미립구 기반 DDS 플랫폼('약물 반감기를 연장하고 혈중 농도 변동을 최소화')이며, 선도 비만 후보물질 DKF-MB501은 단회 주사로 3개월 이상 효과 지속을 목표로 한다",
     "last_updated": "2026-03-30",
     "last_checked": "2026-09-13"
   },
@@ -33,6 +39,7 @@
       "date": "2026-02-06",
       "type": "trial_data_readout",
       "summary": "Dongkook detailed its microsphere-based DK-LADS drug-delivery platform, built on 30 years of in-house DDS work. Lead obesity candidate DKF-MB501 (single injection, 3+ months of effect) is in preclinical/formulation research with Phase 1 targeted for 2027; the article did not name semaglutide or tirzepatide specifically for DKF-MB501. Related DK-LADS-adjacent programs: Lorelin Depot (leuprolide) 1-month formulation launch targeted 2026, 3-month formulation targeted 2027; long-acting tacrolimus and octreotide (1- and 3-month) nearing clinical entry.",
+      "summary_ko": "동국제약은 30년간 축적한 자체 DDS 기술을 기반으로 한 미립구 기반 DK-LADS 약물전달 플랫폼을 상세히 소개했다. 선도 비만 후보물질 DKF-MB501(단회 주사, 3개월 이상 효과)은 전임상/제형 연구 단계로 임상 1상은 2027년 목표다. 기사는 DKF-MB501에 대해 세마글루타이드나 터제파타이드를 구체적으로 명시하지 않았다. DK-LADS 관련 프로그램: Lorelin Depot(류프로렐린) 1개월 제형은 2026년 출시 목표, 3개월 제형은 2027년 목표이며, 장기지속형 타크로리무스와 옥트레오타이드(1개월 및 3개월)는 임상 진입을 앞두고 있다.",
       "source": {
         "name": "ZDNet Korea",
         "url": "https://zdnet.co.kr/view/?no=20260206102022",
@@ -45,6 +52,7 @@
       "date": "2026-03-30",
       "type": "deal_partnership",
       "summary": "Dongkook Pharmaceutical is positioning its 30-year in-house DDS/DK-LADS expertise for a technology-licensing deal, with the company stating it is targeting a licensing agreement within 2026. A separate report (Korean-language) indicates the obesity candidate under DK-LADS is being developed with both semaglutide and tirzepatide under consideration, targeting monthly dosing with an eye toward extending to 3 months, and a Phase 1 entry goal of 2027.",
+      "summary_ko": "동국제약은 30년간 축적한 자체 DDS/DK-LADS 전문성을 기술이전(라이선스) 계약에 활용하려 하고 있으며, 2026년 내 라이선스 계약 체결을 목표로 한다고 밝혔다. 별도의 국문 보도에 따르면 DK-LADS 기반 비만 후보물질은 세마글루타이드와 터제파타이드를 모두 검토하며 개발 중이고, 월 1회 투여를 목표로 하되 3개월로의 연장을 염두에 두고 있으며, 임상 1상 진입 목표는 2027년이다.",
       "source": {
         "name": "Seoul Economic Daily (sedaily)",
         "url": "https://en.sedaily.com/news/2026/03/30/dongkook-pharmaceutical-leverages-30-years-of-dds-expertise",
@@ -57,6 +65,7 @@
       "date": "2026-05-01",
       "type": "manufacturing_capacity",
       "summary": "Dongkook is building a dedicated ~₩60 billion sterile-injectable plant for microsphere/liposome products at its Jincheon (North Chungcheong) site, ~9,240 sqm, targeted to begin operating in H2 2027 — capacity infrastructure to support DK-LADS-based products including any semaglutide/tirzepatide LAI candidate. Exact announcement date approximate; sourced from a single trade-press report.",
+      "summary_ko": "동국제약은 충북 진천 부지에 미립구/리포좀 제품 전용 무균 주사제 공장(약 ₩60 billion, 약 9,240 sqm)을 건설 중이며, 2027년 H2 가동을 목표로 한다. 이는 세마글루타이드/터제파타이드 LAI 후보물질을 포함한 DK-LADS 기반 제품을 지원하기 위한 생산 인프라다. 정확한 발표일은 추정치이며, 단일 전문지 보도에 근거한다.",
       "source": {
         "name": "Edaily Pharm (팜이데일리)",
         "url": "https://pharm.edaily.co.kr/News/Read?newsId=01197206642361784",

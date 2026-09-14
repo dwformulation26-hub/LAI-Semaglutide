@@ -20,15 +20,20 @@
   ],
   "current_status": {
     "stage": "Approved; market leader across monthly (Sustenna), 3-month (Trinza) and 6-month (Hafyera) paliperidone palmitate formulations",
+    "stage_ko": "승인 완료; 월 1회(Sustenna), 3개월 1회(Trinza), 6개월 1회(Hafyera) 팔리페리돈 팔미테이트 제형 전반에서 시장 선두",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Approved and market-leading across monthly/3-month/6-month paliperidone palmitate formulations.",
+    "stage_evidence_ko": "월 1회/3개월 1회/6개월 1회 팔리페리돈 팔미테이트 제형 전반에서 승인받아 시장을 선도하고 있다.",
     "molecule_class": [
       "non_incretin"
     ],
     "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
+    "molecule_evidence_ko": "탑재 약물이 인크레틴·비만 펩타이드 영역 밖에 있어 전달 플랫폼 근거로 추적한다.",
     "dosing_target": "Monthly / Every 3 months / Every 6 months (paliperidone palmitate)",
+    "dosing_target_ko": "월 1회 / 3개월 1회 / 6개월 1회(팔리페리돈 팔미테이트)",
     "partner": null,
     "data_point": "Q2 2026 Invega franchise (Sustenna/Xeplion/Trinza/Trevicta) net sales $1.02B, +2.3% YoY, per J&J Q2 2026 earnings",
+    "data_point_ko": "J&J 2026년 2분기 실적 기준 Invega 프랜차이즈(Sustenna/Xeplion/Trinza/Trevicta) 2026년 2분기 순매출 $1.02B, 전년 대비 +2.3%",
     "last_updated": "2026-07-15",
     "last_checked": "2026-09-13"
   },
@@ -38,6 +43,7 @@
       "date": "2021-09-01",
       "type": "regulatory",
       "summary": "FDA approved Invega Hafyera (6-month paliperidone palmitate), the first and only twice-yearly LAI for schizophrenia, rounding out the Sustenna/Trinza/Hafyera dosing-interval ladder.",
+      "summary_ko": "FDA는 조현병 치료용 최초이자 유일한 연 2회 LAI인 Invega Hafyera(6개월 팔리페리돈 팔미테이트)를 승인해 Sustenna/Trinza/Hafyera로 이어지는 투여 간격 라인업을 완성했다.",
       "source": {
         "name": "Johnson & Johnson (Janssen) press release",
         "url": "https://www.jnj.com/media-center/press-releases/janssen-announces-u-s-fda-approval-of-invega-hafyera-6-month-paliperidone-palmitate-first-and-only-twice-yearly-treatment-for-adults-with-schizophrenia",
@@ -50,6 +56,7 @@
       "date": "2024-07-26",
       "type": "regulatory",
       "summary": "FDA approved Erzofri (Luye Pharma), a competing branded paliperidone palmitate extended-release injectable suspension for schizophrenia/schizoaffective disorder — the first patented paliperidone palmitate LAI developed in China to reach the US market, directly competing with the Invega franchise.",
+      "summary_ko": "FDA는 조현병/조현정동장애 치료용 경쟁 브랜드 팔리페리돈 팔미테이트 서방형 주사용 현탁액 Erzofri(Luye Pharma)를 승인했다. 중국에서 개발된 특허 팔리페리돈 팔미테이트 LAI로는 처음 미국 시장에 진입한 제품으로, Invega 프랜차이즈와 직접 경쟁한다.",
       "source": {
         "name": "BioSpace",
         "url": "https://www.biospace.com/luye-pharma-announces-u-s-fda-approval-of-erzofri-paliperidone-palmitate-extended-release-injectable-suspension-for-treating-schizophrenia-and-schizoaffective-disorder",
@@ -62,6 +69,7 @@
       "date": "2025-04-06",
       "type": "market_reaction",
       "summary": "Luye Pharma launched Erzofri commercially in the US, marketed with a single-dose (351 mg) initiation advantage over standard monthly paliperidone palmitate products that require two initiation doses — a direct competitive positioning against Invega Sustenna.",
+      "summary_ko": "Luye Pharma는 미국에서 Erzofri를 상업 출시했다. 초기 투여를 2회 해야 하는 기존 월 1회 팔리페리돈 팔미테이트 제품과 달리 1회(351 mg) 초기 투여로 충분하다는 장점을 내세웠으며, 이는 Invega Sustenna를 직접 겨냥한 경쟁 포지셔닝이다.",
       "source": {
         "name": "PR Newswire (Luye Pharma release)",
         "url": "https://www.prnewswire.com/news-releases/luye-pharma-announces-us-launch-of-erzofri-paliperidone-palmitate-extended-release-injectable-suspension-for-the-treatment-of-schizophrenia-and-schizoaffective-disorder-302421464.html",
@@ -74,6 +82,7 @@
       "date": "2025-12-29",
       "type": "regulatory",
       "summary": "Janssen v. Sun Pharma Hatch-Waxman patent litigation (D.N.J., re: US9439906B2 covering paliperidone palmitate ER injectable formulations) closed via consent judgment: Sun admitted the patent valid/enforceable/infringed and accepted a permanent injunction against launching its ANDA product before patent expiry — a near-term generic threat deferred, exact authorized-entry date confidential. A parallel Delaware case against Sun was separately dismissed without prejudice in Oct 2025.",
+      "summary_ko": "팔리페리돈 팔미테이트 서방형 주사 제형을 보호하는 US9439906B2를 둘러싼 Janssen 대 Sun Pharma Hatch-Waxman 특허 소송(뉴저지 연방지방법원, D.N.J.)이 동의 판결로 종결됐다. Sun은 특허가 유효하고 집행 가능하며 침해됐음을 인정하고, 특허 만료 전 ANDA 제품 출시를 금지하는 영구 금지명령을 수용했다 — 단기적 제네릭 위협이 유예됐으며, 정확한 허용 진입일은 비공개다. Sun을 상대로 한 델라웨어 병행 소송은 2025년 10월 별도로 기각(재소 가능)됐다.",
       "source": {
         "name": "PatSnap litigation case analysis",
         "url": "https://www.patsnap.com/resources/blog/litigation/janssen-v-sun-pharma-invega-sustenna-patent-consent-judgment-patsnap/",
@@ -86,6 +95,7 @@
       "date": "2026-07-15",
       "type": "market_reaction",
       "summary": "J&J Q2 2026 earnings: Invega franchise (Sustenna/Xeplion/Trinza/Trevicta) net sales rose 2.3% year-over-year to $1.02 billion, within J&J's broader raised full-year 2026 outlook.",
+      "summary_ko": "J&J 2026년 2분기 실적: Invega 프랜차이즈(Sustenna/Xeplion/Trinza/Trevicta) 순매출은 전년 대비 2.3% 증가한 $1.02 billion으로, 상향 조정된 J&J의 2026년 연간 전망 범위 내에 있었다.",
       "source": {
         "name": "Johnson & Johnson Q2 2026 results press release",
         "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-reports-q2-2026-results-raises-2026-outlook",

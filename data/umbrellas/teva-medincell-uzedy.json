@@ -23,15 +23,21 @@
   ],
   "current_status": {
     "stage": "Uzedy approved (schizophrenia + bipolar I); TEV-'749 olanzapine LAI under FDA and EMA review",
+    "stage_ko": "Uzedy 승인(조현병 + 제1형 양극성 장애); TEV-'749 올란자핀 LAI는 FDA 및 EMA 허가 심사 중",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Uzedy is approved for schizophrenia and bipolar I; the umbrella's primary asset is commercially approved even though a related TEV-'749 asset is still under review.",
+    "stage_evidence_ko": "Uzedy는 조현병과 제1형 양극성 장애에 승인됐다. 관련 자산인 TEV-'749가 아직 심사 중이지만 이 umbrella의 주력 자산은 상업적으로 승인된 상태이다.",
     "molecule_class": [
       "non_incretin"
     ],
     "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
+    "molecule_evidence_ko": "탑재 약물이 인크레틴·비만 펩타이드 영역 밖에 있어 전달 플랫폼 근거로 추적한다.",
     "dosing_target": "Once monthly, subcutaneous (both risperidone and investigational olanzapine)",
+    "dosing_target_ko": "월 1회, 피하 투여(리스페리돈 및 개발 중인 올란자핀 모두)",
     "partner": "MedinCell (BEPO®/SteadyTeq™ platform licensor; royalties + up to $105M in commercial milestones on Uzedy)",
+    "partner_ko": "MedinCell(BEPO®/SteadyTeq™ 플랫폼 라이선서; Uzedy 관련 로열티 + 최대 $105M의 상업 마일스톤)",
     "data_point": "Q2 2026 Uzedy US net sales $77M, +43% YoY (record quarter); Teva raised FY2026 Uzedy net sales outlook to $270-290M (from $250-280M)",
+    "data_point_ko": "2026년 2분기 Uzedy 미국 순매출 $77M, 전년 대비 +43%(분기 최고치); Teva는 FY2026 Uzedy 순매출 전망을 $250-280M에서 $270-290M으로 상향했다",
     "last_updated": "2026-07-29",
     "last_checked": "2026-09-13"
   },
@@ -41,6 +47,7 @@
       "date": "2023-04-28",
       "type": "regulatory",
       "summary": "FDA approved Uzedy (risperidone) extended-release injectable suspension, a long-acting subcutaneous atypical antipsychotic built on MedinCell's BEPO® in-situ forming depot platform, for treatment of schizophrenia in adults.",
+      "summary_ko": "FDA는 MedinCell의 BEPO® 체내 형성형 데포 플랫폼을 기반으로 한 장기지속형 피하 비정형 항정신병제 Uzedy(리스페리돈) 서방형 주사용 현탁액을 성인 조현병 치료제로 승인했다.",
       "source": {
         "name": "Teva Pharmaceutical Industries investor relations press release",
         "url": "https://ir.tevapharm.com/news-and-events/press-releases/press-release-details/2023/Teva-and-MedinCell-Announce-FDA-Approval-of-UZEDY-risperidone-Extended-Release-Injectable-Suspension-a-Long-Acting-Subcutaneous-Atypical-Antipsychotic-Injection-for-the-Treatment-of-Schizophrenia-in-Adults/default.aspx",
@@ -53,6 +60,7 @@
       "date": "2025-02-25",
       "type": "regulatory",
       "summary": "FDA accepted for filing Teva/MedinCell's supplemental NDA for Uzedy as maintenance treatment (monotherapy or adjunct to lithium/valproate) for bipolar I disorder in adults.",
+      "summary_ko": "FDA는 성인 제1형 양극성 장애 유지 치료(단독요법 또는 리튬/발프로에이트 병용)를 위한 Teva/MedinCell의 Uzedy 보충 신약허가신청(NDA)을 접수했다.",
       "source": {
         "name": "PharmExec (Teva/MedinCell release)",
         "url": "https://www.pharmexec.com/view/fda-accepts-supplemental-new-drug-application-teva-medincell-uzedy-bipolar-i-disorder",
@@ -65,6 +73,7 @@
       "date": "2025-10-10",
       "type": "regulatory",
       "summary": "FDA approved the expanded Uzedy indication for maintenance treatment of bipolar I disorder in adults (50/75/100 mg once-monthly dosing), based on RISE and SHINE phase 3 schizophrenia data plus established risperidone safety/efficacy history.",
+      "summary_ko": "FDA는 RISE 및 SHINE 조현병 임상 3상 데이터와 기존에 확립된 리스페리돈 안전성·유효성 이력을 근거로, 성인 제1형 양극성 장애 유지 치료로 Uzedy 적응증 확대를 승인했다(50/75/100 mg 월 1회 투여).",
       "source": {
         "name": "Teva Pharmaceutical Industries investor relations press release",
         "url": "https://ir.tevapharm.com/news-and-events/press-releases/press-release-details/2025/FDA-Approves-Expanded-Indication-for-UZEDY-risperidone-Extended-Release-Injectable-Suspension-as-a-Treatment-for-Adults-Living-with-Bipolar-I-Disorder/default.aspx",
@@ -77,6 +86,7 @@
       "date": "2025-12-09",
       "type": "regulatory",
       "summary": "Teva submitted an NDA to the FDA for TEV-'749, an investigational once-monthly subcutaneous olanzapine extended-release injectable suspension for schizophrenia, based on Phase 3 SOLARIS trial data (including Week 56 results) using MedinCell's platform (branded SteadyTeq™ under Teva).",
+      "summary_ko": "Teva는 조현병 치료제로 개발 중인 월 1회 피하 올란자핀 서방형 주사용 현탁액 TEV-'749의 신약허가신청(NDA)을 FDA에 제출했다. 근거는 MedinCell 플랫폼(Teva에서는 SteadyTeq™ 브랜드)을 사용한 임상 3상 SOLARIS 시험 데이터(56주차 결과 포함)이다.",
       "source": {
         "name": "GlobeNewswire (Teva release)",
         "url": "https://www.globenewswire.com/news-release/2025/12/09/3202267/0/en/Teva-Pharmaceuticals-Submits-New-Drug-Application-to-FDA-for-Olanzapine-Extended-Release-Injectable-Suspension-TEV-749-for-the-Once-Monthly-Treatment-of-Schizophrenia-in-Adults.html",
@@ -89,6 +99,7 @@
       "date": "2026-02-20",
       "type": "regulatory",
       "summary": "FDA accepted Teva's NDA for TEV-'749 (olanzapine LAI) for review; a regulatory decision was anticipated in Q4 2026.",
+      "summary_ko": "FDA는 Teva의 TEV-'749(올란자핀 LAI) 신약허가신청(NDA)을 심사 대상으로 접수했으며, 허가 결정은 2026년 4분기로 예상됐다.",
       "source": {
         "name": "Teva Pharmaceutical Industries investor relations press release",
         "url": "https://ir.tevapharm.com/news-and-events/press-releases/press-release-details/2026/U-S--Food-and-Drug-Administration-FDA-Accepts-Tevas-New-Drug-Application-NDA-for-Olanzapine-Extended-Release-Injectable-Suspension-TEV-749-for-the-Once-Monthly-Treatment-of-Schizophrenia-in-Adults/default.aspx",
@@ -101,6 +112,7 @@
       "date": "2026-04-29",
       "type": "market_reaction",
       "summary": "MedinCell reported Uzedy Q1 2026 US net sales of $63 million, up 62% YoY from $39M (Q1 2025) and up 15% sequentially from $55M (Q4 2025); Teva's initial FY2026 Uzedy net sales outlook is $250-280 million, with MedinCell entitled to mid-to-high-single-digit royalties plus up to $105M in commercial milestones.",
+      "summary_ko": "MedinCell은 2026년 1분기 Uzedy 미국 순매출이 $63 million으로 전년 동기 $39M(2025년 1분기) 대비 62%, 직전 분기 $55M(2025년 4분기) 대비 15% 증가했다고 발표했다. Teva의 최초 FY2026 Uzedy 순매출 전망은 $250-280 million이며, MedinCell은 한 자릿수 중후반대 로열티와 최대 $105M의 상업 마일스톤을 받을 권리가 있다.",
       "source": {
         "name": "MedinCell / Euronext company release",
         "url": "https://www.medincell.com/uzedy-q1-2026-net-sales-reached-63m-up-62-year-on-year/",
@@ -113,6 +125,7 @@
       "date": "2026-05-21",
       "type": "regulatory",
       "summary": "The European Medicines Agency accepted Teva's Marketing Authorization Application for TEV-'749 (olanzapine long-acting injectable) for treatment of schizophrenia in adults, supported by the Phase 3 SOLARIS study data.",
+      "summary_ko": "유럽의약품청(EMA)은 임상 3상 SOLARIS 연구 데이터를 근거로 한 Teva의 성인 조현병 치료제 TEV-'749(올란자핀 장기지속형 주사제) 판매허가신청(MAA)을 접수했다.",
       "source": {
         "name": "Teva Pharmaceutical Industries investor relations press release",
         "url": "https://ir.tevapharm.com/news-and-events/press-releases/press-release-details/2026/The-European-Medicines-Agency-Accepts-Tevas-Marketing-Authorization-Application-for-Olanzapine-Long-Acting-Injectable-TEV-749-for-the-Treatment-of-Schizophrenia-in-Adults/default.aspx",
@@ -125,6 +138,7 @@
       "date": "2026-07-29",
       "type": "financing_investor",
       "summary": "MedinCell reported record Uzedy Q2 2026 US net sales of $77 million, up 43% YoY, and Teva raised its FY2026 Uzedy net sales outlook to $270-290 million (from $250-280 million). Uzedy remained the fastest-growing LAI treatment for schizophrenia in the US, with prescriptions up 63% YoY.",
+      "summary_ko": "MedinCell은 2026년 2분기 Uzedy 미국 순매출이 전년 대비 43% 증가한 $77 million으로 사상 최대를 기록했다고 발표했으며, Teva는 FY2026 Uzedy 순매출 전망을 $250-280 million에서 $270-290 million으로 상향했다. Uzedy는 처방 건수가 전년 대비 63% 늘며 미국에서 가장 빠르게 성장하는 조현병 LAI 치료제 자리를 유지했다.",
       "source": {
         "name": "MedinCell / BusinessWire company release",
         "url": "https://www.businesswire.com/news/home/20260729972234/en/Medincell-UZEDY-Record-Q2-Net-Sales-of-%2477M-Up-43-YoY-Teva-Raises-2026-Outlook",

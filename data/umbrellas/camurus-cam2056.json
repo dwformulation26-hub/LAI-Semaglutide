@@ -17,15 +17,21 @@
   ],
   "current_status": {
     "stage": "Phase 2b in preparation (H2 2026 start), following positive Phase 1b and FDA Type B meeting",
+    "stage_ko": "긍정적인 임상 1b상 결과와 FDA Type B 미팅에 이어 임상 2b상 준비 중(2026년 H2 개시)",
     "stage_label": "Phase 1",
     "stage_evidence": "Positive Phase 1b and an FDA Type B meeting completed; Phase 2b is only in preparation, not yet started.",
+    "stage_evidence_ko": "긍정적인 임상 1b상과 FDA Type B 미팅을 완료했다. 임상 2b상은 준비 단계일 뿐 아직 개시되지 않았다.",
     "molecule_class": [
       "semaglutide"
     ],
     "molecule_evidence": "CAM2056 is a once-monthly subcutaneous semaglutide FluidCrystal depot. The Lilly platform licence was expanded to amylin receptor agonists in June 2026, but the record states that expansion is separate from CAM2056 itself, so it does not make this an amylin program.",
+    "molecule_evidence_ko": "CAM2056은 월 1회 피하 투여 세마글루타이드 FluidCrystal 데포다. Lilly 플랫폼 라이선스는 2026년 6월 아밀린 수용체 작용제로 확대됐으나, 기록에 따르면 이 확대는 CAM2056 자체와 별개이므로 이 프로그램이 아밀린 프로그램이 되는 것은 아니다.",
     "dosing_target": "Monthly",
+    "dosing_target_ko": "월 1회",
     "partner": "Eli Lilly (FluidCrystal platform licensing collaboration, expanded June 2026 to include amylin receptor agonists; separate from CAM2056 itself)",
+    "partner_ko": "Eli Lilly(FluidCrystal 플랫폼 기술이전(라이선스) 공동 개발, 2026년 6월 아밀린 수용체 작용제 포함으로 확대; CAM2056 자체와는 별개)",
     "data_point": "Phase 1b (n=80, overweight/obesity): CAM2056 produced faster and greater body-weight, A1C and fasting-glucose reductions than weekly Wegovy®, dose-dependently, with comparable safety/tolerability (topline Nov 10, 2025)",
+    "data_point_ko": "임상 1b상(n=80, 과체중/비만): CAM2056은 주 1회 Wegovy® 대비 체중, A1C, 공복혈당을 용량 의존적으로 더 빠르고 크게 감소시켰으며, 안전성/내약성은 비슷했다(톱라인 2025년 11월 10일)",
     "last_updated": "2026-07-15",
     "last_checked": "2026-09-13"
   },
@@ -35,6 +41,7 @@
       "date": "2025-11-10",
       "type": "trial_data_readout",
       "summary": "Camurus reported positive topline results from a randomized, active-controlled Phase 1b study (n=80) of CAM2056, a once-monthly subcutaneous semaglutide FluidCrystal depot. CAM2056 was well tolerated and reduced body weight, A1C and fasting glucose in a dose-dependent manner, with reductions comparable to or exceeding weekly semaglutide. Note: this was Phase 1b, not Phase 2 as an earlier internal note suggested — no Phase 2 data has yet been reported.",
+      "summary_ko": "Camurus는 월 1회 피하 투여 세마글루타이드 FluidCrystal 데포인 CAM2056의 무작위배정, 활성 대조 임상 1b상(n=80)에서 긍정적인 톱라인 결과를 발표했다. CAM2056은 내약성이 양호했으며 체중, A1C, 공복혈당을 용량 의존적으로 감소시켰고, 감소 폭은 주 1회 세마글루타이드와 비슷하거나 이를 넘어섰다. 참고: 이 시험은 앞선 내부 메모에서 제시된 임상 2상이 아니라 임상 1b상이며, 아직 보고된 임상 2상 데이터는 없다.",
       "source": {
         "name": "Camurus press release",
         "url": "https://www.camurus.com/media/press-releases/2025/camurus-reports-positive-topline-results-for-cam2056-semaglutide-monthly-depot/",
@@ -47,6 +54,7 @@
       "date": "2026-06-01",
       "type": "deal_partnership",
       "summary": "Eli Lilly exercised its option to expand its June 2025 FluidCrystal collaboration/license agreement with Camurus to include amylin receptor agonists, alongside existing GLP-1/GIP dual and GLP-1/GIP/glucagon triple agonist compounds (up to 4 Lilly molecules total). Camurus is eligible for up to $290M in upfront/development/regulatory milestones plus $580M in sales milestones and tiered royalties. This is a platform-licensing deal for Lilly's own compounds, distinct from Camurus's own CAM2056 asset.",
+      "summary_ko": "Eli Lilly는 Camurus와의 2025년 6월 FluidCrystal 공동 개발/라이선스 계약을 확대하는 옵션을 행사해, 기존 GLP-1/GIP 이중 작용제 및 GLP-1/GIP/글루카곤 삼중 작용제 화합물에 더해 아밀린 수용체 작용제를 포함시켰다(Lilly 분자 총 최대 4종). Camurus는 계약금/개발/규제 마일스톤으로 최대 $290M, 판매 마일스톤으로 $580M과 단계별 로열티를 받을 수 있다. 이는 Lilly 자체 화합물에 대한 플랫폼 기술이전 계약으로, Camurus 자체 자산인 CAM2056과는 별개다.",
       "source": {
         "name": "Camurus press release – \"Camurus announces expansion of Lilly collaboration\"",
         "url": "https://www.camurus.com/media/press-releases/2026/camurus-announces-expansion-of-lilly-collaboration/",
@@ -59,6 +67,7 @@
       "date": "2026-07-15",
       "type": "trial_data_readout",
       "summary": "In its Q2/interim report for H1 2026, Camurus said it had completed its regulatory submission package for a placebo-controlled CAM2056 Phase 2b study, following FDA Type B meeting feedback, with study initiation planned for H2 2026.",
+      "summary_ko": "Camurus는 2026년 H1 2분기/중간 보고서에서 FDA Type B 미팅 피드백에 따라 위약 대조 CAM2056 임상 2b상 시험을 위한 규제 제출 패키지를 완성했으며, 시험 개시는 2026년 H2로 계획하고 있다고 밝혔다.",
       "source": {
         "name": "Camurus Financial Reports (Interim Report Q1/Q2 2026)",
         "url": "https://www.camurus.com/investors/financial-reports/",
@@ -71,6 +80,7 @@
       "date": "2026-07-15",
       "type": "market_reaction",
       "summary": "Camurus reported record quarterly product sales (SEK 528M, +13% YoY, first time above SEK 500M) and record total revenue (SEK 702M) for Q2 2026, driving shares up roughly 17%; full-year guidance was reaffirmed.",
+      "summary_ko": "Camurus는 2026년 2분기 사상 최대 분기 제품 매출(SEK 528M, 전년 대비 +13%, 처음으로 SEK 500M 돌파)과 사상 최대 총매출(SEK 702M)을 기록했으며, 이에 주가가 약 17% 상승했다. 연간 가이던스는 유지했다.",
       "source": {
         "name": "Camurus Financial Reports (Interim Report Q2 2026)",
         "url": "https://www.camurus.com/investors/financial-reports/",

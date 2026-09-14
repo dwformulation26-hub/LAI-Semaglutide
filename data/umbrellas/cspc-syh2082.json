@@ -18,15 +18,21 @@
   ],
   "current_status": {
     "stage": "Clinical-ready per AstraZeneca's Jan 30 2026 deal announcement, entering Phase I. CSPC leads development through Phase I for all four licensed programmes, after which AstraZeneca takes over ex-China development and commercialisation. Technology family recorded as 'other': LiquidGel is described only as an injectable depot system for once-monthly peptide dosing, and no source states a mechanism that maps cleanly onto the six controlled families.",
+    "stage_ko": "AstraZeneca의 2026년 1월 30일 계약 발표에 따르면 임상 진입 준비가 완료돼 임상 1상에 진입하는 단계이다. CSPC가 기술이전된 4개 프로그램 모두에 대해 임상 1상까지 개발을 주도하며, 이후 AstraZeneca가 중국 외 지역 개발과 상업화를 맡는다. 기술 계열은 '기타(other)'로 기록됐다. LiquidGel은 월 1회 펩타이드 투여를 위한 주사형 데포 시스템으로만 설명되며, 6개 관리 계열에 명확히 대응되는 작용 기전을 밝힌 출처가 없다.",
     "stage_label": "Preclinical",
     "stage_evidence": "AstraZeneca's release calls SYH2082 clinical-ready and says it is entering Phase I; that is forward-looking language and no source states a trial has begun, so the label stays at Preclinical rather than advancing on intent.",
+    "stage_evidence_ko": "AstraZeneca 보도자료는 SYH2082를 임상 진입 준비 완료 상태이며 임상 1상에 진입하고 있다고 설명한다. 이는 미래 지향적 표현이고 시험 개시를 밝힌 출처가 없으므로, 의도만으로 단계를 올리지 않고 전임상으로 유지한다.",
     "molecule_class": [
       "other_incretin"
     ],
     "molecule_evidence": "SYH2082 is a long-acting GLP-1 receptor and GIP receptor dual agonist new chemical entity, not a depot formulation of tirzepatide, so it sits in the other-incretin bucket rather than a named-molecule class.",
+    "molecule_evidence_ko": "SYH2082는 장기지속형 GLP-1 수용체 및 GIP 수용체 이중 작용제 신규 화합물로, 터제파타이드의 데포 제형이 아니므로 특정 분자 계열이 아닌 기타 인크레틴 분류에 속한다.",
     "dosing_target": "Monthly",
+    "dosing_target_ko": "월 1회",
     "partner": "AstraZeneca (exclusive rights outside China; CSPC retains China, Taiwan, Hong Kong and Macau with an AZ co-commercialisation option post-approval)",
+    "partner_ko": "AstraZeneca(중국 외 지역 독점 권리; CSPC는 중국, 대만, 홍콩, 마카오 권리를 보유하며 AZ는 승인 후 공동 상업화 옵션 보유)",
     "data_point": "$1.2B upfront plus up to $3.5B development and regulatory milestones across eight obesity and T2D programmes; commercial milestones and royalties take the headline ceiling to roughly $18.5B",
+    "data_point_ko": "계약금 $1.2B에 8개 비만 및 제2형 당뇨병 프로그램에 걸친 개발·허가 마일스톤 최대 $3.5B; 상업 마일스톤과 로열티를 포함하면 총 계약 규모 상한은 약 $18.5B",
     "last_updated": "2026-01-30",
     "last_checked": "2026-09-11"
   },
@@ -36,6 +42,7 @@
       "date": "2026-01-30",
       "type": "deal_partnership",
       "summary": "AstraZeneca took exclusive rights outside China to CSPC's once-monthly injectable weight-management portfolio, led by SYH2082, a long-acting GLP-1/GIP dual agonist built on CSPC's proprietary LiquidGel once-monthly dosing technology, plus three preclinical programmes. CSPC receives $1.2B upfront and up to $3.5B in development and regulatory milestones, with commercial milestones and royalties on top.",
+      "summary_ko": "AstraZeneca가 CSPC의 월 1회 주사형 체중 관리 포트폴리오에 대한 중국 외 지역 독점 권리를 확보했다. 이 포트폴리오는 CSPC의 독자적인 LiquidGel 월 1회 투여 기술을 기반으로 한 장기지속형 GLP-1/GIP 이중 작용제 SYH2082가 주도하며, 전임상 프로그램 3개가 추가로 포함된다. CSPC는 계약금 $1.2B와 최대 $3.5B의 개발·허가 마일스톤을 받으며, 상업 마일스톤과 로열티는 별도이다.",
       "source": {
         "name": "AstraZeneca press release (company IR)",
         "url": "https://www.astrazeneca.com/media-centre/press-releases/2026/astrazeneca-agrees-obesity-and-t2d-deal-with-cspc.html",

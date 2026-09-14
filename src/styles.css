@@ -419,3 +419,6 @@ main > footer span:first-child { color: var(--ink); font-weight: 800; letter-spa
 @media (prefers-reduced-motion: no-preference) {
   .program-row > td { transition: background .45s ease; }
 }
+
+/* Korean mode, English shown because no Korean copy exists yet */
+.lang-fallback { display: inline-block; margin-left: 0.45em; padding: 0 0.45em; border: 1px solid currentColor; border-radius: 99px; font-size: 0.72em; opacity: 0.7; white-space: nowrap; vertical-align: middle; }

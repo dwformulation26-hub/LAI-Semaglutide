@@ -15,15 +15,21 @@
   ],
   "current_status": {
     "stage": "Phase Ia comparison with Enantone in endometriosis, registered twice: NCT07755956 (company-sponsored, first posted Aug 10 2026, listed as recruiting with an estimated start of Aug 31 2026) and NCT07793162 (Third Xiangya Hospital as sponsor, first posted Aug 28 2026, not yet recruiting). HHK001 is an improved leuprorelin acetate microsphere whose polymer is not disclosed, so technology_family stays 'other'.",
+    "stage_ko": "자궁내막증에서 Enantone과 비교하는 임상 1a상으로, 두 차례 등록됐다: NCT07755956(회사 스폰서, 2026년 8월 10일 최초 게시, 모집 중으로 등재, 예상 개시일 2026년 8월 31일) 및 NCT07793162(Third Xiangya Hospital 스폰서, 2026년 8월 28일 최초 게시, 모집 전). HHK001은 고분자가 공개되지 않은 개량 류프로렐린 아세테이트 미립구로, technology_family는 'other'로 유지한다.",
     "stage_label": "IND filed",
     "stage_evidence": "Both registrations still give an estimated rather than actual start date and one is not yet recruiting, so dosing is not shown to have begun; it stays at IND filed until a source says it has.",
+    "stage_evidence_ko": "두 등록 모두 실제가 아닌 예상 개시일을 기재하고 있고 하나는 모집 전이어서 투여 개시가 확인되지 않았다. 출처가 투여 개시를 밝힐 때까지 IND 신청 단계로 유지한다.",
     "molecule_class": [
       "non_incretin"
     ],
     "molecule_evidence": "HHK001 is a leuprorelin acetate (GnRH agonist) microsphere formulation, outside the incretin space.",
+    "molecule_evidence_ko": "HHK001은 류프로렐린 아세테이트(GnRH 작용제) 미립구 제형으로, 인크레틴 영역 밖에 있다.",
     "dosing_target": "Single 3.75 mg SC dose in Phase Ia (the strength of 1-month Enantone)",
+    "dosing_target_ko": "임상 1a상에서 3.75 mg 피하 단회 투여(1개월 제형 Enantone의 용량)",
     "partner": "Third Xiangya Hospital, Central South University (sponsor of NCT07793162)",
+    "partner_ko": "Third Xiangya Hospital, Central South University(NCT07793162 스폰서)",
     "data_point": "Phase Ia PK/PD, safety and preliminary efficacy comparison with Enantone in endometriosis.",
+    "data_point_ko": "자궁내막증에서 Enantone과 비교하는 임상 1a상 PK/PD, 안전성 및 예비 유효성 평가.",
     "last_updated": "2026-08-28",
     "last_checked": "2026-09-14"
   },
@@ -33,6 +39,7 @@
       "date": "2026-08-10",
       "type": "regulatory",
       "summary": "Zhuhai Huahaikang registered a Phase Ia trial (NCT07755956) comparing HHK001, an improved leuprorelin acetate microsphere, with Enantone in patients with endometriosis.",
+      "summary_ko": "Zhuhai Huahaikang이 자궁내막증 환자를 대상으로 개량 류프로렐린 아세테이트 미립구 HHK001을 Enantone과 비교하는 임상 1a상(NCT07755956)을 등록했다.",
       "source": {
         "name": "ClinicalTrials.gov NCT07755956",
         "publication": "ClinicalTrials.gov",
@@ -46,6 +53,7 @@
       "date": "2026-08-28",
       "type": "regulatory",
       "summary": "A second registration of the HHK001 Phase Ia comparison with Enantone (NCT07793162) lists Third Xiangya Hospital of Central South University as sponsor and Zhuhai Huahaikang as collaborator, at a single 3.75 mg subcutaneous dose.",
+      "summary_ko": "HHK001의 Enantone 대비 임상 1a상 비교 시험의 두 번째 등록(NCT07793162)은 Central South University Third Xiangya Hospital을 스폰서로, Zhuhai Huahaikang을 협력사로 기재했으며, 3.75 mg 피하 단회 투여로 진행된다.",
       "source": {
         "name": "ClinicalTrials.gov NCT07793162",
         "publication": "ClinicalTrials.gov",

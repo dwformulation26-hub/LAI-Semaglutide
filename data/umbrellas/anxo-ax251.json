@@ -16,15 +16,20 @@
   ],
   "current_status": {
     "stage": "Phase 1 dose-escalation study in schizophrenia registered (NCT07484204, first posted Mar 20 2026) and not yet recruiting at the Jul 22 2026 registry update. AX251 uses Anxo's NanoCIP nanocrystal injectable platform, which has no dedicated technology_family value.",
+    "stage_ko": "조현병 대상 임상 1상 용량 증량 시험이 등록됐으며(NCT07484204, 2026년 3월 20일 최초 게시), 2026년 7월 22일 등록 정보 업데이트 시점에 모집 전이었다. AX251은 Anxo의 NanoCIP 나노결정 주사 플랫폼을 사용하며, 이에 해당하는 전용 technology_family 값은 없다.",
     "stage_label": "IND filed",
     "stage_evidence": "ClinicalTrials.gov lists the Phase 1 study of AX251 as not yet recruiting (last updated Jul 22 2026), which is bucketed as IND filed. A reported FDA IND clearance rests on a single Tier 3 source and was not used.",
+    "stage_evidence_ko": "ClinicalTrials.gov에는 AX251 임상 1상이 모집 전(최종 업데이트 2026년 7월 22일)으로 등재돼 있어 IND 신청으로 분류한다. FDA IND 승인 보도는 단일 Tier 3 출처에 근거해 반영하지 않았다.",
     "molecule_class": [
       "non_incretin"
     ],
     "molecule_evidence": "AX251 is a long-acting injectable formulation of cariprazine, an antipsychotic, per its ClinicalTrials.gov registration.",
+    "molecule_evidence_ko": "ClinicalTrials.gov 등록 정보에 따르면 AX251은 항정신병약물 카리프라진의 장기지속형 주사제 제형이다.",
     "dosing_target": "Not disclosed (single doses of 45 to 180 mg in Phase 1)",
+    "dosing_target_ko": "미공개(임상 1상에서 45-180 mg 단회 투여)",
     "partner": null,
     "data_point": "Phase 1 open-label, multicenter, single-dose escalation study (45, 90, 135 and 180 mg) of PK and safety in schizophrenia.",
+    "data_point_ko": "조현병 환자 대상 PK 및 안전성을 평가하는 임상 1상 공개, 다기관, 단회 투여 용량 증량 시험(45, 90, 135, 180 mg).",
     "last_updated": "2026-03-20",
     "last_checked": "2026-09-14"
   },
@@ -34,6 +39,7 @@
       "date": "2026-03-20",
       "type": "regulatory",
       "summary": "Anxo Pharmaceutical registered a Phase 1 open-label, multicenter dose-escalation study (NCT07484204) of AX251, a long-acting injectable form of cariprazine, at single doses of 45 to 180 mg in people with schizophrenia.",
+      "summary_ko": "Anxo Pharmaceutical은 조현병 환자를 대상으로 카리프라진 장기지속형 주사제 AX251을 45-180 mg 단회 투여하는 임상 1상 공개, 다기관 용량 증량 시험(NCT07484204)을 등록했다.",
       "source": {
         "name": "ClinicalTrials.gov NCT07484204",
         "publication": "ClinicalTrials.gov",

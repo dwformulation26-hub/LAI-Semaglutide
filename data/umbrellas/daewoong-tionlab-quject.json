@@ -21,15 +21,21 @@
   ],
   "current_status": {
     "stage": "Phase 1 IND filed in Korea (April 2026); first-patient dosing targeted within 2026",
+    "stage_ko": "국내 임상 1상 IND 신청(2026년 4월); 2026년 내 첫 환자 투여 목표",
     "stage_label": "IND filed",
     "stage_evidence": "Phase 1 IND filed in Korea (April 2026); first-patient dosing not yet begun, targeted within 2026.",
+    "stage_evidence_ko": "국내 임상 1상 IND 신청(2026년 4월). 첫 환자 투여는 아직 시작되지 않았으며 2026년 내 목표이다.",
     "molecule_class": [
       "semaglutide"
     ],
     "molecule_evidence": "Semaglutide loaded at ~20% density in Quject Sphere microspheres.",
+    "molecule_evidence_ko": "Quject Sphere 미립구에 세마글루타이드를 약 20% 밀도로 탑재했다.",
     "dosing_target": "Monthly",
+    "dosing_target_ko": "월 1회",
     "partner": "TionLab Therapeutics",
+    "partner_ko": "티온랩테라퓨틱스",
     "data_point": "Semaglutide loaded at ~20% density in microspheres; delivered in a 1 mL injection volume",
+    "data_point_ko": "미립구에 세마글루타이드를 약 20% 밀도로 탑재; 1 mL 주사 용량으로 투여",
     "last_updated": "2026-05-08",
     "last_checked": "2026-09-13"
   },
@@ -39,6 +45,7 @@
       "date": "2026-05-08",
       "type": "deal_partnership",
       "summary": "Daewoong Pharmaceutical and TionLab Therapeutics announced a strategic partnership to jointly develop and commercialize a once-monthly long-acting semaglutide injectable, combining TionLab's Quject®Sphere platform (controls initial burst release via microparticle coating) with Daewoong's CURE® platform (produces uniformly sized microspheres for stable release). The formulation targets a 1 mL injection volume with ~20% drug loading, cutting annual injections from 52 (weekly) to 12 (monthly).",
+      "summary_ko": "대웅제약과 티온랩테라퓨틱스는 월 1회 장기지속형 세마글루타이드 주사제를 공동 개발·상업화하는 전략적 파트너십을 발표했다. 티온랩의 Quject®Sphere 플랫폼(미립자 코팅으로 초기 과다 방출 제어)과 대웅제약의 CURE® 플랫폼(안정적 방출을 위해 균일한 크기의 미립구 생산)을 결합한다. 제형은 약 20% 약물 탑재율에 1 mL 주사 용량을 목표로 하며, 연간 주사 횟수를 52회(주 1회)에서 12회(월 1회)로 줄인다.",
       "source": {
         "name": "The Korea Herald",
         "url": "https://www.koreaherald.com/article/10733813",
@@ -51,6 +58,7 @@
       "date": "2026-05-08",
       "type": "deal_partnership",
       "summary": "Corroborating coverage: the Daewoong-TionLab tie-up is framed as adding a long-acting injectable to Daewoong's existing oral and microneedle-patch obesity drug programs, giving the company a three-format anti-obesity portfolio.",
+      "summary_ko": "추가 확인 보도: 대웅제약-티온랩 제휴는 대웅제약의 기존 경구제 및 마이크로니들 패치 비만 치료제 프로그램에 장기지속형 주사제를 더해 세 가지 제형의 항비만 포트폴리오를 갖추게 하는 것으로 소개됐다.",
       "source": {
         "name": "Korea Biomedical Review",
         "url": "https://www.koreabiomed.com/news/articleView.html?idxno=31574",
@@ -63,6 +71,7 @@
       "date": "2026-05-08",
       "type": "regulatory",
       "summary": "Daewoong and TionLab filed a Phase 1 IND application with Korea's Ministry of Food and Drug Safety in April 2026 for the monthly semaglutide LAI candidate, with first-patient dosing planned within the year.",
+      "summary_ko": "대웅제약과 티온랩은 2026년 4월 월 1회 세마글루타이드 LAI 후보물질의 임상 1상 IND를 식품의약품안전처(식약처)에 신청했으며, 연내 첫 환자 투여를 계획하고 있다.",
       "source": {
         "name": "The Korea Herald",
         "url": "https://www.koreaherald.com/article/10733813",

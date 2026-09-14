@@ -1,4 +1,4 @@
-import { CANDIDATE_TONES, FAMILY_COLORS, FAMILY_LABELS, FINDING_LABELS, MOLECULE_COLORS, MOLECULE_ORDER, RACE_ORDERS, SCORED_CLASSES, SCORE_WEIGHTS, STAGES, STAGE_COLORS, formatDate, interpretLeader, leadSentence, orderPrograms, prepareDatabase, safeUrl, truncate } from "./model.js";
+import { CANDIDATE_TONES, FAMILY_COLORS, FAMILY_LABELS, FINDING_LABELS, MOLECULE_COLORS, MOLECULE_ORDER, RACE_ORDERS, SCORED_CLASSES, SCORE_WEIGHTS, STAGES, STAGE_COLORS, formatDate, interpretLeader, leadSentence, localized, orderPrograms, prepareDatabase, safeUrl, truncate } from "./model.js";
 import { DEFAULT_LANG, LANGS, familyLabelText, findingLabelText, moleculeLabelText, originLabelText, stageLabelText, t } from "./i18n.js";
 
 const $ = (selector, root = document) => root.querySelector(selector);
@@ -14,6 +14,17 @@ function node(tag, className = "", text) {
 
 const clear = (element) => { element.replaceChildren(); return element; };
 const badge = (text, tone = "blue") => node("span", `pill pill-${tone}`, text);
+const localText = (source, field, lang) => localized(source, field, lang).text;
+
+// Korean mode shows the record's Korean copy; a missing one falls back to the English with a
+// visible marker.
+function localParagraph(source, field, lang, limit) {
+  const { text, fallback } = localized(source, field, lang);
+  const paragraph = node("p", "", limit ? truncate(text, limit) : text);
+  if (fallback) paragraph.append(node("span", "lang-fallback", t(lang, "content.englishOriginal")));
+  return paragraph;
+}
+
 const firstSentence = (value, lang) => truncate(leadSentence(value || (lang === "ko" ? "업데이트 기록됨" : "Update recorded")), 125);
 
 function sourceAnchor(value, label, lang) {
@@ -212,7 +223,7 @@ function renderRace(data) {
   const leaderProgram = clear($("#leader-program"));
   leaderProgram.append(programLink(leader, "leader-link leader-link-sub", (button) => button.append(document.createTextNode(leader.program))));
   $("#leader-stage").textContent = stageLabelText(leader.stageLabel, lang);
-  $("#leader-summary").textContent = truncate(leader.current_status?.stage, 330);
+  $("#leader-summary").textContent = truncate(localText(leader.current_status, "stage", lang), 330);
   $("#leader-interpretation").textContent = interpretLeader(leader, ranked, Date.now(), lang);
 }
 
@@ -257,7 +268,7 @@ function renderIntelligence(data) {
     const meta = node("div", "feed-meta");
     meta.append(node("strong", "", formatDate(finding.date, true, lang)), node("span", "", finding.company));
     const copy = node("div", "feed-copy");
-    copy.append(node("h3", "", firstSentence(finding.summary, lang)), node("p", "", truncate(finding.summary, 300)));
+    copy.append(node("h3", "", firstSentence(localText(finding, "summary", lang), lang)), localParagraph(finding, "summary", lang, 300));
     const tag = node("span", `tag pill-${evidenceTone(finding.type)}`, findingLabelText(finding.type, lang));
     copy.append(tag);
     article.append(meta, copy, sourceAnchor(finding.sourceUrl, t(lang, "intelligence.source"), lang));
@@ -420,7 +431,7 @@ function filteredPrograms() {
     .filter((record) => state.stage === "all" || record.stageLabel === state.stage)
     .filter((record) => state.molecule === "all"
       || (state.molecule === "unassigned" ? record.needsMoleculeReview : record.molecules.includes(state.molecule)))
-    .filter((record) => !query || [record.canonical_name, record.technology_family, record.current_status?.stage].join(" ").toLowerCase().includes(query))
+    .filter((record) => !query || [record.canonical_name, record.technology_family, record.current_status?.stage, record.current_status?.stage_ko].join(" ").toLowerCase().includes(query))
     .sort((a, b) => {
       if (a.isScored !== b.isScored) return a.isScored ? -1 : 1;
       if (a.isScored) return b.score.total - a.score.total || String(b.current_status?.last_updated ?? "").localeCompare(String(a.current_status?.last_updated ?? ""));
@@ -441,7 +452,7 @@ function evidenceItem(finding, lang) {
   const copy = node("div", "evidence-copy");
   copy.append(
     node("span", `tag pill-${evidenceTone(finding.type)}`, findingLabelText(finding.type, lang)),
-    node("p", "", finding.summary),
+    localParagraph(finding, "summary", lang),
     node("small", "", `${finding.sourceName} · ${t(lang, "evidence.tier", { tier: finding.sourceTier ?? "—" })}`)
   );
   const source = node("div", "evidence-source");
@@ -487,7 +498,7 @@ function renderPrograms() {
       tableCell(t(lang, "programs.col.origin"), originLabelText(record.origin, lang)),
       tableCell(t(lang, "programs.col.technology"), familyLabelText(record.technology_family, lang)),
       tableCell(t(lang, "programs.col.stage"), stageBadge(record.stageLabel, lang, record.stageInferred)),
-      tableCell(t(lang, "programs.col.status"), truncate(record.current_status?.stage, 190)),
+      tableCell(t(lang, "programs.col.status"), truncate(localText(record.current_status, "stage", lang), 190)),
       tableCell(t(lang, "programs.col.updated"), formatDate(record.current_status?.last_updated, true, lang))
     );
     body.append(row);
@@ -515,7 +526,9 @@ function renderMoleculeReview(data) {
   data.needsMoleculeReview.forEach((record) => {
     const card = node("article", "candidate-card");
     card.append(badge(t(lang, "review.moleculeBadge"), "amber"), node("h3", "", record.canonical_name));
-    card.append(node("p", "", record.moleculeEvidence || truncate(record.current_status?.stage, 260)));
+    card.append(record.moleculeEvidence
+      ? localParagraph(record.current_status, "molecule_evidence", lang)
+      : localParagraph(record.current_status, "stage", lang, 260));
     const footer = node("footer");
     footer.append(node("span", "", `${originLabelText(record.origin, lang)} · ${stageLabelText(record.stageLabel, lang)}`));
     footer.append(node("span", "", formatDate(record.current_status?.last_updated, true, lang)));
@@ -538,12 +551,9 @@ function renderCandidates(data) {
     // For an escalated or stalled candidate the written promotion_bar rationale is the
     // thing the admin has to act on, so it outranks the raw evidence snippet on the card.
     const rationale = candidate.promotion_bar?.evidence;
-    card.append(node("p", "", truncate(
-      (escalated || candidate.status === "stalled") && rationale
-        ? rationale
-        : evidence?.snippet ?? t(lang, "review.noEvidence"),
-      260
-    )));
+    card.append((escalated || candidate.status === "stalled") && rationale
+      ? localParagraph(candidate.promotion_bar, "evidence", lang, 260)
+      : evidence ? localParagraph(evidence, "snippet", lang, 260) : node("p", "", t(lang, "review.noEvidence")));
     const unmet = candidate.unmetConditions ?? [];
     if (!escalated && !candidate.assessed) {
       card.append(node("p", "candidate-unmet", t(lang, "review.unassessed")));
@@ -612,14 +622,15 @@ function populateFilters(data, lang) {
 }
 
 // CSV export always uses the English label maps, independent of the UI language,
-// so the exported file stays a stable, consistently-formatted interop artifact.
+// so the exported file stays a stable, consistently-formatted interop artifact. The Korean
+// copies ride along in their own columns next to the English they translate.
 function exportProgramsWithEvidence() {
-  const headers = ["Program", "Molecule class", "Competitive score", "Origin", "Technology", "Normalized stage", "Reported status", "Dosing target", "Program updated", "Finding date", "Finding type", "Finding summary", "Confidence", "Source", "Tier", "URL"];
+  const headers = ["Program", "Molecule class", "Competitive score", "Origin", "Technology", "Normalized stage", "Reported status", "Reported status (KO)", "Dosing target", "Program updated", "Finding date", "Finding type", "Finding summary", "Finding summary (KO)", "Confidence", "Source", "Tier", "URL"];
   const rows = filteredPrograms().flatMap((record) => {
-    const base = [record.canonical_name, record.molecules.join("; "), record.isScored ? record.score.total : "", record.origin, FAMILY_LABELS[record.technology_family] ?? record.technology_family, record.stageLabel, record.current_status?.stage, record.current_status?.dosing_target, record.current_status?.last_updated];
+    const base = [record.canonical_name, record.molecules.join("; "), record.isScored ? record.score.total : "", record.origin, FAMILY_LABELS[record.technology_family] ?? record.technology_family, record.stageLabel, record.current_status?.stage, record.current_status?.stage_ko, record.current_status?.dosing_target, record.current_status?.last_updated];
     const findings = state.data.findings.filter((finding) => finding.recordId === record.id);
-    if (!findings.length) return [[...base, "", "", "", "", "", "", ""]];
-    return findings.map((finding) => [...base, finding.date, FINDING_LABELS[finding.type] ?? finding.type, finding.summary, finding.confidence, finding.sourceName, finding.sourceTier, finding.sourceUrl]);
+    if (!findings.length) return [[...base, "", "", "", "", "", "", "", ""]];
+    return findings.map((finding) => [...base, finding.date, FINDING_LABELS[finding.type] ?? finding.type, finding.summary, finding.summary_ko, finding.confidence, finding.sourceName, finding.sourceTier, finding.sourceUrl]);
   });
   downloadCsv("lai-programs-evidence.csv", headers, rows);
 }

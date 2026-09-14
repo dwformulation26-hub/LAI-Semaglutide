@@ -239,6 +239,16 @@ export function competitiveScore(record, now = Date.now()) {
   return { total: stage + momentum + evidence + interval, stage, momentum, evidence, dosing: interval };
 }
 
+// Text fields carry a Korean copy in a sibling "<field>_ko" (references/ko-glossary.md).
+// English is the source of truth, so Korean mode falls back to it -- and says so -- when a
+// copy is missing, rather than passing untranslated text off as translated.
+export function localized(source, field, lang) {
+  const english = source?.[field] ?? "";
+  if (lang !== "ko") return { text: english, fallback: false };
+  const korean = source?.[`${field}_ko`];
+  return korean ? { text: korean, fallback: false } : { text: english, fallback: Boolean(english) };
+}
+
 export function safeUrl(value) {
   try {
     const url = new URL(String(value));

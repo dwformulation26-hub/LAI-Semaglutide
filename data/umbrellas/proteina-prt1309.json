@@ -16,15 +16,20 @@
   ],
   "current_status": {
     "stage": "Preclinical (long-acting GIPR-antagonist antibody; first application of Proteina's antibody-discovery platform to an antibody drug candidate)",
+    "stage_ko": "전임상(장기지속형 GIPR 길항 항체; 프로티나 항체 발굴 플랫폼을 항체 신약 후보에 처음 적용)",
     "stage_label": "Preclinical",
     "stage_evidence": "Stated as preclinical; first application of Proteina's antibody-discovery platform to an antibody drug candidate.",
+    "stage_evidence_ko": "전임상 단계로 명시됐다. 프로티나 항체 발굴 플랫폼을 항체 신약 후보에 처음 적용한 사례다.",
     "molecule_class": [
       "other_incretin"
     ],
     "molecule_evidence": "Long-acting GIPR-antagonist antibody. Semaglutide and tirzepatide appear in its data only as comparator arms.",
+    "molecule_evidence_ko": "장기지속형 GIPR 길항 항체다. 세마글루타이드와 터제파타이드는 데이터에서 대조군으로만 등장한다.",
     "dosing_target": "Potential 3-6 month dosing interval (based on preclinical PK half-life, not yet clinically confirmed)",
+    "dosing_target_ko": "3-6개월 투여 간격 가능성(전임상 PK 반감기 기준, 임상적으로 아직 확인되지 않음)",
     "partner": null,
     "data_point": "Preclinical: 20.3-day PK half-life in animal models; combined with semaglutide, extended weight reduction to 26.8% at day 14 vs. 16.8% for semaglutide alone and 28.8% for tirzepatide monotherapy; no organ toxicity observed at day 26",
+    "data_point_ko": "전임상: 동물 모델에서 PK 반감기 20.3일; 세마글루타이드 병용 시 14일차 체중 감소를 26.8%까지 확대(세마글루타이드 단독 16.8%, 터제파타이드 단독요법 28.8%); 26일차에 장기 독성은 관찰되지 않았다",
     "last_updated": "2026-06-01",
     "last_checked": "2026-09-13"
   },
@@ -34,6 +39,7 @@
       "date": "2026-06-01",
       "type": "trial_data_readout",
       "summary": "Proteina, a KAIST-founder-linked, KOSDAQ-listed AI antibody discovery company, was the only Korean company selected for an oral presentation at ADA 2026, presenting preclinical data for PRT-1309, a long-acting GIPR-antagonist antibody (the first application of its platform to antibody drug development). PRT-1309 showed a 20.3-day PK half-life in animal models, and when combined with semaglutide extended weight reduction to 26.8% at day 14 (vs. 16.8% for semaglutide alone, 28.8% for tirzepatide monotherapy), with no organ toxicity observed at day 26.",
+      "summary_ko": "KAIST 창업자 연계 KOSDAQ 상장 AI 항체 발굴 기업 프로티나는 ADA 2026에서 구두 발표에 선정된 유일한 국내 기업으로, 장기지속형 GIPR 길항 항체 PRT-1309(자사 플랫폼을 항체 신약 개발에 처음 적용)의 전임상 데이터를 발표했다. PRT-1309는 동물 모델에서 PK 반감기 20.3일을 보였으며, 세마글루타이드와 병용 시 14일차 체중 감소를 26.8%까지 확대했다(세마글루타이드 단독 16.8%, 터제파타이드 단독요법 28.8%). 26일차에 장기 독성은 관찰되지 않았다.",
       "source": {
         "name": "Korea Biomedical Review – \"Korean biotechs sidestep Lilly-Novo showdown at ADA 2026\"",
         "url": "https://www.koreabiomed.com/news/articleView.html?idxno=31960",

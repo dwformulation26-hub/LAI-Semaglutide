@@ -19,15 +19,21 @@
   ],
   "current_status": {
     "stage": "Approved & marketed — US (Brixadi, commercialized by Braeburn under exclusive license from Camurus) and EU/global (same molecule marketed by Camurus directly as Buvidal); unconfirmed press reports since Sept 2025 that Camurus is in talks to acquire Braeburn and reclaim full US rights",
+    "stage_ko": "승인 및 시판 — 미국(Brixadi, Camurus로부터 독점 라이선스를 받아 Braeburn이 상업화)과 EU/글로벌(동일 분자를 Camurus가 Buvidal로 직접 판매). 2025년 9월 이후 Camurus가 Braeburn을 인수해 미국 권리 전체를 되찾기 위해 협상 중이라는 미확인 언론 보도가 있다",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Approved and marketed in the US (Brixadi) and EU/global (Buvidal).",
+    "stage_evidence_ko": "미국(Brixadi)과 EU/글로벌(Buvidal)에서 승인 및 시판 중이다.",
     "molecule_class": [
       "non_incretin"
     ],
     "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
+    "molecule_evidence_ko": "탑재 약물이 인크레틴 및 비만 펩타이드 영역 밖에 있어 전달 플랫폼 근거로 추적한다.",
     "dosing_target": "Weekly or monthly (subcutaneous depot)",
+    "dosing_target_ko": "주 1회 또는 월 1회(피하 데포)",
     "partner": "Braeburn (exclusive US license since 2014 agreement); Camurus is platform owner/EU-global marketer",
+    "partner_ko": "Braeburn(2014년 계약에 따른 미국 독점 라이선스); Camurus는 플랫폼 보유사이자 EU/글로벌 판매사",
     "data_point": "Q2 2026: Brixadi royalties to Camurus SEK 127M (+42% YoY, +20% QoQ); Brixadi held ~32% share of US LAI buprenorphine equivalized units in Q1 2026, vs 26% a year earlier",
+    "data_point_ko": "2026년 2분기: Camurus가 받은 Brixadi 로열티 SEK 127M(전년 대비 +42%, 전 분기 대비 +20%). Brixadi는 2026년 1분기 미국 LAI 부프레노르핀 환산 단위 기준 점유율 약 32%를 기록해 1년 전 26%에서 상승했다",
     "last_updated": "2026-07-15",
     "last_checked": "2026-09-13"
   },
@@ -37,6 +43,7 @@
       "date": "2025-09-12",
       "type": "deal_partnership",
       "summary": "Press reports said Camurus was in talks to acquire its US commercialization partner Braeburn, aiming to regain full US rights to Brixadi (Camurus estimated untapped US market potential at >$1B). Neither company confirmed the talks or disclosed financial terms.",
+      "summary_ko": "언론 보도에 따르면 Camurus는 Brixadi의 미국 권리 전체를 되찾기 위해 미국 상업화 파트너인 Braeburn 인수를 협상 중이었다(Camurus는 미개척 미국 시장 잠재력을 $1B 초과로 추정). 양사 모두 협상을 확인하거나 재무 조건을 공개하지 않았다.",
       "source": {
         "name": "pharmaphorum",
         "url": "https://pharmaphorum.com/news/rumour-mill-has-camurus-buying-partner-braeburn",
@@ -49,6 +56,7 @@
       "date": "2026-05-12",
       "type": "market_reaction",
       "summary": "Camurus Q1 2026 interim report: Brixadi royalties SEK 106M, up 44% YoY; Brixadi reached ~32% share of US LAI buprenorphine equivalized units vs 26% a year earlier. Management attributed a softer sequential quarter to annual payor authorization renewals, expecting growth to normalize through the rest of 2026.",
+      "summary_ko": "Camurus 2026년 1분기 중간 보고서: Brixadi 로열티 SEK 106M, 전년 대비 44% 증가. Brixadi는 미국 LAI 부프레노르핀 환산 단위 기준 점유율 약 32%를 기록해 1년 전 26%에서 상승했다. 경영진은 전 분기 대비 부진한 실적을 연례 보험사 사전승인 갱신 탓으로 돌렸으며, 2026년 남은 기간 동안 성장이 정상화될 것으로 예상했다.",
       "source": {
         "name": "Camurus Interim Report Q1 2026",
         "url": "https://www.camurus.com/files/Main/13456/4347755/camurus-interim-report-first-quarter-2026.pdf",
@@ -61,6 +69,7 @@
       "date": "2026-06-12",
       "type": "trial_data_readout",
       "summary": "Braeburn announced two oral presentations and two posters on Brixadi at the 88th Annual CPDD Meeting (June 13-17, 2026, Portland OR), covering first-dose withdrawal suppression, real-world treatment retention vs. sublingual buprenorphine in patients with recent fentanyl use, and real-world dispensing/utilization trends.",
+      "summary_ko": "Braeburn은 제88회 CPDD 연례 학회(2026년 6월 13-17일, 오리건주 포틀랜드)에서 Brixadi에 관한 구두 발표 2건과 포스터 2건을 발표한다고 밝혔다. 발표는 첫 투여 시 금단 증상 억제, 최근 펜타닐 사용 환자에서 설하 부프레노르핀 대비 실사용 치료 유지율, 실사용 조제/이용 추세를 다룬다.",
       "source": {
         "name": "PR Newswire (Braeburn)",
         "url": "https://www.prnewswire.com/news-releases/braeburn-to-present-research-at-cpdd-2026-annual-meeting-including-data-on-withdrawal-suppression-and-real-world-treatment-retention-in-patients-with-opioid-use-disorder-302798744.html",
@@ -73,6 +82,7 @@
       "date": "2026-07-15",
       "type": "market_reaction",
       "summary": "Camurus Q2 2026 interim report: Brixadi royalties SEK 127M, up 42% YoY and 20% sequentially, contributing to record overall product sales; growth attributed to rising US demand and Braeburn's expanded commercial organization, alongside continued Buvidal growth in Europe.",
+      "summary_ko": "Camurus 2026년 2분기 중간 보고서: Brixadi 로열티 SEK 127M으로 전년 대비 42%, 전 분기 대비 20% 증가해 전체 제품 매출 사상 최대 기록에 기여했다. 성장 요인으로 미국 수요 증가와 Braeburn의 상업 조직 확대가 꼽혔으며, 유럽에서 Buvidal도 성장을 이어갔다.",
       "source": {
         "name": "Camurus Interim Report Q2 2026",
         "url": "https://www.camurus.com/investors/financial-reports/",

@@ -23,15 +23,21 @@
   ],
   "current_status": {
     "stage": "Phase 3 completed in China (2023, via I-Mab-linked partner) with primary endpoint met; China NMPA accepted the BLA for pediatric growth hormone deficiency in Dec 2024 and it remains under review as of Sep 2026; Korea Phase 2 complete with orphan drug designation but launch timing undecided; co-developer Genexine disclosed severe financial distress in early 2025",
+    "stage_ko": "중국 임상 3상은 2023년 I-Mab 연계 파트너를 통해 완료돼 1차 평가변수를 충족했다. 중국 NMPA는 2024년 12월 소아 성장호르몬 결핍증 BLA를 접수했으며 2026년 9월 현재 심사 중이다. 한국은 임상 2상을 완료하고 희귀의약품 지정을 받았으나 출시 시기는 미정이다. 공동 개발사 제넥신은 2025년 초 심각한 재무 위기를 공시했다.",
     "stage_label": "Phase 3",
     "stage_evidence": "Phase 3 completed in China (2023) with primary endpoint met; BLA accepted and under active NMPA review.",
+    "stage_evidence_ko": "중국 임상 3상 완료(2023년), 1차 평가변수 충족. BLA가 접수돼 NMPA 심사가 진행 중이다.",
     "molecule_class": [
       "non_incretin"
     ],
     "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
+    "molecule_evidence_ko": "탑재 약물이 인크레틴 및 비만 펩타이드 영역 밖에 있어 전달 플랫폼 근거로 추적한다.",
     "dosing_target": "Once-weekly subcutaneous injection (hyFc fusion protein, extended half-life vs. daily rhGH)",
+    "dosing_target_ko": "주 1회 피하 주사(hyFc 융합 단백질, 1일 1회 rhGH 대비 반감기 연장)",
     "partner": "Handok (Korea, co-development); TJ Biopharma / Jumpcan Pharmaceutical (China development, manufacturing & commercialization)",
+    "partner_ko": "한독(한국, 공동 개발); TJ Biopharma / Jumpcan Pharmaceutical(중국 개발, 생산 및 상업화)",
     "data_point": "China Phase 3 (CTJ101PGHD301): annualized height velocity 10.76 cm/yr for eftansomatropin alfa vs. 10.28 cm/yr for Norditropin at week 52, non-inferior (p<0.0001); China NMPA BLA accepted for review Dec 9, 2024",
+    "data_point_ko": "중국 임상 3상(CTJ101PGHD301): 52주차 연간 키 성장 속도 에프탄소마트로핀 알파 10.76 cm/yr vs. Norditropin 10.28 cm/yr로 비열등성 입증(p<0.0001). 중국 NMPA BLA 2024년 12월 9일 심사 접수",
     "last_updated": "2025-02-27",
     "last_checked": "2026-09-13"
   },
@@ -41,6 +47,7 @@
       "date": "2023-08-30",
       "type": "trial_data_readout",
       "summary": "Genexine announces its long-acting growth hormone GX-H9 (eftansomatropin alfa, TJ101) met the primary endpoint in a Chinese pivotal Phase 3 trial (CTJ101PGHD301) in pediatric growth hormone deficiency, demonstrating non-inferiority to daily Norditropin on annualized height velocity at week 52 (10.76 vs. 10.28 cm/year), with no discontinuations due to treatment-related adverse events.",
+      "summary_ko": "제넥신은 장기지속형 성장호르몬 GX-H9(에프탄소마트로핀 알파, TJ101)이 소아 성장호르몬 결핍증 대상 중국 허가용 임상(피보탈) 3상(CTJ101PGHD301)에서 1차 평가변수를 충족했다고 발표했다. 52주차 연간 키 성장 속도에서 1일 1회 Norditropin 대비 비열등성(10.76 vs. 10.28 cm/year)을 입증했으며, 치료 관련 이상반응으로 인한 투약 중단은 없었다.",
       "source": {
         "name": "Genexine press release (BusinessWire)",
         "url": "https://www.businesswire.com/news/home/20230830371012/en/Genexine%E2%80%99s-long-acting-growth-hormone-meets-Phase-3-primary-endpoint",
@@ -53,6 +60,7 @@
       "date": "2024-12-09",
       "type": "regulatory",
       "summary": "TJ Biopharma and Jumpcan Pharmaceutical jointly announce that China's NMPA has accepted for review the Biologics License Application for eftansomatropin alfa (GX-H9) for pediatric growth hormone deficiency — described as the first fusion-protein long-acting growth hormone among marketed products in China if approved.",
+      "summary_ko": "TJ Biopharma와 Jumpcan Pharmaceutical은 중국 NMPA가 소아 성장호르몬 결핍증 대상 에프탄소마트로핀 알파(GX-H9)의 생물의약품허가신청(BLA)을 심사 접수했다고 공동 발표했다. 승인되면 중국 시판 제품 중 최초의 융합 단백질 장기지속형 성장호르몬이 된다고 설명했다.",
       "source": {
         "name": "TJ Biopharma press release",
         "url": "https://www.tjbio.com/en/news/12270",
@@ -65,6 +73,7 @@
       "date": "2025-02-27",
       "type": "financing_investor",
       "summary": "Korea Biomedical Review reports Genexine (GX-H9 co-developer) is in severe financial distress: FY2024 operating loss of KRW 373B on revenue down 33.7% YoY to KRW 2.9B, net loss of KRW 60.2B, cash reserves down more than half year-over-year, and market cap collapsed from KRW 1.5T to KRW 203B. Company is selling real estate (including its Korea Bio Park building) to shore up liquidity; GX-H9's China approval remained pending at the time of the report.",
+      "summary_ko": "Korea Biomedical Review는 GX-H9 공동 개발사 제넥신이 심각한 재무 위기에 처했다고 보도했다. FY2024 영업손실 KRW 373B, 매출은 전년 대비 33.7% 감소한 KRW 2.9B, 순손실 KRW 60.2B였으며, 현금성 자산은 전년 대비 절반 넘게 줄었고 시가총액은 KRW 1.5T에서 KRW 203B로 급감했다. 회사는 유동성 확보를 위해 코리아바이오파크 건물 등 부동산을 매각하고 있으며, 보도 시점에 GX-H9의 중국 승인은 대기 중이었다.",
       "source": {
         "name": "Korea Biomedical Review",
         "url": "https://www.koreabiomed.com/news/articleView.html?idxno=26778",

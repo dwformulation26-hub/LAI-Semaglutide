@@ -15,15 +15,20 @@
   ],
   "current_status": {
     "stage": "Phase 2 complete and positive, reported Nov 6 2025 at ObesityWeek 2025 and published simultaneously in The Lancet. Lilly stated an intent to begin Phase 3 monotherapy studies; no source confirms a Phase 3 trial has started. A separate Phase 2 of eloralintide alone or combined with tirzepatide is running in adults with obesity and type 2 diabetes.",
+    "stage_ko": "임상 2상 완료 및 긍정적 결과로, 2025년 11월 6일 ObesityWeek 2025에서 보고되고 The Lancet에 동시 게재됐다. Lilly는 임상 3상 단독요법 연구를 시작할 의향을 밝혔으나, 임상 3상 개시를 확인한 출처는 없다. 비만 및 제2형 당뇨병 성인을 대상으로 엘로랄린타이드 단독 또는 터제파타이드 병용 임상 2상이 별도로 진행 중이다.",
     "stage_label": "Phase 2",
     "stage_evidence": "The Nov 2025 readout is an explicit Phase 2 result; the accompanying Phase 3 statement is an intent to initiate, which under the forward-looking rule cannot advance the label.",
+    "stage_evidence_ko": "2025년 11월 결과는 명시적인 임상 2상 결과이며, 함께 나온 임상 3상 언급은 개시 의향으로, 미래 지향적 표현 규칙에 따라 단계를 올릴 수 없다.",
     "molecule_class": [
       "amylin"
     ],
     "molecule_evidence": "Eloralintide is described by Lilly as a selective amylin receptor agonist, which places it in the amylin class.",
+    "molecule_evidence_ko": "Lilly는 엘로랄린타이드를 선택적 아밀린 수용체 작용제로 설명하며, 이에 따라 아밀린 계열에 속한다.",
     "dosing_target": "Once weekly (subcutaneous); not a depot formulation",
+    "dosing_target_ko": "주 1회(피하); 데포 제형 아님",
     "partner": null,
     "data_point": "Phase 2 (n=263, 48 weeks): mean weight reduction 9.5% to 20.1% across arms versus 0.4% on placebo, with mild to moderate nausea and fatigue the most common adverse events",
+    "data_point_ko": "임상 2상(n=263, 48주): 투여군별 평균 체중 감소 9.5%~20.1%(위약 0.4%), 가장 흔한 이상반응은 경증~중등도 오심과 피로",
     "last_updated": "2025-11-06",
     "last_checked": "2026-09-11"
   },
@@ -33,6 +38,7 @@
       "date": "2025-11-06",
       "type": "trial_data_readout",
       "summary": "Lilly reported that eloralintide, a once-weekly selective amylin receptor agonist, met its primary endpoint in a 263-participant Phase 2 study, with mean weight reductions of 9.5% to 20.1% at 48 weeks against 0.4% on placebo. Results were presented at ObesityWeek 2025 and published simultaneously in The Lancet.",
+      "summary_ko": "Lilly는 주 1회 선택적 아밀린 수용체 작용제 엘로랄린타이드가 참가자 263명 대상 임상 2상에서 1차 평가변수를 충족했으며, 48주 시점 평균 체중 감소는 9.5%~20.1%로 위약 0.4%와 대비됐다고 보고했다. 결과는 ObesityWeek 2025에서 발표되고 The Lancet에 동시 게재됐다.",
       "source": {
         "name": "Eli Lilly press release (company IR)",
         "url": "https://lilly.gcs-web.com/news-releases/news-release-details/lillys-selective-amylin-agonist-eloralintide-demonstrated",

@@ -17,15 +17,20 @@
   ],
   "current_status": {
     "stage": "Approved & marketed globally; facing generic lanreotide competition in the US since 2021 (Cipla, InvaGen/Camber), though generic-side manufacturing challenges have recently supported branded sales resilience",
+    "stage_ko": "전 세계 승인 및 시판; 2021년부터 미국에서 제네릭 란레오타이드(Cipla, InvaGen/Camber)와 경쟁하고 있으나, 최근 제네릭 측의 생산 문제가 오리지널 매출 방어를 뒷받침했다",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Approved and marketed globally, facing US generic competition since 2021.",
+    "stage_evidence_ko": "전 세계에서 승인 및 시판 중이며, 2021년부터 미국에서 제네릭 경쟁에 직면해 있다.",
     "molecule_class": [
       "non_incretin"
     ],
     "molecule_evidence": "Payload is outside the incretin and obesity peptide space; tracked as delivery-platform evidence.",
+    "molecule_evidence_ko": "탑재 약물이 인크레틴 및 비만 펩타이드 영역 밖에 있어, 전달 플랫폼 근거로 추적한다.",
     "dosing_target": "Monthly (28-day) deep subcutaneous injection",
+    "dosing_target_ko": "월 1회(28일) 심부 피하 주사",
     "partner": null,
     "data_point": "Somatuline FY2025 sales grew 4.3% at constant exchange rates, well below the rest of Ipsen's portfolio (ex-Somatuline: +14.2%); FY2026 guidance again cites generic lanreotide production challenges as a tailwind for Somatuline (Ipsen FY2025 results, Feb 12, 2026; Q1 2026 update, Apr 23, 2026)",
+    "data_point_ko": "Somatuline FY2025 매출은 고정환율 기준 4.3% 성장해 Ipsen의 나머지 포트폴리오(Somatuline 제외: +14.2%)를 크게 밑돌았다. FY2026 가이던스는 제네릭 란레오타이드 생산 문제를 Somatuline의 순풍 요인으로 재차 언급했다(Ipsen FY2025 실적, 2026년 2월 12일; 2026년 1분기 업데이트, 2026년 4월 23일)",
     "last_updated": "2026-07-30",
     "last_checked": "2026-09-13"
   },
@@ -35,6 +40,7 @@
       "date": "2022-03-16",
       "type": "manufacturing_capacity",
       "summary": "Ipsen announces an approximately €60M investment in a new state-of-the-art electronic autoinjector device (reusable motorized injector + disposable cartridge, thinner needle) for Somatuline Autogel/Depot, aimed at improving the patient injection experience and defending against emerging generic lanreotide competition; includes expanded investment in Ipsen's Signes, France manufacturing site. First patient access anticipated 2024.",
+      "summary_ko": "Ipsen이 Somatuline Autogel/Depot용 최신 전자식 자동주사기(재사용 가능한 전동 주사기 + 일회용 카트리지, 더 가는 바늘)에 약 €60M을 투자한다고 발표했다. 환자의 주사 경험을 개선하고 부상하는 제네릭 란레오타이드 경쟁에 대응하기 위한 것으로, 프랑스 Signes 생산시설에 대한 투자 확대도 포함된다. 첫 환자 접근은 2024년으로 예상됐다.",
       "source": {
         "name": "Ipsen press release",
         "url": "https://www.ipsen.com/press-release/ipsen-announces-investment-in-new-state-of-the-art-electronic-autoinjector-for-somatuline-autogel-somatuline-depot-lanreotide-designed-to-improve-patient-experience/",
@@ -47,6 +53,7 @@
       "date": "2026-02-12",
       "type": "market_reaction",
       "summary": "Ipsen's FY2025 full-year results show Somatuline sales growth of 4.3% at constant exchange rates for the year, versus 14.2% growth for the rest of the portfolio excluding Somatuline. Guidance language attributes Somatuline's relative resilience partly to generic lanreotide manufacturers' production challenges.",
+      "summary_ko": "Ipsen의 FY2025 연간 실적에서 Somatuline 매출은 고정환율 기준 4.3% 성장했으며, Somatuline을 제외한 나머지 포트폴리오는 14.2% 성장했다. 가이던스 문구는 Somatuline의 상대적 방어력을 부분적으로 제네릭 란레오타이드 제조사들의 생산 문제에 돌렸다.",
       "source": {
         "name": "Ipsen FY2025 results press release",
         "url": "https://www.ipsen.com/press-release/ipsen-delivers-strong-results-in-2025-driven-by-solid-execution-across-all-therapeutic-areas-and-provides-2026-guidance-3236839/",
@@ -59,6 +66,7 @@
       "date": "2026-04-23",
       "type": "market_reaction",
       "summary": "Ipsen's Q1 2026 sales update confirms full-year 2026 guidance (>13% total sales growth at CER), with growth driven by the portfolio excluding Somatuline (+27.5% CER in Q1); Somatuline's own growth is again attributed to ongoing generic lanreotide production/supply challenges among competitors.",
+      "summary_ko": "Ipsen의 2026년 1분기 매출 업데이트에서 2026년 연간 가이던스(고정환율 기준 총매출 성장률 >13%)를 확인했으며, 성장은 Somatuline 제외 포트폴리오(1분기 고정환율 기준 +27.5%)가 주도했다. Somatuline 자체의 성장은 재차 경쟁사들의 제네릭 란레오타이드 생산/공급 문제 지속에 따른 것으로 설명됐다.",
       "source": {
         "name": "Ipsen Q1 2026 sales press release",
         "url": "https://www.ipsen.com/press-release/ipsen-delivers-strong-sales-in-the-first-quarter-of-2026-and-confirms-its-full-year-guidance-3279554/",
@@ -71,6 +79,7 @@
       "date": "2026-07-30",
       "type": "market_reaction",
       "summary": "Ipsen's H1 2026 results (total group sales €2,190.2M, +20.4% reported / +23.5% constant-currency) noted Somatuline maintaining stronger-than-expected demand despite ongoing generic lanreotide competition.",
+      "summary_ko": "Ipsen의 2026년 H1 실적(그룹 총매출 €2,190.2M, 보고 기준 +20.4% / 고정환율 기준 +23.5%)에서 Somatuline은 제네릭 란레오타이드 경쟁이 지속되는 가운데서도 예상보다 강한 수요를 유지한 것으로 나타났다.",
       "source": {
         "name": "Ipsen H1 2026 press release",
         "publication": "Ipsen (company IR)",
