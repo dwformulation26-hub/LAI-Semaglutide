@@ -154,6 +154,19 @@ for (const candidate of candidates) {
   if (UNRESOLVED_STATUSES.has(candidate.status)) problems.push(...checkUnresolvedCandidate(candidate));
 }
 
+// A weekly sweep drafts no email; it lists what it logged in digest_carryover for the next
+// weekday digest. An id that doesn't exist would silently drop out of that email.
+const carryover = meta.digest_carryover;
+if (carryover) {
+  for (const { umbrella_id: umbrellaId, finding_id: findingId } of carryover.findings ?? []) {
+    const record = records.find((item) => item.id === umbrellaId);
+    if (!record?.finding_history.some((finding) => finding.id === findingId)) problems.push(`meta.json digest_carryover: no finding ${findingId} in ${umbrellaId}`);
+  }
+  for (const id of [...(carryover.candidates ?? []), ...(carryover.newly_escalated ?? [])]) {
+    if (!candidates.some((candidate) => candidate.id === id)) problems.push(`meta.json digest_carryover: no candidate ${id}`);
+  }
+}
+
 if (problems.length) {
   throw new Error(`Data checks failed (${problems.length}):\n  - ${problems.join("\n  - ")}`);
 }

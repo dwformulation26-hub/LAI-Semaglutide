@@ -251,6 +251,11 @@ test("flags stale or never-run monitoring types against their expected cadence",
   assert.equal(stale.healthyCount, 1);
   assert.match(stale.summary, /Weekly sweep has never run/);
   assert.match(stale.summary, /QC Tier 2 has never run/);
+
+  // Nothing writes last_run.daily_scan at the weekend, so Friday's scan must still read
+  // healthy on Monday morning before Monday's run finishes.
+  const mondayMorning = assessRunHealth({ daily_scan: "2026-09-18T06:04:00+09:00", weekly_sweep: "2026-09-20T09:10:00+09:00", qc_tier2: "2026-09-20T09:30:00+09:00" }, Date.parse("2026-09-21T06:30:00+09:00"));
+  assert.equal(mondayMorning.allHealthy, true);
 });
 
 test("interprets the leader's lead margin and tie state", () => {

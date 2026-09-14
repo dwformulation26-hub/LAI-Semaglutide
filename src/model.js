@@ -279,7 +279,9 @@ export function formatDate(value, long = false, lang = "en") {
     : { day: "2-digit", month: "short", timeZone: "UTC" }).format(date);
 }
 
-const RUN_CADENCE_DAYS = { daily_scan: 2, weekly_sweep: 10, qc_tier2: 10 };
+// The daily scan runs Monday to Friday only and the Sunday sweep no longer stands in for
+// it, so Friday's run stays the latest one until Monday's lands: up to three calendar days.
+const RUN_CADENCE_DAYS = { daily_scan: 3, weekly_sweep: 10, qc_tier2: 10 };
 
 export function daysSince(dateValue, now = Date.now()) {
   if (!dateValue) return null;

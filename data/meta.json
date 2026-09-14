@@ -8,6 +8,7 @@
     "qc_tier3": null,
     "baseline_class_sweep": "2026-09-11T06:40:00Z"
   },
+  "digest_carryover": null,
   "coverage": {
     "daily_scan": {
       "umbrellas_checked": 4,

@@ -90,7 +90,7 @@ test("emails a late item only while it is recent and confirmed", () => {
   assert.doesNotMatch(mixed.html, /Old patent/);
 });
 
-test("counts escalations apart from new candidates, and repeats them on Sunday only", () => {
+test("counts escalations apart from new candidates, and repeats them on Monday only", () => {
   // Regression: repeated escalations went into the candidates array, so every digest
   // announced "6 new candidates" when one was new.
   const item = (headline, extra = {}) => ({ headline, date: "2026-09-10", summary: "s", sourceUrl: "https://e.com", sourceName: "E", ...extra });
@@ -100,18 +100,26 @@ test("counts escalations apart from new candidates, and repeats them on Sunday o
     candidates: [item("New Co")]
   };
 
+  const tuesday = renderDigest({ ...payload, runDate: "2026-09-15" }, templateHtml);
+  assert.equal(tuesday.subject, "LAI update — 1 program cleared the evidence bar, 1 new candidate");
+  assert.match(tuesday.html, /CLEARED THE EVIDENCE BAR/);
+  assert.match(tuesday.html, /Fresh Co/);
+  assert.doesNotMatch(tuesday.html, /Repeat Co/);
+
   const monday = renderDigest({ ...payload, runDate: "2026-09-14" }, templateHtml);
-  assert.equal(monday.subject, "LAI update — 1 program cleared the evidence bar, 1 new candidate");
-  assert.match(monday.html, /CLEARED THE EVIDENCE BAR/);
-  assert.match(monday.html, /Fresh Co/);
-  assert.doesNotMatch(monday.html, /Repeat Co/);
+  assert.equal(monday.subject, "LAI update — 2 programs cleared the evidence bar, 1 new candidate");
+  assert.match(monday.html, /Repeat Co/);
 
-  const sunday = renderDigest({ ...payload, runDate: "2026-09-13" }, templateHtml);
-  assert.equal(sunday.subject, "LAI update — 2 programs cleared the evidence bar, 1 new candidate");
-  assert.match(sunday.html, /Repeat Co/);
+  const midweekRepeatsOnly = renderDigest({ runDate: "2026-09-16", leadIn: "x", escalations: [item("Repeat Co")] }, templateHtml);
+  assert.equal(midweekRepeatsOnly, null);
+});
 
-  const weekdayRepeatsOnly = renderDigest({ runDate: "2026-09-15", leadIn: "x", escalations: [item("Repeat Co")] }, templateHtml);
-  assert.equal(weekdayRepeatsOnly, null);
+test("never renders an email for a Saturday or Sunday run", () => {
+  // Email is a weekday product: the Sunday sweep hands its results to Monday instead.
+  const payload = { leadIn: "x", findings: [{ headline: "H", date: "2026-09-19", summary: "s", sourceUrl: "https://e.com", sourceName: "E" }] };
+  assert.equal(renderDigest({ ...payload, runDate: "2026-09-19" }, templateHtml), null);
+  assert.equal(renderDigest({ ...payload, runDate: "2026-09-20" }, templateHtml), null);
+  assert.ok(renderDigest({ ...payload, runDate: "2026-09-21" }, templateHtml));
 });
 
 test("rejects a leadIn written in pipeline or admin-queue wording", () => {

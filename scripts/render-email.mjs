@@ -207,11 +207,20 @@ export function digestLateItems(items = [], runDate) {
   });
 }
 
-// An escalation repeats in the Sunday digest only, unless it escalated this run. Daily
-// repetition made the subject line wrong and the email read as noise.
+const weekday = (runDate) => new Date(`${runDate}T00:00:00Z`).getUTCDay();
+
+// Email goes out on weekdays only. The Sunday sweep drafts no digest; what it logs reaches
+// the next weekday digest through meta.json's digest_carryover.
+export function isWeekend(runDate) {
+  const day = weekday(runDate);
+  return day === 0 || day === 6;
+}
+
+// An escalation repeats in the Monday digest only, unless it escalated since the last
+// digest. Daily repetition made the subject line wrong and the email read as noise.
 export function digestEscalations(items = [], runDate) {
-  const sunday = new Date(`${runDate}T00:00:00Z`).getUTCDay() === 0;
-  return items.filter((item) => item.newlyEscalated === true || sunday);
+  const monday = weekday(runDate) === 1;
+  return items.filter((item) => item.newlyEscalated === true || monday);
 }
 
 // The leadIn is a news headline. Three wording corrections in ten days showed a prose
@@ -267,9 +276,11 @@ function buildPreheader(input) {
 
 // Pure: takes the parsed input payload and the raw template file contents,
 // returns { subject, preheader, html } or null if there's nothing to report
-// this run (the caller should skip drafting an email entirely in that case).
+// this run or runDate is a Saturday or Sunday (the caller should skip drafting an
+// email entirely in that case).
 // Throws if the leadIn uses internal or admin-queue wording, so the run rewrites it.
 export function renderDigest(rawInput, templateHtml) {
+  if (isWeekend(rawInput.runDate)) return null;
   const base = { findings: [], escalations: [], lateItems: [], candidates: [], leadIn: "", ...rawInput };
   const input = {
     ...base,
@@ -331,10 +342,15 @@ async function main() {
   const input = JSON.parse(await readFile(inputPath, "utf8"));
   const templateHtml = await readFile(templatePath, "utf8");
 
+  if (isWeekend(input.runDate)) {
+    console.log("Weekend run — no email. The next weekday digest carries this run's results through meta.json's digest_carryover.");
+    return;
+  }
+
   const heldLate = (input.lateItems?.length ?? 0) - digestLateItems(input.lateItems, input.runDate).length;
   const heldEscalations = (input.escalations?.length ?? 0) - digestEscalations(input.escalations, input.runDate).length;
   if (heldLate) console.log(`Held back ${heldLate} late item(s): older than ${LATE_ITEM_MAX_AGE_DAYS} days or not confirmed. They stay on the dashboard.`);
-  if (heldEscalations) console.log(`Held back ${heldEscalations} repeat escalation(s): repeats go out in the Sunday digest only.`);
+  if (heldEscalations) console.log(`Held back ${heldEscalations} repeat escalation(s): repeats go out in the Monday digest only.`);
 
   let result;
   try {

@@ -18,7 +18,7 @@ The invocation (the scheduled routine's prompt, or what the person asked) tells 
 | Mode | Trigger | Runs |
 |---|---|---|
 | **Daily scan** | "run daily LAI scan", "run today's LAI tracking", or no mode specified | Track A + Track B1 + Track B3 (cheap pass) + QC Tier 0/1 |
-| **Weekly sweep** | "run weekly LAI sweep", "Sunday LAI sweep" | Track B2 + Track B3 (deep pass) + QC Tier 2, plus Track A/B1 whenever `last_run.daily_scan` is more than 12 hours old — true on every scheduled Sunday run, since no daily scan runs on weekends |
+| **Weekly sweep** | "run weekly LAI sweep", "Sunday LAI sweep" | Track B2 + Track B3 (deep pass) + QC Tier 2 only. Never Track A or B1 and never an email: what it logs reaches the next weekday digest (see "How the week is covered") |
 | **Full audit** | Only when explicitly requested — "run a full LAI audit/re-verification" | QC Tier 3 only. Never self-trigger this — see QC section |
 
 If it's ambiguous which mode was meant, default to **Daily scan** — it's the cheapest and safest default.
@@ -42,7 +42,7 @@ Nothing runs on Saturday. The routine scheduler only accepts cron in UTC, so the
 - **Day counts** — the quiet-umbrella throttle, the stall rule's 30+ days, and the digest coverage strip's `daysSinceCheck` and `daysSinceNews` — are differences between KST calendar dates.
 - **Source event dates** (`finding.date`, a candidate's `evidence.date`, patent priority dates) are the date as the source publishes it. Never shift them by a time zone: they record when something happened in the world, not when a run saw it.
 
-**How the week is covered.** The Sunday sweep is the only run between Friday 06:00 and Monday 06:00, so it runs Track A and B1 itself and writes `last_run.daily_scan` as well as `last_run.weekly_sweep`. That splits the weekend cleanly: Sunday's window reaches back to Friday's daily scan (about 51 hours, covering Friday, Saturday and Sunday morning), and Monday's reaches back to Sunday's sweep (about 21 hours). A weekly sweep started by hand within 12 hours of a daily scan skips Track A/B1 rather than repeating them.
+**How the week is covered.** Email goes out on weekdays only, so the Sunday sweep does the weekly-only work (Track B2, Track B3's deep pass, QC Tier 2) and nothing else. It never runs Track A or B1, never writes `last_run.daily_scan` or `coverage.daily_scan`, and never drafts a digest. The weekend belongs to Monday: Monday's daily scan window reaches back to Friday's daily scan (about 72 hours, covering Friday, Saturday and Sunday), and whatever the Sunday sweep logged reaches Monday's digest through `meta.json`'s `digest_carryover` (see "Email digest"). A weekly sweep started by hand follows the same rule.
 
 ## Search budget discipline
 
@@ -61,20 +61,19 @@ A real run hit its session search cap partway through a Daily scan, covering onl
 
 The whole point of a *daily* scan is that the dashboard and the email digest always read as current — a finding that's actually a week old, surfacing today as if it just happened, makes the tracker feel unpunctual even though the information itself is accurate. This section draws that line consistently; it is not a license to skip real news that arrives late.
 
-**Window definition:** `window_start` = the timestamp of the last successful `daily_scan` run, from `meta.json.last_run.daily_scan`. If that's null (first run, or the last run never completed), fall back to `last_run.weekly_sweep` if it's more recent than 24h ago; if neither exists, default `window_start` to 24 hours before now. Letting the window stretch back to the last real run — instead of a hard 24h cutoff — means a skipped day or a long weekend widens the net instead of silently losing whatever aged past exactly 24h.
+**Window definition:** `window_start` = the timestamp of the last successful `daily_scan` run, from `meta.json.last_run.daily_scan`. If that's null (first run, or the last run never completed), default `window_start` to 24 hours before now. The weekly sweep never sets the window. Letting the window stretch back to the last real run — instead of a hard 24h cutoff — means a skipped day or a long weekend widens the net instead of silently losing whatever aged past exactly 24h.
 
-**The weekend sits inside the Sunday and Monday windows, and this is the mechanism that makes it work.** Because `window_start` is the last real run rather than a fixed 24 hours back, Sunday's sweep reaches back to Friday's daily scan and Monday's daily scan reaches back to Sunday's sweep (see "How the week is covered" above). Three consequences, none of them anomalies to correct for:
+**The weekend sits inside Monday's window, and this is the mechanism that makes it work.** Because `window_start` is the last real daily scan rather than a fixed 24 hours back, Monday's run reaches back to Friday's. Two consequences, neither an anomaly to correct for:
 
-- **Friday, Saturday and Sunday-morning news is inside Sunday's window**, so it is a normal headline finding in Sunday's digest. It does not belong in the discovered-late note — that is for genuinely old material, not for news the schedule chose not to look at yet.
-- **Sunday throttles the quiet records Friday checked, and Monday picks them up.** Their weekend news still counts as headline on Monday because a throttled record's window starts at its own last check (see "Applying it" below).
-- **Budget accordingly.** On Sunday, Track A/B1 share one search budget with B2, B3's deep pass and QC Tier 2. Do the breadth-first Track A pass before any B2 query, and record coverage honestly in `meta.json` if the budget runs out.
+- **Friday, Saturday and Sunday news is inside Monday's window**, so it is a normal headline finding in Monday's digest. It does not belong in the discovered-late note — that is for genuinely old material, not for news the schedule chose not to look at yet.
+- **Monday carries the heaviest daily load.** Every record Friday checked is due again (three calendar days is past the throttle's two), and B1's searches cover three days instead of one. Do the breadth-first Track A pass first, and record coverage honestly in `meta.json` if the budget runs out.
 
-Use the search tool's recency filter to match the actual window, not a reflexive "past day" — on a Sunday, "past day" silently discards most of what the run exists to catch.
+Use the search tool's recency filter to match the actual window, not a reflexive "past day" — on a Monday, "past day" silently discards most of what the run exists to catch.
 
 **Applying it:**
-- When searching, prefer the search tool's own recency filter scoped to roughly this window where available (a Sunday needs "past week", not "past day" — see the weekend note above) — this also helps the search-budget discipline above by not pulling back stale results to begin with.
+- When searching, prefer the search tool's own recency filter scoped to roughly this window where available (a Monday needs at least "past 3 days", not "past day" — see the weekend note above) — this also helps the search-budget discipline above by not pulling back stale results to begin with.
 - For every finding (Track A) or candidate (Track B1), compare its actual publish/event date (the finding's `date` field, or the candidate evidence's `date`) against `window_start`.
-- **A throttled record's window starts at its own last check.** The quiet-umbrella throttle means some records were not queried on the previous run, so news about them from the skipped days was never seen. For a Track A record, compare against the earlier of `window_start` and 00:00 KST on that record's previous `last_checked` date. Without this, a record checked Friday, throttled Sunday and checked Monday would push its Saturday news into the discovered-late note.
+- **A throttled record's window starts at its own last check.** The quiet-umbrella throttle means some records were not queried on the previous run, so news about them from the skipped days was never seen. For a Track A record, compare against the earlier of `window_start` and 00:00 KST on that record's previous `last_checked` date. Without this, a record checked Wednesday, throttled Thursday and Friday and checked again Monday would push its Thursday news into the discovered-late note.
   - **Within the window:** log normally. This is what belongs in the digest's headline "what's new" section — a punctual update.
   - **Older than the window (real news, just discovered late):** still log it — append-only history means real information is never dropped just because it arrived late (see "Writing to the data file" below). But keep it out of the digest's headline list; if it's material enough to mention, put it in a clearly separate "discovered late" note carrying its actual original date, so the digest never implies something is fresher than it is.
 - This gate applies to Track A findings and Track B1 candidates only. Track B2's weekly structural sources (conference abstracts, patent filings, etc.) refresh on their own slower cadence by design — applying a 24h window there would filter out almost everything B2 exists to catch.
@@ -202,7 +201,7 @@ For each candidate in scope:
 
 A `ready_for_promotion` candidate is the loudest thing this skill can produce, and it stays loud until the admin resolves it:
 
-- It goes in the digest's `escalations` array, never `candidates`, on every run until its `resolution` is non-null. Set `newlyEscalated: true` on the run where its `status` changed to `ready_for_promotion`. The renderer shows an escalation on that run and in every Sunday digest and holds repeats back on weekdays, so a repeat never inflates the subject line or reads as noise.
+- It goes in the digest's `escalations` array, never `candidates`, on every run until its `resolution` is non-null. Set `newlyEscalated: true` in the first digest after its `status` changed to `ready_for_promotion`: that same run for a daily scan, or Monday's run for an escalation the Sunday sweep wrote (listed in `digest_carryover.newly_escalated`). The renderer shows an escalation in that digest and in every Monday digest, and holds repeats back on the other weekdays, so a repeat never inflates the subject line or reads as noise.
 - On a digest where it appears, it leads the `leadIn`. A program that has cleared every evidence bar is the strongest *news* a run can produce: a program the tracker didn't know about, now documented well enough to stand on its own. **Write the sentence as that news, never as a decision waiting on the reader.** "Ready for promotion" is this skill's internal bookkeeping and never appears in the digest (see "The leadIn is news, not a work queue" below).
 - It sorts to the top of the dashboard's candidate queue, and the app counts escalations separately from the plain pending count.
 
@@ -305,9 +304,17 @@ git fetch origin main && git branch -r --contains HEAD   # origin/main must be l
 
 ## Email digest
 
-After a Daily scan or Weekly sweep, draft one bundled digest of what changed this run as a **Gmail draft**, not a sent email. This mirrors the promotion boundary above: drafting is this skill's job, sending is a decision only the admin makes, every time — there is no standing authorization to send mail unattended. If a future admin decision changes this policy, it will be written here explicitly; until then, draft-only is the rule, not a placeholder.
+After a Daily scan, draft one bundled digest of what changed as a **Gmail draft**, not a sent email. **A Weekly sweep drafts no email**, because email goes out on weekdays only. This mirrors the promotion boundary above: drafting is this skill's job, sending is a decision only the admin makes, every time — there is no standing authorization to send mail unattended. If a future admin decision changes this policy, it will be written here explicitly; until then, draft-only is the rule, not a placeholder.
 
 **Don't hand-write the HTML, and don't touch the template file.** `email/templates/daily-digest.html` and `scripts/render-email.mjs` are frozen infrastructure, exactly like the dashboard's `index.html`/`src/`/`scripts/build.mjs` — a routine run changes data, never design. Never edit the rendered HTML by hand, never improvise your own markup, and never modify the template file itself from this skill, even if the output looks like it could use a tweak — that's a deliberate, reviewed, one-off change the admin makes in conversation, not something a daily/weekly run does on its own. Your job every run is only to supply the input data, run the script unmodified, and hand its output to the Gmail draft tool unmodified.
+
+**The Sunday hand-off.** Instead of a digest, the weekly sweep records what it logged in `meta.json`'s `digest_carryover`:
+
+```json
+{ "from": "2026-09-20T09:12:40+09:00", "findings": [{ "umbrella_id": "peptron-pt403", "finding_id": "f-2026-09-19-001" }], "candidates": ["cand-2026-09-20-001"], "newly_escalated": ["cand-2026-09-02-001"] }
+```
+
+If a carryover already exists because no daily scan has picked it up yet, append to it rather than replacing it. The next daily scan reads it at the start of the run and puts every item in its own digest: each carried finding goes into `findings` or `lateItems` by that run's freshness window, carried candidates go into `candidates`, and carried escalations get `newlyEscalated: true`. That daily scan sets `digest_carryover` back to `null` in its own `meta.json` update. `scripts/build.mjs` fails if a carryover names a finding or candidate that doesn't exist.
 
 **1. Build the input payload** as a JSON object (write it to a scratch path, e.g. `email/draft-input.json` — this file is gitignored, it's per-run scratch, not registry data):
 
@@ -318,7 +325,7 @@ After a Daily scan or Weekly sweep, draft one bundled digest of what changed thi
   "findings": [ /* one entry per finding inside the freshness window this run */ ],
   "escalations": [ /* every unresolved ready_for_promotion candidate; newlyEscalated: true on the run it escalated (see Track B3) */ ],
   "lateItems": [ /* real findings logged this run but dated outside the freshness window, each carrying its confidence */ ],
-  "candidates": [ /* new Track B1/B2 candidates created this run, and nothing else */ ],
+  "candidates": [ /* candidates created this run plus any in digest_carryover, and nothing else */ ],
   "coverage": [ /* one row per molecule class, in MOLECULE_ORDER -- see below */ ]
 }
 ```
@@ -326,7 +333,8 @@ After a Daily scan or Weekly sweep, draft one bundled digest of what changed thi
 **The renderer decides what gets emailed, so pass everything and let it filter:**
 
 - Each `lateItems` entry carries `confidence` copied from the finding. Only a `confirmed` item dated within 90 days of `runDate` is emailed; older or unverified items stay logged and on the dashboard. A patent logged under its priority date is usually older than that, so it normally stays out of the digest while remaining tracked.
-- `escalations` repeat on Sundays only unless `newlyEscalated` is true, as described in Track B3.
+- `escalations` repeat on Mondays only unless `newlyEscalated` is true, as described in Track B3.
+- The renderer returns nothing for a Saturday or Sunday `runDate`: email is a weekday product.
 - The `leadIn` is linted. The renderer exits with an error naming the problem if the sentence contains internal or queue wording (umbrella, sweep, wire skim, promotion, awaiting or waiting on, pending, queue, coverage, "your decision/review/call") or an N/N count such as 37/37. Phase designations like "Phase 2/3" are fine. Rewrite the sentence and render again; never edit the renderer to get past it.
 
 **`coverage` is what stops the tagged layout from implying a class was dropped.** The digest tags each row with its molecule class rather than splitting into one section per class, because on 96 of 111 recorded dates there was exactly one finding and six fixed sections would render five empty headings almost every day. The cost of tagging is that a class with no news is simply absent, so the coverage strip carries it instead: one compact row per class, always all six, at the foot of the digest.
@@ -396,6 +404,7 @@ If nothing is left to report after its filters, the script prints a message and 
 - Never change a candidate's `status` without writing `promotion_bar.evidence` explaining why.
 - Never drop a `ready_for_promotion` candidate out of the digest's `escalations` array until its `resolution` is non-null, and never put it in `candidates`.
 - Never send the digest email — draft it and stop, every run.
+- Never draft a digest from a Weekly sweep or for a Saturday or Sunday `runDate`, and never run Track A or B1 in a Weekly sweep; the sweep writes `digest_carryover` instead.
 - Never write the admin's queue or decision workflow into the digest copy — no pending/awaiting counts, no "ready for your promotion decision," no call to action. The digest informs; the dashboard is where decisions get made.
 - Never run the Tier 3 full audit automatically from a Daily scan or Weekly sweep.
 - Never blend multiple aliases into one search query.
