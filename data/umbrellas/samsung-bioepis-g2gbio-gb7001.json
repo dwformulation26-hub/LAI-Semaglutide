@@ -102,13 +102,14 @@
       "id": "f-2024-12-10-001",
       "date": "2024-12-10",
       "type": "regulatory",
-      "summary": "Discovered via weekly patent sweep, not previously logged: G2GBio was granted Korean patent KR102792620B1 for a sustained-release microsphere pharmaceutical composition containing tirzepatide (application filed 2024-06-03, published 2024-12-10) — an initial-burst-inhibiting biodegradable-polymer formulation for diabetes/obesity/NASH/hypertension. Indicates a tirzepatide-based microsphere asset in G2GBio's pipeline distinct from the tracked semaglutide GB-7001 program.",
+      "summary": "G2GBio was granted Korean patent KR102792620B1 for a sustained-release microsphere pharmaceutical composition containing tirzepatide (application filed 2024-06-03, published 2024-12-10) — an initial-burst-inhibiting biodegradable-polymer formulation for diabetes/obesity/NASH/hypertension. Indicates a tirzepatide-based microsphere asset in G2GBio's pipeline distinct from the tracked semaglutide GB-7001 program.",
       "source": {
         "name": "Google Patents record (KR102792620B1)",
         "url": "https://patents.google.com/patent/KR102792620B1/en",
         "tier": 1
       },
-      "confidence": "unverified"
+      "confidence": "unverified",
+      "verification_note": "Found by the weekly patent search; not picked up when the patent was granted."
     },
     {
       "id": "f-2026-05-18-001",
@@ -126,25 +127,27 @@
       "id": "f-2026-09-08-001",
       "date": "2026-09-08",
       "type": "trial_data_readout",
-      "summary": "G2GBio reported consistent Phase 1 pharmacokinetic results across three countries (Korea, Canada, Indonesia) for GB-5001, its once-monthly long-acting donepezil injectable for Alzheimer's/dementia -- a separate asset from the tracked GB-7001 semaglutide program. Single-dose PK across 70/140/280mg was dose-proportional; population-PK steady-state simulation showed 140mg approximating oral Aricept 5mg and 280mg approximating oral Aricept 10mg. Company said it will pursue partnership discussions and follow-on development toward pivotal trials. Exact publish date/time of the 280mg steady-state detail (from a related TheBioNews article) not independently re-verified beyond search-result snippets.",
+      "summary": "G2GBio reported consistent Phase 1 pharmacokinetic results across three countries (Korea, Canada, Indonesia) for GB-5001, its once-monthly long-acting donepezil injectable for Alzheimer's/dementia -- a separate asset from the tracked GB-7001 semaglutide program. Single-dose PK across 70/140/280mg was dose-proportional; population-PK steady-state simulation showed 140mg approximating oral Aricept 5mg and 280mg approximating oral Aricept 10mg. Company said it will pursue partnership discussions and follow-on development toward pivotal trials.",
       "source": {
         "name": "Money Today (머니투데이), corroborated by TheBioNews",
         "url": "https://www.mt.co.kr/thebio/2026/09/08/2026090808284832855",
         "tier": 2
       },
-      "confidence": "confirmed"
+      "confidence": "confirmed",
+      "verification_note": "The 280 mg steady-state detail comes from a related TheBioNews article that was read only as a search-engine summary."
     },
     {
       "id": "f-2026-07-21-001",
       "date": "2026-07-21",
       "type": "deal_partnership",
-      "summary": "Discovered via this run's wire skim, not previously logged: G2GBio signed a contract with medical/bio AI startup SpiderCore to build an AI-based R&D platform for long-acting injectable formulation development -- training models on accumulated microsphere formulation and process data to automate formulation-combination search and process analysis. G2GBio's stated goals are 2x+ faster development and 50%+ lower cost, with platform rollout to the research floor targeted within two years. A tooling/process partnership, not a new drug asset or deal partner for GB-7001 itself.",
+      "summary": "G2GBio signed a contract with medical/bio AI startup SpiderCore to build an AI-based R&D platform for long-acting injectable formulation development -- training models on accumulated microsphere formulation and process data to automate formulation-combination search and process analysis. G2GBio's stated goals are 2x+ faster development and 50%+ lower cost, with platform rollout to the research floor targeted within two years. A tooling/process partnership, not a new drug asset or deal partner for GB-7001 itself.",
       "source": {
         "name": "Newspim, corroborated by TheBioNews",
         "url": "https://www.newspim.com/news/view/20260721000595",
         "tier": 2
       },
-      "confidence": "confirmed"
+      "confidence": "confirmed",
+      "verification_note": "Logged in September 2026; not picked up when it was announced in July."
     }
   ]
 }

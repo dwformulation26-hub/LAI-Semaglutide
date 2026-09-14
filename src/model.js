@@ -209,13 +209,24 @@ export function moleculeClasses(record) {
 // already declares, so any row's total can be re-derived by hand from the registry.
 export const SCORE_WEIGHTS = { stage: 45, momentum: 25, evidence: 18, dosing: 12 };
 
+// Momentum counts only news that moves a program. A quarterly sales line or a share move
+// used to refresh momentum exactly like a trial readout, so programs ranked by their
+// earnings calendar.
+export const MOMENTUM_TYPES = new Set(["regulatory", "trial_data_readout", "deal_partnership"]);
+
 export function competitiveScore(record, now = Date.now()) {
   const status = record.current_status ?? {};
 
   const order = STAGES[status.stage_label];
   const stage = Number.isFinite(order) ? Math.round((order / 7) * SCORE_WEIGHTS.stage) : 0;
 
-  const age = daysSince(status.last_updated, now);
+  const lastMove = (record.finding_history ?? [])
+    .filter((finding) => MOMENTUM_TYPES.has(finding.type))
+    .map((finding) => finding.date)
+    .filter(Boolean)
+    .sort()
+    .at(-1);
+  const age = daysSince(lastMove, now);
   const momentum = age === null ? 0 : age <= 14 ? 25 : age <= 30 ? 21 : age <= 60 ? 16 : age <= 90 ? 11 : age <= 180 ? 6 : 0;
 
   const latest = [...(record.finding_history ?? [])].sort((a, b) => String(b.date).localeCompare(String(a.date)))[0];
@@ -242,6 +253,20 @@ export function truncate(value, limit = 160) {
   if (text.length <= limit) return text;
   const shortened = text.slice(0, limit - 1);
   return `${shortened.slice(0, shortened.lastIndexOf(" ") || shortened.length)}…`;
+}
+
+// Abbreviations end in a period without ending the sentence. Splitting on every period
+// cut a feed headline to "Ascletis initiated a U.S."
+const ABBREVIATION = /(?:\b(?:[A-Za-z]\.){2,}|\b(?:Inc|Ltd|Co|Corp|Dr|No|St|vs|approx)\.)$/;
+
+export function leadSentence(value) {
+  const text = String(value ?? "").replace(/\s+/g, " ").trim();
+  const boundary = /[.!?](?=\s)/g;
+  for (let match = boundary.exec(text); match; match = boundary.exec(text)) {
+    const head = text.slice(0, match.index + 1);
+    if (!(match[0] === "." && ABBREVIATION.test(head))) return head;
+  }
+  return text;
 }
 
 export function formatDate(value, long = false, lang = "en") {

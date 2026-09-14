@@ -15,6 +15,61 @@ const requiredFields = [
   "finding_history"
 ];
 const validStageLabels = Object.keys(STAGES);
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+const UNRESOLVED_STATUSES = new Set(["watch", "pending", "ready_for_promotion", "stalled"]);
+const BAR_KEYS = ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"];
+const DATE_BASES = ["stated", "inferred"];
+
+// The dashboard renders summaries and source names verbatim, so they describe the world
+// only. How a run found or checked an item ("discovered via this run", "fetch was
+// EGRESS_BLOCKED") belongs in verification_note. These checks collect every problem
+// before failing, so an unattended run can fix them all in one pass.
+const NARRATION = /EGRESS_BLOCKED|not previously logged|discovered via (?:this run|(?:the )?(?:weekly|daily))|this run['’]s|FOR REVIEWER|SCOPE CAVEAT|search[- ](?:index|result|snippet|engine)/i;
+const problems = [];
+
+function checkWorldText(label, ...texts) {
+  return texts.filter((text) => NARRATION.test(String(text ?? "")))
+    .map(() => `${label}: summary, snippet or source name narrates the pipeline; move that to verification_note`);
+}
+
+function checkVerificationFields(label, item) {
+  const found = [];
+  if ("date_basis" in item && !DATE_BASES.includes(item.date_basis)) found.push(`${label}: date_basis must be one of ${DATE_BASES.join(", ")}`);
+  if ("verification_note" in item && typeof item.verification_note !== "string") found.push(`${label}: verification_note must be a string`);
+  if (!ISO_DATE.test(item.date ?? "")) found.push(`${label}: date must be YYYY-MM-DD`);
+  return found;
+}
+
+// Track B3's stall rule and weekly deep pass read these fields; a candidate missing them
+// is silently skipped rather than failing loudly, so their shape is enforced here.
+function checkUnresolvedCandidate(candidate) {
+  const label = `candidates.json ${candidate.id}`;
+  const found = [];
+  if (!ISO_DATE.test(candidate.created_date ?? "")) found.push(`${label}: created_date must be YYYY-MM-DD`);
+  if (!Array.isArray(candidate.evidence) || !candidate.evidence.length) found.push(`${label}: needs at least one evidence entry`);
+  (candidate.evidence ?? []).forEach((item, index) => {
+    if (!item.source?.url) found.push(`${label} evidence[${index}]: source.url is required`);
+  });
+  const followUp = candidate.follow_up;
+  if (!followUp) {
+    found.push(`${label}: follow_up is required ({ last_checked: null, checks_run: 0, near_bar: false } for a new candidate)`);
+  } else {
+    if (!(followUp.last_checked === null || ISO_DATE.test(followUp.last_checked ?? ""))) found.push(`${label}: follow_up.last_checked must be YYYY-MM-DD or null`);
+    if (!Number.isInteger(followUp.checks_run) || followUp.checks_run < 0) found.push(`${label}: follow_up.checks_run must be a non-negative integer`);
+    if (typeof followUp.near_bar !== "boolean") found.push(`${label}: follow_up.near_bar must be true or false`);
+  }
+  const bar = candidate.promotion_bar;
+  if (!bar) {
+    found.push(`${label}: promotion_bar is required`);
+  } else {
+    const keys = [...(bar.cleared ?? []), ...(bar.unmet ?? [])];
+    if (keys.length !== BAR_KEYS.length || !BAR_KEYS.every((key) => keys.includes(key))) {
+      found.push(`${label}: promotion_bar.cleared and unmet must together name each of ${BAR_KEYS.join(", ")} exactly once`);
+    }
+    if (!bar.evidence) found.push(`${label}: promotion_bar.evidence is required`);
+  }
+  return found;
+}
 
 async function readJson(filePath) {
   return JSON.parse(await readFile(filePath, "utf8"));
@@ -67,6 +122,10 @@ for (const fileName of umbrellaFiles) {
       `${fileName}: current_status.molecule_evidence is required — one sentence naming the fact behind the class, or behind leaving it unassigned.`
     );
   }
+  for (const finding of record.finding_history) {
+    problems.push(...checkWorldText(`${fileName} ${finding.id}`, finding.summary, finding.source?.name));
+    problems.push(...checkVerificationFields(`${fileName} ${finding.id}`, finding));
+  }
   records.push(record);
 }
 
@@ -88,6 +147,15 @@ for (const candidate of candidates) {
       `candidates.json: ${candidate.id} is ready_for_promotion but has no promotion_bar.evidence explaining why`
     );
   }
+  for (const [index, item] of (candidate.evidence ?? []).entries()) {
+    problems.push(...checkWorldText(`candidates.json ${candidate.id} evidence[${index}]`, item.snippet, item.source?.name));
+    problems.push(...checkVerificationFields(`candidates.json ${candidate.id} evidence[${index}]`, item));
+  }
+  if (UNRESOLVED_STATUSES.has(candidate.status)) problems.push(...checkUnresolvedCandidate(candidate));
+}
+
+if (problems.length) {
+  throw new Error(`Data checks failed (${problems.length}):\n  - ${problems.join("\n  - ")}`);
 }
 
 const dateValues = records.flatMap((record) => [

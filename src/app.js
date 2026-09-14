@@ -1,4 +1,4 @@
-import { CANDIDATE_TONES, FAMILY_COLORS, FAMILY_LABELS, FINDING_LABELS, MOLECULE_COLORS, MOLECULE_ORDER, RACE_ORDERS, SCORED_CLASSES, SCORE_WEIGHTS, STAGES, STAGE_COLORS, formatDate, interpretLeader, orderPrograms, prepareDatabase, safeUrl, truncate } from "./model.js";
+import { CANDIDATE_TONES, FAMILY_COLORS, FAMILY_LABELS, FINDING_LABELS, MOLECULE_COLORS, MOLECULE_ORDER, RACE_ORDERS, SCORED_CLASSES, SCORE_WEIGHTS, STAGES, STAGE_COLORS, formatDate, interpretLeader, leadSentence, orderPrograms, prepareDatabase, safeUrl, truncate } from "./model.js";
 import { DEFAULT_LANG, LANGS, familyLabelText, findingLabelText, moleculeLabelText, originLabelText, stageLabelText, t } from "./i18n.js";
 
 const $ = (selector, root = document) => root.querySelector(selector);
@@ -14,7 +14,7 @@ function node(tag, className = "", text) {
 
 const clear = (element) => { element.replaceChildren(); return element; };
 const badge = (text, tone = "blue") => node("span", `pill pill-${tone}`, text);
-const firstSentence = (value, lang) => truncate(String(value || (lang === "ko" ? "업데이트 기록됨" : "Update recorded")).replace(/\s+/g, " ").trim().split(/(?<=[.!?])\s+/)[0], 125);
+const firstSentence = (value, lang) => truncate(leadSentence(value || (lang === "ko" ? "업데이트 기록됨" : "Update recorded")), 125);
 
 function sourceAnchor(value, label, lang) {
   const anchor = node("a", "source-link", label);
@@ -229,7 +229,11 @@ function renderOverview(data) {
         : t(lang, "conditions.pending.badge"),
       data.readyCandidates.length ? "orange" : "amber",
       data.readyCandidates.length
-        ? t(lang, "conditions.pending.detailEscalated", { count: data.readyCandidates.length })
+        ? t(lang, "conditions.pending.detailEscalated", {
+          count: data.readyCandidates.length,
+          entities: data.readyCandidates.length === 1 ? "candidate has" : "candidates have",
+          await: data.readyCandidates.length === 1 ? "awaits" : "await"
+        })
         : t(lang, "conditions.pending.detail"),
       data.readyCandidates.length ? "#ee7443" : "#e4a11b"],
     ["03", t(lang, "conditions.monitoring.label"), `${data.health.healthyCount}/${data.health.total}`, data.health.allHealthy ? t(lang, "conditions.monitoring.badgeActive") : t(lang, "conditions.monitoring.badgeAttention"), data.health.allHealthy ? "green" : "orange", data.health.summary, "#2bb98a"]
@@ -287,7 +291,7 @@ function renderStatistics(data) {
   const korean = data.records.filter((record) => record.origin === "KR").length;
   const values = [
     [data.records.length, t(lang, "statistics.programsTracked"), t(lang, "statistics.programsTrackedDetail", { korean, global: data.records.length - korean })],
-    [data.records.filter((record) => record.isScored).length, t(lang, "statistics.semaglutideLinked"), t(lang, "statistics.semaglutideLinkedDetail")],
+    [data.records.filter((record) => record.isScored).length, t(lang, "statistics.scoredPrograms"), t(lang, "statistics.scoredProgramsDetail")],
     [data.findings.length, t(lang, "statistics.historicalFindings"), t(lang, "statistics.historicalFindingsDetail")],
     [confirmed, t(lang, "statistics.confirmedEvidence"), t(lang, "statistics.confirmedEvidenceDetail", { count: data.findings.length - confirmed })]
   ];

@@ -1,0 +1,45 @@
+{
+  "id": "bostal-b2227",
+  "canonical_name": "Bostal Drug Delivery – B2227 (cariprazine LAI)",
+  "origin": "Global",
+  "entity_type": [
+    "company",
+    "asset"
+  ],
+  "technology_family": "other",
+  "aliases": [
+    "Bostal Drug Delivery",
+    "Bostal Drug Delivery Co., Ltd",
+    "Bostal LLC",
+    "B2227"
+  ],
+  "current_status": {
+    "stage": "Phase 2/3 PK study against oral Vraylar registered (NCT07722728, first posted Jul 23 2026) and not yet recruiting at the last registry update. The delivery platform for B2227 is not disclosed; Bostal runs microsphere (Zpheres), in-situ gel (Geleepot) and nanocrystal (Kriztols) LAI platforms, so technology_family stays 'other' until one is named.",
+    "stage_label": "IND filed",
+    "stage_evidence": "ClinicalTrials.gov lists the Phase 2/3 study of B2227 as not yet recruiting (estimated start Aug 2026), and a registered study that is not yet recruiting is bucketed as IND filed.",
+    "molecule_class": [
+      "non_incretin"
+    ],
+    "molecule_evidence": "B2227 is an extended-release injectable suspension of cariprazine, an antipsychotic, per its ClinicalTrials.gov registration.",
+    "dosing_target": "Not disclosed (single-dose PK study at 30, 70 and 150 mg SC)",
+    "partner": null,
+    "data_point": "Phase 2/3 PK, safety and tolerability study against Vraylar capsules in schizophrenia; estimated completion Dec 2027.",
+    "last_updated": "2026-07-23",
+    "last_checked": "2026-09-14"
+  },
+  "finding_history": [
+    {
+      "id": "f-2026-07-23-001",
+      "date": "2026-07-23",
+      "type": "regulatory",
+      "summary": "Bostal Drug Delivery registered a Phase 2/3 study (NCT07722728) comparing the pharmacokinetics, safety and tolerability of single subcutaneous doses of B2227 extended-release injectable suspension (30, 70 or 150 mg) with oral Vraylar (cariprazine) in people with schizophrenia.",
+      "source": {
+        "name": "ClinicalTrials.gov NCT07722728",
+        "publication": "ClinicalTrials.gov",
+        "url": "https://clinicaltrials.gov/study/NCT07722728",
+        "tier": 1
+      },
+      "confidence": "confirmed"
+    }
+  ]
+}

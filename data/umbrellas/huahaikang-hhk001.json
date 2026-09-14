@@ -1,0 +1,58 @@
+{
+  "id": "huahaikang-hhk001",
+  "canonical_name": "Zhuhai Huahaikang – HHK001 (leuprorelin microsphere)",
+  "origin": "Global",
+  "entity_type": [
+    "company",
+    "asset"
+  ],
+  "technology_family": "other",
+  "aliases": [
+    "Zhuhai Huahaikang Pharmaceutical Technology",
+    "珠海市华海康医药科技",
+    "Huahaikang",
+    "HHK001"
+  ],
+  "current_status": {
+    "stage": "Phase Ia comparison with Enantone in endometriosis, registered twice: NCT07755956 (company-sponsored, first posted Aug 10 2026, listed as recruiting with an estimated start of Aug 31 2026) and NCT07793162 (Third Xiangya Hospital as sponsor, first posted Aug 28 2026, not yet recruiting). HHK001 is an improved leuprorelin acetate microsphere whose polymer is not disclosed, so technology_family stays 'other'.",
+    "stage_label": "IND filed",
+    "stage_evidence": "Both registrations still give an estimated rather than actual start date and one is not yet recruiting, so dosing is not shown to have begun; it stays at IND filed until a source says it has.",
+    "molecule_class": [
+      "non_incretin"
+    ],
+    "molecule_evidence": "HHK001 is a leuprorelin acetate (GnRH agonist) microsphere formulation, outside the incretin space.",
+    "dosing_target": "Single 3.75 mg SC dose in Phase Ia (the strength of 1-month Enantone)",
+    "partner": "Third Xiangya Hospital, Central South University (sponsor of NCT07793162)",
+    "data_point": "Phase Ia PK/PD, safety and preliminary efficacy comparison with Enantone in endometriosis.",
+    "last_updated": "2026-08-28",
+    "last_checked": "2026-09-14"
+  },
+  "finding_history": [
+    {
+      "id": "f-2026-08-10-001",
+      "date": "2026-08-10",
+      "type": "regulatory",
+      "summary": "Zhuhai Huahaikang registered a Phase Ia trial (NCT07755956) comparing HHK001, an improved leuprorelin acetate microsphere, with Enantone in patients with endometriosis.",
+      "source": {
+        "name": "ClinicalTrials.gov NCT07755956",
+        "publication": "ClinicalTrials.gov",
+        "url": "https://clinicaltrials.gov/study/NCT07755956",
+        "tier": 1
+      },
+      "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-08-28-001",
+      "date": "2026-08-28",
+      "type": "regulatory",
+      "summary": "A second registration of the HHK001 Phase Ia comparison with Enantone (NCT07793162) lists Third Xiangya Hospital of Central South University as sponsor and Zhuhai Huahaikang as collaborator, at a single 3.75 mg subcutaneous dose.",
+      "source": {
+        "name": "ClinicalTrials.gov NCT07793162",
+        "publication": "ClinicalTrials.gov",
+        "url": "https://clinicaltrials.gov/study/NCT07793162",
+        "tier": 1
+      },
+      "confidence": "confirmed"
+    }
+  ]
+}

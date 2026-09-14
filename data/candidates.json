@@ -211,7 +211,7 @@
         "closest_umbrella_id": "alkermes-aristada",
         "score": 0.15
       },
-      "status": "ready_for_promotion",
+      "status": "promoted",
       "created_date": "2026-09-02",
       "follow_up": {
         "last_checked": "2026-09-13",
@@ -223,7 +223,11 @@
         "unmet": [],
         "evidence": "The existing Tier 1 clinicaltrials.gov Phase 2/3 registration (NCT07722728, first posted 2026-07-23) is itself a stage-bearing event, which alone clears confirmed_source and second_dated_event under the promotion-bar rule; no new evidence needed this cycle. Fuzzy match to alkermes-aristada is low (0.15) -- not a merge case."
       },
-      "resolution": null
+      "resolution": {
+        "action": "promoted",
+        "umbrella_id": "bostal-b2227",
+        "date": "2026-09-14"
+      }
     },
     {
       "id": "cand-2026-09-02-006",
@@ -250,19 +254,21 @@
         },
         {
           "source": {
-            "name": "Institute for Biotechnology and Medicine Industry (IBMI, Taiwan) - via search index",
+            "name": "Institute for Biotechnology and Medicine Industry (IBMI, Taiwan)",
             "url": "https://ibmi.taiwan-healthcare.org/en/news_detail.php?REFDOCTYPID=0o4dd9ctwhtyumw0&REFDOCID=0t7lwrr73gaxmceh",
             "tier": 3
           },
-          "snippet": "Indexed article reports Anxo Pharmaceutical received FDA IND clearance for AX251, described as a long-acting injectable reformulation of an existing oral drug using Anxo's proprietary NanoCIP nanocrystal injectable platform. Direct page fetch returned 403; content is from search-index summary only, not independently re-verified by full-page read.",
-          "date": "2026-09-02"
+          "snippet": "Indexed article reports Anxo Pharmaceutical received FDA IND clearance for AX251, described as a long-acting injectable reformulation of an existing oral drug using Anxo's proprietary NanoCIP nanocrystal injectable platform.",
+          "date": "2026-09-02",
+          "verification_note": "Read from a search-engine summary only; the page refused a direct fetch. The date is the day a run found the article, not its publish date.",
+          "date_basis": "inferred"
         }
       ],
       "fuzzy_match": {
         "closest_umbrella_id": "alkermes-aristada",
         "score": 0.15
       },
-      "status": "ready_for_promotion",
+      "status": "promoted",
       "created_date": "2026-09-02",
       "follow_up": {
         "last_checked": "2026-09-13",
@@ -274,7 +280,11 @@
         "unmet": [],
         "evidence": "The existing Tier 1 clinicaltrials.gov Phase 1 registration (NCT07484204, first posted 2026-03-20) is itself a stage-bearing event, clearing confirmed_source and second_dated_event alone. A Tier 3 IND-clearance claim was re-surfaced this cycle via the same original single outlet (IBMI) rather than a genuinely independent second source, so it was not counted toward the bar -- the escalation rests on the Tier 1 trial registration alone."
       },
-      "resolution": null
+      "resolution": {
+        "action": "promoted",
+        "umbrella_id": "anxo-ax251",
+        "date": "2026-09-14"
+      }
     },
     {
       "id": "cand-2026-09-02-007",
@@ -362,7 +372,7 @@
         "closest_umbrella_id": "alkermes-vivitrol",
         "score": 0.4
       },
-      "status": "ready_for_promotion",
+      "status": "promoted",
       "created_date": "2026-09-02",
       "follow_up": {
         "last_checked": "2026-09-13",
@@ -374,7 +384,11 @@
         "unmet": [],
         "evidence": "The existing Tier 1 clinicaltrials.gov Phase 1 registration (NCT07269873, first posted 2025-12-08) is itself stage-bearing, clearing confirmed_source and second_dated_event alone. A possible NIDA methamphetamine-use-disorder grant was mentioned in this cycle's follow-up but its date could not be confirmed, so it was not counted toward the bar. Fuzzy match to alkermes-vivitrol (0.4) reflects the shared naltrexone/opioid-antagonist space but a different delivery technology (implant pellet vs PLGA microsphere) -- not a merge case."
       },
-      "resolution": null
+      "resolution": {
+        "action": "promoted",
+        "umbrella_id": "biocorrx-bicx104",
+        "date": "2026-09-14"
+      }
     },
     {
       "id": "cand-2026-09-02-009",
@@ -402,7 +416,7 @@
         "closest_umbrella_id": "peptron-luprone",
         "score": 0.4
       },
-      "status": "ready_for_promotion",
+      "status": "promoted",
       "created_date": "2026-09-02",
       "follow_up": {
         "last_checked": "2026-09-13",
@@ -414,7 +428,11 @@
         "unmet": [],
         "evidence": "The existing Tier 1 clinicaltrials.gov Phase Ia registration (NCT07793162, first posted 2026-08-28) is itself stage-bearing, clearing confirmed_source and second_dated_event alone. This cycle's follow-up found a possible second HHK001 trial record (NCT07755956) that has not yet been independently verified, so it was not added as evidence; worth confirming next sweep. Fuzzy match to peptron-luprone (0.4) reflects the shared leuprorelin-microsphere space, not a merge case."
       },
-      "resolution": null
+      "resolution": {
+        "action": "promoted",
+        "umbrella_id": "huahaikang-hhk001",
+        "date": "2026-09-14"
+      }
     },
     {
       "id": "cand-2026-09-05-001",
@@ -438,8 +456,10 @@
             "url": "https://www.hankyung.com/article/202602118729P",
             "tier": 2
           },
-          "snippet": "Korea BioNC reported animal-model results for its GLP-1/GIP/GCG triple-agonist–albumin conjugate obesity candidate (co-developed with ProAptec), claiming efficacy on par with Mounjaro (tirzepatide). Fetch of hankyung.com was EGRESS_BLOCKED this run, so this is based on search-result metadata only, not the full article text; date inferred from the article's URL ID (202602118729P -> 2026-02-11) and not independently confirmed.",
-          "date": "2026-02-11"
+          "snippet": "Korea BioNC reported animal-model results for its GLP-1/GIP/GCG triple-agonist–albumin conjugate obesity candidate (co-developed with ProAptec), claiming efficacy on par with Mounjaro (tirzepatide).",
+          "date": "2026-02-11",
+          "verification_note": "Read from search-result metadata only (hankyung.com refused a direct fetch). The date comes from the article's URL ID (202602118729P) and was not confirmed on the page.",
+          "date_basis": "inferred"
         },
         {
           "source": {
@@ -447,8 +467,10 @@
             "url": "https://www.mdtoday.co.kr/news/view/1065581756347305",
             "tier": 2
           },
-          "snippet": "Korea BioNC and ProAptec jointly filed a use patent for a GLP-1/GIP/GCG triple-agonist + albumin-conjugate candidate targeting roughly once-every-3-weeks dosing for obesity/diabetes, combining ProAptec's multi-action peptide platform with albumin-conjugation (click chemistry) technology. Fetch of mdtoday.co.kr was EGRESS_BLOCKED this run; exact publish date not confirmed, could not be verified beyond search-result title/summary.",
-          "date": "2026-02-11"
+          "snippet": "Korea BioNC and ProAptec jointly filed a use patent for a GLP-1/GIP/GCG triple-agonist + albumin-conjugate candidate targeting roughly once-every-3-weeks dosing for obesity/diabetes, combining ProAptec's multi-action peptide platform with albumin-conjugation (click chemistry) technology.",
+          "date": "2026-02-11",
+          "verification_note": "Read from the search-result title and summary only (mdtoday.co.kr refused a direct fetch); the publish date was not confirmed.",
+          "date_basis": "inferred"
         }
       ],
       "fuzzy_match": {
@@ -538,8 +560,10 @@
             "url": "https://www.dtu.dk",
             "tier": 1
           },
-          "snippet": "\"A surgical strike in the battle against infections\" (dtu.dk, May 2026): Precision Antibiotics, a DTU spinout, is developing an injectable drug depot (product family referenced elsewhere as 'CarboCell G/C') delivering a combination of two existing antibiotics (gentamicin + clindamycin) locally into bone/soft tissue after e.g. a bone fracture, sustaining high local concentrations over several weeks to address biofilm infections resistant to systemic treatment. Raised DKK 60 million (~$8-9M) to fund first-in-human Phase 1 trials expected to start 2027. Related to a Novo Nordisk Foundation grant referencing 'CarboCell AntiBiotics (CCAB)', led by Anders Elias Hansen at DTU. Direct fetch of dtu.dk was EGRESS_BLOCKED this run; content is from search-engine snippet only, not independently re-verified by full-page read. SCOPE CAVEAT FOR REVIEWER: this is a local antibiotic depot for post-fracture bone/soft-tissue infection, not a systemic chronic-disease LAI (not GLP-1/antipsychotic/hormone-class) -- fits 'depot drug delivery tech' broadly but sits at the edge of the tracker's usual peptide/protein-LAI focus, flagging for a scope call rather than assuming inclusion.",
-          "date": "2026-05-01"
+          "snippet": "\"A surgical strike in the battle against infections\" (dtu.dk, May 2026): Precision Antibiotics, a DTU spinout, is developing an injectable drug depot (product family referenced elsewhere as 'CarboCell G/C') delivering a combination of two existing antibiotics (gentamicin + clindamycin) locally into bone/soft tissue after e.g. a bone fracture, sustaining high local concentrations over several weeks to address biofilm infections resistant to systemic treatment. Raised DKK 60 million (~$8-9M) to fund first-in-human Phase 1 trials expected to start 2027. Related to a Novo Nordisk Foundation grant referencing 'CarboCell AntiBiotics (CCAB)', led by Anders Elias Hansen at DTU.",
+          "date": "2026-05-01",
+          "verification_note": "Read from a search-engine snippet only (dtu.dk refused a direct fetch); the source gives the month, not the day. Scope note: a local antibiotic depot for post-fracture bone and soft-tissue infection, not a systemic chronic-disease LAI.",
+          "date_basis": "inferred"
         }
       ],
       "fuzzy_match": {
@@ -621,8 +645,9 @@
             "url": "https://www.edaily.co.kr/News/Read?newsId=01994246645577824",
             "tier": 2
           },
-          "snippet": "GSK is advancing felcorekibart, a long-acting engineered antibody originally developed by a China-founded biotech GSK acquired roughly two years ago, registering 6 new Phase 3 trials (2 COPD, 2 asthma, 2 CRSwNP). Corroborated by a TipRanks wire piece on the same COPD Phase 3 program. SCOPE CAVEAT FOR REVIEWER: this is a half-life-extended monoclonal antibody for respiratory disease (COPD/asthma/CRSwNP), not a depot/microsphere/peptide-LAI in the tracker's usual sense. It fits the 'molecular_engineering' technology_family loosely (durability via protein engineering, same broad category as GX-H9's hyFc or Metsera's engineered peptide) but is a therapeutic-area outlier versus the rest of the registry -- flagging for an explicit in/out-of-scope call rather than assuming inclusion.",
-          "date": "2026-09-08"
+          "snippet": "GSK is advancing felcorekibart, a long-acting engineered antibody originally developed by a China-founded biotech GSK acquired roughly two years ago, registering 6 new Phase 3 trials (2 COPD, 2 asthma, 2 CRSwNP). Corroborated by a TipRanks wire piece on the same COPD Phase 3 program.",
+          "date": "2026-09-08",
+          "verification_note": "Scope note: a half-life-extended monoclonal antibody for respiratory disease, not a depot, microsphere or peptide LAI."
         }
       ],
       "fuzzy_match": {
@@ -664,8 +689,9 @@
             "url": "https://www.astrazeneca.com/media-centre/press-releases/2026/astrazeneca-agrees-obesity-and-t2d-deal-with-cspc.html",
             "tier": 1
           },
-          "snippet": "AstraZeneca announced Jan 30, 2026 it will receive exclusive global rights outside China to CSPC's once-monthly injectable weight-management portfolio: lead clinical-ready asset SYH2082, a long-acting GLP-1R/GIPR agonist entering Phase I, plus three preclinical programmes, built on CSPC's AI-driven peptide discovery platform and proprietary 'LiquidGel' once-monthly dosing technology. CSPC receives $1.2B upfront plus up to $3.5B in development/regulatory milestones (plus commercial milestones/royalties); CSPC leads development through Phase I for all four programmes, then AstraZeneca takes over ex-China development/commercialization. CSPC retains China/Taiwan/HK/Macau rights with an AZ co-commercialization option post-approval. Deal expected to close Q2 2026. NOTE FOR REVIEWER: CSPC already has a separate pending candidate in this pipeline (cand-2026-09-02-007, CSPC ZhongQi Pharmaceutical Technology / SYHX2008, a long-acting octreotide for acromegaly) -- this is a different asset/subsidiary of the same corporate parent, surfaced independently via this run's wire skim, not a duplicate of that entry.",
-          "date": "2026-01-30"
+          "snippet": "AstraZeneca announced Jan 30, 2026 it will receive exclusive global rights outside China to CSPC's once-monthly injectable weight-management portfolio: lead clinical-ready asset SYH2082, a long-acting GLP-1R/GIPR agonist entering Phase I, plus three preclinical programmes, built on CSPC's AI-driven peptide discovery platform and proprietary 'LiquidGel' once-monthly dosing technology. CSPC receives $1.2B upfront plus up to $3.5B in development/regulatory milestones (plus commercial milestones/royalties); CSPC leads development through Phase I for all four programmes, then AstraZeneca takes over ex-China development/commercialization. CSPC retains China/Taiwan/HK/Macau rights with an AZ co-commercialization option post-approval. Deal expected to close Q2 2026.",
+          "date": "2026-01-30",
+          "verification_note": "CSPC has a separate candidate for a different asset from the same parent: cand-2026-09-02-007, SYHX2008 long-acting octreotide."
         },
         {
           "source": {
@@ -754,8 +780,9 @@
             "url": "https://pharmaphorum.com/news/hengrui-file-obesity-shot-china-after-phase-3-win",
             "tier": 2
           },
-          "snippet": "Ribupatide (HRS9531) is a GLP-1/GIP dual receptor agonist with positive Phase 2 obesity data at 1, 2 and 4mg and an NMPA filing accepted in China for long-term weight management; partnered outside Greater China with Kailera Therapeutics as KAI-9531. FLAGGED FOR REVIEWER: surfaced while checking a secondary claim that Hengrui was developing monthly formulations, which this sweep could NOT confirm. Every source found describes once-weekly subcutaneous injection plus a once-daily oral tablet, so on current evidence this does not meet the long-acting-injectable bar and is queued for an explicit reject-with-reason rather than promotion.",
-          "date": "2026-07-01"
+          "snippet": "Ribupatide (HRS9531) is a GLP-1/GIP dual receptor agonist with positive Phase 2 obesity data at 1, 2 and 4mg and an NMPA filing accepted in China for long-term weight management; partnered outside Greater China with Kailera Therapeutics as KAI-9531.",
+          "date": "2026-07-01",
+          "verification_note": "Found while checking an unconfirmed claim that Hengrui had monthly formulations. Every source found describes once-weekly injection and a once-daily tablet, so it does not meet the long-acting bar on current evidence."
         }
       ],
       "fuzzy_match": {
@@ -815,6 +842,16 @@
       },
       "status": "pending",
       "created_date": "2026-09-13",
+      "follow_up": {
+        "last_checked": null,
+        "checks_run": 0,
+        "near_bar": true
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim", "confirmed_source"],
+        "unmet": ["second_dated_event"],
+        "evidence": "Two independent Tier 2 reports confirm the December 2025 Series A and the linker-plus-microsphere-hydrogel platform, but that financing is the only dated event and it is not stage-bearing."
+      },
       "resolution": null
     },
     {
@@ -837,8 +874,10 @@
             "url": "https://doc.irasia.com/listco/hk/cspc/announcement/a241220.pdf",
             "tier": 1
           },
-          "snippet": "CSPC voluntary announcement that its independently-developed Semaglutide Long-Acting Injection (SYH9017), a once-monthly GLP-1 receptor agonist using a subcutaneous gel-depot delivery technology, obtained NMPA (China) clinical trial approval. Direct fetch of doc.irasia.com was EGRESS_BLOCKED this run; date inferred from the filing's own announcement-ID convention (a241220 -> 2024-12-20) and corroborated by the matching en.e-cspc.com company news-page title, not independently re-verified by full-page read.",
-          "date": "2024-12-20"
+          "snippet": "CSPC voluntary announcement that its independently-developed Semaglutide Long-Acting Injection (SYH9017), a once-monthly GLP-1 receptor agonist using a subcutaneous gel-depot delivery technology, obtained NMPA (China) clinical trial approval.",
+          "date": "2024-12-20",
+          "verification_note": "Read from a search-engine summary only (doc.irasia.com refused a direct fetch). The date comes from the announcement ID (a241220) and matches the title on the company news page.",
+          "date_basis": "inferred"
         },
         {
           "source": {
@@ -847,8 +886,10 @@
             "url": "https://en.e-cspc.com/news/semaglutide-long-acting-injection-(syh9017)-obtains-clinical-trial-approval.html",
             "tier": 1
           },
-          "snippet": "Company news page confirming SYH9017 (Semaglutide Long-Acting Injection) obtained clinical trial approval. Direct fetch of en.e-cspc.com was EGRESS_BLOCKED this run; content is from search-index title/summary only.",
-          "date": "2024-12-20"
+          "snippet": "Company news page confirming SYH9017 (Semaglutide Long-Acting Injection) obtained clinical trial approval.",
+          "date": "2024-12-20",
+          "verification_note": "Read from the search-index title and summary only (en.e-cspc.com refused a direct fetch); dated to match the HKEX announcement.",
+          "date_basis": "inferred"
         },
         {
           "source": {
@@ -857,8 +898,10 @@
             "url": "https://www.tipranks.com/news/company-announcements/cspc-wins-u-s-fda-nod-for-once-monthly-semaglutide-trial",
             "tier": 2
           },
-          "snippet": "CSPC Pharmaceutical Group's SYH9017, a once-monthly semaglutide GLP-1 injection, received US FDA approval to begin clinical trials targeting weight management in overweight/obese adults (with potential type 2 diabetes and cardiovascular indications). Reported ~2026-06-08; direct fetch of tipranks.com was EGRESS_BLOCKED this run, date inferred from search-result source dates rather than an independently re-verified full-page read.",
-          "date": "2026-06-08"
+          "snippet": "CSPC Pharmaceutical Group's SYH9017, a once-monthly semaglutide GLP-1 injection, received US FDA approval to begin clinical trials targeting weight management in overweight/obese adults (with potential type 2 diabetes and cardiovascular indications).",
+          "date": "2026-06-08",
+          "verification_note": "Read from a search-engine summary only (tipranks.com refused a direct fetch); the date comes from the search result, not the page.",
+          "date_basis": "inferred"
         }
       ],
       "fuzzy_match": {
@@ -867,6 +910,11 @@
       },
       "status": "pending",
       "created_date": "2026-09-13",
+      "follow_up": {
+        "last_checked": null,
+        "checks_run": 0,
+        "near_bar": false
+      },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
         "unmet": [],

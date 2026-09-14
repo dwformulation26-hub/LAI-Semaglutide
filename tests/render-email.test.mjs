@@ -57,7 +57,7 @@ test("falls back to a late/candidate-only subject when there are no headline fin
     runDate: "2026-09-04",
     leadIn: "",
     findings: [],
-    lateItems: [{ headline: "Peptron raises convertible bond", date: "2026-08-20", summary: "Published on DART, only surfaced by this run's wire skim.", sourceUrl: "https://dart.fss.or.kr/x", sourceName: "DART" }],
+    lateItems: [{ headline: "Peptron raises convertible bond", date: "2026-08-20", confidence: "confirmed", summary: "Published on DART in August.", sourceUrl: "https://dart.fss.or.kr/x", sourceName: "DART" }],
     candidates: [{ headline: "Example Biosciences", date: "2026-09-01", summary: "Licensed a PLGA microsphere platform for an undisclosed GLP-1 asset.", sourceUrl: "https://example.com", sourceName: "BioSpace" }]
   }, templateHtml);
   assert.equal(result.subject, "LAI update — 1 discovered late, 1 new candidate");
@@ -69,6 +69,60 @@ test("falls back to a late/candidate-only subject when there are no headline fin
 test("returns null when there is nothing to report, so the caller can skip drafting entirely", () => {
   const result = renderDigest({ runDate: "2026-09-04", leadIn: "", findings: [], lateItems: [], candidates: [] }, templateHtml);
   assert.equal(result, null);
+});
+
+test("emails a late item only while it is recent and confirmed", () => {
+  // Regression: a January 2025 patent grant, logged from one search snippet as unverified,
+  // was the whole content of a September 2026 digest.
+  const late = (headline, date, confidence) => ({ headline, date, confidence, summary: "s", sourceUrl: "https://e.com", sourceName: "E" });
+  const onlyStale = renderDigest({
+    runDate: "2026-09-14", leadIn: "x",
+    lateItems: [late("Old patent", "2025-01-23", "confirmed"), late("Thin lead", "2026-09-01", "unverified"), late("No confidence", "2026-09-01")]
+  }, templateHtml);
+  assert.equal(onlyStale, null);
+
+  const mixed = renderDigest({
+    runDate: "2026-09-14", leadIn: "x",
+    lateItems: [late("Old patent", "2025-01-23", "confirmed"), late("Recent filing", "2026-07-01", "confirmed")]
+  }, templateHtml);
+  assert.equal(mixed.subject, "LAI update — 1 discovered late");
+  assert.match(mixed.html, /Recent filing/);
+  assert.doesNotMatch(mixed.html, /Old patent/);
+});
+
+test("counts escalations apart from new candidates, and repeats them on Sunday only", () => {
+  // Regression: repeated escalations went into the candidates array, so every digest
+  // announced "6 new candidates" when one was new.
+  const item = (headline, extra = {}) => ({ headline, date: "2026-09-10", summary: "s", sourceUrl: "https://e.com", sourceName: "E", ...extra });
+  const payload = {
+    leadIn: "x",
+    escalations: [item("Repeat Co"), item("Fresh Co", { newlyEscalated: true })],
+    candidates: [item("New Co")]
+  };
+
+  const monday = renderDigest({ ...payload, runDate: "2026-09-14" }, templateHtml);
+  assert.equal(monday.subject, "LAI update — 1 program cleared the evidence bar, 1 new candidate");
+  assert.match(monday.html, /CLEARED THE EVIDENCE BAR/);
+  assert.match(monday.html, /Fresh Co/);
+  assert.doesNotMatch(monday.html, /Repeat Co/);
+
+  const sunday = renderDigest({ ...payload, runDate: "2026-09-13" }, templateHtml);
+  assert.equal(sunday.subject, "LAI update — 2 programs cleared the evidence bar, 1 new candidate");
+  assert.match(sunday.html, /Repeat Co/);
+
+  const weekdayRepeatsOnly = renderDigest({ runDate: "2026-09-15", leadIn: "x", escalations: [item("Repeat Co")] }, templateHtml);
+  assert.equal(weekdayRepeatsOnly, null);
+});
+
+test("rejects a leadIn written in pipeline or admin-queue wording", () => {
+  const render = (leadIn) => renderDigest({ runDate: "2026-09-14", leadIn, candidates: [{ headline: "H", date: "2026-09-14", summary: "s", sourceUrl: "https://e.com", sourceName: "E" }] }, templateHtml);
+  assert.throws(() => render("Bostal's B2227 is one of five programs ready for your promotion decision."), /promotion/);
+  assert.throws(() => render("A quiet day: 37/37 umbrellas checked."), /umbrella.*N\/N count/);
+  assert.throws(() => render("This week's sweep found a new depot program."), /sweep/);
+  assert.throws(() => render("Two cariprazine depots are now waiting on your call."), /awaiting/);
+  // Phase designations are not counts, and plain news passes.
+  assert.doesNotThrow(() => render("Bostal Drug Delivery's long-acting antipsychotic B2227 is registered for a Phase 2/3 trial."));
+  assert.doesNotThrow(() => render("No new developments today."));
 });
 
 test("orders rows deterministically: stage changes, then class, then newest", () => {

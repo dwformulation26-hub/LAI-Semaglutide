@@ -25,7 +25,8 @@ Use these exact string values — never invent a variant, even one that reads mo
 | `origin` | `KR`, `Global` |
 | `technology_family` | `plga_microsphere`, `in_situ_forming_depot`, `lipid_liquid_crystal_depot`, `molecular_engineering`, `prodrug_linker`, `subdermal_implant`, `other` |
 | `entity_type` (array, pick all that apply) | `company`, `platform`, `asset` |
-| `finding.type` | `deal_partnership`, `financing_investor`, `regulatory`, `trial_data_readout`, `manufacturing_capacity`, `market_reaction` |
+| `finding.type` | `deal_partnership`, `financing_investor`, `regulatory`, `trial_data_readout`, `manufacturing_capacity`, `market_reaction` (historical only: runs stopped logging sales and share-price items on 2026-09-14) |
+| `date_basis` (optional, on a finding or evidence entry) | `stated`, `inferred` |
 | `finding.confidence` | `confirmed`, `unverified` |
 | `source.tier` | `1`, `2`, `3` (integer) |
 | `candidate.status` | `watch`, `pending`, `ready_for_promotion`, `stalled`, `promoted`, `merged`, `rejected`, `snoozed` — see the escalation ladder below; the build fails on anything outside this list |
@@ -87,9 +88,12 @@ Notes:
 
 - `source.publication` is the outlet on its own — "Fierce Biotech", not "Fierce Biotech – \"Pfizer axes ex-Metsera obesity asset\"". It is optional but write it whenever the outlet is clear. `source.name` is free-text and in practice holds a mix of publication, article title and corroboration clauses, which is fine for the record but unusable as a label; the digest needs a short outlet name and falls back to cutting `name` at the first dash, comma, slash or bracket when `publication` is absent.
 
+- `verification_note` (optional, on a finding or a candidate evidence entry) records how the item was found or checked: a fetch that was refused, a search snippet read instead of the page, a scope note for the admin. `summary`, `snippet` and `source.name` describe the world only, because the dashboard shows them verbatim, and `scripts/build.mjs` fails on pipeline narration there.
+- `date_basis` (optional) is `stated` or `inferred`. Use `inferred` when the date comes from a URL ID, search metadata, a month-only mention or anything other than the source stating the day. An absent value means stated. The build checks that every finding and evidence `date` is `YYYY-MM-DD`.
+
 - `finding_history` is append-only. Never edit or remove a past entry, even to "clean it up" — if something logged earlier turns out wrong, append a new finding correcting it (this preserves the audit trail; git history plus this append-only log together are the record of what was known when).
 - Staleness (`days_since_last_finding`) is computed by the app from `current_status.last_updated` at render time. Do not store it — a stored value goes stale itself.
-- `last_checked` is updated by Track A every time it actually queries this umbrella's aliases, regardless of whether anything new turned up — it's what powers the quiet-umbrella throttle in the skill (checking a consistently quiet umbrella every 3rd day instead of daily). This is deliberately separate from `last_updated`, which only moves when a real finding lands. A missing `last_checked` means "never checked under the throttle rule" — treat it as due for a check, not as quiet.
+- `last_checked` is updated by Track A (with `node scripts/stamp.mjs checked`) every time it actually queries this umbrella's aliases, regardless of whether anything new turned up — it's what powers the quiet-umbrella throttle in the skill (checking a consistently quiet umbrella every 3rd day instead of daily). This is deliberately separate from `last_updated`, which only moves when a real finding lands. A missing `last_checked` means "never checked under the throttle rule" — treat it as due for a check, not as quiet.
 
 ## `candidate` object (an entry in the `candidates` array in `data/candidates.json`)
 
@@ -120,6 +124,7 @@ Notes:
 ```
 
 - `fuzzy_match.score` is 0–1; include it even when the closest match is weak — a low score is still useful context for whoever reviews the candidate.
+- An unresolved candidate (`watch`, `pending`, `ready_for_promotion`, `stalled`) must carry `created_date`, at least one evidence entry with `source.url` and `date`, `follow_up` and `promotion_bar`. A brand-new candidate starts with `"follow_up": { "last_checked": null, "checks_run": 0, "near_bar": false }`. `scripts/build.mjs` fails otherwise.
 - `evidence` is **append-only**, exactly like an umbrella's `finding_history`. A follow-up check that finds something new appends an entry; it never rewrites or replaces an existing one. This is what turns a candidate from a one-time snapshot into a record of how the signal built up (or didn't).
 - `resolution` stays `null` until the admin acts on it, then becomes e.g. `{ "action": "promoted", "umbrella_id": "example-biosciences", "date": "2026-09-05" }` or `{ "action": "rejected", "reason": "duplicate of existing umbrella", "date": "2026-09-05" }`. Rejected candidates are never deleted — the reason feeds the query-tuning feedback loop.
 
@@ -127,7 +132,7 @@ Notes:
 
 This is the candidate-side mirror of an umbrella's `current_status.last_checked`, and it exists for the same reason: without it, nothing can tell a candidate that was re-checked and is genuinely quiet apart from one that has simply been forgotten.
 
-- `last_checked` — the date Track B3 last re-searched this candidate, whether or not anything new turned up. A missing value means "never followed up", which is due for a check, not quiet.
+- `last_checked` — the date Track B3 last re-searched this candidate, whether or not anything new turned up. `null` means "never followed up", which is due for a check, not quiet. Stamp it with `node scripts/stamp.mjs followup`, which also adds one to `checks_run`.
 - `checks_run` — integer count of completed follow-up checks, incremented on every re-search. This is what the stall rule counts against, so a candidate can't be declared stalled before it has actually been looked at several times.
 - `near_bar` — boolean, set by the weekly deep pass: true when the candidate clears every promotion-bar condition but one. The cheap daily pass uses this to decide the handful of candidates worth spending a search on before the next weekly sweep.
 
@@ -147,7 +152,7 @@ Written by Track B3 on every follow-up check, and the direct analogue of `stage_
 |---|---|---|---|
 | `watch` | Thin signal — a named entity with no concrete technical claim yet. The lower-priority queue. | Monthly (every 4th weekly sweep) | Dashboard watch count only, never the digest |
 | `pending` | Cleared the creation bar, tracking toward the promotion bar | Weekly deep pass; daily if `near_bar` | Candidate queue, digest when first created |
-| `ready_for_promotion` | Cleared all four promotion conditions and is not a merge case | Every run, until the admin resolves it | Top of the candidate queue, and leads the digest every run |
+| `ready_for_promotion` | Cleared all four promotion conditions and is not a merge case | Every run, until the admin resolves it | Top of the candidate queue; the digest's `escalations` section on the run it escalates and in every Sunday digest after |
 | `stalled` | 30+ days old with no new evidence across 3+ follow-up checks | Monthly, same as `watch` | Candidate queue, flagged for reject-or-snooze |
 
 `promoted`, `merged`, `rejected` and `snoozed` are terminal and admin-only — Track B3 never writes them, and never re-checks a candidate carrying one.

@@ -44,13 +44,14 @@ function fill(template, tokens) {
   return out;
 }
 
-// Every list in the digest (new findings, discovered-late, new candidates) uses
-// the exact same row shape: name, date, a short summary, a source link. The only
+// Every list in the digest (new findings, escalations, discovered-late, new candidates)
+// uses the exact same row shape: name, date, a short summary, a source link. The only
 // thing that varies per section is a single accent color carried through onto
 // each of that section's items — visual richness without re-introducing a
 // hierarchy between individual items within a section.
 const SECTION_ACCENT = {
   findings: { accent: "#178665", soft: "#eaf7f2" },
+  escalations: { accent: "#c2571a", soft: "#fdf0e8" },
   late: { accent: "#a87504", soft: "#fdf6e6" },
   candidates: { accent: "#6d5dad", soft: "#f2f0fa" }
 };
@@ -102,15 +103,15 @@ function itemTags(item) {
 function publicationName(sourceName, declared) {
   if (declared) {
     const name = String(declared).trim();
-    if (name) return name.length > 34 ? `${name.slice(0, 33).replace(/[\s,]+$/, "")}\u2026` : name;
+    if (name) return name.length > 34 ? `${name.slice(0, 33).replace(/[\s,]+$/, "")}…` : name;
   }
   return cutPublication(sourceName);
 }
 
 function cutPublication(sourceName) {
-  const cut = String(sourceName ?? "").split(/\s[-\u2013\u2014/]\s|,\s|\s\(/)[0].trim();
+  const cut = String(sourceName ?? "").split(/\s[-–—/]\s|,\s|\s\(/)[0].trim();
   const name = cut || String(sourceName ?? "").trim() || "Source";
-  return name.length > 34 ? `${name.slice(0, 33).replace(/[\s,]+$/, "")}\u2026` : name;
+  return name.length > 34 ? `${name.slice(0, 33).replace(/[\s,]+$/, "")}…` : name;
 }
 
 function renderItem(item, itemTemplate, accent) {
@@ -184,15 +185,72 @@ function renderCoverage(coverage) {
   }).join("");
 }
 
+// --- What is allowed into the digest -------------------------------------------------
+// These gates are enforced here rather than left to prose in the skill, because prose
+// rules alone did not hold: a January 2025 patent grant from a single search snippet went
+// out as Monday's news, and the same five escalations were re-sent every day.
+
+const LATE_ITEM_MAX_AGE_DAYS = 90;
+
+function daysBetween(fromIso, toIso) {
+  const from = Date.parse(`${fromIso}T00:00:00Z`);
+  const to = Date.parse(`${toIso}T00:00:00Z`);
+  return Number.isNaN(from) || Number.isNaN(to) ? null : Math.round((to - from) / 86400000);
+}
+
+// A late item is still news only while it is recent and confirmed. Older or unverified
+// items stay logged and on the dashboard; they just don't get emailed.
+export function digestLateItems(items = [], runDate) {
+  return items.filter((item) => {
+    const age = daysBetween(item.date, runDate);
+    return item.confidence === "confirmed" && age !== null && age <= LATE_ITEM_MAX_AGE_DAYS;
+  });
+}
+
+// An escalation repeats in the Sunday digest only, unless it escalated this run. Daily
+// repetition made the subject line wrong and the email read as noise.
+export function digestEscalations(items = [], runDate) {
+  const sunday = new Date(`${runDate}T00:00:00Z`).getUTCDay() === 0;
+  return items.filter((item) => item.newlyEscalated === true || sunday);
+}
+
+// The leadIn is a news headline. Three wording corrections in ten days showed a prose
+// rule alone does not keep pipeline and admin-queue language out of it, so it is linted.
+const LEAD_IN_RULES = [
+  [/\bumbrellas?\b/i, "\"umbrella\""],
+  [/\bsweep\b/i, "\"sweep\""],
+  [/\bwire[- ]?skim\b/i, "\"wire skim\""],
+  [/\bpromotion\b/i, "\"promotion\""],
+  [/\bawaiting\b|\bwaiting on\b/i, "\"awaiting\""],
+  [/\byour (?:decision|review|call|approval)\b/i, "a request for the reader's decision"],
+  [/\bpending\b|\bqueue\b/i, "queue status"],
+  [/\bcoverage\b/i, "\"coverage\""]
+];
+
+export function lintLeadIn(leadIn) {
+  const text = String(leadIn ?? "");
+  const problems = LEAD_IN_RULES.filter(([pattern]) => pattern.test(text)).map(([, label]) => label);
+  // A count like "37/37" reads as an ops metric. Phase designations ("Phase 2/3") are not counts.
+  const withoutPhases = text.replace(/\bphase\s*(?:\d+|[ivx]+)[a-c]?\s*\/\s*(?:\d+|[ivx]+)[a-c]?/gi, "");
+  if (/\b\d+\s*\/\s*\d+\b/.test(withoutPhases)) problems.push("an N/N count");
+  return problems;
+}
+
+function plural(count, word) {
+  return `${count} ${word}${count === 1 ? "" : "s"}`;
+}
+
 function buildSubject(input) {
   const count = input.findings.length;
   const lead = orderItems(input.findings)[0];
   if (count === 1) return `LAI update — ${lead.headline}`;
   if (count > 1) return `LAI update — ${count} new findings (incl. ${lead.headline})`;
-  // No headline findings this run, but there's still something worth a subject line for.
+  // No headline findings this run. Each part counts only what it names: repeated
+  // escalations are never counted as new candidates.
   const parts = [];
+  if (input.escalations.length) parts.push(`${plural(input.escalations.length, "program")} cleared the evidence bar`);
   if (input.lateItems.length) parts.push(`${input.lateItems.length} discovered late`);
-  if (input.candidates.length) parts.push(`${input.candidates.length} new candidate${input.candidates.length === 1 ? "" : "s"}`);
+  if (input.candidates.length) parts.push(plural(input.candidates.length, "new candidate"));
   if (!parts.length) return null;
   return `LAI update — ${parts.join(", ")}`;
 }
@@ -203,26 +261,39 @@ function buildPreheader(input) {
   const lead = count ? orderItems(input.findings)[0] : null;
   if (count === 1) return `New finding on ${dateLabel}: ${lead.headline}`;
   if (count > 1) return `${count} new findings on ${dateLabel}, including ${lead.headline}.`;
-  if (input.lateItems.length || input.candidates.length) return `No new headline findings on ${dateLabel} — see what was discovered late or is pending review.`;
+  if (input.escalations.length || input.lateItems.length || input.candidates.length) return `No new headline findings on ${dateLabel} — see what else surfaced.`;
   return "";
 }
 
 // Pure: takes the parsed input payload and the raw template file contents,
 // returns { subject, preheader, html } or null if there's nothing to report
 // this run (the caller should skip drafting an email entirely in that case).
+// Throws if the leadIn uses internal or admin-queue wording, so the run rewrites it.
 export function renderDigest(rawInput, templateHtml) {
-  const input = { findings: [], lateItems: [], candidates: [], leadIn: "", ...rawInput };
+  const base = { findings: [], escalations: [], lateItems: [], candidates: [], leadIn: "", ...rawInput };
+  const input = {
+    ...base,
+    escalations: digestEscalations(base.escalations, base.runDate),
+    lateItems: digestLateItems(base.lateItems, base.runDate)
+  };
 
   const subject = buildSubject(input);
   if (subject === null) return null;
 
+  const problems = lintLeadIn(input.leadIn);
+  if (problems.length) {
+    throw new Error(`leadIn uses internal or admin wording: ${problems.join(", ")}. Rewrite it as one sentence of news about the program itself.`);
+  }
+
   const { block: itemTemplate, rest: withoutItem } = extractBlock(templateHtml, "ITEM");
   const { block: findingsSectionTemplate, rest: withoutFindingsSection } = extractBlock(withoutItem, "FINDINGS_SECTION");
-  const { block: lateSectionTemplate, rest: withoutLateSection } = extractBlock(withoutFindingsSection, "LATE_SECTION");
+  const { block: escalationsSectionTemplate, rest: withoutEscalationsSection } = extractBlock(withoutFindingsSection, "ESCALATIONS_SECTION");
+  const { block: lateSectionTemplate, rest: withoutLateSection } = extractBlock(withoutEscalationsSection, "LATE_SECTION");
   const { block: candidatesSectionTemplate, rest: withoutCandidates } = extractBlock(withoutLateSection, "CANDIDATES_SECTION");
-  const { block: coverageSectionTemplate, rest: base } = extractBlock(withoutCandidates, "COVERAGE_SECTION");
+  const { block: coverageSectionTemplate, rest: shell } = extractBlock(withoutCandidates, "COVERAGE_SECTION");
 
   const findingsSectionHtml = renderSection(input.findings, findingsSectionTemplate, itemTemplate, "FINDINGS_ITEMS", "findings");
+  const escalationsSectionHtml = renderSection(input.escalations, escalationsSectionTemplate, itemTemplate, "ESCALATION_ITEMS", "escalations");
   const lateSectionHtml = renderSection(input.lateItems, lateSectionTemplate, itemTemplate, "LATE_ITEMS", "late");
   const candidatesSectionHtml = renderSection(input.candidates, candidatesSectionTemplate, itemTemplate, "CANDIDATE_ITEMS", "candidates");
   const preheader = buildPreheader(input);
@@ -230,13 +301,14 @@ export function renderDigest(rawInput, templateHtml) {
   const coverageRows = renderCoverage(input.coverage);
   const coverageSectionHtml = coverageRows ? fill(coverageSectionTemplate, { COVERAGE_ROWS: coverageRows }) : "";
 
-  const html = fill(base, {
+  const html = fill(shell, {
     __COVERAGE_SECTION_SLOT__: coverageSectionHtml,
     __FINDINGS_SECTION_SLOT__: findingsSectionHtml,
+    __ESCALATIONS_SECTION_SLOT__: escalationsSectionHtml,
     __LATE_SECTION_SLOT__: lateSectionHtml,
     __CANDIDATES_SECTION_SLOT__: candidatesSectionHtml,
-    // ITEM is only ever used as the row template fed into the three SECTION
-    // templates above — its own slot in the base never holds anything directly.
+    // ITEM is only ever used as the row template fed into the SECTION templates
+    // above — its own slot in the base never holds anything directly.
     __ITEM_SLOT__: "",
     SUBJECT: escapeHtml(subject),
     PREHEADER: escapeHtml(preheader),
@@ -258,7 +330,20 @@ async function main() {
 
   const input = JSON.parse(await readFile(inputPath, "utf8"));
   const templateHtml = await readFile(templatePath, "utf8");
-  const result = renderDigest(input, templateHtml);
+
+  const heldLate = (input.lateItems?.length ?? 0) - digestLateItems(input.lateItems, input.runDate).length;
+  const heldEscalations = (input.escalations?.length ?? 0) - digestEscalations(input.escalations, input.runDate).length;
+  if (heldLate) console.log(`Held back ${heldLate} late item(s): older than ${LATE_ITEM_MAX_AGE_DAYS} days or not confirmed. They stay on the dashboard.`);
+  if (heldEscalations) console.log(`Held back ${heldEscalations} repeat escalation(s): repeats go out in the Sunday digest only.`);
+
+  let result;
+  try {
+    result = renderDigest(input, templateHtml);
+  } catch (error) {
+    console.error(error.message);
+    process.exitCode = 1;
+    return;
+  }
 
   if (!result) {
     console.log("Nothing to report this run — skip drafting an email entirely.");
@@ -266,7 +351,9 @@ async function main() {
   }
 
   await writeFile(outputPath, JSON.stringify(result, null, 2), "utf8");
-  console.log(`Rendered digest (${input.findings?.length ?? 0} findings, ${input.lateItems?.length ?? 0} late, ${input.candidates?.length ?? 0} candidates) → ${outputPath}`);
+  const escalations = (input.escalations?.length ?? 0) - heldEscalations;
+  const late = (input.lateItems?.length ?? 0) - heldLate;
+  console.log(`Rendered digest (${input.findings?.length ?? 0} findings, ${escalations} escalations, ${late} late, ${input.candidates?.length ?? 0} candidates) → ${outputPath}`);
 }
 
 if (path.resolve(process.argv[1] ?? "") === path.resolve(fileURLToPath(import.meta.url))) main();

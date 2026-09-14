@@ -1,0 +1,84 @@
+{
+  "id": "biocorrx-bicx104",
+  "canonical_name": "BioCorRx – BICX104 (naltrexone implant)",
+  "origin": "Global",
+  "entity_type": [
+    "company",
+    "asset"
+  ],
+  "technology_family": "subdermal_implant",
+  "aliases": [
+    "BioCorRx",
+    "BioCorRx Pharmaceuticals",
+    "BICX",
+    "BICX104"
+  ],
+  "current_status": {
+    "stage": "Phase 1 recruiting (NCT07269873, started Mar 16 2026): BICX104 alone and with bupropion, compared with Vivitrol, funded by NIDA (U01DA059994). U.S. Patent 12,569,430 on the biodegradable naltrexone implant issued in Mar 2026.",
+    "stage_label": "Phase 1",
+    "stage_evidence": "ClinicalTrials.gov lists NCT07269873 as recruiting with an actual start date of Mar 16 2026, following BioCorRx's Jan 14 2026 announcement that the study had been initiated.",
+    "molecule_class": [
+      "non_incretin"
+    ],
+    "molecule_evidence": "BICX104 is a biodegradable subcutaneous naltrexone implant for substance use disorders, outside the incretin space.",
+    "dosing_target": "About every 3 months (one implant targets naltrexone of at least 1 ng/mL for about 3 months)",
+    "partner": "National Institute on Drug Abuse (grant funding)",
+    "data_point": "Phase 1 sequential-cohort PK and safety study of a 997.5 mg naltrexone implant, with or without bupropion, against Vivitrol.",
+    "last_updated": "2026-03-11",
+    "last_checked": "2026-09-14"
+  },
+  "finding_history": [
+    {
+      "id": "f-2023-08-15-001",
+      "date": "2023-08-15",
+      "type": "regulatory",
+      "summary": "BioCorRx submitted an FDA expanded-access treatment protocol for BICX104, a biodegradable subcutaneous naltrexone pellet designed to deliver therapeutic levels for 84 days, three times the 28-day duration of Vivitrol.",
+      "source": {
+        "name": "BioCorRx press release via BioSpace",
+        "publication": "BioSpace",
+        "url": "https://www.biospace.com/biocorrx-submits-expanded-access-treatment-protocol-to-fda-for-bicx104-implantable-biodegradable-naltrexone-pellet-for-treatment-of-opioid-use-disorder",
+        "tier": 1
+      },
+      "confidence": "confirmed"
+    },
+    {
+      "id": "f-2025-12-08-001",
+      "date": "2025-12-08",
+      "type": "regulatory",
+      "summary": "BioCorRx Pharmaceuticals registered a Phase 1 sequential-cohort PK and safety study (NCT07269873) of BICX104, a 997.5 mg biodegradable naltrexone implant targeting at least 1 ng/mL for three months, given with or without bupropion and compared with Vivitrol.",
+      "source": {
+        "name": "ClinicalTrials.gov NCT07269873",
+        "publication": "ClinicalTrials.gov",
+        "url": "https://clinicaltrials.gov/study/NCT07269873",
+        "tier": 1
+      },
+      "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-01-14-001",
+      "date": "2026-01-14",
+      "type": "trial_data_readout",
+      "summary": "BioCorRx announced its subsidiary BioCorRx Pharmaceuticals had initiated the Phase 1 study of BICX104 with or without bupropion (NCT07269873), supported by NIDA award U01DA059994.",
+      "source": {
+        "name": "BioCorRx press release",
+        "publication": "BioCorRx",
+        "url": "https://www.biocorrx.com/news-media/press-releases/detail/240/biocorrx-inc-announces-initiation-of-clinical-study-by",
+        "tier": 1
+      },
+      "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-03-11-001",
+      "date": "2026-03-11",
+      "type": "regulatory",
+      "summary": "The USPTO issued U.S. Patent No. 12,569,430, \"Biodegradable Implant Including Naltrexone\", covering the controlled-delivery implant technology behind BICX104.",
+      "source": {
+        "name": "BioCorRx press release",
+        "publication": "BioCorRx",
+        "url": "https://www.biocorrx.com/news-media/press-releases/detail/241/biocorrx-inc-announces-issuance-of-u-s-patent-supporting",
+        "tier": 1
+      },
+      "confidence": "confirmed"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "anxo-ax251",
+  "canonical_name": "Anxo Pharmaceutical – AX251 (cariprazine LAI, NanoCIP)",
+  "origin": "Global",
+  "entity_type": [
+    "company",
+    "platform",
+    "asset"
+  ],
+  "technology_family": "other",
+  "aliases": [
+    "Anxo Pharmaceutical",
+    "Anxo Pharmaceutical Co., Ltd.",
+    "AX251",
+    "NanoCIP"
+  ],
+  "current_status": {
+    "stage": "Phase 1 dose-escalation study in schizophrenia registered (NCT07484204, first posted Mar 20 2026) and not yet recruiting at the Jul 22 2026 registry update. AX251 uses Anxo's NanoCIP nanocrystal injectable platform, which has no dedicated technology_family value.",
+    "stage_label": "IND filed",
+    "stage_evidence": "ClinicalTrials.gov lists the Phase 1 study of AX251 as not yet recruiting (last updated Jul 22 2026), which is bucketed as IND filed. A reported FDA IND clearance rests on a single Tier 3 source and was not used.",
+    "molecule_class": [
+      "non_incretin"
+    ],
+    "molecule_evidence": "AX251 is a long-acting injectable formulation of cariprazine, an antipsychotic, per its ClinicalTrials.gov registration.",
+    "dosing_target": "Not disclosed (single doses of 45 to 180 mg in Phase 1)",
+    "partner": null,
+    "data_point": "Phase 1 open-label, multicenter, single-dose escalation study (45, 90, 135 and 180 mg) of PK and safety in schizophrenia.",
+    "last_updated": "2026-03-20",
+    "last_checked": "2026-09-14"
+  },
+  "finding_history": [
+    {
+      "id": "f-2026-03-20-001",
+      "date": "2026-03-20",
+      "type": "regulatory",
+      "summary": "Anxo Pharmaceutical registered a Phase 1 open-label, multicenter dose-escalation study (NCT07484204) of AX251, a long-acting injectable form of cariprazine, at single doses of 45 to 180 mg in people with schizophrenia.",
+      "source": {
+        "name": "ClinicalTrials.gov NCT07484204",
+        "publication": "ClinicalTrials.gov",
+        "url": "https://clinicaltrials.gov/study/NCT07484204",
+        "tier": 1
+      },
+      "confidence": "confirmed"
+    }
+  ]
+}

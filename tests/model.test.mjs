@@ -3,7 +3,7 @@ import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
-import { CANDIDATE_STATUSES, MOLECULE_ORDER, assessRunHealth, competitiveScore, interpretLeader, moleculeClasses, normalizeStage, orderPrograms, prepareDatabase, safeUrl } from "../src/model.js";
+import { CANDIDATE_STATUSES, MOLECULE_ORDER, assessRunHealth, competitiveScore, interpretLeader, leadSentence, moleculeClasses, normalizeStage, orderPrograms, prepareDatabase, safeUrl } from "../src/model.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -114,7 +114,7 @@ test("prepares the complete repository snapshot and identifies the development l
   // so it's safe to pin exactly. findings/candidates grow every time the daily scan finds
   // something, so pinning an exact count here would fail after the very next scan run —
   // assert the pipeline produced a non-empty, monotonically-plausible result instead.
-  assert.equal(data.records.length, 41);
+  assert.equal(data.records.length, 45);
   assert.ok(data.findings.length >= 126, `expected at least 126 findings, got ${data.findings.length}`);
   assert.ok(data.pendingCandidates.length >= 9, `expected at least 9 pending candidates, got ${data.pendingCandidates.length}`);
   assert.equal(data.leader.id, "mapi-pharma-semaglutide");
@@ -197,7 +197,7 @@ test("scores competitively from declared fields only, and never scores the platf
   const now = Date.parse("2026-09-11T00:00:00Z");
   const strong = competitiveScore({
     current_status: { stage_label: "Phase 3", last_updated: "2026-09-05", dosing_target: "Monthly" },
-    finding_history: [{ date: "2026-09-05", source: { tier: 1 } }]
+    finding_history: [{ date: "2026-09-05", type: "trial_data_readout", source: { tier: 1 } }]
   }, now);
   assert.equal(strong.total, strong.stage + strong.momentum + strong.evidence + strong.dosing);
   assert.equal(strong.stage, 32);      // Phase 3 is 5 of 7 steps -> round(5/7*45)
@@ -212,6 +212,32 @@ test("scores competitively from declared fields only, and never scores the platf
   assert.equal(stale.momentum, 0);
   assert.equal(stale.dosing, 0);
   assert.ok(stale.total < strong.total, "a stale record must not outrank a fresh one at the same stage");
+});
+
+test("momentum comes only from findings that move a program, never from sales or share moves", () => {
+  const now = Date.parse("2026-09-11T00:00:00Z");
+  const salesOnly = competitiveScore({
+    current_status: { stage_label: "Approved / marketed", last_updated: "2026-09-05" },
+    finding_history: [
+      { date: "2026-09-05", type: "market_reaction", source: { tier: 1 } },
+      { date: "2025-01-01", type: "regulatory", source: { tier: 1 } }
+    ]
+  }, now);
+  assert.equal(salesOnly.momentum, 0, "a fresh sales line must not refresh momentum");
+
+  const readout = competitiveScore({
+    current_status: { stage_label: "Phase 2", last_updated: "2026-01-01" },
+    finding_history: [{ date: "2026-09-01", type: "trial_data_readout", source: { tier: 2 } }]
+  }, now);
+  assert.equal(readout.momentum, 25);
+});
+
+test("takes the first sentence without cutting at abbreviations", () => {
+  // Regression: the feed headline for Ascletis read "Ascletis initiated a U.S."
+  assert.equal(leadSentence("Ascletis initiated a U.S. Phase I study for ASC36. It is the fourth start."), "Ascletis initiated a U.S. Phase I study for ASC36.");
+  assert.equal(leadSentence("Camurus Inc. filed in the E.U. today. More follows."), "Camurus Inc. filed in the E.U. today.");
+  assert.equal(leadSentence("No period at all"), "No period at all");
+  assert.equal(leadSentence("임상 1상을 시작했다. 두 번째 문장."), "임상 1상을 시작했다.");
 });
 
 test("flags stale or never-run monitoring types against their expected cadence", () => {

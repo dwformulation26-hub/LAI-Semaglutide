@@ -52,6 +52,8 @@ A real run hit its session search cap partway through a Daily scan, covering onl
 - **Cap the aliases queried per record per run, and order them by distinctiveness.** Query the drug code and ticker first, the platform name next, and generic company or molecule names last. Naming four molecule classes adds low-specificity terms that many records share, and without a cap those quietly eat the breadth pass. The alias table is 245 strings across 41 records, so an uncapped full pass is 245 searches.
 - **One query per alias, two absolute max.** If the first query for an alias comes back with nothing new, move on — don't try three more phrasings hunting for something. A quiet result is a valid result, not a reason to keep searching.
 - **Don't retry a domain that just told you no.** If a fetch returns `EGRESS_BLOCKED` or a similar hard error, don't try that same domain again this run — note it under `source_health` (see below) and move on. Retrying a blocked domain burns a tool call for a result you already know.
+- **Never fetch a host already recorded as blocked.** Before the first WebFetch of a run, read `meta.json`'s `source_health` and list every host whose status is `blocked` or `search_only`. Don't WebFetch those hosts this run; reach their content through search. Any other host gets at most one fetch attempt per run, and a refusal adds it to the list. The 2026-09-13 sweep spent about 20 tool calls re-fetching hosts already on that list.
+- **Run every track in this one session.** Don't use the Agent tool or spawn helper agents. Each helper re-reads this skill and the data files and none of them sees the blocked list, so the seven helpers the 2026-09-13 sweep started multiplied its cost and repeated the blocked fetches.
 - **Track B1's wire skim is a fixed, bounded pass** — a handful of term-based searches, not a per-umbrella sweep. Don't let it balloon into checking specific companies; that's Track A's job.
 - **Track B3's daily pass spends at most 2 searches, and its weekly pass one query per pending candidate.** Follow-up must never crowd out Track A's first-pass coverage of every due umbrella — if budget is tight, the umbrellas come first and the follow-up queue waits for the weekly deep pass. Date math costs nothing and always runs.
 
@@ -90,16 +92,18 @@ Checking every umbrella every single day is wasteful once an umbrella has demons
 
 For every existing "umbrella" (a tracked company/platform/asset — has a `canonical_name` and an `aliases` list: English name, Korean name, ticker, drug code, platform name, etc.) that isn't being skipped this run under the throttle above, search **once per alias**, never one blended query covering all aliases at once. A blended query is exactly how Korean-language hits get missed — the two languages compete for the same query and English results crowd out Hangul ones. Apply the search budget discipline above: breadth first, one query per alias, don't chase a quiet result with more phrasings.
 
-Classify every finding into exactly one of these six types, and take the corresponding action:
+**Log only news about the record's long-acting assets.** The tracker covers long-acting technology: depots, implants, microspheres, in-situ gels and molecules engineered for monthly or less frequent dosing. Oral, daily and weekly programs are out of scope even when they share the record's molecule or company, and so are sales figures, share-price moves and analyst notes. Don't log them as findings; if one is material context, give it one line in `coverage.daily_scan.notes`. Patents on long-acting formulations stay in scope (see "Primary sources available to every track").
+
+Classify every finding into exactly one of these types, and take the corresponding action:
 
 | Type | Signal words | Action |
 |---|---|---|
 | Deal/partnership | "partners with", "licenses", "collaboration" | Append to `finding_history`; flag the partner org as a Track B candidate if it's not already a known umbrella |
-| Financing/investor | "raises", "convertible bond", "capital increase", stock-move % | Append; update the cap-table note |
+| Financing/investor | "raises", "convertible bond", "capital increase" | Append; update the cap-table note. A share-price move is not a financing event |
 | Regulatory | NDA, IND, CHMP, PDUFA | Append; update `current_status.stage` |
 | Trial/data readout | "topline", "Phase", % weight loss, PK data | Append; update `current_status.data_point` |
 | Manufacturing/capacity | "plant", "facility", capacity multiplier | Append, lower priority |
-| Market reaction | stock %, analyst note | Append, lowest priority — context only, never the sole basis for a status change |
+| Market reaction | stock %, analyst note, quarterly sales | **Not logged by runs** (out of scope since 2026-09-14). The type stays in the schema for findings already recorded |
 
 A known company's deal can surface a brand-new partner organization. Log the deal itself under the known umbrella (that's Track A's job, since it was found via a known alias) — but the new partner org itself becomes a Track B candidate, not a footnote inside the known umbrella's history.
 
@@ -198,8 +202,8 @@ For each candidate in scope:
 
 A `ready_for_promotion` candidate is the loudest thing this skill can produce, and it stays loud until the admin resolves it:
 
-- It leads the email digest's `leadIn` **every run**, on the day it escalates and on every run after, until its `resolution` is non-null. This is the one case that outranks the normal headline-picking order below — a candidate that has cleared every evidence bar is the strongest *news* a run can produce: a program the tracker didn't know about, now documented well enough to stand on its own. That is why it leads. **Write the sentence as that news, never as a decision waiting on the reader** — "ready for promotion" is this skill's internal bookkeeping and never appears in the digest's wording (see "The leadIn is news, not a work queue" below).
-- It appears in the digest's `candidates` array every run too, not only on the run that created it. Re-appearing is the point: an escalation that was shown once and then went quiet is indistinguishable from one that was handled. The renderer's generated subject line will count it as a "new candidate" on those later runs — that's a known wrinkle of frozen infrastructure, and the `leadIn` you write is what carries the real message. Don't edit the renderer to fix it.
+- It goes in the digest's `escalations` array, never `candidates`, on every run until its `resolution` is non-null. Set `newlyEscalated: true` on the run where its `status` changed to `ready_for_promotion`. The renderer shows an escalation on that run and in every Sunday digest and holds repeats back on weekdays, so a repeat never inflates the subject line or reads as noise.
+- On a digest where it appears, it leads the `leadIn`. A program that has cleared every evidence bar is the strongest *news* a run can produce: a program the tracker didn't know about, now documented well enough to stand on its own. **Write the sentence as that news, never as a decision waiting on the reader.** "Ready for promotion" is this skill's internal bookkeeping and never appears in the digest (see "The leadIn is news, not a work queue" below).
 - It sorts to the top of the dashboard's candidate queue, and the app counts escalations separately from the plain pending count.
 
 Everything else on the ladder keeps the existing behavior: a newly created candidate appears in that run's digest once, and after that it lives on the dashboard until it's resolved.
@@ -219,6 +223,8 @@ Apply this consistently — it's what keeps "confirmed" meaning something over t
 This section exists because the dashboard used to *infer* a program's development stage from the free-text `stage` description with a regex parser, and that parser was wrong four separate times in one review — roman numerals swallowed into the wrong phase, "IND submitted" not recognized as equivalent to "IND filed," a combined Phase I/II design counted as an active Phase 2 the moment it started recruiting. A parser guessing at prose will always have another edge case. The fix isn't a better parser — it's that **you assign the stage directly, the same way you already assign `technology_family` or `finding.type`, instead of leaving it to be reverse-engineered later.**
 
 `current_status.stage_label` must always be exactly one of: `Research`, `Preclinical`, `IND filed`, `Phase 1`, `Phase 2`, `Phase 3`, `Filed / review`, `Approved / marketed`. `scripts/build.mjs` fails the build if it's missing or isn't one of these eight — this is a hard stop, not a style preference. `stage` stays as free-text color; `stage_label` is what the dashboard actually sorts, colors, and ranks programs by.
+
+**`stage_label` describes the record's most advanced long-acting asset, never an oral, daily or weekly sibling.** Ascletis is the worked example: its once-daily oral ASC30 tablet is in Phase 3, but the record sits at `Phase 2` because that is where the once-monthly depot stands. Name the same asset in `stage_evidence`.
 
 **When you may advance `stage_label` to a higher bucket:**
 
@@ -275,6 +281,9 @@ Two things matter more than the field names themselves, because they're what act
 
 - **Never invent a variant of a controlled value.** If `technology_family` doesn't cleanly fit one of the listed values, use `other` and add a one-line note — don't coin a new tag that reads more naturally in the moment. A schema only prevents naming drift if every run treats it as fixed, not as a starting suggestion.
 - **Never write outside your own file's lane.** Track A only ever touches the specific umbrella files it found findings for. Track B, follow-up included, only ever touches `candidates.json` — B3 updating a candidate's evidence never also writes that evidence into an umbrella file, however strong the match looks. Don't "helpfully" fix something you notice in an unrelated umbrella file while you're in there — flag it instead, or handle it under the mode that owns it.
+- **`summary`, `snippet` and `source.name` describe the world, not the run.** The dashboard shows them verbatim. How an item was found or checked ("discovered via this run's search", "fetch was EGRESS_BLOCKED", "read from a search snippet only", a scope note for the reviewer) goes in the optional `verification_note` on that finding or evidence entry. When a date comes from a URL ID, search metadata or anything other than the source stating it, set `date_basis: "inferred"`. `scripts/build.mjs` fails on pipeline narration in those fields.
+- **Stamp dates with the script, not with Edit calls.** `node scripts/stamp.mjs checked <KST date> <umbrella-id>...` sets `current_status.last_checked` on every umbrella Track A queried, and `node scripts/stamp.mjs followup <KST date> <candidate-id>...` sets `follow_up.last_checked` and adds one to `checks_run` on every candidate Track B3 re-searched. Both edit in place, keep the file's formatting and refuse to write if anything else would change. Findings, candidates and status changes are still written with targeted Edit calls, never a bulk rewrite.
+- **Write a new candidate complete.** It carries `created_date`, at least one evidence entry with `source.url` and `date`, `follow_up` as `{ "last_checked": null, "checks_run": 0, "near_bar": false }` (`near_bar: true` when it is one condition short), and a `promotion_bar` naming all four conditions. The build fails on an unresolved candidate missing any of these.
 
 Update `meta.json`'s `last_run` and `source_health` at the end of every run, even a run that found nothing, using the run's single KST "now" value (see "Schedule and time zone") — an absent update is indistinguishable from a job that silently failed, which is exactly the failure mode this field exists to catch. Also record coverage: how many umbrellas were actually checked this run versus skipped (throttled quiet ones, or ones never reached because the search budget ran out) — a run that only covered 2 of 37 umbrellas needs to be visible as incomplete, not indistinguishable from a full run that just happened to find little. Record follow-up coverage the same way, under `coverage.candidate_follow_up` — how many unresolved candidates exist, how many Track B3 actually re-checked this run, and how many it escalated or stalled. A run that escalated nothing because it re-checked nothing must be distinguishable from a run that re-checked the whole queue and found nothing ready. If any domain returned `EGRESS_BLOCKED` this run, log it under `source_health` with status `blocked` so a pattern of unreachable sources shows up over time instead of silently degrading source quality run after run.
 
@@ -307,11 +316,18 @@ After a Daily scan or Weekly sweep, draft one bundled digest of what changed thi
   "runDate": "2026-09-04",  /* KST calendar date of this run: TZ=Asia/Seoul date +%F */
   "leadIn": "One short sentence summarizing the run — findings + late items + candidates, in your own words.",
   "findings": [ /* one entry per finding inside the freshness window this run */ ],
-  "lateItems": [ /* real findings logged this run but dated outside the freshness window (see above) */ ],
-  "candidates": [ /* new Track B1/B2 candidates from this run, plus every unresolved ready_for_promotion candidate (see Track B3) */ ],
+  "escalations": [ /* every unresolved ready_for_promotion candidate; newlyEscalated: true on the run it escalated (see Track B3) */ ],
+  "lateItems": [ /* real findings logged this run but dated outside the freshness window, each carrying its confidence */ ],
+  "candidates": [ /* new Track B1/B2 candidates created this run, and nothing else */ ],
   "coverage": [ /* one row per molecule class, in MOLECULE_ORDER -- see below */ ]
 }
 ```
+
+**The renderer decides what gets emailed, so pass everything and let it filter:**
+
+- Each `lateItems` entry carries `confidence` copied from the finding. Only a `confirmed` item dated within 90 days of `runDate` is emailed; older or unverified items stay logged and on the dashboard. A patent logged under its priority date is usually older than that, so it normally stays out of the digest while remaining tracked.
+- `escalations` repeat on Sundays only unless `newlyEscalated` is true, as described in Track B3.
+- The `leadIn` is linted. The renderer exits with an error naming the problem if the sentence contains internal or queue wording (umbrella, sweep, wire skim, promotion, awaiting or waiting on, pending, queue, coverage, "your decision/review/call") or an N/N count such as 37/37. Phase designations like "Phase 2/3" are fine. Rewrite the sentence and render again; never edit the renderer to get past it.
 
 **`coverage` is what stops the tagged layout from implying a class was dropped.** The digest tags each row with its molecule class rather than splitting into one section per class, because on 96 of 111 recorded dates there was exactly one finding and six fixed sections would render five empty headings almost every day. The cost of tagging is that a class with no news is simply absent, so the coverage strip carries it instead: one compact row per class, always all six, at the foot of the digest.
 
@@ -340,7 +356,7 @@ In both bad versions the news is the first clause and the clause after the dash 
 
 Write it the way you'd tell a colleague the one thing worth knowing today, and only mention that a run was quiet in plain terms ("no new developments today") without exposing the count of things checked. If nothing at all happened, a short plain sentence saying so is fine — don't manufacture drama, but don't narrate the scan process either.
 
-**Every entry in all three arrays uses the exact same shape** — the digest deliberately gives every item identical visual weight, not one highlighted story with extra sections and the rest as footnotes:
+**Every entry in all four item arrays uses the exact same shape** — the digest deliberately gives every item identical visual weight, not one highlighted story with extra sections and the rest as footnotes:
 
 | Field | Source | Direct or synthesized |
 |---|---|---|
@@ -368,7 +384,7 @@ There is no `type`, `confidence`, or evidence-tier badge in the digest — those
 node scripts/render-email.mjs email/draft-input.json email/draft-output.json
 ```
 
-If there's nothing in any of the three arrays, the script prints a message and writes no output file — that's the signal to skip drafting an email entirely this run, not an error to work around.
+If nothing is left to report after its filters, the script prints a message and writes no output file — that's the signal to skip drafting an email entirely this run, not an error to work around.
 
 **3. Read `email/draft-output.json`** — it has exactly `{ "subject": "...", "preheader": "...", "html": "..." }`. Pass `subject` and `html` to the Gmail draft tool as-is. Don't edit, re-wrap, or re-escape either value — the script already handles escaping and the light `**bold**` markup.
 
@@ -378,13 +394,15 @@ If there's nothing in any of the three arrays, the script prints a message and w
 - Never let an unresolved candidate go un-aged on a run — the date math is free and always runs, even when the search budget is gone.
 - Never escalate a candidate with `fuzzy_match.score` 0.55 or higher — that's a merge decision for the admin, not a new umbrella.
 - Never change a candidate's `status` without writing `promotion_bar.evidence` explaining why.
-- Never drop a `ready_for_promotion` candidate out of the digest until its `resolution` is non-null.
+- Never drop a `ready_for_promotion` candidate out of the digest's `escalations` array until its `resolution` is non-null, and never put it in `candidates`.
 - Never send the digest email — draft it and stop, every run.
 - Never write the admin's queue or decision workflow into the digest copy — no pending/awaiting counts, no "ready for your promotion decision," no call to action. The digest informs; the dashboard is where decisions get made.
 - Never run the Tier 3 full audit automatically from a Daily scan or Weekly sweep.
 - Never blend multiple aliases into one search query.
 - Never fire more than two query variants for a single alias.
-- Never retry a domain that returned `EGRESS_BLOCKED` this run.
+- Never retry a domain that returned `EGRESS_BLOCKED` this run, and never WebFetch a host `source_health` already lists as `blocked` or `search_only`.
+- Never spawn sub-agents; every track runs in the one session.
+- Never log sales, share-price or analyst-note items, or news about an oral, daily or weekly program, as a finding.
 - Never do a deep multi-query dive on any umbrella before every umbrella has had its first-pass query — breadth before depth.
 - Never edit the app's interface/UI code, or the email digest template/renderer.
 - Never log a claim as "confirmed" without meeting the Tier 1/Tier 2 source rule.
