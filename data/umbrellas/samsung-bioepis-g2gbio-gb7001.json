@@ -41,7 +41,7 @@
     "data_point": "InnoLAMP: <5% initial drug burst in first 24h; serum concentrations maintained beyond 28 days in rodent models across semaglutide, tirzepatide, and retatrutide",
     "data_point_ko": "InnoLAMP: 첫 24시간 초기 약물 방출(burst) 5% 미만; 설치류 모델에서 세마글루타이드, 터제파타이드, 레타트루타이드 전반에 걸쳐 혈중 농도 28일 이상 유지",
     "last_updated": "2026-09-08",
-    "last_checked": "2026-09-13"
+    "last_checked": "2026-09-15"
   },
   "finding_history": [
     {
@@ -163,6 +163,36 @@
       },
       "confidence": "confirmed",
       "verification_note": "Logged in September 2026; not picked up when it was announced in July."
+    },
+    {
+      "id": "f-2025-08-18-001",
+      "date": "2025-08-18",
+      "type": "financing_investor",
+      "summary": "G2GBio was selected by Korea's Ministry of Trade, Industry and Energy for a government-funded R&D project (₩2.5B over 2.5 years) to develop a once-monthly immunosuppressant for organ transplant patients using its InnoLAMP long-acting microsphere platform -- a separate asset from the tracked GB-7001 semaglutide program, applying InnoLAMP outside the GLP-1/incretin space.",
+      "summary_ko": "지투지바이오(G2GBio)는 산업통상자원부의 정부 R&D 프로젝트(₩2.5B, 2.5년)에 선정되어 자사의 InnoLAMP 장기지속형 미립구 플랫폼을 활용한 장기이식 환자 대상 월 1회 면역억제제를 개발한다. 이는 추적 중인 GB-7001 세마글루타이드 프로그램과는 별개의 자산으로, GLP-1/인크레틴 영역 밖에 InnoLAMP를 적용한 사례다.",
+      "source": {
+        "name": "Hitnews (히트뉴스), corroborated by Biospectator",
+        "publication": "Hitnews",
+        "url": "http://www.hitnews.co.kr/news/articleView.html?idxno=67922",
+        "tier": 2
+      },
+      "confidence": "confirmed",
+      "verification_note": "Found via this run's Track A search of the InnoLAMP platform alias; announced 2025-08-18, over a year before this run and not previously logged."
+    },
+    {
+      "id": "f-2025-09-29-001",
+      "date": "2025-09-29",
+      "type": "deal_partnership",
+      "summary": "G2GBio signed a roughly 16-month research collaboration with an undisclosed European pharmaceutical company -- described as its 4th global InnoLAMP partnership, following two prior Boehringer Ingelheim agreements -- to reformulate the partner's active pharmaceutical ingredient into a long-acting injectable using InnoLAMP, covering feasibility-stage formulation and preclinical PK/PD-ready prototype development. The upfront payment is confidential but disclosed as at least 10% of G2GBio's prior-year revenue; G2GBio grants the partner an exclusive option on a non-exclusive, worldwide, perpetual sublicense to background IP needed to develop or commercialize results.",
+      "summary_ko": "지투지바이오(G2GBio)는 비공개 유럽 소재 제약사와 약 16개월간의 공동연구 계약을 체결했다(InnoLAMP 기준 4번째 글로벌 파트너십으로, 앞서 Boehringer Ingelheim과의 계약 2건에 이은 것). 이번 계약은 InnoLAMP를 활용해 파트너사의 활성 약리 성분(API)을 장기지속형 주사제로 재창출하는 것을 목표로 하며, 타당성 중심의 제형 개발과 전임상 PK/PD 평가용 프로토타입 제형 개발을 포함한다. 계약금은 비공개이나 지투지바이오의 전년도 매출 10% 이상으로 공시되었으며, 지투지바이오는 파트너사에게 연구 결과 개발·상업화에 필요한 범위 내 비독점적, 전 세계적, 영구적 서브라이선스에 대한 독점적 옵션을 부여한다.",
+      "source": {
+        "name": "Hitnews (히트뉴스), corroborated by KPA News (약사공론)",
+        "publication": "Hitnews",
+        "url": "https://www.hitnews.co.kr/news/articleView.html?idxno=69421",
+        "tier": 2
+      },
+      "confidence": "confirmed",
+      "verification_note": "Found via this run's Track A search of the InnoLAMP platform alias; announced 2025-09-29, over a year before this run and not previously logged."
     }
   ]
 }

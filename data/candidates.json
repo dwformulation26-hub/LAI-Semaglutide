@@ -640,24 +640,35 @@
           "snippet": "Beijing-based QL Biopharm raised over RMB 500M (~$72M) in a Series C led by OrbiMed (with 5Y Capital, Apricot Capital, Huagai Capital, Qiming Venture Partners, TigerYeah Capital, Lanchi Ventures, TF Capital), announced March 2, 2026. Lead candidate zovaglutide (ZT002) is a GLP-1 receptor agonist injection designed for monthly dosing -- potentially the first monthly GLP-1 peptide to reach market -- now in a China Phase 3 obesity trial (first patient dosed January 2026) after Phase II data showed 13.8% weight loss by week 24 without reaching a plateau.",
           "snippet_ko": "베이징 소재 QL Biopharm은 OrbiMed가 주도하고 5Y Capital, Apricot Capital, Huagai Capital, Qiming Venture Partners, TigerYeah Capital, Lanchi Ventures, TF Capital이 참여한 시리즈 C에서 RMB 500M(~$72M) 이상을 조달했다고 2026년 3월 2일 발표했다. 주력 후보 zovaglutide(ZT002)는 월 1회 투여용으로 설계된 GLP-1 수용체 작용제 주사제로, 시장에 출시되는 최초의 월 1회 GLP-1 펩타이드가 될 가능성이 있다. 임상 2상에서 24주차까지 정체기 없이 13.8% 체중 감소를 보인 데이터에 이어 현재 중국에서 비만 임상 3상(2026년 1월 첫 환자 투여)을 진행 중이다.",
           "date": "2026-03-02"
+        },
+        {
+          "source": {
+            "name": "Fierce Biotech",
+            "publication": "Fierce Biotech",
+            "url": "https://www.fiercebiotech.com/biotech/ql-biopharm-links-once-monthly-glp-1-incumbent-rivaling-weight-loss-phase-2",
+            "tier": 2
+          },
+          "snippet": "QL Biopharm's zovaglutide (ZT002), a once-monthly GLP-1 receptor agonist, met its primary and secondary endpoints in a Phase 2 obesity trial presented at EASD 2025: the 160 mg once-monthly dose produced 13.8% body-weight reduction at 24 weeks versus 2.4% for placebo, comparable to the 80 mg every-other-week arm's 12.5%. Independent editorial coverage of the same EASD 2025 data also reported via BioSpace/PR Newswire.",
+          "snippet_ko": "QL Biopharm의 월 1회 투여 GLP-1 수용체 작용제 조바글루타이드(ZT002)는 EASD 2025에서 발표된 임상 2상 비만 시험에서 주요 및 2차 평가변수를 충족했다: 160mg 월 1회 투여군은 24주차에 위약군 2.4% 대비 13.8%의 체중 감소를 보였으며, 이는 80mg 격주 투여군의 12.5%와 비슷한 수준이었다. BioSpace/PR Newswire를 통해서도 보도된 동일한 EASD 2025 데이터에 대한 독립적인 편집 보도다.",
+          "date": "2025-09-18"
         }
       ],
       "fuzzy_match": {
         "closest_umbrella_id": "mapi-pharma-semaglutide",
         "score": 0.2
       },
-      "status": "pending",
+      "status": "ready_for_promotion",
       "created_date": "2026-09-09",
       "follow_up": {
-        "last_checked": "2026-09-13",
-        "checks_run": 1,
-        "near_bar": true
+        "last_checked": "2026-09-15",
+        "checks_run": 2,
+        "near_bar": false
       },
       "promotion_bar": {
-        "cleared": ["named_entity", "technical_claim", "second_dated_event"],
-        "unmet": ["confirmed_source"],
-        "evidence": "The Endpoints News report itself already describes a stage-bearing event (Phase 3 'HORIZON-1' first-patient-dosed, ~2026-01-16), which alone clears second_dated_event. Only a single Tier 2 outlet is on record, though; this cycle's follow-up found likely independent corroboration (Fierce Biotech, BioSpace, BioWorld, PRNewswire on EASD 2025 data and the Phase 3 dosing start) but could not confirm citable URLs this pass -- one confirmed independent source next sweep would clear the bar.",
-        "evidence_ko": "Endpoints News 보도 자체가 이미 개발 단계를 나타내는 이벤트(임상 3상 'HORIZON-1' 첫 환자 투여, ~2026-01-16)를 기술하고 있어 이것만으로 second_dated_event(두 번째 날짜 이벤트)를 충족한다. 다만 기록된 것은 단일 Tier 2 매체뿐이다. 이번 주기 후속 조사에서 독립적인 교차 확인일 가능성이 높은 보도(EASD 2025 데이터 및 임상 3상 투여 개시에 관한 Fierce Biotech, BioSpace, BioWorld, PRNewswire)를 찾았으나 이번 조사에서는 인용 가능한 URL을 확인하지 못했다. 다음 스윕에서 확인된 독립 출처 1건이 나오면 기준을 충족하게 된다."
+        "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
+        "unmet": [],
+        "evidence": "Fierce Biotech's independently reported coverage of the same EASD 2025 Phase 2 data (zovaglutide 160mg once-monthly dose, 13.8% body-weight reduction at 24 weeks vs 2.4% placebo, announced 2025-09-18) corroborates the original BioSpace/PR Newswire company release, clearing confirmed_source. The Endpoints News report's Phase 3 'HORIZON-1' first-patient-dosed event (~2026-01-16) already cleared second_dated_event on its own. Fuzzy match to mapi-pharma-semaglutide remains low (0.2), well under the 0.55 merge threshold, so this candidate now clears every promotion-bar condition and escalates to ready_for_promotion.",
+        "evidence_ko": "Fierce Biotech가 독립적으로 보도한 동일한 EASD 2025 임상 2상 데이터(조바글루타이드 160mg 월 1회 투여군, 24주차 위약 대비 2.4% 대비 13.8% 체중 감소, 2025-09-18 발표)가 기존 BioSpace/PR Newswire 회사 보도자료를 교차 확인해 confirmed_source(확인된 출처)를 충족했다. Endpoints News 보도의 임상 3상 'HORIZON-1' 첫 환자 투여 이벤트(~2026-01-16)는 이미 그 자체로 second_dated_event(두 번째 날짜 이벤트)를 충족한 바 있다. mapi-pharma-semaglutide와의 퍼지 매칭 점수는 0.2로 병합 임계값 0.55보다 훨씬 낮아, 이번 후보는 이제 네 가지 승격 기준 조건을 모두 충족해 ready_for_promotion으로 에스컬레이션된다."
       },
       "resolution": null
     },
@@ -886,15 +897,15 @@
       "status": "pending",
       "created_date": "2026-09-13",
       "follow_up": {
-        "last_checked": null,
-        "checks_run": 0,
+        "last_checked": "2026-09-15",
+        "checks_run": 1,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "Two independent Tier 2 reports confirm the December 2025 Series A and the linker-plus-microsphere-hydrogel platform, but that financing is the only dated event and it is not stage-bearing.",
-        "evidence_ko": "독립적인 Tier 2 보도 2건이 2025년 12월 시리즈 A와 링커-미립구-하이드로겔 플랫폼을 확인했으나, 해당 자금 조달이 유일한 날짜 이벤트이며 개발 단계를 나타내는 이벤트가 아니다."
+        "evidence": "This run's follow-up search found no IND filing, clinical trial registration, or other second dated event since the December 2025 Series A -- as of a July 2026 report the company still had not disclosed when it expects to begin clinical testing. The financing remains the only dated event and it is not stage-bearing.",
+        "evidence_ko": "이번 주기 후속 조사에서 2025년 12월 시리즈 A 이후 IND 신청, 임상시험 등록 또는 그 외 두 번째 날짜 이벤트를 찾지 못했다 -- 2026년 7월 보도 기준으로도 회사는 여전히 임상시험 개시 시점을 공개하지 않았다. 해당 자금 조달이 유일한 날짜 이벤트로 남아 있으며 개발 단계를 나타내는 이벤트가 아니다."
       },
       "resolution": null
     },
