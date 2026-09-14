@@ -171,7 +171,7 @@ For each candidate in scope:
 
 A `ready_for_promotion` candidate is the loudest thing this skill can produce, and it stays loud until the admin resolves it:
 
-- It leads the email digest's `leadIn` **every run**, on the day it escalates and on every run after, until its `resolution` is non-null. This is the one case that outranks the normal headline-picking order below — a candidate ready for promotion beats a regulatory filing or a trial readout, because the filing is news the reader can read at leisure while the escalation is blocked on a decision only they can make.
+- It leads the email digest's `leadIn` **every run**, on the day it escalates and on every run after, until its `resolution` is non-null. This is the one case that outranks the normal headline-picking order below — a candidate that has cleared every evidence bar is the strongest *news* a run can produce: a program the tracker didn't know about, now documented well enough to stand on its own. That is why it leads. **Write the sentence as that news, never as a decision waiting on the reader** — "ready for promotion" is this skill's internal bookkeeping and never appears in the digest's wording (see "The leadIn is news, not a work queue" below).
 - It appears in the digest's `candidates` array every run too, not only on the run that created it. Re-appearing is the point: an escalation that was shown once and then went quiet is indistinguishable from one that was handled. The renderer's generated subject line will count it as a "new candidate" on those later runs — that's a known wrinkle of frozen infrastructure, and the `leadIn` you write is what carries the real message. Don't edit the renderer to fix it.
 - It sorts to the top of the dashboard's candidate queue, and the app counts escalations separately from the plain pending count.
 
@@ -284,7 +284,18 @@ Each row is `{ key, label, programs, daysSinceCheck, daysSinceNews }`:
 
 The reader is not you: they don't know what an "umbrella" is, don't care that this was a "sweep" or a "wire skim," and a raw coverage fraction like "37/37" or "5 umbrellas due for a check" reads as an internal ops metric, not news. Those are all terms this skill uses for its *own* bookkeeping (Track A/B mechanics, `meta.json` coverage) — they belong in the commit message and `source_health`, never in the digest.
 
-**When there's more than one finding, don't try to fold all of them into the sentence.** Pick the single most compelling one (two, at most, and only if both are genuinely strong) and lead with that — the rest are already listed in full right below, so the headline isn't the reader's only chance to see them. Trying to cram every item in produces a run-on that reads like a status report, not a headline. Judge "most compelling" the way a news editor would: a `ready_for_promotion` candidate outranks everything (see Track B3 — it's the only item in the digest that is blocked on the reader's decision rather than just informing them); then a regulatory filing or trial readout; then a new company entering the space, which beats a routine update to one already tracked; a plain new candidate is worth leading with only when there's no real finding that outranks it.
+**When there's more than one finding, don't try to fold all of them into the sentence.** Pick the single most compelling one (two, at most, and only if both are genuinely strong) and lead with that — the rest are already listed in full right below, so the headline isn't the reader's only chance to see them. Trying to cram every item in produces a run-on that reads like a status report, not a headline. Judge "most compelling" the way a news editor would: a `ready_for_promotion` candidate outranks everything (see Track B3 — a program that just cleared every evidence bar is the biggest thing the tracker learned, though the sentence never says so in those words); then a regulatory filing or trial readout; then a new company entering the space, which beats a routine update to one already tracked; a plain new candidate is worth leading with only when there's no real finding that outranks it.
+
+**The leadIn is news, not a work queue.** The digest exists to tell the reader what was found this run. It is not a task list, a queue status, or a request for a decision, so the admin's own workflow never appears in the wording: no count of what is pending or awaiting action ("one of five pending programs," "3 candidates in the queue"), no "ready for your promotion decision," "awaiting your review," "waiting on your call," and no imperative sending the reader off to go act on something. Promotion, merging, rejecting and snoozing are decisions the admin makes on the dashboard on their own schedule, and the dashboard already shows what is queued — a digest sentence that reports it is writing an internal ops tool's voice into what should read as news.
+
+Write about the program instead: what it is, who is behind it, what stage it reached, what changed. Compare:
+
+- ✗ "Two rival companies, Bostal and Anxo, are independently racing to build a long-acting injectable version of the antipsychotic cariprazine — one of five pending programs now ready for your promotion decision."
+- ✓ "Two rival companies, Bostal and Anxo, are independently racing to build a long-acting injectable version of the antipsychotic cariprazine."
+- ✗ "Bostal Drug Delivery's long-acting antipsychotic B2227, already in Phase 2/3 trials, is one of five programs that have now cleared every bar for a promotion decision — waiting on your call."
+- ✓ "Bostal Drug Delivery's long-acting antipsychotic B2227 is already in Phase 2/3 trials, the furthest along of any cariprazine LAI on the tracker."
+
+In both bad versions the news is the first clause and the clause after the dash is admin bookkeeping bolted on; deleting it loses the reader nothing. The same rule governs every `summary` row: describe the finding, never the reader's next action.
 
 Write it the way you'd tell a colleague the one thing worth knowing today, and only mention that a run was quiet in plain terms ("no new developments today") without exposing the count of things checked. If nothing at all happened, a short plain sentence saying so is fine — don't manufacture drama, but don't narrate the scan process either.
 
@@ -328,6 +339,7 @@ If there's nothing in any of the three arrays, the script prints a message and w
 - Never change a candidate's `status` without writing `promotion_bar.evidence` explaining why.
 - Never drop a `ready_for_promotion` candidate out of the digest until its `resolution` is non-null.
 - Never send the digest email — draft it and stop, every run.
+- Never write the admin's queue or decision workflow into the digest copy — no pending/awaiting counts, no "ready for your promotion decision," no call to action. The digest informs; the dashboard is where decisions get made.
 - Never run the Tier 3 full audit automatically from a Daily scan or Weekly sweep.
 - Never blend multiple aliases into one search query.
 - Never fire more than two query variants for a single alias.
