@@ -21,18 +21,17 @@
     "stage_evidence": "Preclinical/IND-enabling; Ascendis expects clinical entry in 2026 but trials have not started.",
     "stage_evidence_ko": "전임상/IND 준비 단계. Ascendis는 2026년 임상 진입을 예상하지만 시험은 아직 시작되지 않았다.",
     "molecule_class": [
-      "other_incretin"
+      "semaglutide"
     ],
-    "molecule_evidence": "TransCon GLP-1 receptor agonist, a new chemical entity, not one of the four named molecules.",
-    "molecule_evidence_ko": "TransCon GLP-1 수용체 작용제로, 신규 화학물질이며 지정된 4개 분자 중 하나가 아니다.",
+    "molecule_evidence": "Ascendis's own Sept 14, 2026 release names the lead program 'TransCon Semaglutide,' describing it as an investigational long-acting prodrug of the GLP-1 receptor agonist semaglutide -- superseding the 2024 finding's 'not a reformulation' characterization now that the program has a stated name and payload.",
+    "molecule_evidence_ko": "Ascendis의 2026년 9월 14일 자체 발표는 선도 프로그램을 'TransCon Semaglutide'로 명명하며, GLP-1 수용체 작용제 세마글루타이드의 장기지속형 프로드럭으로 설명한다 -- 이는 프로그램의 명칭과 탑재 약물이 명시된 지금, 2024년 기록의 '재제형이 아니다'라는 설명을 대체한다.",
     "dosing_target": "Monthly",
     "dosing_target_ko": "월 1회",
-    "partner": "Novo Nordisk",
-    "partner_ko": "Novo Nordisk",
-    "data_point": "No clinical efficacy data yet reported for the lead TransCon GLP-1 receptor agonist candidate as of Sept 2026",
-    "data_point_ko": "2026년 9월 기준 선도 TransCon GLP-1 수용체 작용제 후보의 임상 유효성 데이터는 아직 보고되지 않았다.",
-    "last_updated": "2026-08-20",
-    "last_checked": "2026-09-13"
+    "partner": null,
+    "data_point": "No clinical efficacy data yet reported for the lead TransCon Semaglutide candidate as of Sept 2026",
+    "data_point_ko": "2026년 9월 기준 선도 TransCon Semaglutide 후보의 임상 유효성 데이터는 아직 보고되지 않았다.",
+    "last_updated": "2026-09-14",
+    "last_checked": "2026-09-16"
   },
   "finding_history": [
     {
@@ -60,6 +59,21 @@
         "tier": 2
       },
       "confidence": "unverified"
+    },
+    {
+      "id": "f-2026-09-14-001",
+      "date": "2026-09-14",
+      "type": "deal_partnership",
+      "summary": "Ascendis Pharma announced it will regain full, exclusive rights to develop, manufacture and commercialize its TransCon technology-based programs in metabolic and cardiovascular disease -- including once-monthly TransCon Semaglutide -- following termination of the 2024 licensing collaboration with Novo Nordisk. All licenses granted to Novo Nordisk revert to Ascendis with no continuing financial obligations on either side, and Ascendis says it will now advance the program independently.",
+      "summary_ko": "Ascendis Pharma는 Novo Nordisk와의 2024년 기술이전 협력이 종료됨에 따라, 월 1회 TransCon Semaglutide를 포함한 대사 및 심혈관 질환 분야 TransCon 기술 기반 프로그램에 대한 완전하고 독점적인 개발/제조/상업화 권리를 되찾는다고 발표했다. Novo Nordisk에 부여됐던 모든 라이선스는 양측에 별도의 재무적 의무 없이 Ascendis로 반환되며, Ascendis는 이제 해당 프로그램을 독자적으로 진행할 계획이라고 밝혔다.",
+      "source": {
+        "name": "Ascendis Pharma press release (GlobeNewswire)",
+        "publication": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/09/14/3361592/0/en/ascendis-to-regain-rights-to-transcon-technology-in-metabolic-and-cardiovascular-diseases.html",
+        "tier": 2
+      },
+      "confidence": "confirmed",
+      "verification_note": "Corroborated by independent Tier 2 coverage (BioSpace) of the same Sept 14, 2026 release; globenewswire.com and investors.ascendispharma.com were reached via search only this run."
     }
   ]
 }

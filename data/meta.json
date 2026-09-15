@@ -2,7 +2,7 @@
   "last_run": {
     "initial_seed": "2026-09-02T00:00:00Z",
     "initial_discovery_test": "2026-09-02T00:00:00Z",
-    "daily_scan": "2026-09-15T06:04:08+09:00",
+    "daily_scan": "2026-09-16T06:04:14+09:00",
     "weekly_sweep": "2026-09-13T07:45:00Z",
     "qc_tier2": "2026-09-13T07:50:00Z",
     "qc_tier3": null,
@@ -11,15 +11,15 @@
   "digest_carryover": null,
   "coverage": {
     "daily_scan": {
-      "umbrellas_checked": 9,
+      "umbrellas_checked": 37,
       "umbrellas_total": 45,
-      "skipped_throttled": 36,
+      "skipped_throttled": 8,
       "skipped_budget_exhausted": 0,
-      "codes_harvested": 4,
-      "codes_unknown": 1,
-      "codes_queried": 1,
-      "watchlist_cursor": "alteogen-monthly",
-      "notes": "Breadth-first single-alias pass across all 9 due records (adocia-adoxlong, ascletis-asc30, astrazeneca-zoladex, cspc-syh2082, huahaikang-hhk001, lilly-eloralintide, owlbio-kyungdong-xtina, samsung-bioepis-g2gbio-gb7001, zealand-petrelintide); the other 36 were checked within the last 2 days and quiet 21+ days, so correctly throttled rather than budget-exhausted. Two real-but-late findings surfaced for samsung-bioepis-g2gbio-gb7001 via its InnoLAMP alias search: an 2025-08-18 government R&D grant (KIET/MOTIE, ₩2.5B over 2.5 years) for a 1-month InnoLAMP immunosuppressant, and a 2025-09-29 4th global InnoLAMP research collaboration with an undisclosed European pharma -- both over a year old and previously unlogged, both confirmed via multiple independent Tier 2 Korean trade outlets, but outside both the freshness window and the digest's 90-day cutoff so neither appears in today's email. A repeated claim that Hanmi's HM15275 is being developed in patch and once-monthly forms surfaced identically worded across two separate searches with no actual supporting article found (Hanmi's own pipeline page and every named article are about the standard once-weekly Phase 2 program) -- treated as an unverified search-summary artifact and not logged or queued as a candidate (Tier 0 QC catch). Track B1: 14/14 fixed watchlist rows queried; code harvest surfaced 4 code-pattern strings (HM15211, NN1706, MAR423, RO6883746), of which 1 (HM15211) needed a bounded query and resolved to a NASH-indicated triple agonist (Hanmi's efocipegtrutide, hours-scale half-life) that does not meet the long-acting/monthly bar; the other 3 resolved immediately from their own harvest context as a once-daily tri-agonist (Novo's NN1706), out of scope -- no new candidates from B1 this run. 4 rotation-list rows queried (abbv-295, pt404, lilly-camurus, alteogen-monthly), resuming from the start since no watchlist_cursor was on record; all reconfirmed existing watchlist entries with no information beyond what class-watchlist.md already documents, so no new candidates were queued from the rotation either. B3 cheap pass (2/2 searches spent): escalated cand-2026-09-09-001 (QL Biopharm / zovaglutide ZT002) to ready_for_promotion -- independent Fierce Biotech coverage corroborated the existing BioSpace/PR Newswire EASD 2025 Phase 2 readout, clearing confirmed_source (second_dated_event was already cleared by the Phase 3 dosing-start event); re-checked cand-2026-09-13-001 (Prolynx) and found no second dated event since its Dec 2025 Series A, remains pending/near_bar. Stall rule checked across all 14 unresolved candidates -- none 30+ days old, none triggered. etoday.co.kr, ebn.co.kr, hellodd.com and hanmi.co.kr each returned EGRESS_BLOCKED on their first fetch attempt this run and are now recorded as blocked."
+      "codes_harvested": 6,
+      "codes_unknown": 2,
+      "codes_queried": 2,
+      "watchlist_cursor": "pt404",
+      "notes": "Breadth-first single-alias pass across all 37 due records (the other 8 -- adocia-adoxlong, anxo-ax251, astrazeneca-zoladex, biocorrx-bicx104, bostal-b2227, cspc-syh2082, lilly-eloralintide, zealand-petrelintide -- were checked within the last 2 days and quiet 21+ days, so correctly throttled). One major finding: Ascendis Pharma regained full rights to TransCon GLP-1 (now named TransCon Semaglutide) from Novo Nordisk on Sept 14, 2026, following the 2024 collaboration's termination; the program's own Tier 1/2 release explicitly names it a semaglutide prodrug, so molecule_class on ascendis-transcon-novo was advanced from other_incretin to semaglutide (partner cleared to null; stage_label unchanged at Preclinical, no trial start disclosed). All other 36 due records reconfirmed existing findings with no material new information. Track B1: 14/14 fixed watchlist rows queried; code harvest surfaced 6 code-pattern strings across results (AZD6234, efsubaglutide alfa/Suba, plus MET-233i/PT404/ASC37/IVL3024 which resolved immediately as already-tracked aliases), of which 2 (AZD6234, efsubaglutide alfa) needed bounded queries -- both resolved to once-weekly/biweekly dosing (AstraZeneca amylin agonist; a GLP-1-Fc fusion), neither meeting the long-acting/monthly bar, so no new candidates from B1 this run. 4 rotation-list rows queried (biote-cn121154792a, ct-g32, abbv-295, pt404), resuming after alteogen-monthly and wrapping; all reconfirmed existing watchlist entries with no information beyond what class-watchlist.md already documents -- ct-g32 (Celltrion) still has no disclosed dosing interval, so still watch-only, not a candidate. B3 cheap pass (2/2 searches spent): escalated cand-2026-09-02-001 (Nanexa/PharmaShell) to ready_for_promotion -- this run's search found two of Nanexa's own 2026 dated PK announcements (Jan 27 monthly-dosing data, Mar 19 quarterly-dosing feasibility) beyond the Dec 2025 Moderna deal, clearing second_dated_event; re-checked cand-2026-09-02-003 (SpiderCore) and found only the same July 21, 2026 contract recirculated, remains pending/near_bar. Stall rule checked across all 14 unresolved candidates -- none 30+ days old, none triggered. No new EGRESS_BLOCKED domains this run (no direct WebFetch attempted; all sourcing via WebSearch, including patents.google.com which is already search_only)."
     },
     "weekly_sweep": {
       "source_categories_checked": 6,
@@ -40,7 +40,7 @@
       "escalated": 1,
       "stalled": 0,
       "aged": 14,
-      "notes": "Cheap daily B3 pass: pure date-math aging across all 14 unresolved candidates (5 of the prior 18 were promoted by the admin on 2026-09-10/09-11/09-14: cand-2026-09-02-005 Bostal, cand-2026-09-02-006 Anxo, cand-2026-09-02-008 BioCorRx, cand-2026-09-02-009 Huahaikang, cand-2026-09-10-001 CSPC/SYH2082 -- now resolved and out of the unresolved pool). Two near_bar candidates re-searched (the run's 2-search cap): cand-2026-09-09-001 (QL Biopharm) escalated to ready_for_promotion on independent Fierce Biotech corroboration; cand-2026-09-13-001 (Prolynx) re-checked, still pending/near_bar with no second dated event yet. Stall rule checked and not triggered (oldest unresolved candidate is cand-2026-09-02-001/002/003/004/007 at 13 days; stall requires 30+ days and 3+ checks)."
+      "notes": "Cheap daily B3 pass: pure date-math aging across all 14 unresolved candidates. Two near_bar candidates re-searched (the run's 2-search cap): cand-2026-09-02-001 (Nanexa/PharmaShell) escalated to ready_for_promotion on two newly-found 2026 dated PK announcements (Jan 27, Mar 19) beyond the original Dec 2025 Moderna deal; cand-2026-09-02-003 (SpiderCore) re-checked, still pending/near_bar with no second dated event beyond the original July 21, 2026 contract. Stall rule checked and not triggered (oldest unresolved candidates are cand-2026-09-02-002/003/004/007 at 14 days; stall requires 30+ days and 3+ checks)."
     }
   },
   "source_health": {
@@ -129,9 +129,9 @@
       "status": "blocked"
     },
     "patents.google.com": {
-      "last_success": "2026-09-13T07:45:00Z",
+      "last_success": "2026-09-16T06:04:14+09:00",
       "status": "search_only",
-      "note": "Direct fetch blocked by network policy (gateway 403 on CONNECT); reached via domain-scoped search this run too (WebFetch attempts to patents.google.com were EGRESS_BLOCKED, but WebSearch continued to surface current filing data)."
+      "note": "Direct fetch blocked by network policy (gateway 403 on CONNECT); reached via domain-scoped search again this run (e.g. CN121154792A tirzepatide filing)."
     },
     "controlledreleasesociety.org": {
       "last_success": null,

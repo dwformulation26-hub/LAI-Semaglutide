@@ -34,24 +34,46 @@
           "snippet": "Moderna taps Nanexa to improve delivery of injectable therapies in a back-loaded $500M pact, to develop long-acting versions of Moderna's mRNA-based compounds.",
           "snippet_ko": "Moderna는 대가가 후반부에 집중된 $500M 규모 계약으로 주사제 전달 개선을 위해 Nanexa와 손잡았으며, 이는 Moderna의 mRNA 기반 화합물의 장기지속형 버전을 개발하기 위한 것이다.",
           "date": "2025-12-10"
+        },
+        {
+          "source": {
+            "name": "Nanexa Announces Breakthrough Preclinical Data Demonstrating Exceptional Pharmacokinetic Profile for Monthly Semaglutide Formulation",
+            "publication": "Nanexa AB",
+            "url": "https://nanexa.com/mfn_news/nanexa-announces-breakthrough-preclinical-data-demonstrating-exceptional-pharmacokinetic-profile-for-monthly-semaglutide-formulation/",
+            "tier": 1
+          },
+          "snippet": "Nanexa reported preclinical PK studies showing an exceptional pharmacokinetic profile for a once-monthly subcutaneous PharmaShell semaglutide formulation -- a low peak-to-trough plasma concentration ratio, more stable than weekly Wegovy, with a low initial peak intended to reduce GI adverse events.",
+          "snippet_ko": "Nanexa는 월 1회 피하 투여용 PharmaShell 세마글루타이드 제형의 전임상 PK 연구에서 뛰어난 약동학적 프로파일을 확인했다고 보고했다 -- 주 1회 Wegovy보다 안정적인 낮은 최고/최저 혈중 농도 비율을 보였으며, 낮은 초기 피크는 GI 이상반응 감소를 목표로 한다.",
+          "date": "2026-01-27"
+        },
+        {
+          "source": {
+            "name": "Nanexa Demonstrates Feasibility of Quarterly Semaglutide Dosing with PharmaShell",
+            "publication": "Nanexa AB",
+            "url": "https://nanexa.com/mfn_news/nanexa-demonstrates-feasibility-of-quarterly-semaglutide-dosing-with-pharmashell/",
+            "tier": 1
+          },
+          "snippet": "Building on its Jan 2026 monthly-dosing PK data, Nanexa completed a rat PK study using several PharmaShell semaglutide formulations; the new data plus human modelling indicate semaglutide could potentially be dosed once every three months while maintaining a controlled, therapeutically relevant plasma concentration.",
+          "snippet_ko": "2026년 1월 월 1회 투여 PK 데이터에 이어, Nanexa는 여러 PharmaShell 세마글루타이드 제형을 활용한 쥐 대상 PK 연구를 완료했다. 새로운 데이터와 인체 모델링에 따르면 세마글루타이드를 조절되고 치료적으로 유의미한 혈중 농도를 유지하면서 3개월에 1회 투여할 수 있을 것으로 나타났다.",
+          "date": "2026-03-19"
         }
       ],
       "fuzzy_match": {
         "closest_umbrella_id": "camurus-cam2029",
         "score": 0.18
       },
-      "status": "pending",
+      "status": "ready_for_promotion",
       "created_date": "2026-09-02",
       "follow_up": {
-        "last_checked": "2026-09-13",
-        "checks_run": 1,
+        "last_checked": "2026-09-16",
+        "checks_run": 2,
         "near_bar": true
       },
       "promotion_bar": {
-        "cleared": ["named_entity", "technical_claim", "confirmed_source"],
-        "unmet": ["second_dated_event"],
-        "evidence": "The Dec 2025 Moderna licensing deal is a single dated event and not itself stage-bearing (a deal/partnership, not an IND/trial/regulatory/approval event). This week's follow-up found references to further 2026 dosing data and an ADA poster but could not pin down citable URLs this pass, so a second confirmed dated event is still needed before promotion.",
-        "evidence_ko": "2025년 12월 Moderna 기술이전 계약은 단일 날짜 이벤트이며 그 자체로 개발 단계를 나타내지 않는다(IND/임상/규제/승인 이벤트가 아닌 계약/파트너십). 이번 주 후속 조사에서 2026년 추가 투여 데이터와 ADA 포스터에 대한 언급을 찾았으나 이번 조사에서는 인용 가능한 URL을 확정하지 못해, 승격 전에 확인된 두 번째 날짜 이벤트가 여전히 필요하다."
+        "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
+        "unmet": [],
+        "evidence": "This run's follow-up found two of Nanexa's own dated PharmaShell semaglutide PK announcements, separate from the Dec 2025 Moderna deal: a Jan 27, 2026 release reporting an exceptional once-monthly PK profile in preclinical studies, and a Mar 19, 2026 release reporting follow-on data (plus human modelling) indicating quarterly semaglutide dosing may be feasible. Two distinct 2026 dated events beyond the original deal clear second_dated_event; all four promotion-bar conditions are now met and fuzzy_match to camurus-cam2029 remains low (0.18), well under the merge threshold.",
+        "evidence_ko": "이번 주기 후속 조사에서 2025년 12월 Moderna 계약과는 별개인 Nanexa 자체의 PharmaShell 세마글루타이드 PK 발표 2건을 확인했다: 2026년 1월 27일 발표는 전임상 연구에서 뛰어난 월 1회 PK 프로파일을 보고했고, 2026년 3월 19일 발표는 추가 데이터(및 인체 모델링)를 통해 3개월 1회 세마글루타이드 투여가 가능할 수 있다고 보고했다. 원 계약 이후의 별개 2026년 날짜 이벤트 2건이 second_dated_event(두 번째 날짜 이벤트)를 충족시키며, 이제 네 가지 승격 기준 조건을 모두 충족한다. camurus-cam2029와의 퍼지 매칭 점수는 여전히 낮아(0.18) 병합 임계값을 크게 밑돈다."
       },
       "resolution": null
     },
@@ -129,15 +151,15 @@
       "status": "pending",
       "created_date": "2026-09-02",
       "follow_up": {
-        "last_checked": "2026-09-13",
-        "checks_run": 1,
+        "last_checked": "2026-09-16",
+        "checks_run": 2,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "A second outlet (eToday) independently corroborates the same 2026-07-21 G2GBio/SpiderCore AI-platform contract, clearing confirmed_source, but no second distinct date has surfaced. SCOPE CAVEAT: SpiderCore is a KAIST-founded AI/software vendor selling an R&D tool to G2GBio, not itself a drug or delivery-technology developer -- recommend an explicit admin scope call on whether this belongs in the registry at all, independent of the promotion bar.",
-        "evidence_ko": "두 번째 매체(eToday)가 동일한 2026-07-21 지투지바이오/스파이더코어 AI 플랫폼 계약을 독립적으로 교차 확인해 confirmed_source(확인된 출처) 조건은 충족했으나, 두 번째 별개 날짜는 나타나지 않았다. 범위 관련 유의사항: 스파이더코어는 지투지바이오에 R&D 도구를 판매하는 KAIST 창업 AI/소프트웨어 업체로, 그 자체가 약물 또는 전달 기술 개발사가 아니다. 승격 기준과는 별개로 이 후보가 레지스트리에 포함돼야 하는지 여부에 대해 관리자의 명시적인 범위 판단을 권고한다."
+        "evidence": "A second outlet (eToday) independently corroborates the same 2026-07-21 G2GBio/SpiderCore AI-platform contract, clearing confirmed_source, but no second distinct date has surfaced. This run's follow-up found only the same July 21, 2026 contract announcement recirculated (Pitchbook/Tracxn company-profile listings, no new dated development), so second_dated_event remains unmet. SCOPE CAVEAT: SpiderCore is a KAIST-founded AI/software vendor selling an R&D tool to G2GBio, not itself a drug or delivery-technology developer -- recommend an explicit admin scope call on whether this belongs in the registry at all, independent of the promotion bar.",
+        "evidence_ko": "두 번째 매체(eToday)가 동일한 2026-07-21 지투지바이오/스파이더코어 AI 플랫폼 계약을 독립적으로 교차 확인해 confirmed_source(확인된 출처) 조건은 충족했으나, 두 번째 별개 날짜는 나타나지 않았다. 이번 주기 후속 조사에서도 동일한 2026년 7월 21일 계약 발표가 재게재된 것만 확인됐고(Pitchbook/Tracxn 기업 프로필 게재 등, 새로운 날짜의 진전 없음), second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다. 범위 관련 유의사항: 스파이더코어는 지투지바이오에 R&D 도구를 판매하는 KAIST 창업 AI/소프트웨어 업체로, 그 자체가 약물 또는 전달 기술 개발사가 아니다. 승격 기준과는 별개로 이 후보가 레지스트리에 포함돼야 하는지 여부에 대해 관리자의 명시적인 범위 판단을 권고한다."
       },
       "resolution": null
     },
