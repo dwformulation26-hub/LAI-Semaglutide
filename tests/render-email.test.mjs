@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
-import { orderItems, renderDigest } from "../scripts/render-email.mjs";
+import { deliveryMode, orderItems, renderDigest } from "../scripts/render-email.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const templateHtml = await readFile(path.join(root, "email", "templates", "daily-digest.html"), "utf8");
@@ -242,15 +242,50 @@ test("links the dashboard button at the current domain, and lets the environment
   assert.doesNotMatch(out.html, /\{\{DASHBOARD_URL\}\}/);
 });
 
-test("the footer states only what stays true whether the digest is drafted or sent", () => {
+test("the footer never claims a human saw the digest before it went out", () => {
   const out = renderDigest({
     runDate: "2026-09-11", leadIn: "x",
     findings: [{ headline: "H", date: "2026-09-11", molecules: ["semaglutide"], summary: "s", sourceUrl: "https://e.com", sourceName: "E" }]
   }, templateHtml);
-  // The old wording promised the digest was "never sent without a human reviewing it
-  // first", which stops being a claim the system can stand behind the moment sending is
-  // ever automated. Approval of the send is the part that holds either way.
+  // Two earlier wordings had to go: "never sent without a human reviewing it first", and
+  // then "A person approves each send". Both stopped being true on 2026-09-16, when a
+  // digest carrying new findings started going out unattended. What is left has to hold
+  // for the unattended send, because that is now the common case.
   assert.doesNotMatch(out.html, /never sent/);
-  assert.match(out.html, /A person approves each send/);
+  assert.doesNotMatch(out.html, /approves each send/);
+  assert.match(out.html, /No one reads it before it goes out/);
   assert.match(out.html, /public sources/);
+});
+
+// --- Send or draft -------------------------------------------------------------------
+// The send decision belongs to the renderer, not to the run: these recipients are real
+// colleagues, and "did anything actually turn up today" should not be a judgment call a
+// model re-litigates every morning.
+
+test("a digest with new findings is marked for sending", () => {
+  const out = renderDigest({ runDate: "2026-09-16", leadIn: "x", findings: [sampleFinding] }, templateHtml);
+  assert.equal(out.delivery, "send");
+});
+
+test("a digest with no new findings is drafted, never sent", () => {
+  // Escalations, late items and new candidates are each worth drafting, and none of them
+  // is new news. A repeated escalation in particular would otherwise mail the whole list
+  // the same program every Monday.
+  const out = renderDigest({
+    runDate: "2026-09-21",
+    leadIn: "x",
+    findings: [],
+    escalations: [{ headline: "QL Biopharm", date: "2026-09-02", summary: "Cleared every bar.", sourceUrl: "https://e.com", sourceName: "E" }],
+    lateItems: [{ headline: "Peptron CB", date: "2026-09-01", confidence: "confirmed", summary: "Filed on DART.", sourceUrl: "https://d.com", sourceName: "DART" }],
+    candidates: [{ headline: "New code XY-1", date: "2026-09-21", summary: "First sighting.", sourceUrl: "https://c.com", sourceName: "C" }]
+  }, templateHtml);
+  assert.notEqual(out, null);
+  assert.equal(out.delivery, "draft");
+});
+
+test("deliveryMode keys off findings alone, and treats a missing array as none", () => {
+  assert.equal(deliveryMode({ findings: [sampleFinding] }), "send");
+  assert.equal(deliveryMode({ findings: [] }), "draft");
+  assert.equal(deliveryMode({}), "draft");
+  assert.equal(deliveryMode({ escalations: [{}], candidates: [{}] }), "draft");
 });

@@ -274,6 +274,16 @@ function buildPreheader(input) {
   return "";
 }
 
+// --- Send or draft ------------------------------------------------------------------
+// New findings are the send trigger, and the only one. A digest carrying nothing but
+// repeated escalations, late items or new candidates is still worth drafting, but it is
+// not news that justifies mailing four inboxes unattended -- that one waits in Drafts for
+// the admin to read and send by hand. Decided here rather than in prose so the rule is
+// testable and a run cannot talk itself into a send.
+export function deliveryMode(input) {
+  return (input.findings?.length ?? 0) > 0 ? "send" : "draft";
+}
+
 // Pure: takes the parsed input payload and the raw template file contents,
 // returns { subject, preheader, html } or null if there's nothing to report
 // this run or runDate is a Saturday or Sunday (the caller should skip drafting an
@@ -328,7 +338,7 @@ export function renderDigest(rawInput, templateHtml) {
     DASHBOARD_URL: escapeHtml(dashboardUrl)
   });
 
-  return { subject, preheader, html };
+  return { subject, preheader, html, delivery: deliveryMode(input) };
 }
 
 async function main() {
@@ -370,6 +380,9 @@ async function main() {
   const escalations = (input.escalations?.length ?? 0) - heldEscalations;
   const late = (input.lateItems?.length ?? 0) - heldLate;
   console.log(`Rendered digest (${input.findings?.length ?? 0} findings, ${escalations} escalations, ${late} late, ${input.candidates?.length ?? 0} candidates) → ${outputPath}`);
+  console.log(result.delivery === "send"
+    ? "delivery: send — this digest has new findings, so send it to the standing recipient list."
+    : "delivery: draft — no new findings this run. Create the Gmail draft and do not send it.");
 }
 
 if (path.resolve(process.argv[1] ?? "") === path.resolve(fileURLToPath(import.meta.url))) main();

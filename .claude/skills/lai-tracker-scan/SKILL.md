@@ -305,7 +305,18 @@ git fetch origin main && git branch -r --contains HEAD   # origin/main must be l
 
 ## Email digest
 
-After a Daily scan, draft one bundled digest of what changed as a **Gmail draft**, not a sent email. **A Weekly sweep drafts no email**, because email goes out on weekdays only. The digest is English only; the Korean copies are for the dashboard, so never pass `_ko` text into the payload. This mirrors the promotion boundary above: drafting is this skill's job, sending is a decision only the admin makes, every time — there is no standing authorization to send mail unattended. If a future admin decision changes this policy, it will be written here explicitly; until then, draft-only is the rule, not a placeholder.
+After a Daily scan, build one bundled digest of what changed. **A Weekly sweep builds no email**, because email goes out on weekdays only. The digest is English only; the Korean copies are for the dashboard, so never pass `_ko` text into the payload.
+
+**Whether that digest is sent or only drafted is the renderer's decision, never yours.** `email/draft-output.json` carries a `delivery` field:
+
+| `delivery` | What the run does |
+|---|---|
+| `"send"` | The run logged at least one **new finding**. Send the digest to the standing recipient list, in the exact order the routine prompt lists it. |
+| `"draft"` | Everything else — a digest carrying only repeated escalations, late items or new candidates. Create the Gmail draft and stop. The admin reads that one and sends it by hand, or doesn't. |
+
+This is a standing authorization the admin granted on 2026-09-16, and it is deliberately narrow: new findings are news and go out unattended; a queue that merely hasn't moved is not, and never mails anyone on its own. Do not re-judge the `delivery` value against your own read of how interesting the run was, in either direction — the whole point of deciding it in the renderer is that the rule doesn't drift day to day. Sending remains the only unattended outward action in this skill: the promotion boundary above is untouched, and creating, promoting, merging, rejecting or snoozing anything is still admin-only, always.
+
+**The recipient list lives in the routine prompt, not in this repo.** It is real colleagues' work addresses and this repository is public, so never commit them to a file here, never write them into a commit message, and never put them in the digest body. If you are running this skill by hand and the recipient list is not in front of you, that is a `draft`, whatever `delivery` says — ask the admin rather than guessing an address.
 
 **Don't hand-write the HTML, and don't touch the template file.** `email/templates/daily-digest.html` and `scripts/render-email.mjs` are frozen infrastructure, exactly like the dashboard's `index.html`/`src/`/`scripts/build.mjs` — a routine run changes data, never design. Never edit the rendered HTML by hand, never improvise your own markup, and never modify the template file itself from this skill, even if the output looks like it could use a tweak — that's a deliberate, reviewed, one-off change the admin makes in conversation, not something a daily/weekly run does on its own. Your job every run is only to supply the input data, run the script unmodified, and hand its output to the Gmail draft tool unmodified.
 
@@ -395,7 +406,9 @@ node scripts/render-email.mjs email/draft-input.json email/draft-output.json
 
 If nothing is left to report after its filters, the script prints a message and writes no output file — that's the signal to skip drafting an email entirely this run, not an error to work around.
 
-**3. Read `email/draft-output.json`** — it has exactly `{ "subject": "...", "preheader": "...", "html": "..." }`. Pass `subject` and `html` to the Gmail draft tool as-is. Don't edit, re-wrap, or re-escape either value — the script already handles escaping and the light `**bold**` markup.
+**3. Read `email/draft-output.json`** — it has exactly `{ "subject": "...", "preheader": "...", "html": "...", "delivery": "send" | "draft" }`. Pass `subject` and `html` to the Gmail tool as-is. Don't edit, re-wrap, or re-escape either value — the script already handles escaping and the light `**bold**` markup.
+
+**4. Deliver it per `delivery`.** On `"draft"`, create a Gmail draft and stop. On `"send"`, send it to the routine prompt's recipient list in the order given, and say in your final summary that you sent it and to how many people. Either way the mail is the *last* thing the run does, after the commit is on `main`: a failure here must never cost the run its data. If the Gmail tool fails on a `"send"`, fall back to leaving a draft and say so plainly — do not retry a send you cannot confirm, since the failure mode is four people getting the same digest twice.
 
 ## Hard boundaries, recap
 
@@ -404,7 +417,8 @@ If nothing is left to report after its filters, the script prints a message and 
 - Never escalate a candidate with `fuzzy_match.score` 0.55 or higher — that's a merge decision for the admin, not a new umbrella.
 - Never change a candidate's `status` without writing `promotion_bar.evidence` explaining why.
 - Never drop a `ready_for_promotion` candidate out of the digest's `escalations` array until its `resolution` is non-null, and never put it in `candidates`.
-- Never send the digest email — draft it and stop, every run.
+- Never send a digest the renderer marked `"draft"`, and never send one from a Weekly sweep at all. `delivery` is the entire decision and it is not yours to re-judge.
+- Never send to an address that is not in the routine prompt's recipient list, never reorder that list, and never add a cc, a bcc or a reply-to of your own.
 - Never write a dashboard text field without its Korean copy, and never let a Korean copy say more or less than its English.
 - Never draft a digest from a Weekly sweep or for a Saturday or Sunday `runDate`, and never run Track A or B1 in a Weekly sweep; the sweep writes `digest_carryover` instead.
 - Never write the admin's queue or decision workflow into the digest copy — no pending/awaiting counts, no "ready for your promotion decision," no call to action. The digest informs; the dashboard is where decisions get made.
