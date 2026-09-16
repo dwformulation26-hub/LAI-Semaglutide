@@ -25,7 +25,8 @@ const STRINGS = {
     "page.eyebrow": "INCRETIN LAI · COMPETITIVE INTELLIGENCE",
     "page.title": "Long Acting Injection Intelligence Tracker",
     "page.subtitle": "Development maturity, recent evidence and the full historical record—kept separate and traceable.",
-    "page.freshnessLabel": "Database last updated",
+    "page.lastScanLabel": "Last scan",
+    "page.newestFindingLabel": "Newest finding",
 
     "overview.eyebrow": "MARKET AT A GLANCE",
     "overview.title": "Development race",
@@ -219,7 +220,8 @@ const STRINGS = {
     "page.eyebrow": "인크레틴 LAI · 경쟁 인텔리전스",
     "page.title": "지속형 주사제 인텔리전스 트래커",
     "page.subtitle": "개발 성숙도, 최신 근거 자료, 전체 히스토리 기록을 구분하여 추적합니다.",
-    "page.freshnessLabel": "데이터베이스 최종 업데이트",
+    "page.lastScanLabel": "최종 스캔",
+    "page.newestFindingLabel": "최신 소식",
 
     "overview.eyebrow": "시장 한눈에 보기",
     "overview.title": "개발 경쟁 현황",

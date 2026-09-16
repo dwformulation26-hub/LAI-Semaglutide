@@ -94,6 +94,11 @@ function setLang(lang) {
 function renderHeader(data) {
   const lang = state.lang;
   const displayDate = formatDate(data.latestDataDate, true, lang);
+  // Two dates, deliberately. The newest finding is the news; the last scan is the proof
+  // the tracker is still running. One combined "Database last updated" line could not say
+  // which it meant, so a stretch with no news read as a tracker that had stopped -- and on
+  // 2026-09-16 a stale tab reading "08 Sept" was indistinguishable from a run that failed.
+  $("#last-scan").textContent = formatDate(data.runStatus?.daily_scan, true, lang);
   $("#latest-date").textContent = displayDate;
   $("#mobile-date").textContent = displayDate;
   $("#rail-freshness").textContent = t(lang, "rail.freshness", { count: data.records.length, date: displayDate });
@@ -673,15 +678,60 @@ function renderAll(data) {
   renderCandidates(data);
 }
 
+// --- Keeping an open tab honest -------------------------------------------------------
+// This page used to fetch the database exactly once, when it loaded. A dashboard is a
+// thing people leave open, and the tracker commits new findings at 06:00 KST every
+// weekday, so a tab opened yesterday kept showing yesterday's world forever. On
+// 2026-09-16 that is exactly what happened: a real finding logged that morning was read
+// as "no new findings" while the deployed data had been correct all along.
+//
+// So re-check: whenever the tab comes back to the front, and on a slow timer for a tab
+// that simply stays open all day. `built_at` is the version marker -- if it hasn't moved,
+// nothing re-renders and the visit cost one conditional GET.
+const REFRESH_INTERVAL_MS = 5 * 60 * 1000;
+let refreshInFlight = false;
+
+async function fetchDatabase() {
+  // no-store, because the whole point of this request is to defeat a cached copy.
+  const response = await fetch("/data/dashboard.json", { headers: { Accept: "application/json" }, cache: "no-store" });
+  if (!response.ok) throw new Error(`Database request failed (${response.status})`);
+  return response.json();
+}
+
+async function refreshDatabase() {
+  if (refreshInFlight || !state.data || document.visibilityState !== "visible") return;
+  refreshInFlight = true;
+  try {
+    const payload = await fetchDatabase();
+    if (!payload.built_at || payload.built_at === state.rawPayload?.built_at) return;
+    const data = prepareDatabase(payload, state.lang);
+    // A refresh must never be able to blank a page that is already working, so a build
+    // that arrives empty is ignored rather than rendered.
+    if (!data.records.length) return;
+    state.rawPayload = payload;
+    state.data = data;
+    renderAll(data);
+  } catch (error) {
+    // Same reason: a failed re-check leaves what is on screen exactly as it was.
+    console.warn("Dashboard refresh failed; keeping the data already on screen.", error);
+  } finally {
+    refreshInFlight = false;
+  }
+}
+
+function watchForNewData() {
+  document.addEventListener("visibilitychange", refreshDatabase);
+  window.addEventListener("focus", refreshDatabase);
+  setInterval(refreshDatabase, REFRESH_INTERVAL_MS);
+}
+
 async function start() {
   state.lang = getStoredLang();
   applyStaticStrings(state.lang);
   updateLangToggle(state.lang);
   bindLangToggle();
   try {
-    const response = await fetch("/data/dashboard.json", { headers: { Accept: "application/json" } });
-    if (!response.ok) throw new Error(`Database request failed (${response.status})`);
-    const payload = await response.json();
+    const payload = await fetchDatabase();
     state.rawPayload = payload;
     const data = prepareDatabase(payload, state.lang);
     if (!data.records.length) throw new Error("The dashboard database contains no accepted records.");
@@ -689,6 +739,7 @@ async function start() {
     renderAll(data);
     bindEvents();
     enableScrollSpy();
+    watchForNewData();
     $("#app-status").hidden = true;
   } catch (error) {
     const status = $("#app-status");

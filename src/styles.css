@@ -102,7 +102,7 @@ main { width: calc(100% - var(--rail)); max-width: 1500px; margin-left: var(--ra
 .page-head h1 { max-width: 720px; margin: .35rem 0 .4rem; font: 750 clamp(2.2rem, 4.5vw, 4.7rem)/.98 "Manrope", "Noto Sans KR", sans-serif; letter-spacing: -.055em; }
 .page-head p:last-child { max-width: 720px; margin: 0; color: var(--muted); }
 .eyebrow { margin: 0; color: var(--blue); font-size: .68rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
-.freshness { min-width: 165px; padding-bottom: .25rem; text-align: right; }
+.freshness { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .35rem 1.15rem; min-width: 165px; padding-bottom: .25rem; text-align: right; }
 .freshness span { display: block; color: var(--faint); font-size: .7rem; }
 .freshness strong { font-family: "Manrope", "Noto Sans KR", sans-serif; font-size: .95rem; }
 

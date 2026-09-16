@@ -3,7 +3,8 @@ import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
-import { CANDIDATE_STATUSES, MOLECULE_ORDER, assessRunHealth, competitiveScore, interpretLeader, leadSentence, localized, moleculeClasses, normalizeStage, orderPrograms, prepareDatabase, safeUrl } from "../src/model.js";
+import { CANDIDATE_STATUSES, MOLECULE_ORDER, assessRunHealth, competitiveScore, formatDate, interpretLeader, leadSentence, localized, moleculeClasses, normalizeStage, orderPrograms, prepareDatabase, safeUrl } from "../src/model.js";
+import { LANGS, t } from "../src/i18n.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -347,4 +348,71 @@ test("shows the Korean copy in Korean mode and falls back to English visibly", (
   assert.deepEqual(localized(finding, "summary", "ko"), { text: "임상 1상을 시작했다.", fallback: false });
   assert.deepEqual(localized({ summary: "Phase 1 started." }, "summary", "ko"), { text: "Phase 1 started.", fallback: true });
   assert.deepEqual(localized({ partner: null }, "partner", "ko"), { text: "", fallback: false });
+});
+
+
+// --- Staying current --------------------------------------------------------------------
+// All four of these exist because of one incident, 2026-09-16: the daily scan logged a real
+// finding at 06:04 KST and deployed it correctly, but a dashboard tab that had been open
+// since the previous day still showed the older newest-item, and the single "Database last
+// updated" line could not distinguish "nothing found lately" from "the tracker stopped
+// running". The data was never wrong; only the page was.
+
+test("the page re-checks for new data instead of trusting the copy it first loaded", async () => {
+  const app = await readFile(path.join(root, "src", "app.js"), "utf8");
+  // A dashboard is left open for days. If these go, stale-tab blindness comes back.
+  assert.ok(app.includes("visibilitychange"), "must re-check when the tab returns to the front");
+  assert.ok(app.includes("setInterval(refreshDatabase"), "must also re-check a tab that just stays open");
+  assert.ok(app.includes('cache: "no-store"'), "the re-check must defeat a cached copy");
+  // The version marker: without a built_at comparison the page either re-renders on every
+  // check or never notices a change at all.
+  assert.ok(app.includes("payload.built_at === state.rawPayload?.built_at"), "must compare build versions");
+});
+
+test("a failed or empty re-check never blanks a page that is already working", async () => {
+  const app = await readFile(path.join(root, "src", "app.js"), "utf8");
+  const body = app.slice(app.indexOf("async function refreshDatabase"), app.indexOf("function watchForNewData"));
+  assert.ok(body.includes("if (!data.records.length) return;"), "an empty build must be ignored, not rendered");
+  assert.ok(body.includes("catch"), "a failed refresh must leave the screen as it was");
+  assert.ok(!body.includes("throw"), "refresh must never throw its way into the error banner");
+});
+
+test("the header dates the last scan and the newest finding separately", async () => {
+  const html = await readFile(path.join(root, "index.html"), "utf8");
+  assert.ok(html.includes('id="last-scan"'), "the run date is what shows the tracker is alive");
+  assert.ok(html.includes('id="latest-date"'), "the newest finding date is the news");
+  assert.ok(html.includes('data-i18n="page.lastScanLabel"'));
+  assert.ok(html.includes('data-i18n="page.newestFindingLabel"'));
+  // The old combined label said neither thing, and must not come back.
+  assert.ok(!html.includes("page.freshnessLabel"), "the ambiguous single label must stay gone");
+
+  // The header reads the scan time straight off meta.last_run, so that shape must hold.
+  const data = prepareDatabase({
+    records: [{ id: "x", canonical_name: "X - Y", origin: "Global", technology_family: "other", current_status: { stage_label: "Phase 1" }, finding_history: [] }],
+    latest_data_date: "2026-09-14",
+    meta: { last_run: { daily_scan: "2026-09-16T06:04:14+09:00" } }
+  });
+  assert.equal(data.runStatus.daily_scan, "2026-09-16T06:04:14+09:00");
+  assert.equal(data.latestDataDate, "2026-09-14");
+  // A KST timestamp must render as its KST calendar day, not slip back into the 15th.
+  assert.equal(formatDate(data.runStatus.daily_scan, true, "en"), "16 Sept 2026");
+});
+
+test("every UI string the page asks for exists in both languages", async () => {
+  const html = await readFile(path.join(root, "index.html"), "utf8");
+  const keys = [...html.matchAll(/data-i18n(?:-placeholder|-aria-label)?="([^"]+)"/g)].map((m) => m[1]);
+  assert.ok(keys.length > 20, "expected the page to use many i18n keys, found " + keys.length);
+  for (const key of new Set(keys)) {
+    for (const lang of LANGS) {
+      // t() returns the key itself when it resolves nowhere, and silently falls back to
+      // English when only the Korean copy is missing -- neither is acceptable on a page
+      // that ships an EN/KR toggle.
+      assert.notEqual(t(lang, key), key, key + " has no " + lang + " string");
+    }
+  }
+  // The two new header labels must be genuinely translated, not English wearing a ko tag.
+  for (const key of ["page.lastScanLabel", "page.newestFindingLabel"]) {
+    assert.notEqual(t("ko", key), t("en", key), key + " is not translated");
+    assert.match(t("ko", key), /[\uac00-\ud7a3]/, key + " has no Hangul");
+  }
 });
