@@ -2,7 +2,7 @@
   "last_run": {
     "initial_seed": "2026-09-02T00:00:00Z",
     "initial_discovery_test": "2026-09-02T00:00:00Z",
-    "daily_scan": "2026-09-16T06:04:14+09:00",
+    "daily_scan": "2026-09-17T06:04:18+09:00",
     "weekly_sweep": "2026-09-13T07:45:00Z",
     "qc_tier2": "2026-09-13T07:50:00Z",
     "qc_tier3": null,
@@ -11,15 +11,15 @@
   "digest_carryover": null,
   "coverage": {
     "daily_scan": {
-      "umbrellas_checked": 37,
+      "umbrellas_checked": 8,
       "umbrellas_total": 45,
-      "skipped_throttled": 8,
+      "skipped_throttled": 37,
       "skipped_budget_exhausted": 0,
-      "codes_harvested": 6,
+      "codes_harvested": 16,
       "codes_unknown": 2,
-      "codes_queried": 2,
-      "watchlist_cursor": "pt404",
-      "notes": "Breadth-first single-alias pass across all 37 due records (the other 8 -- adocia-adoxlong, anxo-ax251, astrazeneca-zoladex, biocorrx-bicx104, bostal-b2227, cspc-syh2082, lilly-eloralintide, zealand-petrelintide -- were checked within the last 2 days and quiet 21+ days, so correctly throttled). One major finding: Ascendis Pharma regained full rights to TransCon GLP-1 (now named TransCon Semaglutide) from Novo Nordisk on Sept 14, 2026, following the 2024 collaboration's termination; the program's own Tier 1/2 release explicitly names it a semaglutide prodrug, so molecule_class on ascendis-transcon-novo was advanced from other_incretin to semaglutide (partner cleared to null; stage_label unchanged at Preclinical, no trial start disclosed). All other 36 due records reconfirmed existing findings with no material new information. Track B1: 14/14 fixed watchlist rows queried; code harvest surfaced 6 code-pattern strings across results (AZD6234, efsubaglutide alfa/Suba, plus MET-233i/PT404/ASC37/IVL3024 which resolved immediately as already-tracked aliases), of which 2 (AZD6234, efsubaglutide alfa) needed bounded queries -- both resolved to once-weekly/biweekly dosing (AstraZeneca amylin agonist; a GLP-1-Fc fusion), neither meeting the long-acting/monthly bar, so no new candidates from B1 this run. 4 rotation-list rows queried (biote-cn121154792a, ct-g32, abbv-295, pt404), resuming after alteogen-monthly and wrapping; all reconfirmed existing watchlist entries with no information beyond what class-watchlist.md already documents -- ct-g32 (Celltrion) still has no disclosed dosing interval, so still watch-only, not a candidate. B3 cheap pass (2/2 searches spent): escalated cand-2026-09-02-001 (Nanexa/PharmaShell) to ready_for_promotion -- this run's search found two of Nanexa's own 2026 dated PK announcements (Jan 27 monthly-dosing data, Mar 19 quarterly-dosing feasibility) beyond the Dec 2025 Moderna deal, clearing second_dated_event; re-checked cand-2026-09-02-003 (SpiderCore) and found only the same July 21, 2026 contract recirculated, remains pending/near_bar. Stall rule checked across all 14 unresolved candidates -- none 30+ days old, none triggered. No new EGRESS_BLOCKED domains this run (no direct WebFetch attempted; all sourcing via WebSearch, including patents.google.com which is already search_only)."
+      "codes_queried": 1,
+      "watchlist_cursor": "ct-g32",
+      "notes": "Breadth-first single-alias pass across all 8 due records (anxo-ax251, ascendis-transcon-novo, ascletis-asc30, biocorrx-bicx104, bostal-b2227, huahaikang-hhk001, owlbio-kyungdong-xtina, samsung-bioepis-g2gbio-gb7001); the other 37 were checked within the last 1-2 days and are quiet 21+ days, so correctly throttled. All 8 due records reconfirmed existing findings with no material new information this run (a BioCorRx NIDA-grant press release surfaced via search cites the same U01DA059994 award already in the record's 2026-01-14 finding, so it was not logged as a separate new finding). Track B1: 14/14 fixed watchlist rows queried. Code harvest surfaced roughly 16 code-pattern strings across results, most resolving immediately as already-tracked aliases or parent-molecule identifiers (AX251, ASC30, BICX104, B2227, HHK001, AUL009, GB-7001, PT404, MET-233i, IVL3024, ABBV-295, MET-097i, HM15275); 2 needed further evaluation -- NN1706 (a Novo once-daily tri-agonist, resolved immediately from context as out of scope/daily dosing, no extra query needed) and DD15 (D&D Pharmatech's triple-agonist licensed to Metsera/Pfizer, 1 bounded query) -- DD15's only once-monthly-target reporting traces to a single Dec 11, 2024 Edaily exclusive whose own 'H1 2025' clinical-start prediction is now over a year stale with no confirming trial registration found, so it was not logged as a new candidate or umbrella finding. One new candidate cleared the creation bar via the wire skim itself: cand-2026-09-17-001, Samik Pharmaceutical's once-monthly thymosin alpha-1 long-acting microsphere (UniSphero platform, Korean patent 10-3012843), corroborated by multiple independent Tier 2 Korean trade outlets -- near_bar, missing only second_dated_event. 4 rotation-list rows queried (lilly-camurus, alteogen-monthly, biote-cn121154792a, ct-g32), resuming after pt404 and wrapping the list; all reconfirmed existing watchlist entries with no information beyond what class-watchlist.md already documents -- ct-g32 (Celltrion) still has no disclosed dosing interval, so still watch-only, not a candidate. B3 cheap pass (2/2 searches spent): re-checked cand-2026-09-11-001 (Appel Sauce Studios) -- found only a further academic, non-company preprint, remains pending/near_bar; re-checked cand-2026-09-13-001 (Prolynx) -- still no IND/trial registration, remains pending/near_bar. Stall rule checked across all 15 unresolved candidates -- none 30+ days old, none triggered. New EGRESS_BLOCKED domains this run: ir.biocorrx.com, edaily.co.kr (each attempted once via direct WebFetch while chasing a lead, not retried). clinicaltrials.gov and patents.google.com both reached via search again this run (e.g. CN121154792A tirzepatide filing; HHK001/B2227/BICX104/AX251 trial listings)."
     },
     "weekly_sweep": {
       "source_categories_checked": 6,
@@ -35,12 +35,12 @@
       "dedup_sweep": "completed -- no true duplicate umbrellas or candidates found; all near-identical alias/name collisions are legitimate same-parent-company multi-asset umbrellas (Alkermes, Ascendis Pharma, Camurus incl. Braeburn-Camurus-Brixadi, InventageLab, Ipsen, Mapi Pharma, Novo Nordisk, Peptron each have 2-3 separate umbrella files by design). Candidate-list fuzzy-dedup also checked: several candidate pairs score 0.5-0.79 on generic legal-suffix similarity alone (e.g. \"... Pharmaceutical Technology Co., Ltd.\") but are confirmed distinct real-world companies, not duplicates -- one genuine registry-growth case was caught and handled under candidate_follow_up instead (cand-2026-09-02-007 vs the newly-promoted cspc-syh2082, same corporate parent, different asset)."
     },
     "candidate_follow_up": {
-      "unresolved_total": 14,
+      "unresolved_total": 15,
       "rechecked": 2,
-      "escalated": 1,
+      "escalated": 0,
       "stalled": 0,
-      "aged": 14,
-      "notes": "Cheap daily B3 pass: pure date-math aging across all 14 unresolved candidates. Two near_bar candidates re-searched (the run's 2-search cap): cand-2026-09-02-001 (Nanexa/PharmaShell) escalated to ready_for_promotion on two newly-found 2026 dated PK announcements (Jan 27, Mar 19) beyond the original Dec 2025 Moderna deal; cand-2026-09-02-003 (SpiderCore) re-checked, still pending/near_bar with no second dated event beyond the original July 21, 2026 contract. Stall rule checked and not triggered (oldest unresolved candidates are cand-2026-09-02-002/003/004/007 at 14 days; stall requires 30+ days and 3+ checks)."
+      "aged": 15,
+      "notes": "Cheap daily B3 pass: pure date-math aging across all 15 unresolved candidates (14 carried over plus cand-2026-09-17-001 created this run). Two near_bar candidates re-searched (the run's 2-search cap): cand-2026-09-11-001 (Appel Sauce Studios) -- found only a further academic, non-company preprint, remains pending/near_bar; cand-2026-09-13-001 (Prolynx) -- still no IND/trial registration since the Dec 2025 Series A, remains pending/near_bar. Stall rule checked and not triggered (oldest unresolved candidates are the 2026-09-02 batch at 15 days; stall requires 30+ days and 3+ checks)."
     }
   },
   "source_health": {
@@ -129,9 +129,17 @@
       "status": "blocked"
     },
     "patents.google.com": {
-      "last_success": "2026-09-16T06:04:14+09:00",
+      "last_success": "2026-09-17T06:04:18+09:00",
       "status": "search_only",
       "note": "Direct fetch blocked by network policy (gateway 403 on CONNECT); reached via domain-scoped search again this run (e.g. CN121154792A tirzepatide filing)."
+    },
+    "ir.biocorrx.com": {
+      "last_success": null,
+      "status": "blocked"
+    },
+    "edaily.co.kr": {
+      "last_success": null,
+      "status": "blocked"
     },
     "controlledreleasesociety.org": {
       "last_success": null,
@@ -158,9 +166,9 @@
       "status": "blocked"
     },
     "clinicaltrials.gov": {
-      "last_success": "2026-09-15T06:04:08+09:00",
+      "last_success": "2026-09-17T06:04:18+09:00",
       "status": "search_only",
-      "note": "Direct fetch blocked by network policy (gateway 403 on CONNECT); reached via domain-scoped search, which returned current registrations this run too (e.g. NCT07755956, NCT07793162)."
+      "note": "Direct fetch blocked by network policy (gateway 403 on CONNECT); reached via domain-scoped search, which returned current registrations this run too (e.g. NCT07484204, NCT07722728)."
     },
     "etoday.co.kr": {
       "last_success": null,

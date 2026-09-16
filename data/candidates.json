@@ -817,15 +817,15 @@
       "status": "pending",
       "created_date": "2026-09-11",
       "follow_up": {
-        "last_checked": "2026-09-13",
-        "checks_run": 1,
+        "last_checked": "2026-09-17",
+        "checks_run": 2,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This cycle's follow-up found the same underlying study also appeared as a 2025-07 bioRxiv preprint before its 2026 peer-reviewed publication -- but a preprint-then-journal republication of one static academic result doesn't count as the entity showing up twice in the world. Still no company pipeline page, financing, or clinical trial registration found for Appel Sauce Studios as of this sweep; a first commercial/company-level signal is what would actually clear this condition.",
-        "evidence_ko": "이번 주기 후속 조사에서 동일한 기저 연구가 2026년 동료 심사 논문으로 출판되기 전에 2025-07 bioRxiv 프리프린트로도 공개됐음을 확인했으나, 하나의 정적인 학술 결과가 프리프린트에서 저널로 재출판된 것은 해당 주체가 실제로 두 차례 등장한 것으로 간주되지 않는다. 이번 스윕 기준으로 Appel Sauce Studios의 회사 파이프라인 페이지, 자금 조달, 임상시험 등록은 여전히 찾지 못했으며, 이 조건을 실제로 충족하려면 첫 상업/회사 차원의 신호가 필요하다."
+        "evidence": "This run's follow-up found a further related academic preprint (a May 2026 bioRxiv paper on hydrogel-depot structure-property engineering from the same Stanford research group) but it does not name Appel Sauce Studios and is academic, not a company-level signal, so it does not count as a second dated event. Still no company pipeline page, financing, or clinical trial registration found for Appel Sauce Studios as of this run; a first commercial/company-level signal is what would actually clear this condition.",
+        "evidence_ko": "이번 주기 후속 조사에서 같은 Stanford 연구팀의 관련 학술 프리프린트(2026년 5월 bioRxiv, 하이드로겔 데포 구조-물성 설계)를 추가로 찾았으나, Appel Sauce Studios를 명시하지 않은 학술 자료로 회사 차원의 신호가 아니어서 두 번째 날짜 이벤트로 인정하지 않는다. 이번 실행 기준으로도 Appel Sauce Studios의 회사 파이프라인 페이지, 자금 조달, 임상시험 등록은 여전히 찾지 못했으며, 이 조건을 실제로 충족하려면 첫 상업/회사 차원의 신호가 필요하다."
       },
       "resolution": null
     },
@@ -919,15 +919,15 @@
       "status": "pending",
       "created_date": "2026-09-13",
       "follow_up": {
-        "last_checked": "2026-09-15",
-        "checks_run": 1,
+        "last_checked": "2026-09-17",
+        "checks_run": 2,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's follow-up search found no IND filing, clinical trial registration, or other second dated event since the December 2025 Series A -- as of a July 2026 report the company still had not disclosed when it expects to begin clinical testing. The financing remains the only dated event and it is not stage-bearing.",
-        "evidence_ko": "이번 주기 후속 조사에서 2025년 12월 시리즈 A 이후 IND 신청, 임상시험 등록 또는 그 외 두 번째 날짜 이벤트를 찾지 못했다 -- 2026년 7월 보도 기준으로도 회사는 여전히 임상시험 개시 시점을 공개하지 않았다. 해당 자금 조달이 유일한 날짜 이벤트로 남아 있으며 개발 단계를 나타내는 이벤트가 아니다."
+        "evidence": "This run's repeat search again found no IND filing, clinical trial registration, or other second dated event since the December 2025 Series A -- no update to the company's undisclosed clinical-entry timeline was found this run either. The financing remains the only dated event and it is not stage-bearing.",
+        "evidence_ko": "이번 주기 반복 조사에서도 2025년 12월 시리즈 A 이후 IND 신청, 임상시험 등록 또는 그 외 두 번째 날짜 이벤트를 찾지 못했다 -- 회사의 미공개 임상 개시 시점에 대한 업데이트도 이번 조사에서 확인되지 않았다. 해당 자금 조달이 유일한 날짜 이벤트로 남아 있으며 개발 단계를 나타내는 이벤트가 아니다."
       },
       "resolution": null
     },
@@ -1000,6 +1000,67 @@
         "unmet": [],
         "evidence": "Mechanically clears the bar: a Tier 1 company-IR source (own HKEX announcement / e-cspc.com news page) confirms the claim, and two distinct stage-bearing regulatory events (NMPA China CTA ~2024-12-20, US FDA CTA ~2026-06-08) clear second_dated_event on their own. However, SYH9017 is a semaglutide-monoagonist gel-depot asset from the same corporate parent (CSPC Pharmaceutical Group) as the already-promoted cspc-syh2082 (SYH2082, a distinct GLP-1R/GIPR dual-agonist LiquidGel asset licensed to AstraZeneca) -- fuzzy match against the grown alias table scores 0.6 (>= the 0.55 merge threshold), so per the mechanical merge-case rule this must NOT be escalated to ready_for_promotion. Flagging for an admin merge/new-sibling-umbrella decision, same pattern as cand-2026-09-02-007 (CSPC ZhongQi/SYHX2008).",
         "evidence_ko": "기계적으로 기준을 충족한다: Tier 1 회사 IR 출처(자체 HKEX 공시 / e-cspc.com 뉴스 페이지)가 주장을 확인하며, 개발 단계를 나타내는 별개의 규제 이벤트 2건(NMPA 중국 CTA ~2024-12-20, 미국 FDA CTA ~2026-06-08)만으로 second_dated_event(두 번째 날짜 이벤트)를 충족한다. 그러나 SYH9017은 이미 승격된 cspc-syh2082(AstraZeneca에 기술이전된 별개의 GLP-1R/GIPR 이중 작용제 LiquidGel 자산 SYH2082)와 동일한 모회사(CSPC Pharmaceutical Group)의 세마글루타이드 단일 작용제 겔-데포 자산이며, 확장된 별칭 테이블 기준 퍼지 매칭 점수가 0.6(병합 임계값 0.55 이상)으로 나타나 기계적 병합 사례 규칙에 따라 ready_for_promotion으로 에스컬레이션해서는 안 된다. cand-2026-09-02-007(CSPC ZhongQi/SYHX2008)과 같은 패턴으로, 관리자의 병합/신규 자매 엄브렐라 결정을 위해 플래그를 지정한다."
+      },
+      "resolution": null
+    },
+    {
+      "id": "cand-2026-09-17-001",
+      "detected_name": "Samik Pharmaceutical -- Thymosin Alpha-1 Long-Acting Microsphere (UniSphero)",
+      "detected_aliases": [
+        "Samik Pharmaceutical",
+        "삼익제약",
+        "UniSphero",
+        "Thymosin alpha-1",
+        "싸이모신 알파1"
+      ],
+      "entity_type_guess": [
+        "company",
+        "platform"
+      ],
+      "evidence": [
+        {
+          "source": {
+            "name": "Hitnews (히트뉴스)",
+            "publication": "Hitnews",
+            "url": "https://www.hitnews.co.kr/news/articleView.html?idxno=79109",
+            "tier": 2
+          },
+          "snippet": "Samik Pharmaceutical registered Korean patent No. 10-3012843 for a long-acting microsphere formulation of the immune-modulating peptide thymosin alpha-1, built on the company's own 'UniSphero' microsphere platform. A membrane-emulsification technique produces uniform microspheres (22.9-28.6 micrometers) designed to sustain drug release for up to 4 weeks, versus the current standard aqueous formulation's twice-weekly subcutaneous injections. Samik's shares rose as much as 18% on the news.",
+          "snippet_ko": "삼익제약은 면역조절 펩타이드 싸이모신 알파1의 장기지속형 미립구 제형에 대해 자체 미립구 플랫폼 '유니스페로(UniSphero)'를 적용한 국내 특허 제10-3012843호를 등록했다. 막유화 기술로 균일한 크기의 미립구(22.9-28.6 마이크로미터)를 제조해 기존 표준 치료인 주 2회 피하주사가 필요한 수용액 제형과 달리 최대 4주까지 약물 방출을 지속하도록 설계됐다. 이 소식에 삼익제약 주가는 최대 18% 상승했다.",
+          "date": "2026-09-14",
+          "verification_note": "Read from a search-result summary only; hitnews.co.kr was not independently fetched this run.",
+          "date_basis": "inferred"
+        },
+        {
+          "source": {
+            "name": "Dailypharm (데일리팜)",
+            "publication": "Dailypharm",
+            "url": "https://dailypharm.com/user/news/342459",
+            "tier": 2
+          },
+          "snippet": "Independent coverage from Dailypharm corroborates the same Samik Pharmaceutical patent (No. 10-3012843) for the once-monthly thymosin alpha-1 microsphere injection using the UniSphero platform, reported the same week as the patent announcement.",
+          "snippet_ko": "데일리팜의 독립적인 보도는 UniSphero 플랫폼을 활용한 월 1회 싸이모신 알파1 미립구 주사제에 대한 동일한 삼익제약 특허(제10-3012843호)를 특허 발표와 같은 주에 교차 확인했다.",
+          "date": "2026-09-14",
+          "verification_note": "Read from a search-result summary only; dailypharm.com was not independently fetched this run.",
+          "date_basis": "inferred"
+        }
+      ],
+      "fuzzy_match": {
+        "closest_umbrella_id": null,
+        "score": 0
+      },
+      "status": "pending",
+      "created_date": "2026-09-17",
+      "follow_up": {
+        "last_checked": null,
+        "checks_run": 0,
+        "near_bar": true
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim", "confirmed_source"],
+        "unmet": ["second_dated_event"],
+        "evidence": "Multiple independent Tier 2 Korean trade outlets (Hitnews, Dailypharm and others) reported that Samik Pharmaceutical registered a Korean patent (No. 10-3012843) for a once-monthly thymosin alpha-1 microsphere injection on its own UniSphero platform, clearing named_entity, technical_claim and confirmed_source. Only a single dated event (the Sept 14, 2026 patent registration) is on record so far, so second_dated_event remains unmet -- a company disclosure of clinical or IND-stage plans would clear it.",
+        "evidence_ko": "히트뉴스, 데일리팜 등 독립적인 Tier 2 한국 전문 매체 여러 곳이 삼익제약이 자체 유니스페로(UniSphero) 플랫폼으로 월 1회 싸이모신 알파1 미립구 주사제에 대한 국내 특허(제10-3012843호)를 등록했다고 보도해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. 현재까지는 단일 날짜 이벤트(2026년 9월 14일 특허 등록)만 기록돼 있어 second_dated_event(두 번째 날짜 이벤트)는 미충족이며, 임상 또는 IND 단계 계획에 대한 회사 공개가 있으면 이 조건이 충족될 것이다."
       },
       "resolution": null
     }
