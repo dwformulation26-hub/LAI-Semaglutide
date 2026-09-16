@@ -35,7 +35,9 @@ vercel.json     explicit static build and output configuration
 
 ## Email digest
 
-`scripts/render-email.mjs` fills `email/templates/daily-digest.html` from a per-run JSON input (see the `lai-tracker-scan` skill's "Email digest" section for the exact contract) and produces `{ subject, preheader, html }`, which the skill hands to a Gmail draft — never sent automatically. `email/draft-input.json` / `email/draft-output.json` are gitignored scratch files, regenerated every run.
+`scripts/render-email.mjs` fills `email/templates/daily-digest.html` from a per-run JSON input (see the `lai-tracker-scan` skill's "Email digest" section for the exact contract) and produces `{ subject, preheader, html, delivery }`.
+
+`delivery` is the send decision, made here rather than left to the run's judgment: `"send"` when the run logged at least one new finding, `"draft"` for a digest carrying only repeated escalations, late items or new candidates. A `"send"` digest goes out unattended to a standing recipient list held in the daily routine's prompt — deliberately not in this repository, which is public. A `"draft"` digest waits in Gmail for a person. `email/draft-input.json` / `email/draft-output.json` are gitignored scratch files, regenerated every run.
 
 ## Local build
 
