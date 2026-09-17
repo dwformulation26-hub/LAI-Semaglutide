@@ -17,11 +17,11 @@
     "1093.HK"
   ],
   "current_status": {
-    "stage": "Clinical-ready per AstraZeneca's Jan 30 2026 deal announcement, entering Phase I. CSPC leads development through Phase I for all four licensed programmes, after which AstraZeneca takes over ex-China development and commercialisation. Technology family recorded as 'other': LiquidGel is described only as an injectable depot system for once-monthly peptide dosing, and no source states a mechanism that maps cleanly onto the six controlled families.",
-    "stage_ko": "AstraZeneca의 2026년 1월 30일 계약 발표에 따르면 임상 진입 준비가 완료돼 임상 1상에 진입하는 단계이다. CSPC가 기술이전된 4개 프로그램 모두에 대해 임상 1상까지 개발을 주도하며, 이후 AstraZeneca가 중국 외 지역 개발과 상업화를 맡는다. 기술 계열은 '기타(other)'로 기록됐다. LiquidGel은 월 1회 펩타이드 투여를 위한 주사형 데포 시스템으로만 설명되며, 6개 관리 계열에 명확히 대응되는 작용 기전을 밝힌 출처가 없다.",
-    "stage_label": "Preclinical",
-    "stage_evidence": "AstraZeneca's release calls SYH2082 clinical-ready and says it is entering Phase I; that is forward-looking language and no source states a trial has begun, so the label stays at Preclinical rather than advancing on intent.",
-    "stage_evidence_ko": "AstraZeneca 보도자료는 SYH2082를 임상 진입 준비 완료 상태이며 임상 1상에 진입하고 있다고 설명한다. 이는 미래 지향적 표현이고 시험 개시를 밝힌 출처가 없으므로, 의도만으로 단계를 올리지 않고 전임상으로 유지한다.",
+    "stage": "FDA cleared SYH2082 for clinical trials on Feb 16, 2026. A Phase I dose-escalation study (NCT07736404) in healthy participants began dosing on Apr 13, 2026 and its status is now Active, not recruiting. CSPC leads development through Phase I for all four licensed programmes, after which AstraZeneca takes over ex-China development and commercialisation. Technology family recorded as 'other': LiquidGel is described only as an injectable depot system for once-monthly peptide dosing, and no source states a mechanism that maps cleanly onto the six controlled families.",
+    "stage_ko": "CSPC는 2026년 2월 16일 SYH2082에 대해 FDA로부터 임상시험 승인을 받았다. 건강한 참가자 대상 임상 1상 용량 증량 시험(NCT07736404)은 2026년 4월 13일 첫 투여를 시작했으며 현재 상태는 '활성, 모집 중단(Active, not recruiting)'이다. CSPC가 기술이전된 4개 프로그램 모두에 대해 임상 1상까지 개발을 주도하며, 이후 AstraZeneca가 중국 외 지역 개발과 상업화를 맡는다. 기술 계열은 '기타(other)'로 기록됐다. LiquidGel은 월 1회 펩타이드 투여를 위한 주사형 데포 시스템으로만 설명되며, 6개 관리 계열에 명확히 대응되는 작용 기전을 밝힌 출처가 없다.",
+    "stage_label": "Phase 1",
+    "stage_evidence": "ClinicalTrials.gov's NCT07736404, a Phase I dose-escalation study of SYH2082 injection, has an actual start date of 2026-04-13 and status Active, not recruiting -- explicit confirmation that dosing has begun, advancing the label from Preclinical to Phase 1.",
+    "stage_evidence_ko": "ClinicalTrials.gov에 등록된 SYH2082 주사제 임상 1상 용량 증량 시험 NCT07736404의 실제 개시일은 2026-04-13이며 상태는 '활성, 모집 중단(Active, not recruiting)'이다. 이는 투여가 시작됐다는 명시적 확인으로, 단계 표시를 전임상에서 임상 1상으로 상향한다.",
     "molecule_class": [
       "other_incretin"
     ],
@@ -33,8 +33,8 @@
     "partner_ko": "AstraZeneca(중국 외 지역 독점 권리; CSPC는 중국, 대만, 홍콩, 마카오 권리를 보유하며 AZ는 승인 후 공동 상업화 옵션 보유)",
     "data_point": "$1.2B upfront plus up to $3.5B development and regulatory milestones across eight obesity and T2D programmes; commercial milestones and royalties take the headline ceiling to roughly $18.5B",
     "data_point_ko": "계약금 $1.2B에 8개 비만 및 제2형 당뇨병 프로그램에 걸친 개발·허가 마일스톤 최대 $3.5B; 상업 마일스톤과 로열티를 포함하면 총 계약 규모 상한은 약 $18.5B",
-    "last_updated": "2026-01-30",
-    "last_checked": "2026-09-15"
+    "last_updated": "2026-04-13",
+    "last_checked": "2026-09-18"
   },
   "finding_history": [
     {
@@ -49,6 +49,35 @@
         "tier": 1
       },
       "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-02-16-001",
+      "date": "2026-02-16",
+      "type": "regulatory",
+      "summary": "CSPC Pharmaceutical Group received FDA approval to begin clinical trials of SYH2082, its once-monthly GLP-1R/GIP dual-agonist injection for weight management in obese/overweight adults.",
+      "summary_ko": "CSPC Pharmaceutical Group은 2026년 2월 16일 비만/과체중 성인 대상 체중 관리를 위한 월 1회 GLP-1R/GIP 이중 작용제 주사제 SYH2082의 임상시험 개시에 대해 미국 FDA 승인을 받았다고 발표했다.",
+      "source": {
+        "name": "Reuters (via TradingView)",
+        "publication": "Reuters",
+        "url": "https://www.tradingview.com/news/reuters.com,2026:newsml_FWN3ZB06H:0-cspc-pharmaceutical-obtains-fda-approval-for-syh2082-clinical-trial/",
+        "tier": 2
+      },
+      "confidence": "confirmed",
+      "verification_note": "Corroborated by independent wire coverage of the same Feb 16, 2026 FDA approval (Globe and Mail/TipRanks). Discovered via this run's Track A search, over 7 months after the event."
+    },
+    {
+      "id": "f-2026-04-13-001",
+      "date": "2026-04-13",
+      "type": "trial_data_readout",
+      "summary": "ClinicalTrials.gov registration NCT07736404 shows a Phase I dose-escalation study of SYH2082 injection in healthy participants with an actual start (first dosing) of April 13, 2026; the study's status is Active, not recruiting as of this check.",
+      "summary_ko": "ClinicalTrials.gov 등록(NCT07736404)에 따르면 건강한 참가자 대상 SYH2082 주사제 임상 1상 용량 증량 시험의 실제 개시(첫 투여)일은 2026년 4월 13일이며, 이번 확인 시점 기준 시험 상태는 '활성, 모집 중단(Active, not recruiting)'이다.",
+      "source": {
+        "name": "ClinicalTrials.gov",
+        "url": "https://clinicaltrials.gov/study/NCT07736404",
+        "tier": 1
+      },
+      "confidence": "confirmed",
+      "verification_note": "Reached via domain-scoped search (clinicaltrials.gov is search_only in source_health). Discovered via this run's Track A search, dated outside the freshness window."
     }
   ]
 }

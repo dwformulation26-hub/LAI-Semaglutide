@@ -919,8 +919,8 @@
       "status": "pending",
       "created_date": "2026-09-13",
       "follow_up": {
-        "last_checked": "2026-09-17",
-        "checks_run": 2,
+        "last_checked": "2026-09-18",
+        "checks_run": 3,
         "near_bar": true
       },
       "promotion_bar": {
@@ -1052,8 +1052,8 @@
       "status": "pending",
       "created_date": "2026-09-17",
       "follow_up": {
-        "last_checked": null,
-        "checks_run": 0,
+        "last_checked": "2026-09-18",
+        "checks_run": 1,
         "near_bar": true
       },
       "promotion_bar": {
@@ -1061,6 +1061,64 @@
         "unmet": ["second_dated_event"],
         "evidence": "Multiple independent Tier 2 Korean trade outlets (Hitnews, Dailypharm and others) reported that Samik Pharmaceutical registered a Korean patent (No. 10-3012843) for a once-monthly thymosin alpha-1 microsphere injection on its own UniSphero platform, clearing named_entity, technical_claim and confirmed_source. Only a single dated event (the Sept 14, 2026 patent registration) is on record so far, so second_dated_event remains unmet -- a company disclosure of clinical or IND-stage plans would clear it.",
         "evidence_ko": "히트뉴스, 데일리팜 등 독립적인 Tier 2 한국 전문 매체 여러 곳이 삼익제약이 자체 유니스페로(UniSphero) 플랫폼으로 월 1회 싸이모신 알파1 미립구 주사제에 대한 국내 특허(제10-3012843호)를 등록했다고 보도해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. 현재까지는 단일 날짜 이벤트(2026년 9월 14일 특허 등록)만 기록돼 있어 second_dated_event(두 번째 날짜 이벤트)는 미충족이며, 임상 또는 IND 단계 계획에 대한 회사 공개가 있으면 이 조건이 충족될 것이다."
+      },
+      "resolution": null
+    },
+    {
+      "id": "cand-2026-09-18-001",
+      "detected_name": "Alteogen -- ALT-M5 (Long-Acting Conjugate)",
+      "detected_aliases": [
+        "Alteogen",
+        "알테오젠",
+        "ALT-M5",
+        "Long-Acting Conjugate",
+        "장기지속형 접합체"
+      ],
+      "entity_type_guess": [
+        "company",
+        "platform",
+        "asset"
+      ],
+      "evidence": [
+        {
+          "source": {
+            "name": "EBN (이비엔뉴스센터)",
+            "publication": "EBN",
+            "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1724662",
+            "tier": 2
+          },
+          "snippet": "Alteogen announced it completed a PCT international patent application for a new 'Long-Acting Conjugate' platform technology -- combining multiple active molecules into a single conjugate to extend a drug's half-life -- and is advancing ALT-M5, a once-monthly obesity candidate built on the platform. Animal studies showed once-monthly dosing potential and possible suppression of weight regain (rebound) after treatment is stopped; the molecule(s) carried by the conjugate were not disclosed.",
+          "snippet_ko": "알테오젠은 복수의 활성분자를 하나의 접합체로 결합해 약물의 반감기를 늘리는 신규 플랫폼 기술 '장기지속형 접합체(Long-Acting Conjugate)'에 대한 국제특허출원(PCT)을 완료했다고 밝혔으며, 이 플랫폼 기반의 월 1회 비만 후보물질 ALT-M5를 개발 중이다. 동물실험에서 월 1회 투여 가능성과 투약 중단 후 체중 재증가(리바운드) 억제 가능성이 확인됐다. 접합체가 탑재한 분자는 공개되지 않았다.",
+          "date": "2026-09-17"
+        },
+        {
+          "source": {
+            "name": "Alteogen seeks patent for long-acting obesity drug platform",
+            "publication": "The Korea Herald",
+            "url": "https://www.koreaherald.com/article/10877578",
+            "tier": 2
+          },
+          "snippet": "Independent corroboration of the same PCT filing for Alteogen's 'long-acting conjugate' platform and ALT-M5 once-monthly obesity candidate: animal studies showed potential for once-monthly dosing and for limiting weight regain after treatment was stopped. Alteogen plans to present detailed results at ObesityWeek 2026 (Nov 14-17, Washington D.C.).",
+          "snippet_ko": "알테오젠의 '장기지속형 접합체' 플랫폼 및 월 1회 비만 후보물질 ALT-M5에 대한 동일한 PCT 출원을 독립적으로 교차 확인했다: 동물실험에서 월 1회 투여 가능성과 투약 중단 후 체중 재증가 억제 가능성이 확인됐다. 알테오젠은 오는 11월 14~17일 워싱턴 D.C.에서 열리는 ObesityWeek 2026에서 구체적인 연구 결과를 발표할 계획이다.",
+          "date": "2026-09-17"
+        }
+      ],
+      "fuzzy_match": {
+        "closest_umbrella_id": null,
+        "score": 0.05
+      },
+      "status": "pending",
+      "created_date": "2026-09-18",
+      "follow_up": {
+        "last_checked": null,
+        "checks_run": 0,
+        "near_bar": true
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim", "confirmed_source"],
+        "unmet": ["second_dated_event"],
+        "evidence": "Two independent Tier 2 outlets (EBN, Korea Herald) corroborate the same Sept 17, 2026 announcement that Alteogen filed a PCT application for its 'Long-Acting Conjugate' platform and is advancing once-monthly obesity candidate ALT-M5, clearing named_entity, technical_claim and confirmed_source. Only a single dated event (the Sept 17, 2026 patent-filing announcement) is on record so far, so second_dated_event remains unmet -- the planned ObesityWeek 2026 (Nov 14-17) data presentation would likely clear it once it occurs. Molecule identity behind the conjugate was not disclosed, so no molecule_class can be assigned to this candidate.",
+        "evidence_ko": "독립적인 Tier 2 매체 2곳(EBN, Korea Herald)이 알테오젠이 '장기지속형 접합체' 플랫폼에 대한 PCT를 출원하고 월 1회 비만 후보물질 ALT-M5를 개발 중이라는 2026년 9월 17일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. 현재까지는 단일 날짜 이벤트(2026년 9월 17일 특허 출원 발표)만 기록돼 있어 second_dated_event(두 번째 날짜 이벤트)는 미충족이며, 예정된 ObesityWeek 2026(11월 14~17일) 데이터 발표가 이뤄지면 충족될 가능성이 크다. 접합체가 탑재한 분자의 정체는 공개되지 않아 이 후보에는 molecule_class를 부여할 수 없다."
       },
       "resolution": null
     }
