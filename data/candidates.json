@@ -62,7 +62,7 @@
         "closest_umbrella_id": "camurus-cam2029",
         "score": 0.18
       },
-      "status": "ready_for_promotion",
+      "status": "promoted",
       "created_date": "2026-09-02",
       "follow_up": {
         "last_checked": "2026-09-16",
@@ -75,7 +75,11 @@
         "evidence": "This run's follow-up found two of Nanexa's own dated PharmaShell semaglutide PK announcements, separate from the Dec 2025 Moderna deal: a Jan 27, 2026 release reporting an exceptional once-monthly PK profile in preclinical studies, and a Mar 19, 2026 release reporting follow-on data (plus human modelling) indicating quarterly semaglutide dosing may be feasible. Two distinct 2026 dated events beyond the original deal clear second_dated_event; all four promotion-bar conditions are now met and fuzzy_match to camurus-cam2029 remains low (0.18), well under the merge threshold.",
         "evidence_ko": "이번 주기 후속 조사에서 2025년 12월 Moderna 계약과는 별개인 Nanexa 자체의 PharmaShell 세마글루타이드 PK 발표 2건을 확인했다: 2026년 1월 27일 발표는 전임상 연구에서 뛰어난 월 1회 PK 프로파일을 보고했고, 2026년 3월 19일 발표는 추가 데이터(및 인체 모델링)를 통해 3개월 1회 세마글루타이드 투여가 가능할 수 있다고 보고했다. 원 계약 이후의 별개 2026년 날짜 이벤트 2건이 second_dated_event(두 번째 날짜 이벤트)를 충족시키며, 이제 네 가지 승격 기준 조건을 모두 충족한다. camurus-cam2029와의 퍼지 매칭 점수는 여전히 낮아(0.18) 병합 임계값을 크게 밑돈다."
       },
-      "resolution": null
+      "resolution": {
+        "action": "promoted",
+        "umbrella_id": "nanexa-pharmashell-semaglutide",
+        "date": "2026-09-18"
+      }
     },
     {
       "id": "cand-2026-09-02-002",
@@ -679,7 +683,7 @@
         "closest_umbrella_id": "mapi-pharma-semaglutide",
         "score": 0.2
       },
-      "status": "ready_for_promotion",
+      "status": "promoted",
       "created_date": "2026-09-09",
       "follow_up": {
         "last_checked": "2026-09-15",
@@ -689,10 +693,14 @@
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
         "unmet": [],
-        "evidence": "Fierce Biotech's independently reported coverage of the same EASD 2025 Phase 2 data (zovaglutide 160mg once-monthly dose, 13.8% body-weight reduction at 24 weeks vs 2.4% placebo, announced 2025-09-18) corroborates the original BioSpace/PR Newswire company release, clearing confirmed_source. The Endpoints News report's Phase 3 'HORIZON-1' first-patient-dosed event (~2026-01-16) already cleared second_dated_event on its own. Fuzzy match to mapi-pharma-semaglutide remains low (0.2), well under the 0.55 merge threshold, so this candidate now clears every promotion-bar condition and escalates to ready_for_promotion.",
-        "evidence_ko": "Fierce Biotech가 독립적으로 보도한 동일한 EASD 2025 임상 2상 데이터(조바글루타이드 160mg 월 1회 투여군, 24주차 위약 대비 2.4% 대비 13.8% 체중 감소, 2025-09-18 발표)가 기존 BioSpace/PR Newswire 회사 보도자료를 교차 확인해 confirmed_source(확인된 출처)를 충족했다. Endpoints News 보도의 임상 3상 'HORIZON-1' 첫 환자 투여 이벤트(~2026-01-16)는 이미 그 자체로 second_dated_event(두 번째 날짜 이벤트)를 충족한 바 있다. mapi-pharma-semaglutide와의 퍼지 매칭 점수는 0.2로 병합 임계값 0.55보다 훨씬 낮아, 이번 후보는 이제 네 가지 승격 기준 조건을 모두 충족해 ready_for_promotion으로 에스컬레이션된다."
+        "evidence": "Fierce Biotech's independently reported coverage of the same EASD 2025 Phase 2 data (zovaglutide 160mg once-monthly dose, 13.8% body-weight reduction at 24 weeks vs 2.4% placebo, announced 2025-09-18) corroborates the original BioSpace/PR Newswire company release, clearing confirmed_source. The Endpoints News report's Phase 3 'HORIZON-1' first-patient-dosed event (~2026-01-16) already cleared second_dated_event on its own. Fuzzy match to mapi-pharma-semaglutide remains low (0.2), well under the 0.55 merge threshold, so this candidate now clears every promotion-bar condition and escalates to ready_for_promotion. Promoted 2026-09-18: the new umbrella keeps stage_label at Phase 2 rather than Phase 3, since the HORIZON-1 registration (NCT07230119) itself reads 'Not yet recruiting' and could not be reconciled with the single-sourced dosing claim at promotion time -- see the umbrella's own stage_evidence.",
+        "evidence_ko": "Fierce Biotech가 독립적으로 보도한 동일한 EASD 2025 임상 2상 데이터(조바글루타이드 160mg 월 1회 투여군, 24주차 위약 대비 2.4% 대비 13.8% 체중 감소, 2025-09-18 발표)가 기존 BioSpace/PR Newswire 회사 보도자료를 교차 확인해 confirmed_source(확인된 출처)를 충족했다. Endpoints News 보도의 임상 3상 'HORIZON-1' 첫 환자 투여 이벤트(~2026-01-16)는 이미 그 자체로 second_dated_event(두 번째 날짜 이벤트)를 충족한 바 있다. mapi-pharma-semaglutide와의 퍼지 매칭 점수는 0.2로 병합 임계값 0.55보다 훨씬 낮아, 이번 후보는 이제 네 가지 승격 기준 조건을 모두 충족해 ready_for_promotion으로 에스컬레이션된다. 2026-09-18 승격: HORIZON-1 등록(NCT07230119) 자체가 '모집 전(Not yet recruiting)' 상태이며 단일 출처의 투여 개시 주장과 승격 시점에 일치시킬 수 없어, 신규 엄브렐라의 stage_label은 임상 3상이 아닌 임상 2상으로 유지한다 -- 자세한 내용은 엄브렐라 자체의 stage_evidence를 참고."
       },
-      "resolution": null
+      "resolution": {
+        "action": "promoted",
+        "umbrella_id": "ql-biopharm-zovaglutide",
+        "date": "2026-09-18"
+      }
     },
     {
       "id": "cand-2026-09-09-002",
@@ -721,7 +729,7 @@
         "closest_umbrella_id": null,
         "score": 0
       },
-      "status": "ready_for_promotion",
+      "status": "promoted",
       "created_date": "2026-09-09",
       "follow_up": {
         "last_checked": "2026-09-13",
@@ -731,10 +739,14 @@
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
         "unmet": [],
-        "evidence": "Two independent Tier 2 outlets (Edaily, TipRanks/Globe and Mail) corroborate the same trial-registration event, which is itself stage-bearing, clearing all four conditions on the original evidence alone; this cycle's follow-up further confirmed three separate new Phase 3 registrations (PERSIST COPD-1, COPD-2, ASTHMA-1). SCOPE CAVEAT STILL APPLIES: felcorekibart is a systemic half-life-extended monoclonal antibody for respiratory disease (COPD/asthma/CRSwNP), not a depot/microsphere/peptide-LAI delivery asset -- recommend an explicit in/out-of-scope admin call before promotion regardless of the bar being mechanically cleared.",
-        "evidence_ko": "독립적인 Tier 2 매체 2곳(Edaily, TipRanks/Globe and Mail)이 그 자체로 개발 단계를 나타내는 동일한 임상 등록 이벤트를 교차 확인해, 최초 근거만으로 네 가지 조건을 모두 충족한다. 이번 주기 후속 조사에서는 별도의 신규 임상 3상 등록 3건(PERSIST COPD-1, COPD-2, ASTHMA-1)을 추가로 확인했다. 범위 관련 유의사항은 여전히 적용된다: felcorekibart는 호흡기 질환(COPD/천식/CRSwNP)을 위한 전신 반감기 연장 단클론 항체로, 데포/미립구/펩타이드 LAI 전달 자산이 아니므로 기준이 기계적으로 충족된 것과 관계없이 승격 전에 관리자의 명시적인 범위 포함/제외 판단을 권고한다."
+        "evidence": "Two independent Tier 2 outlets (Edaily, TipRanks/Globe and Mail) corroborate the same trial-registration event, which is itself stage-bearing, clearing all four conditions on the original evidence alone; this cycle's follow-up further confirmed three separate new Phase 3 registrations (PERSIST COPD-1, COPD-2, ASTHMA-1). SCOPE CAVEAT STILL APPLIES: felcorekibart is a systemic half-life-extended monoclonal antibody for respiratory disease (COPD/asthma/CRSwNP), not a depot/microsphere/peptide-LAI delivery asset -- recommend an explicit in/out-of-scope admin call before promotion regardless of the bar being mechanically cleared. Promoted 2026-09-18 on the admin's explicit scope call: tracked under the registry's broader peptide/protein long-acting delivery-technology scope rather than its semaglutide/incretin core.",
+        "evidence_ko": "독립적인 Tier 2 매체 2곳(Edaily, TipRanks/Globe and Mail)이 그 자체로 개발 단계를 나타내는 동일한 임상 등록 이벤트를 교차 확인해, 최초 근거만으로 네 가지 조건을 모두 충족한다. 이번 주기 후속 조사에서는 별도의 신규 임상 3상 등록 3건(PERSIST COPD-1, COPD-2, ASTHMA-1)을 추가로 확인했다. 범위 관련 유의사항은 여전히 적용된다: felcorekibart는 호흡기 질환(COPD/천식/CRSwNP)을 위한 전신 반감기 연장 단클론 항체로, 데포/미립구/펩타이드 LAI 전달 자산이 아니므로 기준이 기계적으로 충족된 것과 관계없이 승격 전에 관리자의 명시적인 범위 포함/제외 판단을 권고한다. 2026-09-18 관리자의 명시적 범위 판단에 따라 승격: 세마글루타이드/인크레틴 핵심 영역이 아닌, 레지스트리의 보다 넓은 펩타이드/단백질 장기지속형 전달 기술 범위 아래 추적한다."
       },
-      "resolution": null
+      "resolution": {
+        "action": "promoted",
+        "umbrella_id": "gsk-felcorekibart",
+        "date": "2026-09-18"
+      }
     },
     {
       "id": "cand-2026-09-10-001",

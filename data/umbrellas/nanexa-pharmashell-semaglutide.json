@@ -1,0 +1,71 @@
+{
+  "id": "nanexa-pharmashell-semaglutide",
+  "canonical_name": "Nanexa AB – PharmaShell® (semaglutide)",
+  "origin": "Global",
+  "entity_type": ["company", "platform", "asset"],
+  "technology_family": "other",
+  "aliases": ["Nanexa", "Nanexa AB", "NANEXA", "PharmaShell", "PharmaShell®"],
+  "current_status": {
+    "stage": "Preclinical. PharmaShell uses atomic layer deposition (ALD) to coat drug particles; a Jan 2026 rat PK study reported an exceptional PK profile supporting once-monthly SC dosing of semaglutide, and a Mar 2026 follow-on study plus human modelling indicated once-quarterly dosing may be feasible. No clinical trial for the semaglutide asset has been announced. Separately, Nanexa licensed PharmaShell to Moderna in Dec 2025 for long-acting mRNA-based compounds, unrelated to the semaglutide program.",
+    "stage_ko": "전임상 단계이다. PharmaShell은 원자층 증착(ALD)으로 약물 입자를 코팅하는 기술로, 2026년 1월 랫드 대상 PK 연구에서 월 1회 피하(SC) 세마글루타이드 투여를 뒷받침하는 뛰어난 PK 프로파일을 보고했다. 2026년 3월 후속 연구와 인체 모델링은 3개월 1회 투여 가능성을 시사했다. 세마글루타이드 자산에 대한 임상시험은 아직 발표되지 않았다. 별도로 Nanexa는 2025년 12월 Moderna에 장기지속형 mRNA 기반 화합물을 위한 PharmaShell 기술을 라이선스 계약했으며, 이는 세마글루타이드 프로그램과는 무관하다.",
+    "stage_label": "Preclinical",
+    "stage_evidence": "The Jan 2026 and Mar 2026 releases report preliminary rat PK data and human modelling with no clinical study stated, which is squarely preclinical.",
+    "stage_evidence_ko": "2026년 1월과 3월 발표는 예비 랫드 PK 데이터와 인체 모델링을 보고했을 뿐 임상 시험은 언급하지 않았으므로, 명백히 전임상 단계이다.",
+    "molecule_class": ["semaglutide"],
+    "molecule_evidence": "Nanexa's Jan 27, 2026 and Mar 19, 2026 company releases report PharmaShell PK data specifically for a once-monthly, and potentially once-quarterly, semaglutide formulation.",
+    "molecule_evidence_ko": "Nanexa의 2026년 1월 27일과 3월 19일 자체 발표는 월 1회, 잠재적으로 3개월 1회 세마글루타이드 제형을 위한 PharmaShell PK 데이터를 보고한다.",
+    "dosing_target": "Monthly, with once-quarterly dosing feasibility also reported",
+    "dosing_target_ko": "월 1회, 추가적으로 3개월 1회 투여 가능성도 보고됨",
+    "partner": "Not disclosed for the semaglutide asset specifically. Nanexa's PharmaShell platform separately has collaboration agreements with Novo Nordisk and AstraZeneca (pre-existing, undisclosed scope) and Moderna (Dec 2025, mRNA-focused, not semaglutide).",
+    "partner_ko": "세마글루타이드 자산 자체에 대해서는 공개된 파트너가 없다. Nanexa의 PharmaShell 플랫폼은 별도로 Novo Nordisk 및 AstraZeneca와 기존 공동개발 계약(범위 비공개)을, Moderna와는 2025년 12월 계약(mRNA 중심, 세마글루타이드와 무관)을 보유하고 있다.",
+    "data_point": "Preclinical rat PK (Jan 2026): exceptional PK profile supporting once-monthly SC dosing, more stable than weekly Wegovy with a low initial peak. Follow-on rat PK plus human modelling (Mar 2026): semaglutide could potentially be dosed once every three months while maintaining a controlled, therapeutically relevant plasma concentration.",
+    "data_point_ko": "전임상 랫드 PK(2026년 1월): 월 1회 피하 투여를 뒷받침하는 뛰어난 PK 프로파일을 확인했으며, 주 1회 Wegovy보다 안정적이고 낮은 초기 피크를 보였다. 후속 랫드 PK 및 인체 모델링(2026년 3월): 세마글루타이드를 조절되고 치료적으로 유의미한 혈중 농도를 유지하면서 3개월에 1회 투여할 수 있을 가능성이 제시되었다.",
+    "last_updated": "2026-03-19",
+    "last_checked": "2026-09-18"
+  },
+  "finding_history": [
+    {
+      "id": "f-2025-12-10-001",
+      "date": "2025-12-10",
+      "type": "deal_partnership",
+      "summary": "Nanexa granted Moderna a license and option agreement for PharmaShell-based products: USD 3 million upfront, up to USD 500 million in development/commercial milestones plus tiered royalties. PharmaShell uses atomic layer deposition to coat drug particles for tailored, long-acting (1-3 month) release, terminal sterilization, and room-temperature stability. Not specific to the semaglutide asset -- Moderna's interest is in long-acting mRNA-based compounds.",
+      "summary_ko": "Nanexa는 Moderna에 PharmaShell 기반 제품에 대한 기술이전(라이선스) 및 옵션 계약을 부여했다: 계약금 USD 3 million, 개발/상업화 마일스톤 최대 USD 500 million에 단계별 로열티가 더해진다. PharmaShell은 원자층 증착으로 약물 입자를 코팅해 맞춤형 장기 지속(1-3개월) 방출, 최종 멸균, 상온 안정성을 구현한다. 세마글루타이드 자산에 특화된 것은 아니며, Moderna의 관심은 장기지속형 mRNA 기반 화합물에 있다.",
+      "source": {
+        "name": "Nanexa AB company press release",
+        "publication": "Nanexa AB",
+        "url": "https://nanexa.com/mfn_news/nanexa-and-moderna-enter-into-license-and-option-agreement-for-the-development-of-pharmashell-based-products/",
+        "tier": 1
+      },
+      "confidence": "confirmed",
+      "verification_note": "Corroborated by independent Tier 2 coverage (Fierce Biotech) of the same Dec 10, 2025 deal."
+    },
+    {
+      "id": "f-2026-01-27-001",
+      "date": "2026-01-27",
+      "type": "trial_data_readout",
+      "summary": "Nanexa reported preclinical PK studies showing an exceptional pharmacokinetic profile for a once-monthly subcutaneous PharmaShell semaglutide formulation -- a low peak-to-trough plasma concentration ratio, more stable than weekly Wegovy, with a low initial peak intended to reduce GI adverse events.",
+      "summary_ko": "Nanexa는 월 1회 피하 투여용 PharmaShell 세마글루타이드 제형의 전임상 PK 연구에서 뛰어난 약동학적 프로파일을 확인했다고 보고했다 -- 주 1회 Wegovy보다 안정적인 낮은 최고/최저 혈중 농도 비율을 보였으며, 낮은 초기 피크는 GI 이상반응 감소를 목표로 한다.",
+      "source": {
+        "name": "Nanexa Announces Breakthrough Preclinical Data Demonstrating Exceptional Pharmacokinetic Profile for Monthly Semaglutide Formulation",
+        "publication": "Nanexa AB",
+        "url": "https://nanexa.com/mfn_news/nanexa-announces-breakthrough-preclinical-data-demonstrating-exceptional-pharmacokinetic-profile-for-monthly-semaglutide-formulation/",
+        "tier": 1
+      },
+      "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-03-19-001",
+      "date": "2026-03-19",
+      "type": "trial_data_readout",
+      "summary": "Building on its Jan 2026 monthly-dosing PK data, Nanexa completed a rat PK study using several PharmaShell semaglutide formulations; the new data plus human modelling indicate semaglutide could potentially be dosed once every three months while maintaining a controlled, therapeutically relevant plasma concentration.",
+      "summary_ko": "2026년 1월 월 1회 투여 PK 데이터에 이어, Nanexa는 여러 PharmaShell 세마글루타이드 제형을 활용한 랫드 대상 PK 연구를 완료했다. 새 데이터와 인체 모델링에 따르면 세마글루타이드를 조절되고 치료적으로 유의미한 혈중 농도를 유지하면서 3개월에 1회 투여할 수 있을 가능성이 제시되었다.",
+      "source": {
+        "name": "Nanexa Demonstrates Feasibility of Quarterly Semaglutide Dosing with PharmaShell",
+        "publication": "Nanexa AB",
+        "url": "https://nanexa.com/mfn_news/nanexa-demonstrates-feasibility-of-quarterly-semaglutide-dosing-with-pharmashell/",
+        "tier": 1
+      },
+      "confidence": "confirmed"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "gsk-felcorekibart",
+  "canonical_name": "GSK – Felcorekibart",
+  "origin": "Global",
+  "entity_type": ["company", "asset"],
+  "technology_family": "molecular_engineering",
+  "aliases": ["GSK", "GlaxoSmithKline", "Felcorekibart", "펠코레키바트"],
+  "current_status": {
+    "stage": "GSK is advancing felcorekibart, a long-acting engineered antibody originally developed by a China-founded biotech GSK acquired roughly two years ago, having registered 6 new Phase 3 trials in 2026: two COPD studies (including PERSIST COPD-1 and COPD-2), two asthma studies, and two CRSwNP (chronic rhinosinusitis with nasal polyps) studies. This is a systemic respiratory-disease antibody, not an obesity/metabolic peptide or a depot/microsphere formulation -- tracked here under the tracker's broader peptide/protein long-acting delivery-technology scope, not its semaglutide/incretin core.",
+    "stage_ko": "GSK는 약 2년 전 인수한 중국 창업 바이오텍이 원래 개발한 장기지속형 엔지니어링 항체 펠코레키바트(felcorekibart)의 개발을 진행 중이며, 2026년 신규 임상 3상 6건을 등록했다: COPD 2건(PERSIST COPD-1, COPD-2 포함), 천식 2건, CRSwNP(비용종 동반 만성 부비동염) 2건이다. 이는 비만/대사 펩타이드나 데포/미립구 제형이 아닌 전신형 호흡기 질환 항체로, 트래커의 세마글루타이드/인크레틴 핵심 영역이 아니라 보다 넓은 펩타이드/단백질 장기지속형 전달 기술 범위 아래 추적한다.",
+    "stage_label": "Phase 3",
+    "stage_evidence": "Two independent Tier 2 outlets (Edaily and TipRanks/Globe and Mail) report GSK's registration of new Phase 3 trials for felcorekibart (including named PERSIST COPD-1/COPD-2 studies), which is itself a stage-bearing trial-registration event.",
+    "stage_evidence_ko": "독립적인 Tier 2 매체 2곳(Edaily, TipRanks/Globe and Mail)이 펠코레키바트에 대한 신규 임상 3상 등록(PERSIST COPD-1/COPD-2 등 명명된 시험 포함)을 보도했으며, 이는 그 자체로 개발 단계를 나타내는 임상 등록 이벤트다.",
+    "molecule_class": ["non_incretin"],
+    "molecule_evidence": "Felcorekibart is a systemic long-acting engineered antibody for respiratory disease, outside the incretin and amylin classes, so it is tracked under the non-incretin bucket alongside other non-obesity long-acting delivery technologies already in the registry (e.g. Zoladex).",
+    "molecule_evidence_ko": "펠코레키바트는 인크레틴·아밀린 계열 밖에 있는 호흡기 질환용 전신형 장기지속형 엔지니어링 항체로, 레지스트리에 이미 있는 다른 비(非)비만 장기지속형 전달 기술(예: Zoladex)과 함께 기타(비인크레틴) 분류로 추적한다.",
+    "dosing_target": "Not disclosed in available reporting (described only as \"long-acting\"); specific dosing interval unconfirmed.",
+    "dosing_target_ko": "현재 가용 보도에서는 공개되지 않음(\"장기지속형\"으로만 설명됨); 구체적인 투여 간격은 확인되지 않았다.",
+    "partner": null,
+    "data_point": "Registered 6 new Phase 3 trials in 2026: PERSIST COPD-1 and COPD-2 (2 studies), 2 asthma studies, and 2 CRSwNP studies.",
+    "data_point_ko": "2026년 신규 임상 3상 6건 등록: PERSIST COPD-1 및 COPD-2(2건), 천식 2건, CRSwNP 2건.",
+    "last_updated": "2026-09-08",
+    "last_checked": "2026-09-18"
+  },
+  "finding_history": [
+    {
+      "id": "f-2026-09-08-001",
+      "date": "2026-09-08",
+      "type": "regulatory",
+      "summary": "GSK is advancing felcorekibart, a long-acting engineered antibody originally developed by a China-founded biotech GSK acquired roughly two years ago, registering 6 new Phase 3 trials (2 COPD, 2 asthma, 2 CRSwNP).",
+      "summary_ko": "GSK는 약 2년 전 인수한 중국 창업 바이오텍이 원래 개발한 장기지속형 엔지니어링 항체 펠코레키바트의 개발을 진행 중이며, 신규 임상 3상 6건(COPD 2건, 천식 2건, CRSwNP 2건)을 등록했다.",
+      "source": {
+        "name": "Edaily (이데일리)",
+        "publication": "Edaily",
+        "url": "https://www.edaily.co.kr/News/Read?newsId=01994246645577824",
+        "tier": 2
+      },
+      "confidence": "confirmed",
+      "verification_note": "Corroborated by a TipRanks/Globe and Mail wire piece on the same COPD Phase 3 program; three further new Phase 3 registrations (PERSIST COPD-1, COPD-2, ASTHMA-1) were separately confirmed."
+    }
+  ]
+}

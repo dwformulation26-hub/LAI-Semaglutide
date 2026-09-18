@@ -1,0 +1,56 @@
+{
+  "id": "ql-biopharm-zovaglutide",
+  "canonical_name": "QL Biopharm (Zhitai Biopharmaceutical) – Zovaglutide (ZT002)",
+  "origin": "Global",
+  "entity_type": ["company", "asset"],
+  "technology_family": "molecular_engineering",
+  "aliases": ["QL Biopharm", "Zhitai Biopharmaceutical", "质肽生物医药", "Zhitai Bio", "Beijing Zhitai Biomedical Technology", "zovaglutide", "ZT002"],
+  "current_status": {
+    "stage": "Phase 2 complete with positive topline at EASD 2025 (Sept 2025): the 160 mg once-monthly dose produced 13.8% body-weight reduction at 24 weeks versus 2.4% for placebo. A Phase 3 trial (HORIZON-1, NCT07230119, ~620 participants, 52 weeks) is registered on ClinicalTrials.gov for the same asset, but its own status reads \"Not yet recruiting\" as of this check -- trade-press reports describing a first patient dosed in January 2026 could not be independently reconciled against the primary registration this run, so no Phase 3 claim is made here.",
+    "stage_ko": "임상 2상을 완료하고 EASD 2025(2025년 9월)에서 긍정적인 톱라인을 발표했다: 160mg 월 1회 투여군은 24주차에 위약 대비 13.8%의 체중 감소를 보였다(위약군 2.4%). 동일 자산에 대한 임상 3상 시험(HORIZON-1, NCT07230119, 약 620명, 52주)이 ClinicalTrials.gov에 등록돼 있으나, 이번 확인 시점 기준 등록 상태는 \"모집 전(Not yet recruiting)\"이다. 2026년 1월 첫 환자 투여를 보도한 업계 매체 기사가 있으나 이번 조사에서는 1차 등록 정보와 일치시킬 수 없었으므로, 여기서는 임상 3상으로 표시하지 않는다.",
+    "stage_label": "Phase 2",
+    "stage_evidence": "EASD 2025 Phase 2 data (160mg once-monthly, 13.8% weight loss at 24 weeks vs 2.4% placebo) is independently corroborated by two Tier 2 outlets (BioSpace/PR Newswire company release and Fierce Biotech's own coverage). A Phase 3 registration (HORIZON-1, NCT07230119) exists, but its ClinicalTrials.gov status reads \"Not yet recruiting\", which conflicts with unconfirmed trade-press claims of a January 2026 first dose -- flagging the discrepancy rather than advancing the label on unreconciled reporting.",
+    "stage_evidence_ko": "EASD 2025 임상 2상 데이터(160mg 월 1회 투여, 24주차 위약(2.4%) 대비 13.8% 체중 감소)는 독립적인 Tier 2 매체 2곳(BioSpace/PR Newswire 회사 보도자료, Fierce Biotech 자체 보도)이 교차 확인했다. 임상 3상 등록(HORIZON-1, NCT07230119)이 존재하나 ClinicalTrials.gov 상 상태는 \"모집 전(Not yet recruiting)\"으로, 2026년 1월 첫 투여를 주장하는 확인되지 않은 업계 매체 보도와 배치된다. 이를 확인 없이 단계 상향에 반영하지 않고 불일치로 표시한다.",
+    "molecule_class": ["other_incretin"],
+    "molecule_evidence": "Zovaglutide (ZT002) is described as a novel, extended half-life GLP-1 receptor agonist -- a new chemical entity, not a semaglutide reformulation -- which places it in the other-incretin bucket rather than a named-molecule class.",
+    "molecule_evidence_ko": "조바글루타이드(ZT002)는 세마글루타이드의 재제형이 아닌 신규 화합물로서, 반감기가 연장된 새로운 GLP-1 수용체 작용제로 설명된다. 이에 따라 특정 분자 계열이 아닌 기타 인크레틴 분류에 속한다.",
+    "dosing_target": "Monthly",
+    "dosing_target_ko": "월 1회",
+    "partner": null,
+    "data_point": "Series C: RMB 500M+ (~$72M) led by OrbiMed, announced Mar 2, 2026. Phase 2 (EASD 2025): 160mg once-monthly dose gave 13.8% body-weight reduction at 24 weeks vs 2.4% placebo, comparable to an 80mg every-other-week arm's 12.5%.",
+    "data_point_ko": "시리즈 C: OrbiMed 주도로 RMB 500M+(~$72M) 조달, 2026년 3월 2일 발표. 임상 2상(EASD 2025): 160mg 월 1회 투여군은 24주차에 위약(2.4%) 대비 13.8%의 체중 감소를 보였으며, 이는 80mg 격주 투여군의 12.5%와 비슷한 수준이었다.",
+    "last_updated": "2026-03-02",
+    "last_checked": "2026-09-18"
+  },
+  "finding_history": [
+    {
+      "id": "f-2025-09-18-001",
+      "date": "2025-09-18",
+      "type": "trial_data_readout",
+      "summary": "QL Biopharm's zovaglutide (ZT002), a once-monthly GLP-1 receptor agonist, met its primary and secondary endpoints in a Phase 2 obesity trial presented at EASD 2025: the 160 mg once-monthly dose produced 13.8% body-weight reduction at 24 weeks versus 2.4% for placebo, comparable to the 80 mg every-other-week arm's 12.5%.",
+      "summary_ko": "QL Biopharm의 월 1회 투여 GLP-1 수용체 작용제 조바글루타이드(ZT002)는 EASD 2025에서 발표된 임상 2상 비만 시험에서 주요 및 2차 평가변수를 충족했다: 160mg 월 1회 투여군은 24주차에 위약군 2.4% 대비 13.8%의 체중 감소를 보였으며, 이는 80mg 격주 투여군의 12.5%와 비슷한 수준이었다.",
+      "source": {
+        "name": "Fierce Biotech",
+        "publication": "Fierce Biotech",
+        "url": "https://www.fiercebiotech.com/biotech/ql-biopharm-links-once-monthly-glp-1-incumbent-rivaling-weight-loss-phase-2",
+        "tier": 2
+      },
+      "confidence": "confirmed",
+      "verification_note": "Corroborated by the company's own BioSpace/PR Newswire release of the same EASD 2025 data."
+    },
+    {
+      "id": "f-2026-03-02-001",
+      "date": "2026-03-02",
+      "type": "financing_investor",
+      "summary": "Beijing-based QL Biopharm raised over RMB 500M (~$72M) in a Series C led by OrbiMed (with 5Y Capital, Apricot Capital, Huagai Capital, Qiming Venture Partners, TigerYeah Capital, Lanchi Ventures, TF Capital). Lead candidate zovaglutide (ZT002) is potentially the first monthly GLP-1 peptide to reach market.",
+      "summary_ko": "베이징 소재 QL Biopharm은 OrbiMed가 주도하고 5Y Capital, Apricot Capital, Huagai Capital, Qiming Venture Partners, TigerYeah Capital, Lanchi Ventures, TF Capital이 참여한 시리즈 C에서 RMB 500M(~$72M) 이상을 조달했다. 주력 후보 조바글루타이드(ZT002)는 시장에 출시되는 최초의 월 1회 GLP-1 펩타이드가 될 가능성이 있다.",
+      "source": {
+        "name": "Endpoints News",
+        "publication": "Endpoints News",
+        "url": "https://endpoints.news/china-obesity-biotech-ql-biopharm-gets-72m-including-support-from-orbimed/",
+        "tier": 2
+      },
+      "confidence": "confirmed"
+    }
+  ]
+}
