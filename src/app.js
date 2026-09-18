@@ -268,15 +268,21 @@ function renderOverview(data) {
 function renderIntelligence(data) {
   const lang = state.lang;
   const feed = clear($("#latest-feed"));
-  data.findings.slice(0, 6).forEach((finding) => {
-    const article = node("article", "feed-item");
+  // Confirmed findings and newly discovered candidates share one feed, newest first --
+  // a candidate is still-unverified pipeline evidence, so it always carries its own
+  // "New candidate — unverified" tag rather than a finding.type badge, and links out to
+  // its own source exactly like a finding does. Program Directory stays findings-only.
+  data.intelligenceFeed.slice(0, 6).forEach((item) => {
+    const article = node("article", `feed-item${item.isCandidate ? " feed-item-candidate" : ""}`);
     const meta = node("div", "feed-meta");
-    meta.append(node("strong", "", formatDate(finding.date, true, lang)), node("span", "", finding.company));
+    meta.append(node("strong", "", formatDate(item.date, true, lang)), node("span", "", item.company));
     const copy = node("div", "feed-copy");
-    copy.append(node("h3", "", firstSentence(localText(finding, "summary", lang), lang)), localParagraph(finding, "summary", lang, 300));
-    const tag = node("span", `tag pill-${evidenceTone(finding.type)}`, findingLabelText(finding.type, lang));
+    copy.append(node("h3", "", firstSentence(localText(item, "summary", lang), lang)), localParagraph(item, "summary", lang, 300));
+    const tag = item.isCandidate
+      ? node("span", "tag pill-violet", t(lang, "intelligence.candidateTag"))
+      : node("span", `tag pill-${evidenceTone(item.type)}`, findingLabelText(item.type, lang));
     copy.append(tag);
-    article.append(meta, copy, sourceAnchor(finding.sourceUrl, t(lang, "intelligence.source"), lang));
+    article.append(meta, copy, sourceAnchor(item.sourceUrl, t(lang, "intelligence.source"), lang));
     feed.append(article);
   });
 

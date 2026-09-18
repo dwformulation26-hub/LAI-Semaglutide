@@ -415,6 +415,35 @@ export function prepareDatabase(payload, lang = "en") {
     );
   const readyCandidates = pendingCandidates.filter((candidate) => candidate.status === "ready_for_promotion");
   const watchCandidates = candidates.filter((candidate) => candidate.status === "watch").map(candidateAge);
+
+  // Latest market intelligence merges confirmed findings with newly discovered candidates,
+  // tagged so a reader can tell them apart at a glance -- a candidate is evidence still
+  // under construction (see the promotion bar), not a verified program update. Program
+  // Directory stays findings-only; this feed is the one place the two meet. Stalled
+  // candidates are excluded: they are old, dead signal, not "latest" anything.
+  const candidateFeedItems = pendingCandidates
+    .filter((candidate) => candidate.status !== "stalled")
+    .map((candidate) => {
+      const firstEvidence = [...(candidate.evidence ?? [])].sort((a, b) => String(a.date ?? "").localeCompare(String(b.date ?? "")))[0];
+      // Same rule as a finding: date the row by the real-world event, not by the day this
+      // system happened to write it down.
+      const date = firstEvidence?.date ?? candidate.created_date ?? "";
+      return {
+        id: `candidate-${candidate.id}`,
+        isCandidate: true,
+        candidateStatus: candidate.status,
+        company: candidate.detected_name,
+        date,
+        summary: firstEvidence?.snippet,
+        summary_ko: firstEvidence?.snippet_ko,
+        sourceName: firstEvidence?.source?.name ?? (lang === "ko" ? "출처 미상" : "Source unavailable"),
+        sourceUrl: safeUrl(firstEvidence?.source?.url),
+        sourceTier: firstEvidence?.source?.tier ?? null,
+        timestamp: Date.parse(`${String(date).slice(0, 10)}T00:00:00Z`) || 0
+      };
+    });
+  const intelligenceFeed = [...findings, ...candidateFeedItems].sort((a, b) => b.timestamp - a.timestamp || String(b.id).localeCompare(String(a.id)));
+
   const runStatus = payload.meta?.last_run ?? {};
   const health = assessRunHealth(runStatus, Date.now(), lang);
   const leaderNote = interpretLeader(leader, developmentPrograms, Date.now(), lang);
@@ -422,6 +451,7 @@ export function prepareDatabase(payload, lang = "en") {
   return {
     records,
     findings,
+    intelligenceFeed,
     moleculeGroups,
     groupFor,
     needsMoleculeReview,

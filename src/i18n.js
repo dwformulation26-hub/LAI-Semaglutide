@@ -71,9 +71,10 @@ const STRINGS = {
 
     "intelligence.eyebrow": "WHAT CHANGED",
     "intelligence.title": "Latest market intelligence",
-    "intelligence.subtitle": "Six recent findings; open the original source for context.",
+    "intelligence.subtitle": "Six recent findings and newly discovered candidates; open the original source for context.",
     "intelligence.readoutEyebrow": "TODAY'S READOUT",
     "intelligence.source": "Source ↗",
+    "intelligence.candidateTag": "New candidate — unverified",
     "content.englishOriginal": "English original",
 
     "readout.leadLabel": "Development lead",
@@ -268,9 +269,10 @@ const STRINGS = {
 
     "intelligence.eyebrow": "변경 사항",
     "intelligence.title": "최신 시장 인텔리전스",
-    "intelligence.subtitle": "최근 발견 6건 · 원문 출처를 열어 맥락을 확인하세요.",
+    "intelligence.subtitle": "최근 발견 6건과 새로 발견된 후보를 함께 보여줍니다 · 원문 출처를 열어 맥락을 확인하세요.",
     "intelligence.readoutEyebrow": "오늘의 요약",
     "intelligence.source": "출처 ↗",
+    "intelligence.candidateTag": "신규 후보 — 미검증",
     "content.englishOriginal": "영문 원문",
 
     "readout.leadLabel": "개발 선두",

@@ -163,6 +163,7 @@ main { width: calc(100% - var(--rail)); max-width: 1500px; margin-left: var(--ra
 .intel-grid { display: grid; grid-template-columns: minmax(0, 1.72fr) minmax(270px, .62fr); gap: 1rem; align-items: start; }
 .feed { border-top: 1px solid var(--line-strong); }
 .feed-item { display: grid; grid-template-columns: 125px minmax(0,1fr) 92px; gap: 1rem; padding: 1.15rem .15rem; border-bottom: 1px solid var(--line); }
+.feed-item-candidate { background: linear-gradient(90deg, var(--violet-soft) 0, var(--violet-soft) 3px, transparent 3px); padding-left: .45rem; margin-left: -.3rem; }
 .feed-meta strong, .feed-meta span { display: block; }
 .feed-meta strong { font-size: .74rem; }
 .feed-meta span { margin-top: .25rem; color: var(--faint); font-size: .68rem; }
