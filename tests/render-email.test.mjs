@@ -267,25 +267,39 @@ test("a digest with new findings is marked for sending", () => {
   assert.equal(out.delivery, "send");
 });
 
-test("a digest with no new findings is drafted, never sent", () => {
-  // Escalations, late items and new candidates are each worth drafting, and none of them
-  // is new news. A repeated escalation in particular would otherwise mail the whole list
-  // the same program every Monday.
+test("a digest with no new findings or candidates is drafted, never sent", () => {
+  // Escalations and late items are each worth drafting, but neither is new news on its
+  // own. A repeated escalation in particular would otherwise mail the whole list the same
+  // program every Monday.
   const out = renderDigest({
     runDate: "2026-09-21",
     leadIn: "x",
     findings: [],
     escalations: [{ headline: "QL Biopharm", date: "2026-09-02", summary: "Cleared every bar.", sourceUrl: "https://e.com", sourceName: "E" }],
-    lateItems: [{ headline: "Peptron CB", date: "2026-09-01", confidence: "confirmed", summary: "Filed on DART.", sourceUrl: "https://d.com", sourceName: "DART" }],
-    candidates: [{ headline: "New code XY-1", date: "2026-09-21", summary: "First sighting.", sourceUrl: "https://c.com", sourceName: "C" }]
+    lateItems: [{ headline: "Peptron CB", date: "2026-09-01", confidence: "confirmed", summary: "Filed on DART.", sourceUrl: "https://d.com", sourceName: "DART" }]
   }, templateHtml);
   assert.notEqual(out, null);
   assert.equal(out.delivery, "draft");
 });
 
-test("deliveryMode keys off findings alone, and treats a missing array as none", () => {
+test("a digest with a new candidate is marked for sending, same as a new finding", () => {
+  // A candidate only reaches this array after clearing named_entity + technical_claim +
+  // a Tier 1/2 source (see data-schema.md's candidate pipeline), so it is worth an
+  // unattended send on its own -- unlike a repeated escalation or an old late item, which
+  // stay draft-only.
+  const out = renderDigest({
+    runDate: "2026-09-21",
+    leadIn: "x",
+    findings: [],
+    candidates: [{ headline: "New code XY-1", date: "2026-09-21", summary: "First sighting.", sourceUrl: "https://c.com", sourceName: "C" }]
+  }, templateHtml);
+  assert.equal(out.delivery, "send");
+});
+
+test("deliveryMode keys off findings or new candidates, and treats a missing array as none", () => {
   assert.equal(deliveryMode({ findings: [sampleFinding] }), "send");
   assert.equal(deliveryMode({ findings: [] }), "draft");
   assert.equal(deliveryMode({}), "draft");
-  assert.equal(deliveryMode({ escalations: [{}], candidates: [{}] }), "draft");
+  assert.equal(deliveryMode({ candidates: [{}] }), "send");
+  assert.equal(deliveryMode({ escalations: [{}] }), "draft");
 });

@@ -150,6 +150,8 @@ const STRINGS = {
     "evidence.empty": "No findings logged for this program yet.",
 
     "review.eyebrow": "PENDING REVIEW",
+    "review.sectionTitle": "Review queue",
+    "review.sectionSubtitle": "Two queues wait on a human decision below: records with an unresolved molecule class, and newly discovered entities not yet promoted, merged or rejected.",
     "review.title": "Candidate queue",
     "review.moleculeTitle": "Molecule class unresolved",
     "review.moleculeBadge": "Needs review",
@@ -345,6 +347,8 @@ const STRINGS = {
     "evidence.empty": "이 프로그램에 대해 기록된 근거가 아직 없습니다.",
 
     "review.eyebrow": "검토 대기",
+    "review.sectionTitle": "검토 대기열",
+    "review.sectionSubtitle": "아래에는 사람의 판단이 필요한 두 개의 대기열이 있습니다: 분자 계열이 미확정인 레코드, 그리고 아직 승격·병합·반려되지 않은 새로 발견된 개체입니다.",
     "review.title": "후보 대기열",
     "review.moleculeTitle": "분자 계열 미확정",
     "review.moleculeBadge": "검토 필요",

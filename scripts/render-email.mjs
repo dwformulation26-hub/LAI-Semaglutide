@@ -275,13 +275,16 @@ function buildPreheader(input) {
 }
 
 // --- Send or draft ------------------------------------------------------------------
-// New findings are the send trigger, and the only one. A digest carrying nothing but
-// repeated escalations, late items or new candidates is still worth drafting, but it is
-// not news that justifies mailing four inboxes unattended -- that one waits in Drafts for
-// the admin to read and send by hand. Decided here rather than in prose so the rule is
-// testable and a run cannot talk itself into a send.
+// New findings and new candidates are the send triggers (extended to candidates
+// 2026-09-18: a candidate only reaches `candidates` at all after clearing named_entity +
+// technical_claim + a Tier 1/2 source, which is a high enough bar that it is worth an
+// unattended send on its own). A digest carrying nothing but repeated escalations or late
+// items is still worth drafting, but it is not news that justifies mailing four inboxes
+// unattended -- that one waits in Drafts for the admin to read and send by hand. Decided
+// here rather than in prose so the rule is testable and a run cannot talk itself into a
+// send.
 export function deliveryMode(input) {
-  return (input.findings?.length ?? 0) > 0 ? "send" : "draft";
+  return ((input.findings?.length ?? 0) > 0 || (input.candidates?.length ?? 0) > 0) ? "send" : "draft";
 }
 
 // Pure: takes the parsed input payload and the raw template file contents,
@@ -381,8 +384,8 @@ async function main() {
   const late = (input.lateItems?.length ?? 0) - heldLate;
   console.log(`Rendered digest (${input.findings?.length ?? 0} findings, ${escalations} escalations, ${late} late, ${input.candidates?.length ?? 0} candidates) → ${outputPath}`);
   console.log(result.delivery === "send"
-    ? "delivery: send — this digest has new findings, so send it to the standing recipient list."
-    : "delivery: draft — no new findings this run. Create the Gmail draft and do not send it.");
+    ? "delivery: send — this digest has a new finding or a new candidate, so send it to the standing recipient list."
+    : "delivery: draft — no new finding or candidate this run. Create the Gmail draft and do not send it.");
 }
 
 if (path.resolve(process.argv[1] ?? "") === path.resolve(fileURLToPath(import.meta.url))) main();
