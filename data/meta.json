@@ -2,29 +2,24 @@
   "last_run": {
     "initial_seed": "2026-09-02T00:00:00Z",
     "initial_discovery_test": "2026-09-02T00:00:00Z",
-    "daily_scan": "2026-09-18T06:04:04+09:00",
+    "daily_scan": "2026-09-21T06:04:20+09:00",
     "weekly_sweep": "2026-09-20T09:01:24+09:00",
     "qc_tier2": "2026-09-20T09:01:24+09:00",
     "qc_tier3": null,
     "baseline_class_sweep": "2026-09-11T06:40:00Z"
   },
-  "digest_carryover": {
-    "from": "2026-09-20T09:01:24+09:00",
-    "findings": [],
-    "candidates": ["cand-2026-09-20-001", "cand-2026-09-20-002"],
-    "newly_escalated": ["cand-2026-09-02-004"]
-  },
+  "digest_carryover": null,
   "coverage": {
     "daily_scan": {
-      "umbrellas_checked": 9,
-      "umbrellas_total": 45,
-      "skipped_throttled": 36,
+      "umbrellas_checked": 48,
+      "umbrellas_total": 48,
+      "skipped_throttled": 0,
       "skipped_budget_exhausted": 0,
-      "codes_harvested": 11,
-      "codes_unknown": 2,
-      "codes_queried": 3,
-      "watchlist_cursor": "alteogen-monthly",
-      "notes": "Breadth-first single-alias pass across all 9 due records (adocia-adoxlong, ascendis-transcon-novo, ascletis-asc30, astrazeneca-zoladex, cspc-syh2082, lilly-eloralintide, owlbio-kyungdong-xtina, samsung-bioepis-g2gbio-gb7001, zealand-petrelintide); the other 36 were checked within the last 1-2 days and are quiet 21+ days, so correctly throttled. 8 of the 9 due records reconfirmed existing findings with no material new information this run. cspc-syh2082 turned up genuine late-discovered news: an FDA clinical-trial clearance (2026-02-16, wire-corroborated) and a clinicaltrials.gov Phase I dose-escalation study (NCT07736404) with an actual dosing start of 2026-04-13 and status Active, not recruiting -- both logged as new findings and stage_label advanced Preclinical -> Phase 1 (both discovered ~5-7 months after the fact, well outside the freshness window, so treated as discovered-late rather than headline). Track B1: 14/14 fixed watchlist rows queried. Code harvest surfaced 11 code-pattern strings across results (ALT-M5, AZD6234, NN1706, DA-3091, AZD8233, MET-233i, HM15275, ABBV-295, GUB014295, PT404, AZD9550); most resolved immediately as already-tracked aliases, parent-molecule identifiers or known decoys. 2 needed a bounded query: AZD6234 (AstraZeneca amylin analog; confirmed weekly-only dosing, decoy, no LAI program) and a claim that Hanmi's HM15275 (an existing once-weekly decoy) is also being developed in patch and once-monthly formulations -- traced to a single Tier 2/3 outlet (medicopharma.co.kr) using aspirational framing with no corroboration and no concrete technical detail, so it does not clear the candidate creation bar and was not queued. ALT-M5 (Alteogen) resolved as a genuine new candidate via the fixed watchlist queries themselves (see below), so no extra bounded query was needed for it. 4 rotation-list rows queried (abbv-295, pt404, lilly-camurus, alteogen-monthly), resuming after ct-g32 and wrapping to the start of the list; abbv-295/pt404/lilly-camurus reconfirmed existing watchlist documentation with nothing new. alteogen-monthly is now resolved: Alteogen announced (2026-09-17, two independent Tier 2 outlets) a PCT filing for a new 'Long-Acting Conjugate' platform and a once-monthly obesity candidate ALT-M5 with animal data on monthly dosing and rebound suppression -- logged as new candidate cand-2026-09-18-001 (near_bar, missing only second_dated_event); PROPOSING this row be retired from the rotation list now that it has a candidate entry. B3 cheap pass (2/2 searches spent): re-checked cand-2026-09-17-001 (Samik Pharmaceutical) -- found only the same patent registration with a more precise date (Aug 27, 2026), not a new dated event, remains pending/near_bar; re-checked cand-2026-09-13-001 (Prolynx) -- still no IND/trial registration since the Dec 2025 Series A, remains pending/near_bar. Stall rule checked across all 16 unresolved candidates -- oldest is 16 days old, none 30+ days, none triggered. No new EGRESS_BLOCKED domains this run (no direct WebFetch attempted; all sources reached via search). clinicaltrials.gov and patents.google.com both reached via search again this run (e.g. NCT07736404, NCT07484204)."
+      "codes_harvested": 7,
+      "codes_unknown": 1,
+      "codes_queried": 1,
+      "watchlist_cursor": "pt404",
+      "notes": "Monday scan: window_start = Friday's daily_scan (2026-09-18T06:04:04+09:00), so the freshness window covers Fri-Sat-Sun. Throttle rule found no eligible skips: every umbrella's last_checked was 2026-09-16/17/18, all more than 2 KST calendar days before today, so all 48 were due and breadth-first single-alias queried (drug code/ticker first). All 48 reconfirmed existing findings with no material new information -- notably Ascendis/Novo TransCon Semaglutide rights-reversion (Sept 14) and Novo Sogroya EU CHMP opinion (Sept 18) were both already logged by their own umbrellas' last_updated dates, and Peptron PT403's IND-filed status, Foresee Camcevi's 3-month FDA approval and Camurus CAM2029's CRL were all already on file -- so no new findings this run. Track B1: 14/14 fixed watchlist rows queried; nothing new found (Hanmi HM15275 patch/monthly claim from medicopharma.co.kr resurfaced but remains a single uncorroborated Tier 2/3 source per the prior run's assessment, still not queued). Code harvest surfaced 7 code-pattern strings (HM15211, MET-233, ABBV-295, GUB014295, NN1706, DA-3091, PT404); all but HM15211 were already-tracked aliases or known decoys. HM15211 (Hanmi efocipegtrutide/LAPS triple agonist) needed the one bounded query: resolved as a long-running NASH-focused Fc-conjugate program with no source stating a monthly-or-longer dosing interval -- a decoy, not queued. 4 rotation-list rows queried (biote-cn121154792a, ct-g32, abbv-295, pt404), resuming after alteogen-monthly and wrapping to the start of the list; all four reconfirmed existing watchlist documentation with nothing new (CT-G32 still discloses no dosing interval; PT404, ABBV-295 and the Biote CN121154792A patent unchanged). B3 cheap pass (2/2 searches spent, both near_bar, oldest first): re-checked cand-2026-09-02-002 (Samchundang) -- same Jan 7, 2026 term sheet, no new dated event; re-checked cand-2026-09-02-003 (SpiderCore) -- same July 21, 2026 G2GBio contract, a generic 'Novo Nordisk partnering company' mention on SpiderCore's own site carries no date so does not clear second_dated_event. Stall rule checked across all 15 unresolved candidates -- oldest is 19 days old, none 30+ days, none triggered. No EGRESS_BLOCKED domains this run (no direct WebFetch attempted; every source reached via search). patents.google.com reached via search again this run (CN121154792A); clinicaltrials.gov was not queried this run (no ct.gov links surfaced in this run's searches)."
     },
     "weekly_sweep": {
       "source_categories_checked": 8,
@@ -42,11 +37,11 @@
     },
     "candidate_follow_up": {
       "unresolved_total": 15,
-      "rechecked": 13,
-      "escalated": 1,
+      "rechecked": 2,
+      "escalated": 0,
       "stalled": 0,
       "aged": 15,
-      "notes": "Weekly deep pass: one query each on all 13 previously-unresolved candidates (near_bar first: cand-2026-09-02-003 SpiderCore, cand-2026-09-02-004 Alveus, cand-2026-09-07-001 Precision Antibiotics, cand-2026-09-11-001 Appel Sauce Studios, cand-2026-09-13-001 Prolynx, cand-2026-09-17-001 Samik Pharmaceutical, cand-2026-09-18-001 Alteogen ALT-M5; then the rest of pending: cand-2026-09-02-002 Samchundang, cand-2026-09-02-007 CSPC ZhongQi/SYHX2008, cand-2026-09-05-001 Korea BioNC+ProAptec, cand-2026-09-06-001 Mapi Cariprazine, cand-2026-09-11-002 Hengrui Ribupatide, cand-2026-09-13-002 CSPC SYH9017). No watch/stalled candidates existed to check this sweep (0 of either). cand-2026-09-02-004 (Alveus) escalated to ready_for_promotion. Two candidates (Samchundang, Precision Antibiotics) newly cleared confirmed_source. The two candidates created this run (cand-2026-09-20-001, cand-2026-09-20-002) are new and were not re-searched. Stall rule checked across all 15 unresolved candidates -- oldest is 18 days old (2026-09-02 batch), none 30+ days, none triggered."
+      "notes": "Daily cheap pass, per the skill's Track B3 section: date-math aged all 15 unresolved candidates (oldest 19 days, none 30+, stall rule not triggered). Re-searched the 2 oldest near_bar candidates (cand-2026-09-02-002 Samchundang, cand-2026-09-02-003 SpiderCore) -- both reconfirmed their existing single dated event with no new evidence, so no status changes; promotion_bar.evidence rewritten on both to record this run's check per the skill's 'write on every check' rule. cand-2026-09-02-004 (Alveus) remains ready_for_promotion, carried into this digest's escalations with newlyEscalated:true per digest_carryover from the weekly sweep (it escalated during that sweep, so today's daily scan is its first digest appearance)."
     }
   },
   "source_health": {
@@ -135,9 +130,9 @@
       "status": "blocked"
     },
     "patents.google.com": {
-      "last_success": "2026-09-20T09:01:24+09:00",
+      "last_success": "2026-09-21T06:04:20+09:00",
       "status": "search_only",
-      "note": "Direct fetch blocked by network policy (gateway 403 on CONNECT); reached via domain-scoped search again this run (e.g. CN121154792A, KR20240005579A)."
+      "note": "Direct fetch blocked by network policy (gateway 403 on CONNECT); reached via domain-scoped search again this run (e.g. CN121154792A)."
     },
     "ir.biocorrx.com": {
       "last_success": null,
