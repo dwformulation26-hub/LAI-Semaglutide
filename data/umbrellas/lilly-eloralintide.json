@@ -14,11 +14,11 @@
     "LLY"
   ],
   "current_status": {
-    "stage": "Phase 2 complete and positive, reported Nov 6 2025 at ObesityWeek 2025 and published simultaneously in The Lancet. Lilly stated an intent to begin Phase 3 monotherapy studies; no source confirms a Phase 3 trial has started. A separate Phase 2 of eloralintide alone or combined with tirzepatide is running in adults with obesity and type 2 diabetes.",
-    "stage_ko": "임상 2상 완료 및 긍정적 결과로, 2025년 11월 6일 ObesityWeek 2025에서 보고되고 The Lancet에 동시 게재됐다. Lilly는 임상 3상 단독요법 연구를 시작할 의향을 밝혔으나, 임상 3상 개시를 확인한 출처는 없다. 비만 및 제2형 당뇨병 성인을 대상으로 엘로랄린타이드 단독 또는 터제파타이드 병용 임상 2상이 별도로 진행 중이다.",
-    "stage_label": "Phase 2",
-    "stage_evidence": "The Nov 2025 readout is an explicit Phase 2 result; the accompanying Phase 3 statement is an intent to initiate, which under the forward-looking rule cannot advance the label.",
-    "stage_evidence_ko": "2025년 11월 결과는 명시적인 임상 2상 결과이며, 함께 나온 임상 3상 언급은 개시 의향으로, 미래 지향적 표현 규칙에 따라 단계를 올릴 수 없다.",
+    "stage": "Phase 3 underway: the ENLIGHTEN programme for eloralintide (LY3841136) is registered and enrolling. ENLIGHTEN-1 (NCT07321886) in obesity or overweight without type 2 diabetes carries a study start in January 2026, a companion Phase 3 study with type 2 diabetes (NCT07282600) is registered alongside it, and both were recruiting at active sites as of September 2026. The Phase 2 readout at ObesityWeek 2025 gave up to 20.1% mean weight reduction at 48 weeks versus 0.4% for placebo.",
+    "stage_ko": "임상 3상 진행 중이다. 엘로랄린타이드(LY3841136)의 ENLIGHTEN 프로그램이 등록되어 환자를 모집하고 있다. 제2형 당뇨 비동반 비만·과체중 대상 ENLIGHTEN-1(NCT07321886)의 시험 개시는 2026년 1월이며, 제2형 당뇨 동반 환자 대상 임상 3상(NCT07282600)이 함께 등록되어 있고, 두 시험 모두 2026년 9월 기준 활성 기관에서 모집 중이었다. ObesityWeek 2025 임상 2상 결과는 48주차 평균 체중 최대 20.1% 감소(위약 0.4%)였다.",
+    "stage_label": "Phase 3",
+    "stage_evidence": "The ENLIGHTEN Phase 3 studies of eloralintide (LY3841136) are registered with a January 2026 study start and were recruiting at active sites as of September 2026 — enrolment has begun, which is the bar for Phase 3, and supersedes the November 2025 statement of intent that could not advance the label on its own.",
+    "stage_evidence_ko": "엘로랄린타이드(LY3841136)의 ENLIGHTEN 임상 3상 시험들은 2026년 1월 개시로 등록되어 있고 2026년 9월 기준 활성 기관에서 모집 중이었다. 등록(모집)이 시작됐으므로 임상 3상 기준을 충족하며, 이는 그 자체로는 단계를 올릴 수 없던 2025년 11월의 개시 의향 발표를 대체한다.",
     "molecule_class": [
       "amylin"
     ],
@@ -29,7 +29,7 @@
     "partner": null,
     "data_point": "Phase 2 (n=263, 48 weeks): mean weight reduction 9.5% to 20.1% across arms versus 0.4% on placebo, with mild to moderate nausea and fatigue the most common adverse events",
     "data_point_ko": "임상 2상(n=263, 48주): 투여군별 평균 체중 감소 9.5%~20.1%(위약 0.4%), 가장 흔한 이상반응은 경증~중등도 오심과 피로",
-    "last_updated": "2025-11-06",
+    "last_updated": "2026-01-01",
     "last_checked": "2026-09-21"
   },
   "finding_history": [
@@ -45,6 +45,22 @@
         "tier": 1
       },
       "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-01-01-001",
+      "date": "2026-01-01",
+      "date_basis": "inferred",
+      "type": "regulatory",
+      "summary": "Lilly's Phase 3 programme for eloralintide (LY3841136), a selective once-weekly amylin receptor agonist, is registered and enrolling. ENLIGHTEN-1 (NCT07321886), in obesity or overweight without type 2 diabetes, carries a study start in January 2026, and a companion Phase 3 study in participants with type 2 diabetes (NCT07282600) is registered alongside it; both were recruiting at active sites as of September 2026. Further Phase 3 studies in the programme cover obstructive sleep apnoea and osteoarthritis knee pain.",
+      "summary_ko": "일라이 릴리의 선택적 주 1회 아밀린 수용체 작용제 엘로랄린타이드(LY3841136) 임상 3상 프로그램이 등록되어 환자를 모집하고 있다. 제2형 당뇨 비동반 비만·과체중 대상 ENLIGHTEN-1(NCT07321886)의 시험 개시는 2026년 1월이며, 제2형 당뇨 동반 환자 대상 임상 3상(NCT07282600)이 함께 등록되어 있다. 두 시험 모두 2026년 9월 기준 활성 기관에서 모집 중이었다. 이 프로그램의 추가 임상 3상은 폐쇄성 수면무호흡과 무릎 골관절염 통증을 대상으로 한다.",
+      "source": {
+        "name": "ClinicalTrials.gov registrations NCT07321886 and NCT07282600",
+        "publication": "ClinicalTrials.gov",
+        "url": "https://clinicaltrials.gov/study/NCT07321886",
+        "tier": 1
+      },
+      "confidence": "confirmed",
+      "verification_note": "Date is the registry's stated study-start month rather than a company first-dosing announcement, so it is inferred; ct.gov reached by domain-scoped search, as source_health lists it search_only."
     }
   ]
 }

@@ -2,16 +2,29 @@
   "id": "ql-biopharm-zovaglutide",
   "canonical_name": "QL Biopharm (Zhitai Biopharmaceutical) – Zovaglutide (ZT002)",
   "origin": "Global",
-  "entity_type": ["company", "asset"],
+  "entity_type": [
+    "company",
+    "asset"
+  ],
   "technology_family": "molecular_engineering",
-  "aliases": ["QL Biopharm", "Zhitai Biopharmaceutical", "质肽生物医药", "Zhitai Bio", "Beijing Zhitai Biomedical Technology", "zovaglutide", "ZT002"],
+  "aliases": [
+    "QL Biopharm",
+    "Zhitai Biopharmaceutical",
+    "质肽生物医药",
+    "Zhitai Bio",
+    "Beijing Zhitai Biomedical Technology",
+    "zovaglutide",
+    "ZT002"
+  ],
   "current_status": {
-    "stage": "Phase 2 complete with positive topline at EASD 2025 (Sept 2025): the 160 mg once-monthly dose produced 13.8% body-weight reduction at 24 weeks versus 2.4% for placebo. A Phase 3 trial (HORIZON-1, NCT07230119, ~620 participants, 52 weeks) is registered on ClinicalTrials.gov for the same asset, but its own status reads \"Not yet recruiting\" as of this check -- trade-press reports describing a first patient dosed in January 2026 could not be independently reconciled against the primary registration this run, so no Phase 3 claim is made here.",
-    "stage_ko": "임상 2상을 완료하고 EASD 2025(2025년 9월)에서 긍정적인 톱라인을 발표했다: 160mg 월 1회 투여군은 24주차에 위약 대비 13.8%의 체중 감소를 보였다(위약군 2.4%). 동일 자산에 대한 임상 3상 시험(HORIZON-1, NCT07230119, 약 620명, 52주)이 ClinicalTrials.gov에 등록돼 있으나, 이번 확인 시점 기준 등록 상태는 \"모집 전(Not yet recruiting)\"이다. 2026년 1월 첫 환자 투여를 보도한 업계 매체 기사가 있으나 이번 조사에서는 1차 등록 정보와 일치시킬 수 없었으므로, 여기서는 임상 3상으로 표시하지 않는다.",
-    "stage_label": "Phase 2",
-    "stage_evidence": "EASD 2025 Phase 2 data (160mg once-monthly, 13.8% weight loss at 24 weeks vs 2.4% placebo) is independently corroborated by two Tier 2 outlets (BioSpace/PR Newswire company release and Fierce Biotech's own coverage). A Phase 3 registration (HORIZON-1, NCT07230119) exists, but its ClinicalTrials.gov status reads \"Not yet recruiting\", which conflicts with unconfirmed trade-press claims of a January 2026 first dose -- flagging the discrepancy rather than advancing the label on unreconciled reporting.",
-    "stage_evidence_ko": "EASD 2025 임상 2상 데이터(160mg 월 1회 투여, 24주차 위약(2.4%) 대비 13.8% 체중 감소)는 독립적인 Tier 2 매체 2곳(BioSpace/PR Newswire 회사 보도자료, Fierce Biotech 자체 보도)이 교차 확인했다. 임상 3상 등록(HORIZON-1, NCT07230119)이 존재하나 ClinicalTrials.gov 상 상태는 \"모집 전(Not yet recruiting)\"으로, 2026년 1월 첫 투여를 주장하는 확인되지 않은 업계 매체 보도와 배치된다. 이를 확인 없이 단계 상향에 반영하지 않고 불일치로 표시한다.",
-    "molecule_class": ["other_incretin"],
+    "stage": "Phase 3 underway: HORIZON-1 (NCT07230119), the pivotal obesity trial of the once-monthly GLP-1 receptor agonist zovaglutide (ZT002), dosed its first participant on 2026-01-16 and its registration read \"Active, not recruiting\" as of July 2026, meaning the trial is running with enrolment closed. The supporting Phase 2 readout at EASD 2025 gave 13.8% body-weight reduction at 24 weeks on 160 mg once-monthly versus 2.4% for placebo.",
+    "stage_ko": "임상 3상 진행 중이다. 월 1회 GLP-1 수용체 작용제 조바글루타이드(ZT002)의 허가용 비만 임상 HORIZON-1(NCT07230119)은 2026-01-16 첫 환자 투여를 시작했고, 등록 정보는 2026년 7월 기준 \"Active, not recruiting\"으로, 등록이 마감된 채 시험이 진행 중임을 뜻한다. 근거가 된 EASD 2025 임상 2상 결과는 160mg 월 1회 투여군에서 24주차 체중 13.8% 감소(위약 2.4%)였다.",
+    "stage_label": "Phase 3",
+    "stage_evidence": "HORIZON-1 (NCT07230119) states a study start of 2026-01-16 with the first participant dosed, and a registration status of \"Active, not recruiting\" as of July 2026 — dosing has begun, which is the bar for Phase 3. The once-monthly SC depot asset zovaglutide (ZT002) is the asset named.",
+    "stage_evidence_ko": "HORIZON-1(NCT07230119)은 2026-01-16 시험 개시와 첫 환자 투여를 명시하고 있으며, 등록 상태는 2026년 7월 기준 \"Active, not recruiting\"이다. 투여가 시작됐으므로 임상 3상 기준을 충족한다. 대상 자산은 월 1회 피하 투여 자산 조바글루타이드(ZT002)다.",
+    "molecule_class": [
+      "other_incretin"
+    ],
     "molecule_evidence": "Zovaglutide (ZT002) is described as a novel, extended half-life GLP-1 receptor agonist -- a new chemical entity, not a semaglutide reformulation -- which places it in the other-incretin bucket rather than a named-molecule class.",
     "molecule_evidence_ko": "조바글루타이드(ZT002)는 세마글루타이드의 재제형이 아닌 신규 화합물로서, 반감기가 연장된 새로운 GLP-1 수용체 작용제로 설명된다. 이에 따라 특정 분자 계열이 아닌 기타 인크레틴 분류에 속한다.",
     "dosing_target": "Monthly",
@@ -51,6 +64,21 @@
         "tier": 2
       },
       "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-01-16-001",
+      "date": "2026-01-16",
+      "type": "regulatory",
+      "summary": "QL Biopharm dosed the first participant in HORIZON-1 (NCT07230119), the Phase 3 obesity trial of its once-monthly GLP-1 receptor agonist zovaglutide (ZT002), on 2026-01-16. The registration gives a study start date of 2026-01-16 and a status of \"Active, not recruiting\" as of July 2026, so the trial is underway with enrolment complete. HORIZON-1 enrols about 620 participants over 52 weeks, with primary completion estimated May 2027.",
+      "summary_ko": "QL Biopharm은 월 1회 GLP-1 수용체 작용제 조바글루타이드(ZT002)의 임상 3상 비만 시험 HORIZON-1(NCT07230119)에서 2026-01-16 첫 환자 투여를 시작했다. 등록 정보는 시험 개시일을 2026-01-16으로, 상태를 2026년 7월 기준 \"Active, not recruiting\"으로 기재하고 있어 등록이 마감된 채 시험이 진행 중이다. HORIZON-1은 약 620명을 52주간 등록하며 1차 완료 예정 시점은 2027년 5월이다.",
+      "source": {
+        "name": "ClinicalTrials.gov registration NCT07230119, corroborated by trade-press coverage of the first-patient dosing",
+        "publication": "ClinicalTrials.gov",
+        "url": "https://clinicaltrials.gov/study/NCT07230119",
+        "tier": 1
+      },
+      "confidence": "confirmed",
+      "verification_note": "Registration status re-read 2026-09-21 and reads \"Active, not recruiting\" (running, enrolment closed), which is distinct from the \"Not yet recruiting\" status the record previously carried; ct.gov reached by domain-scoped search, as source_health lists it search_only."
     }
   ]
 }

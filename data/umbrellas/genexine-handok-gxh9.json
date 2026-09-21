@@ -22,11 +22,11 @@
     "Jumpcan Pharmaceutical"
   ],
   "current_status": {
-    "stage": "Phase 3 completed in China (2023, via I-Mab-linked partner) with primary endpoint met; China NMPA accepted the BLA for pediatric growth hormone deficiency in Dec 2024 and it remains under review as of Sep 2026; Korea Phase 2 complete with orphan drug designation but launch timing undecided; co-developer Genexine disclosed severe financial distress in early 2025",
-    "stage_ko": "중국 임상 3상은 2023년 I-Mab 연계 파트너를 통해 완료돼 1차 평가변수를 충족했다. 중국 NMPA는 2024년 12월 소아 성장호르몬 결핍증 BLA를 접수했으며 2026년 9월 현재 심사 중이다. 한국은 임상 2상을 완료하고 희귀의약품 지정을 받았으나 출시 시기는 미정이다. 공동 개발사 제넥신은 2025년 초 심각한 재무 위기를 공시했다.",
-    "stage_label": "Phase 3",
-    "stage_evidence": "Phase 3 completed in China (2023) with primary endpoint met; BLA accepted and under active NMPA review.",
-    "stage_evidence_ko": "중국 임상 3상 완료(2023년), 1차 평가변수 충족. BLA가 접수돼 NMPA 심사가 진행 중이다.",
+    "stage": "BLA under review in China: the NMPA accepted the Biologics License Application for eftansomatropin alfa (GX-H9) in pediatric growth hormone deficiency on 2024-12-09 and no approval has been announced since, so the asset sits at regulatory review rather than in trials. The supporting Chinese pivotal Phase 3 (CTJ101PGHD301) completed in 2023 having met its primary endpoint. Korea Phase 2 is complete with orphan drug designation but launch timing is undecided.",
+    "stage_ko": "중국에서 허가 심사 중이다. 중국 NMPA는 2024-12-09 소아 성장호르몬결핍증 대상 에프탄소마트로핀 알파(GX-H9)의 품목허가신청(BLA)을 접수했고 이후 승인 발표는 없어, 해당 자산은 임상 단계가 아니라 규제 심사 단계에 있다. 근거가 된 중국 허가용 임상 3상(CTJ101PGHD301)은 1차 평가변수를 충족하고 2023년 완료됐다. 국내 임상 2상은 완료되어 희귀의약품 지정을 받았으나 출시 시점은 미정이다.",
+    "stage_label": "Filed / review",
+    "stage_evidence": "China's NMPA accepted the BLA for eftansomatropin alfa (GX-H9) on 2024-12-09 and it remains under review with no approval announced, which is the Filed / review bucket. The completed 2023 Chinese Phase 3 is what the filing rests on, not the asset's current state.",
+    "stage_evidence_ko": "중국 NMPA는 2024-12-09 에프탄소마트로핀 알파(GX-H9)의 BLA를 접수했고 승인 발표 없이 심사가 계속되고 있어 'Filed / review' 구간에 해당한다. 2023년 완료된 중국 임상 3상은 이 신청의 근거일 뿐 자산의 현재 상태는 아니다.",
     "molecule_class": [
       "non_incretin"
     ],
