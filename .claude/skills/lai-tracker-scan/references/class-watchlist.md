@@ -93,12 +93,14 @@ MET-233i (`pfizer-metsera-engineered-peptide`), AUL016 and AUL018 (`owlbio-kyung
 (`daewon-pharmus-quadagonist`), and Yuhan (`inventagelab-ivl3021`). PT404 stays in rotation: Peptron's record states
 tirzepatide is outside the Lilly work, and the program looks dormant.
 
+Moved to a candidate's `detected_aliases` by the admin on 2026-09-21, so no longer rotated:
+alteogen-monthly / ALT-M5 (`cand-2026-09-18-001`).
+
 | key | Query | Class | What it is | Gap | Source (date) |
 |---|---|---|---|---|---|
 | abbv-295 | `ABBV-295 GUB014295 amylin` | amylin | AbbVie (from Gubra) long-acting amylin analog. Phase 1 multiple-dose study tested weekly, every-2-weeks and monthly dosing | Untracked program | https://news.abbvie.com/2026-03-09-AbbVie-Announces-Positive-Topline-Results-from-a-Phase-1-Multiple-Ascending-Dose-Study-of-ABBV-295,-a-Long-Acting-Amylin-Analog,-in-Adults (2026-03-09) |
 | pt404 | `PT404 펩트론 터제파타이드` | tirzepatide | Peptron SmartDepot tirzepatide, preclinical, ~70-day release in minipigs; may have stalled after the July 2026 statement that tirzepatide is outside the Lilly work | Alias gap on `peptron-pt403` | https://diabetesjournals.org/diabetes/article/72/Supplement_1/781-P/149936/ (ADA 2023) |
 | lilly-camurus | `Lilly Camurus FluidCrystal amylin triple agonist` | tirzepatide / retatrutide / amylin | Lilly–Camurus FluidCrystal deal covering a GLP-1/GIP dual, a triple agonist and an amylin agonist (amylin option exercised 2026-06-02) | Deal not captured as its own program | https://allsci.com/news/licensing-deals/eli-lilly-expands-camurus-fluidcrystal-collaboration-to-amylin-receptor-agonists-usd-870m-deal/ (2026-06-02) |
-| alteogen-monthly | `알테오젠 월 1회 비만 플랫폼` | undetermined | Alteogen ultra-long-acting monthly protein platform, preclinical; molecule undisclosed, retatrutide only as comparator (so no class yet) | Untracked program | https://www.paxetv.com/news/articleView.html?idxno=261222 (2026-02-09) |
 | biote-cn121154792a | `CN121154792A 替尔泊肽` | tirzepatide | Beijing Biote in-situ gel tirzepatide, 28+ days in vitro; patent only | Untracked program | https://patents.google.com/patent/CN121154792A/zh (published 2025-12-19) |
 | ct-g32 | `셀트리온 CT-G32 4중 작용 비만` | undetermined | Celltrion GLP-1-based quadruple-agonist injection, run alongside an oral program; animal-efficacy stage with an IND planned. **Dosing interval not disclosed** — it becomes a candidate only once a source shows a monthly-or-longer interval or a depot formulation | Untracked program (watch) | https://www.ebn.co.kr/news/articleView.html?idxno=1710549 ; https://www.khan.co.kr/article/202602241439001 (2026-02-24) |
 
