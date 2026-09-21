@@ -204,6 +204,47 @@ export function moleculeClasses(record) {
   return declared.filter((value) => MOLECULE_ORDER.includes(value));
 }
 
+// A record carries ONE stage_label -- the furthest-along asset under the umbrella -- but
+// molecule_class is a set, and the two compose into a claim neither of them makes. Owl
+// Bio filed a Phase 1 IND for AUL009, a semaglutide microsphere, and separately names a
+// tirzepatide microsphere, AUL016, that has a patent and a press mention and nothing
+// clinical. Both fields were right; putting the record on the tirzepatide board at "IND
+// filed" still said "Owl Bio has taken tirzepatide into the clinic", which no source
+// says, and made it that board's leader. current_status.molecule_stages carries the
+// stage each molecule is separately evidenced at, and the build requires it as soon as
+// a record holds a second molecule.
+export function moleculeStageEntry(record, molecule) {
+  const entry = record.current_status?.molecule_stages?.[molecule];
+  return entry?.stage_label in STAGES ? entry : null;
+}
+
+// The record as it stands on ONE board: its stage, the prose beside it and its score all
+// come from the molecule whose board this is. A record with no per-molecule split, or
+// one whose split matches the umbrella headline, is passed through untouched.
+export function projectOntoMolecule(record, molecule) {
+  const entry = moleculeStageEntry(record, molecule);
+  if (!entry || entry.stage_label === record.stageLabel) return record;
+  const status = {
+    ...record.current_status,
+    stage_label: entry.stage_label,
+    // stage_evidence is already a sentence naming the fact behind the bucket, so it is
+    // what the leader panel reads out in place of the umbrella's own stage prose --
+    // which describes a different molecule's asset.
+    stage: entry.stage_evidence,
+    stage_ko: entry.stage_evidence_ko,
+    stage_evidence: entry.stage_evidence,
+    stage_evidence_ko: entry.stage_evidence_ko
+  };
+  return {
+    ...record,
+    current_status: status,
+    stageLabel: entry.stage_label,
+    stageOrder: STAGES[entry.stage_label],
+    score: competitiveScore({ ...record, current_status: status }),
+    boardMolecule: molecule
+  };
+}
+
 // Deterministic, computed at render, never stored: a saved score is a number that ages
 // on its own and that a scan run could quietly edit. Every input is a field the record
 // already declares, so any row's total can be re-derived by hand from the registry.
@@ -373,9 +414,14 @@ export function prepareDatabase(payload, lang = "en") {
   }))).sort((a, b) => b.timestamp - a.timestamp || String(b.id).localeCompare(String(a.id)));
 
   // One ranked board per class. A program formulating two molecules appears on both
-  // boards, which is correct -- InventageLab really is a separate competitor on each.
+  // boards, which is correct -- InventageLab really is a separate competitor on each --
+  // but it appears at the stage THAT molecule is evidenced at, not at the umbrella's
+  // furthest-along stage, which may belong to the other asset entirely.
   const moleculeGroups = MOLECULE_ORDER.map((key) => {
-    const members = orderPrograms(records.filter((record) => record.molecules.includes(key)), "score");
+    const members = orderPrograms(
+      records.filter((record) => record.molecules.includes(key)).map((record) => projectOntoMolecule(record, key)),
+      "score"
+    );
     return { key, scored: SCORED_CLASSES.has(key), members };
   });
 

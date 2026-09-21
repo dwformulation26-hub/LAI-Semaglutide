@@ -60,6 +60,12 @@ export function koreanPairs({ records = [], candidates = [] }) {
     for (const field of STATUS_FIELDS) {
       pairs.push({ label: `${record.id} current_status.${field}`, en: status[field], ko: status[`${field}_ko`] });
     }
+    // A multi-molecule record states a stage per molecule, and the dashboard reads that
+    // sentence out on the board for that molecule, so it needs a Korean copy like any
+    // other field it shows.
+    for (const [molecule, entry] of Object.entries(status.molecule_stages ?? {})) {
+      pairs.push({ label: `${record.id} current_status.molecule_stages.${molecule}.stage_evidence`, en: entry?.stage_evidence, ko: entry?.stage_evidence_ko });
+    }
     for (const finding of record.finding_history ?? []) {
       pairs.push({ label: `${record.id} ${finding.id} summary`, en: finding.summary, ko: finding.summary_ko });
     }

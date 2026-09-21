@@ -411,10 +411,20 @@ function moleculeCell(record, lang) {
   cell.dataset.label = t(lang, "programs.col.molecule");
   const tags = node("div", "mol-tags");
   const keys = record.needsMoleculeReview ? ["unassigned"] : record.molecules;
+  // The stage column shows the umbrella's furthest-along asset, which on a record holding
+  // two molecules belongs to one of them. Each tag carries the stage its own molecule is
+  // evidenced at, and prints it beside the name whenever that is not the row's stage --
+  // so a reader can never pair the tirzepatide tag with someone else's IND.
+  const perMolecule = record.current_status?.molecule_stages ?? {};
   keys.forEach((key) => {
     const tag = node("span", "mol-tag", key === "unassigned" ? t(lang, "programs.moleculeReview") : moleculeLabelText(key, lang));
     tag.style.setProperty("--tone", MOLECULE_COLORS[key]);
     if (key === "unassigned" && record.moleculeEvidence) tag.title = record.moleculeEvidence;
+    const own = perMolecule[key];
+    if (own) {
+      tag.title = localText(own, "stage_evidence", lang);
+      if (own.stage_label !== record.stageLabel) tag.append(node("em", "mol-tag-stage", stageLabelText(own.stage_label, lang)));
+    }
     tags.append(tag);
   });
   cell.append(tags);

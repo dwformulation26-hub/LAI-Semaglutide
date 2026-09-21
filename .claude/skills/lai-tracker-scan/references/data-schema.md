@@ -32,6 +32,8 @@ Use these exact string values — never invent a variant, even one that reads mo
 | `candidate.status` | `watch`, `pending`, `ready_for_promotion`, `stalled`, `promoted`, `merged`, `rejected`, `snoozed` — see the escalation ladder below; the build fails on anything outside this list |
 | `current_status.stage_label` | `Research`, `Preclinical`, `IND filed`, `Phase 1`, `Phase 2`, `Phase 3`, `Filed / review`, `Approved / marketed` — see the dedicated section below, this one has real teeth (the build fails without it) |
 | `current_status.molecule_class` (array) | `semaglutide`, `tirzepatide`, `retatrutide`, `amylin`, `other_incretin`, `non_incretin` — see the dedicated section below; the build fails on a missing field or an unknown value, and an empty array is legal and means "ambiguous, left for review" |
+| `current_status.molecule_stages` (object) | Required **only** when `molecule_class` holds more than one molecule, and rejected otherwise. Keyed by molecule, naming every one of them, each `{ stage_label, stage_evidence, stage_evidence_ko }`. The furthest-along entry must equal the umbrella's `stage_label` |
+| finding `molecules` (array) | Required on **every** finding of a record whose `molecule_class` holds more than one molecule; a subset of it, and `[]` when the finding is about none of them in particular. Omitted elsewhere, where it simply means the record's one molecule |
 
 Dates are always `YYYY-MM-DD`, and every date this tracker generates about its own runs (`last_checked`, `last_updated`, `created_date`, `follow_up.last_checked`) is the KST calendar date from `TZ=Asia/Seoul date +%F`. Source event dates (`finding.date`, `evidence.date`) are recorded as the source publishes them, never shifted. Timestamps (in `meta.json` only) are ISO 8601 with the KST offset: `YYYY-MM-DDTHH:MM:SS+09:00`. Timestamps written before 2026-09-14 end in `Z` (UTC) and remain valid instants; compare timestamps as instants, never as strings. See the skill's "Schedule and time zone" section.
 
@@ -87,6 +89,7 @@ Notes:
   - **It records what a program formulates, never what it is measured against.** Rival molecule names enter a record through comparator arms, analyst commentary and outright denials, and all three look identical to a text search. Peptron's own record says the Lilly collaboration does *not* include tirzepatide; a pattern match would tag it tirzepatide anyway. This field exists precisely so nothing downstream has to guess.
   - **An empty array is a legal, meaningful value.** It means the run found the evidence genuinely ambiguous and declined to pick. Those records surface in the dashboard's review queue for the admin. `molecule_evidence` is still required and should say what was ambiguous.
   - **A program may hold more than one class**, and several do. InventageLab formulates semaglutide and tirzepatide as separate assets; G2GBio's platform data covers three. Such a record appears on every matching board but remains a single file with a single finding history.
+  - **And a second class obliges a second stage.** `stage_label` describes the furthest-along asset under the umbrella, so on a multi-molecule record it is a fact about one of them, not all. Put the record on a board per molecule and those two correct fields start claiming something no source said — Owl Bio's semaglutide IND read as tirzepatide clinical entry, at the top of that board. `molecule_stages` is therefore required as soon as there is a second molecule, and so is a `molecules` array on each of that record's findings. See the skill's "Molecule classification" section for both.
 
 - `source.publication` is the outlet on its own — "Fierce Biotech", not "Fierce Biotech – \"Pfizer axes ex-Metsera obesity asset\"". It is optional but write it whenever the outlet is clear. `source.name` is free-text and in practice holds a mix of publication, article title and corroboration clauses, which is fine for the record but unusable as a label; the digest needs a short outlet name and falls back to cutting `name` at the first dash, comma, slash or bracket when `publication` is absent.
 
@@ -105,6 +108,7 @@ Every text field the dashboard shows has a Korean sibling named `<field>_ko`, pl
 |---|---|
 | finding `summary` | `summary_ko` |
 | `current_status.stage`, `stage_evidence`, `molecule_evidence`, `dosing_target`, `partner`, `data_point` | the same name plus `_ko` |
+| each `current_status.molecule_stages.<molecule>.stage_evidence` | `stage_evidence_ko` |
 | candidate evidence `snippet` | `snippet_ko` |
 | candidate `promotion_bar.evidence` | `promotion_bar.evidence_ko` |
 

@@ -3,7 +3,7 @@ import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
-import { CANDIDATE_STATUSES, MOLECULE_ORDER, assessRunHealth, competitiveScore, formatDate, interpretLeader, leadSentence, localized, moleculeClasses, normalizeStage, orderPrograms, prepareDatabase, safeUrl } from "../src/model.js";
+import { CANDIDATE_STATUSES, MOLECULE_ORDER, assessRunHealth, competitiveScore, formatDate, interpretLeader, leadSentence, localized, moleculeClasses, normalizeStage, orderPrograms, prepareDatabase, projectOntoMolecule, safeUrl, STAGES } from "../src/model.js";
 import { LANGS, t } from "../src/i18n.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -192,6 +192,86 @@ test("groups every record into its declared classes and flags the unresolved one
   const boards = data.moleculeGroups.filter((g) => g.members.some((m) => m.id === dual.id));
   assert.equal(boards.length, dual.molecules.length);
   assert.equal(data.records.filter((r) => r.id === dual.id).length, 1);
+});
+
+test("shows a record on each board at that molecule's own stage, not the umbrella's", () => {
+  // The regression, reported from the dashboard: Owl Bio filed a Phase 1 IND for AUL009,
+  // a semaglutide microsphere, and separately names AUL016, a tirzepatide microsphere
+  // with a patent and nothing clinical. molecule_class and stage_label were each right;
+  // put together on the tirzepatide board they said Owl Bio had taken tirzepatide into
+  // the clinic, and made it that board's leader.
+  const record = {
+    id: "owl", company: "Owl Bio", stageLabel: "IND filed", stageOrder: 2,
+    molecules: ["semaglutide", "tirzepatide"],
+    current_status: {
+      stage: "Phase 1 IND filed with Korea's MFDS", stage_label: "IND filed",
+      last_updated: "2026-09-02", dosing_target: "Monthly",
+      molecule_class: ["semaglutide", "tirzepatide"],
+      molecule_stages: {
+        semaglutide: { stage_label: "IND filed", stage_evidence: "AUL009 is the asset behind the IND." },
+        tirzepatide: { stage_label: "Research", stage_evidence: "AUL016 has a patent and no clinical work." }
+      }
+    },
+    finding_history: []
+  };
+
+  const onTirzepatide = projectOntoMolecule(record, "tirzepatide");
+  assert.equal(onTirzepatide.stageLabel, "Research");
+  assert.equal(onTirzepatide.stageOrder, 0);
+  // The prose beside the bar follows too -- the umbrella's own sentence is about AUL009.
+  assert.match(onTirzepatide.current_status.stage, /AUL016/);
+  // And the score, which is stage-weighted, is recomputed from the projected stage rather
+  // than carried over from the umbrella's.
+  assert.equal(onTirzepatide.score.total, competitiveScore({ ...record, current_status: onTirzepatide.current_status }).total);
+  assert.ok(onTirzepatide.score.total < competitiveScore(record).total, "a Research board entry must not score as an IND-filed one");
+
+  // The molecule whose stage IS the umbrella headline is passed through untouched.
+  assert.equal(projectOntoMolecule(record, "semaglutide"), record);
+  // So is a record that declares no per-molecule split at all.
+  const single = { id: "s", stageLabel: "Phase 2", current_status: { stage_label: "Phase 2" } };
+  assert.equal(projectOntoMolecule(single, "semaglutide"), single);
+});
+
+test("no live board claims a stage the molecule's own assets have not reached", async () => {
+  const data = prepareDatabase(await sourcePayload());
+  for (const group of data.moleculeGroups) {
+    for (const member of group.members) {
+      const declared = member.current_status?.molecule_stages?.[group.key];
+      if (!declared) continue;
+      assert.equal(
+        member.stageLabel, declared.stage_label,
+        `${member.id} sits on the ${group.key} board at ${member.stageLabel}, but its ${group.key} assets are evidenced at ${declared.stage_label}`
+      );
+    }
+  }
+});
+
+test("every multi-molecule record states a stage per molecule, topped by the umbrella headline", async () => {
+  const { records } = await sourcePayload();
+  const multi = records.filter((record) => (record.current_status?.molecule_class ?? []).length > 1);
+  assert.ok(multi.length, "expected at least one multi-molecule record");
+  for (const record of multi) {
+    const stages = record.current_status.molecule_stages;
+    assert.ok(stages, `${record.id} holds more than one molecule but states no molecule_stages`);
+    assert.deepEqual(
+      Object.keys(stages).sort(), [...record.current_status.molecule_class].sort(),
+      `${record.id}: molecule_stages must name exactly the declared molecules`
+    );
+    const furthest = Math.max(...Object.values(stages).map((entry) => STAGES[entry.stage_label]));
+    assert.equal(STAGES[record.current_status.stage_label], furthest, `${record.id}: stage_label is not the furthest-along molecule`);
+    // Each finding says what it is about, so the digest cannot tag a semaglutide IND
+    // with the record's tirzepatide class.
+    for (const finding of record.finding_history) {
+      assert.ok(Array.isArray(finding.molecules), `${record.id} ${finding.id} has no molecules array`);
+      const outside = finding.molecules.filter((value) => !record.current_status.molecule_class.includes(value));
+      assert.deepEqual(outside, [], `${record.id} ${finding.id} names molecules the record does not declare`);
+    }
+  }
+  // A single-molecule record says it once, in stage_label, and never twice.
+  for (const record of records) {
+    if ((record.current_status?.molecule_class ?? []).length > 1) continue;
+    assert.equal(record.current_status?.molecule_stages, undefined, `${record.id} states molecule_stages without a second molecule`);
+  }
 });
 
 test("scores competitively from declared fields only, and never scores the platform set", () => {

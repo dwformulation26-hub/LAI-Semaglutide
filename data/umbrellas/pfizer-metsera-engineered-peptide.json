@@ -31,6 +31,18 @@
     ],
     "molecule_evidence": "Berobenatide / PF-08653944 is an ultra-long-acting monthly GLP-1 new chemical entity. Amylin was added 2026-09-14 (admin) for MET-233i / PF-08653945, an ultra-long-acting once-monthly amylin analog. Pfizer's August 4, 2026 pipeline update lists it in clinical development alone and in combination with berobenatide.",
     "molecule_evidence_ko": "Berobenatide / PF-08653944는 초장기 지속형 월 1회 GLP-1 신규 화합물(NCE)이다. 초장기 지속형 월 1회 아밀린 유사체인 MET-233i / PF-08653945에 따라 2026-09-14(관리자)에 아밀린이 추가됐다. Pfizer의 2026년 8월 4일 파이프라인 업데이트는 이를 단독 및 berobenatide 병용으로 임상 개발 중인 것으로 기재했다.",
+    "molecule_stages": {
+      "other_incretin": {
+        "stage_label": "Phase 3",
+        "stage_evidence": "Berobenatide / PF-08653944, the ultra-long-acting monthly GLP-1 asset, is the one in Phase 3: VESPER-6 was registered in 2026 and Pfizer plans roughly 10 pivotal studies for it.",
+        "stage_evidence_ko": "임상 3상 단계인 자산은 초장기지속형 월 1회 GLP-1 자산 berobenatide / PF-08653944이다. VESPER-6이 2026년 등록됐고 Pfizer는 이 자산에 대해 약 10건의 허가용 임상을 계획하고 있다."
+      },
+      "amylin": {
+        "stage_label": "Phase 1",
+        "stage_evidence": "The amylin asset is MET-233i / PF-08653945, which Pfizer's 2026-08-04 pipeline update lists in clinical development alone and combined with berobenatide. No phase is named for it, so it is held at the lowest clinical bucket; the Phase 3 program is berobenatide's.",
+        "stage_evidence_ko": "아밀린 자산은 MET-233i / PF-08653945로, Pfizer의 2026-08-04 파이프라인 업데이트는 이를 단독 및 berobenatide 병용으로 임상 개발 중이라고만 기재한다. 구체적 상(相)이 명시되지 않아 가장 낮은 임상 단계로 유지하며, 임상 3상 프로그램은 berobenatide의 것이다."
+      }
+    },
     "dosing_target": "Monthly (also weekly-dose arm studied)",
     "dosing_target_ko": "월 1회(주 1회 투여군도 연구)",
     "partner": null,
@@ -44,6 +56,10 @@
       "id": "f-2025-11-13-001",
       "date": "2025-11-13",
       "type": "deal_partnership",
+      "molecules": [
+        "other_incretin",
+        "amylin"
+      ],
       "summary": "Pfizer completed its acquisition of Metsera, Inc. for $65.60/share cash (~$7.0B enterprise value) plus a contingent value right of up to $20.65/share tied to clinical/regulatory milestones. Metsera became a wholly owned Pfizer subsidiary and its shares ceased trading. Note: this closed in November 2025, not January 2026 as an earlier internal note suggested.",
       "summary_ko": "Pfizer는 Metsera, Inc. 인수를 완료했다. 인수 조건은 주당 현금 $65.60(기업가치 약 $7.0B)과 임상/규제 마일스톤에 연동된 주당 최대 $20.65의 조건부가치권(CVR)이다. Metsera는 Pfizer의 완전 자회사가 됐으며 주식 거래는 중단됐다. 참고: 이번 인수는 앞선 내부 메모에서 제시된 2026년 1월이 아니라 2025년 11월에 완료됐다.",
       "source": {
@@ -57,6 +73,9 @@
       "id": "f-2026-06-06-001",
       "date": "2026-06-06",
       "type": "trial_data_readout",
+      "molecules": [
+        "other_incretin"
+      ],
       "summary": "Pfizer presented detailed Phase 2b VESPER-3 results for its ultra-long-acting injectable GLP-1 receptor agonist (ex-Metsera MET-097i, engineered on the HALO peptide-lipidation platform for albumin binding and biased GLP-1R signaling; renamed PF-08653944/berobenatide) at ADA 2026, showing robust, continuing weight loss with monthly dosing and no plateau at week 28 (up to 12.3% placebo-adjusted).",
       "summary_ko": "Pfizer는 ADA 2026에서 초장기 지속형 주사용 GLP-1 수용체 작용제(ex-Metsera MET-097i로, 알부민 결합과 편향된 GLP-1R 신호전달을 위해 HALO 펩타이드 지질화 플랫폼으로 설계됐으며 PF-08653944/berobenatide로 개명)의 임상 2b상 VESPER-3 세부 결과를 발표했다. 월 1회 투여로 28주차까지 정체기 없이 견고하고 지속적인 체중 감소를 보였다(위약 대비 최대 12.3%).",
       "source": {
@@ -70,6 +89,9 @@
       "id": "f-2026-08-04-001",
       "date": "2026-08-04",
       "type": "regulatory",
+      "molecules": [
+        "other_incretin"
+      ],
       "summary": "In its quarterly pipeline update, Pfizer discontinued two other obesity-adjacent programs it had gained via the Metsera deal and its broader obesity push: MET-224o (an oral, fully-biased ultra-long-acting GLP-1 peptide, renamed PF-6796), and the Phase 2 GIPR antagonist PF-07976016 (licensed/developed separately, being tested with YaoPharma-origin oral GLP-1 YP05002), after review of Phase 2a data on a liraglutide background. Pfizer said it remains committed to oral peptide and small-molecule GLP-1R agonism. These cuts are separate assets from the lead monthly injectable berobenatide/PF-08653944 (VESPER program), which continues to advance into Phase 3.",
       "summary_ko": "Pfizer는 분기 파이프라인 업데이트에서 Metsera 인수와 광범위한 비만 사업 확대를 통해 확보한 다른 두 비만 인접 프로그램을 중단했다. 대상은 MET-224o(경구용 완전 편향 초장기 지속형 GLP-1 펩타이드, PF-6796으로 개명)와 임상 2상 GIPR 길항제 PF-07976016(별도로 라이선스/개발됐으며 YaoPharma 유래 경구 GLP-1 YP05002와 병용 시험 중)으로, 리라글루타이드 기저 치료 환경에서의 임상 2a상 데이터를 검토한 뒤 결정됐다. Pfizer는 경구 펩타이드 및 소분자 GLP-1R 작용 기전 개발에 계속 전념하겠다고 밝혔다. 이번 중단 대상은 임상 3상으로 계속 진행 중인 선도 월 1회 주사제 berobenatide/PF-08653944(VESPER 프로그램)와는 별개의 자산이다.",
       "source": {
@@ -83,6 +105,9 @@
       "id": "f-2026-08-04-002",
       "date": "2026-08-04",
       "type": "trial_data_readout",
+      "molecules": [
+        "other_incretin"
+      ],
       "summary": "Pfizer said it plans roughly 10 pivotal Phase 3 studies in 2026 for berobenatide/PF-08653944 (weekly and monthly dosing) across chronic weight management and obesity-related comorbidities (e.g., knee osteoarthritis, obstructive sleep apnea), as part of a broader 20+ trial obesity program; Phase 3 trial VESPER-6 was registered (first submitted May 12, 2026).",
       "summary_ko": "Pfizer는 2026년 berobenatide/PF-08653944(주 1회 및 월 1회 투여)에 대해 만성 체중 관리와 비만 관련 동반질환(예: 무릎 골관절염, 폐쇄성 수면무호흡증)을 대상으로 약 10건의 허가용 임상 3상을 계획하고 있으며, 이는 20건 이상의 임상으로 구성된 광범위한 비만 프로그램의 일부라고 밝혔다. 임상 3상 VESPER-6는 등록됐다(최초 제출 2026년 5월 12일).",
       "source": {

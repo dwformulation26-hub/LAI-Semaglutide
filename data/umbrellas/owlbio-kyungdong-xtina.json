@@ -35,6 +35,18 @@
     ],
     "molecule_evidence": "AUL009 is a once-monthly semaglutide microparticle injection (ADA 2026 late-breaker), and AUL018 is an every-3-months semaglutide microsphere in a government-funded project running to Phase 1 (Asia Economy, 2026-08-06). Tirzepatide was added 2026-09-14 (admin) because Aul Bio now names a tirzepatide program, AUL016, a microsphere on the same ExTenna platform, confirmed by two independent Tier 2 outlets (Bio Spectator; Herald Business, 2026-06-16).",
     "molecule_evidence_ko": "AUL009는 월 1회 세마글루타이드 미립자 주사제(ADA 2026 late-breaker)이며, AUL018은 임상 1상까지 진행하는 정부 지원 과제에서 개발 중인 3개월 1회 세마글루타이드 미립구다(Asia Economy, 2026-08-06). 아울바이오가 현재 같은 ExTenna 플랫폼 기반 미립구인 터제파타이드 프로그램 AUL016을 공개했고 이를 독립된 Tier 2 매체 2곳(Bio Spectator; Herald Business, 2026-06-16)이 확인함에 따라, 2026-09-14(관리자)에 터제파타이드가 추가됐다.",
+    "molecule_stages": {
+      "semaglutide": {
+        "stage_label": "IND filed",
+        "stage_evidence": "AUL009, the once-monthly semaglutide microsphere, is the asset behind the Phase 1 IND filed with Korea's MFDS on 2026-09-02; dosing under it has not begun.",
+        "stage_evidence_ko": "임상 1상 IND의 대상 자산은 월 1회 세마글루타이드 미립구 AUL009이며, 2026-09-02 식약처에 신청됐다. 이에 따른 투여는 아직 시작되지 않았다."
+      },
+      "tirzepatide": {
+        "stage_label": "Research",
+        "stage_evidence": "The tirzepatide asset is AUL016, named by Aul Bio as a microsphere on the same ExTenna platform and covered by patent application KR20240167410A. No preclinical package, IND or trial has been reported for it, and the AUL009 IND is a semaglutide filing that does not carry it.",
+        "stage_evidence_ko": "터제파타이드 자산은 AUL016으로, 아울바이오가 동일한 ExTenna 플랫폼 기반 미립구로 공개했고 특허출원 KR20240167410A가 이를 다룬다. 전임상 패키지, IND, 임상시험은 보고된 바 없으며, AUL009 IND는 세마글루타이드 신청이므로 AUL016을 포함하지 않는다."
+      }
+    },
     "dosing_target": "Monthly",
     "dosing_target_ko": "월 1회",
     "partner": "Kyungdong Pharmaceutical (lead developer) / Aul Bio (platform provider)",
@@ -49,6 +61,9 @@
       "id": "f-2026-06-11-001",
       "date": "2026-06-11",
       "type": "trial_data_readout",
+      "molecules": [
+        "semaglutide"
+      ],
       "summary": "Kyungdong Pharmaceutical and Aul Bio presented a Late-Breaking Abstract at ADA 2026 for AUL009, a once-monthly semaglutide microparticle injection built on Aul Bio's proprietary 'Xtina' (also rendered 'ExTenna™') long-acting delivery platform. Human PK/safety data showed a single dose maintained stable blood concentrations for 30+ days, suppressed initial burst release (reducing early nausea/vomiting risk), and is compatible with a 27-gauge ultrafine needle for reduced injection discomfort. Independently corroborated by multiple other Korean trade outlets covering the same presentation (Dailypharm, Medifonews, TheBioNews).",
       "summary_ko": "경동제약과 아울바이오는 ADA 2026에서 아울바이오의 독자 장기지속형 전달 플랫폼 'Xtina'('ExTenna™'로도 표기) 기반 월 1회 세마글루타이드 미립자 주사제 AUL009에 대한 Late-Breaking Abstract를 발표했다. 인체 PK/안전성 데이터에서 단회 투여로 30일 이상 안정적인 혈중 농도가 유지됐고, 초기 급속 방출이 억제됐으며(초기 오심/구토 위험 감소), 주사 불편감을 줄이는 27게이지 초미세 바늘과 호환되는 것으로 나타났다. 같은 발표를 다룬 다른 복수의 국내 전문 매체(Dailypharm, Medifonews, TheBioNews)가 독립적으로 뒷받침했다.",
       "source": {
@@ -62,6 +77,9 @@
       "id": "f-2026-09-02-001",
       "date": "2026-09-02",
       "type": "regulatory",
+      "molecules": [
+        "semaglutide"
+      ],
       "summary": "Kyungdong Pharmaceutical and Aul Bio filed a Phase 1 clinical trial (IND) application with Korea's Ministry of Food and Drug Safety for AUL009, the once-monthly semaglutide long-acting injectable, to evaluate safety, tolerability, PK, and PD toward establishing dosing strategy for obesity/metabolic disease.",
       "summary_ko": "경동제약과 아울바이오는 월 1회 세마글루타이드 장기지속형 주사제 AUL009에 대해 식품의약품안전처에 임상 1상 시험계획(IND)을 신청했다. 비만/대사질환 투여 전략 수립을 위해 안전성, 내약성, PK, PD를 평가할 예정이다.",
       "source": {
@@ -75,6 +93,9 @@
       "id": "f-2024-05-17-001",
       "date": "2024-05-17",
       "type": "regulatory",
+      "molecules": [
+        "tirzepatide"
+      ],
       "summary": "Aul Bio filed Korean patent application KR20240167410A for microspheres containing tirzepatide. Suggests Aul Bio may be developing a second, tirzepatide-based microsphere candidate on its Xtina/ExTenna platform, distinct from the tracked semaglutide-based AUL009 asset.",
       "summary_ko": "아울바이오는 터제파타이드 함유 미립구에 대한 국내 특허 KR20240167410A를 출원했다. 이는 아울바이오가 추적 중인 세마글루타이드 기반 AUL009 자산과 별개로, Xtina/ExTenna 플랫폼에서 터제파타이드 기반 두 번째 미립구 후보를 개발하고 있을 가능성을 시사한다.",
       "source": {

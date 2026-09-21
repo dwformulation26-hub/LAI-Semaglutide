@@ -384,6 +384,12 @@ main > footer span:first-child { color: var(--ink); font-weight: 800; letter-spa
   border-radius: 99px; font-size: .6rem; font-weight: 800; white-space: nowrap;
   color: var(--tone); background: color-mix(in srgb, var(--tone) 12%, white);
 }
+/* Printed only when a molecule sits at a different stage from the row's headline, so the
+   tag cannot be read as sharing the other asset's progress. */
+.mol-tag-stage {
+  margin-left: .3rem; padding-left: .3rem; border-left: 1px solid color-mix(in srgb, var(--tone) 35%, transparent);
+  font-style: normal; font-weight: 700; opacity: .85;
+}
 .score-value { font: 750 .95rem/1 "Manrope", "Noto Sans KR", sans-serif; letter-spacing: -.02em; }
 .score-unscored { color: var(--faint); font-size: .68rem; font-weight: 600; }
 

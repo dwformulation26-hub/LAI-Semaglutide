@@ -254,6 +254,15 @@ This is the same discipline as stage scoring above, and it exists for the same r
 
 **A program may legitimately hold more than one class.** InventageLab formulates semaglutide (IVL3021) and tirzepatide (IVL3024) as separate assets; G2GBio's InnoLAMP platform data covers semaglutide, tirzepatide and retatrutide. Such a record appears on every matching board while remaining one file with one finding history — it is never duplicated.
 
+**A second class means a second stage — write `molecule_stages`.** This is the one rule in this section that is about `stage_label` rather than the class itself, and it exists because getting both fields individually right still produced a false claim. `stage_label` is the furthest-along asset *under the umbrella*. `molecule_class` is a set. The dashboard puts the record on one board per molecule, so those two correct facts compose into "this company is at that stage with that molecule" — which no source said. Owl Bio filed a Phase 1 IND for AUL009, a semaglutide microsphere, and separately names AUL016, a tirzepatide microsphere with a patent and a press mention and nothing clinical. The tirzepatide board showed Owl Bio at "IND filed", at the top.
+
+So the moment `molecule_class` holds a second value, `current_status.molecule_stages` is required, and `scripts/build.mjs` fails without it. It is an object keyed by molecule, naming every molecule in `molecule_class` and nothing else, each with:
+
+- `stage_label` — the stage **that molecule's own named assets** are evidenced at, under the same eight buckets and the same rules as the umbrella's `stage_label`. A patent still may never advance it. A platform data point that covers a molecule is preclinical evidence for that molecule, not clinical progress.
+- `stage_evidence` / `stage_evidence_ko` — one sentence naming the asset and the fact. Say plainly which asset the *other* stage belongs to when that is the confusion being prevented ("the AUL009 IND is a semaglutide filing that does not carry it"). The dashboard reads this sentence out on that molecule's board, in place of the umbrella's own stage prose.
+
+The furthest-along entry must equal the umbrella's `stage_label` — the headline is the furthest-along asset under it — and the build checks that too. On a record with one molecule or none, omit the field entirely; `stage_label` already says it.
+
 **Platform breadth is not a class claim.** A platform stated to work with a molecule, without a named asset or data for it, does not earn that class. Adocia's AdoXLong is stated to work with GIP, amylin and dual or triple agonists, but only its semaglutide application is named, so only `semaglutide` is claimed.
 
 ## Calendar-aware bursts
@@ -389,7 +398,7 @@ Write it the way you'd tell a colleague the one thing worth knowing today, and o
 
 | Field | What it carries |
 |---|---|
-| `molecules` | The record's `molecule_class`, copied. Renders as the outline tags on the row. |
+| `molecules` | The **finding's** own `molecules`, copied — not the record's `molecule_class`. Renders as the outline tags on the row, so copying the class set put a TIRZEPATIDE tag beside a semaglutide IND. A finding on a single-molecule record has no `molecules` of its own; use that record's `molecule_class`. An empty array is legal and means no tag. |
 | `stageChange` | The new `stage_label`, but **only** when this finding is what moved the program — the same moment `stage_evidence` gets written. Otherwise `null`. Renders as the one filled dark marker, and sorts that row to the top. |
 
 Also pass `sourcePublication` (the outlet on its own) when the finding's source carries it, so the row's label is a clean outlet name instead of a cut-down article title.
@@ -435,4 +444,6 @@ If nothing is left to report after its filters, the script prints a message and 
 - Never leave `stage_label` unset or set it to anything outside the eight controlled values — the build fails on this by design; don't work around it, fix the value.
 - Never assign a `molecule_class` for a molecule the program does not formulate — a comparator arm, a platform's stated breadth, or an explicit denial is never a class.
 - Never guess a `molecule_class` to avoid an empty array; an empty array is the correct answer when the evidence is ambiguous, and `molecule_evidence` is required either way.
+- Never let one molecule's stage stand for another's. A record with a second class needs `molecule_stages`, and every finding on it needs its own `molecules`.
+- Never tag a finding with the record's whole `molecule_class` out of habit — tag it with the molecules that finding is actually about, and `[]` when it is about none of them.
 - Never advance `stage_label` on a patent filing, and never log a patent under its publication date when a priority date is available.

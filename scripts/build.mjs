@@ -123,6 +123,73 @@ for (const fileName of umbrellaFiles) {
       `${fileName}: current_status.molecule_evidence is required — one sentence naming the fact behind the class, or behind leaving it unassigned.`
     );
   }
+  // stage_label describes the umbrella's furthest-along asset. The moment a record holds
+  // a second molecule that single value stops being a fact about each of them, and the
+  // dashboard -- which puts the record on one board per molecule -- reads it as exactly
+  // that. So molecule_stages becomes required here, must name every declared molecule
+  // and nothing else, and its furthest-along entry must be the umbrella headline.
+  const moleculeStages = record.current_status?.molecule_stages;
+  if (moleculeClass.length > 1) {
+    if (!moleculeStages || typeof moleculeStages !== "object" || Array.isArray(moleculeStages)) {
+      throw new Error(
+        `${fileName}: current_status.molecule_class holds ${moleculeClass.length} molecules, so current_status.molecule_stages is required — an object keyed by molecule, each with the stage_label that molecule's own assets are evidenced at.`
+      );
+    }
+    const named = Object.keys(moleculeStages);
+    const missingStages = moleculeClass.filter((value) => !named.includes(value));
+    const strayStages = named.filter((value) => !moleculeClass.includes(value));
+    if (missingStages.length || strayStages.length) {
+      throw new Error(
+        `${fileName}: current_status.molecule_stages must name exactly the molecules in molecule_class${missingStages.length ? `; missing ${missingStages.join(", ")}` : ""}${strayStages.length ? `; unexpected ${strayStages.join(", ")}` : ""}`
+      );
+    }
+    for (const [molecule, entry] of Object.entries(moleculeStages)) {
+      if (!validStageLabels.includes(entry?.stage_label)) {
+        throw new Error(
+          `${fileName}: current_status.molecule_stages.${molecule}.stage_label is ${JSON.stringify(entry?.stage_label)}, must be one of ${validStageLabels.join(", ")}`
+        );
+      }
+      if (!entry.stage_evidence) {
+        throw new Error(
+          `${fileName}: current_status.molecule_stages.${molecule}.stage_evidence is required — one sentence naming the asset and the fact that puts ${molecule} at ${entry.stage_label}.`
+        );
+      }
+    }
+    const furthest = Math.max(...Object.values(moleculeStages).map((entry) => STAGES[entry.stage_label]));
+    if (STAGES[stageLabel] !== furthest) {
+      throw new Error(
+        `${fileName}: current_status.stage_label is ${JSON.stringify(stageLabel)} but the furthest-along molecule_stages entry is ${JSON.stringify(validStageLabels[furthest])}. The umbrella headline is the furthest-along asset under it.`
+      );
+    }
+  } else if (moleculeStages) {
+    throw new Error(
+      `${fileName}: current_status.molecule_stages is only for a record holding more than one molecule — with ${moleculeClass.length === 1 ? "a single molecule" : "no molecule"} declared, stage_label already says it.`
+    );
+  }
+  // A finding is about specific assets, not about everything the umbrella formulates.
+  // The digest tags each finding with these, so copying the record's whole class set put
+  // a TIRZEPATIDE pill beside a semaglutide IND. Required wherever there is more than one
+  // molecule to confuse; absent elsewhere it simply means "the record's only molecule".
+  // An empty array is legal and says the finding is about none of them in particular --
+  // an acquisition, a platform licence, a share move -- and the digest tags it with none.
+  for (const finding of record.finding_history) {
+    const declared = finding.molecules;
+    if (moleculeClass.length > 1) {
+      if (!Array.isArray(declared)) {
+        throw new Error(
+          `${fileName} ${finding.id}: molecules is required on every finding of a record holding more than one molecule — name the ones this finding is actually about, as a subset of ${moleculeClass.join(", ")}, or [] if it is about none of them in particular.`
+        );
+      }
+    } else if (declared !== undefined && !Array.isArray(declared)) {
+      throw new Error(`${fileName} ${finding.id}: molecules must be an array when present`);
+    }
+    const outside = (declared ?? []).filter((value) => !moleculeClass.includes(value));
+    if (outside.length) {
+      throw new Error(
+        `${fileName} ${finding.id}: molecules names ${outside.map((v) => JSON.stringify(v)).join(", ")}, which the record does not declare in molecule_class`
+      );
+    }
+  }
   for (const finding of record.finding_history) {
     problems.push(...checkWorldText(`${fileName} ${finding.id}`, finding.summary, finding.source?.name));
     problems.push(...checkVerificationFields(`${fileName} ${finding.id}`, finding));
