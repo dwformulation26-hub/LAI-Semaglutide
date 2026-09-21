@@ -1277,6 +1277,19 @@
           "snippet_ko": "동일한 i2o Therapeutics 시리즈 A와 Intarcia 자산 인수를 독립적으로 교차 확인한 같은 주 보도다.",
           "date": "2023-08-28",
           "date_basis": "stated"
+        },
+        {
+          "source": {
+            "name": "FDA panel votes down Intarcia's twice-rejected, long-term diabetes drug implant",
+            "publication": "Fierce Biotech",
+            "url": "https://www.fiercebiotech.com/medtech/fda-panel-votes-down-intarcias-twice-rejected-long-term-diabetes-drug-implant",
+            "tier": 2
+          },
+          "snippet": "The FDA's Endocrinologic and Metabolic Drugs Advisory Committee voted unanimously (19-0) against ITCA 650 (exenatide in the DUROS/Medici osmotic implant device) on Sept 21, 2023, citing acute kidney injury and cardiovascular safety concerns; the FDA subsequently issued a final decision refusing to approve the NDA, effective Aug 23, 2024 (Federal Register). ITCA 650 was the flagship, most clinically advanced asset in the Medici-platform pipeline i2o acquired from Intarcia.",
+          "snippet_ko": "FDA 내분비대사약물자문위원회(EMDAC)는 2023년 9월 21일 ITCA 650(DUROS/Medici 삼투압 임플란트 장치에 담긴 엑세나타이드)에 대해 급성 신손상 및 심혈관 안전성 우려를 이유로 19대 0 만장일치로 반대표를 던졌다. 이후 FDA는 신약허가신청(NDA)을 승인하지 않는다는 최종 결정을 내렸으며 이는 2024년 8월 23일부터 발효됐다(연방관보). ITCA 650은 i2o가 Intarcia로부터 인수한 Medici 플랫폼 파이프라인에서 가장 임상적으로 진전된 대표 자산이었다.",
+          "date": "2023-09-21",
+          "date_basis": "stated",
+          "verification_note": "Found while trying to confirm a 2026-dated AI-search summary claiming a new FDA Advisory Committee hearing on 'Sept 21, 2026' -- that claim did not hold up: cross-checking FDA.gov and the Federal Register confirms the actual hearing was Sept 21, 2023, and the search engine's own synthesis had mis-labeled the year. Logging the real, verified 2023/2024 regulatory history instead, since it materially changes the picture: the platform's most advanced named asset has already been rejected by FDA, and no 2026 clinical, financing or regulatory update for the DACRA/GLP-1/glucagon/PYY pipeline could be found despite a repeat search this session."
         }
       ],
       "fuzzy_match": {
@@ -1286,15 +1299,15 @@
       "status": "pending",
       "created_date": "2026-09-20",
       "follow_up": {
-        "last_checked": null,
-        "checks_run": 0,
+        "last_checked": "2026-09-21",
+        "checks_run": 1,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "Two independent Tier 2 outlets (BioSpace, BioPharma Dive) corroborate the same Aug 28, 2023 announcement that i2o Therapeutics acquired Intarcia's Medici osmotic-implant platform and a long-acting GLP-1/amylin(DACRA)/glucagon/PYY pipeline designed for twice-yearly dosing, clearing named_entity, technical_claim and confirmed_source. Only that single 2023 dated event is on record -- no 2026-specific clinical or financing update was found this run -- so second_dated_event remains unmet. This is genuinely old news just now discovered (over two years old, surfaced via this run's VC/deal-database search track), not a recent development; a first IND filing or a new financing round would clear the remaining condition.",
-        "evidence_ko": "독립적인 Tier 2 매체 2곳(BioSpace, BioPharma Dive)이 i2o Therapeutics가 Intarcia의 Medici 삼투압 임플란트 플랫폼과 연 2회 투여를 목표로 하는 장기지속형 GLP-1/아밀린(DACRA)/글루카곤/PYY 파이프라인을 인수했다는 2023년 8월 28일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. 현재까지는 해당 2023년 단일 날짜 이벤트만 기록돼 있으며, 이번 조사에서 2026년 관련 임상 또는 자금 조달 업데이트는 찾지 못해 second_dated_event(두 번째 날짜 이벤트)는 미충족이다. 이는 최근 소식이 아니라 2년 이상 지난 뒤(이번 실행의 VC/딜 데이터베이스 조사를 통해) 뒤늦게 발견된 실제 소식이며, 최초 IND 신청이나 신규 자금 조달 라운드가 있으면 남은 조건을 충족할 것이다."
+        "evidence": "Two independent Tier 2 outlets (BioSpace, BioPharma Dive) corroborate the same Aug 28, 2023 announcement that i2o Therapeutics acquired Intarcia's Medici osmotic-implant platform and a long-acting GLP-1/amylin(DACRA)/glucagon/PYY pipeline designed for twice-yearly dosing, clearing named_entity, technical_claim and confirmed_source. A follow-up check found that ITCA 650, the flagship named asset in the acquired pipeline, was unanimously rejected by an FDA advisory committee (2023-09-21) and then formally refused approval by the FDA (2024-08-23) -- two further verified dated events distinct from the original announcement, but both negative/regulatory-refusal events rather than the positive stage-advancing examples (IND clearance, trial registration, approval) the skill's second_dated_event condition is written around. Left as an open judgment call rather than auto-escalated: marking unmet pending an explicit admin read on whether a rejection counts as a qualifying 'stage-bearing event' here. No 2026-specific update (clinical, financing, or otherwise) for the broader DACRA/GLP-1/glucagon/PYY pipeline was found despite two search sessions.",
+        "evidence_ko": "독립적인 Tier 2 매체 2곳(BioSpace, BioPharma Dive)이 i2o Therapeutics가 Intarcia의 Medici 삼투압 임플란트 플랫폼과 연 2회 투여를 목표로 하는 장기지속형 GLP-1/아밀린(DACRA)/글루카곤/PYY 파이프라인을 인수했다는 2023년 8월 28일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. 후속 조사에서 인수 파이프라인의 대표 자산인 ITCA 650이 FDA 자문위원회에서 만장일치로 반대(2023-09-21)를 받고 이후 FDA로부터 정식 승인 거부(2024-08-23)를 받았음을 확인했다. 이는 최초 발표와는 별개인, 검증된 추가 날짜 이벤트 2건이지만, 둘 다 second_dated_event(두 번째 날짜 이벤트) 조건이 예시하는 긍정적 단계 진전 사례(IND 승인, 임상 등록, 승인)가 아니라 부정적/규제 거부 이벤트다. 거부가 여기서 조건을 충족하는 '개발 단계를 나타내는 이벤트'로 인정될지에 대한 관리자의 명시적 판단이 필요하다고 보고, 자동 에스컬레이션 대신 미충족으로 남겨 판단을 요청한다. 두 차례의 조사에도 불구하고 더 넓은 DACRA/GLP-1/글루카곤/PYY 파이프라인에 대한 2026년 관련 업데이트(임상, 자금 조달 등)는 찾지 못했다."
       },
       "resolution": null
     }
