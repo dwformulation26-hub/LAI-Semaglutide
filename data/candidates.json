@@ -690,15 +690,15 @@
       "status": "pending",
       "created_date": "2026-09-07",
       "follow_up": {
-        "last_checked": "2026-09-20",
-        "checks_run": 2,
+        "last_checked": "2026-09-22",
+        "checks_run": 3,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's follow-up pinned down two independent peer-reviewed Journal of Bone and Joint Infection papers (2025-11 and 2026-05-08) with pig-model release-kinetics and tissue-concentration data for the CarboCell G/C depot, corroborating the technical claim beyond the single dtu.dk news item and clearing confirmed_source. Neither paper names Precision Antibiotics as a company (they describe the CarboCell G/C technology from the DTU research group only), so -- consistent with how Appel Sauce Studios' academic evidence was treated -- second_dated_event still requires a company-level signal (financing, an IND filing, a named commercial partnership) and remains unmet. SCOPE CAVEAT STILL APPLIES regardless of bar status: this is a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI -- recommend an explicit admin scope call before any promotion.",
-        "evidence_ko": "이번 주기 후속 조사에서 CarboCell G/C 데포에 대한 돼지 모델 방출 동역학 및 조직 농도 데이터를 담은 독립적인 동료 심사 논문 2건(Journal of Bone and Joint Infection, 2025년 11월 및 2026년 5월 8일)을 확정했다. 이는 단일 dtu.dk 뉴스 항목을 넘어 기술적 주장을 뒷받침해 confirmed_source(확인된 출처)를 충족한다. 두 논문 모두 Precision Antibiotics를 회사로 명시하지 않으며(DTU 연구팀의 CarboCell G/C 기술만 기술함), Appel Sauce Studios의 학술 근거를 다룬 것과 동일한 기준에 따라 second_dated_event(두 번째 날짜 이벤트)는 여전히 회사 차원의 신호(자금 조달, IND 신청, 명시된 상업적 파트너십)를 필요로 하며 미충족으로 남는다. 기준 충족 여부와 관계없이 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포이므로, 승격 전에 관리자의 명시적인 범위 판단을 권고한다."
+        "evidence": "This run's daily cheap-pass re-search (query: Precision Antibiotics DTU CarboCell funding IND) again found only the same DKK 60M raise and 2027 Phase 1 target (dtu.dk, May 2026) and the same two peer-reviewed CarboCell G/C papers already on file; no IND filing, clinical trial registration, or other company-level dated event has been reported since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles -- the academic papers describe the CarboCell G/C technology, not the company. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI.",
+        "evidence_ko": "이번 주기 데일리 저비용 후속 조사(검색어: Precision Antibiotics DTU CarboCell funding IND)에서도 기존과 동일한 DKK 60M 자금 조달과 2027년 임상 1상 목표(dtu.dk, 2026년 5월), 그리고 이미 확보된 동일한 동료 심사 논문 2건만 확인됐다. 이후 IND 신청, 임상시험 등록 또는 그 외 회사 차원의 날짜 이벤트는 보고되지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다 -- 학술 논문들은 회사가 아닌 CarboCell G/C 기술 자체를 다룬다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다."
       },
       "resolution": null
     },
@@ -1229,15 +1229,76 @@
       "status": "pending",
       "created_date": "2026-09-20",
       "follow_up": {
-        "last_checked": null,
-        "checks_run": 0,
+        "last_checked": "2026-09-22",
+        "checks_run": 1,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "Named entity (Beijing Biote Pharmaceutical Co., Ltd.), a concrete technical claim (a long-acting liquid tirzepatide injection addressing burst release and injection-site pain, CN121154792A, filed 2025-10-24), and a Tier 1 primary-document source (the patent record itself) clear named_entity, technical_claim and confirmed_source. Only a single dated event (the patent filing) is on record, and per the skill's rule a patent filing does not by itself count as a stage-bearing event for second_dated_event, so that condition remains unmet.",
-        "evidence_ko": "명확한 주체(베이징 바이오테 제약, Beijing Biote Pharmaceutical Co., Ltd.), 구체적 기술 근거(초기 과다 방출과 주사 부위 통증을 개선하는 터제파타이드 장기지속형 액상 주사제, CN121154792A, 2025-10-24 출원), Tier 1 1차 문헌 출처(특허 문서 자체)가 named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족한다. 현재까지는 단일 날짜 이벤트(특허 출원)만 기록돼 있으며, 이 스킬의 규칙에 따라 특허 출원 자체는 second_dated_event(두 번째 날짜 이벤트)를 충족시키는 개발 단계를 나타내는 이벤트로 인정되지 않아 해당 조건은 미충족으로 남는다."
+        "evidence": "This run's daily cheap-pass re-search (query: Beijing Biote Pharmaceutical CN121154792A tirzepatide update) found only the same patent record and general company background (founded 2004, Beijing high-tech enterprise, CFDA GMP-certified microsphere manufacturer); no clinical trial registration, IND filing or further company disclosure since the patent's 2025-10-24 filing. Named entity, technical claim and confirmed_source remain cleared from the patent record itself; second_dated_event remains unmet, since per the skill's rule a patent filing does not by itself count as a stage-bearing event.",
+        "evidence_ko": "이번 주기 데일리 저비용 후속 조사(검색어: Beijing Biote Pharmaceutical CN121154792A tirzepatide update)에서도 동일한 특허 기록과 일반적인 회사 정보(2004년 설립, 베이징시 하이테크 기업, CFDA GMP 인증 미립구 제조사)만 확인됐다. 2025-10-24 특허 출원 이후 임상시험 등록, IND 신청 또는 추가 회사 공개는 없었다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 특허 기록 자체로 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이 스킬의 규칙에 따라 특허 출원 자체가 개발 단계를 나타내는 이벤트로 인정되지 않아 여전히 미충족이다."
+      },
+      "resolution": null
+    },
+    {
+      "id": "cand-2026-09-22-001",
+      "detected_name": "AbbVie / Gubra -- ABBV-295 (GUB014295, long-acting amylin analog)",
+      "detected_aliases": [
+        "AbbVie",
+        "Gubra",
+        "ABBV-295",
+        "GUB014295",
+        "GUB-014295"
+      ],
+      "entity_type_guess": [
+        "company",
+        "asset"
+      ],
+      "evidence": [
+        {
+          "source": {
+            "name": "AbbVie Announces Positive Topline Results from a Phase 1 Multiple Ascending Dose Study of ABBV-295, a Long-Acting Amylin Analog, in Adults",
+            "publication": "AbbVie",
+            "url": "https://news.abbvie.com/2026-03-09-AbbVie-Announces-Positive-Topline-Results-from-a-Phase-1-Multiple-Ascending-Dose-Study-of-ABBV-295,-a-Long-Acting-Amylin-Analog,-in-Adults",
+            "tier": 1
+          },
+          "snippet": "AbbVie reported positive topline results from a Phase 1 multiple ascending dose (MAD) study of ABBV-295, a long-acting amylin analog licensed from Denmark's Gubra in March 2025. Weekly, every-2-week and monthly dosing (after week 5) all produced clinically meaningful body-weight reduction of roughly 7.75-9.79% (least-squares mean) at week 12 and 7.86-9.73% at week 13, with a favorable tolerability profile and no serious adverse events.",
+          "snippet_ko": "AbbVie는 2025년 3월 덴마크 Gubra로부터 라이선스 도입한 장기지속형 아밀린 유사체 ABBV-295의 임상 1상 다회 용량 증량(MAD) 시험에서 긍정적인 톱라인 결과를 보고했다. 5주차 이후 주 1회, 2주 1회(격주), 월 1회 투여 모두 임상적으로 유의미한 체중 감소를 보였다(12주차 최소제곱평균 약 7.75-9.79%, 13주차 7.86-9.73%). 내약성 프로파일은 양호했고 중대한 이상반응은 보고되지 않았다.",
+          "date": "2026-03-09",
+          "date_basis": "stated",
+          "verification_note": "Read from search-result title/snippet only; news.abbvie.com returned EGRESS_BLOCKED on direct fetch this run. Corroborated independently by TipRanks, Yahoo Finance and Fierce Biotech coverage of the same March 9, 2026 announcement. Found via this run's Track B1 bounded rotation-list query (watchlist key 'abbv-295'), which had sat as an untracked program on the rotation list since the watchlist was built."
+        },
+        {
+          "source": {
+            "name": "AbbVie Targets Obesity Market With New Phase 2 ABBV-295 Trial",
+            "publication": "TipRanks",
+            "url": "https://www.tipranks.com/news/company-announcements/abbvie-targets-obesity-market-with-new-phase-2-abbv-295-trial",
+            "tier": 2
+          },
+          "snippet": "Following the Phase 1 MAD readout, AbbVie registered a Phase 2 dose-finding study evaluating several doses of ABBV-295 against placebo in adults with obesity or overweight with weight-related comorbidities -- a distinct, later trial from the completed Phase 1 study.",
+          "snippet_ko": "임상 1상 MAD 결과 발표에 이어, AbbVie는 비만 또는 체중 관련 동반질환이 있는 과체중 성인을 대상으로 ABBV-295 여러 용량을 위약과 비교하는 임상 2상 용량설정 시험을 등록했다 -- 이는 이미 완료된 임상 1상과는 별개의 후속 시험이다.",
+          "date": "2026-04-13",
+          "date_basis": "inferred",
+          "verification_note": "Date inferred from the 'most recent update posted April 13, 2026' framing on the related clinicaltrials.gov listing for ABBV-295 (NCT07291232); tipranks.com is on this run's blocked-domain list so was not fetched directly, and the Phase 2 registration's own NCT number/first-posted date was not independently confirmed this run."
+        }
+      ],
+      "fuzzy_match": {
+        "closest_umbrella_id": "lilly-eloralintide",
+        "score": 0.12
+      },
+      "status": "ready_for_promotion",
+      "created_date": "2026-09-22",
+      "follow_up": {
+        "last_checked": null,
+        "checks_run": 0,
+        "near_bar": false
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
+        "unmet": [],
+        "evidence": "Named entity (AbbVie, having licensed ABBV-295 from Denmark's Gubra in March 2025) and a concrete technical claim (a long-acting amylin analog dosed weekly, every-2-weeks or monthly, with positive Phase 1 MAD weight-loss data) clear named_entity and technical_claim. A Tier 1 primary source (AbbVie's own March 9, 2026 topline announcement), independently corroborated by TipRanks, Yahoo Finance and Fierce Biotech, clears confirmed_source. A second, later, distinct dated event -- AbbVie's registration of a Phase 2 dose-finding study for ABBV-295, itself a stage-bearing trial-registration event following on from the completed Phase 1 MAD study -- clears second_dated_event. This program had sat on the skill's rotation-list watchlist (key 'abbv-295') as an untracked program since the list was built; this run's bounded rotation query resolved it into a full candidate. Fuzzy match against the closest existing amylin-analog umbrella (lilly-eloralintide) is low (0.12 -- different originator company and delivery platform) -- not a merge case. All four promotion-bar conditions clear at creation; escalating directly to ready_for_promotion.",
+        "evidence_ko": "명확한 주체(2025년 3월 덴마크 Gubra로부터 ABBV-295를 라이선스 도입한 AbbVie)와 구체적 기술 근거(주 1회, 격주 1회 또는 월 1회 투여되며 임상 1상 MAD 긍정적 체중 감소 데이터를 확보한 장기지속형 아밀린 유사체)가 named_entity(명확한 주체)와 technical_claim(구체적 기술 근거)을 충족한다. Tier 1 1차 출처(AbbVie 자체의 2026년 3월 9일 톱라인 발표)가 TipRanks, Yahoo Finance, Fierce Biotech의 독립적인 교차 확인을 받아 confirmed_source(확인된 출처)를 충족한다. 완료된 임상 1상 MAD 시험에 이은 별개의 후속 날짜 이벤트인 AbbVie의 ABBV-295 임상 2상 용량설정 시험 등록(그 자체로 개발 단계를 나타내는 임상 등록 이벤트)이 second_dated_event(두 번째 날짜 이벤트)를 충족한다. 이 프로그램은 스킬의 순환 감시목록(key 'abbv-295')에 미추적 프로그램으로 목록 작성 이후 계속 남아 있었으며, 이번 실행의 순환 목록 조회를 통해 정식 후보로 해소됐다. 가장 가까운 기존 아밀린 유사체 엄브렐라(lilly-eloralintide)와의 퍼지 매칭 점수는 낮으며(0.12 -- 원개발사 및 전달 플랫폼이 다름) 병합 사례가 아니다. 생성 시점에 네 가지 승격 기준 조건을 모두 충족해 곧바로 ready_for_promotion으로 에스컬레이션한다."
       },
       "resolution": null
     },
