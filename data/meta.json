@@ -2,7 +2,7 @@
   "last_run": {
     "initial_seed": "2026-09-02T00:00:00Z",
     "initial_discovery_test": "2026-09-02T00:00:00Z",
-    "daily_scan": "2026-09-22T06:03:56+09:00",
+    "daily_scan": "2026-09-23T06:04:11+09:00",
     "weekly_sweep": "2026-09-20T09:01:24+09:00",
     "qc_tier2": "2026-09-20T09:01:24+09:00",
     "qc_tier3": null,
@@ -11,15 +11,15 @@
   "digest_carryover": null,
   "coverage": {
     "daily_scan": {
-      "umbrellas_checked": 5,
+      "umbrellas_checked": 4,
       "umbrellas_total": 48,
-      "skipped_throttled": 43,
+      "skipped_throttled": 44,
       "skipped_budget_exhausted": 0,
-      "codes_harvested": 8,
+      "codes_harvested": 4,
       "codes_unknown": 2,
       "codes_queried": 2,
-      "watchlist_cursor": "abbv-295",
-      "notes": "Tuesday scan, first run after yesterday's re-run touched all 48 umbrella files at once (setting last_checked=2026-09-21 on every one). Throttle rule (21+ days quiet AND last_checked <=2 KST days before today) applied against that shared baseline: 43 of 48 umbrellas were eligible to skip (all checked yesterday, all 25-831 days quiet on last_updated) and were skipped this run per the rule -- only 5 were due (quiet <21 days): ascendis-transcon-novo (8d), gsk-felcorekibart (14d) ascletis-asc30 (14d), samsung-bioepis-g2gbio-gb7001 (14d), owlbio-kyungdong-xtina (20d). All 5 single-alias breadth-queried (drug code/asset name first: TransCon Semaglutide, ASC30, Felcorekibart, AUL009, GB-7001) and all reconfirmed existing findings with no material new information -- gsk-felcorekibart's search surfaced two clinicaltrials.gov NCT numbers (NCT07780656/NCT07780669) for the already-logged PERSIST COPD-1/COPD-2 registrations, an enrichment of the existing Sept 8 finding rather than a new dated event, so no new finding was written. Track B1: 14/14 fixed watchlist rows queried; nothing new found among the four named-molecule classes. Code harvest surfaced 8 code-pattern strings (PT404, NN1706, MET-233, GSK5784283, HM17321, AZD6234, GUB014295/ABBV-295, DA-3091); PT404/NN1706/MET-233/GSK5784283/DA-3091 were already-tracked aliases or known decoys. Two unknown codes needed the two bounded queries: HM17321 (Hanmi) resolved as a Urocortin-2/CRF2-receptor muscle-preservation candidate, not an incretin/amylin molecule and no monthly-or-longer dosing disclosed -- a decoy, not queued; AZD6234 (AstraZeneca) resolved as a long-acting amylin analog but explicitly once-weekly dosed -- a decoy under the class baseline rule, not queued. 4 rotation-list rows queried (lilly-camurus, biote-cn121154792a, ct-g32, abbv-295), resuming after pt404 and wrapping to the start of the list; lilly-camurus and biote-cn121154792a reconfirmed existing documentation with nothing new; ct-g32 (Celltrion) progressed to primate toxicity testing (H1 2027 IND target) but still discloses no monthly-or-longer dosing interval, so it stays a watch-only rotation row, not a candidate; abbv-295 (AbbVie/Gubra long-acting amylin analog, on the rotation list as an untracked program since the watchlist was built) resolved into a new candidate, cand-2026-09-22-001 -- a Tier 1 AbbVie topline release (positive Phase 1 MAD data, 2026-03-09) plus a later Phase 2 dose-finding study registration clear all four promotion-bar conditions, so it was written directly as ready_for_promotion (fuzzy match to lilly-eloralintide 0.12, not a merge case). PROPOSAL for the admin: move 'abbv-295' out of the rotation list now that it is candidate cand-2026-09-22-001 (same treatment as 'alteogen-monthly' on 2026-09-21). B3 cheap pass (2/2 searches spent, priority: the never-checked cand-2026-09-20-001 first, then the oldest-created near_bar candidate last checked 2026-09-20, cand-2026-09-07-001): re-checked cand-2026-09-20-001 (Beijing Biote) -- same CN121154792A patent record, no new dated event; re-checked cand-2026-09-07-001 (Precision Antibiotics) -- same DKK 60M raise and two CarboCell G/C papers, no new dated event. Stall rule checked across all 15 pre-existing unresolved candidates (the new cand-2026-09-22-001 was created fresh via B1 and is not part of this count) -- oldest is 20 days old, none 30+, none triggered. Three domains returned EGRESS_BLOCKED this run on direct WebFetch (news.abbvie.com, www.gubra.dk, www.theglobeandmail.com), now logged under source_health as blocked; all other sources this run were reached via search only. patents.google.com and clinicaltrials.gov both reached via domain-scoped search again this run (search_only)."
+      "watchlist_cursor": "ct-g32",
+      "notes": "Wednesday scan. Throttle rule (21+ days quiet AND last_checked <=2 KST days before today) applied against yesterday's shared baseline (every umbrella last_checked 2026-09-21 or 2026-09-22): 44 of 48 umbrellas were eligible to skip and were skipped this run -- only 4 were due (quiet <21 days): ascendis-transcon-novo (9d), ascletis-asc30 (15d), gsk-felcorekibart (15d), samsung-bioepis-g2gbio-gb7001 (15d). All 4 single-alias breadth-queried (TransCon Semaglutide, ASC30, Felcorekibart, GB-7001) and reconfirmed existing findings with no material new information from those specific alias queries. A WebSearch synthesis floated an unsourced 'twice-yearly' dosing claim for felcorekibart; a follow-up query and a blocked fetch could not corroborate it against any specific article, so it was not logged -- Tier 0 catch, dosing_target left as 'not disclosed'. Track B1: 14/14 fixed watchlist rows queried. The semaglutide/tirzepatide/cross-class rows surfaced a Sept 21-22 G2GBio CEO interview (Seoul Economic Daily, corroborated by The Korea Herald) reporting the Boehringer Ingelheim joint peptide has reached the final stage of preclinical evaluation, targeting a global licensing deal this year -- logged as a new finding (f-2026-09-22-001) on samsung-bioepis-g2gbio-gb7001. The same rows also resurfaced multiple independent Korean outlets (Asia Business Daily -- already a corroborating source on f-2026-06-08-001 -- plus Edaily and eToday, all repeating consistent per-dose payload figures of ~9.6mg/15mg/12mg) showing the ADA 2026 InnoLAMP dual/triple-agonist rodent dataset covered CagriSema, tirzepatide and retatrutide, not semaglutide as f-2026-06-08-001's summary stated -- logged as a correcting finding (f-2026-06-08-002, discovered-late, real date 2026-06-08) and added amylin to samsung-bioepis-g2gbio-gb7001's molecule_class with a new molecule_stages entry (Preclinical). Code harvest surfaced 4 code-pattern strings (NN1213, HM15211, AZD6234, MET-233); AZD6234 and MET-233 were already-known decoys/tracked aliases from prior runs. Two unknown codes needed the two bounded queries: NN1213 (Novo Nordisk) resolved as a long-acting amylin analog explicitly suited to once-weekly dosing -- a decoy, not queued; HM15211/efocipegtrutide (Hanmi) resolved as a long-acting GLP-1/GIP/glucagon triple agonist in Phase 2 NASH trials, explicitly weekly-dosed -- a decoy, not queued. 4 rotation-list rows queried (pt404, lilly-camurus, biote-cn121154792a, ct-g32), resuming after abbv-295 and reaching the end of the list; all four reconfirmed existing documentation with nothing new -- ct-g32 (Celltrion) still discloses no monthly-or-longer dosing interval, so it stays a watch-only rotation row, not a candidate. B3 cheap pass (2/2 searches spent, priority: near_bar candidates least recently checked, oldest-created first): re-searched cand-2026-09-11-001 (Appel Sauce Studios) -- found only corporate/venture-studio background (a sibling company, Surf Bio), no new dated event for the hydrogel depot licence itself, promotion_bar unchanged; re-searched cand-2026-09-13-001 (Prolynx) -- found a July 15, 2026 CFO/CSO appointment (BioSpace/GlobeNewswire, Nasdaq and Yahoo Finance syndication), a second distinct dated event beyond the December 2025 Series A, clearing the last promotion-bar condition -- escalated to ready_for_promotion (fuzzy match to adocia-adoxlong 0.15, not a merge case). Stall rule checked across all 16 pre-existing unresolved candidates -- oldest is 21 days old, none 30+, none triggered. Six domains returned EGRESS_BLOCKED this run on direct WebFetch (tipranks.com, koreaherald.com, mt.co.kr, thebionews.net, view.asiae.co.kr, news.nate.com), now logged under source_health as blocked; all other sources this run were reached via search only."
     },
     "weekly_sweep": {
       "source_categories_checked": 8,
@@ -36,15 +36,45 @@
       "dedup_sweep": "completed -- rebuilt the full normalized alias table (umbrellas + all unresolved candidates' detected_aliases, case/hyphen/space-normalized) and diffed for cross-owner collisions. No true duplicate umbrellas or candidates found; all collisions are the same legitimate same-parent-company multi-asset umbrellas noted in prior sweeps (Alkermes, Ascendis Pharma, Camurus incl. Braeburn-Camurus-Brixadi, InventageLab, Ipsen, Mapi Pharma, Novo Nordisk, Peptron), plus the two already-flagged CSPC merge-case candidates (cand-2026-09-02-007, cand-2026-09-13-002) colliding with cspc-syh2082 on 'CSPC Pharmaceutical Group' -- both already correctly held at pending/merge-case rather than escalated. The two candidates created this run (cand-2026-09-20-001 Beijing Biote, cand-2026-09-20-002 i2o Therapeutics) collide with nothing in the table."
     },
     "candidate_follow_up": {
-      "unresolved_total": 15,
+      "unresolved_total": 16,
       "rechecked": 2,
-      "escalated": 0,
+      "escalated": 1,
       "stalled": 0,
-      "aged": 15,
-      "notes": "Daily cheap pass, per the skill's Track B3 section: date-math aged all 15 pre-existing unresolved candidates (oldest 20 days, none 30+, stall rule not triggered). Re-searched, in priority order, the never-checked cand-2026-09-20-001 (Beijing Biote) and the oldest-created near_bar candidate last checked 2026-09-20, cand-2026-09-07-001 (Precision Antibiotics) -- both reconfirmed their existing evidence with no new dated event, so no status changes; promotion_bar.evidence rewritten on both per the skill's 'write on every check' rule. Separately (not counted in this section's totals, since it was newly created by this run's Track B1 rather than aged from the pre-existing queue), cand-2026-09-22-001 (AbbVie/Gubra ABBV-295) was written directly as ready_for_promotion -- see coverage.daily_scan.notes -- bringing the unresolved queue to 16 candidates for tomorrow's aging pass."
+      "aged": 16,
+      "notes": "Daily cheap pass, per the skill's Track B3 section: date-math aged all 16 pre-existing unresolved candidates (oldest 21 days, none 30+, stall rule not triggered). Re-searched, in priority order (near_bar, least-recently-checked, oldest-created first), cand-2026-09-11-001 (Appel Sauce Studios) and cand-2026-09-13-001 (Prolynx) -- see coverage.daily_scan.notes. Prolynx's July 2026 CFO/CSO appointment cleared its last promotion-bar condition and it was escalated to ready_for_promotion; Appel Sauce Studios found no new dated event and stays pending/near_bar. promotion_bar.evidence rewritten on both per the skill's 'write on every check' rule."
     }
   },
   "source_health": {
+    "tipranks.com": {
+      "last_success": null,
+      "status": "blocked",
+      "note": "EGRESS_BLOCKED on direct WebFetch this run (felcorekibart dosing follow-up)."
+    },
+    "koreaherald.com": {
+      "last_success": null,
+      "status": "blocked",
+      "note": "EGRESS_BLOCKED on direct WebFetch this run (G2GBio/Boehringer CEO-interview piece)."
+    },
+    "mt.co.kr": {
+      "last_success": null,
+      "status": "blocked",
+      "note": "EGRESS_BLOCKED on direct WebFetch this run (G2GBio ADA 2026 CagriSema article)."
+    },
+    "thebionews.net": {
+      "last_success": null,
+      "status": "blocked",
+      "note": "EGRESS_BLOCKED on direct WebFetch this run (G2GBio ADA 2026 article)."
+    },
+    "view.asiae.co.kr": {
+      "last_success": null,
+      "status": "blocked",
+      "note": "EGRESS_BLOCKED on direct WebFetch this run (G2GBio ADA 2026 CagriSema article)."
+    },
+    "news.nate.com": {
+      "last_success": null,
+      "status": "blocked",
+      "note": "EGRESS_BLOCKED on direct WebFetch this run."
+    },
     "clinicaltrialsarena.com": {
       "last_success": null,
       "status": "blocked"

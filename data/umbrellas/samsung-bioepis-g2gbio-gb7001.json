@@ -30,10 +30,11 @@
     "molecule_class": [
       "semaglutide",
       "tirzepatide",
-      "retatrutide"
+      "retatrutide",
+      "amylin"
     ],
-    "molecule_evidence": "Licensed asset GB-7001 is long-acting semaglutide. InnoLAMP serum levels held beyond 28 days in rodents across semaglutide, tirzepatide and retatrutide.",
-    "molecule_evidence_ko": "기술이전된 자산 GB-7001은 장기지속형 세마글루타이드이다. InnoLAMP는 설치류에서 세마글루타이드, 터제파타이드, 레타트루타이드 전반에 걸쳐 혈중 농도를 28일 이상 유지했다.",
+    "molecule_evidence": "Licensed asset GB-7001 is long-acting semaglutide. InnoLAMP serum levels held beyond 28 days in rodents across CagriSema (a cagrilintide/semaglutide amylin combination), tirzepatide and retatrutide -- independent Korean coverage of the ADA 2026 poster names CagriSema, not standalone semaglutide, as the third molecule in that specific dual/triple-agonist dataset.",
+    "molecule_evidence_ko": "기술이전된 자산 GB-7001은 장기지속형 세마글루타이드이다. InnoLAMP는 설치류에서 카그리세마(카그릴린타이드/세마글루타이드 아밀린 병용제), 터제파타이드, 레타트루타이드 전반에 걸쳐 혈중 농도를 28일 이상 유지했다 -- ADA 2026 포스터를 다룬 독립적인 한국 매체 보도는 해당 이중/삼중 작용제 데이터셋의 세 번째 분자를 단독 세마글루타이드가 아닌 카그리세마로 명시한다.",
     "molecule_stages": {
       "semaglutide": {
         "stage_label": "Preclinical",
@@ -49,16 +50,21 @@
         "stage_label": "Preclinical",
         "stage_evidence": "Retatrutide appears only in the rodent InnoLAMP formulation data presented at ADA 2026, where serum concentrations held beyond 28 days. No named asset, licence or filing exists for it.",
         "stage_evidence_ko": "레타트루타이드는 ADA 2026에서 발표된 설치류 InnoLAMP 제형 데이터에만 등장하며, 혈청 농도가 28일 이상 유지됐다. 명명된 자산, 라이선스, 신청 건은 없다."
+      },
+      "amylin": {
+        "stage_label": "Preclinical",
+        "stage_evidence": "Amylin enters via CagriSema (cagrilintide/semaglutide), loaded near its full ~9.6 mg per-dose payload in the same rodent InnoLAMP dataset presented at ADA 2026 -- under 5% initial burst, serum levels held beyond 28 days. No named single-molecule amylin asset has been licensed or advanced toward the clinic.",
+        "stage_evidence_ko": "아밀린은 카그리세마(카그릴린타이드/세마글루타이드)를 통해 진입하며, ADA 2026에서 발표된 동일한 설치류 InnoLAMP 데이터셋에서 최대 용량인 약 9.6mg에 가깝게 탑재됐다 -- 초기 방출 5% 미만, 혈중 농도 28일 이상 유지. 명명된 단일 아밀린 자산이 라이선스되거나 임상으로 진행된 바는 없다."
       }
     },
     "dosing_target": "Monthly",
     "dosing_target_ko": "월 1회",
     "partner": "Samsung Bioepis / Epis NexLab (full license on long-acting semaglutide asset + option on a 2nd asset + first-negotiation rights on 3 more undisclosed assets); Boehringer Ingelheim (separate LAI peptide formulation collaboration since Jan 2025, expanded July 2026); Celltrion (MOU for InnoBioLAMP antibody SC platform)",
     "partner_ko": "삼성바이오에피스 / 에피스넥스랩(장기지속형 세마글루타이드 자산 전체 라이선스 + 두 번째 자산 옵션 + 비공개 자산 3개 추가에 대한 우선협상권); Boehringer Ingelheim(2025년 1월부터 별도의 LAI 펩타이드 제형 공동 개발, 2026년 7월 확대); 셀트리온(InnoBioLAMP 항체 SC 플랫폼 MOU)",
-    "data_point": "InnoLAMP: <5% initial drug burst in first 24h; serum concentrations maintained beyond 28 days in rodent models across semaglutide, tirzepatide, and retatrutide",
-    "data_point_ko": "InnoLAMP: 첫 24시간 초기 약물 방출(burst) 5% 미만; 설치류 모델에서 세마글루타이드, 터제파타이드, 레타트루타이드 전반에 걸쳐 혈중 농도 28일 이상 유지",
-    "last_updated": "2026-09-08",
-    "last_checked": "2026-09-22"
+    "data_point": "InnoLAMP: <5% initial drug burst in first 24h; serum concentrations maintained beyond 28 days in rodent models, shown for the licensed semaglutide asset (GB-7001) and, per the ADA 2026 dual/triple-agonist dataset, for CagriSema (amylin/GLP-1), tirzepatide, and retatrutide, each loaded near its full per-dose payload (CagriSema ~9.6mg, tirzepatide 15mg, retatrutide 12mg)",
+    "data_point_ko": "InnoLAMP: 첫 24시간 초기 약물 방출(burst) 5% 미만; 설치류 모델에서 라이선스된 세마글루타이드 자산(GB-7001)과, ADA 2026 이중/삼중 작용제 데이터셋에 따른 카그리세마(아밀린/GLP-1), 터제파타이드, 레타트루타이드에서 혈중 농도가 28일 이상 유지됐으며, 각각 최대 용량에 가깝게 탑재됐다(카그리세마 약 9.6mg, 터제파타이드 15mg, 레타트루타이드 12mg)",
+    "last_updated": "2026-09-22",
+    "last_checked": "2026-09-23"
   },
   "finding_history": [
     {
@@ -231,6 +237,41 @@
       },
       "confidence": "confirmed",
       "verification_note": "Found via this run's Track A search of the InnoLAMP platform alias; announced 2025-09-29, over a year before this run and not previously logged."
+    },
+    {
+      "id": "f-2026-09-22-001",
+      "date": "2026-09-22",
+      "type": "trial_data_readout",
+      "molecules": [],
+      "summary": "In a Sept 21, 2026 interview, G2GBio's CEO said the once-monthly obesity peptide the company is co-developing with Boehringer Ingelheim has reached the final stage of preclinical evaluation, with licensing talks proceeding on schedule toward a targeted global deal this year; he reiterated that G2GBio's InnoLAMP platform is also being applied to monthly and 3-month semaglutide formulations and to monthly formulations of next-generation obesity therapies including CagriSema, tirzepatide and retatrutide.",
+      "summary_ko": "G2GBio(지투지바이오) 대표는 2026년 9월 21일 인터뷰에서 Boehringer Ingelheim과 공동 개발 중인 월 1회 비만 펩타이드가 전임상 평가 마지막 단계에 도달했으며, 올해 글로벌 기술이전 계약 체결을 목표로 협상이 계획대로 진행 중이라고 밝혔다. 그는 또한 G2GBio의 InnoLAMP 플랫폼이 월 1회 및 3개월 1회 세마글루타이드 제형뿐 아니라 카그리세마, 터제파타이드, 레타트루타이드를 포함한 차세대 비만 치료제의 월 1회 제형에도 적용되고 있다고 재확인했다.",
+      "source": {
+        "name": "Seoul Economic Daily (corroborated by The Korea Herald)",
+        "publication": "Seoul Economic Daily",
+        "url": "https://en.sedaily.com/finance/2026/09/22/g2gbio-ceo-sees-monthly-obesity-shots-becoming-industry",
+        "tier": 2
+      },
+      "confidence": "confirmed",
+      "date_basis": "inferred",
+      "verification_note": "Read from search snippets only -- en.sedaily.com, koreaherald.com, mt.co.kr, thebionews.net, view.asiae.co.kr and news.nate.com all returned EGRESS_BLOCKED to direct WebFetch this run."
+    },
+    {
+      "id": "f-2026-06-08-002",
+      "date": "2026-06-08",
+      "type": "trial_data_readout",
+      "molecules": [
+        "amylin"
+      ],
+      "summary": "Independent Korean coverage of the same ADA 2026 InnoLAMP poster underlying f-2026-06-08-001 -- including Asia Business Daily, already cited there as a corroborating outlet, plus separate Edaily and eToday coverage -- specifies that the three next-generation dual/triple-agonist molecules in the rodent dataset were CagriSema (the cagrilintide/semaglutide combination), tirzepatide and retatrutide, not standalone semaglutide as f-2026-06-08-001's summary stated. Each was loaded near its full per-dose payload -- CagriSema up to 9.6 mg, tirzepatide 15 mg, retatrutide 12 mg -- while still achieving under 5% initial burst release and serum concentrations maintained beyond 28 days in rodents. This is the first evidence of a formulated amylin-class (cagrilintide) InnoLAMP asset and corrects f-2026-06-08-001's molecule list.",
+      "summary_ko": "f-2026-06-08-001의 근거가 된 동일한 ADA 2026 InnoLAMP 포스터에 대한 독립적인 한국 매체 보도 -- f-2026-06-08-001에 이미 인용된 아시아경제(Asia Business Daily)와, 별도의 이데일리 및 이투데이 보도 포함 -- 에 따르면 설치류 데이터셋에서 시험된 세 가지 차세대 이중/삼중 작용제 분자는 f-2026-06-08-001 요약이 밝힌 단독 세마글루타이드가 아니라 카그리세마(카그릴린타이드/세마글루타이드 병용제), 터제파타이드, 레타트루타이드였다. 각각 최대 용량에 가깝게 탑재됐다 -- 카그리세마 최대 9.6mg, 터제파타이드 15mg, 레타트루타이드 12mg -- 이면서도 초기 방출 5% 미만, 혈중 농도 28일 이상 유지를 달성했다. 이는 카그릴린타이드(아밀린 계열) 자산이 InnoLAMP로 제형화됐다는 최초의 근거이며, f-2026-06-08-001의 분자 목록을 정정한다.",
+      "source": {
+        "name": "Asia Business Daily / 아시아경제 (corroborated by Edaily and eToday)",
+        "publication": "Asia Business Daily",
+        "url": "https://view.asiae.co.kr/article/2026060816162398095",
+        "tier": 2
+      },
+      "confidence": "confirmed",
+      "verification_note": "Correction to f-2026-06-08-001's molecule list, found via this run's Track B1 cross-class and other_incretin watchlist queries (rows 10-14); the event predates the freshness window (ADA 2026, 2026-06-08) so this is a discovered-late item, not headline news. Read from search snippets only -- view.asiae.co.kr, edaily.co.kr and etoday.co.kr all returned EGRESS_BLOCKED or are already on the blocked list this run."
     }
   ]
 }
