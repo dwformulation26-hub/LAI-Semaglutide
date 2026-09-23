@@ -1136,15 +1136,15 @@
       "status": "pending",
       "created_date": "2026-09-17",
       "follow_up": {
-        "last_checked": "2026-09-20",
-        "checks_run": 2,
+        "last_checked": "2026-09-24",
+        "checks_run": 3,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's follow-up found the same Sept 14, 2026 patent-registration story (No. 10-3012843) with no further company disclosure of clinical or IND-stage plans since. Only that single dated event is on record, so second_dated_event remains unmet.",
-        "evidence_ko": "이번 주기 후속 조사에서도 동일한 2026년 9월 14일 특허 등록(제10-3012843호) 소식만 확인됐고, 이후 임상 또는 IND 단계 계획에 대한 추가 회사 공개는 없었다. 여전히 단일 날짜 이벤트만 기록돼 있어 second_dated_event(두 번째 날짜 이벤트)는 미충족이다."
+        "evidence": "This run's daily cheap-pass re-search (query: 삼익제약 UniSphero 싸이모신 알파1) again found only the same Sept 14, 2026 patent-registration story (No. 10-3012843, registered Aug 27 per one outlet's dateline) recirculated across additional outlets (Gukje News, Financial News, CBC News, Seoul Economic Daily); no further company disclosure of clinical or IND-stage plans has surfaced since. Only that single dated event remains on record, so second_dated_event stays unmet.",
+        "evidence_ko": "이번 주기 데일리 저비용 후속 조사(검색어: 삼익제약 UniSphero 싸이모신 알파1)에서도 동일한 2026년 9월 14일 특허 등록(제10-3012843호, 한 매체에 따르면 등록일은 8월 27일) 소식이 추가 매체(국제뉴스, 파이낸셜뉴스, CBC뉴스, 서울경제)에 재게재된 것만 확인됐다. 이후 임상 또는 IND 단계 계획에 대한 추가 회사 공개는 없었다. 여전히 단일 날짜 이벤트만 기록돼 있어 second_dated_event(두 번째 날짜 이벤트)는 미충족이다."
       },
       "resolution": null
     },
@@ -1194,15 +1194,15 @@
       "status": "pending",
       "created_date": "2026-09-18",
       "follow_up": {
-        "last_checked": "2026-09-20",
-        "checks_run": 1,
+        "last_checked": "2026-09-24",
+        "checks_run": 2,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "Two independent Tier 2 outlets (EBN, Korea Herald) corroborate the same Sept 17, 2026 announcement that Alteogen filed a PCT application for its 'Long-Acting Conjugate' platform and is advancing once-monthly obesity candidate ALT-M5, clearing named_entity, technical_claim and confirmed_source. This run's follow-up (via the watchlist's alteogen-monthly rotation row) found only the same Sept 17, 2026 announcement recirculated across additional Korean outlets (Medipana, Kormedi, Nate News aggregations); no second distinct dated event surfaced, so second_dated_event remains unmet -- the planned ObesityWeek 2026 (Nov 14-17) data presentation would likely clear it once it occurs. Molecule identity behind the conjugate was not disclosed, so no molecule_class can be assigned to this candidate.",
-        "evidence_ko": "독립적인 Tier 2 매체 2곳(EBN, Korea Herald)이 알테오젠이 '장기지속형 접합체' 플랫폼에 대한 PCT를 출원하고 월 1회 비만 후보물질 ALT-M5를 개발 중이라는 2026년 9월 17일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. 이번 주기 후속 조사(watchlist의 alteogen-monthly 순환 항목을 통해)에서도 동일한 2026년 9월 17일 발표가 추가 한국 매체(메디파나, 코메디닷컴, 네이트뉴스 집계 등)에 재게재된 것만 확인됐다. 두 번째 별개 날짜 이벤트는 나타나지 않아 second_dated_event(두 번째 날짜 이벤트)는 미충족이며, 예정된 ObesityWeek 2026(11월 14~17일) 데이터 발표가 이뤄지면 충족될 가능성이 크다. 접합체가 탑재한 분자의 정체는 공개되지 않아 이 후보에는 molecule_class를 부여할 수 없다."
+        "evidence": "Two independent Tier 2 outlets (EBN, Korea Herald) corroborate the same Sept 17, 2026 announcement that Alteogen filed a PCT application for its 'Long-Acting Conjugate' platform and is advancing once-monthly obesity candidate ALT-M5, clearing named_entity, technical_claim and confirmed_source. This run's daily cheap-pass re-search (query: ALT-M5 Alteogen) again found only the same Sept 17, 2026 PCT-filing announcement recirculated across additional outlets (NOCUTNEWS, Seoul Economic Daily), still naming the planned ObesityWeek 2026 (Nov 14-17) data presentation as a forward-looking plan, not yet occurred; no second distinct dated event surfaced, so second_dated_event remains unmet. Molecule identity behind the conjugate was not disclosed, so no molecule_class can be assigned to this candidate.",
+        "evidence_ko": "독립적인 Tier 2 매체 2곳(EBN, Korea Herald)이 알테오젠이 '장기지속형 접합체' 플랫폼에 대한 PCT를 출원하고 월 1회 비만 후보물질 ALT-M5를 개발 중이라는 2026년 9월 17일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. 이번 주기 데일리 저비용 후속 조사(검색어: ALT-M5 Alteogen)에서도 동일한 2026년 9월 17일 PCT 출원 발표가 추가 매체(NOCUTNEWS, 서울경제)에 재게재된 것만 확인됐으며, 예정된 ObesityWeek 2026(11월 14~17일) 데이터 발표는 여전히 아직 일어나지 않은 미래 계획으로 언급됐다. 두 번째 별개 날짜 이벤트는 나타나지 않아 second_dated_event(두 번째 날짜 이벤트)는 미충족이다. 접합체가 탑재한 분자의 정체는 공개되지 않아 이 후보에는 molecule_class를 부여할 수 없다."
       },
       "resolution": null
     },
