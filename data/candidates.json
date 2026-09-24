@@ -123,15 +123,15 @@
       "status": "pending",
       "created_date": "2026-09-02",
       "follow_up": {
-        "last_checked": "2026-09-21",
-        "checks_run": 3,
+        "last_checked": "2026-09-25",
+        "checks_run": 4,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's daily cheap-pass re-search (query: 삼천당제약 류프로렐린 FDA 라이선스) found only the same 2026-01-07 term sheet already on file, with no FDA submission or definitive licensing agreement reported since. confirmed_source remains cleared from the prior check's independent-outlet corroboration; second_dated_event still unmet.",
-        "evidence_ko": "이번 주기 데일리 저비용 후속 조사(검색어: 삼천당제약 류프로렐린 FDA 라이선스)에서도 기존에 확보한 2026-01-07 텀시트 외에 FDA 제출이나 정식 라이선스 계약 체결 소식은 확인되지 않았다. confirmed_source(확인된 출처)는 이전 조사의 독립 매체 교차 확인으로 이미 충족된 상태를 유지하며, second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다."
+        "evidence": "This run's daily cheap-pass re-search (query: 삼천당제약 류프로렐린 FDA 라이선스) again found only the same 2026-01-07 term sheet, recirculated across the same set of outlets (Newspim, dt.co.kr, thebionews.net, mdtoday.co.kr, yakup.com, biz.newdaily.co.kr, finance-scope.com, pharmnews.com, doctorstimes.com); no FDA submission or definitive licensing agreement has been reported since. confirmed_source remains cleared from the prior check's independent-outlet corroboration; second_dated_event still unmet.",
+        "evidence_ko": "이번 주기 데일리 저비용 후속 조사(검색어: 삼천당제약 류프로렐린 FDA 라이선스)에서도 동일한 2026-01-07 텀시트가 동일한 매체군(Newspim, dt.co.kr, thebionews.net, mdtoday.co.kr, yakup.com, biz.newdaily.co.kr, finance-scope.com, pharmnews.com, doctorstimes.com)에 재게재된 것만 확인됐다. FDA 제출이나 정식 라이선스 계약 체결 소식은 확인되지 않았다. confirmed_source(확인된 출처)는 이전 조사의 독립 매체 교차 확인으로 이미 충족된 상태를 유지하며, second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다."
       },
       "resolution": null
     },
@@ -167,15 +167,15 @@
       "status": "pending",
       "created_date": "2026-09-02",
       "follow_up": {
-        "last_checked": "2026-09-21",
-        "checks_run": 4,
+        "last_checked": "2026-09-25",
+        "checks_run": 5,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's daily cheap-pass re-search (query: 스파이더코어 SpiderCore 지투지바이오) again found only the same 2026-07-21 G2GBio contract; SpiderCore's own company profile also describes it generically as 'a partnering company of Novo Nordisk' but with no date attached, so that mention cannot itself supply a second dated event. confirmed_source remains cleared from the prior check; second_dated_event still unmet. SCOPE CAVEAT STILL APPLIES: SpiderCore is a KAIST-founded AI/software vendor selling an R&D tool to G2GBio, not itself a drug or delivery-technology developer -- recommend an explicit admin scope call on whether this belongs in the registry at all, independent of the promotion bar.",
-        "evidence_ko": "이번 주기 데일리 저비용 후속 조사(검색어: 스파이더코어 SpiderCore 지투지바이오)에서도 동일한 2026년 7월 21일 지투지바이오 계약만 확인됐다. 스파이더코어 자체 회사 소개에 'Novo Nordisk의 파트너링 기업'이라는 표현이 있으나 날짜가 명시되지 않아 이 자체로는 두 번째 날짜 이벤트가 될 수 없다. confirmed_source(확인된 출처)는 이전 조사에서 이미 충족된 상태를 유지하며, second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 스파이더코어는 지투지바이오에 R&D 도구를 판매하는 KAIST 창업 AI/소프트웨어 업체로, 그 자체가 약물 또는 전달 기술 개발사가 아니다. 승격 기준과는 별개로 이 후보가 레지스트리에 포함돼야 하는지 여부에 대해 관리자의 명시적인 범위 판단을 권고한다."
+        "evidence": "This run's daily cheap-pass re-search (query: 스파이더코어 SpiderCore 지투지바이오) again found only the same 2026-07-21 G2GBio/SpiderCore AI-platform contract, recirculated across additional outlets (etoday.co.kr, thebionews.net, supple.kr, sedaily.com); no further dated development has surfaced. confirmed_source remains cleared from the prior check; second_dated_event still unmet. SCOPE CAVEAT STILL APPLIES: SpiderCore remains a KAIST-founded AI/software vendor selling an R&D tool to G2GBio, not itself a drug or delivery-technology developer -- recommend an explicit admin scope call on whether this belongs in the registry at all, independent of the promotion bar.",
+        "evidence_ko": "이번 주기 데일리 저비용 후속 조사(검색어: 스파이더코어 SpiderCore 지투지바이오)에서도 동일한 2026년 7월 21일 지투지바이오·스파이더코어 AI 플랫폼 계약이 추가 매체(etoday.co.kr, thebionews.net, supple.kr, sedaily.com)에 재게재된 것만 확인됐다. 추가적인 날짜 이벤트는 확인되지 않았다. confirmed_source(확인된 출처)는 이전 조사에서 이미 충족된 상태를 유지하며, second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 스파이더코어는 지투지바이오에 R&D 도구를 판매하는 KAIST 창업 AI/소프트웨어 업체로, 그 자체가 약물 또는 전달 기술 개발사가 아니다. 승격 기준과는 별개로 이 후보가 레지스트리에 포함돼야 하는지 여부에 대해 관리자의 명시적인 범위 판단을 권고한다."
       },
       "resolution": null
     },
@@ -1127,24 +1127,37 @@
           "date": "2026-09-14",
           "verification_note": "Read from a search-result summary only; dailypharm.com was not independently fetched this run.",
           "date_basis": "inferred"
+        },
+        {
+          "source": {
+            "name": "Samik Pharmaceutical baricitinib once-monthly injectable platform patent (No. 10-2905826)",
+            "publication": "Datatooza",
+            "url": "https://www.datatooza.com/article/202601081109199232e80ea65769_80",
+            "tier": 2
+          },
+          "snippet": "Samik Pharmaceutical registered Korean patent No. 10-2905826 for the same UniSphero long-acting microsphere platform, applied here to baricitinib (a JAK inhibitor for alopecia areata/rheumatoid arthritis) rather than thymosin alpha-1 -- using a cyclodextrin-inclusion technique to convert the daily oral drug into a once-monthly injectable, with over 95% drug loading, suppressed initial burst release, and a stable release pattern lasting more than a month. Independently corroborated by Dailypharm, BioTimes, MDON and Hinews coverage of the same patent registration.",
+          "snippet_ko": "삼익제약은 싸이모신 알파1과 동일한 UniSphero 장기지속형 미립구 플랫폼을 야누스키나아제(JAK) 억제제 바리시티닙(원형탈모·류마티스 관절염 치료제)에 적용한 국내 특허 제10-2905826호를 등록했다. 사이클로덱스트린 포접 기술로 매일 복용하는 경구제를 월 1회 주사제로 전환했으며, 약물 탑재율 95% 이상, 초기 방출 억제, 1개월 이상의 안정적인 방출 패턴을 구현했다. Dailypharm, BioTimes, MDON, Hinews 등 다수 매체가 동일한 특허 등록을 독립적으로 보도했다.",
+          "date": "2026-01-08",
+          "date_basis": "inferred",
+          "verification_note": "Read from search-result snippets only; datatooza.com and dailypharm.com were not independently fetched this run (dailypharm.com already on this run's blocked-domain list). Date inferred from the article's URL ID (202601081109...). Found this run when a Track B1 cross-class query (삼중작용제 월 1회 주사) surfaced a separate Samik Pharmaceutical alopecia-drug headline, prompting a follow-up search on the same company/platform."
         }
       ],
       "fuzzy_match": {
         "closest_umbrella_id": null,
         "score": 0
       },
-      "status": "pending",
+      "status": "ready_for_promotion",
       "created_date": "2026-09-17",
       "follow_up": {
-        "last_checked": "2026-09-24",
-        "checks_run": 3,
-        "near_bar": true
+        "last_checked": "2026-09-25",
+        "checks_run": 4,
+        "near_bar": false
       },
       "promotion_bar": {
-        "cleared": ["named_entity", "technical_claim", "confirmed_source"],
-        "unmet": ["second_dated_event"],
-        "evidence": "This run's daily cheap-pass re-search (query: 삼익제약 UniSphero 싸이모신 알파1) again found only the same Sept 14, 2026 patent-registration story (No. 10-3012843, registered Aug 27 per one outlet's dateline) recirculated across additional outlets (Gukje News, Financial News, CBC News, Seoul Economic Daily); no further company disclosure of clinical or IND-stage plans has surfaced since. Only that single dated event remains on record, so second_dated_event stays unmet.",
-        "evidence_ko": "이번 주기 데일리 저비용 후속 조사(검색어: 삼익제약 UniSphero 싸이모신 알파1)에서도 동일한 2026년 9월 14일 특허 등록(제10-3012843호, 한 매체에 따르면 등록일은 8월 27일) 소식이 추가 매체(국제뉴스, 파이낸셜뉴스, CBC뉴스, 서울경제)에 재게재된 것만 확인됐다. 이후 임상 또는 IND 단계 계획에 대한 추가 회사 공개는 없었다. 여전히 단일 날짜 이벤트만 기록돼 있어 second_dated_event(두 번째 날짜 이벤트)는 미충족이다."
+        "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
+        "unmet": [],
+        "evidence": "This run found an earlier, distinct Samik Pharmaceutical UniSphero patent (No. 10-2905826, dated on or before 2026-01-08) applying the same long-acting microsphere platform to baricitinib -- converting a daily oral JAK inhibitor to a once-monthly injectable -- a different drug from the Sept 14, 2026 thymosin alpha-1 patent already on file, but the same named entity and platform, corroborated by multiple independent Tier 2 outlets (Dailypharm, BioTimes, MDON, Hinews). Two distinct dated patent events, eight months apart, on the same named platform/company clear second_dated_event; all four promotion-bar conditions are now met. Fuzzy match remains 0 (no matching umbrella) -- not a merge case. Escalating to ready_for_promotion. NOTE FOR ADMIN: the two dated events are two different drugs (thymosin alpha-1 vs. baricitinib) on the same UniSphero platform/company, not two events about the same single asset -- flagging this explicitly since it is a judgment call on how second_dated_event applies to a platform company with multiple pipeline assets.",
+        "evidence_ko": "이번 실행에서 삼익제약의 또 다른 UniSphero 특허(제10-2905826호, 2026년 1월 8일경)를 확인했다. 동일한 장기지속형 미립구 플랫폼을 바리시티닙에 적용해 매일 복용하는 경구용 JAK 억제제를 월 1회 주사제로 전환한 것으로, 이미 파일에 있는 2026년 9월 14일 싸이모신 알파1 특허와는 다른 약물이지만 동일한 명확한 주체와 플랫폼이며, 다수의 독립적인 Tier 2 매체(Dailypharm, BioTimes, MDON, Hinews)가 이를 뒷받침한다. 8개월 간격을 둔 동일 플랫폼/기업의 서로 다른 날짜 특허 이벤트 2건이 second_dated_event(두 번째 날짜 이벤트)를 충족시키며, 이제 네 가지 승격 기준 조건을 모두 충족한다. 퍼지 매칭 점수는 여전히 0(일치하는 엄브렐라 없음)으로 병합 사례가 아니다. ready_for_promotion으로 에스컬레이션한다. 관리자 참고: 두 날짜 이벤트는 동일한 UniSphero 플랫폼/기업에서 나온 서로 다른 약물(싸이모신 알파1 대 바리시티닙)에 대한 것으로, 동일한 단일 자산에 대한 두 이벤트가 아니다 -- 다중 파이프라인 자산을 보유한 플랫폼 기업에 second_dated_event를 어떻게 적용할지에 대한 판단이 필요한 지점임을 명시적으로 플래그한다."
       },
       "resolution": null
     },
