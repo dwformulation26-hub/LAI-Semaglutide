@@ -16,11 +16,11 @@
     "molecule_evidence_ko": "Nanexa의 2026년 1월 27일과 3월 19일 자체 발표는 월 1회, 잠재적으로 3개월 1회 세마글루타이드 제형을 위한 PharmaShell PK 데이터를 보고한다.",
     "dosing_target": "Monthly, with once-quarterly dosing feasibility also reported",
     "dosing_target_ko": "월 1회, 추가적으로 3개월 1회 투여 가능성도 보고됨",
-    "partner": "Not disclosed for the semaglutide asset specifically. Nanexa's PharmaShell platform separately has collaboration agreements with Novo Nordisk and AstraZeneca (pre-existing, undisclosed scope) and Moderna (Dec 2025, mRNA-focused, not semaglutide).",
-    "partner_ko": "세마글루타이드 자산 자체에 대해서는 공개된 파트너가 없다. Nanexa의 PharmaShell 플랫폼은 별도로 Novo Nordisk 및 AstraZeneca와 기존 공동개발 계약(범위 비공개)을, Moderna와는 2025년 12월 계약(mRNA 중심, 세마글루타이드와 무관)을 보유하고 있다.",
+    "partner": "Novo Nordisk holds a global exclusive license (announced 2026-09-25) covering up to five PharmaShell development programs for peptide-based obesity/T2D/cardiometabolic drugs, targeting monthly and quarterly administration -- an upgrade from the pre-existing, undisclosed-scope relationship. Not confirmed to name the semaglutide asset specifically. Separately, AstraZeneca (pre-existing, undisclosed scope) and Moderna (Dec 2025, mRNA-focused, not semaglutide) also hold PharmaShell agreements.",
+    "partner_ko": "Novo Nordisk는 비만/제2형 당뇨병/심장대사 펩타이드 약물을 대상으로 한 최대 5개 PharmaShell 개발 프로그램에 대한 글로벌 독점 라이선스를 보유하고 있으며(2026-09-25 발표), 월 1회 및 3개월 1회 투여를 목표로 한다 -- 기존의 범위 비공개 관계에서 격상된 것이다. 세마글루타이드 자산을 구체적으로 명시하는지는 확인되지 않았다. 별도로 AstraZeneca(기존, 범위 비공개)와 Moderna(2025년 12월, mRNA 중심, 세마글루타이드와 무관)도 PharmaShell 계약을 보유하고 있다.",
     "data_point": "Preclinical rat PK (Jan 2026): exceptional PK profile supporting once-monthly SC dosing, more stable than weekly Wegovy with a low initial peak. Follow-on rat PK plus human modelling (Mar 2026): semaglutide could potentially be dosed once every three months while maintaining a controlled, therapeutically relevant plasma concentration.",
     "data_point_ko": "전임상 랫드 PK(2026년 1월): 월 1회 피하 투여를 뒷받침하는 뛰어난 PK 프로파일을 확인했으며, 주 1회 Wegovy보다 안정적이고 낮은 초기 피크를 보였다. 후속 랫드 PK 및 인체 모델링(2026년 3월): 세마글루타이드를 조절되고 치료적으로 유의미한 혈중 농도를 유지하면서 3개월에 1회 투여할 수 있을 가능성이 제시되었다.",
-    "last_updated": "2026-03-19",
+    "last_updated": "2026-09-25",
     "last_checked": "2026-09-24"
   },
   "finding_history": [
@@ -66,6 +66,21 @@
         "tier": 1
       },
       "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-09-25-001",
+      "date": "2026-09-25",
+      "type": "deal_partnership",
+      "summary": "Nanexa and Novo Nordisk entered a global exclusive license and collaboration agreement for PharmaShell, worth up to EUR 1.165 billion (EUR 615 million upfront plus development/regulatory milestones) plus low-single-digit royalties. The deal covers up to five PharmaShell development programs for peptide-based obesity, type 2 diabetes and other cardiometabolic drugs, with monthly and quarterly administration as target dosing profiles; Novo leads global development and commercialization. The release does not confirm whether the already-tracked semaglutide asset is one of the five named programs.",
+      "summary_ko": "Nanexa와 Novo Nordisk는 PharmaShell에 대해 최대 EUR 1.165 billion(계약금 EUR 615 million 플러스 개발/허가 마일스톤) 규모의 글로벌 독점 라이선스 및 공동개발 계약을 체결했으며, 낮은 한 자릿수 로열티도 포함된다. 계약은 비만, 제2형 당뇨병, 기타 심장대사질환을 위한 펩타이드 기반 약물의 PharmaShell 개발 프로그램 최대 5건을 대상으로 하며, 월 1회 및 3개월 1회 투여를 목표 제형으로 한다. Novo가 글로벌 개발과 상업화를 주도한다. 이미 추적 중인 세마글루타이드 자산이 5개 지정 프로그램 중 하나인지는 발표에서 확인되지 않았다.",
+      "source": {
+        "name": "Nanexa and Novo enter into EUR 1.165 billion global license and collaboration agreement for long-acting injectables",
+        "publication": "Nanexa AB",
+        "url": "https://nanexa.com/mfn_news/nanexa-and-novo-enter-into-eur-1-165-billion-global-license-and-collaboration-agreement-for-long-acting-injectables/",
+        "tier": 1
+      },
+      "confidence": "confirmed",
+      "verification_note": "nanexa.com returned EGRESS_BLOCKED on direct WebFetch this run; read from search-result snippets and corroborated independently by Bloomberg, CNBC, BioSpace, PR Newswire and Yahoo Finance coverage of the same Sept 25, 2026 deal. Found via this run's Track B2 VC/deal-database sweep."
     }
   ]
 }
