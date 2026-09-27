@@ -29,8 +29,8 @@
     "partner": null,
     "data_point": "REAL8 Phase 3 basket study: at week 52, once-weekly somapacitan showed comparable annualized height velocity to daily somatropin across ISS (10.2 vs 10.5 cm/yr), SGA (11.0 vs ~9.4-11.1 cm/yr across daily-dose arms), and Noonan syndrome (10.4 vs 9.2 cm/yr); FDA approved all three indications Feb 27, 2026",
     "data_point_ko": "REAL8 임상 3상 바스켓 시험: 52주차 주 1회 소마파시탄은 1일 1회 소마트로핀과 비슷한 연간 키 성장 속도를 보였다. ISS(10.2 vs 10.5 cm/yr), SGA(11.0 vs 1일 투여 용량군별 약 9.4-11.1 cm/yr), 누난 증후군(10.4 vs 9.2 cm/yr). FDA는 2026년 2월 27일 3개 적응증을 모두 승인했다.",
-    "last_updated": "2026-02-27",
-    "last_checked": "2026-09-24"
+    "last_updated": "2026-09-18",
+    "last_checked": "2026-09-28"
   },
   "finding_history": [
     {
@@ -58,6 +58,21 @@
         "tier": 1
       },
       "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-09-18-001",
+      "date": "2026-09-18",
+      "type": "regulatory",
+      "summary": "The EMA's CHMP issued a positive opinion recommending once-weekly Sogroya (somapacitan) for children with idiopathic short stature (ISS) with persistent growth disturbance, following its earlier recommendations for small-for-gestational-age short stature and Noonan syndrome growth failure. The opinion goes to the European Commission for a marketing-authorization decision.",
+      "summary_ko": "EMA CHMP는 지속적인 성장 장애가 있는 특발성 저신장(ISS) 소아에 대해 주 1회 Sogroya(소마파시탄)를 권고하는 긍정 의견을 발표했다. 이는 앞서 부당경량아 저신장 및 누난 증후군 성장 부전에 대한 권고에 이은 것이다. 이 의견은 판매허가 결정을 위해 유럽연합 집행위원회로 전달된다.",
+      "source": {
+        "name": "Novo Nordisk press release (GlobeNewswire)",
+        "publication": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/09/18/3364591/0/en/novo-s-once-weekly-sogroya-somapacitan-receives-positive-chmp-opinion-in-europe-for-children-with-idiopathic-short-stature-unexplained-shortness.html",
+        "tier": 1
+      },
+      "confidence": "confirmed",
+      "verification_note": "Discovered this run (2026-09-28); this record was throttled and last checked 2026-09-24, so per the skill's per-record freshness window this Sept 18 event predates that record's window and is discovered-late, not a headline item for today's digest."
     }
   ]
 }

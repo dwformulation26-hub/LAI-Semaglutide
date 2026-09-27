@@ -2,31 +2,24 @@
   "last_run": {
     "initial_seed": "2026-09-02T00:00:00Z",
     "initial_discovery_test": "2026-09-02T00:00:00Z",
-    "daily_scan": "2026-09-25T06:04:24+09:00",
+    "daily_scan": "2026-09-28T06:04:24+09:00",
     "weekly_sweep": "2026-09-27T09:01:32+09:00",
     "qc_tier2": "2026-09-27T09:01:32+09:00",
     "qc_tier3": null,
     "baseline_class_sweep": "2026-09-11T06:40:00Z"
   },
-  "digest_carryover": {
-    "from": "2026-09-27T09:01:32+09:00",
-    "findings": [
-      { "umbrella_id": "nanexa-pharmashell-semaglutide", "finding_id": "f-2026-09-25-001" }
-    ],
-    "candidates": [],
-    "newly_escalated": []
-  },
+  "digest_carryover": null,
   "coverage": {
     "daily_scan": {
-      "umbrellas_checked": 6,
+      "umbrellas_checked": 48,
       "umbrellas_total": 48,
-      "skipped_throttled": 42,
+      "skipped_throttled": 0,
       "skipped_budget_exhausted": 0,
       "codes_harvested": 4,
-      "codes_unknown": 1,
-      "codes_queried": 1,
-      "watchlist_cursor": "lilly-camurus",
-      "notes": "Friday scan. Throttle rule applied against yesterday's (2026-09-24) Thursday baseline, at which 47/48 umbrellas were freshly checked: today diff=1 KST day for every umbrella checked yesterday, so every umbrella that is also 21+ days quiet (last_updated) came due for a throttle skip today (42 of them) -- only records that are NOT 21+ days quiet (ascendis-transcon-novo, ascletis-asc30, gsk-felcorekibart, samsung-bioepis-g2gbio-gb7001) or whose last_checked was already 3+ KST days old (owlbio-kyungdong-xtina, last checked Tue 2026-09-22) were due. huahaikang-hhk001 was also checked despite being throttle-eligible (28 days quiet, diff=1), specifically to follow up on qc_tier2's 2026-09-20 note that its second trial NCT07755956 was independently confirmed but not yet logged -- confirmed again this run (already on file as f-2026-08-10-001), no new finding needed. All 6 due umbrellas breadth-queried on their single most distinctive alias; every query reconfirmed existing documentation already on file (Ascendis TransCon Semaglutide rights-reversion, Ascletis ASC37 selection, GSK felcorekibart Phase 3 registrations, HHK001's two ClinicalTrials.gov registrations, Aul Bio AUL016 tirzepatide microsphere, G2GBio GB-7001) -- a genuinely quiet Track A day with zero new findings logged and zero molecule_class/stage_label changes. Track B1: 14/14 fixed watchlist rows queried; all reconfirmed existing Peptron PT403/PT404, Daewoong-TionLab, InventageLab IVL3024 and G2GBio InnoLAMP coverage with no new company or program. Code harvest surfaced 4 code-pattern strings encountered in this run's results (MET-233, HM15211, NN1706 -- all already-known tracked-alias/decoys from prior runs -- and AZD6234, newly seen this run in an amylin-analog search). AZD6234 (AstraZeneca/CSPC selective amylin receptor agonist) needed the one bounded code query: confirmed once-weekly-only dosing (Phase 2 ASCEND trial, NCT06862791) with no monthly-or-longer formulation reported -- a non-LAI decoy per the watchlist's dosing-interval rule, not queued as a candidate; proposing it below for the admin's awareness as a watchlist decoy-table addition. 4 rotation-list rows queried (ct-g32, abbv-295, pt404, lilly-camurus), resuming after biote-cn121154792a and wrapping to the start of the list; all four reconfirmed existing documentation (Celltrion CT-G32 still discloses no dosing interval and stays watch-only; ABBV-295 and the Lilly-Camurus amylin expansion are already captured in cand-2026-09-22-001 and camurus-cam2029's f-2026-06-01-001 respectively) with nothing new. A B1 cross-class result surfaced a second, earlier (2026-01-08) Samik Pharmaceutical UniSphero patent (No. 10-2905826, baricitinib once-monthly conversion) distinct from the already-tracked Sept 14 thymosin alpha-1 patent underlying cand-2026-09-17-001 -- see coverage.candidate_follow_up for the resulting escalation. B3 cheap pass (2/2 searches spent, priority: near_bar candidates least recently checked, tied oldest-created): re-searched cand-2026-09-02-002 (Samchundang/leuprorelin) and cand-2026-09-02-003 (SpiderCore) -- both found only the same single dated event recirculated across additional outlets, no second dated event surfaced for either, promotion_bar.evidence rewritten on both per the skill's 'write on every check' rule, no status change. Stall rule checked across all 16 pre-existing unresolved candidates -- oldest is 23 days old, none 30+, none triggered. No domain returned EGRESS_BLOCKED this run and no direct WebFetch was attempted (all sourcing via WebSearch); source_health left unchanged from yesterday."
+      "codes_unknown": 0,
+      "codes_queried": 0,
+      "watchlist_cursor": "pt404",
+      "notes": "Monday scan, heaviest-load day per the skill's weekend note: Friday's scan (2026-09-25) checked only 6 umbrellas, so by today every umbrella's last_checked was 3-4 KST days old -- past the throttle's 2-day skip window -- and all 48 came due regardless of days-since-last-finding. No throttle skips applied this run. All 48 breadth-queried on their single most distinctive alias. Two new findings logged: Novo Nordisk's Sept 18, 2026 CHMP positive opinion recommending once-weekly Sogroya for idiopathic short stature in Europe (novonordisk-sogroya) -- discovered this run but predates that throttled record's own window (last checked 2026-09-24), so logged as discovered-late, not a headline; and Camurus's June 18, 2025 POSITANO Phase 2b topline for the CAM2029 octreotide depot in polycystic liver disease (camurus-cam2029) -- a new indication beyond acromegaly, discovered this run via a breadth query but well outside the freshness window, logged append-only per the skill's rule that real information is never dropped for arriving late. All other 46 umbrellas' queries reconfirmed existing documentation (Ascendis TransCon rights-reversion, Ascletis ASC30/36/37 portfolio, Camurus CAM2029 CRL/resubmission and CAM2056 Phase 2b prep, CSPC/AstraZeneca SYH2082, G2GBio InnoLAMP multi-molecule data, Peptron PT403 IND, Vivani NPM-139 SLIM-1 dosing, Teva/MedinCell Uzedy and TEV-'749, Zealand petrelintide Phase 3 ZUPREME initiation -- out of scope to log since petrelintide is dosed once-weekly, not long-acting -- and more) with no new findings and no molecule_class/stage_label changes. Track B1: all 14 fixed watchlist rows queried (EN/KR class rows for the four named molecules, cross-class and other_incretin rows); all reconfirmed existing coverage (G2GBio InnoLAMP semaglutide/tirzepatide/retatrutide preclinical data, Peptron PT404 gap, Owl Bio/Kyungdong AUL009, InventageLab/Yuhan tirzepatide microsphere, Samik/UniSphero baricitinib patent recirculating) with no new company or program; known non-LAI decoys (HM15275, NN1706, AZD6234, DD07/MET-AMYo) re-surfaced in results but were not queued, per the watchlist's decoy table. Code harvest surfaced 4 code-pattern strings this run (HM15275, NN1706, AZD6234, MET-233/DD07), all already-known tracked-alias/decoys -- no unknown code needed the bounded resolution path. 4 rotation-list rows queried (biote-cn121154792a, ct-g32, abbv-295, pt404), resuming after lilly-camurus and wrapping to the start of the list; all four reconfirmed existing documentation (Beijing Biote CN121154792A patent still has no second dated event beyond the filing itself; Celltrion CT-G32 still discloses no dosing interval and stays watch-only; ABBV-295's Phase 1 MAD data and PT404's alias-gap status are unchanged) with nothing new. B3 cheap pass (2/2 searches spent, near_bar priority): re-searched cand-2026-09-20-002 (i2o Therapeutics) and cand-2026-09-11-001 (Appel Sauce Studios) -- both found only material already on file, no new dated event for either, promotion_bar.evidence rewritten on both, no status change. Stall rule checked across all 16 pre-existing unresolved candidates -- oldest is 26 days old (the four 2026-09-02 candidates), none 30+, none triggered. One domain returned EGRESS_BLOCKED this run (biz.newdaily.co.kr, a Daewon Pharmaceutical quadruple-agonist recap article); no other direct WebFetch was attempted this run (all other sourcing via WebSearch)."
     },
     "weekly_sweep": {
       "source_categories_checked": 8,
@@ -44,11 +37,11 @@
     },
     "candidate_follow_up": {
       "unresolved_total": 16,
-      "rechecked": 16,
+      "rechecked": 2,
       "escalated": 0,
       "stalled": 0,
       "aged": 16,
-      "notes": "Weekly deep pass, per the skill's Track B3 section: every one of the 16 unresolved candidates got one query and a full re-score this run (see coverage.weekly_sweep.notes for the per-candidate detail); date-math aged all 16 (oldest is 25 days -- cand-2026-09-02-002/003/004/007, all created 2026-09-02 -- none 30+, stall rule not triggered). No candidate was escalated to ready_for_promotion this run (the 4 already at that status stay there, each with an additional corroborating dated event appended this cycle); none stalled."
+      "notes": "Cheap daily pass, per the skill's Track B3 section: date-math aged all 16 unresolved candidates (oldest is 26 days -- cand-2026-09-02-002/003/004/007, all created 2026-09-02 -- none 30+, stall rule not triggered). Re-searched the 2 candidates prioritized under the near_bar rule (cand-2026-09-20-002 i2o Therapeutics, cand-2026-09-11-001 Appel Sauce Studios) -- both promotion_bar.evidence rewritten, no status change. The 4 ready_for_promotion candidates (Alveus/ALV-100, Prolynx, Samik/UniSphero, AbbVie-Gubra/ABBV-295) remain unresolved and repeat in today's digest per the Monday-repeat rule; none newly escalated this run."
     }
   },
   "source_health": {
@@ -283,6 +276,11 @@
     "irasia.com": {
       "last_success": null,
       "status": "blocked"
+    },
+    "biz.newdaily.co.kr": {
+      "last_success": null,
+      "status": "blocked",
+      "note": "EGRESS_BLOCKED on direct WebFetch this run (Daewon Pharmaceutical quadruple-agonist recap article)."
     }
   }
 }

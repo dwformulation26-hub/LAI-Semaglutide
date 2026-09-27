@@ -33,7 +33,7 @@
     "data_point": "US FDA CRL #2 issued Jun 10, 2026 (manufacturing/facility-related, explicitly not efficacy/safety); resubmission accepted for review Jul 17, 2026 with PDUFA target action date of Dec 18, 2026",
     "data_point_ko": "미국 FDA 두 번째 CRL(CRL #2) 2026년 6월 10일 발행(제조/시설 관련, 유효성/안전성 문제는 아니라고 명시). 재제출은 2026년 7월 17일 심사 접수됐으며 PDUFA 목표일은 2026년 12월 18일이다.",
     "last_updated": "2026-07-17",
-    "last_checked": "2026-09-24"
+    "last_checked": "2026-09-28"
   },
   "finding_history": [
     {
@@ -126,6 +126,20 @@
         "tier": 1
       },
       "confidence": "confirmed"
+    },
+    {
+      "id": "f-2025-06-18-001",
+      "date": "2025-06-18",
+      "type": "trial_data_readout",
+      "summary": "Camurus reported positive topline results from the POSITANO Phase 2b study of the CAM2029 octreotide subcutaneous depot in patients with symptomatic polycystic liver disease, a new indication beyond acromegaly. The study met its primary endpoint, showing a statistically significant 4.3% relative reduction in height-adjusted liver volume (p=0.044) and an 8.7% relative reduction in total liver cyst volume (p=0.016) versus placebo, plus improvements in disease symptoms, with no new or unexpected safety findings.",
+      "summary_ko": "Camurus는 증상성 다낭성 간질환 환자를 대상으로 한 CAM2029 옥트레오타이드 피하 데포의 POSITANO 임상 2b상에서 긍정적인 톱라인 결과를 보고했다. 이는 말단비대증을 넘어선 새로운 적응증이다. 시험은 주요 평가변수를 충족해 위약 대비 신장보정 간 부피의 통계적으로 유의미한 4.3% 상대적 감소(p=0.044)와 총 간낭종 부피의 8.7% 상대적 감소(p=0.016)를 보였으며, 질병 증상도 개선됐고 새롭거나 예상치 못한 안전성 문제는 없었다.",
+      "source": {
+        "name": "Camurus press release",
+        "url": "https://www.camurus.com/media/press-releases/2025/camurus-positano-study-shows-treatment-effects-with-cam2029-in-polycystic-liver-disease-patients/",
+        "tier": 1
+      },
+      "confidence": "confirmed",
+      "verification_note": "Discovered this run (2026-09-28) via a Track A breadth query; the June 2025 topline predates this run's freshness window by over a year, so it is a real finding logged append-only but is discovered-late, not a headline item for today's digest."
     }
   ]
 }
