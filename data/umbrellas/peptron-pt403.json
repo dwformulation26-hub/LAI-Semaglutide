@@ -33,10 +33,25 @@
     "partner_ko": "Eli Lilly(SmartDepot 내부 R&D 용도의 비독점 글로벌 라이선스, 평가 기간은 2025년 12월 최대 24개월로 연장)",
     "data_point": "~30% body-weight reduction at week 4 in obese-mouse model; Phase 1 human data showed no vomiting/nausea in 16 healthy adults vs. weekly semaglutide (ADA 2026)",
     "data_point_ko": "비만 마우스 모델에서 4주차 약 30% 체중 감소, 임상 1상 인체 데이터에서 건강한 성인 16명 대상 주 1회 세마글루타이드 대비 구토/메스꺼움 없음(ADA 2026)",
-    "last_updated": "2026-08-25",
+    "last_updated": "2026-09-28",
     "last_checked": "2026-09-28"
   },
   "finding_history": [
+    {
+      "id": "f-2026-09-28-001",
+      "date": "2026-09-28",
+      "type": "regulatory",
+      "summary": "Peptron secured South Korean patent registration for a sustained-release microsphere formulation covering GLP-1 receptor agonists, with the patent specification naming tirzepatide as well as semaglutide (priority date Dec 16, 2022; composition mixes one low-viscosity PLGA type with two or more high-viscosity PLGA types). Trade press framed the patent as laying the groundwork for potential business development around Peptron's tirzepatide-based candidate, referred to in the article as PT404 -- a program distinct from the tracked semaglutide PT403 asset, and separate from the Eli Lilly collaboration, which the company has stated does not include tirzepatide.",
+      "summary_ko": "펩트론은 세마글루타이드뿐 아니라 터제파타이드도 명시한 GLP-1 수용체 작용제용 서방형 미립구 제형에 대해 한국 특허 등록을 확보했다(우선일 2022년 12월 16일, 저점도 PLGA 1종과 고점도 PLGA 2종 이상을 혼합하는 조성). 업계는 이번 특허를 펩트론의 터제파타이드 기반 후보물질(기사에서 PT404로 지칭)의 사업개발(BD) 근거를 마련한 것으로 보고 있다 -- 이는 추적 중인 세마글루타이드 PT403 자산과는 별개이며, 회사가 터제파타이드를 포함하지 않는다고 밝힌 Eli Lilly 협력과도 무관하다.",
+      "source": {
+        "name": "[단독] 펩트론, 터제파타이드 장기지속형 제형 국내 특허 확보",
+        "publication": "MTN (머니투데이방송)",
+        "url": "https://news.mtn.co.kr/news-detail/2026092809275247506",
+        "tier": 2
+      },
+      "confidence": "unverified",
+      "verification_note": "Single-source this run -- no independently bylined second outlet covering this specific Sept 28, 2026 patent registration was found, so it does not meet the Tier 1/two-independent-Tier-2 confirmation bar. Not counted toward molecule_class (current_status.molecule_class left unchanged at [\"semaglutide\"] this run). Resolves part of the watchlist rotation list's 'pt404' alias-gap entry -- 'PT404' is not yet in this record's own aliases array; propose the admin add it."
+    },
     {
       "id": "f-2026-06-09-001",
       "date": "2026-06-09",

@@ -702,15 +702,15 @@
       "status": "pending",
       "created_date": "2026-09-07",
       "follow_up": {
-        "last_checked": "2026-09-27",
-        "checks_run": 4,
+        "last_checked": "2026-09-29",
+        "checks_run": 5,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's weekly deep-pass re-search (query: Precision Antibiotics DTU CarboCell IND update) found only the same DKK 60M raise and 2027 Phase 1 target (dtu.dk, May 2026), the same two peer-reviewed CarboCell G/C bone-infection papers already on file, plus a further DTU CarboCell publication on an unrelated intratumoral immunotherapy application and a general long-acting-injectables review article -- neither names Precision Antibiotics or the gentamicin/clindamycin program. No IND filing, clinical trial registration, or other company-level dated event has been reported since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI.",
-        "evidence_ko": "이번 주기 주간 심층 재조사(검색어: Precision Antibiotics DTU CarboCell IND update)에서 기존과 동일한 DKK 60M 자금 조달과 2027년 임상 1상 목표(dtu.dk, 2026년 5월), 이미 확보된 동일한 뼈 감염 관련 동료 심사 논문 2건에 더해, 무관한 종양 내 면역치료 응용에 관한 추가 DTU CarboCell 논문과 일반적인 장기지속형 주사제 리뷰 논문을 확인했다 -- 둘 다 Precision Antibiotics나 겐타마이신/클린다마이신 프로그램을 명시하지 않는다. 이후 IND 신청, 임상시험 등록 또는 그 외 회사 차원의 날짜 이벤트는 보고되지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다."
+        "evidence": "This run's cheap daily-pass re-search (query: Precision Antibiotics CarboCell DTU update) again found only the same DKK 60M raise and 2027 Phase 1 target (dtu.dk, May 2026) and the same two peer-reviewed CarboCell G/C bone-infection papers already on file, plus an unrelated DTU CarboCell publication on intratumoral immunotherapy that does not name Precision Antibiotics. No IND filing, clinical trial registration, or other company-level dated event has been reported since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI.",
+        "evidence_ko": "이번 주기 일일 저비용 재조사(검색어: Precision Antibiotics CarboCell DTU update)에서도 기존과 동일한 DKK 60M 자금 조달과 2027년 임상 1상 목표(dtu.dk, 2026년 5월), 이미 확보된 동일한 뼈 감염 관련 동료 심사 논문 2건만 확인됐고, Precision Antibiotics를 명시하지 않는 무관한 종양 내 면역치료 응용에 관한 DTU CarboCell 논문 1건이 추가로 확인됐다. 이후 IND 신청, 임상시험 등록 또는 그 외 회사 차원의 날짜 이벤트는 보고되지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다."
       },
       "resolution": null
     },
@@ -1265,15 +1265,15 @@
       "status": "pending",
       "created_date": "2026-09-20",
       "follow_up": {
-        "last_checked": "2026-09-27",
-        "checks_run": 2,
+        "last_checked": "2026-09-29",
+        "checks_run": 3,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's weekly deep-pass re-search (query: Beijing Biote Pharmaceutical tirzepatide CN121154792A update clinical trial) again found only the same patent record and general company background; no clinical trial registration, IND filing or further company disclosure since the patent's 2025-10-24 filing. Named entity, technical claim and confirmed_source remain cleared from the patent record itself; second_dated_event remains unmet, since per the skill's rule a patent filing does not by itself count as a stage-bearing event.",
-        "evidence_ko": "이번 주기 주간 심층 재조사(검색어: Beijing Biote Pharmaceutical tirzepatide CN121154792A update clinical trial)에서도 동일한 특허 기록과 일반적인 회사 정보만 확인됐다. 2025-10-24 특허 출원 이후 임상시험 등록, IND 신청 또는 추가 회사 공개는 없었다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 특허 기록 자체로 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이 스킬의 규칙에 따라 특허 출원 자체가 개발 단계를 나타내는 이벤트로 인정되지 않아 여전히 미충족이다."
+        "evidence": "This run's cheap daily-pass re-search (rotation-list query: CN121154792A 替尔泊肽) again found only the same patent record and general company background; no clinical trial registration, IND filing or further company disclosure since the patent's 2025-10-24 filing. Named entity, technical claim and confirmed_source remain cleared from the patent record itself; second_dated_event remains unmet, since per the skill's rule a patent filing does not by itself count as a stage-bearing event.",
+        "evidence_ko": "이번 주기 일일 저비용 재조사(로테이션 목록 검색어: CN121154792A 替尔泊肽)에서도 동일한 특허 기록과 일반적인 회사 정보만 확인됐다. 2025-10-24 특허 출원 이후 임상시험 등록, IND 신청 또는 추가 회사 공개는 없었다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 특허 기록 자체로 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이 스킬의 규칙에 따라 특허 출원 자체가 개발 단계를 나타내는 이벤트로 인정되지 않아 여전히 미충족이다."
       },
       "resolution": null
     },
