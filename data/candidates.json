@@ -123,15 +123,15 @@
       "status": "pending",
       "created_date": "2026-09-02",
       "follow_up": {
-        "last_checked": "2026-09-27",
-        "checks_run": 5,
+        "last_checked": "2026-09-30",
+        "checks_run": 6,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's weekly deep-pass re-search (query: 삼천당제약 류프로렐린 FDA 라이선스 업데이트) found only unrelated company news -- a July 20, 2026 FDA Pre-ANDA response for Samchundang's oral, SNAC-free generic semaglutide tablet (S-PASS platform), which is a daily oral program outside this candidate's leuprorelin/octreotide long-acting injectable scope, so it is not logged as evidence here. No new dated event for the leuprorelin/octreotide LAI lineup itself has surfaced since the Jan 7, 2026 term sheet; confirmed_source remains cleared, second_dated_event still unmet.",
-        "evidence_ko": "이번 주기 주간 심층 재조사(검색어: 삼천당제약 류프로렐린 FDA 라이선스 업데이트)에서는 무관한 회사 소식만 확인됐다 -- 2026년 7월 20일 삼천당제약의 경구용 SNAC-Free 제네릭 세마글루타이드 정제(S-PASS 플랫폼)에 대한 FDA Pre-ANDA 답변서로, 이는 이 후보의 류프로렐린/옥트레오타이드 장기지속형 주사제 범위를 벗어난 경구 일일 제제 프로그램이어서 여기에 근거로 기록하지 않는다. 류프로렐린/옥트레오타이드 LAI 라인업 자체에 대한 새로운 날짜 이벤트는 2026년 1월 7일 텀시트 이후 나타나지 않았다. confirmed_source(확인된 출처)는 계속 충족된 상태이며, second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다."
+        "evidence": "This run's cheap daily-pass re-search (query: 삼천당제약 류프로렐린 옥트레오타이드 FDA 라이선스 업데이트) found only the same Jan 7/15, 2026 term-sheet and FDA-submission-target reporting recirculated across additional outlets (hankyung.com, thebionews.net); no new dated event for the leuprorelin/octreotide LAI lineup has surfaced. confirmed_source remains cleared, second_dated_event still unmet.",
+        "evidence_ko": "이번 주기 저비용 일일 재조사(검색어: 삼천당제약 류프로렐린 옥트레오타이드 FDA 라이선스 업데이트)에서도 2026년 1월 7일/15일 텀시트 및 FDA 제출 목표 보도가 추가 매체(hankyung.com, thebionews.net)에 재게재된 것만 확인됐다. 류프로렐린/옥트레오타이드 LAI 라인업에 대한 새로운 날짜 이벤트는 나타나지 않았다. confirmed_source(확인된 출처)는 계속 충족된 상태이며, second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다."
       },
       "resolution": null
     },
@@ -167,15 +167,15 @@
       "status": "pending",
       "created_date": "2026-09-02",
       "follow_up": {
-        "last_checked": "2026-09-27",
-        "checks_run": 6,
+        "last_checked": "2026-09-30",
+        "checks_run": 7,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's weekly deep-pass re-search (query: 스파이더코어 SpiderCore 지투지바이오 업데이트) again found only the same 2026-07-21 G2GBio/SpiderCore AI-platform contract, recirculated across the same additional outlets (etoday.co.kr, thebionews.net, supple.kr, sedaily.com); no further dated development has surfaced. confirmed_source remains cleared from the prior check; second_dated_event still unmet. SCOPE CAVEAT STILL APPLIES: SpiderCore remains a KAIST-founded AI/software vendor selling an R&D tool to G2GBio, not itself a drug or delivery-technology developer -- recommend an explicit admin scope call on whether this belongs in the registry at all, independent of the promotion bar.",
-        "evidence_ko": "이번 주기 주간 심층 재조사(검색어: 스파이더코어 SpiderCore 지투지바이오 업데이트)에서도 동일한 2026년 7월 21일 지투지바이오·스파이더코어 AI 플랫폼 계약이 동일한 추가 매체(etoday.co.kr, thebionews.net, supple.kr, sedaily.com)에 재게재된 것만 확인됐다. 추가적인 날짜 이벤트는 확인되지 않았다. confirmed_source(확인된 출처)는 이전 조사에서 이미 충족된 상태를 유지하며, second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 스파이더코어는 지투지바이오에 R&D 도구를 판매하는 KAIST 창업 AI/소프트웨어 업체로, 그 자체가 약물 또는 전달 기술 개발사가 아니다. 승격 기준과는 별개로 이 후보가 레지스트리에 포함돼야 하는지 여부에 대해 관리자의 명시적인 범위 판단을 권고한다."
+        "evidence": "This run's cheap daily-pass re-search (query: 스파이더코어 SpiderCore 지투지바이오 업데이트) again found only the same 2026-07-21 G2GBio/SpiderCore AI-platform contract, recirculated across additional outlets (etoday.co.kr, mt.co.kr, dailypharm.com); no further dated development has surfaced. confirmed_source remains cleared from the prior check; second_dated_event still unmet. SCOPE CAVEAT STILL APPLIES: SpiderCore remains a KAIST-founded AI/software vendor selling an R&D tool to G2GBio, not itself a drug or delivery-technology developer -- the admin scope call from the prior check remains open.",
+        "evidence_ko": "이번 주기 저비용 일일 재조사(검색어: 스파이더코어 SpiderCore 지투지바이오 업데이트)에서도 동일한 2026년 7월 21일 지투지바이오·스파이더코어 AI 플랫폼 계약이 추가 매체(etoday.co.kr, mt.co.kr, dailypharm.com)에 재게재된 것만 확인됐다. 추가적인 날짜 이벤트는 확인되지 않았다. confirmed_source(확인된 출처)는 이전 조사에서 이미 충족된 상태를 유지하며, second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 스파이더코어는 지투지바이오에 R&D 도구를 판매하는 KAIST 창업 AI/소프트웨어 업체로, 그 자체가 약물 또는 전달 기술 개발사가 아니다. 이전 조사에서 제기된 관리자 범위 판단 요청은 여전히 미해결이다."
       },
       "resolution": null
     },
