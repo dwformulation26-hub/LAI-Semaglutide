@@ -902,15 +902,15 @@
       "status": "pending",
       "created_date": "2026-09-11",
       "follow_up": {
-        "last_checked": "2026-09-28",
-        "checks_run": 6,
+        "last_checked": "2026-10-01",
+        "checks_run": 7,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's cheap daily-pass re-search (query: Appel Sauce Studios PNP hydrogel Stanford update) again found only the same underlying Stanford PNP hydrogel research program -- the peer-reviewed shingles-vaccine depot paper already on file plus unrelated PNP hydrogel work (a surgical-adhesion gel, a thiol-ene click-chemistry customization paper) -- none of which independently names Appel Sauce Studios as a company. Still no pipeline page, financing announcement, or clinical registration specific to the semaglutide/tirzepatide hydrogel depot program itself; second_dated_event remains unmet.",
-        "evidence_ko": "이번 주기 저비용 일일 재조사(검색어: Appel Sauce Studios PNP hydrogel Stanford update)에서도 기존 파일에 있는 동일한 기저 Stanford PNP 하이드로겔 연구 프로그램만 확인됐다 -- 이미 파일에 있는 동료 심사 대상포진 백신 데포 논문에 더해 무관한 PNP 하이드로겔 연구(수술 유착 방지 겔, 티올-엔 클릭 화학 커스터마이징 논문)이며, 어느 것도 Appel Sauce Studios를 회사로 독립적으로 명시하지 않는다. 세마글루타이드/터제파타이드 하이드로겔 데포 프로그램 자체와 관련된 파이프라인 페이지, 자금 조달 발표, 임상시험 등록은 여전히 없다. second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다."
+        "evidence": "This run's cheap daily-pass re-search (query: Appel Sauce Studios Stanford hydrogel long-acting injectable) again found only the same underlying Stanford PNP hydrogel research program -- the peer-reviewed shingles-vaccine depot paper already on file plus unrelated PNP hydrogel work (a surgical-adhesion gel, a hydrogel structure-property-performance engineering paper) -- none of which independently names Appel Sauce Studios as a company. Still no pipeline page, financing announcement, or clinical registration specific to the semaglutide/tirzepatide hydrogel depot program itself; second_dated_event remains unmet.",
+        "evidence_ko": "이번 주기 저비용 일일 재조사(검색어: Appel Sauce Studios Stanford hydrogel long-acting injectable)에서도 기존 파일에 있는 동일한 기저 Stanford PNP 하이드로겔 연구 프로그램만 확인됐다 -- 이미 파일에 있는 동료 심사 대상포진 백신 데포 논문에 더해 무관한 PNP 하이드로겔 연구(수술 유착 방지 겔, 하이드로겔 구조-물성-성능 공학 논문)이며, 어느 것도 Appel Sauce Studios를 회사로 독립적으로 명시하지 않는다. 세마글루타이드/터제파타이드 하이드로겔 데포 프로그램 자체와 관련된 파이프라인 페이지, 자금 조달 발표, 임상시험 등록은 여전히 없다. second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다."
       },
       "resolution": null
     },
@@ -1219,15 +1219,15 @@
       "status": "pending",
       "created_date": "2026-09-18",
       "follow_up": {
-        "last_checked": "2026-09-27",
-        "checks_run": 3,
+        "last_checked": "2026-10-01",
+        "checks_run": 4,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "Two independent Tier 2 outlets (EBN, Korea Herald) corroborate the same Sept 17, 2026 announcement that Alteogen filed a PCT application for its 'Long-Acting Conjugate' platform and is advancing once-monthly obesity candidate ALT-M5, clearing named_entity, technical_claim and confirmed_source. This run's weekly deep-pass re-search (query: ALT-M5 Alteogen update news September 2026) again found only the same Sept 17, 2026 PCT-filing announcement recirculated across additional outlets (NOCUTNEWS, Seoul Economic Daily, monews.co.kr), still naming the planned ObesityWeek 2026 (Nov 14-17) data presentation as a forward-looking plan, not yet occurred. A separate Sept 2, 2026 Alteogen deal (ALT-B4 platform licensed to Novartis, up to $3.2B) was also found but is an unrelated antibody/hyaluronidase-delivery platform, not ALT-M5 or the Long-Acting Conjugate program, so it is not counted as this candidate's second dated event. second_dated_event remains unmet. Molecule identity behind the conjugate was not disclosed, so no molecule_class can be assigned to this candidate.",
-        "evidence_ko": "독립적인 Tier 2 매체 2곳(EBN, Korea Herald)이 알테오젠이 '장기지속형 접합체' 플랫폼에 대한 PCT를 출원하고 월 1회 비만 후보물질 ALT-M5를 개발 중이라는 2026년 9월 17일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. 이번 주기 주간 심층 재조사(검색어: ALT-M5 Alteogen update news September 2026)에서도 동일한 2026년 9월 17일 PCT 출원 발표가 추가 매체(NOCUTNEWS, 서울경제, 메디칼업저버)에 재게재된 것만 확인됐으며, 예정된 ObesityWeek 2026(11월 14~17일) 데이터 발표는 여전히 아직 일어나지 않은 미래 계획으로 언급됐다. 별도의 2026년 9월 2일 알테오젠 계약(ALT-B4 플랫폼을 Novartis에 최대 $3.2B로 라이선스)도 확인됐으나 이는 ALT-M5나 장기지속형 접합체 프로그램과 무관한 항체/히알루로니다제 전달 플랫폼이어서 이 후보의 두 번째 날짜 이벤트로 반영하지 않는다. second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다. 접합체가 탑재한 분자의 정체는 공개되지 않아 이 후보에는 molecule_class를 부여할 수 없다."
+        "evidence": "Two independent Tier 2 outlets (EBN, Korea Herald) corroborate the same Sept 17, 2026 announcement that Alteogen filed a PCT application for its 'Long-Acting Conjugate' platform and is advancing once-monthly obesity candidate ALT-M5, clearing named_entity, technical_claim and confirmed_source. This run's cheap daily-pass re-search (query: Alteogen ALT-M5 long-acting conjugate obesity) again found only the same Sept 17, 2026 PCT-filing announcement recirculated across additional outlets, including a Sept 29, 2026 Seoul Economic Daily roundup of Korean obesity-drug developers that still describes the ObesityWeek 2026 (Nov 14-17) data presentation as a forward-looking plan, not yet occurred. second_dated_event remains unmet. Molecule identity behind the conjugate was not disclosed, so no molecule_class can be assigned to this candidate.",
+        "evidence_ko": "독립적인 Tier 2 매체 2곳(EBN, Korea Herald)이 알테오젠이 '장기지속형 접합체' 플랫폼에 대한 PCT를 출원하고 월 1회 비만 후보물질 ALT-M5를 개발 중이라는 2026년 9월 17일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. 이번 주기 저비용 일일 재조사(검색어: Alteogen ALT-M5 long-acting conjugate obesity)에서도 동일한 2026년 9월 17일 PCT 출원 발표가 추가 매체에 재게재된 것만 확인됐으며, 여기에는 국내 비만 치료제 개발사를 정리한 2026년 9월 29일 서울경제 기사도 포함되나 예정된 ObesityWeek 2026(11월 14~17일) 데이터 발표는 여전히 아직 일어나지 않은 미래 계획으로 언급됐다. second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다. 접합체가 탑재한 분자의 정체는 공개되지 않아 이 후보에는 molecule_class를 부여할 수 없다."
       },
       "resolution": null
     },
@@ -1317,6 +1317,19 @@
           "date": "2026-04-13",
           "date_basis": "inferred",
           "verification_note": "Date inferred from the 'most recent update posted April 13, 2026' framing on the related clinicaltrials.gov listing for ABBV-295 (NCT07291232); tipranks.com is on this run's blocked-domain list so was not fetched directly, and the Phase 2 registration's own NCT number/first-posted date was not independently confirmed this run."
+        },
+        {
+          "source": {
+            "name": "AbbVie Presents Detailed Phase 1 Data for ABBV-295, a Long-Acting Amylin Analog, Demonstrating Favorable Tolerability and Pharmacokinetic Profile at EASD 2026",
+            "publication": "AbbVie",
+            "url": "https://news.abbvie.com/2026-09-30-AbbVie-Presents-Detailed-Phase-1-Data-for-ABBV-295,-a-Long-Acting-Amylin-Analog,-Demonstrating-Favorable-Tolerability-and-Pharmacokinetic-Profile-at-EASD-2026",
+            "tier": 1
+          },
+          "snippet": "AbbVie presented full Phase 1 MAD data (Part 2B/2C, n=60: 45 ABBV-295 vs 15 placebo) for ABBV-295 at EASD 2026: an approximately 11-12 day half-life with dose-proportional plasma exposure supporting weekly, every-other-week and monthly regimens; body-weight reductions of -7.8% to -9.8% at week 12 (weekly cohorts), -9.7% (every-other-week) and -7.9% (monthly) at week 13, versus about -0.3% for placebo; nausea in 33.3% of ABBV-295 participants vs 20.0% placebo, diarrhea in 20.0% vs 0.0%.",
+          "snippet_ko": "AbbVie는 EASD 2026에서 ABBV-295의 임상 1상 MAD 전체 데이터(Part 2B/2C, n=60: ABBV-295군 45명 대 위약군 15명)를 발표했다: 반감기는 약 11-12일이며 용량 비례적 혈중 노출을 보여 주 1회, 격주 1회, 월 1회 투여 요법을 뒷받침했다. 체중 감소율은 12주차 기준 -7.8%~-9.8%(주 1회 코호트), 13주차 기준 격주 1회 -9.7%, 월 1회 -7.9%였으며(위약군 약 -0.3%), 오심은 ABBV-295군 33.3% 대 위약군 20.0%, 설사는 20.0% 대 0.0%로 나타났다.",
+          "date": "2026-09-30",
+          "date_basis": "stated",
+          "verification_note": "Found via this run's Track B1 class query (long-acting amylin analog once-monthly); news.abbvie.com is on this run's blocked-domain list, read from search snippets/summary only. A further, more granular dated event on the same underlying Phase 1 MAD study already cited above."
         }
       ],
       "fuzzy_match": {

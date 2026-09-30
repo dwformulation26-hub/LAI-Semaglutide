@@ -15,11 +15,11 @@
     "Roche petrelintide"
   ],
   "current_status": {
-    "stage": "Phase 2 complete with positive topline (Mar 2026). Zealand and Roche formally endorsed advancing to Phase 3 on Apr 29 2026 with initiation planned for H2 2026; no source confirms a Phase 3 trial has started.",
-    "stage_ko": "임상 2상을 완료하고 긍정적 톱라인을 발표했다(2026년 3월). Zealand와 Roche는 2026년 4월 29일 임상 3상 진입을 공식 추인했으며 개시는 2026년 H2로 계획돼 있다. 임상 3상 시험이 시작됐다고 확인한 출처는 없다.",
-    "stage_label": "Phase 2",
-    "stage_evidence": "The April 2026 announcement endorses advancing to Phase 3 with initiation planned for H2 2026, which is forward-looking; the label stays at Phase 2 until a source states the Phase 3 trial is underway.",
-    "stage_evidence_ko": "2026년 4월 발표는 2026년 H2 개시 계획과 함께 임상 3상 진입을 추인한 것으로 미래 계획에 해당한다. 임상 3상 시험이 진행 중이라고 명시한 출처가 나올 때까지 단계 표시는 임상 2상으로 유지한다.",
+    "stage": "Global registrational Phase 3 ZUPREME program (ZUPREME-3, -4, -5) for petrelintide monotherapy initiated Sep 22 2026. Full Phase 2 ZUPREME-1 data published in The Lancet Diabetes & Endocrinology and presented at EASD 2026 (Sep 29-30 2026): up to 10.7% mean body-weight reduction at week 42 vs 1.7% placebo, plus secondary cardiometabolic benefits.",
+    "stage_ko": "페트렐린타이드 단독요법의 글로벌 허가용(등록) 임상 3상 ZUPREME 프로그램(ZUPREME-3, -4, -5)이 2026년 9월 22일 개시됐다. 임상 2상 ZUPREME-1의 전체 데이터가 The Lancet Diabetes & Endocrinology에 발표됐고 EASD 2026(2026년 9월 29-30일)에서 발표됐다: 42주차 위약 대비 최대 10.7%의 평균 체중 감소(위약군 1.7%)와 함께 2차 심대사 지표 개선이 나타났다.",
+    "stage_label": "Phase 3",
+    "stage_evidence": "Zealand Pharma announced initiation of the registrational Phase 3 ZUPREME program (three trials) for petrelintide on Sep 22 2026, an explicit, stage-bearing trial-initiation event, not forward-looking language.",
+    "stage_evidence_ko": "Zealand Pharma는 2026년 9월 22일 페트렐린타이드의 허가용(등록) 임상 3상 ZUPREME 프로그램(3건의 시험) 개시를 발표했다. 이는 미래형 표현이 아닌 명시적이고 개발 단계를 나타내는 임상시험 개시 이벤트다.",
     "molecule_class": [
       "amylin"
     ],
@@ -29,10 +29,10 @@
     "dosing_target_ko": "주 1회(피하); 데포 제형 아님",
     "partner": "Roche (exclusive collaboration and licence signed Mar 12 2025; $1.6B upfront, 50/50 profit share on monotherapy and on the fixed-dose combination with Roche's CT-388)",
     "partner_ko": "Roche(2025년 3월 12일 독점 공동 개발 및 라이선스 계약 체결; 계약금 $1.6B, 단독요법 및 Roche의 CT-388과의 고정용량 복합제에 대해 50/50 이익 분배)",
-    "data_point": "Phase 2: double-digit weight loss with placebo-like tolerability — nausea 16.7% with 80% of events mild, vomiting below detectable levels, diarrhoea 1.0%, constipation 2.3%",
-    "data_point_ko": "임상 2상: 위약 수준의 내약성과 함께 두 자릿수 체중 감소 — 오심 16.7%(이 중 80%가 경증), 구토는 검출 한계 미만, 설사 1.0%, 변비 2.3%",
-    "last_updated": "2026-04-29",
-    "last_checked": "2026-09-28"
+    "data_point": "Phase 2 ZUPREME-1 (n=485): up to 10.7% mean body-weight reduction at week 42 vs 1.7% placebo; waist circumference down up to 10.8cm vs 4.3cm placebo; hs-CRP down up to 41% vs 6% placebo; triglycerides down up to 21% vs 9% placebo; GI AEs mild and placebo-like, no vomiting or discontinuations at the maximally effective dose.",
+    "data_point_ko": "임상 2상 ZUPREME-1(n=485): 42주차 체중 평균 최대 10.7% 감소(위약군 1.7%); 허리둘레 최대 10.8cm 감소(위약군 4.3cm); hs-CRP 최대 41% 감소(위약군 6%); 중성지방 최대 21% 감소(위약군 9%); 위장관 이상반응은 경증이고 위약 수준이었으며, 최대 효과 용량에서 구토나 중단 사례 없음.",
+    "last_updated": "2026-09-29",
+    "last_checked": "2026-10-01"
   },
   "finding_history": [
     {
@@ -70,6 +70,35 @@
       "source": {
         "name": "Zealand Pharma release via GlobeNewswire",
         "url": "https://www.globenewswire.com/news-release/2026/04/29/3284133/0/en/zealand-pharma-and-roche-to-advance-petrelintide-an-amylin-analog-to-phase-3-trials-for-chronic-weight-management.html",
+        "tier": 2
+      },
+      "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-09-22-001",
+      "date": "2026-09-22",
+      "type": "regulatory",
+      "summary": "Zealand Pharma and Roche announced initiation of the global registrational Phase 3 ZUPREME program for petrelintide monotherapy in people with overweight or obesity, comprising three trials: ZUPREME-3, ZUPREME-4 and ZUPREME-5.",
+      "summary_ko": "Zealand Pharma와 Roche는 과체중 또는 비만 환자를 대상으로 한 페트렐린타이드 단독요법의 글로벌 허가용(등록) 임상 3상 ZUPREME 프로그램 개시를 발표했다. 이 프로그램은 ZUPREME-3, ZUPREME-4, ZUPREME-5 등 3건의 시험으로 구성된다.",
+      "source": {
+        "name": "Zealand Pharma announcement via GlobeNewswire",
+        "publication": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/09/22/3366613/0/en/zealand-pharma-announces-initiation-of-the-registrational-phase-3-zupreme-program-of-petrelintide-in-people-with-overweight-or-obesity.html",
+        "tier": 2
+      },
+      "confidence": "confirmed",
+      "verification_note": "This record was throttled through last_checked 2026-09-28 under the quiet-umbrella rule; the announcement itself predates that check, so it is logged as real news discovered later than the standard freshness window rather than as a headline item."
+    },
+    {
+      "id": "f-2026-09-29-001",
+      "date": "2026-09-29",
+      "type": "trial_data_readout",
+      "summary": "Zealand Pharma announced publication of full Phase 2 ZUPREME-1 trial results for petrelintide (n=485) in The Lancet Diabetes & Endocrinology, with additional data presented at EASD 2026: up to 10.7% mean body-weight reduction at week 42 versus 1.7% with placebo, plus secondary cardiometabolic benefits in waist circumference, hs-CRP and triglycerides.",
+      "summary_ko": "Zealand Pharma는 페트렐린타이드의 임상 2상 ZUPREME-1 시험(n=485) 전체 결과가 The Lancet Diabetes & Endocrinology에 발표됐다고 밝혔으며, EASD 2026에서 추가 데이터가 발표됐다: 42주차 체중 평균 최대 10.7% 감소(위약군 1.7%)와 함께 허리둘레, hs-CRP, 중성지방 등 2차 심대사 지표 개선이 나타났다.",
+      "source": {
+        "name": "Zealand Pharma announcement via GlobeNewswire",
+        "publication": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/09/29/3371443/0/en/zealand-pharma-to-present-additional-data-from-phase-2-zupreme-1-trial-for-petrelintide-at-easd-2026-and-announces-publication-of-trial-results-in-the-lancet-diabetes-endocrinology.html",
         "tier": 2
       },
       "confidence": "confirmed"
