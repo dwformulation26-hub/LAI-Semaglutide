@@ -120,7 +120,7 @@
         "closest_umbrella_id": "peptron-luprone",
         "score": 0.32
       },
-      "status": "pending",
+      "status": "stalled",
       "created_date": "2026-09-02",
       "follow_up": {
         "last_checked": "2026-09-30",
@@ -130,8 +130,8 @@
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's cheap daily-pass re-search (query: 삼천당제약 류프로렐린 옥트레오타이드 FDA 라이선스 업데이트) found only the same Jan 7/15, 2026 term-sheet and FDA-submission-target reporting recirculated across additional outlets (hankyung.com, thebionews.net); no new dated event for the leuprorelin/octreotide LAI lineup has surfaced. confirmed_source remains cleared, second_dated_event still unmet.",
-        "evidence_ko": "이번 주기 저비용 일일 재조사(검색어: 삼천당제약 류프로렐린 옥트레오타이드 FDA 라이선스 업데이트)에서도 2026년 1월 7일/15일 텀시트 및 FDA 제출 목표 보도가 추가 매체(hankyung.com, thebionews.net)에 재게재된 것만 확인됐다. 류프로렐린/옥트레오타이드 LAI 라인업에 대한 새로운 날짜 이벤트는 나타나지 않았다. confirmed_source(확인된 출처)는 계속 충족된 상태이며, second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다."
+        "evidence": "No new evidence in 30 days across 6 checks -- recommend reject or snooze. The newest dated event on file (the Jan 7/15, 2026 term-sheet and FDA-submission-target reporting) predates this candidate's own 2026-09-02 creation date, and every follow-up since (including this run's free date-math pass, 2026-10-02) has only found that same disclosure recirculated across additional outlets. confirmed_source remains cleared; second_dated_event remains unmet with no sign of a second company-level event since creation.",
+        "evidence_ko": "30일간 6회 재확인에도 새로운 근거가 없음 -- 거부(reject) 또는 보류(snooze)를 권고한다. 파일에 기록된 최신 날짜 이벤트(2026년 1월 7일/15일 텀시트 및 FDA 제출 목표 보도)는 이 후보의 생성일(2026-09-02)보다 앞서며, 이후의 모든 후속 조사(이번 주기의 무비용 날짜 계산 포함, 2026-10-02)에서도 동일한 공시가 추가 매체에 재게재된 것만 확인됐다. confirmed_source(확인된 출처)는 계속 충족되나, second_dated_event(두 번째 날짜 이벤트)는 생성 이후 두 번째 회사 차원 이벤트의 조짐 없이 여전히 미충족이다."
       },
       "resolution": null
     },
@@ -164,7 +164,7 @@
         "closest_umbrella_id": "samsung-bioepis-g2gbio-gb7001",
         "score": 0.25
       },
-      "status": "pending",
+      "status": "stalled",
       "created_date": "2026-09-02",
       "follow_up": {
         "last_checked": "2026-09-30",
@@ -174,8 +174,8 @@
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's cheap daily-pass re-search (query: 스파이더코어 SpiderCore 지투지바이오 업데이트) again found only the same 2026-07-21 G2GBio/SpiderCore AI-platform contract, recirculated across additional outlets (etoday.co.kr, mt.co.kr, dailypharm.com); no further dated development has surfaced. confirmed_source remains cleared from the prior check; second_dated_event still unmet. SCOPE CAVEAT STILL APPLIES: SpiderCore remains a KAIST-founded AI/software vendor selling an R&D tool to G2GBio, not itself a drug or delivery-technology developer -- the admin scope call from the prior check remains open.",
-        "evidence_ko": "이번 주기 저비용 일일 재조사(검색어: 스파이더코어 SpiderCore 지투지바이오 업데이트)에서도 동일한 2026년 7월 21일 지투지바이오·스파이더코어 AI 플랫폼 계약이 추가 매체(etoday.co.kr, mt.co.kr, dailypharm.com)에 재게재된 것만 확인됐다. 추가적인 날짜 이벤트는 확인되지 않았다. confirmed_source(확인된 출처)는 이전 조사에서 이미 충족된 상태를 유지하며, second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 스파이더코어는 지투지바이오에 R&D 도구를 판매하는 KAIST 창업 AI/소프트웨어 업체로, 그 자체가 약물 또는 전달 기술 개발사가 아니다. 이전 조사에서 제기된 관리자 범위 판단 요청은 여전히 미해결이다."
+        "evidence": "No new evidence in 30 days across 7 checks -- recommend reject or snooze. The only dated event on file (the 2026-07-21 G2GBio/SpiderCore AI-platform contract) predates this candidate's own 2026-09-02 creation date, and every follow-up since (including this run's free date-math pass, 2026-10-02) has only found that same contract recirculated across additional outlets. confirmed_source remains cleared; second_dated_event remains unmet. SCOPE CAVEAT STILL APPLIES: SpiderCore remains a KAIST-founded AI/software vendor selling an R&D tool to G2GBio, not itself a drug or delivery-technology developer -- the admin scope call from prior checks remains open.",
+        "evidence_ko": "30일간 7회 재확인에도 새로운 근거가 없음 -- 거부(reject) 또는 보류(snooze)를 권고한다. 파일에 기록된 유일한 날짜 이벤트(2026년 7월 21일 지투지바이오·스파이더코어 AI 플랫폼 계약)는 이 후보의 생성일(2026-09-02)보다 앞서며, 이후의 모든 후속 조사(이번 주기의 무비용 날짜 계산 포함, 2026-10-02)에서도 동일한 계약이 추가 매체에 재게재된 것만 확인됐다. confirmed_source(확인된 출처)는 계속 충족되나, second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 스파이더코어는 지투지바이오에 R&D 도구를 판매하는 KAIST 창업 AI/소프트웨어 업체로, 그 자체가 약물 또는 전달 기술 개발사가 아니다. 이전 조사에서 제기된 관리자 범위 판단 요청은 여전히 미해결이다."
       },
       "resolution": null
     },
@@ -702,15 +702,15 @@
       "status": "pending",
       "created_date": "2026-09-07",
       "follow_up": {
-        "last_checked": "2026-09-29",
-        "checks_run": 5,
+        "last_checked": "2026-10-02",
+        "checks_run": 6,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's cheap daily-pass re-search (query: Precision Antibiotics CarboCell DTU update) again found only the same DKK 60M raise and 2027 Phase 1 target (dtu.dk, May 2026) and the same two peer-reviewed CarboCell G/C bone-infection papers already on file, plus an unrelated DTU CarboCell publication on intratumoral immunotherapy that does not name Precision Antibiotics. No IND filing, clinical trial registration, or other company-level dated event has been reported since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI.",
-        "evidence_ko": "이번 주기 일일 저비용 재조사(검색어: Precision Antibiotics CarboCell DTU update)에서도 기존과 동일한 DKK 60M 자금 조달과 2027년 임상 1상 목표(dtu.dk, 2026년 5월), 이미 확보된 동일한 뼈 감염 관련 동료 심사 논문 2건만 확인됐고, Precision Antibiotics를 명시하지 않는 무관한 종양 내 면역치료 응용에 관한 DTU CarboCell 논문 1건이 추가로 확인됐다. 이후 IND 신청, 임상시험 등록 또는 그 외 회사 차원의 날짜 이벤트는 보고되지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다."
+        "evidence": "This run's cheap daily-pass re-search (2026-10-02, query: Precision Antibiotics CarboCell DTU update IND clinical trial) again found only the same DKK 60M raise and 2027 Phase 1 target (dtu.dk, May 2026) and the same two peer-reviewed CarboCell G/C bone-infection papers already on file. No IND filing, clinical trial registration, or other company-level dated event has been reported since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI.",
+        "evidence_ko": "이번 주기 일일 저비용 재조사(2026-10-02, 검색어: Precision Antibiotics CarboCell DTU update IND clinical trial)에서도 기존과 동일한 DKK 60M 자금 조달과 2027년 임상 1상 목표(dtu.dk, 2026년 5월), 이미 확보된 동일한 뼈 감염 관련 동료 심사 논문 2건만 확인됐다. 이후 IND 신청, 임상시험 등록 또는 그 외 회사 차원의 날짜 이벤트는 보고되지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다."
       },
       "resolution": null
     },
@@ -1409,15 +1409,83 @@
       "status": "pending",
       "created_date": "2026-09-20",
       "follow_up": {
-        "last_checked": "2026-09-28",
-        "checks_run": 3,
+        "last_checked": "2026-10-02",
+        "checks_run": 4,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "Two independent Tier 2 outlets (BioSpace, BioPharma Dive) corroborate the same Aug 28, 2023 announcement that i2o Therapeutics acquired Intarcia's Medici osmotic-implant platform and a long-acting GLP-1/amylin(DACRA)/glucagon/PYY pipeline designed for twice-yearly dosing, clearing named_entity, technical_claim and confirmed_source. ITCA 650's FDA rejection (2023-09-21 advisory vote, 2024-08-23 refusal) remains the only further verified dated event and is left unresolved pending the admin's read on whether a rejection qualifies (see prior cycle's note). This run's cheap daily-pass re-search (query: i2o Therapeutics Medici implant update news) again found only the same 2023 Series A/Medici-acquisition and ITCA 650 rejection history already on file; no 2026-specific clinical, financing or regulatory update for the broader DACRA/GLP-1/glucagon/PYY pipeline. second_dated_event remains unmet on the same open judgment call.",
-        "evidence_ko": "독립적인 Tier 2 매체 2곳(BioSpace, BioPharma Dive)이 i2o Therapeutics가 Intarcia의 Medici 삼투압 임플란트 플랫폼과 연 2회 투여를 목표로 하는 장기지속형 GLP-1/아밀린(DACRA)/글루카곤/PYY 파이프라인을 인수했다는 2023년 8월 28일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. ITCA 650의 FDA 거부(2023-09-21 자문위 표결, 2024-08-23 최종 거부)는 여전히 유일한 추가 검증 날짜 이벤트로 남아 있으며, 거부가 조건을 충족하는지에 대한 관리자의 판단을 기다리고 있다(이전 주기 참고). 이번 주기 저비용 일일 재조사(검색어: i2o Therapeutics Medici implant update news)에서도 기존 파일에 있는 2023년 시리즈 A/Medici 인수 및 ITCA 650 거부 이력만 확인됐다. 더 넓은 DACRA/GLP-1/글루카곤/PYY 파이프라인에 대한 2026년 관련 업데이트는 없다. second_dated_event(두 번째 날짜 이벤트)는 동일한 미해결 판단 사안으로 여전히 미충족이다."
+        "evidence": "Two independent Tier 2 outlets (BioSpace, BioPharma Dive) corroborate the same Aug 28, 2023 announcement that i2o Therapeutics acquired Intarcia's Medici osmotic-implant platform and a long-acting GLP-1/amylin(DACRA)/glucagon/PYY pipeline designed for twice-yearly dosing, clearing named_entity, technical_claim and confirmed_source. ITCA 650's FDA rejection (2023-09-21 advisory vote, 2024-08-23 refusal) remains the only further verified dated event and is left unresolved pending the admin's read on whether a rejection qualifies (see prior cycle's note). This run's cheap daily-pass re-search (2026-10-02, query: i2o Therapeutics Medici implant update news) again found only the same 2023 Series A/Medici-acquisition and ITCA 650 rejection history already on file; no 2026-specific clinical, financing or regulatory update for the broader DACRA/GLP-1/glucagon/PYY pipeline. second_dated_event remains unmet on the same open judgment call.",
+        "evidence_ko": "독립적인 Tier 2 매체 2곳(BioSpace, BioPharma Dive)이 i2o Therapeutics가 Intarcia의 Medici 삼투압 임플란트 플랫폼과 연 2회 투여를 목표로 하는 장기지속형 GLP-1/아밀린(DACRA)/글루카곤/PYY 파이프라인을 인수했다는 2023년 8월 28일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. ITCA 650의 FDA 거부(2023-09-21 자문위 표결, 2024-08-23 최종 거부)는 여전히 유일한 추가 검증 날짜 이벤트로 남아 있으며, 거부가 조건을 충족하는지에 대한 관리자의 판단을 기다리고 있다(이전 주기 참고). 이번 주기 저비용 일일 재조사(2026-10-02, 검색어: i2o Therapeutics Medici implant update news)에서도 기존 파일에 있는 2023년 시리즈 A/Medici 인수 및 ITCA 650 거부 이력만 확인됐다. 더 넓은 DACRA/GLP-1/글루카곤/PYY 파이프라인에 대한 2026년 관련 업데이트는 없다. second_dated_event(두 번째 날짜 이벤트)는 동일한 미해결 판단 사안으로 여전히 미충족이다."
+      },
+      "resolution": null
+    },
+    {
+      "id": "cand-2026-10-02-001",
+      "detected_name": "D&D Pharmatech -- DD15 (Metsera-licensed injectable triple-G agonist)",
+      "detected_aliases": [
+        "D&D Pharmatech",
+        "DD Pharmatech",
+        "디앤디파마텍",
+        "DD15"
+      ],
+      "entity_type_guess": ["company", "asset"],
+      "evidence": [
+        {
+          "source": {
+            "name": "D&D Pharmatech, Metsera sign modified/new technology-transfer agreement for DD15 Tri-G",
+            "publication": "Hitnews",
+            "url": "https://www.hitnews.co.kr/news/articleView.html?idxno=53199",
+            "tier": 2
+          },
+          "snippet": "D&D Pharmatech and Metsera expanded their technology-transfer collaboration to include DD15, described as an injectable Tri-G (GLP-1/GIP/GCG triple agonist) incorporating D&D Pharmatech's long-acting technology for obesity and MASH, in a new license agreement worth about KRW 280 billion -- part of a broader expansion (alongside oral candidates DD14 and DD07) that brought the total deal value to over KRW 1 trillion.",
+          "snippet_ko": "디앤디파마텍과 멧세라는 기술이전 협력을 확대해 비만 및 MASH 치료를 위한 디앤디파마텍의 장기지속형 기술이 적용된 주사용 트리플-G(GLP-1·GIP·GCG 삼중작용제) DD15를 포함시켰다. 신규 라이선스 계약 규모는 약 KRW 280 billion이며, 경구용 후보물질 DD14·DD07을 포함한 광범위한 계약 확대와 더불어 총 계약 규모는 KRW 1 trillion을 넘어섰다.",
+          "date": "2024-03-18",
+          "verification_note": "Publish date confirmed via direct WebFetch of hitnews.co.kr. This is a 2024 deal, well outside this run's freshness window, surfaced via this run's Track B1 code harvest (alias: DD15, surfaced from the cross-class query \"삼중작용제 월 1회 주사\"); logged now as a newly-discovered, previously-untracked program per the bounded code-query process."
+        },
+        {
+          "source": {
+            "name": "D&D Pharmatech, Metsera expand collaboration for new obesity, MASH treatments",
+            "publication": "Korea Biomedical Review",
+            "url": "https://www.koreabiomed.com/news/articleView.html?idxno=23594",
+            "tier": 2
+          },
+          "snippet": "Independent English-language coverage corroborating the same disclosure: D&D Pharmatech and Metsera entered a new global license for DD15, an injectable GLP-1/GIP/GCG triple agonist built on D&D Pharmatech's long-acting technology, alongside amendments adding oral candidates DD14 and DD07 to the existing ORALINK license.",
+          "snippet_ko": "동일한 공시를 독립적으로 교차 확인한 영문 보도: 디앤디파마텍과 멧세라는 디앤디파마텍의 장기지속형 기술을 적용한 주사용 GLP-1·GIP·GCG 삼중작용제 DD15에 대한 신규 글로벌 라이선스를 체결했으며, 기존 ORALINK 라이선스에 경구용 후보물질 DD14·DD07을 추가하는 계약 수정도 함께 이뤄졌다.",
+          "date": "2024-03-18",
+          "date_basis": "inferred",
+          "verification_note": "Read from a search-result summary only; koreabiomed.com already on this run's blocked-host list. Date assumed to match the same-week Hitnews report of the same disclosure above; not independently confirmed on the page."
+        },
+        {
+          "source": {
+            "name": "D&D Pharmatech Signs $1.3M Research Contract with Pfizer Following Metsera Acquisition",
+            "publication": "Seoul Economic Daily",
+            "url": "https://en.sedaily.com/finance/2026/04/16/dd-pharmatech-signs-13m-research-contract-with-pfizer",
+            "tier": 2
+          },
+          "snippet": "A later, unrelated article (on a separate $1.3M D&D Pharmatech-Pfizer research contract for an oral peptide dual-agonist formulation) recaps that Metsera licensed six oral peptide compounds from D&D Pharmatech in 2023 -- DD02S, DD03, DD07, DD14, DD15 and MET06 -- describing DD15 as oral, which conflicts with the Hitnews/Korea Biomedical Review characterization of DD15 as an injectable Tri-G agonist above.",
+          "snippet_ko": "별개의 기사(경구용 GLP-1·GIP 이중작용제 제형에 대한 디앤디파마텍-화이자 간 $1.3M 규모 연구계약 관련)는 멧세라가 2023년 디앤디파마텍으로부터 경구용 펩타이드 화합물 6종(DD02S, DD03, DD07, DD14, DD15, MET06)을 라이선스했다고 요약하며 DD15를 경구용으로 설명하는데, 이는 위 Hitnews/Korea Biomedical Review의 DD15를 주사용 트리플-G 작용제로 설명한 내용과 상충한다.",
+          "date": "2026-04-16",
+          "verification_note": "Direct WebFetch of en.sedaily.com succeeded this run. This article reports no DD15-specific development itself (its subject is a different, oral-only Pfizer research contract) so it is not counted toward second_dated_event; included only to document the oral-vs-injectable discrepancy for the admin to resolve."
+        }
+      ],
+      "fuzzy_match": {
+        "closest_umbrella_id": "pfizer-metsera-engineered-peptide",
+        "score": 0.25
+      },
+      "status": "pending",
+      "created_date": "2026-10-02",
+      "follow_up": {
+        "last_checked": null,
+        "checks_run": 0,
+        "near_bar": false
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim", "confirmed_source"],
+        "unmet": ["second_dated_event"],
+        "evidence": "D&D Pharmatech (named_entity) licensed DD15, a concretely-described injectable GLP-1/GIP/GCG triple agonist built on its own long-acting technology (technical_claim), to Metsera (now Pfizer-owned) in a ~KRW 280B deal, independently reported by Hitnews and Korea Biomedical Review (confirmed_source). All evidence traces to the same March 2024 disclosure, so second_dated_event is unmet -- no distinct later development specific to DD15 has surfaced; a 2026-04-16 article mentions DD15 only in a historical recap and, confusingly, calls it oral rather than injectable, a discrepancy flagged above rather than resolved. Fuzzy match to pfizer-metsera-engineered-peptide (0.25) reflects the licensing relationship, not a shared corporate identity -- not a merge case. Found via this run's Track B1 code harvest (unknown-code bounded-query budget: 1 of 3 used this run).",
+        "evidence_ko": "디앤디파마텍(named_entity, 명확한 주체)은 자사의 장기지속형 기술을 적용한 주사용 GLP-1·GIP·GCG 삼중작용제 DD15(technical_claim, 구체적 기술 근거)를 멧세라(현재 화이자 소유)에 약 KRW 280B 규모로 라이선스했으며, Hitnews와 Korea Biomedical Review가 이를 독립적으로 보도했다(confirmed_source, 확인된 출처). 모든 근거가 2024년 3월의 동일한 공시로 귀결되어 second_dated_event(두 번째 날짜 이벤트)는 미충족이다 -- DD15에 특정된 이후의 별개 진전은 확인되지 않았으며, 2026년 4월 16일자 기사는 DD15를 역사적 요약에서만 언급할 뿐 아니라 혼란스럽게도 주사용이 아닌 경구용으로 설명하는데, 이 불일치는 해소하지 않고 위에 플래그만 남긴다. pfizer-metsera-engineered-peptide와의 퍼지 매칭 점수(0.25)는 라이선스 관계를 반영할 뿐 동일 법인을 의미하지 않는다 -- 병합 사례가 아니다. 이번 주기 Track B1의 코드 수집 과정에서 발견됐다(미지 코드 제한 조회 예산: 이번 주기 3건 중 1건 사용)."
       },
       "resolution": null
     }

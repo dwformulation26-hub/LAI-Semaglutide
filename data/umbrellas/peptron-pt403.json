@@ -33,10 +33,25 @@
     "partner_ko": "Eli Lilly(SmartDepot 내부 R&D 용도의 비독점 글로벌 라이선스, 평가 기간은 2025년 12월 최대 24개월로 연장)",
     "data_point": "~30% body-weight reduction at week 4 in obese-mouse model; Phase 1 human data showed no vomiting/nausea in 16 healthy adults vs. weekly semaglutide (ADA 2026)",
     "data_point_ko": "비만 마우스 모델에서 4주차 약 30% 체중 감소, 임상 1상 인체 데이터에서 건강한 성인 16명 대상 주 1회 세마글루타이드 대비 구토/메스꺼움 없음(ADA 2026)",
-    "last_updated": "2026-09-28",
-    "last_checked": "2026-10-01"
+    "last_updated": "2026-10-01",
+    "last_checked": "2026-10-02"
   },
   "finding_history": [
+    {
+      "id": "f-2026-10-01-001",
+      "date": "2026-10-01",
+      "type": "regulatory",
+      "summary": "A second, independently bylined outlet (Asia Business Daily) reported Peptron's Sept 28, 2026 Korean patent registration for its sustained-release microsphere formulation covering GLP-1 receptor agonists (semaglutide and tirzepatide), corroborating MTN's original single-source report and meeting the confirmed-source bar for this patent event. The follow-on coverage adds that Peptron is pursuing the tirzepatide-based candidate (referred to as PT404) for monthly or once-every-2-months dosing, alongside in-house development and global business-development outreach -- still distinct from the tracked semaglutide PT403 asset and from the Eli Lilly collaboration, which does not include tirzepatide.",
+      "summary_ko": "두 번째 독립 매체(아시아경제)가 펩트론의 2026년 9월 28일 한국 특허 등록(세마글루타이드 및 터제파타이드를 포함하는 GLP-1 수용체 작용제용 서방형 미립구 제형)을 보도해, MTN의 기존 단일 출처 보도를 교차 확인하며 이번 특허 이벤트에 대해 confirmed_source(확인된 출처) 기준을 충족시켰다. 후속 보도는 펩트론이 터제파타이드 기반 후보물질(PT404로 지칭)을 월 1회 또는 2개월 1회 투여를 목표로 사내 개발과 글로벌 사업개발(BD)을 병행해 추진 중이라고 덧붙였다 -- 이는 여전히 추적 중인 세마글루타이드 PT403 자산 및 터제파타이드를 포함하지 않는 Eli Lilly 협력과는 별개다.",
+      "source": {
+        "name": "Peptron Receives Patent Approval for Tirzepatide Long-Acting Formulation",
+        "publication": "The Asia Business Daily",
+        "url": "https://www.asiae.co.kr/en/article/bio-health/2026100109284412680",
+        "tier": 2
+      },
+      "confidence": "confirmed",
+      "verification_note": "Independent second-outlet corroboration of f-2026-09-28-001's single-sourced patent event, found via this run's Track A breadth-first query (alias: PT403) and Track B1 class queries; read from search snippets only, asiae.co.kr (view.asiae.co.kr) already on the blocked-host list. molecule_class left unchanged at [\"semaglutide\"] this run -- the patent and PT404 reporting still describe a distinct candidate/IP position, not a formulated asset under this umbrella's own PT403 program; see current_status.molecule_evidence. PT404 is still not in this record's own aliases array; repeating the proposal that the admin add it."
+    },
     {
       "id": "f-2026-09-28-001",
       "date": "2026-09-28",
