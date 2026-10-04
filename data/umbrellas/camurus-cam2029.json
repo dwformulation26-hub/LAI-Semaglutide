@@ -33,7 +33,7 @@
     "data_point": "US FDA CRL #2 issued Jun 10, 2026 (manufacturing/facility-related, explicitly not efficacy/safety); resubmission accepted for review Jul 17, 2026 with PDUFA target action date of Dec 18, 2026",
     "data_point_ko": "미국 FDA 두 번째 CRL(CRL #2) 2026년 6월 10일 발행(제조/시설 관련, 유효성/안전성 문제는 아니라고 명시). 재제출은 2026년 7월 17일 심사 접수됐으며 PDUFA 목표일은 2026년 12월 18일이다.",
     "last_updated": "2026-07-17",
-    "last_checked": "2026-09-28"
+    "last_checked": "2026-10-04"
   },
   "finding_history": [
     {
@@ -140,6 +140,21 @@
       },
       "confidence": "confirmed",
       "verification_note": "Discovered this run (2026-09-28) via a Track A breadth query; the June 2025 topline predates this run's freshness window by over a year, so it is a real finding logged append-only but is discovered-late, not a headline item for today's digest."
+    },
+    {
+      "id": "f-2026-06-01-002",
+      "date": "2026-06-01",
+      "type": "deal_partnership",
+      "summary": "Eli Lilly exercised an option to expand its existing collaboration with Camurus (originally covering GLP-1/GIP dual agonists and GLP-1/GIP/glucagon triple agonists) to include amylin receptor agonists as a third compound class, gaining exclusive global rights to Camurus's FluidCrystal depot technology for this class. The option exercise triggered a $5M payment to Camurus, with up to $290M in development/regulatory milestones and up to $580M in sales milestones plus tiered mid-single-digit royalties. The drug compounds remain Lilly's proprietary assets; Camurus licenses only the delivery platform and is not developing the amylin molecule itself.",
+      "summary_ko": "Eli Lilly는 Camurus와의 기존 협력(원래 GLP-1/GIP 이중 작용제 및 GLP-1/GIP/글루카곤 삼중 작용제를 포함)을 아밀린 수용체 작용제라는 세 번째 화합물 부류로 확대하는 옵션을 행사해, 이 부류에 대한 Camurus의 FluidCrystal 데포 기술에 대한 독점적 글로벌 권리를 확보했다. 옵션 행사로 Camurus에 $5M가 지급됐으며, 개발/허가 마일스톤 최대 $290M, 매출 마일스톤 최대 $580M에 단계별 한 자릿수 중반대 로열티가 추가된다. 약물 화합물 자체는 Lilly의 독점 자산으로 남으며, Camurus는 전달 플랫폼만 라이선스할 뿐 아밀린 분자 자체를 개발하지는 않는다.",
+      "source": {
+        "name": "Camurus announces expansion of Lilly collaboration",
+        "publication": "Camurus (company IR)",
+        "url": "https://www.camurus.com/media/press-releases/2026/camurus-announces-expansion-of-lilly-collaboration/",
+        "tier": 1
+      },
+      "confidence": "confirmed",
+      "verification_note": "Found via this run's Track B2 rotation-list query (key: lilly-camurus). Event dated 2026-06-01, well before this record's Sunday-only freshness window (last_checked 2026-09-28), so it is a real but late-discovered item, not a headline finding. Logged here (Camurus's wholly-owned asset record) rather than on braeburn-camurus-brixadi since the deal concerns the shared FluidCrystal platform/company, not the Brixadi buprenorphine asset specifically. Camurus does not itself formulate an amylin agonist, so molecule_class is unchanged."
     }
   ]
 }

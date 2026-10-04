@@ -123,15 +123,15 @@
       "status": "stalled",
       "created_date": "2026-09-02",
       "follow_up": {
-        "last_checked": "2026-09-30",
-        "checks_run": 6,
+        "last_checked": "2026-10-04",
+        "checks_run": 7,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "No new evidence in 30 days across 6 checks -- recommend reject or snooze. The newest dated event on file (the Jan 7/15, 2026 term-sheet and FDA-submission-target reporting) predates this candidate's own 2026-09-02 creation date, and every follow-up since (including this run's free date-math pass, 2026-10-02) has only found that same disclosure recirculated across additional outlets. confirmed_source remains cleared; second_dated_event remains unmet with no sign of a second company-level event since creation.",
-        "evidence_ko": "30일간 6회 재확인에도 새로운 근거가 없음 -- 거부(reject) 또는 보류(snooze)를 권고한다. 파일에 기록된 최신 날짜 이벤트(2026년 1월 7일/15일 텀시트 및 FDA 제출 목표 보도)는 이 후보의 생성일(2026-09-02)보다 앞서며, 이후의 모든 후속 조사(이번 주기의 무비용 날짜 계산 포함, 2026-10-02)에서도 동일한 공시가 추가 매체에 재게재된 것만 확인됐다. confirmed_source(확인된 출처)는 계속 충족되나, second_dated_event(두 번째 날짜 이벤트)는 생성 이후 두 번째 회사 차원 이벤트의 조짐 없이 여전히 미충족이다."
+        "evidence": "No new evidence -- recommend reject or snooze. This sweep's monthly stalled-candidate re-search (query: 삼천당제약 장기지속형 주사제 임상 FDA 업데이트 2026, the every-4th-sweep check for stalled/watch candidates) again found only the same Jan 2026 US term-sheet/~KRW 3 trillion deal and 2026 FDA-submission-target reporting already on file, recirculated across additional outlets (mdtoday.co.kr, Dailypharm, Newsmp, Medicaltimes). confirmed_source remains cleared; second_dated_event remains unmet with no sign of a second company-level event since creation.",
+        "evidence_ko": "새로운 근거 없음 -- 거부(reject) 또는 보류(snooze)를 권고한다. 이번 스윕의 월간 정체(stalled) 후보 재조사(검색어: 삼천당제약 장기지속형 주사제 임상 FDA 업데이트 2026, 4회 스윕마다 수행하는 watch/stalled 점검)에서도 기존의 2026년 1월 미국 텀시트/약 3조원 규모 계약과 2026년 FDA 제출 목표 보도만 추가 매체(mdtoday.co.kr, 데일리팜, 의약뉴스, 메디칼타임즈)에서 재확인됐다. confirmed_source(확인된 출처)는 계속 충족되나, second_dated_event(두 번째 날짜 이벤트)는 생성 이후 두 번째 회사 차원 이벤트의 조짐 없이 여전히 미충족이다."
       },
       "resolution": null
     },
@@ -167,15 +167,15 @@
       "status": "stalled",
       "created_date": "2026-09-02",
       "follow_up": {
-        "last_checked": "2026-09-30",
-        "checks_run": 7,
+        "last_checked": "2026-10-04",
+        "checks_run": 8,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "No new evidence in 30 days across 7 checks -- recommend reject or snooze. The only dated event on file (the 2026-07-21 G2GBio/SpiderCore AI-platform contract) predates this candidate's own 2026-09-02 creation date, and every follow-up since (including this run's free date-math pass, 2026-10-02) has only found that same contract recirculated across additional outlets. confirmed_source remains cleared; second_dated_event remains unmet. SCOPE CAVEAT STILL APPLIES: SpiderCore remains a KAIST-founded AI/software vendor selling an R&D tool to G2GBio, not itself a drug or delivery-technology developer -- the admin scope call from prior checks remains open.",
-        "evidence_ko": "30일간 7회 재확인에도 새로운 근거가 없음 -- 거부(reject) 또는 보류(snooze)를 권고한다. 파일에 기록된 유일한 날짜 이벤트(2026년 7월 21일 지투지바이오·스파이더코어 AI 플랫폼 계약)는 이 후보의 생성일(2026-09-02)보다 앞서며, 이후의 모든 후속 조사(이번 주기의 무비용 날짜 계산 포함, 2026-10-02)에서도 동일한 계약이 추가 매체에 재게재된 것만 확인됐다. confirmed_source(확인된 출처)는 계속 충족되나, second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 스파이더코어는 지투지바이오에 R&D 도구를 판매하는 KAIST 창업 AI/소프트웨어 업체로, 그 자체가 약물 또는 전달 기술 개발사가 아니다. 이전 조사에서 제기된 관리자 범위 판단 요청은 여전히 미해결이다."
+        "evidence": "No new evidence -- recommend reject or snooze. This sweep's monthly stalled-candidate re-search (query: 스파이더코어 지투지바이오 AI 플랫폼 업데이트 2026, the every-4th-sweep check for stalled/watch candidates) again found only the same 2026-07-21 G2GBio/SpiderCore AI-platform contract, recirculated across additional outlets (mt.co.kr, EToday, Dailypharm, en.sedaily.com). confirmed_source remains cleared; second_dated_event remains unmet. SCOPE CAVEAT STILL APPLIES: SpiderCore remains a KAIST-founded AI/software vendor selling an R&D tool to G2GBio, not itself a drug or delivery-technology developer -- the admin scope call from prior checks remains open.",
+        "evidence_ko": "새로운 근거 없음 -- 거부(reject) 또는 보류(snooze)를 권고한다. 이번 스윕의 월간 정체(stalled) 후보 재조사(검색어: 스파이더코어 지투지바이오 AI 플랫폼 업데이트 2026, 4회 스윕마다 수행하는 watch/stalled 점검)에서도 기존의 2026년 7월 21일 지투지바이오·스파이더코어 AI 플랫폼 계약만 추가 매체(mt.co.kr, 이투데이, 데일리팜, en.sedaily.com)에서 재확인됐다. confirmed_source(확인된 출처)는 계속 충족되나, second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 스파이더코어는 지투지바이오에 R&D 도구를 판매하는 KAIST 창업 AI/소프트웨어 업체로, 그 자체가 약물 또는 전달 기술 개발사가 아니다. 이전 조사에서 제기된 관리자 범위 판단 요청은 여전히 미해결이다."
       },
       "resolution": null
     },
@@ -245,15 +245,15 @@
       "status": "ready_for_promotion",
       "created_date": "2026-09-02",
       "follow_up": {
-        "last_checked": "2026-09-27",
-        "checks_run": 3,
+        "last_checked": "2026-10-04",
+        "checks_run": 4,
         "near_bar": false
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
         "unmet": [],
-        "evidence": "This run's weekly deep pass found a third distinct dated event since creation: Alveus initiated its Phase 2 PRESERVE trial for ALV-100 and dosed its first patient (2026-09-14, GlobeNewswire), a stage-bearing progression from the completed Phase 1b study. All four promotion-bar conditions remain cleared; still awaiting admin resolution. Fuzzy match to pfizer-metsera-engineered-peptide remains low (0.15) -- not a merge case.",
-        "evidence_ko": "이번 주기 주간 심층 조사에서 생성 이후 세 번째 별개 날짜 이벤트를 확인했다: Alveus는 ALV-100의 임상 2상 PRESERVE 시험을 개시하고 첫 환자 투여를 완료했다(2026-09-14, GlobeNewswire). 이는 완료된 임상 1b상에서의 개발 단계를 나타내는 진전이다. 네 가지 승격 기준 조건은 계속 충족된 상태이며, 관리자의 결정을 기다리고 있다. pfizer-metsera-engineered-peptide와의 퍼지 매칭 점수는 여전히 낮아(0.15) 병합 사례가 아니다."
+        "evidence": "This run's weekly deep-pass re-search (query: Alveus Therapeutics ALV-100 update news October 2026) found only the same Phase 2 PRESERVE trial initiation (2026-09-14) and prior Series A/Phase 1b history already on file, recirculated across the same outlets; no further dated event since. All four promotion-bar conditions remain cleared; still awaiting admin resolution. Fuzzy match to pfizer-metsera-engineered-peptide remains low (0.15) -- not a merge case.",
+        "evidence_ko": "이번 주기 주간 심층 재조사(검색어: Alveus Therapeutics ALV-100 update news October 2026)에서도 기존 파일에 있는 임상 2상 PRESERVE 시험 개시(2026-09-14)와 이전 시리즈 A/임상 1b상 이력만 동일 매체에서 재확인됐다. 추가 날짜 이벤트는 없었다. 네 가지 승격 기준 조건은 계속 충족된 상태이며, 관리자의 결정을 기다리고 있다. pfizer-metsera-engineered-peptide와의 퍼지 매칭 점수는 여전히 낮아(0.15) 병합 사례가 아니다."
       },
       "resolution": null
     },
@@ -415,15 +415,15 @@
       "status": "pending",
       "created_date": "2026-09-02",
       "follow_up": {
-        "last_checked": "2026-09-27",
-        "checks_run": 3,
+        "last_checked": "2026-10-04",
+        "checks_run": 4,
         "near_bar": false
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
         "unmet": [],
-        "evidence": "Mechanically clears the bar on its own evidence (Tier 1 clinicaltrials.gov Phase III registration, NCT07623824, is itself stage-bearing). This run's weekly deep-pass re-search (query: CSPC ZhongQi SYHX2008 octreotide FDA update 2026) re-confirmed the same two dated events (China Phase III registration, US FDA CTA clearance) and found no further development. CSPC ZhongQi Pharmaceutical Technology (Shijiazhuang) Co., Ltd. remains a subsidiary of CSPC Pharmaceutical Group Limited (1093.HK) -- the same corporate parent as the already-promoted cspc-syh2082 umbrella -- and the fuzzy match against the grown alias table still scores 0.58 (>= the 0.55 merge threshold), so per the mechanical merge-case rule this must NOT be escalated to ready_for_promotion. Flagging remains unchanged: an admin merge/new-sibling-umbrella decision is needed.",
-        "evidence_ko": "자체 근거만으로 기계적으로 기준을 충족한다(Tier 1 clinicaltrials.gov 임상 3상 등록 NCT07623824는 그 자체로 개발 단계를 나타내는 이벤트). 이번 주기 주간 심층 재조사(검색어: CSPC ZhongQi SYHX2008 octreotide FDA update 2026)에서 동일한 두 날짜 이벤트(중국 임상 3상 등록, 미국 FDA CTA 승인)만 재확인됐고 추가 진전은 없었다. CSPC ZhongQi Pharmaceutical Technology (Shijiazhuang) Co., Ltd.는 여전히 CSPC Pharmaceutical Group Limited(1093.HK)의 자회사이며, 이미 승격된 cspc-syh2082 엄브렐라와 동일한 모회사를 두고 있다. 확장된 별칭 테이블 기준 퍼지 매칭 점수는 여전히 0.58(병합 임계값 0.55 이상)로, 기계적 병합 사례 규칙에 따라 ready_for_promotion으로 에스컬레이션해서는 안 된다. 관리자의 병합/신규 자매 엄브렐라 결정이 필요하다는 플래그는 변함없다."
+        "evidence": "Mechanically clears the bar on its own evidence (Tier 1 clinicaltrials.gov Phase III registration, NCT07623824, is itself stage-bearing). This run's weekly deep-pass re-search (query: CSPC ZhongQi SYHX2008 octreotide FDA update 2026) re-confirmed the same two dated events (China Phase III registration, US FDA CTA clearance), plus the already-known additional China Phase III registrations for neuroendocrine-tumor indications (no new China or US development since last check). CSPC ZhongQi Pharmaceutical Technology (Shijiazhuang) Co., Ltd. remains a subsidiary of CSPC Pharmaceutical Group Limited (1093.HK) -- the same corporate parent as the already-promoted cspc-syh2082 umbrella -- and the fuzzy match against the grown alias table still scores 0.58 (>= the 0.55 merge threshold), so per the mechanical merge-case rule this must NOT be escalated to ready_for_promotion. Flagging remains unchanged: an admin merge/new-sibling-umbrella decision is needed.",
+        "evidence_ko": "자체 근거만으로 기계적으로 기준을 충족한다(Tier 1 clinicaltrials.gov 임상 3상 등록 NCT07623824는 그 자체로 개발 단계를 나타내는 이벤트). 이번 주기 주간 심층 재조사(검색어: CSPC ZhongQi SYHX2008 octreotide FDA update 2026)에서 동일한 두 날짜 이벤트(중국 임상 3상 등록, 미국 FDA CTA 승인)에 더해 이미 알려진 신경내분비종양 적응증 중국 임상 3상 등록 추가 건만 재확인됐고(지난 확인 이후 중국·미국에서 새로운 진전 없음), 추가 진전은 없었다. CSPC ZhongQi Pharmaceutical Technology (Shijiazhuang) Co., Ltd.는 여전히 CSPC Pharmaceutical Group Limited(1093.HK)의 자회사이며, 이미 승격된 cspc-syh2082 엄브렐라와 동일한 모회사를 두고 있다. 확장된 별칭 테이블 기준 퍼지 매칭 점수는 여전히 0.58(병합 임계값 0.55 이상)로, 기계적 병합 사례 규칙에 따라 ready_for_promotion으로 에스컬레이션해서는 안 된다. 관리자의 병합/신규 자매 엄브렐라 결정이 필요하다는 플래그는 변함없다."
       },
       "resolution": null
     },
@@ -569,24 +569,48 @@
           "date": "2026-02-11",
           "verification_note": "Read from the search-result title and summary only (mdtoday.co.kr refused a direct fetch); the publish date was not confirmed.",
           "date_basis": "inferred"
+        },
+        {
+          "source": {
+            "name": "한국비엔씨-프로앱텍, 삼중작용 비만치료제 후보물질 최적화…비임상서 최대 30% 체중감소",
+            "publication": "바이오타임즈 (BioTimes)",
+            "url": "https://www.biotimes.co.kr/news/articleView.html?idxno=34732",
+            "tier": 2
+          },
+          "snippet": "New preclinical data: in diet-induced-obese mice over 6 weeks, Korea BioNC/ProAptec's optimized GLP-1/GIP/GCG triple-agonist-albumin conjugate achieved about 30% maximum weight reduction versus about 23% for Wegovy (semaglutide), with a 27.3% weight-regain rate after stopping dosing versus 47.4% for a Wegovy/Mounjaro combination. In standard mice the conjugate's half-life was about 19 hours (~2.7x Wegovy's ~7 hours); in humanized-FcRn mice modeling human albumin recycling, half-life extended to about 41 hours. No human dosing interval was specified.",
+          "snippet_ko": "새로운 전임상 데이터: 식이유도비만(DIO) 마우스에 6주간 투여한 결과, 한국비엔씨/프로앱텍의 최적화된 GLP-1/GIP/GCG 삼중작용제-알부민 결합체는 위고비(세마글루타이드)의 약 23% 대비 최대 약 30%의 체중 감소를 달성했다. 투여 중단 후 체중 재증가율은 위고비/마운자로 병용 47.4% 대비 27.3%였다. 일반 마우스에서 결합체의 반감기는 약 19시간(위고비 약 7시간의 약 2.7배)이었고, 인체 알부민 재순환을 모사한 인간화 FcRn 마우스에서는 반감기가 약 41시간으로 연장됐다. 사람 대상 투여 간격은 명시되지 않았다.",
+          "date": "2026-09-28",
+          "verification_note": "Direct WebFetch of biotimes.co.kr succeeded this run (not previously on the blocked-host list)."
+        },
+        {
+          "source": {
+            "name": "한국비엔씨, 삼중작용 비만치료제 동물실험서 체중 30% 감량",
+            "publication": "머니투데이 (Money Today)",
+            "url": "https://www.mt.co.kr/stock/2026/09/28/2026092811194873003",
+            "tier": 2
+          },
+          "snippet": "Independent corroboration of the same Sept 28, 2026 preclinical disclosure: Korea BioNC's triple-action obesity candidate achieved approximately 30% weight loss in animal testing.",
+          "snippet_ko": "동일한 2026년 9월 28일 전임상 공시에 대한 독립적인 교차 확인이다: 한국비엔씨의 삼중작용 비만치료제 후보물질이 동물실험에서 약 30%의 체중 감량을 달성했다.",
+          "date": "2026-09-28",
+          "verification_note": "Read from a search-result summary only; mt.co.kr already on this run's blocked-host list, not independently fetched."
         }
       ],
       "fuzzy_match": {
         "closest_umbrella_id": "daewon-pharmus-quadagonist",
         "score": 0.2
       },
-      "status": "pending",
+      "status": "ready_for_promotion",
       "created_date": "2026-09-05",
       "follow_up": {
-        "last_checked": "2026-09-27",
-        "checks_run": 3,
+        "last_checked": "2026-10-04",
+        "checks_run": 4,
         "near_bar": false
       },
       "promotion_bar": {
-        "cleared": ["named_entity", "technical_claim"],
-        "unmet": ["confirmed_source", "second_dated_event"],
-        "evidence": "This run's weekly deep-pass re-search (query: 한국비엔씨 프로앱텍 삼중작용제 특허 업데이트) found only unrelated Korea BioNC/ProAptec news -- a USPTO gout-treatment patent (PAT101, uricase-albumin conjugate) and a LYTAC-platform PCT filing -- neither of which concerns the GLP-1/GIP/GCG triple-agonist + albumin-conjugate obesity candidate this entry tracks, so neither is logged as evidence here. The original outlets (Hankyung, mdtoday.co.kr) remain on this run's blocked-domain list; confirmed_source and second_dated_event remain unmet for the triple-agonist claim specifically.",
-        "evidence_ko": "이번 주기 주간 심층 재조사(검색어: 한국비엔씨 프로앱텍 삼중작용제 특허 업데이트)에서는 이 후보가 추적하는 GLP-1/GIP/GCG 삼중 작용제 + 알부민 결합체 비만 후보물질과 무관한 한국비엔씨/프로앱텍 소식만 확인됐다 -- USPTO 통풍 치료제 특허(PAT101, 유리카아제-알부민 결합체)와 LYTAC 플랫폼 PCT 출원이다. 따라서 여기에 근거로 기록하지 않는다. 기존 매체(Hankyung, mdtoday.co.kr)는 이번 실행에서도 차단 도메인 목록에 있다. confirmed_source(확인된 출처)와 second_dated_event(두 번째 날짜 이벤트)는 삼중 작용제 주장에 대해 여전히 미충족이다."
+        "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
+        "unmet": [],
+        "evidence": "This run's weekly deep-pass re-search (query: 한국비엔씨 프로앱텍 삼중작용제 알부민 업데이트) found a new, later dated event: a Sept 28, 2026 preclinical data disclosure (DIO-mouse weight loss ~30% vs Wegovy's ~23%, lower weight regain after dosing stops, and FcRn-humanized-mouse half-life of ~41 hours vs Wegovy's ~7 hours), independently reported by BioTimes and Money Today (mt.co.kr) -- two distinct Tier 2 outlets covering the same disclosure, clearing confirmed_source, and a dated event distinct from the original Feb 11, 2026 patent/animal-model announcement, clearing second_dated_event. All four promotion-bar conditions now clear. Fuzzy match to daewon-pharmus-quadagonist remains low (0.2) -- not a merge case.",
+        "evidence_ko": "이번 주기 주간 심층 재조사(검색어: 한국비엔씨 프로앱텍 삼중작용제 알부민 업데이트)에서 새로운 후속 날짜 이벤트를 확인했다: 2026년 9월 28일 전임상 데이터 공개(DIO 마우스 체중감소 약 30% vs 위고비 약 23%, 투여 중단 후 체중 재증가 감소, FcRn 인간화 마우스 반감기 약 41시간 vs 위고비 약 7시간)로, BioTimes와 머니투데이(mt.co.kr) 두 개의 독립적인 Tier 2 매체가 동일한 공시를 보도해 confirmed_source(확인된 출처)를 충족했고, 기존 2026년 2월 11일 특허/동물모델 발표와는 별개의 날짜 이벤트로 second_dated_event(두 번째 날짜 이벤트)도 충족했다. 이제 네 가지 승격 기준 조건이 모두 충족된다. daewon-pharmus-quadagonist와의 퍼지 매칭 점수는 여전히 낮아(0.2) 병합 사례가 아니다."
       },
       "resolution": null
     },
@@ -630,15 +654,15 @@
       "status": "pending",
       "created_date": "2026-09-06",
       "follow_up": {
-        "last_checked": "2026-09-27",
-        "checks_run": 3,
+        "last_checked": "2026-10-04",
+        "checks_run": 4,
         "near_bar": false
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "second_dated_event"],
         "unmet": ["confirmed_source"],
-        "evidence": "This run's weekly deep-pass re-search (query: Mapi Pharma Cariprazine Depot update IND FDA) found only the same first-patient-recruited (2025-09-17) and Phase I/IIa (2026-08-12) company releases, plus the same forward-looking statement that Mapi Pharma plans a US FDA IND submission by end of 2026 with a partner supporting Phase 3 -- still no independent third-party corroboration of either dated event, so confirmed_source remains unmet. MERGE CASE STILL APPLIES: fuzzy_match to mapi-pharma-semaglutide sits at the 0.55 merge threshold, so per the mechanical rule this cannot be escalated to ready_for_promotion regardless; flagging for an admin merge-vs-new-sibling-umbrella decision.",
-        "evidence_ko": "이번 주기 주간 심층 재조사(검색어: Mapi Pharma Cariprazine Depot update IND FDA)에서도 기존의 첫 환자 모집(2025-09-17)과 임상 1/2a상(2026-08-12) 회사 발표, Mapi Pharma가 파트너와 함께 2026년 말까지 미국 FDA IND 제출을 계획한다는 동일한 전망성 언급만 확인됐다. 두 날짜 이벤트 모두 여전히 독립적인 제3자 교차 확인이 없어 confirmed_source(확인된 출처)는 미충족으로 남는다. 병합 사례는 여전히 적용된다: mapi-pharma-semaglutide와의 fuzzy_match가 병합 임계값 0.55에 해당해, 기계적 규칙에 따라 어떤 경우든 ready_for_promotion으로 에스컬레이션할 수 없다. 관리자의 병합 vs 신규 자매 엄브렐라 결정을 위해 플래그를 지정한다."
+        "evidence": "This run's weekly deep-pass re-search (query: Mapi Pharma cariprazine depot update 2026) again found only the same first-patient-recruited (2025-09-17) and Phase I/IIa (2026-08-12) company releases, plus the same forward-looking statement that Mapi Pharma plans a US FDA IND submission by end of 2026 with a partner supporting Phase 3 -- still no independent third-party corroboration of either dated event, so confirmed_source remains unmet. MERGE CASE STILL APPLIES: fuzzy_match to mapi-pharma-semaglutide sits at the 0.55 merge threshold, so per the mechanical rule this cannot be escalated to ready_for_promotion regardless; flagging for an admin merge-vs-new-sibling-umbrella decision.",
+        "evidence_ko": "이번 주기 주간 심층 재조사(검색어: Mapi Pharma cariprazine depot update 2026)에서도 기존의 첫 환자 모집(2025-09-17)과 임상 1/2a상(2026-08-12) 회사 발표, Mapi Pharma가 파트너와 함께 2026년 말까지 미국 FDA IND 제출을 계획한다는 동일한 전망성 언급만 확인됐다. 두 날짜 이벤트 모두 여전히 독립적인 제3자 교차 확인이 없어 confirmed_source(확인된 출처)는 미충족으로 남는다. 병합 사례는 여전히 적용된다: mapi-pharma-semaglutide와의 fuzzy_match가 병합 임계값 0.55에 해당해, 기계적 규칙에 따라 어떤 경우든 ready_for_promotion으로 에스컬레이션할 수 없다. 관리자의 병합 vs 신규 자매 엄브렐라 결정을 위해 플래그를 지정한다."
       },
       "resolution": null
     },
@@ -702,15 +726,15 @@
       "status": "pending",
       "created_date": "2026-09-07",
       "follow_up": {
-        "last_checked": "2026-10-02",
-        "checks_run": 6,
+        "last_checked": "2026-10-04",
+        "checks_run": 7,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's cheap daily-pass re-search (2026-10-02, query: Precision Antibiotics CarboCell DTU update IND clinical trial) again found only the same DKK 60M raise and 2027 Phase 1 target (dtu.dk, May 2026) and the same two peer-reviewed CarboCell G/C bone-infection papers already on file. No IND filing, clinical trial registration, or other company-level dated event has been reported since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI.",
-        "evidence_ko": "이번 주기 일일 저비용 재조사(2026-10-02, 검색어: Precision Antibiotics CarboCell DTU update IND clinical trial)에서도 기존과 동일한 DKK 60M 자금 조달과 2027년 임상 1상 목표(dtu.dk, 2026년 5월), 이미 확보된 동일한 뼈 감염 관련 동료 심사 논문 2건만 확인됐다. 이후 IND 신청, 임상시험 등록 또는 그 외 회사 차원의 날짜 이벤트는 보고되지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다."
+        "evidence": "This run's weekly deep-pass re-search (query: Precision Antibiotics CarboCell DTU IND clinical trial update 2026) again found only the same DKK 60M raise and 2027 Phase 1 target (dtu.dk, May 2026) and the same peer-reviewed CarboCell G/C bone-infection paper (JBJI, May 2026) already on file. No IND filing, clinical trial registration, or other company-level dated event has been reported since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI.",
+        "evidence_ko": "이번 주기 주간 심층 재조사(검색어: Precision Antibiotics CarboCell DTU IND clinical trial update 2026)에서도 기존과 동일한 DKK 60M 자금 조달과 2027년 임상 1상 목표(dtu.dk, 2026년 5월), 이미 확보된 동일한 뼈 감염 관련 동료 심사 논문(JBJI, 2026년 5월)만 확인됐다. 이후 IND 신청, 임상시험 등록 또는 그 외 회사 차원의 날짜 이벤트는 보고되지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다."
       },
       "resolution": null
     },
@@ -902,15 +926,15 @@
       "status": "pending",
       "created_date": "2026-09-11",
       "follow_up": {
-        "last_checked": "2026-10-01",
-        "checks_run": 7,
+        "last_checked": "2026-10-04",
+        "checks_run": 8,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's cheap daily-pass re-search (query: Appel Sauce Studios Stanford hydrogel long-acting injectable) again found only the same underlying Stanford PNP hydrogel research program -- the peer-reviewed shingles-vaccine depot paper already on file plus unrelated PNP hydrogel work (a surgical-adhesion gel, a hydrogel structure-property-performance engineering paper) -- none of which independently names Appel Sauce Studios as a company. Still no pipeline page, financing announcement, or clinical registration specific to the semaglutide/tirzepatide hydrogel depot program itself; second_dated_event remains unmet.",
-        "evidence_ko": "이번 주기 저비용 일일 재조사(검색어: Appel Sauce Studios Stanford hydrogel long-acting injectable)에서도 기존 파일에 있는 동일한 기저 Stanford PNP 하이드로겔 연구 프로그램만 확인됐다 -- 이미 파일에 있는 동료 심사 대상포진 백신 데포 논문에 더해 무관한 PNP 하이드로겔 연구(수술 유착 방지 겔, 하이드로겔 구조-물성-성능 공학 논문)이며, 어느 것도 Appel Sauce Studios를 회사로 독립적으로 명시하지 않는다. 세마글루타이드/터제파타이드 하이드로겔 데포 프로그램 자체와 관련된 파이프라인 페이지, 자금 조달 발표, 임상시험 등록은 여전히 없다. second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다."
+        "evidence": "This run's weekly deep-pass re-search (query: Appel Sauce Studios Stanford hydrogel long-acting injectable semaglutide update) again found only the same underlying Stanford PNP hydrogel research program -- the semaglutide/tirzepatide hydrogel-depot bioRxiv paper already on file plus unrelated PNP hydrogel work (a structure-property-performance engineering paper) -- none of which independently names Appel Sauce Studios as a company; the research's own stated clinical timeline is H1 2028. Still no pipeline page, financing announcement, or clinical registration specific to the company itself; second_dated_event remains unmet.",
+        "evidence_ko": "이번 주기 주간 심층 재조사(검색어: Appel Sauce Studios Stanford hydrogel long-acting injectable semaglutide update)에서도 기존 파일에 있는 동일한 기저 Stanford PNP 하이드로겔 연구 프로그램만 확인됐다 -- 이미 파일에 있는 세마글루타이드/터제파타이드 하이드로겔 데포 bioRxiv 논문에 더해 무관한 PNP 하이드로겔 구조-물성-성능 공학 논문이며, 어느 것도 Appel Sauce Studios를 회사로 독립적으로 명시하지 않는다. 연구 자체가 밝힌 임상 일정은 2028년 상반기다. 회사 자체와 관련된 파이프라인 페이지, 자금 조달 발표, 임상시험 등록은 여전히 없다. second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다."
       },
       "resolution": null
     },
@@ -950,15 +974,15 @@
       "status": "pending",
       "created_date": "2026-09-11",
       "follow_up": {
-        "last_checked": "2026-09-27",
-        "checks_run": 3,
+        "last_checked": "2026-10-04",
+        "checks_run": 4,
         "near_bar": false
       },
       "promotion_bar": {
         "cleared": ["named_entity", "confirmed_source", "second_dated_event"],
         "unmet": ["technical_claim"],
-        "evidence": "This run's weekly deep-pass re-search (query: Hengrui ribupatide HRS9531 long-acting monthly formulation depot) again confirmed only once-weekly subcutaneous ribupatide/HRS9531/KAI-9531 (KaiNETIC global Phase 3 program, 21.1% placebo-adjusted weight loss at 36 weeks per ADA 2026 data) plus the once-daily oral tablet -- still no monthly, depot, or otherwise long-acting formulation in any source found. The 'technical_claim' condition remains unmet for the same reason as prior cycles. Recommend the admin close this as reject-with-reason ('does not meet the LAI/depot bar') rather than continuing to track it.",
-        "evidence_ko": "이번 주기 주간 심층 재조사(검색어: Hengrui ribupatide HRS9531 long-acting monthly formulation depot)에서도 주 1회 피하 주사 ribupatide/HRS9531/KAI-9531(KaiNETIC 글로벌 임상 3상 프로그램, ADA 2026 데이터 기준 36주차 위약 대비 21.1% 체중 감소)과 1일 1회 경구 정제만 확인됐다 -- 어떤 출처에도 월 1회, 데포 또는 기타 장기지속형 제형은 여전히 존재하지 않는다. 'technical_claim'(구체적 기술 근거) 조건은 이전 주기와 동일한 이유로 미충족이다. 추적을 계속하기보다 관리자가 사유를 명시한 거절('LAI/데포 기준 미충족')로 종결할 것을 권고한다."
+        "evidence": "This run's weekly deep-pass re-search (query: Hengrui ribupatide HRS9531 Kailera KAI-9531 long-acting update 2026) again confirmed only once-weekly subcutaneous ribupatide/HRS9531/KAI-9531 -- KaiNETIC global Phase 3 enrollment completed 2026-09-30, topline now expected mid-2028 -- plus the once-daily oral tablet (KAI-9531-T) and a separate once-weekly triple agonist (KAI-4729, a known decoy). Still no monthly, depot, or otherwise long-acting formulation in any source found. The 'technical_claim' condition remains unmet for the same reason as prior cycles. Recommend the admin close this as reject-with-reason ('does not meet the LAI/depot bar') rather than continuing to track it.",
+        "evidence_ko": "이번 주기 주간 심층 재조사(검색어: Hengrui ribupatide HRS9531 Kailera KAI-9531 long-acting update 2026)에서도 주 1회 피하 주사 ribupatide/HRS9531/KAI-9531 -- KaiNETIC 글로벌 임상 3상 등록이 2026-09-30 완료됐고 톱라인은 2028년 중반으로 예상됨 -- 과 1일 1회 경구 정제(KAI-9531-T), 별개의 주 1회 삼중작용제(KAI-4729, 기존에 디코이로 확인됨)만 확인됐다. 어떤 출처에도 월 1회, 데포 또는 기타 장기지속형 제형은 여전히 존재하지 않는다. 'technical_claim'(구체적 기술 근거) 조건은 이전 주기와 동일한 이유로 미충족이다. 추적을 계속하기보다 관리자가 사유를 명시한 거절('LAI/데포 기준 미충족')로 종결할 것을 권고한다."
       },
       "resolution": null
     },
@@ -1015,15 +1039,15 @@
       "status": "ready_for_promotion",
       "created_date": "2026-09-13",
       "follow_up": {
-        "last_checked": "2026-09-27",
-        "checks_run": 6,
+        "last_checked": "2026-10-04",
+        "checks_run": 7,
         "near_bar": false
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
         "unmet": [],
-        "evidence": "This run's weekly deep-pass re-search (query: Prolynx obesity news update) found only the same December 2025 Series A and July 2026 CFO/CSO appointment already on file, recirculated across the same and additional outlets (The Pharmaletter, Endpoints News, LucidQuest); no new company pipeline page, financing or clinical registration has surfaced. All four promotion-bar conditions remain cleared; still awaiting admin resolution. Fuzzy match to adocia-adoxlong remains weak (0.15) -- not a merge case.",
-        "evidence_ko": "이번 주기 주간 심층 재조사(검색어: Prolynx obesity news update)에서도 기존의 2025년 12월 시리즈 A와 2026년 7월 CFO/CSO 선임만 확인됐으며, 동일 및 추가 매체(The Pharmaletter, Endpoints News, LucidQuest)에 재게재된 것이다. 새로운 회사 파이프라인 페이지, 자금 조달 또는 임상시험 등록은 나타나지 않았다. 네 가지 승격 기준 조건은 계속 충족된 상태이며, 관리자의 결정을 기다리고 있다. adocia-adoxlong과의 퍼지 매칭 점수는 여전히 낮아(0.15) 병합 사례가 아니다."
+        "evidence": "This run's weekly deep-pass re-search (query: Prolynx obesity long-acting news update 2026) again found only the same December 2025 Series A and July 2026 CFO/CSO appointment already on file, recirculated across the same outlets; no new company pipeline page, financing or clinical registration has surfaced. All four promotion-bar conditions remain cleared; still awaiting admin resolution. Fuzzy match to adocia-adoxlong remains weak (0.15) -- not a merge case.",
+        "evidence_ko": "이번 주기 주간 심층 재조사(검색어: Prolynx obesity long-acting news update 2026)에서도 기존의 2025년 12월 시리즈 A와 2026년 7월 CFO/CSO 선임만 동일 매체에서 재확인됐다. 새로운 회사 파이프라인 페이지, 자금 조달 또는 임상시험 등록은 나타나지 않았다. 네 가지 승격 기준 조건은 계속 충족된 상태이며, 관리자의 결정을 기다리고 있다. adocia-adoxlong과의 퍼지 매칭 점수는 여전히 낮아(0.15) 병합 사례가 아니다."
       },
       "resolution": null
     },
@@ -1087,14 +1111,14 @@
       "status": "pending",
       "created_date": "2026-09-13",
       "follow_up": {
-        "last_checked": "2026-09-27",
-        "checks_run": 2,
+        "last_checked": "2026-10-04",
+        "checks_run": 3,
         "near_bar": false
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
         "unmet": [],
-        "evidence": "Mechanically clears the bar: a Tier 1 company-IR source (own HKEX announcement / e-cspc.com news page) confirms the claim, and two distinct stage-bearing regulatory events (NMPA China CTA ~2024-12-20, US FDA CTA ~2026-06-08) clear second_dated_event on their own. This run's weekly deep-pass re-search (query: CSPC SYH9017 semaglutide update NMPA FDA 2026) re-confirmed the same two dated events, plus the already-implied Phase I PK/safety trial (NCT06830343, recruiting, est. completion Oct 2026) -- no further development beyond what is already on file. However, SYH9017 is a semaglutide-monoagonist gel-depot asset from the same corporate parent (CSPC Pharmaceutical Group) as the already-promoted cspc-syh2082 -- fuzzy match against the grown alias table scores 0.6 (>= the 0.55 merge threshold), so per the mechanical merge-case rule this must NOT be escalated to ready_for_promotion. Flagging for an admin merge/new-sibling-umbrella decision, same pattern as cand-2026-09-02-007 (CSPC ZhongQi/SYHX2008).",
+        "evidence": "Mechanically clears the bar: a Tier 1 company-IR source (own HKEX announcement / e-cspc.com news page) confirms the claim, and two distinct stage-bearing regulatory events (NMPA China CTA ~2024-12-20, US FDA CTA ~2026-06-08) clear second_dated_event on their own. This run's weekly deep-pass re-search (query: CSPC SYH9017 semaglutide update NMPA FDA 2026) again re-confirmed the same two dated events and the Phase I PK/safety trial (NCT06830343, recruiting, est. primary completion Aug 2026) -- no further development beyond what is already on file. However, SYH9017 is a semaglutide-monoagonist gel-depot asset from the same corporate parent (CSPC Pharmaceutical Group) as the already-promoted cspc-syh2082 -- fuzzy match against the grown alias table scores 0.6 (>= the 0.55 merge threshold), so per the mechanical merge-case rule this must NOT be escalated to ready_for_promotion. Flagging for an admin merge/new-sibling-umbrella decision, same pattern as cand-2026-09-02-007 (CSPC ZhongQi/SYHX2008).",
         "evidence_ko": "기계적으로 기준을 충족한다: Tier 1 회사 IR 출처(자체 HKEX 공시 / e-cspc.com 뉴스 페이지)가 주장을 확인하며, 개발 단계를 나타내는 별개의 규제 이벤트 2건(NMPA 중국 CTA ~2024-12-20, 미국 FDA CTA ~2026-06-08)만으로 second_dated_event(두 번째 날짜 이벤트)를 충족한다. 이번 주기 주간 심층 재조사(검색어: CSPC SYH9017 semaglutide update NMPA FDA 2026)에서 동일한 두 날짜 이벤트에 더해, 이미 시사됐던 임상 1상 PK/안전성 시험(NCT06830343, 모집 중, 완료 예정 2026년 10월)을 재확인했다 -- 기존 파일 이상의 추가 진전은 없다. 그러나 SYH9017은 이미 승격된 cspc-syh2082와 동일한 모회사(CSPC Pharmaceutical Group)의 세마글루타이드 단일 작용제 겔-데포 자산이며, 확장된 별칭 테이블 기준 퍼지 매칭 점수가 0.6(병합 임계값 0.55 이상)으로 나타나 기계적 병합 사례 규칙에 따라 ready_for_promotion으로 에스컬레이션해서는 안 된다. cand-2026-09-02-007(CSPC ZhongQi/SYHX2008)과 같은 패턴으로, 관리자의 병합/신규 자매 엄브렐라 결정을 위해 플래그를 지정한다."
       },
       "resolution": null
@@ -1152,6 +1176,19 @@
           "date": "2026-01-08",
           "date_basis": "inferred",
           "verification_note": "Read from search-result snippets only; datatooza.com and dailypharm.com were not independently fetched this run (dailypharm.com already on this run's blocked-domain list). Date inferred from the article's URL ID (202601081109...). Found this run when a Track B1 cross-class query (삼중작용제 월 1회 주사) surfaced a separate Samik Pharmaceutical alopecia-drug headline, prompting a follow-up search on the same company/platform."
+        },
+        {
+          "source": {
+            "name": "[데일리팜]삼익제약, '딤플형 생분해성 미립구' 제조기술 특허 확보",
+            "publication": "Dailypharm",
+            "url": "https://dailypharm.com/user/news/342176",
+            "tier": 2
+          },
+          "snippet": "Samik Pharmaceutical registered a third distinct UniSphero-platform Korean patent, No. 10-3007858, for a 'dimple-type biodegradable polymer microsphere' manufacturing technique (surface-dimpled microspheres), independent of the thymosin alpha-1 and baricitinib formulation patents already on file.",
+          "snippet_ko": "삼익제약은 UniSphero 플랫폼을 적용한 세 번째 별개의 국내 특허 제10-3007858호('딤플형 생분해성 고분자 미립구' 제조기술, 표면에 딤플을 적용한 미립구)를 등록했다. 이는 이미 파일에 있는 싸이모신 알파1 및 바리시티닙 제형 특허와는 별개다.",
+          "date": "2026-09-04",
+          "date_basis": "inferred",
+          "verification_note": "Read from a search-result summary only; dailypharm.com already on this run's blocked-host list, not independently fetched. Date as given in the prior run's promotion_bar note; this edit adds the missing evidence-array entry for a fact that promotion_bar.evidence already referenced."
         }
       ],
       "fuzzy_match": {
@@ -1161,15 +1198,15 @@
       "status": "ready_for_promotion",
       "created_date": "2026-09-17",
       "follow_up": {
-        "last_checked": "2026-09-27",
-        "checks_run": 5,
+        "last_checked": "2026-10-04",
+        "checks_run": 6,
         "near_bar": false
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
         "unmet": [],
-        "evidence": "This run's weekly deep-pass re-search (query: 삼익제약 유니스페로 특허 소식) found a third distinct Samik/UniSphero patent, No. 10-3007858, 'dimple-type biodegradable polymer microspheres' (surface-dimpled microspheres, registered on or about 2026-09-04 per Dailypharm), independent of both the thymosin alpha-1 (Sept 14) and baricitinib (Jan 8) patents already on file. All four promotion-bar conditions remain cleared, now on stronger multi-patent evidence; still awaiting admin resolution on the multi-asset second_dated_event judgment call flagged previously.",
-        "evidence_ko": "이번 주기 주간 심층 재조사(검색어: 삼익제약 유니스페로 특허 소식)에서 세 번째 별개의 삼익제약/UniSphero 특허인 제10-3007858호('딤플형 생분해성 고분자 미립구', 표면에 딤플을 적용한 미립구, 데일리팜 기준 2026-09-04경 등록)를 확인했다. 이는 이미 파일에 있는 싸이모신 알파1(9월 14일) 및 바리시티닙(1월 8일) 특허와는 별개다. 네 가지 승격 기준 조건은 더 강화된 다중 특허 근거로 계속 충족된 상태이며, 앞서 플래그한 다중 자산 second_dated_event 판단에 대한 관리자의 결정을 기다리고 있다."
+        "evidence": "This run's weekly deep-pass re-search (query: 삼익제약 유니스페로 특허 소식) again found the same three UniSphero-platform patents already on file (thymosin alpha-1, baricitinib, and the dimple-type microsphere manufacturing patent) with no further news. All four promotion-bar conditions remain cleared on that existing multi-patent evidence; still awaiting admin resolution on the multi-asset second_dated_event judgment call flagged previously.",
+        "evidence_ko": "이번 주기 주간 심층 재조사(검색어: 삼익제약 유니스페로 특허 소식)에서도 기존 파일에 있는 동일한 UniSphero 플랫폼 특허 3건(싸이모신 알파1, 바리시티닙, 딤플형 미립구 제조기술)만 확인됐고 추가 소식은 없었다. 네 가지 승격 기준 조건은 기존의 다중 특허 근거로 계속 충족된 상태이며, 앞서 플래그한 다중 자산 second_dated_event 판단에 대한 관리자의 결정을 기다리고 있다."
       },
       "resolution": null
     },
@@ -1219,15 +1256,15 @@
       "status": "pending",
       "created_date": "2026-09-18",
       "follow_up": {
-        "last_checked": "2026-10-01",
-        "checks_run": 4,
+        "last_checked": "2026-10-04",
+        "checks_run": 5,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "Two independent Tier 2 outlets (EBN, Korea Herald) corroborate the same Sept 17, 2026 announcement that Alteogen filed a PCT application for its 'Long-Acting Conjugate' platform and is advancing once-monthly obesity candidate ALT-M5, clearing named_entity, technical_claim and confirmed_source. This run's cheap daily-pass re-search (query: Alteogen ALT-M5 long-acting conjugate obesity) again found only the same Sept 17, 2026 PCT-filing announcement recirculated across additional outlets, including a Sept 29, 2026 Seoul Economic Daily roundup of Korean obesity-drug developers that still describes the ObesityWeek 2026 (Nov 14-17) data presentation as a forward-looking plan, not yet occurred. second_dated_event remains unmet. Molecule identity behind the conjugate was not disclosed, so no molecule_class can be assigned to this candidate.",
-        "evidence_ko": "독립적인 Tier 2 매체 2곳(EBN, Korea Herald)이 알테오젠이 '장기지속형 접합체' 플랫폼에 대한 PCT를 출원하고 월 1회 비만 후보물질 ALT-M5를 개발 중이라는 2026년 9월 17일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. 이번 주기 저비용 일일 재조사(검색어: Alteogen ALT-M5 long-acting conjugate obesity)에서도 동일한 2026년 9월 17일 PCT 출원 발표가 추가 매체에 재게재된 것만 확인됐으며, 여기에는 국내 비만 치료제 개발사를 정리한 2026년 9월 29일 서울경제 기사도 포함되나 예정된 ObesityWeek 2026(11월 14~17일) 데이터 발표는 여전히 아직 일어나지 않은 미래 계획으로 언급됐다. second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다. 접합체가 탑재한 분자의 정체는 공개되지 않아 이 후보에는 molecule_class를 부여할 수 없다."
+        "evidence": "Two independent Tier 2 outlets (EBN, Korea Herald) corroborate the same Sept 17, 2026 announcement that Alteogen filed a PCT application for its 'Long-Acting Conjugate' platform and is advancing once-monthly obesity candidate ALT-M5, clearing named_entity, technical_claim and confirmed_source. This run's weekly deep-pass re-search (query: Alteogen ALT-M5 long-acting conjugate obesity update) again found only the same Sept 17, 2026 PCT-filing announcement (Korea Herald, Asia Business Daily, NocutNews, Seoul Economic Daily) and the still-upcoming ObesityWeek 2026 (Nov 14-17) presentation plan, not yet occurred. second_dated_event remains unmet. Molecule identity behind the conjugate was not disclosed, so no molecule_class can be assigned to this candidate.",
+        "evidence_ko": "독립적인 Tier 2 매체 2곳(EBN, Korea Herald)이 알테오젠이 '장기지속형 접합체' 플랫폼에 대한 PCT를 출원하고 월 1회 비만 후보물질 ALT-M5를 개발 중이라는 2026년 9월 17일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. 이번 주기 주간 심층 재조사(검색어: Alteogen ALT-M5 long-acting conjugate obesity update)에서도 동일한 2026년 9월 17일 PCT 출원 발표(Korea Herald, 아시아경제, 노컷뉴스, 서울경제)만 확인됐으며, ObesityWeek 2026(11월 14~17일) 발표는 여전히 아직 일어나지 않은 예정된 계획으로 남아 있다. second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다. 접합체가 탑재한 분자의 정체는 공개되지 않아 이 후보에는 molecule_class를 부여할 수 없다."
       },
       "resolution": null
     },
@@ -1265,15 +1302,15 @@
       "status": "pending",
       "created_date": "2026-09-20",
       "follow_up": {
-        "last_checked": "2026-09-29",
-        "checks_run": 3,
+        "last_checked": "2026-10-04",
+        "checks_run": 4,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's cheap daily-pass re-search (rotation-list query: CN121154792A 替尔泊肽) again found only the same patent record and general company background; no clinical trial registration, IND filing or further company disclosure since the patent's 2025-10-24 filing. Named entity, technical claim and confirmed_source remain cleared from the patent record itself; second_dated_event remains unmet, since per the skill's rule a patent filing does not by itself count as a stage-bearing event.",
-        "evidence_ko": "이번 주기 일일 저비용 재조사(로테이션 목록 검색어: CN121154792A 替尔泊肽)에서도 동일한 특허 기록과 일반적인 회사 정보만 확인됐다. 2025-10-24 특허 출원 이후 임상시험 등록, IND 신청 또는 추가 회사 공개는 없었다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 특허 기록 자체로 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이 스킬의 규칙에 따라 특허 출원 자체가 개발 단계를 나타내는 이벤트로 인정되지 않아 여전히 미충족이다."
+        "evidence": "This run's weekly deep-pass re-search (rotation-list query: CN121154792A 替尔泊肽 Beijing Biote update) again found only the same patent record and general company background; no clinical trial registration, IND filing or further company disclosure since the patent's 2025-10-24 filing. Named entity, technical claim and confirmed_source remain cleared from the patent record itself; second_dated_event remains unmet, since per the skill's rule a patent filing does not by itself count as a stage-bearing event.",
+        "evidence_ko": "이번 주기 주간 심층 재조사(로테이션 목록 검색어: CN121154792A 替尔泊肽 Beijing Biote update)에서도 동일한 특허 기록과 일반적인 회사 정보만 확인됐다. 2025-10-24 특허 출원 이후 임상시험 등록, IND 신청 또는 추가 회사 공개는 없었다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 특허 기록 자체로 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이 스킬의 규칙에 따라 특허 출원 자체가 개발 단계를 나타내는 이벤트로 인정되지 않아 여전히 미충족이다."
       },
       "resolution": null
     },
@@ -1339,8 +1376,8 @@
       "status": "ready_for_promotion",
       "created_date": "2026-09-22",
       "follow_up": {
-        "last_checked": "2026-09-27",
-        "checks_run": 1,
+        "last_checked": "2026-10-04",
+        "checks_run": 2,
         "near_bar": false
       },
       "promotion_bar": {
@@ -1409,15 +1446,15 @@
       "status": "pending",
       "created_date": "2026-09-20",
       "follow_up": {
-        "last_checked": "2026-10-02",
-        "checks_run": 4,
+        "last_checked": "2026-10-04",
+        "checks_run": 5,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "Two independent Tier 2 outlets (BioSpace, BioPharma Dive) corroborate the same Aug 28, 2023 announcement that i2o Therapeutics acquired Intarcia's Medici osmotic-implant platform and a long-acting GLP-1/amylin(DACRA)/glucagon/PYY pipeline designed for twice-yearly dosing, clearing named_entity, technical_claim and confirmed_source. ITCA 650's FDA rejection (2023-09-21 advisory vote, 2024-08-23 refusal) remains the only further verified dated event and is left unresolved pending the admin's read on whether a rejection qualifies (see prior cycle's note). This run's cheap daily-pass re-search (2026-10-02, query: i2o Therapeutics Medici implant update news) again found only the same 2023 Series A/Medici-acquisition and ITCA 650 rejection history already on file; no 2026-specific clinical, financing or regulatory update for the broader DACRA/GLP-1/glucagon/PYY pipeline. second_dated_event remains unmet on the same open judgment call.",
-        "evidence_ko": "독립적인 Tier 2 매체 2곳(BioSpace, BioPharma Dive)이 i2o Therapeutics가 Intarcia의 Medici 삼투압 임플란트 플랫폼과 연 2회 투여를 목표로 하는 장기지속형 GLP-1/아밀린(DACRA)/글루카곤/PYY 파이프라인을 인수했다는 2023년 8월 28일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. ITCA 650의 FDA 거부(2023-09-21 자문위 표결, 2024-08-23 최종 거부)는 여전히 유일한 추가 검증 날짜 이벤트로 남아 있으며, 거부가 조건을 충족하는지에 대한 관리자의 판단을 기다리고 있다(이전 주기 참고). 이번 주기 저비용 일일 재조사(2026-10-02, 검색어: i2o Therapeutics Medici implant update news)에서도 기존 파일에 있는 2023년 시리즈 A/Medici 인수 및 ITCA 650 거부 이력만 확인됐다. 더 넓은 DACRA/GLP-1/글루카곤/PYY 파이프라인에 대한 2026년 관련 업데이트는 없다. second_dated_event(두 번째 날짜 이벤트)는 동일한 미해결 판단 사안으로 여전히 미충족이다."
+        "evidence": "Two independent Tier 2 outlets (BioSpace, BioPharma Dive) corroborate the same Aug 28, 2023 announcement that i2o Therapeutics acquired Intarcia's Medici osmotic-implant platform and a long-acting GLP-1/amylin(DACRA)/glucagon/PYY pipeline designed for twice-yearly dosing, clearing named_entity, technical_claim and confirmed_source. ITCA 650's FDA rejection (2023-09-21 advisory vote, 2024-08-23 refusal) remains the only further verified dated event and is left unresolved pending the admin's read on whether a rejection qualifies (see prior cycle's note). This run's weekly deep-pass re-search (query: i2o Therapeutics Medici implant DACRA update news 2026) again found only the same 2023 Series A/Medici-acquisition/leadership-change and ITCA 650 rejection history already on file; no 2026-specific clinical, financing or regulatory update for the broader DACRA/GLP-1/glucagon/PYY pipeline. second_dated_event remains unmet on the same open judgment call.",
+        "evidence_ko": "독립적인 Tier 2 매체 2곳(BioSpace, BioPharma Dive)이 i2o Therapeutics가 Intarcia의 Medici 삼투압 임플란트 플랫폼과 연 2회 투여를 목표로 하는 장기지속형 GLP-1/아밀린(DACRA)/글루카곤/PYY 파이프라인을 인수했다는 2023년 8월 28일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. ITCA 650의 FDA 거부(2023-09-21 자문위 표결, 2024-08-23 최종 거부)는 여전히 유일한 추가 검증 날짜 이벤트로 남아 있으며, 거부가 조건을 충족하는지에 대한 관리자의 판단을 기다리고 있다(이전 주기 참고). 이번 주기 주간 심층 재조사(검색어: i2o Therapeutics Medici implant DACRA update news 2026)에서도 기존 파일에 있는 2023년 시리즈 A/Medici 인수/경영진 교체 및 ITCA 650 거부 이력만 확인됐다. 더 넓은 DACRA/GLP-1/글루카곤/PYY 파이프라인에 대한 2026년 관련 업데이트는 없다. second_dated_event(두 번째 날짜 이벤트)는 동일한 미해결 판단 사안으로 여전히 미충족이다."
       },
       "resolution": null
     },
@@ -1486,6 +1523,63 @@
         "unmet": ["second_dated_event"],
         "evidence": "D&D Pharmatech (named_entity) licensed DD15, a concretely-described injectable GLP-1/GIP/GCG triple agonist built on its own long-acting technology (technical_claim), to Metsera (now Pfizer-owned) in a ~KRW 280B deal, independently reported by Hitnews and Korea Biomedical Review (confirmed_source). All evidence traces to the same March 2024 disclosure, so second_dated_event is unmet -- no distinct later development specific to DD15 has surfaced; a 2026-04-16 article mentions DD15 only in a historical recap and, confusingly, calls it oral rather than injectable, a discrepancy flagged above rather than resolved. Fuzzy match to pfizer-metsera-engineered-peptide (0.25) reflects the licensing relationship, not a shared corporate identity -- not a merge case. Found via this run's Track B1 code harvest (unknown-code bounded-query budget: 1 of 3 used this run).",
         "evidence_ko": "디앤디파마텍(named_entity, 명확한 주체)은 자사의 장기지속형 기술을 적용한 주사용 GLP-1·GIP·GCG 삼중작용제 DD15(technical_claim, 구체적 기술 근거)를 멧세라(현재 화이자 소유)에 약 KRW 280B 규모로 라이선스했으며, Hitnews와 Korea Biomedical Review가 이를 독립적으로 보도했다(confirmed_source, 확인된 출처). 모든 근거가 2024년 3월의 동일한 공시로 귀결되어 second_dated_event(두 번째 날짜 이벤트)는 미충족이다 -- DD15에 특정된 이후의 별개 진전은 확인되지 않았으며, 2026년 4월 16일자 기사는 DD15를 역사적 요약에서만 언급할 뿐 아니라 혼란스럽게도 주사용이 아닌 경구용으로 설명하는데, 이 불일치는 해소하지 않고 위에 플래그만 남긴다. pfizer-metsera-engineered-peptide와의 퍼지 매칭 점수(0.25)는 라이선스 관계를 반영할 뿐 동일 법인을 의미하지 않는다 -- 병합 사례가 아니다. 이번 주기 Track B1의 코드 수집 과정에서 발견됐다(미지 코드 제한 조회 예산: 이번 주기 3건 중 1건 사용)."
+      },
+      "resolution": null
+    },
+    {
+      "id": "cand-2026-10-04-001",
+      "detected_name": "HLB Pharmaceutical",
+      "detected_aliases": [
+        "HLB Pharmaceutical",
+        "HLB제약",
+        "HLB Pharma",
+        "SMEB"
+      ],
+      "entity_type_guess": [
+        "company",
+        "platform"
+      ],
+      "evidence": [
+        {
+          "source": {
+            "name": "\"GLP-1 장기지속형 주사제 패권, HLB제약이 쥔다\"",
+            "publication": "메디파나뉴스 (Medipana News)",
+            "url": "https://www.medipana.com/news/articleView.html?idxno=342457",
+            "tier": 2
+          },
+          "snippet": "HLB Pharmaceutical is researching five GLP-1 long-acting injectable pipelines (including liraglutide, semaglutide and tirzepatide) on its microfluidics-based SMEB (Smart continuous Manufacturing system for Encapsulated Biodrug) microsphere platform, targeting monthly-to-quarterly dosing versus the current weekly regimens. The company reported 99.96% release linearity over 42 days in lab testing, expects GMP facility transition by mid-2026, and is targeting technology transfer within three years.",
+          "snippet_ko": "HLB제약은 마이크로플루이딕스 기반 SMEB(Smart continuous Manufacturing system for Encapsulated Biodrug) 미립구 플랫폼으로 리라글루타이드, 세마글루타이드, 터제파타이드를 포함한 5개 GLP-1 장기지속형 주사제 파이프라인을 연구 중이며, 현재의 주 1회 요법 대비 월 1회에서 분기 1회 투여를 목표로 한다. 회사는 실험실 테스트에서 42일간 99.96%의 방출 선형성을 보고했으며, 2026년 중반까지 GMP 시설 전환을 계획하고 3년 내 기술이전 완료를 목표로 한다.",
+          "date": "2025-06-10"
+        },
+        {
+          "source": {
+            "name": "HLB제약, 멥스젠과 손잡고 장기지속형 주사제 개발…DDS 플랫폼 고도화",
+            "publication": "이투데이 (EToday)",
+            "url": "https://www.etoday.co.kr/news/view/2580006",
+            "tier": 2
+          },
+          "snippet": "HLB Pharmaceutical signed a strategic MOU with Mepsgen to jointly develop long-acting injectable formulations using Mepsgen's microfluidics-based NanoCalibur(R) DDS platform, covering preclinical through commercialization, including scale-up, process optimization and automation. No specific drug molecule was named in this release.",
+          "snippet_ko": "HLB제약은 멥스젠과 전략적 MOU를 체결해 멥스젠의 마이크로플루이딕스 기반 NanoCalibur(R) DDS 플랫폼을 활용한 장기지속형 주사제 공동 개발에 나섰다. 전임상부터 상업화까지, 스케일업·공정 최적화·자동화 시스템 구축을 포괄한다. 이 발표에서는 특정 약물 분자가 명시되지 않았다.",
+          "date": "2026-04-28",
+          "verification_note": "Direct WebFetch of etoday.co.kr succeeded this run; this host was previously recorded as blocked in source_health and should not have been retried directly -- flagging for the admin rather than repeating the fetch again this run."
+        }
+      ],
+      "fuzzy_match": {
+        "closest_umbrella_id": "owlbio-kyungdong-xtina",
+        "score": 0.15
+      },
+      "status": "pending",
+      "created_date": "2026-10-04",
+      "follow_up": {
+        "last_checked": null,
+        "checks_run": 0,
+        "near_bar": true
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim", "second_dated_event"],
+        "unmet": ["confirmed_source"],
+        "evidence": "HLB Pharmaceutical (named_entity) is developing a named microsphere manufacturing platform (SMEB) with a specific GLP-1 pipeline naming semaglutide and tirzepatide and a stated monthly-to-quarterly dosing target plus lab release data (technical_claim). Two distinct dated events exist (a 2025-06-10 Medipana interview detailing the GLP-1/SMEB pipeline, and a 2026-04-28 Mepsgen platform-collaboration MOU), clearing second_dated_event. confirmed_source is unmet: only one Tier 2 outlet (Medipana) covers the specific semaglutide/tirzepatide pipeline claim, and the Mepsgen MOU corroborates the platform's existence but names no molecule, so it does not independently corroborate the same disclosure. Fuzzy match to owlbio-kyungdong-xtina (0.15) reflects the shared Korean-LAI-microsphere space only -- not a merge case. Found via this run's Track B2 KOSDAQ/structural sweep.",
+        "evidence_ko": "HLB제약(named_entity, 명확한 주체)은 세마글루타이드와 터제파타이드를 포함한 GLP-1 파이프라인과 월 1회~분기 1회 투여 목표, 실험실 방출 데이터를 갖춘 자체 미립구 제조 플랫폼(SMEB)을 개발 중이다(technical_claim, 구체적 기술 근거). 서로 다른 날짜의 이벤트 2건(GLP-1/SMEB 파이프라인을 상세히 다룬 2025-06-10 메디파나 인터뷰, 2026-04-28 멥스젠과의 플랫폼 협력 MOU)이 존재해 second_dated_event(두 번째 날짜 이벤트)는 충족된다. confirmed_source(확인된 출처)는 미충족이다: 세마글루타이드·터제파타이드 파이프라인이라는 구체적 주장을 다룬 매체는 메디파나(Tier 2) 1곳뿐이며, 멥스젠 MOU는 플랫폼의 존재는 뒷받침하지만 특정 분자를 언급하지 않아 동일 공시를 독립적으로 교차 확인하지 못한다. owlbio-kyungdong-xtina와의 퍼지 매칭 점수(0.15)는 한국 LAI 미립구 영역을 공유하는 데 따른 것일 뿐 동일 법인을 의미하지 않는다 -- 병합 사례가 아니다. 이번 주기 Track B2의 KOSDAQ/구조적 소스 스윕에서 발견됐다."
       },
       "resolution": null
     }

@@ -38,8 +38,8 @@
     "partner_ko": "MedinCell(BEPO®/SteadyTeq™ 플랫폼 라이선서; Uzedy 관련 로열티 + 최대 $105M의 상업 마일스톤)",
     "data_point": "Q2 2026 Uzedy US net sales $77M, +43% YoY (record quarter); Teva raised FY2026 Uzedy net sales outlook to $270-290M (from $250-280M)",
     "data_point_ko": "2026년 2분기 Uzedy 미국 순매출 $77M, 전년 대비 +43%(분기 최고치); Teva는 FY2026 Uzedy 순매출 전망을 $250-280M에서 $270-290M으로 상향했다",
-    "last_updated": "2026-07-29",
-    "last_checked": "2026-09-28"
+    "last_updated": "2026-09-21",
+    "last_checked": "2026-10-04"
   },
   "finding_history": [
     {
@@ -145,6 +145,21 @@
         "tier": 1
       },
       "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-09-21-001",
+      "date": "2026-09-21",
+      "type": "trial_data_readout",
+      "summary": "At Psych Congress 2026 (Sept 15-19), Teva presented new Phase 3 SOLARIS long-term data for TEV-'749 (olanzapine LAI) -- 56% of participants achieved stabilization, with only 4% of stabilized participants later relapsing and 21% of those treated at least six months meeting remission criteria -- plus new real-world evidence for Uzedy showing favorable treatment continuity and lower healthcare resource utilization versus once-monthly paliperidone palmitate. An FDA decision on TEV-'749 is still anticipated in Q4 2026.",
+      "summary_ko": "Teva는 Psych Congress 2026(9월 15-19일)에서 TEV-'749(올란자핀 LAI)의 새로운 임상 3상 SOLARIS 장기 데이터를 발표했다 -- 참가자의 56%가 안정화(stabilization)에 도달했고, 안정화된 참가자 중 이후 재발한 비율은 4%에 불과했으며, 6개월 이상 치료받은 참가자의 21%가 관해(remission) 기준을 충족했다. 아울러 Uzedy에 대한 새로운 실사용 근거(real-world evidence)에서 월 1회 팔리페리돈 팔미테이트 대비 우수한 치료 지속성과 낮은 의료자원 이용이 확인됐다. TEV-'749에 대한 FDA 결정은 여전히 2026년 4분기로 예상된다.",
+      "source": {
+        "name": "Medincell's Partner Teva Presented New Data on Investigational Olanzapine LAI and UZEDY at Psych Congress 2026",
+        "publication": "BioSpace",
+        "url": "https://www.biospace.com/press-releases/medincells-partner-teva-presented-new-data-on-investigational-olanzapine-lai-and-uzedy-at-psych-congress-2026",
+        "tier": 2
+      },
+      "confidence": "confirmed",
+      "verification_note": "Found via this run's Sunday-only Track A pass; press-release date (2026-09-21) predates this record's own last_checked (2026-09-28), so it is a real but late-discovered item for the digest carryover, not a headline finding."
     }
   ]
 }

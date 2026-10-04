@@ -16,8 +16,8 @@
     "lanreotide acetate"
   ],
   "current_status": {
-    "stage": "Approved & marketed globally; facing generic lanreotide competition in the US since 2021 (Cipla, InvaGen/Camber), though generic-side manufacturing challenges have recently supported branded sales resilience",
-    "stage_ko": "전 세계 승인 및 시판; 2021년부터 미국에서 제네릭 란레오타이드(Cipla, InvaGen/Camber)와 경쟁하고 있으나, 최근 제네릭 측의 생산 문제가 오리지널 매출 방어를 뒷받침했다",
+    "stage": "Approved & marketed globally; facing generic lanreotide competition in the US since 2021 (Cipla, InvaGen/Camber), though generic-side manufacturing challenges have recently supported branded sales resilience. A third US generic (Amneal, 120mg/0.5mL, Competitive Generic Therapy designation) gained FDA approval and launched immediately on 2026-09-18.",
+    "stage_ko": "전 세계 승인 및 시판; 2021년부터 미국에서 제네릭 란레오타이드(Cipla, InvaGen/Camber)와 경쟁하고 있으나, 최근 제네릭 측의 생산 문제가 오리지널 매출 방어를 뒷받침했다. 2026-09-18에는 세 번째 미국 제네릭(Amneal, 120mg/0.5mL, 경쟁 제네릭 치료제 지정)이 FDA 승인을 받아 즉시 시판됐다.",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Approved and marketed globally, facing US generic competition since 2021.",
     "stage_evidence_ko": "전 세계에서 승인 및 시판 중이며, 2021년부터 미국에서 제네릭 경쟁에 직면해 있다.",
@@ -31,8 +31,8 @@
     "partner": null,
     "data_point": "Somatuline FY2025 sales grew 4.3% at constant exchange rates, well below the rest of Ipsen's portfolio (ex-Somatuline: +14.2%); FY2026 guidance again cites generic lanreotide production challenges as a tailwind for Somatuline (Ipsen FY2025 results, Feb 12, 2026; Q1 2026 update, Apr 23, 2026)",
     "data_point_ko": "Somatuline FY2025 매출은 고정환율 기준 4.3% 성장해 Ipsen의 나머지 포트폴리오(Somatuline 제외: +14.2%)를 크게 밑돌았다. FY2026 가이던스는 제네릭 란레오타이드 생산 문제를 Somatuline의 순풍 요인으로 재차 언급했다(Ipsen FY2025 실적, 2026년 2월 12일; 2026년 1분기 업데이트, 2026년 4월 23일)",
-    "last_updated": "2026-07-30",
-    "last_checked": "2026-09-28"
+    "last_updated": "2026-09-18",
+    "last_checked": "2026-10-04"
   },
   "finding_history": [
     {
@@ -87,6 +87,21 @@
         "tier": 1
       },
       "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-09-18-001",
+      "date": "2026-09-18",
+      "type": "regulatory",
+      "summary": "Amneal Pharmaceuticals received FDA approval under the Competitive Generic Therapy designation for a lanreotide injection (120 mg/0.5 mL sterile single-dose prefilled syringe) referencing Somatuline Depot, covering acromegaly, GEP-NETs and carcinoid syndrome, and launched the product immediately.",
+      "summary_ko": "Amneal Pharmaceuticals는 Somatuline Depot을 참조하는 란레오타이드 주사제(120 mg/0.5 mL 멸균 단회투여 사전충전 주사기)에 대해 FDA로부터 경쟁 제네릭 치료제(Competitive Generic Therapy) 지정 승인을 받았으며, 말단비대증·위장췌장 신경내분비종양(GEP-NET)·카르시노이드증후군에 적용된다. 해당 제품은 즉시 시판됐다.",
+      "source": {
+        "name": "Amneal Announces FDA Approval and Launch of Lanreotide Injection",
+        "publication": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/09/18/3364935/0/en/amneal-announces-fda-approval-and-launch-of-lanreotide-injection.html",
+        "tier": 2
+      },
+      "confidence": "confirmed",
+      "verification_note": "Found via this run's Sunday-only Track A pass; event dated 2026-09-18 predates this record's own last_checked (2026-09-28), so it is a real but late-discovered item for the digest carryover, not a headline finding."
     }
   ]
 }

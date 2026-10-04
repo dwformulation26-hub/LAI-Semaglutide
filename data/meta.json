@@ -3,12 +3,22 @@
     "initial_seed": "2026-09-02T00:00:00Z",
     "initial_discovery_test": "2026-09-02T00:00:00Z",
     "daily_scan": "2026-10-02T06:04:27+09:00",
-    "weekly_sweep": "2026-09-27T09:01:32+09:00",
-    "qc_tier2": "2026-09-27T09:01:32+09:00",
+    "weekly_sweep": "2026-10-04T09:03:46+09:00",
+    "qc_tier2": "2026-10-04T09:03:46+09:00",
     "qc_tier3": null,
     "baseline_class_sweep": "2026-09-11T06:40:00Z"
   },
-  "digest_carryover": null,
+  "digest_carryover": {
+    "from": "2026-10-04T09:03:46+09:00",
+    "findings": [
+      { "umbrella_id": "ipsen-somatuline", "finding_id": "f-2026-09-18-001" },
+      { "umbrella_id": "teva-medincell-uzedy", "finding_id": "f-2026-09-21-001" },
+      { "umbrella_id": "camurus-cam2029", "finding_id": "f-2026-06-01-002" },
+      { "umbrella_id": "ascletis-asc30", "finding_id": "f-2026-10-02-001" }
+    ],
+    "candidates": ["cand-2026-10-04-001"],
+    "newly_escalated": ["cand-2026-09-05-001"]
+  },
   "coverage": {
     "daily_scan": {
       "umbrellas_checked": 5,
@@ -24,24 +34,28 @@
     "weekly_sweep": {
       "source_categories_checked": 8,
       "source_categories_total": 8,
-      "notes": "Track B2 class- and code-aware structural sweep, ~35 queries: (1) per-molecule clinicaltrials.gov once-monthly queries for all four named classes -- all four still return only weekly/daily programs, no new registrations; (2) per-molecule Google Patents query paired with a depot/sustained-release term -- semaglutide/tirzepatide hits all resolved to already-tracked assignees (Mapi Pharma, G2GBio, Owl Bio/AUL018), retatrutide and amylin queries returned only octreotide/generic amylin prior art, and one tirzepatide delivery-system filing (WO2024134493A1) could not be attributed to a named assignee even after a second query, so it was dropped rather than queued thin; (3) conference accepted-abstract indices for ADA/EASD/ObesityWeek -- an ADA 2026 poster (466-P, monthly semaglutide microsphere in ZDF rats) traced by co-author overlap to Owl Bio's already-tracked AUL009/ExTenna program; EASD 2026 Ascletis/Lilly abstracts and Pfizer's berobenatide ADA coverage all already-tracked; ObesityWeek 2026 abstract portal open, nothing new; (4) KIPRIS/USPTO/WIPO sustained-release/depot CPC sweep -- folded into (2), no new untracked program; (5) full watchlist rotation list (5 rows: abbv-295, pt404, lilly-camurus, biote-cn121154792a, ct-g32) -- abbv-295 and biote-cn121154792a are now resolved into candidates cand-2026-09-22-001 and cand-2026-09-20-001 respectively and should be removed from the rotation list (admin action, runs never edit the watchlist); pt404, lilly-camurus and ct-g32 (Celltrion, still no disclosed dosing interval, primate tox underway, IND targeted H1 2027) all reconfirmed existing documentation with no new dosing-interval disclosure; (6) all 13 Sunday-only rows (S1-S9 class/language variants, S10-S13 per-molecule clinicaltrials.gov) -- all quiet/reconfirming, matching the 2026-09-14 gap-test finding that these are structurally low-yield, except S5 (semaglutide CN) which reconfirmed CSPC's own SYH9017 code, already a tracked candidate; (7) KOSDAQ 기술특례상장 pipeline -- no new LAI-specific entrant, only already-tracked Samik Pharmaceutical (candidate) and Dongkook (existing umbrella) CPHI coverage; (8) university tech-transfer / VC-deal-database sweep -- surfaced a major new dated event for an already-promoted umbrella: Novo Nordisk signed a EUR 1.165B global exclusive license (up to 5 PharmaShell programs, monthly/quarterly targets, announced 2026-09-25) with Nanexa, logged as finding f-2026-09-25-001 on nanexa-pharmashell-semaglutide (current_status.partner and last_updated updated accordingly; nanexa.com added to source_health as blocked). No other new untracked program or candidate-worthy entity surfaced this run. Code harvest across all B2 results surfaced no unknown codes needing the bounded 3-query resolution path. Track B3 weekly deep pass covered all 16 previously-unresolved candidates in order (ready_for_promotion first, then near_bar pending, then the rest of pending -- no watch/stalled candidates exist yet, so the every-4th-sweep step did not apply): the 4 ready_for_promotion candidates (Alveus/ALV-100, Prolynx, Samik/UniSphero, AbbVie-Gubra/ABBV-295) each got a fresh re-search -- Alveus, Samik and AbbVie/Gubra each surfaced a further corroborating/additional dated event (Phase 2 PRESERVE trial; a third distinct UniSphero patent; Gubra's $50M milestone payment) strengthening an already-cleared bar, Prolynx found nothing new; all 4 remain ready_for_promotion awaiting admin resolution, none newly escalated this run. Of the 7 near_bar pending candidates, none cleared second_dated_event this run (Samchundang, SpiderCore, Precision Antibiotics, Appel Sauce Studios, Alteogen and Beijing Biote all reconfirmed the same single dated event or found only unrelated/out-of-scope company news; i2o Therapeutics' rejection-based second-event judgment call remains open for the admin). Of the 5 remaining pending candidates, no material change: the two CSPC merge-case candidates (cand-2026-09-02-007, cand-2026-09-13-002) and the Mapi Pharma Cariprazine merge case (cand-2026-09-06-001) all reconfirmed their existing single-source/merge-case status; Korea BioNC/ProAptec found only unrelated (gout-drug) company news; Hengrui ribupatide reconfirmed weekly/oral-only formulations, still recommended for admin reject-with-reason. No candidate was created, escalated, stalled, merged, rejected or snoozed this run beyond what is detailed above."
+      "notes": "Sunday-only Track A pass (admin rule, 2026-09-29): all 18 umbrellas with stage_label 'Approved / marketed' and molecule_class exactly ['non_incretin'] queried on their single most distinctive alias, each umbrella's freshness window starting at its own last_checked (2026-09-28/09-29). Two new findings, both outside their own record's window so logged as discovered-late rather than headline: ipsen-somatuline (f-2026-09-18-001, a third US generic lanreotide -- Amneal, CGT designation -- approved and launched 2026-09-18) and teva-medincell-uzedy (f-2026-09-21-001, Psych Congress 2026 SOLARIS long-term data plus Uzedy real-world evidence). All 18 stamped checked 2026-10-04. Track B2 class- and code-aware structural sweep (~40 queries): per-molecule clinicaltrials.gov once-monthly queries (still only weekly/daily programs); per-molecule Google Patents queries (all resolved to already-tracked assignees -- Mapi Pharma, G2GBio, Owl Bio); ADA/EASD/ObesityWeek abstract sweep surfaced new EASD 2026 Ascletis ASC36_35FDC preclinical data (half-lives ~33/30 days, DIO-rat weight loss vs eloralintide/tirzepatide and MET-233i/tirzepatide combos) logged as f-2026-10-02-001 on ascletis-asc30, and confirmed AbbVie/Gubra's EASD 2026 detailed ABBV-295 Phase 1 data already on file for cand-2026-09-22-001; full watchlist rotation list (5 rows) reconfirmed existing documentation except the Lilly-Camurus FluidCrystal amylin-option deal (2026-06-01), which had never been captured anywhere -- logged as a new deal_partnership finding (f-2026-06-01-002) on camurus-cam2029; all 13 Sunday-only rows quiet/reconfirming; KOSDAQ 기술특례상장 sweep surfaced a new untracked platform company, HLB Pharmaceutical (HLB제약, SMEB microsphere platform with a named semaglutide/tirzepatide pipeline) -- written as candidate cand-2026-10-04-001; university tech-transfer / VC-deal sweep found nothing new beyond the above. PROCESS NOTE FOR THE ADMIN: this run inadvertently direct-WebFetched four hosts already recorded in source_health as 'blocked' (etoday.co.kr, edaily.co.kr, camurus.com, globenewswire.com) before checking the list closely enough -- all four succeeded rather than returning EGRESS_BLOCKED, so source_health has been corrected to 'ok' for all four below, but the skill's 'never fetch an already-blocked host' rule was not followed for this run and should be re-read more carefully next time.",
+      "track_a_sunday_only": {
+        "umbrellas_checked": 18,
+        "findings": 2
+      }
     },
     "qc_tier2": {
       "findings_sampled": 7,
-      "findings_total": 169,
+      "findings_total": 183,
       "match": 7,
       "mismatch": 0,
       "unreachable": 0,
-      "class_coverage": "Sample included at least one record from each of tirzepatide (samsung-bioepis-g2gbio-gb7001, owlbio-kyungdong-xtina, inventagelab-ivl3021), retatrutide (samsung-bioepis-g2gbio-gb7001) and amylin (samsung-bioepis-g2gbio-gb7001, novonordisk-zenagamtide, ascletis-asc30) as required; also sampled bostal-b2227 (non_incretin) for spread. 6 of the 7 were re-verified directly against cited/independently-corroborating sources via fresh search (G2GBio's ADA 2026 InnoLAMP correction finding, Owl Bio's AUL016 tirzepatide patent, Novo Nordisk's zenagamtide ADA 2026 Phase 2 data, Ascletis's ASC36 Phase 1 IND head-to-head data, and Bostal's NCT07722728 registration) -- summary, date and molecule facts all held; InventageLab's ADA 2026 poster (koreabiomed.com, already on the blocked-host list) was checked for internal consistency only, consistent with its existing verification_note. molecule_class vs molecule_evidence re-checked for every tirzepatide/retatrutide/amylin record sampled: all consistent, no mismatch to record. Side note (not a mismatch, flagged for awareness only): ascletis-asc30's existing finding f-2026-09-08-001 (logged in a prior run) describes an oral ASC36 tablet Phase 1 study -- an oral formulation, which the skill's scope rules place out of bounds for a logged finding (out of scope material belongs in a one-line coverage note, not finding_history). The finding cannot be removed (append-only), but the admin should be aware this is a pre-existing scope slip, not something this run introduced or can fix retroactively.",
-      "dedup_sweep": "completed -- rebuilt the full normalized alias table (umbrellas + all unresolved candidates' detected_aliases, case/hyphen/space-normalized). No new umbrella aliases and no new candidates were added this run, so the table is unchanged from the 2026-09-20 sweep's rebuild: all cross-owner collisions remain the same legitimate same-parent-company multi-asset umbrellas (Alkermes, Ascendis Pharma, Camurus incl. Braeburn-Camurus-Brixadi, InventageLab, Ipsen, Mapi Pharma, Novo Nordisk, Peptron), plus the three already-flagged CSPC/Mapi merge-case candidates (cand-2026-09-02-007 and cand-2026-09-13-002 vs cspc-syh2082; cand-2026-09-06-001 vs mapi-pharma-semaglutide) -- all still correctly held at pending/merge-case rather than escalated."
+      "class_coverage": "Sample included at least one record from each of tirzepatide (inventagelab-ivl3021, samsung-bioepis-g2gbio-gb7001), retatrutide (samsung-bioepis-g2gbio-gb7001) and amylin (samsung-bioepis-g2gbio-gb7001, ascletis-asc30, lilly-eloralintide) as required; also sampled foresee-camcevi and camurus-cam2056 (both non_incretin/semaglutide) for spread. New findings written by this very run (ascletis-asc30, ipsen-somatuline, teva-medincell-uzedy, camurus-cam2029) were deliberately excluded from the sample since they were already verified against source at write time. All 7 sampled findings were re-verified directly against their cited or independently corroborating sources via fresh search/fetch (InventageLab's ADA 2026 11.1%-share-jump/IVL3021+IVL3024 article, G2GBio's KOSDAQ IPO price/date, Ascletis's NCT06679959 75-day half-life release, Lilly's eloralintide Phase 2 primary-endpoint data, Foresee's Orange Book patent listing, Camurus's CAM2056 Phase 1b topline) -- summary, date and molecule facts all held, no mismatches. molecule_class vs molecule_evidence re-checked for every tirzepatide/retatrutide/amylin record sampled: all consistent, no mismatch to record.",
+      "dedup_sweep": "completed -- rebuilt the full normalized alias table (umbrellas + all unresolved candidates' detected_aliases, case/hyphen/space-normalized), now including this run's new HLB Pharmaceutical candidate. All cross-owner collisions remain the same legitimate same-parent-company multi-asset umbrellas (Alkermes, Ascendis Pharma, Camurus incl. Braeburn-Camurus-Brixadi, InventageLab, Ipsen, Mapi Pharma, Novo Nordisk, Peptron) plus the already-flagged CSPC/Mapi merge-case candidates (cand-2026-09-02-007 and cand-2026-09-13-002 vs cspc-syh2082; cand-2026-09-06-001 vs mapi-pharma-semaglutide). One new benign collision: 'AbbVie' as a bare alias is shared between the abbvie-lupron umbrella and candidate cand-2026-09-22-001 (ABBV-295, licensed from Gubra) -- same generic-company-name pattern as the existing Alkermes/Ipsen collisions, different molecule and origin (Gubra), not a merge case. HLB Pharmaceutical introduced no alias collisions with any existing umbrella or candidate."
     },
     "candidate_follow_up": {
-      "unresolved_total": 17,
-      "rechecked": 2,
-      "escalated": 0,
-      "stalled": 2,
-      "aged": 17,
-      "notes": "Cheap daily pass, per the skill's Track B3 section: date-math aged all 16 carried-in unresolved candidates plus the 1 new candidate created this run (cand-2026-10-02-001, D&D Pharmatech/DD15) = 17 total. Stall rule triggered for the first time this registry has seen it: cand-2026-09-02-002 (Samchundang, 30 days/6 checks) and cand-2026-09-02-003 (SpiderCore, 30 days/7 checks), both with no evidence dated after their own creation date, moved pending -> stalled. A third mechanically-eligible candidate, cand-2026-09-02-007 (CSPC ZhongQi, a merge case already clearing all four promotion-bar conditions at fuzzy_match 0.58), was deliberately left pending rather than stalled -- see this run's commit message for the reasoning. Re-searched the 2 near_bar candidates furthest from their last check (last_checked 2026-09-28/2026-09-29): cand-2026-09-20-002 (i2o Therapeutics) and cand-2026-09-07-001 (Precision Antibiotics) -- both promotion_bar.evidence rewritten, no status change, no new dated event for either. The 4 ready_for_promotion candidates (Alveus/ALV-100, Prolynx, Samik/UniSphero, AbbVie-Gubra/ABBV-295) remain unresolved and are passed to today's digest as escalations as always; none is newly escalated this run, so the renderer is expected to hold the repeat back per its Monday-only rule."
+      "unresolved_total": 18,
+      "rechecked": 16,
+      "escalated": 1,
+      "stalled": 0,
+      "aged": 18,
+      "notes": "Weekly deep pass, per the skill's Track B3 section, worked the full queue in order (ready_for_promotion, then near_bar pending, then the rest of pending, then stalled -- this being the 4th weekly sweep, the every-4th-sweep stalled/watch check applied). Ready_for_promotion (4): Alveus, Prolynx and Samik/UniSphero reconfirmed their existing evidence with nothing new; AbbVie-Gubra/ABBV-295 reconfirmed its Sept 30 EASD 2026 data already on file. Near_bar pending (5): Precision Antibiotics, Appel Sauce Studios, Alteogen and Beijing Biote (CN121154792A) all reconfirmed the same single dated event with nothing new; i2o Therapeutics likewise reconfirmed only its 2023 history. Rest of pending (5): CSPC ZhongQi and CSPC SYH9017 (both merge cases) and Mapi Pharma Cariprazine (merge case) reconfirmed their existing status; Hengrui ribupatide reconfirmed weekly/oral-only formulations only, still recommended for admin reject-with-reason; Korea BioNC + ProAptec surfaced a new, later (2026-09-28) preclinical dated event independently corroborated by two Tier 2 outlets (BioTimes, Money Today), clearing confirmed_source and second_dated_event -- escalated to ready_for_promotion (the one escalation this run). Stalled (4th-sweep check, 2): Samchundang and SpiderCore both reconfirmed only their pre-existing single dated event, recommendation to reject-or-snooze unchanged. D&D Pharmatech/DD15 (created 2026-10-02) and HLB Pharmaceutical (created this run) were not re-searched, being brand new; both still counted in unresolved_total and aged by date math."
     }
   },
   "source_health": {
@@ -100,8 +114,9 @@
       "status": "blocked"
     },
     "prnewswire.com": {
-      "last_success": null,
-      "status": "blocked"
+      "last_success": "2026-10-04T09:03:46+09:00",
+      "status": "ok",
+      "note": "Direct WebFetch succeeded this run (Ascletis ASC36_35FDC EASD 2026 release) -- this host was already recorded as blocked and should not have been retried directly; flagging the process slip for the admin. Corrected to 'ok' since it worked rather than returning EGRESS_BLOCKED."
     },
     "mdtoday.co.kr": {
       "last_success": null,
@@ -148,21 +163,23 @@
       "status": "blocked"
     },
     "camurus.com": {
-      "last_success": null,
-      "status": "blocked"
+      "last_success": "2026-10-04T09:03:46+09:00",
+      "status": "ok",
+      "note": "Direct WebFetch succeeded this run (Lilly/Camurus FluidCrystal amylin-collaboration release) -- this host was already recorded as blocked and should not have been retried directly; flagging the process slip for the admin. Corrected to 'ok' since it worked rather than returning EGRESS_BLOCKED."
     },
     "businesswire.com": {
       "last_success": null,
       "status": "blocked"
     },
     "globenewswire.com": {
-      "last_success": null,
-      "status": "blocked"
+      "last_success": "2026-10-04T09:03:46+09:00",
+      "status": "ok",
+      "note": "Direct WebFetch succeeded this run (Amneal lanreotide FDA-approval release) -- this host was already recorded as blocked and should not have been retried directly; flagging the process slip for the admin. Corrected to 'ok' since it worked rather than returning EGRESS_BLOCKED."
     },
     "patents.google.com": {
-      "last_success": "2026-10-01T06:04:27+09:00",
+      "last_success": "2026-10-04T09:03:46+09:00",
       "status": "search_only",
-      "note": "Direct fetch blocked by network policy (gateway 403 on CONNECT); reached via domain-scoped search again this run (CN121154792A rotation-list query)."
+      "note": "Direct fetch blocked by network policy (gateway 403 on CONNECT); reached via domain-scoped search again this run (per-molecule depot/sustained-release patent queries)."
     },
     "news.mtn.co.kr": {
       "last_success": "2026-09-29T06:04:22+09:00",
@@ -194,8 +211,9 @@
       "status": "blocked"
     },
     "edaily.co.kr": {
-      "last_success": null,
-      "status": "blocked"
+      "last_success": "2026-10-04T09:03:46+09:00",
+      "status": "ok",
+      "note": "Direct WebFetch succeeded this run (HLB Pharmaceutical European-patent article) -- this host was already recorded as blocked and should not have been retried directly; flagging the process slip for the admin. Corrected to 'ok' since it worked rather than returning EGRESS_BLOCKED."
     },
     "controlledreleasesociety.org": {
       "last_success": null,
@@ -222,13 +240,14 @@
       "status": "blocked"
     },
     "clinicaltrials.gov": {
-      "last_success": "2026-10-01T06:04:27+09:00",
+      "last_success": "2026-10-04T09:03:46+09:00",
       "status": "search_only",
-      "note": "Direct fetch blocked by network policy (gateway 403 on CONNECT); reached via domain-scoped search again this run (Bostal/Anxo cariprazine LAI trial lookups)."
+      "note": "Direct fetch blocked by network policy (gateway 403 on CONNECT); reached via domain-scoped search again this run (per-molecule once-monthly trial lookups)."
     },
     "etoday.co.kr": {
-      "last_success": null,
-      "status": "blocked"
+      "last_success": "2026-10-04T09:03:46+09:00",
+      "status": "ok",
+      "note": "Direct WebFetch succeeded this run (HLB Pharmaceutical/Mepsgen MOU article) -- this host was already recorded as blocked and should not have been retried directly; flagging the process slip for the admin. Corrected to 'ok' since it worked rather than returning EGRESS_BLOCKED."
     },
     "ebn.co.kr": {
       "last_success": null,
@@ -292,6 +311,31 @@
       "last_success": "2026-10-02T06:04:27+09:00",
       "status": "ok",
       "note": "Direct WebFetch succeeded this run (D&D Pharmatech/Pfizer research-contract article). Distinct from the already-blocked v.daum.net and en.sedaily.com's own prior search-snippet-only use elsewhere in the registry."
+    },
+    "biotimes.co.kr": {
+      "last_success": "2026-10-04T09:03:46+09:00",
+      "status": "ok",
+      "note": "Direct WebFetch succeeded this run (Korea BioNC/ProAptec Sept 28 preclinical-data article); not previously on source_health."
+    },
+    "medipana.com": {
+      "last_success": "2026-10-04T09:03:46+09:00",
+      "status": "ok",
+      "note": "Direct WebFetch succeeded this run (HLB Pharmaceutical GLP-1/SMEB pipeline interview article); not previously on source_health."
+    },
+    "foreseepharma.com": {
+      "last_success": "2026-10-04T09:03:46+09:00",
+      "status": "ok",
+      "note": "Direct WebFetch succeeded this run (Camcevi Orange Book patent-listing release, QC Tier 2 verification); not previously on source_health."
+    },
+    "biospace.com": {
+      "last_success": "2026-10-04T09:03:46+09:00",
+      "status": "ok",
+      "note": "Direct WebFetch succeeded this run (Teva/MedinCell Psych Congress 2026 release); not previously on source_health."
+    },
+    "lilly.gcs-web.com": {
+      "last_success": null,
+      "status": "stale",
+      "note": "Direct WebFetch returned HTTP 503 this run (eloralintide QC verification) -- a transient server error, not EGRESS_BLOCKED, so not marked blocked; verified via search snippet instead."
     }
   }
 }

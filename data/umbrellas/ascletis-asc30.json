@@ -47,7 +47,7 @@
     "partner": null,
     "data_point": "SC depot Phase II (n=65, 24 weeks): Formulation A1, three monthly 400 mg doses with no weekly lead-in, gave placebo-adjusted weight loss of 7.5% at week 16 and 5.8% at week 24. Phase Ib: observed half-life of about 75 days after a single 100 mg SC dose.",
     "data_point_ko": "피하(SC) 데포 임상 2상(n=65, 24주): 주 1회 도입 투여 없이 400 mg을 월 1회씩 3회 투여한 Formulation A1은 16주차 위약 대비 체중 감소율 7.5%, 24주차 5.8%를 기록했다. 임상 1b상: 100 mg 피하(SC) 단회 투여 후 관찰된 반감기는 약 75일이었다.",
-    "last_updated": "2026-09-08",
+    "last_updated": "2026-10-02",
     "last_checked": "2026-10-01"
   },
   "finding_history": [
@@ -133,6 +133,25 @@
         "tier": 2
       },
       "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-10-02-001",
+      "date": "2026-10-02",
+      "type": "trial_data_readout",
+      "molecules": [
+        "amylin",
+        "other_incretin"
+      ],
+      "summary": "Ascletis presented new preclinical data on ASC36_35FDC (the once-monthly injectable ASC36 amylin-receptor agonist plus ASC35 GLP-1R/GIPR dual agonist co-formulation) at EASD 2026: half-lives in non-human primates of about 33 days (ASC36) and 30 days (ASC35), supporting once-monthly and potentially once-quarterly dosing, plus a diet-induced-obesity rat study showing 24.8% weight loss at day 14 versus 12.5% for eloralintide/tirzepatide and 16.8% for MET-233i/tirzepatide co-formulations, with no fibril-induced aggregation under simulated storage (unlike cagrilintide in the same test).",
+      "summary_ko": "Ascletis는 EASD 2026에서 ASC36_35FDC(월 1회 주사형 아밀린 수용체 작용제 ASC36과 GLP-1R/GIPR 이중 작용제 ASC35의 공동 제형)에 대한 새로운 전임상 데이터를 발표했다: 비인간 영장류에서 반감기는 ASC36 약 33일, ASC35 약 30일로 월 1회 및 잠재적으로 3개월 1회 투여를 뒷받침했다. 식이유도비만(DIO) 랫드 시험에서는 14일차 체중 감소율이 24.8%로, 엘로랄린타이드/터제파타이드 병용(12.5%) 및 MET-233i/터제파타이드 병용(16.8%)보다 컸으며, 동일 모의 보관 조건에서 카그릴린타이드와 달리 피브릴 유발 응집이 관찰되지 않았다.",
+      "source": {
+        "name": "Ascletis' ASC36_35FDC Demonstrated Potential for Once-Monthly to Once-Quarterly Dosing and Robust Weight-Loss in Preclinical Studies Presented at EASD 2026",
+        "publication": "PR Newswire",
+        "url": "https://www.prnewswire.com/news-releases/ascletis-asc3635fdc-demonstrated-potential-for-once-monthly-to-once-quarterly-dosing-and-robust-weight-loss-in-preclinical-studies-presented-at-easd-2026-302894756.html",
+        "tier": 2
+      },
+      "confidence": "confirmed",
+      "verification_note": "Found via this run's Track B2 EASD 2026 conference-abstract sweep."
     }
   ]
 }
