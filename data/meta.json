@@ -2,34 +2,24 @@
   "last_run": {
     "initial_seed": "2026-09-02T00:00:00Z",
     "initial_discovery_test": "2026-09-02T00:00:00Z",
-    "daily_scan": "2026-10-02T06:04:27+09:00",
+    "daily_scan": "2026-10-05T06:04:11+09:00",
     "weekly_sweep": "2026-10-04T09:03:46+09:00",
     "qc_tier2": "2026-10-04T09:03:46+09:00",
     "qc_tier3": null,
     "baseline_class_sweep": "2026-09-11T06:40:00Z"
   },
-  "digest_carryover": {
-    "from": "2026-10-04T09:03:46+09:00",
-    "findings": [
-      { "umbrella_id": "ipsen-somatuline", "finding_id": "f-2026-09-18-001" },
-      { "umbrella_id": "teva-medincell-uzedy", "finding_id": "f-2026-09-21-001" },
-      { "umbrella_id": "camurus-cam2029", "finding_id": "f-2026-06-01-002" },
-      { "umbrella_id": "ascletis-asc30", "finding_id": "f-2026-10-02-001" }
-    ],
-    "candidates": ["cand-2026-10-04-001"],
-    "newly_escalated": ["cand-2026-09-05-001"]
-  },
+  "digest_carryover": null,
   "coverage": {
     "daily_scan": {
-      "umbrellas_checked": 5,
+      "umbrellas_checked": 30,
       "umbrellas_total": 48,
-      "skipped_throttled": 43,
+      "skipped_throttled": 18,
       "skipped_budget_exhausted": 0,
-      "codes_harvested": 19,
+      "codes_harvested": 38,
       "codes_unknown": 1,
       "codes_queried": 1,
-      "watchlist_cursor": "lilly-camurus",
-      "notes": "Friday scan. All 18 Sunday-only umbrellas (stage_label 'Approved / marketed' with molecule_class exactly ['non_incretin'] -- the admin's 2026-09-29 rule) skipped again, counted as throttled. Of the remaining 30 non-Sunday-only umbrellas, 25 are mid-throttle this run (checked yesterday 2026-10-01, now only 1 KST day later -- due again Sunday/Monday per the 3rd-day cadence), also counted as throttled. The other 5 (last_updated within 21 days, so never throttle-eligible) got a full breadth-first query on their single most distinctive alias: ascendis-transcon-novo (TransCon Semaglutide), nanexa-pharmashell-semaglutide (PharmaShell), peptron-pt403 (PT403), samsung-bioepis-g2gbio-gb7001 (GB-7001) and zealand-petrelintide (Petrelintide). Four of the five reconfirmed existing documentation with no new findings. The exception: peptron-pt403 -- a second, independently bylined outlet (Asia Business Daily/view.asiae.co.kr) corroborated the Sept 28 MTN-sourced Korean patent registration covering semaglutide and tirzepatide GLP-1 formulations, clearing the confirmed-source bar for that event and adding a PT404 dosing-interval detail (monthly or once-every-2-months); logged as a new finding (f-2026-10-01-001, confidence upgraded to confirmed), current_status.last_updated advanced to 2026-10-01, molecule_class left unchanged at [\"semaglutide\"] (PT404 is still a distinct, unlicensed candidate asset, not part of this record's own formulated pipeline). Track B1: all 14 fixed watchlist rows queried (En/Kr per class plus cross-class and other_incretin rows) -- all already-tracked programs reconfirmed, no new finding. Code harvest surfaced ~19 code-pattern strings (PT403/PT404, GB-7001, IVL3021/3024, AUL009, MET-233i, ABBV-295, ZP8396, HM15275, AMG133/MariTide, NN1213, CT-G32, DD14/DD07/DD02S/DD03/MET06, DD15) -- all resolved to already-tracked aliases or known decoys except DD15 (D&D Pharmatech's Metsera-licensed injectable GLP-1/GIP/GCG triple agonist, 'Tri-G'), which was unknown and used this run's one bounded code query; resolved into a new candidate (cand-2026-10-02-001) rather than a known program. AMG133/MariTide (Amgen) and NN1213 (a Novo Nordisk academic amylin-analog research code) surfaced only as comparator/academic mentions in existing evidence, not as fresh disclosures this run, so neither was queued -- flagging AMG133/MariTide in the run report as a possible registry gap worth a deliberate look, since Amgen is not currently tracked anywhere in the 48 umbrellas despite being a major once-monthly engineered-peptide program. Rotation list: queried ct-g32, abbv-295, pt404 and lilly-camurus (4 rows, resuming after 'biote-cn121154792a' and wrapping to the start) -- all four reconfirmed existing documentation with nothing new; repeating the standing proposal that the admin remove 'abbv-295' and 'biote-cn121154792a' from the rotation list now that both are tracked candidates. One existing ready_for_promotion candidate's UniSphero/Samik Pharmaceutical thymosin alpha-1 patent (cand-2026-09-17-001) resurfaced via a B1 cross-class query but matched evidence already on file (patent No. 10-3012843) -- no new append. B3 cheap pass (2/2 searches spent): re-searched the 2 near_bar candidates furthest from their last check, i2o Therapeutics (cand-2026-09-20-002) and Precision Antibiotics (cand-2026-09-07-001) -- both found only material already on file, no new dated event for either, promotion_bar.evidence rewritten on both, no status change. Date math aged all 17 unresolved candidates (16 carried in plus the new DD15 candidate). Stall rule applied for the first time this registry has triggered it: cand-2026-09-02-002 (Samchundang) and cand-2026-09-02-003 (SpiderCore) both reached 30+ days with 6-7 follow-up checks and no evidence dated after their own creation date, so both moved pending -> stalled, flagged recommend reject-or-snooze. A third candidate meeting the same mechanical age/checks/no-new-evidence criteria, cand-2026-09-02-007 (CSPC ZhongQi, a merge case at fuzzy_match 0.58 that already clears all four promotion-bar conditions), was deliberately NOT stalled -- stalling would misrepresent a fully-evidenced merge-decision case as a thin, go-nowhere one; left as pending with the existing merge-case flag, a judgment call documented in the run's commit message for the admin. No domain returned EGRESS_BLOCKED this run; two direct WebFetches succeeded (hitnews.co.kr, en.sedaily.com, both newly added/confirmed under source_health as 'ok') while koreabiomed.com, dailypharm.com and view.asiae.co.kr (already on the blocked/search-only list) were reached via search snippet only."
+      "watchlist_cursor": "pt404",
+      "notes": "Monday scan (window reaches back to Friday's daily_scan, covering the weekend; no scan runs Sat/Sun). All 18 Sunday-only umbrellas (stage_label 'Approved / marketed' with molecule_class exactly ['non_incretin'] -- the admin's 2026-09-29 rule) skipped, counted as throttled; they were already checked by Sunday's weekly sweep. The other 30 non-Sunday-only umbrellas were all due (Thursday/Friday last_checked dates are 3-4 KST days before this run, past the throttle's 2-day grace window), so none were throttle-skipped -- Track A ran a full breadth-first pass, one query on each record's single most distinctive alias: adocia-adoxlong (AdoXLong), anxo-ax251 (AX251), ascendis-transcon-novo (TransCon GLP-1), ascletis-asc30 (ASC30), biocorrx-bicx104 (BICX104), bostal-b2227 (B2227), camurus-cam2056 (CAM2056), cspc-syh2082 (SYH2082), daewon-pharmus-quadagonist (DW-4321), daewoong-tionlab-quject (Quject Sphere), dongkook-dk-lads (DK-LADS), genexine-handok-gxh9 (GX-H9), gsk-felcorekibart (Felcorekibart), huahaikang-hhk001 (HHK001), inventagelab-cns (IVL3003), inventagelab-ivl3021 (IVL3021/IVL3024), inventagelab-leuprolide (IVL3008/IVL3016), lilly-eloralintide (Eloralintide/LY3841136), mapi-pharma-semaglutide (Semaglutide Depot), mapipharma-glatiramer (GA Depot), nanexa-pharmashell-semaglutide (PharmaShell), novonordisk-zenagamtide (Zenagamtide/Amycretin), owlbio-kyungdong-xtina (AUL009), peptron-pt403 (PT403), pfizer-metsera-engineered-peptide (Berobenatide/MET-097i), proteina-prt1309 (PRT-1309), ql-biopharm-zovaglutide (Zovaglutide/ZT002), samsung-bioepis-g2gbio-gb7001 (GB-7001), vivani-npm139 (NPM-139) and zealand-petrelintide (Petrelintide). All 30 reconfirmed existing documentation with no new findings (quiet run) -- stamped checked 2026-10-05. Track B1: all 14 fixed watchlist rows queried (En/Kr per class plus cross-class and other_incretin rows) -- all already-tracked programs reconfirmed, no new finding. Code harvest surfaced ~38 code-pattern strings across the Track A and B1 results (PT403/PT404, GB-7001, IVL3003/3008/3009/3016/3021/3024, AUL009, AX251/NanoCIP, B2227, BICX104, CAM2056, SYH2082, DW-4321, Quject Sphere/CURE, DK-LADS/DKF-MB501, GX-H9/TJ101, Felcorekibart/GSK5784283, HHK001, LY3841136, GA Depot, PharmaShell, Zenagamtide/Amycretin, MET-097i/Berobenatide/PF-08653944, PRT-1309, Zovaglutide/ZT002, NPM-139, Petrelintide/ZP8396, ABBV-295/GUB014295, MET-233i, LY3437943, ASC30/ASC36/ASC37/ASC39, CN121154792A, CT-G32, DD15) -- all resolved to already-tracked aliases or known parent-molecule/decoy identifiers except ASC39, which was unknown and used this run's one bounded code query; resolved as an oral small-molecule amylin-receptor agonist (Ascletis, presented at ADA 2026) -- out of scope (oral, not long-acting injectable), so no finding or alias addition, and not queued as a candidate since it fuzzy-matches Ascletis itself rather than being a new entity. Rotation list: queried biote-cn121154792a, ct-g32, abbv-295 and pt404 (4 rows, resuming after cursor 'lilly-camurus' and wrapping to the start) -- all four reconfirmed existing documentation (the CN121154792A and ABBV-295 rows are now also tracked candidates; repeating the standing proposal that the admin remove them from the rotation list). B3 cheap pass (2/2 searches spent): re-searched 2 near_bar pending candidates not touched by the cheap pass since their creation, Appel Sauce Studios (cand-2026-09-11-001) and Beijing Biote/CN121154792A (cand-2026-09-20-001) -- both found only material already on file, no new dated event for either, promotion_bar.evidence rewritten on both, no status change; stamped follow-up 2026-10-05. Consumed the weekly sweep's digest_carryover (4 carried findings routed to lateItems/headline by this run's freshness window, 1 carried candidate, 1 carried escalation now newlyEscalated in this digest) and set digest_carryover to null. No WebFetch calls made this run (WebSearch only), so no source_health changes beyond marking clinicaltrials.gov and patents.google.com reached again via search."
     },
     "weekly_sweep": {
       "source_categories_checked": 8,
@@ -51,11 +41,11 @@
     },
     "candidate_follow_up": {
       "unresolved_total": 18,
-      "rechecked": 16,
-      "escalated": 1,
+      "rechecked": 2,
+      "escalated": 0,
       "stalled": 0,
       "aged": 18,
-      "notes": "Weekly deep pass, per the skill's Track B3 section, worked the full queue in order (ready_for_promotion, then near_bar pending, then the rest of pending, then stalled -- this being the 4th weekly sweep, the every-4th-sweep stalled/watch check applied). Ready_for_promotion (4): Alveus, Prolynx and Samik/UniSphero reconfirmed their existing evidence with nothing new; AbbVie-Gubra/ABBV-295 reconfirmed its Sept 30 EASD 2026 data already on file. Near_bar pending (5): Precision Antibiotics, Appel Sauce Studios, Alteogen and Beijing Biote (CN121154792A) all reconfirmed the same single dated event with nothing new; i2o Therapeutics likewise reconfirmed only its 2023 history. Rest of pending (5): CSPC ZhongQi and CSPC SYH9017 (both merge cases) and Mapi Pharma Cariprazine (merge case) reconfirmed their existing status; Hengrui ribupatide reconfirmed weekly/oral-only formulations only, still recommended for admin reject-with-reason; Korea BioNC + ProAptec surfaced a new, later (2026-09-28) preclinical dated event independently corroborated by two Tier 2 outlets (BioTimes, Money Today), clearing confirmed_source and second_dated_event -- escalated to ready_for_promotion (the one escalation this run). Stalled (4th-sweep check, 2): Samchundang and SpiderCore both reconfirmed only their pre-existing single dated event, recommendation to reject-or-snooze unchanged. D&D Pharmatech/DD15 (created 2026-10-02) and HLB Pharmaceutical (created this run) were not re-searched, being brand new; both still counted in unresolved_total and aged by date math."
+      "notes": "Cheap daily pass, per the skill's Track B3 section, run after Track A and B1. Date math aged all 18 unresolved candidates (no change since yesterday's weekly deep pass -- all follow_up/evidence fields were already current). Stall rule re-checked: no pending candidate newly crossed 30+ days with 3+ checks and no post-creation evidence this run (the closest, cand-2026-09-06-001 at 29 days, is not yet eligible); Samchundang and SpiderCore remain stalled from the prior sweep, unchanged. Re-searched the 2 near_bar pending candidates least recently touched by a dedicated cheap-pass query, Appel Sauce Studios (cand-2026-09-11-001) and Beijing Biote/CN121154792A (cand-2026-09-20-001) -- both reconfirmed only material already on file, no new dated event, promotion_bar.evidence rewritten on both, no status change. No escalation this run (cand-2026-09-05-001's escalation to ready_for_promotion was written by Sunday's weekly sweep and is carried into today's digest via digest_carryover.newly_escalated, not counted again here)."
     }
   },
   "source_health": {
@@ -177,9 +167,9 @@
       "note": "Direct WebFetch succeeded this run (Amneal lanreotide FDA-approval release) -- this host was already recorded as blocked and should not have been retried directly; flagging the process slip for the admin. Corrected to 'ok' since it worked rather than returning EGRESS_BLOCKED."
     },
     "patents.google.com": {
-      "last_success": "2026-10-04T09:03:46+09:00",
+      "last_success": "2026-10-05T06:04:11+09:00",
       "status": "search_only",
-      "note": "Direct fetch blocked by network policy (gateway 403 on CONNECT); reached via domain-scoped search again this run (per-molecule depot/sustained-release patent queries)."
+      "note": "Direct fetch blocked by network policy (gateway 403 on CONNECT); reached via domain-scoped search again this run (CN121154792A/Beijing Biote rotation-list and B3 follow-up queries)."
     },
     "news.mtn.co.kr": {
       "last_success": "2026-09-29T06:04:22+09:00",
@@ -240,9 +230,9 @@
       "status": "blocked"
     },
     "clinicaltrials.gov": {
-      "last_success": "2026-10-04T09:03:46+09:00",
+      "last_success": "2026-10-05T06:04:11+09:00",
       "status": "search_only",
-      "note": "Direct fetch blocked by network policy (gateway 403 on CONNECT); reached via domain-scoped search again this run (per-molecule once-monthly trial lookups)."
+      "note": "Direct fetch blocked by network policy (gateway 403 on CONNECT); reached via domain-scoped search again this run (Track A/B1 trial-registration lookups, e.g. AX251 NCT07484204, B2227 NCT07722728)."
     },
     "etoday.co.kr": {
       "last_success": "2026-10-04T09:03:46+09:00",
