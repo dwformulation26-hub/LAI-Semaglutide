@@ -651,7 +651,7 @@
         "closest_umbrella_id": "mapi-pharma-semaglutide",
         "score": 0.55
       },
-      "status": "pending",
+      "status": "stalled",
       "created_date": "2026-09-06",
       "follow_up": {
         "last_checked": "2026-10-04",
@@ -661,8 +661,8 @@
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "second_dated_event"],
         "unmet": ["confirmed_source"],
-        "evidence": "This run's weekly deep-pass re-search (query: Mapi Pharma cariprazine depot update 2026) again found only the same first-patient-recruited (2025-09-17) and Phase I/IIa (2026-08-12) company releases, plus the same forward-looking statement that Mapi Pharma plans a US FDA IND submission by end of 2026 with a partner supporting Phase 3 -- still no independent third-party corroboration of either dated event, so confirmed_source remains unmet. MERGE CASE STILL APPLIES: fuzzy_match to mapi-pharma-semaglutide sits at the 0.55 merge threshold, so per the mechanical rule this cannot be escalated to ready_for_promotion regardless; flagging for an admin merge-vs-new-sibling-umbrella decision.",
-        "evidence_ko": "이번 주기 주간 심층 재조사(검색어: Mapi Pharma cariprazine depot update 2026)에서도 기존의 첫 환자 모집(2025-09-17)과 임상 1/2a상(2026-08-12) 회사 발표, Mapi Pharma가 파트너와 함께 2026년 말까지 미국 FDA IND 제출을 계획한다는 동일한 전망성 언급만 확인됐다. 두 날짜 이벤트 모두 여전히 독립적인 제3자 교차 확인이 없어 confirmed_source(확인된 출처)는 미충족으로 남는다. 병합 사례는 여전히 적용된다: mapi-pharma-semaglutide와의 fuzzy_match가 병합 임계값 0.55에 해당해, 기계적 규칙에 따라 어떤 경우든 ready_for_promotion으로 에스컬레이션할 수 없다. 관리자의 병합 vs 신규 자매 엄브렐라 결정을 위해 플래그를 지정한다."
+        "evidence": "No new evidence in 30 days across 4 checks -- recommend reject or snooze. Still only the same first-patient-recruited (2025-09-17) and Phase I/IIa (2026-08-12) Mapi Pharma company releases on file, with no independent third-party corroboration of either dated event found since creation, so confirmed_source remains unmet. MERGE CASE STILL APPLIES: fuzzy_match to mapi-pharma-semaglutide sits at the 0.55 merge threshold, so per the mechanical rule this cannot be escalated to ready_for_promotion regardless; flagging for an admin merge-vs-new-sibling-umbrella decision alongside the reject-or-snooze recommendation.",
+        "evidence_ko": "30일간 4회 점검에서도 새로운 근거 없음 -- 거부(reject) 또는 보류(snooze)를 권고한다. 여전히 동일한 첫 환자 모집(2025-09-17)과 임상 1/2a상(2026-08-12) Mapi Pharma 자체 발표만 파일에 있으며, 생성 이후 두 날짜 이벤트에 대한 독립적인 제3자 교차 확인을 찾지 못해 confirmed_source(확인된 출처)는 미충족으로 남는다. 병합 사례는 여전히 적용된다: mapi-pharma-semaglutide와의 fuzzy_match가 병합 임계값 0.55에 해당해, 기계적 규칙에 따라 어떤 경우든 ready_for_promotion으로 에스컬레이션할 수 없다. 거부/보류 권고와 함께 관리자의 병합 vs 신규 자매 엄브렐라 결정을 위해 플래그를 지정한다."
       },
       "resolution": null
     },
@@ -726,15 +726,15 @@
       "status": "pending",
       "created_date": "2026-09-07",
       "follow_up": {
-        "last_checked": "2026-10-04",
-        "checks_run": 7,
+        "last_checked": "2026-10-06",
+        "checks_run": 8,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's weekly deep-pass re-search (query: Precision Antibiotics CarboCell DTU IND clinical trial update 2026) again found only the same DKK 60M raise and 2027 Phase 1 target (dtu.dk, May 2026) and the same peer-reviewed CarboCell G/C bone-infection paper (JBJI, May 2026) already on file. No IND filing, clinical trial registration, or other company-level dated event has been reported since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI.",
-        "evidence_ko": "이번 주기 주간 심층 재조사(검색어: Precision Antibiotics CarboCell DTU IND clinical trial update 2026)에서도 기존과 동일한 DKK 60M 자금 조달과 2027년 임상 1상 목표(dtu.dk, 2026년 5월), 이미 확보된 동일한 뼈 감염 관련 동료 심사 논문(JBJI, 2026년 5월)만 확인됐다. 이후 IND 신청, 임상시험 등록 또는 그 외 회사 차원의 날짜 이벤트는 보고되지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다."
+        "evidence": "This run's cheap daily-pass re-search (query: Precision Antibiotics CarboCell DTU IND clinical trial update 2026) again found only the same DKK 60M raise and 2027 Phase 1 target (dtu.dk, May 2026) and the same peer-reviewed CarboCell G/C bone-infection papers (JBJI, Nov 2025 and May 2026) already on file. No IND filing, clinical trial registration, or other company-level dated event has been reported since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI.",
+        "evidence_ko": "이번 주기 저비용 일일 재조사(검색어: Precision Antibiotics CarboCell DTU IND clinical trial update 2026)에서도 기존과 동일한 DKK 60M 자금 조달과 2027년 임상 1상 목표(dtu.dk, 2026년 5월), 이미 확보된 동일한 뼈 감염 관련 동료 심사 논문 2건(JBJI, 2025년 11월 및 2026년 5월)만 확인됐다. 이후 IND 신청, 임상시험 등록 또는 그 외 회사 차원의 날짜 이벤트는 보고되지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다."
       },
       "resolution": null
     },
@@ -1571,15 +1571,15 @@
       "status": "pending",
       "created_date": "2026-10-04",
       "follow_up": {
-        "last_checked": null,
-        "checks_run": 0,
+        "last_checked": "2026-10-06",
+        "checks_run": 1,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "second_dated_event"],
         "unmet": ["confirmed_source"],
-        "evidence": "HLB Pharmaceutical (named_entity) is developing a named microsphere manufacturing platform (SMEB) with a specific GLP-1 pipeline naming semaglutide and tirzepatide and a stated monthly-to-quarterly dosing target plus lab release data (technical_claim). Two distinct dated events exist (a 2025-06-10 Medipana interview detailing the GLP-1/SMEB pipeline, and a 2026-04-28 Mepsgen platform-collaboration MOU), clearing second_dated_event. confirmed_source is unmet: only one Tier 2 outlet (Medipana) covers the specific semaglutide/tirzepatide pipeline claim, and the Mepsgen MOU corroborates the platform's existence but names no molecule, so it does not independently corroborate the same disclosure. Fuzzy match to owlbio-kyungdong-xtina (0.15) reflects the shared Korean-LAI-microsphere space only -- not a merge case. Found via this run's Track B2 KOSDAQ/structural sweep.",
-        "evidence_ko": "HLB제약(named_entity, 명확한 주체)은 세마글루타이드와 터제파타이드를 포함한 GLP-1 파이프라인과 월 1회~분기 1회 투여 목표, 실험실 방출 데이터를 갖춘 자체 미립구 제조 플랫폼(SMEB)을 개발 중이다(technical_claim, 구체적 기술 근거). 서로 다른 날짜의 이벤트 2건(GLP-1/SMEB 파이프라인을 상세히 다룬 2025-06-10 메디파나 인터뷰, 2026-04-28 멥스젠과의 플랫폼 협력 MOU)이 존재해 second_dated_event(두 번째 날짜 이벤트)는 충족된다. confirmed_source(확인된 출처)는 미충족이다: 세마글루타이드·터제파타이드 파이프라인이라는 구체적 주장을 다룬 매체는 메디파나(Tier 2) 1곳뿐이며, 멥스젠 MOU는 플랫폼의 존재는 뒷받침하지만 특정 분자를 언급하지 않아 동일 공시를 독립적으로 교차 확인하지 못한다. owlbio-kyungdong-xtina와의 퍼지 매칭 점수(0.15)는 한국 LAI 미립구 영역을 공유하는 데 따른 것일 뿐 동일 법인을 의미하지 않는다 -- 병합 사례가 아니다. 이번 주기 Track B2의 KOSDAQ/구조적 소스 스윕에서 발견됐다."
+        "evidence": "This run's cheap daily-pass re-search (query: HLB Pharmaceutical GLP-1 SMEB microsphere) again found only the same Medipana interview describing the five-pipeline SMEB platform (liraglutide/semaglutide/tirzepatide, 99.96% release linearity over 42 days) already on file; no second outlet naming the semaglutide/tirzepatide pipeline claim turned up. named_entity, technical_claim and second_dated_event (the Medipana interview plus the separate Mepsgen MOU) remain cleared; confirmed_source remains unmet for the same reason as at creation -- only one Tier 2 outlet covers the specific molecule claim. Fuzzy match to owlbio-kyungdong-xtina (0.15) remains low -- not a merge case.",
+        "evidence_ko": "이번 주기 저비용 일일 재조사(검색어: HLB Pharmaceutical GLP-1 SMEB microsphere)에서도 기존 파일에 있는 5개 파이프라인 SMEB 플랫폼(리라글루타이드/세마글루타이드/터제파타이드, 42일간 99.96% 방출 선형성)을 다룬 동일한 메디파나 인터뷰만 확인됐다. 세마글루타이드·터제파타이드 파이프라인 주장을 다루는 두 번째 매체는 나타나지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), second_dated_event(두 번째 날짜 이벤트, 메디파나 인터뷰와 별개의 멥스젠 MOU)는 계속 충족되며, confirmed_source(확인된 출처)는 생성 시점과 동일한 이유로 미충족이다 -- 특정 분자 주장을 다루는 매체가 Tier 2 1곳뿐이다. owlbio-kyungdong-xtina와의 퍼지 매칭 점수(0.15)는 여전히 낮아 병합 사례가 아니다."
       },
       "resolution": null
     }
