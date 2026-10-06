@@ -1256,15 +1256,15 @@
       "status": "pending",
       "created_date": "2026-09-18",
       "follow_up": {
-        "last_checked": "2026-10-04",
-        "checks_run": 5,
+        "last_checked": "2026-10-07",
+        "checks_run": 6,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "Two independent Tier 2 outlets (EBN, Korea Herald) corroborate the same Sept 17, 2026 announcement that Alteogen filed a PCT application for its 'Long-Acting Conjugate' platform and is advancing once-monthly obesity candidate ALT-M5, clearing named_entity, technical_claim and confirmed_source. This run's weekly deep-pass re-search (query: Alteogen ALT-M5 long-acting conjugate obesity update) again found only the same Sept 17, 2026 PCT-filing announcement (Korea Herald, Asia Business Daily, NocutNews, Seoul Economic Daily) and the still-upcoming ObesityWeek 2026 (Nov 14-17) presentation plan, not yet occurred. second_dated_event remains unmet. Molecule identity behind the conjugate was not disclosed, so no molecule_class can be assigned to this candidate.",
-        "evidence_ko": "독립적인 Tier 2 매체 2곳(EBN, Korea Herald)이 알테오젠이 '장기지속형 접합체' 플랫폼에 대한 PCT를 출원하고 월 1회 비만 후보물질 ALT-M5를 개발 중이라는 2026년 9월 17일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. 이번 주기 주간 심층 재조사(검색어: Alteogen ALT-M5 long-acting conjugate obesity update)에서도 동일한 2026년 9월 17일 PCT 출원 발표(Korea Herald, 아시아경제, 노컷뉴스, 서울경제)만 확인됐으며, ObesityWeek 2026(11월 14~17일) 발표는 여전히 아직 일어나지 않은 예정된 계획으로 남아 있다. second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다. 접합체가 탑재한 분자의 정체는 공개되지 않아 이 후보에는 molecule_class를 부여할 수 없다."
+        "evidence": "Two independent Tier 2 outlets (EBN, Korea Herald) corroborate the same Sept 17, 2026 announcement that Alteogen filed a PCT application for its 'Long-Acting Conjugate' platform and is advancing once-monthly obesity candidate ALT-M5, clearing named_entity, technical_claim and confirmed_source. This run's cheap daily-pass re-search (query: Alteogen ALT-M5 long-acting conjugate obesity update) again found only the same Sept 17, 2026 PCT-filing announcement (Korea Herald, Herald Biz, Dealsite, SBS Biz, Huffington Post Korea) and the still-upcoming ObesityWeek 2026 (Nov 14-17) presentation plan, not yet occurred. second_dated_event remains unmet. Molecule identity behind the conjugate was not disclosed, so no molecule_class can be assigned to this candidate.",
+        "evidence_ko": "독립적인 Tier 2 매체 2곳(EBN, Korea Herald)이 알테오젠이 '장기지속형 접합체' 플랫폼에 대한 PCT를 출원하고 월 1회 비만 후보물질 ALT-M5를 개발 중이라는 2026년 9월 17일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. 이번 주기 저비용 일일 재조사(검색어: Alteogen ALT-M5 long-acting conjugate obesity update)에서도 동일한 2026년 9월 17일 PCT 출원 발표(Korea Herald, 헤럴드biz, 딜사이트, SBS Biz, 허프포스트코리아)만 확인됐으며, ObesityWeek 2026(11월 14~17일) 발표는 여전히 아직 일어나지 않은 예정된 계획으로 남아 있다. second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다. 접합체가 탑재한 분자의 정체는 공개되지 않아 이 후보에는 molecule_class를 부여할 수 없다."
       },
       "resolution": null
     },
@@ -1446,15 +1446,15 @@
       "status": "pending",
       "created_date": "2026-09-20",
       "follow_up": {
-        "last_checked": "2026-10-04",
-        "checks_run": 5,
+        "last_checked": "2026-10-07",
+        "checks_run": 6,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "Two independent Tier 2 outlets (BioSpace, BioPharma Dive) corroborate the same Aug 28, 2023 announcement that i2o Therapeutics acquired Intarcia's Medici osmotic-implant platform and a long-acting GLP-1/amylin(DACRA)/glucagon/PYY pipeline designed for twice-yearly dosing, clearing named_entity, technical_claim and confirmed_source. ITCA 650's FDA rejection (2023-09-21 advisory vote, 2024-08-23 refusal) remains the only further verified dated event and is left unresolved pending the admin's read on whether a rejection qualifies (see prior cycle's note). This run's weekly deep-pass re-search (query: i2o Therapeutics Medici implant DACRA update news 2026) again found only the same 2023 Series A/Medici-acquisition/leadership-change and ITCA 650 rejection history already on file; no 2026-specific clinical, financing or regulatory update for the broader DACRA/GLP-1/glucagon/PYY pipeline. second_dated_event remains unmet on the same open judgment call.",
-        "evidence_ko": "독립적인 Tier 2 매체 2곳(BioSpace, BioPharma Dive)이 i2o Therapeutics가 Intarcia의 Medici 삼투압 임플란트 플랫폼과 연 2회 투여를 목표로 하는 장기지속형 GLP-1/아밀린(DACRA)/글루카곤/PYY 파이프라인을 인수했다는 2023년 8월 28일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. ITCA 650의 FDA 거부(2023-09-21 자문위 표결, 2024-08-23 최종 거부)는 여전히 유일한 추가 검증 날짜 이벤트로 남아 있으며, 거부가 조건을 충족하는지에 대한 관리자의 판단을 기다리고 있다(이전 주기 참고). 이번 주기 주간 심층 재조사(검색어: i2o Therapeutics Medici implant DACRA update news 2026)에서도 기존 파일에 있는 2023년 시리즈 A/Medici 인수/경영진 교체 및 ITCA 650 거부 이력만 확인됐다. 더 넓은 DACRA/GLP-1/글루카곤/PYY 파이프라인에 대한 2026년 관련 업데이트는 없다. second_dated_event(두 번째 날짜 이벤트)는 동일한 미해결 판단 사안으로 여전히 미충족이다."
+        "evidence": "Two independent Tier 2 outlets (BioSpace, BioPharma Dive) corroborate the same Aug 28, 2023 announcement that i2o Therapeutics acquired Intarcia's Medici osmotic-implant platform and a long-acting GLP-1/amylin(DACRA)/glucagon/PYY pipeline designed for twice-yearly dosing, clearing named_entity, technical_claim and confirmed_source. ITCA 650's FDA rejection (2023-09-21 advisory vote, 2024-08-23 refusal) remains the only further verified dated event and is left unresolved pending the admin's read on whether a rejection qualifies (see prior cycle's note). This run's cheap daily-pass re-search (query: i2o Therapeutics Medici DACRA GLP-1 update 2026) again found only generic pipeline-description pages (mtec-sc.org, convention.bio.org) restating the same long-acting GLP-1/DACRA/PYY pipeline description with no date attached, and no 2026-specific clinical, financing or regulatory update. second_dated_event remains unmet on the same open judgment call.",
+        "evidence_ko": "독립적인 Tier 2 매체 2곳(BioSpace, BioPharma Dive)이 i2o Therapeutics가 Intarcia의 Medici 삼투압 임플란트 플랫폼과 연 2회 투여를 목표로 하는 장기지속형 GLP-1/아밀린(DACRA)/글루카곤/PYY 파이프라인을 인수했다는 2023년 8월 28일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. ITCA 650의 FDA 거부(2023-09-21 자문위 표결, 2024-08-23 최종 거부)는 여전히 유일한 추가 검증 날짜 이벤트로 남아 있으며, 거부가 조건을 충족하는지에 대한 관리자의 판단을 기다리고 있다(이전 주기 참고). 이번 주기 저비용 일일 재조사(검색어: i2o Therapeutics Medici DACRA GLP-1 update 2026)에서도 날짜가 명시되지 않은 동일한 장기지속형 GLP-1/DACRA/PYY 파이프라인 소개 페이지(mtec-sc.org, convention.bio.org)만 확인됐으며, 2026년 관련 임상·자금·규제 업데이트는 없다. second_dated_event(두 번째 날짜 이벤트)는 동일한 미해결 판단 사안으로 여전히 미충족이다."
       },
       "resolution": null
     },

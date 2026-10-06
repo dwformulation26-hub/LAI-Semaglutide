@@ -6,28 +6,57 @@
   "technology_family": "other",
   "aliases": ["Nanexa", "Nanexa AB", "NANEXA", "PharmaShell", "PharmaShell®"],
   "current_status": {
-    "stage": "Preclinical. PharmaShell uses atomic layer deposition (ALD) to coat drug particles; a Jan 2026 rat PK study reported an exceptional PK profile supporting once-monthly SC dosing of semaglutide, and a Mar 2026 follow-on study plus human modelling indicated once-quarterly dosing may be feasible. No clinical trial for the semaglutide asset has been announced. Separately, Nanexa licensed PharmaShell to Moderna in Dec 2025 for long-acting mRNA-based compounds, unrelated to the semaglutide program.",
-    "stage_ko": "전임상 단계이다. PharmaShell은 원자층 증착(ALD)으로 약물 입자를 코팅하는 기술로, 2026년 1월 랫드 대상 PK 연구에서 월 1회 피하(SC) 세마글루타이드 투여를 뒷받침하는 뛰어난 PK 프로파일을 보고했다. 2026년 3월 후속 연구와 인체 모델링은 3개월 1회 투여 가능성을 시사했다. 세마글루타이드 자산에 대한 임상시험은 아직 발표되지 않았다. 별도로 Nanexa는 2025년 12월 Moderna에 장기지속형 mRNA 기반 화합물을 위한 PharmaShell 기술을 라이선스 계약했으며, 이는 세마글루타이드 프로그램과는 무관하다.",
-    "stage_label": "Preclinical",
-    "stage_evidence": "The Jan 2026 and Mar 2026 releases report preliminary rat PK data and human modelling with no clinical study stated, which is squarely preclinical.",
-    "stage_evidence_ko": "2026년 1월과 3월 발표는 예비 랫드 PK 데이터와 인체 모델링을 보고했을 뿐 임상 시험은 언급하지 않았으므로, 명백히 전임상 단계이다.",
-    "molecule_class": ["semaglutide"],
-    "molecule_evidence": "Nanexa's Jan 27, 2026 and Mar 19, 2026 company releases report PharmaShell PK data specifically for a once-monthly, and potentially once-quarterly, semaglutide formulation.",
-    "molecule_evidence_ko": "Nanexa의 2026년 1월 27일과 3월 19일 자체 발표는 월 1회, 잠재적으로 3개월 1회 세마글루타이드 제형을 위한 PharmaShell PK 데이터를 보고한다.",
-    "dosing_target": "Monthly, with once-quarterly dosing feasibility also reported",
-    "dosing_target_ko": "월 1회, 추가적으로 3개월 1회 투여 가능성도 보고됨",
+    "stage": "Two distinct PharmaShell assets: semaglutide remains preclinical (a Jan 2026 rat PK study reported an exceptional PK profile supporting once-monthly SC dosing, and a Mar 2026 follow-on study plus human modelling indicated once-quarterly dosing may be feasible; no clinical trial announced). Separately, NEX-22, a once-monthly PharmaShell depot of liraglutide, completed a nine-patient Phase I study (Profil, Germany) meeting all primary and secondary endpoints (Nanexa release, Nov 22 2024) -- the furthest-along long-acting asset under this umbrella. Separately, Nanexa licensed PharmaShell to Moderna in Dec 2025 for long-acting mRNA-based compounds, unrelated to either program.",
+    "stage_ko": "PharmaShell 기반의 서로 다른 두 자산이 있다. 세마글루타이드는 여전히 전임상 단계다(2026년 1월 랫드 대상 PK 연구에서 월 1회 피하(SC) 투여를 뒷받침하는 뛰어난 PK 프로파일을 보고했고, 2026년 3월 후속 연구와 인체 모델링은 3개월 1회 투여 가능성을 시사했다. 임상시험은 아직 발표되지 않았다). 별도로 NEX-22(월 1회 PharmaShell 리라글루타이드 데포)는 9명을 대상으로 한 임상 1상(독일 Profil)에서 모든 1차 및 2차 평가변수를 충족했다(Nanexa 발표, 2024년 11월 22일) -- 이 umbrella 하에서 가장 앞선 장기지속형 자산이다. 별도로 Nanexa는 2025년 12월 Moderna에 장기지속형 mRNA 기반 화합물을 위한 PharmaShell 기술을 라이선스 계약했으며, 두 프로그램과는 무관하다.",
+    "stage_label": "Phase 1",
+    "stage_evidence": "NEX-22, Nanexa's once-monthly PharmaShell liraglutide depot, completed a nine-patient Phase I dose-escalation study (Profil, Germany) meeting all primary and secondary endpoints -- dose-linear PK (Cmax, AUC, depot duration) and no adverse events including no nausea or vomiting (Nanexa release, 2024-11-22). This is the furthest-along long-acting asset under the umbrella; the semaglutide asset itself remains preclinical.",
+    "stage_evidence_ko": "Nanexa의 월 1회 PharmaShell 리라글루타이드 데포인 NEX-22는 9명을 대상으로 한 용량 증량 임상 1상(독일 Profil)에서 모든 1차 및 2차 평가변수를 충족했다 -- 용량에 비례하는 PK(Cmax, AUC, 데포 지속시간)와 이상반응 없음(오심·구토 없음 포함)을 보였다(Nanexa 발표, 2024-11-22). 이는 이 umbrella 하에서 가장 앞선 장기지속형 자산이며, 세마글루타이드 자산 자체는 여전히 전임상 단계다.",
+    "molecule_class": ["semaglutide", "other_incretin"],
+    "molecule_evidence": "Nanexa's own releases name two distinct formulated long-acting assets under PharmaShell: a once-monthly/potentially once-quarterly semaglutide program (Jan and Mar 2026 releases, preclinical) and NEX-22, a once-monthly liraglutide depot with a completed, all-endpoints-met Phase I study (2024-11-22 release). Liraglutide is a once-daily GLP-1 agonist outside the four named molecules, so it sits in other_incretin.",
+    "molecule_evidence_ko": "Nanexa의 자체 발표는 PharmaShell 기반의 서로 다른 두 가지 장기지속형 자산을 명시한다: 월 1회, 잠재적으로 3개월 1회 세마글루타이드 프로그램(2026년 1월·3월 발표, 전임상)과, 모든 평가변수를 충족한 임상 1상을 완료한 월 1회 리라글루타이드 데포 NEX-22(2024-11-22 발표)다. 리라글루타이드는 4대 지정 분자 밖의 1일 1회 GLP-1 작용제이므로 other_incretin에 분류된다.",
+    "molecule_stages": {
+      "semaglutide": {
+        "stage_label": "Preclinical",
+        "stage_evidence": "The semaglutide asset remains at rat PK data and human modelling (Jan and Mar 2026 releases); no clinical study has been announced for it.",
+        "stage_evidence_ko": "세마글루타이드 자산은 여전히 랫드 PK 데이터와 인체 모델링 단계에 있다(2026년 1월·3월 발표). 해당 자산에 대한 임상시험은 아직 발표되지 않았다."
+      },
+      "other_incretin": {
+        "stage_label": "Phase 1",
+        "stage_evidence": "NEX-22, the once-monthly PharmaShell liraglutide depot, completed a nine-patient Phase I dose-escalation study (Profil, Germany) meeting all primary and secondary endpoints, with dose-linear PK and no adverse events (Nanexa release, 2024-11-22).",
+        "stage_evidence_ko": "월 1회 PharmaShell 리라글루타이드 데포인 NEX-22는 9명을 대상으로 한 용량 증량 임상 1상(독일 Profil)에서 모든 1차 및 2차 평가변수를 충족했으며, 용량에 비례하는 PK와 이상반응 없음을 보였다(Nanexa 발표, 2024-11-22)."
+      }
+    },
+    "dosing_target": "Monthly for semaglutide, with once-quarterly dosing feasibility also reported; monthly for the NEX-22 liraglutide depot",
+    "dosing_target_ko": "세마글루타이드는 월 1회(추가적으로 3개월 1회 투여 가능성도 보고됨); NEX-22 리라글루타이드 데포도 월 1회",
     "partner": "Novo Nordisk holds a global exclusive license (announced 2026-09-25) covering up to five PharmaShell development programs for peptide-based obesity/T2D/cardiometabolic drugs, targeting monthly and quarterly administration -- an upgrade from the pre-existing, undisclosed-scope relationship. Not confirmed to name the semaglutide asset specifically. Separately, AstraZeneca (pre-existing, undisclosed scope) and Moderna (Dec 2025, mRNA-focused, not semaglutide) also hold PharmaShell agreements.",
     "partner_ko": "Novo Nordisk는 비만/제2형 당뇨병/심장대사 펩타이드 약물을 대상으로 한 최대 5개 PharmaShell 개발 프로그램에 대한 글로벌 독점 라이선스를 보유하고 있으며(2026-09-25 발표), 월 1회 및 3개월 1회 투여를 목표로 한다 -- 기존의 범위 비공개 관계에서 격상된 것이다. 세마글루타이드 자산을 구체적으로 명시하는지는 확인되지 않았다. 별도로 AstraZeneca(기존, 범위 비공개)와 Moderna(2025년 12월, mRNA 중심, 세마글루타이드와 무관)도 PharmaShell 계약을 보유하고 있다.",
     "data_point": "Preclinical rat PK (Jan 2026): exceptional PK profile supporting once-monthly SC dosing, more stable than weekly Wegovy with a low initial peak. Follow-on rat PK plus human modelling (Mar 2026): semaglutide could potentially be dosed once every three months while maintaining a controlled, therapeutically relevant plasma concentration.",
     "data_point_ko": "전임상 랫드 PK(2026년 1월): 월 1회 피하 투여를 뒷받침하는 뛰어난 PK 프로파일을 확인했으며, 주 1회 Wegovy보다 안정적이고 낮은 초기 피크를 보였다. 후속 랫드 PK 및 인체 모델링(2026년 3월): 세마글루타이드를 조절되고 치료적으로 유의미한 혈중 농도를 유지하면서 3개월에 1회 투여할 수 있을 가능성이 제시되었다.",
     "last_updated": "2026-09-25",
-    "last_checked": "2026-10-06"
+    "last_checked": "2026-10-07"
   },
   "finding_history": [
+    {
+      "id": "f-2024-11-22-001",
+      "date": "2024-11-22",
+      "type": "trial_data_readout",
+      "molecules": ["other_incretin"],
+      "summary": "Nanexa announced that its Phase I study of NEX-22, a once-monthly PharmaShell depot of the GLP-1 analog liraglutide, met all primary and secondary endpoints in nine treatment-naive type 2 diabetes patients dosed across three escalating-dose cohorts at Profil (Germany). Pharmacokinetics showed dose linearity for Cmax, AUC and depot duration; no adverse events were reported, including no nausea or vomiting, and no or only minimal injection-site reactions. A distinct asset from the tracked semaglutide PharmaShell program, first identified this run.",
+      "summary_ko": "Nanexa는 월 1회 PharmaShell 리라글루타이드 데포인 NEX-22의 임상 1상에서 모든 1차 및 2차 평가변수를 충족했다고 발표했다. 이 시험은 GLP-1 치료 경험이 없는 제2형 당뇨병 환자 9명을 대상으로 독일 Profil에서 3개 용량 증량 코호트에 걸쳐 투여됐다. 약동학적으로 Cmax, AUC, 데포 지속시간 모두 용량에 비례했으며, 오심이나 구토를 포함한 이상반응은 보고되지 않았고 주사 부위 반응도 없거나 경미했다. 이는 추적 중인 세마글루타이드 PharmaShell 프로그램과는 별개의 자산으로, 이번 주기에 처음 확인됐다.",
+      "source": {
+        "name": "All Primary and Secondary endpoints met in Nanexa's Phase I study of the one-month GLP-1 depot NEX-22",
+        "publication": "Nanexa AB",
+        "url": "https://nanexa.com/en/mfn_news/all-primary-and-secondary-endpoints-met-in-nanexas-phase-i-study-of-the-one-month-glp-1-depot-nex-22/",
+        "tier": 1
+      },
+      "confidence": "confirmed",
+      "verification_note": "Found via this run's Track B1 cross-class wire-skim query (\"long-acting injectable\" GLP-1 depot). A 2024 event, well outside this run's freshness window, logged now as a newly-discovered long-acting asset under this already-tracked umbrella -- never previously captured. Direct WebFetch of nanexa.com succeeded this run (a different page than the one recorded blocked in source_health for this host)."
+    },
     {
       "id": "f-2025-12-10-001",
       "date": "2025-12-10",
       "type": "deal_partnership",
+      "molecules": [],
       "summary": "Nanexa granted Moderna a license and option agreement for PharmaShell-based products: USD 3 million upfront, up to USD 500 million in development/commercial milestones plus tiered royalties. PharmaShell uses atomic layer deposition to coat drug particles for tailored, long-acting (1-3 month) release, terminal sterilization, and room-temperature stability. Not specific to the semaglutide asset -- Moderna's interest is in long-acting mRNA-based compounds.",
       "summary_ko": "Nanexa는 Moderna에 PharmaShell 기반 제품에 대한 기술이전(라이선스) 및 옵션 계약을 부여했다: 계약금 USD 3 million, 개발/상업화 마일스톤 최대 USD 500 million에 단계별 로열티가 더해진다. PharmaShell은 원자층 증착으로 약물 입자를 코팅해 맞춤형 장기 지속(1-3개월) 방출, 최종 멸균, 상온 안정성을 구현한다. 세마글루타이드 자산에 특화된 것은 아니며, Moderna의 관심은 장기지속형 mRNA 기반 화합물에 있다.",
       "source": {
@@ -43,6 +72,7 @@
       "id": "f-2026-01-27-001",
       "date": "2026-01-27",
       "type": "trial_data_readout",
+      "molecules": ["semaglutide"],
       "summary": "Nanexa reported preclinical PK studies showing an exceptional pharmacokinetic profile for a once-monthly subcutaneous PharmaShell semaglutide formulation -- a low peak-to-trough plasma concentration ratio, more stable than weekly Wegovy, with a low initial peak intended to reduce GI adverse events.",
       "summary_ko": "Nanexa는 월 1회 피하 투여용 PharmaShell 세마글루타이드 제형의 전임상 PK 연구에서 뛰어난 약동학적 프로파일을 확인했다고 보고했다 -- 주 1회 Wegovy보다 안정적인 낮은 최고/최저 혈중 농도 비율을 보였으며, 낮은 초기 피크는 GI 이상반응 감소를 목표로 한다.",
       "source": {
@@ -57,6 +87,7 @@
       "id": "f-2026-03-19-001",
       "date": "2026-03-19",
       "type": "trial_data_readout",
+      "molecules": ["semaglutide"],
       "summary": "Building on its Jan 2026 monthly-dosing PK data, Nanexa completed a rat PK study using several PharmaShell semaglutide formulations; the new data plus human modelling indicate semaglutide could potentially be dosed once every three months while maintaining a controlled, therapeutically relevant plasma concentration.",
       "summary_ko": "2026년 1월 월 1회 투여 PK 데이터에 이어, Nanexa는 여러 PharmaShell 세마글루타이드 제형을 활용한 랫드 대상 PK 연구를 완료했다. 새 데이터와 인체 모델링에 따르면 세마글루타이드를 조절되고 치료적으로 유의미한 혈중 농도를 유지하면서 3개월에 1회 투여할 수 있을 가능성이 제시되었다.",
       "source": {
@@ -71,6 +102,7 @@
       "id": "f-2026-09-25-001",
       "date": "2026-09-25",
       "type": "deal_partnership",
+      "molecules": [],
       "summary": "Nanexa and Novo Nordisk entered a global exclusive license and collaboration agreement for PharmaShell, worth up to EUR 1.165 billion (EUR 615 million upfront plus development/regulatory milestones) plus low-single-digit royalties. The deal covers up to five PharmaShell development programs for peptide-based obesity, type 2 diabetes and other cardiometabolic drugs, with monthly and quarterly administration as target dosing profiles; Novo leads global development and commercialization. The release does not confirm whether the already-tracked semaglutide asset is one of the five named programs.",
       "summary_ko": "Nanexa와 Novo Nordisk는 PharmaShell에 대해 최대 EUR 1.165 billion(계약금 EUR 615 million 플러스 개발/허가 마일스톤) 규모의 글로벌 독점 라이선스 및 공동개발 계약을 체결했으며, 낮은 한 자릿수 로열티도 포함된다. 계약은 비만, 제2형 당뇨병, 기타 심장대사질환을 위한 펩타이드 기반 약물의 PharmaShell 개발 프로그램 최대 5건을 대상으로 하며, 월 1회 및 3개월 1회 투여를 목표 제형으로 한다. Novo가 글로벌 개발과 상업화를 주도한다. 이미 추적 중인 세마글루타이드 자산이 5개 지정 프로그램 중 하나인지는 발표에서 확인되지 않았다.",
       "source": {
