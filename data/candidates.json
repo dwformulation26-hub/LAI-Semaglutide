@@ -926,15 +926,15 @@
       "status": "pending",
       "created_date": "2026-09-11",
       "follow_up": {
-        "last_checked": "2026-10-05",
-        "checks_run": 9,
+        "last_checked": "2026-10-08",
+        "checks_run": 10,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's cheap daily-pass re-search (query: Appel Sauce Studios hydrogel depot Stanford GLP-1) again found only the same underlying Stanford PNP hydrogel research program (Eric Appel/Bob Langer), the GelGLP once-monthly semaglutide concept and the stated H1 2028 first-in-human timeline, all already on file. No pipeline page, financing announcement, or clinical registration specific to the company itself; second_dated_event remains unmet.",
-        "evidence_ko": "이번 주기 저비용 일일 재조사(검색어: Appel Sauce Studios hydrogel depot Stanford GLP-1)에서도 기존 파일에 있는 동일한 기저 Stanford PNP 하이드로겔 연구 프로그램(Eric Appel/Bob Langer), GelGLP 월 1회 세마글루타이드 개념, 2028년 상반기 최초 인체 임상 일정만 확인됐다. 회사 자체와 관련된 파이프라인 페이지, 자금 조달 발표, 임상시험 등록은 여전히 없다. second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다."
+        "evidence": "This run's cheap daily-pass re-search (query: Appel Sauce Studios Stanford hydrogel GLP-1 depot) again found only the same underlying Stanford PNP hydrogel research program (Eric Appel/Bob Langer, Cell Reports Medicine), the once-every-four-months semaglutide/tirzepatide depot concept and the same two-years-to-clinic projection, all already on file. No pipeline page, financing announcement, or clinical registration specific to the company itself; second_dated_event remains unmet.",
+        "evidence_ko": "이번 주기 저비용 일일 재조사(검색어: Appel Sauce Studios Stanford hydrogel GLP-1 depot)에서도 기존 파일에 있는 동일한 기저 Stanford PNP 하이드로겔 연구 프로그램(Eric Appel/Bob Langer, Cell Reports Medicine), 4개월 1회 세마글루타이드/터제파타이드 데포 개념, 임상까지 2년이 걸릴 것이라는 동일한 예상만 확인됐다. 회사 자체와 관련된 파이프라인 페이지, 자금 조달 발표, 임상시험 등록은 여전히 없다. second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다."
       },
       "resolution": null
     },
@@ -1302,15 +1302,15 @@
       "status": "pending",
       "created_date": "2026-09-20",
       "follow_up": {
-        "last_checked": "2026-10-05",
-        "checks_run": 5,
+        "last_checked": "2026-10-08",
+        "checks_run": 6,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's cheap daily-pass re-search (query: CN121154792A Beijing Biote tirzepatide in-situ gel) and the Track B1 rotation-list row (query: CN121154792A 替尔泊肽, exactly as written) again found only the same patent record (CN121154792A, published 2025-12-19) and general molecule background; no clinical trial registration, IND filing or further company disclosure since the patent's 2025-10-24 filing. Named entity, technical claim and confirmed_source remain cleared from the patent record itself; second_dated_event remains unmet, since per the skill's rule a patent filing does not by itself count as a stage-bearing event.",
-        "evidence_ko": "이번 주기 저비용 일일 재조사(검색어: CN121154792A Beijing Biote tirzepatide in-situ gel)와 Track B1 로테이션 목록 행(검색어: CN121154792A 替尔泊肽, 그대로 사용)에서도 동일한 특허 기록(CN121154792A, 2025-12-19 공개)과 일반적인 분자 정보만 확인됐다. 2025-10-24 특허 출원 이후 임상시험 등록, IND 신청 또는 추가 회사 공개는 없었다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 특허 기록 자체로 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이 스킬의 규칙에 따라 특허 출원 자체가 개발 단계를 나타내는 이벤트로 인정되지 않아 여전히 미충족이다."
+        "evidence": "This run's cheap daily-pass re-search (query: Beijing Biote Pharmaceutical tirzepatide clinical trial IND) and the Track B1 rotation-list row (query: CN121154792A 替尔泊肽, exactly as written) again found only the same patent record (CN121154792A, published 2025-12-19) and general molecule background -- one superficially similar ClinicalTrials.gov hit (NCT07481747, titled 'SURMOUNT-1' at a Peking University Shenzhen Hospital site) turned out to be a Lilly-sponsored trial, not a Beijing Biote one, so it does not corroborate anything. No clinical trial registration, IND filing or further company disclosure since the patent's 2025-10-24 filing. Named entity, technical claim and confirmed_source remain cleared from the patent record itself; second_dated_event remains unmet, since per the skill's rule a patent filing does not by itself count as a stage-bearing event.",
+        "evidence_ko": "이번 주기 저비용 일일 재조사(검색어: Beijing Biote Pharmaceutical tirzepatide clinical trial IND)와 Track B1 로테이션 목록 행(검색어: CN121154792A 替尔泊肽, 그대로 사용)에서도 동일한 특허 기록(CN121154792A, 2025-12-19 공개)과 일반적인 분자 정보만 확인됐다. 표면적으로 유사해 보인 ClinicalTrials.gov 기록 하나(NCT07481747, 'SURMOUNT-1'이라는 제목, Peking University Shenzhen Hospital 기관)는 확인 결과 Beijing Biote가 아닌 Lilly 후원 시험이어서 근거가 되지 못했다. 2025-10-24 특허 출원 이후 임상시험 등록, IND 신청 또는 추가 회사 공개는 없었다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 특허 기록 자체로 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이 스킬의 규칙에 따라 특허 출원 자체가 개발 단계를 나타내는 이벤트로 인정되지 않아 여전히 미충족이다."
       },
       "resolution": null
     },
