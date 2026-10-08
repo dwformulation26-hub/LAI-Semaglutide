@@ -726,15 +726,15 @@
       "status": "pending",
       "created_date": "2026-09-07",
       "follow_up": {
-        "last_checked": "2026-10-06",
-        "checks_run": 8,
+        "last_checked": "2026-10-09",
+        "checks_run": 9,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's cheap daily-pass re-search (query: Precision Antibiotics CarboCell DTU IND clinical trial update 2026) again found only the same DKK 60M raise and 2027 Phase 1 target (dtu.dk, May 2026) and the same peer-reviewed CarboCell G/C bone-infection papers (JBJI, Nov 2025 and May 2026) already on file. No IND filing, clinical trial registration, or other company-level dated event has been reported since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI.",
-        "evidence_ko": "이번 주기 저비용 일일 재조사(검색어: Precision Antibiotics CarboCell DTU IND clinical trial update 2026)에서도 기존과 동일한 DKK 60M 자금 조달과 2027년 임상 1상 목표(dtu.dk, 2026년 5월), 이미 확보된 동일한 뼈 감염 관련 동료 심사 논문 2건(JBJI, 2025년 11월 및 2026년 5월)만 확인됐다. 이후 IND 신청, 임상시험 등록 또는 그 외 회사 차원의 날짜 이벤트는 보고되지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다."
+        "evidence": "This run's cheap daily-pass re-search (query: Precision Antibiotics CarboCell DTU IND clinical trial update 2026) again found only the same DKK 60M raise and 2027 Phase 1 target (dtu.dk, May 2026) and the same peer-reviewed CarboCell G/C bone-infection papers (JBJI, Nov 2025 and May 2026) already on file, plus a DTU/orbit.dtu.dk mirror of the same material. No IND filing, clinical trial registration, or other company-level dated event has been reported since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI.",
+        "evidence_ko": "이번 주기 저비용 일일 재조사(검색어: Precision Antibiotics CarboCell DTU IND clinical trial update 2026)에서도 기존과 동일한 DKK 60M 자금 조달과 2027년 임상 1상 목표(dtu.dk, 2026년 5월), 이미 확보된 동일한 뼈 감염 관련 동료 심사 논문 2건(JBJI, 2025년 11월 및 2026년 5월), 그리고 동일 자료를 미러링한 DTU/orbit.dtu.dk 게시물만 확인됐다. 이후 IND 신청, 임상시험 등록 또는 그 외 회사 차원의 날짜 이벤트는 보고되지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다."
       },
       "resolution": null
     },
@@ -1571,15 +1571,60 @@
       "status": "pending",
       "created_date": "2026-10-04",
       "follow_up": {
-        "last_checked": "2026-10-06",
-        "checks_run": 1,
+        "last_checked": "2026-10-09",
+        "checks_run": 2,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "second_dated_event"],
         "unmet": ["confirmed_source"],
-        "evidence": "This run's cheap daily-pass re-search (query: HLB Pharmaceutical GLP-1 SMEB microsphere) again found only the same Medipana interview describing the five-pipeline SMEB platform (liraglutide/semaglutide/tirzepatide, 99.96% release linearity over 42 days) already on file; no second outlet naming the semaglutide/tirzepatide pipeline claim turned up. named_entity, technical_claim and second_dated_event (the Medipana interview plus the separate Mepsgen MOU) remain cleared; confirmed_source remains unmet for the same reason as at creation -- only one Tier 2 outlet covers the specific molecule claim. Fuzzy match to owlbio-kyungdong-xtina (0.15) remains low -- not a merge case.",
-        "evidence_ko": "이번 주기 저비용 일일 재조사(검색어: HLB Pharmaceutical GLP-1 SMEB microsphere)에서도 기존 파일에 있는 5개 파이프라인 SMEB 플랫폼(리라글루타이드/세마글루타이드/터제파타이드, 42일간 99.96% 방출 선형성)을 다룬 동일한 메디파나 인터뷰만 확인됐다. 세마글루타이드·터제파타이드 파이프라인 주장을 다루는 두 번째 매체는 나타나지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), second_dated_event(두 번째 날짜 이벤트, 메디파나 인터뷰와 별개의 멥스젠 MOU)는 계속 충족되며, confirmed_source(확인된 출처)는 생성 시점과 동일한 이유로 미충족이다 -- 특정 분자 주장을 다루는 매체가 Tier 2 1곳뿐이다. owlbio-kyungdong-xtina와의 퍼지 매칭 점수(0.15)는 여전히 낮아 병합 사례가 아니다."
+        "evidence": "This run's cheap daily-pass re-search (query: HLB제약 SMEB 세마글루타이드 터제파타이드 장기지속형) again found only the same Medipana interview describing the five-pipeline SMEB platform (liraglutide/semaglutide/tirzepatide, 99.96% release linearity over 42 days); it also surfaced a 2021 Humedix/HLB long-acting-GLP-1 collaboration report, but that release names no specific molecule and does not corroborate the semaglutide/tirzepatide claim, so it is not counted as a second source for that claim. No second outlet naming the semaglutide/tirzepatide pipeline turned up. named_entity, technical_claim and second_dated_event remain cleared; confirmed_source remains unmet for the same reason as at creation -- only one Tier 2 outlet covers the specific molecule claim. Fuzzy match to owlbio-kyungdong-xtina (0.15) remains low -- not a merge case.",
+        "evidence_ko": "이번 주기 저비용 일일 재조사(검색어: HLB제약 SMEB 세마글루타이드 터제파타이드 장기지속형)에서도 5개 파이프라인 SMEB 플랫폼(리라글루타이드/세마글루타이드/터제파타이드, 42일간 99.96% 방출 선형성)을 다룬 동일한 메디파나 인터뷰만 확인됐다. 2021년 휴메딕스·HLB 장기지속형 GLP-1 협력 보도도 검색됐으나, 해당 보도는 특정 분자를 명시하지 않아 세마글루타이드·터제파타이드 주장을 뒷받침하지 못하므로 두 번째 출처로 인정하지 않는다. 세마글루타이드·터제파타이드 파이프라인 주장을 다루는 두 번째 매체는 나타나지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), second_dated_event(두 번째 날짜 이벤트)는 계속 충족되며, confirmed_source(확인된 출처)는 생성 시점과 동일한 이유로 미충족이다 -- 특정 분자 주장을 다루는 매체가 Tier 2 1곳뿐이다. owlbio-kyungdong-xtina와의 퍼지 매칭 점수(0.15)는 여전히 낮아 병합 사례가 아니다."
+      },
+      "resolution": null
+    },
+    {
+      "id": "cand-2026-10-09-001",
+      "detected_name": "AstraZeneca -- Cotadutide Long-Acting Depot (academic/STFC collaboration)",
+      "detected_aliases": [
+        "AstraZeneca",
+        "Cotadutide"
+      ],
+      "entity_type_guess": [
+        "company",
+        "asset"
+      ],
+      "evidence": [
+        {
+          "source": {
+            "name": "Cotadutide reversible self-assembly based long-acting injectable depot for sustained delivery of GLP-1 glucagon receptor agonists with controlled burst release",
+            "publication": "Journal of Controlled Release",
+            "url": "https://doi.org/10.1016/j.jconrel.2025.01.064",
+            "tier": 2
+          },
+          "snippet": "AstraZeneca scientists (with the ISIS Neutron and Muon Source at STFC) published a peer-reviewed paper (DOI 10.1016/j.jconrel.2025.01.064) describing a long-acting injectable depot for cotadutide, AstraZeneca's GLP-1/glucagon dual-receptor agonist, built on a reversible self-assembly mechanism that controls the initial burst release and sustains delivery of the peptide over an extended period (Journal of Controlled Release, vol. 380, 2025, pp. 647-663). The bibliographic record states only the year; the exact publication date and the paper's quantitative release data were not accessible this run.",
+          "snippet_ko": "AstraZeneca 소속 과학자들(STFC의 ISIS Neutron and Muon Source와 공동)이 AstraZeneca의 GLP-1/글루카곤 이중 수용체 작용제 코타두타이드(cotadutide)에 대한 장기지속형 주사형 데포를 설명하는 동료 심사 논문(DOI 10.1016/j.jconrel.2025.01.064)을 발표했다. 이 데포는 가역적 자기조립(self-assembly) 기전을 기반으로 초기 과다 방출(burst)을 제어하고 펩타이드를 장기간에 걸쳐 전달한다(Journal of Controlled Release, 380권, 2025년, 647-663쪽). 서지 기록에는 연도만 명시되어 있어 정확한 발행일과 논문의 정량적 방출 데이터는 이번 조사에서 확인하지 못했다.",
+          "date": "2025-01-01",
+          "date_basis": "inferred",
+          "verification_note": "Found via this run's Track B1 cross-class query (sustained-release microsphere peptide obesity), then followed up with one extra search to identify the entity behind the claim before writing it up. The DOI and journal volume/year/pages are confirmed via search and the STFC ePubs bibliographic record (authors include AstraZeneca staff plus STFC's N Mahmoudi), but no exact day of publication was found -- 2025-01-01 is a placeholder for 'sometime in 2025', not a stated day. The DOI and ScienceDirect landing pages returned only a 'Redirecting' placeholder on direct WebFetch; full text was not read."
+        }
+      ],
+      "fuzzy_match": {
+        "closest_umbrella_id": "astrazeneca-zoladex",
+        "score": 0.15
+      },
+      "status": "pending",
+      "created_date": "2026-10-09",
+      "follow_up": {
+        "last_checked": null,
+        "checks_run": 0,
+        "near_bar": false
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim"],
+        "unmet": ["confirmed_source", "second_dated_event"],
+        "evidence": "Named entity (AstraZeneca, whose scientists co-authored the paper with STFC's ISIS Neutron and Muon Source) and a concrete technical claim (a reversible self-assembly depot for cotadutide, AstraZeneca's GLP-1/glucagon dual agonist, with controlled burst release) clear named_entity and technical_claim. Only one source (a single peer-reviewed Journal of Controlled Release paper) has been found so far, so confirmed_source is unmet pending an independent second source or a company statement; only one dated event (the 2025 publication, exact day unknown) is on file, so second_dated_event is also unmet. Fuzzy match to the existing astrazeneca-zoladex umbrella is low (0.15) -- same parent company, but an unrelated molecule (goserelin implant) and delivery technology -- not a merge case.",
+        "evidence_ko": "명확한 주체(AstraZeneca -- 소속 과학자들이 STFC의 ISIS Neutron and Muon Source와 공동 저술)와 구체적 기술 근거(AstraZeneca의 GLP-1/글루카곤 이중 작용제 코타두타이드에 대한 가역적 자기조립 데포로, 초기 과다 방출(burst)을 제어)가 named_entity(명확한 주체)와 technical_claim(구체적 기술 근거)을 충족한다. 지금까지는 단일 출처(Journal of Controlled Release의 동료 심사 논문 1건)만 확인되어, 독립적인 두 번째 출처나 회사 발표가 나오기 전까지 confirmed_source(확인된 출처)는 미충족이다. 또한 날짜가 확인된 이벤트가 1건(2025년 발행, 정확한 날짜 미확인)뿐이어서 second_dated_event(두 번째 날짜 이벤트)도 미충족이다. 기존 astrazeneca-zoladex 엄브렐라와의 퍼지 매칭 점수는 낮다(0.15) -- 모회사는 같지만 분자(고세렐린 임플란트)와 전달 기술이 무관하여 병합 사례가 아니다."
       },
       "resolution": null
     }
