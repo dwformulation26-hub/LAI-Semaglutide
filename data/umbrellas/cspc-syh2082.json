@@ -34,7 +34,7 @@
     "data_point": "$1.2B upfront plus up to $3.5B development and regulatory milestones across eight obesity and T2D programmes; commercial milestones and royalties take the headline ceiling to roughly $18.5B",
     "data_point_ko": "계약금 $1.2B에 8개 비만 및 제2형 당뇨병 프로그램에 걸친 개발·허가 마일스톤 최대 $3.5B; 상업 마일스톤과 로열티를 포함하면 총 계약 규모 상한은 약 $18.5B",
     "last_updated": "2026-04-13",
-    "last_checked": "2026-10-08"
+    "last_checked": "2026-10-13"
   },
   "finding_history": [
     {
@@ -64,6 +64,22 @@
       },
       "confidence": "confirmed",
       "verification_note": "Corroborated by independent wire coverage of the same Feb 16, 2026 FDA approval (Globe and Mail/TipRanks). Discovered via this run's Track A search, over 7 months after the event."
+    },
+    {
+      "id": "f-2026-03-20-001",
+      "date": "2026-03-20",
+      "type": "regulatory",
+      "summary": "CSPC's own HKEX voluntary announcement disclosed that the Group obtained approval from China's National Medical Products Administration (NMPA) to conduct clinical trials of SYH2082 in China, alongside the already-known February 2026 US FDA clearance.",
+      "summary_ko": "CSPC의 자체 HKEX 자발적 공시에 따르면, Group은 중국 국가약품감독관리국(NMPA)으로부터 SYH2082의 중국 내 임상시험 승인을 받았다. 이는 이미 알려진 2026년 2월 미국 FDA 승인과 별개의 사실이다.",
+      "source": {
+        "name": "CSPC Pharmaceutical Group Limited (company IR announcement, via IRAsia HKEX filing)",
+        "publication": "CSPC Pharmaceutical Group",
+        "url": "https://doc.irasia.com/listco/hk/cspc/announcement/a260320.pdf",
+        "tier": 1
+      },
+      "confidence": "confirmed",
+      "verification_note": "Read from a search-engine summary only (doc.irasia.com refused a direct fetch); corroborated by a contemporaneous minichart.com.sg wire item citing the same March 20, 2026 announcement. Discovered via this run's Track A search, over six months after the event -- logged as discovered-late.",
+      "date_basis": "inferred"
     },
     {
       "id": "f-2026-04-13-001",
