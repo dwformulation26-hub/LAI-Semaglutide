@@ -726,15 +726,15 @@
       "status": "pending",
       "created_date": "2026-09-07",
       "follow_up": {
-        "last_checked": "2026-10-09",
-        "checks_run": 9,
+        "last_checked": "2026-10-14",
+        "checks_run": 10,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's cheap daily-pass re-search (query: Precision Antibiotics CarboCell DTU IND clinical trial update 2026) again found only the same DKK 60M raise and 2027 Phase 1 target (dtu.dk, May 2026) and the same peer-reviewed CarboCell G/C bone-infection papers (JBJI, Nov 2025 and May 2026) already on file, plus a DTU/orbit.dtu.dk mirror of the same material. No IND filing, clinical trial registration, or other company-level dated event has been reported since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI.",
-        "evidence_ko": "이번 주기 저비용 일일 재조사(검색어: Precision Antibiotics CarboCell DTU IND clinical trial update 2026)에서도 기존과 동일한 DKK 60M 자금 조달과 2027년 임상 1상 목표(dtu.dk, 2026년 5월), 이미 확보된 동일한 뼈 감염 관련 동료 심사 논문 2건(JBJI, 2025년 11월 및 2026년 5월), 그리고 동일 자료를 미러링한 DTU/orbit.dtu.dk 게시물만 확인됐다. 이후 IND 신청, 임상시험 등록 또는 그 외 회사 차원의 날짜 이벤트는 보고되지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다."
+        "evidence": "This run's cheap daily-pass re-search (query: Precision Antibiotics CarboCell DTU clinical trial update) again found only the DTU PhD thesis's pig-model data (4/5 pigs cured, June 2023), a University of Copenhagen SPARK project page naming Anders Elias Hansen's lead candidate, and the same registered-trial mismatch (NCT05508607 is an unrelated C. difficile study, not a CarboCell trial) -- nothing dated after the May 2026 dtu.dk release or the May 2026 JBJI paper already on file. No IND filing, clinical trial registration, or other company-level dated event has been reported since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI.",
+        "evidence_ko": "이번 주기 저비용 일일 재조사(검색어: Precision Antibiotics CarboCell DTU clinical trial update)에서도 DTU 박사 학위논문의 돼지 모델 데이터(5마리 중 4마리 치료, 2023년 6월), Anders Elias Hansen의 주력 후보물질을 언급한 코펜하겐대 SPARK 프로젝트 페이지, 그리고 동일한 등록 시험 불일치(NCT05508607은 CarboCell 시험이 아니라 무관한 C. difficile 연구)만 확인됐다 -- 이미 확보된 2026년 5월 dtu.dk 보도자료나 2026년 5월 JBJI 논문 이후 날짜의 새로운 내용은 없었다. 이후 IND 신청, 임상시험 등록 또는 그 외 회사 차원의 날짜 이벤트는 보고되지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다."
       },
       "resolution": null
     },
@@ -1302,15 +1302,15 @@
       "status": "pending",
       "created_date": "2026-09-20",
       "follow_up": {
-        "last_checked": "2026-10-08",
-        "checks_run": 6,
+        "last_checked": "2026-10-14",
+        "checks_run": 7,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's cheap daily-pass re-search (query: Beijing Biote Pharmaceutical tirzepatide clinical trial IND) and the Track B1 rotation-list row (query: CN121154792A 替尔泊肽, exactly as written) again found only the same patent record (CN121154792A, published 2025-12-19) and general molecule background -- one superficially similar ClinicalTrials.gov hit (NCT07481747, titled 'SURMOUNT-1' at a Peking University Shenzhen Hospital site) turned out to be a Lilly-sponsored trial, not a Beijing Biote one, so it does not corroborate anything. No clinical trial registration, IND filing or further company disclosure since the patent's 2025-10-24 filing. Named entity, technical claim and confirmed_source remain cleared from the patent record itself; second_dated_event remains unmet, since per the skill's rule a patent filing does not by itself count as a stage-bearing event.",
-        "evidence_ko": "이번 주기 저비용 일일 재조사(검색어: Beijing Biote Pharmaceutical tirzepatide clinical trial IND)와 Track B1 로테이션 목록 행(검색어: CN121154792A 替尔泊肽, 그대로 사용)에서도 동일한 특허 기록(CN121154792A, 2025-12-19 공개)과 일반적인 분자 정보만 확인됐다. 표면적으로 유사해 보인 ClinicalTrials.gov 기록 하나(NCT07481747, 'SURMOUNT-1'이라는 제목, Peking University Shenzhen Hospital 기관)는 확인 결과 Beijing Biote가 아닌 Lilly 후원 시험이어서 근거가 되지 못했다. 2025-10-24 특허 출원 이후 임상시험 등록, IND 신청 또는 추가 회사 공개는 없었다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 특허 기록 자체로 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이 스킬의 규칙에 따라 특허 출원 자체가 개발 단계를 나타내는 이벤트로 인정되지 않아 여전히 미충족이다."
+        "evidence": "This run's Track B1 rotation-list row (query: CN121154792A 替尔泊肽, exactly as written) did not resurface the patent record itself this time -- the only on-topic hit was an unrelated NMPA filing by Shenzhen Hanyu Pharmaceutical (翰宇药业) for a first-generic weekly tirzepatide injection, a different company and a different (weekly, not long-acting) product, so it does not corroborate or extend anything about Beijing Biote. No clinical trial registration, IND filing or further company disclosure has surfaced since the patent's 2025-10-24 filing. Named entity, technical claim and confirmed_source remain cleared from the patent record itself; second_dated_event remains unmet, since per the skill's rule a patent filing does not by itself count as a stage-bearing event.",
+        "evidence_ko": "이번 주기 Track B1 로테이션 목록 행(검색어: CN121154792A 替尔泊肽, 그대로 사용)에서는 특허 기록 자체가 다시 검색되지 않았다 -- 유일하게 관련된 결과는 선전 한위제약(翰宇药业, Shenzhen Hanyu Pharmaceutical)의 주 1회 터제파타이드 제네릭 주사제 NMPA 신청으로, 베이징 바이오테와는 다른 회사이고 장기지속형이 아닌 주 1회 제품이어서 어떤 내용도 뒷받침하거나 확장하지 못한다. 2025-10-24 특허 출원 이후 임상시험 등록, IND 신청 또는 추가 회사 공개는 나타나지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 특허 기록 자체로 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이 스킬의 규칙에 따라 특허 출원 자체가 개발 단계를 나타내는 이벤트로 인정되지 않아 여전히 미충족이다."
       },
       "resolution": null
     },
