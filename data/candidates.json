@@ -1256,15 +1256,15 @@
       "status": "pending",
       "created_date": "2026-09-18",
       "follow_up": {
-        "last_checked": "2026-10-13",
-        "checks_run": 7,
+        "last_checked": "2026-10-15",
+        "checks_run": 8,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "Two independent Tier 2 outlets (EBN, Korea Herald) corroborate the same Sept 17, 2026 announcement that Alteogen filed a PCT application for its 'Long-Acting Conjugate' platform and is advancing once-monthly obesity candidate ALT-M5, clearing named_entity, technical_claim and confirmed_source. This run's cheap daily-pass re-search (query: Alteogen ALT-M5 long-acting conjugate update) again found only the same Sept 17, 2026 PCT-filing announcement and the still-upcoming ObesityWeek 2026 (Nov 14-17) presentation plan, which has not yet occurred as of this check. second_dated_event remains unmet. Molecule identity behind the conjugate was not disclosed, so no molecule_class can be assigned to this candidate.",
-        "evidence_ko": "독립적인 Tier 2 매체 2곳(EBN, Korea Herald)이 알테오젠이 '장기지속형 접합체' 플랫폼에 대한 PCT를 출원하고 월 1회 비만 후보물질 ALT-M5를 개발 중이라는 2026년 9월 17일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. 이번 주기 저비용 일일 재조사(검색어: Alteogen ALT-M5 long-acting conjugate update)에서도 동일한 2026년 9월 17일 PCT 출원 발표만 확인됐으며, ObesityWeek 2026(11월 14~17일) 발표는 이번 확인 시점까지 여전히 아직 일어나지 않은 예정된 계획으로 남아 있다. second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다. 접합체가 탑재한 분자의 정체는 공개되지 않아 이 후보에는 molecule_class를 부여할 수 없다."
+        "evidence": "Two independent Tier 2 outlets (EBN, Korea Herald) corroborate the same Sept 17, 2026 announcement that Alteogen filed a PCT application for its 'Long-Acting Conjugate' platform and is advancing once-monthly obesity candidate ALT-M5, clearing named_entity, technical_claim and confirmed_source. This run's cheap daily-pass re-search (query: Alteogen ALT-M5 long-acting conjugate obesity) again found only the same Sept 17, 2026 PCT-filing announcement and the still-upcoming ObesityWeek 2026 (Nov 14-17) presentation plan, which has not yet occurred as of this check. second_dated_event remains unmet. Molecule identity behind the conjugate was not disclosed, so no molecule_class can be assigned to this candidate.",
+        "evidence_ko": "독립적인 Tier 2 매체 2곳(EBN, Korea Herald)이 알테오젠이 '장기지속형 접합체' 플랫폼에 대한 PCT를 출원하고 월 1회 비만 후보물질 ALT-M5를 개발 중이라는 2026년 9월 17일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. 이번 주기 저비용 일일 재조사(검색어: Alteogen ALT-M5 long-acting conjugate obesity)에서도 동일한 2026년 9월 17일 PCT 출원 발표만 확인됐으며, ObesityWeek 2026(11월 14~17일) 발표는 이번 확인 시점까지 여전히 아직 일어나지 않은 예정된 계획으로 남아 있다. second_dated_event(두 번째 날짜 이벤트)는 여전히 미충족이다. 접합체가 탑재한 분자의 정체는 공개되지 않아 이 후보에는 molecule_class를 부여할 수 없다."
       },
       "resolution": null
     },
@@ -1571,15 +1571,15 @@
       "status": "pending",
       "created_date": "2026-10-04",
       "follow_up": {
-        "last_checked": "2026-10-09",
-        "checks_run": 2,
+        "last_checked": "2026-10-15",
+        "checks_run": 3,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "second_dated_event"],
         "unmet": ["confirmed_source"],
-        "evidence": "This run's cheap daily-pass re-search (query: HLB제약 SMEB 세마글루타이드 터제파타이드 장기지속형) again found only the same Medipana interview describing the five-pipeline SMEB platform (liraglutide/semaglutide/tirzepatide, 99.96% release linearity over 42 days); it also surfaced a 2021 Humedix/HLB long-acting-GLP-1 collaboration report, but that release names no specific molecule and does not corroborate the semaglutide/tirzepatide claim, so it is not counted as a second source for that claim. No second outlet naming the semaglutide/tirzepatide pipeline turned up. named_entity, technical_claim and second_dated_event remain cleared; confirmed_source remains unmet for the same reason as at creation -- only one Tier 2 outlet covers the specific molecule claim. Fuzzy match to owlbio-kyungdong-xtina (0.15) remains low -- not a merge case.",
-        "evidence_ko": "이번 주기 저비용 일일 재조사(검색어: HLB제약 SMEB 세마글루타이드 터제파타이드 장기지속형)에서도 5개 파이프라인 SMEB 플랫폼(리라글루타이드/세마글루타이드/터제파타이드, 42일간 99.96% 방출 선형성)을 다룬 동일한 메디파나 인터뷰만 확인됐다. 2021년 휴메딕스·HLB 장기지속형 GLP-1 협력 보도도 검색됐으나, 해당 보도는 특정 분자를 명시하지 않아 세마글루타이드·터제파타이드 주장을 뒷받침하지 못하므로 두 번째 출처로 인정하지 않는다. 세마글루타이드·터제파타이드 파이프라인 주장을 다루는 두 번째 매체는 나타나지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), second_dated_event(두 번째 날짜 이벤트)는 계속 충족되며, confirmed_source(확인된 출처)는 생성 시점과 동일한 이유로 미충족이다 -- 특정 분자 주장을 다루는 매체가 Tier 2 1곳뿐이다. owlbio-kyungdong-xtina와의 퍼지 매칭 점수(0.15)는 여전히 낮아 병합 사례가 아니다."
+        "evidence": "This run's cheap daily-pass re-search (query: HLB Pharmaceutical SMEB microsphere semaglutide) again found only generic PLGA/semaglutide-microsphere patent literature with no assignee match to HLB Pharmaceutical or 'SMEB' -- it did not even resurface the Medipana interview already on file. No second outlet naming the semaglutide/tirzepatide pipeline turned up. named_entity, technical_claim and second_dated_event remain cleared; confirmed_source remains unmet for the same reason as at creation -- only one Tier 2 outlet covers the specific molecule claim. Fuzzy match to owlbio-kyungdong-xtina (0.15) remains low -- not a merge case.",
+        "evidence_ko": "이번 주기 저비용 일일 재조사(검색어: HLB Pharmaceutical SMEB microsphere semaglutide)에서는 HLB제약이나 'SMEB'와 일치하는 출원인이 없는 일반적인 PLGA·세마글루타이드 미립구 특허 문헌만 확인됐고, 이미 확보된 메디파나 인터뷰조차 다시 검색되지 않았다. 세마글루타이드·터제파타이드 파이프라인 주장을 다루는 두 번째 매체는 나타나지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), second_dated_event(두 번째 날짜 이벤트)는 계속 충족되며, confirmed_source(확인된 출처)는 생성 시점과 동일한 이유로 미충족이다 -- 특정 분자 주장을 다루는 매체가 Tier 2 1곳뿐이다. owlbio-kyungdong-xtina와의 퍼지 매칭 점수(0.15)는 여전히 낮아 병합 사례가 아니다."
       },
       "resolution": null
     },
