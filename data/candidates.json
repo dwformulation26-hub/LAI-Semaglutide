@@ -1302,15 +1302,15 @@
       "status": "pending",
       "created_date": "2026-09-20",
       "follow_up": {
-        "last_checked": "2026-10-18",
-        "checks_run": 8,
+        "last_checked": "2026-10-19",
+        "checks_run": 9,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's Track B2 rotation-list row (query: CN121154792A 替尔泊肽, exactly as written) again did not resurface the patent record itself -- the same unrelated Shenzhen Hanyu Pharmaceutical (翰宇药业) weekly tirzepatide generic-filing material surfaced instead, a different company and a different (weekly, not long-acting) product that does not corroborate or extend anything about Beijing Biote. No clinical trial registration, IND filing or further company disclosure has surfaced since the patent's 2025-10-24 filing. Named entity, technical claim and confirmed_source remain cleared from the patent record itself; second_dated_event remains unmet, since per the skill's rule a patent filing does not by itself count as a stage-bearing event.",
-        "evidence_ko": "이번 주기 Track B2 로테이션 목록 행(검색어: CN121154792A 替尔泊肽, 그대로 사용)에서도 특허 기록 자체는 다시 검색되지 않았다 -- 이전과 동일하게 선전 한위제약(翰宇药业, Shenzhen Hanyu Pharmaceutical)의 주 1회 터제파타이드 제네릭 신청 관련 자료만 나타났으며, 베이징 바이오테와는 다른 회사이고 장기지속형이 아닌 주 1회 제품이어서 어떤 내용도 뒷받침하거나 확장하지 못한다. 2025-10-24 특허 출원 이후 임상시험 등록, IND 신청 또는 추가 회사 공개는 나타나지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 특허 기록 자체로 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이 스킬의 규칙에 따라 특허 출원 자체가 개발 단계를 나타내는 이벤트로 인정되지 않아 여전히 미충족이다."
+        "evidence": "Monday daily scan's cheap-pass re-search (query: CN121154792A Biote tirzepatide in-situ gel) again did not resurface the patent record itself -- unrelated academic tirzepatide/semaglutide hydrogel-depot preprints (bioRxiv, a triblock-copolymer OAJPR article) and a different, unrelated Chinese in-situ-gel filing (CN121987556A) surfaced instead, none naming Beijing Biote. No clinical trial registration, IND filing or further company disclosure has surfaced since the patent's 2025-10-24 filing. named_entity, technical_claim and confirmed_source remain cleared from the patent record itself; second_dated_event remains unmet.",
+        "evidence_ko": "월요일 일간 스캔의 저비용 재조사(검색어: CN121154792A Biote tirzepatide in-situ gel)에서도 특허 기록 자체는 다시 검색되지 않았다 -- 대신 무관한 학술 터제파타이드/세마글루타이드 하이드로겔 디포 프리프린트(bioRxiv, 트리블록 공중합체 OAJPR 논문)와 베이징 바이오테와 무관한 별개의 중국 in-situ 겔 출원(CN121987556A)만 나타났다. 2025-10-24 특허 출원 이후 임상시험 등록, IND 신청 또는 추가 회사 공개는 나타나지 않았다. named_entity, technical_claim, confirmed_source는 특허 기록 자체로 계속 충족되며, second_dated_event는 여전히 미충족이다."
       },
       "resolution": null
     },
@@ -1584,15 +1584,15 @@
       "status": "pending",
       "created_date": "2026-10-04",
       "follow_up": {
-        "last_checked": "2026-10-18",
-        "checks_run": 4,
+        "last_checked": "2026-10-19",
+        "checks_run": 5,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "second_dated_event"],
         "unmet": ["confirmed_source"],
-        "evidence": "This run's weekly deep-pass re-search (query: HLB제약 SMEB 세마글루타이드 터제파타이드 미립구 특허 2026) surfaced one new, unconfirmed detail -- a passing mention that Huons Global (휴메딕스) signed an exclusive license agreement with HLB Pharmaceutical for a long-acting obesity injectable using SMEB -- but the source carrying it is undated and names no semaglutide/tirzepatide specifics, and no second outlet corroborates it, so it is not added as evidence. Otherwise found only the same Medipana interview already on file and unrelated patents from other companies (Peptron, G2GBio). named_entity, technical_claim and second_dated_event remain cleared; confirmed_source remains unmet for the same reason as at creation -- only one Tier 2 outlet covers the specific molecule claim. Fuzzy match to owlbio-kyungdong-xtina (0.15) remains low -- not a merge case.",
-        "evidence_ko": "이번 주기 주간 심층 재조사(검색어: HLB제약 SMEB 세마글루타이드 터제파타이드 미립구 특허 2026)에서 새롭지만 미확인된 세부사항 하나가 나타났다 -- 휴메딕스가 HLB제약과 SMEB를 활용한 장기지속형 비만 주사제에 대한 특허전용실시권 계약을 체결했다는 간략한 언급이다 -- 그러나 이를 전한 출처에는 날짜가 없고 세마글루타이드·터제파타이드에 대한 구체적 언급도 없으며, 두 번째 매체의 교차 확인도 없어 근거로 추가하지 않았다. 그 외에는 이미 확보된 메디파나 인터뷰와 다른 회사(펩트론, 지투지바이오)의 무관한 특허만 확인됐다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), second_dated_event(두 번째 날짜 이벤트)는 계속 충족되며, confirmed_source(확인된 출처)는 생성 시점과 동일한 이유로 미충족이다 -- 특정 분자 주장을 다루는 매체가 Tier 2 1곳뿐이다. owlbio-kyungdong-xtina와의 퍼지 매칭 점수(0.15)는 여전히 낮아 병합 사례가 아니다."
+        "evidence": "Monday daily scan's cheap-pass re-search (query: HLB Pharmaceutical GLP-1 long-acting SMEB pipeline) surfaced only the same 2021 Huons/Hummedix GLP-1 licensing deal and the 2026-04-28 Mepsgen NanoCalibur MOU already on file, plus a 2025 HLB Group/Anygen peptide-maker acquisition writeup that names no specific GLP-1 long-acting molecule. No new dated event. named_entity, technical_claim and second_dated_event remain cleared; confirmed_source remains unmet for the same reason as at creation. Fuzzy match to owlbio-kyungdong-xtina (0.15) remains low -- not a merge case.",
+        "evidence_ko": "월요일 일간 스캔의 저비용 재조사(검색어: HLB Pharmaceutical GLP-1 long-acting SMEB pipeline)에서는 이미 확보된 2021년 휴메딕스/휴온스글로벌 GLP-1 라이선스 계약과 2026-04-28 멥스젠 NanoCalibur MOU, 그리고 특정 GLP-1 장기지속형 분자를 명시하지 않은 2025년 HLB그룹/애니젠 펩타이드 제조사 인수 관련 기사만 확인됐다. 새로운 날짜 이벤트는 없다. named_entity, technical_claim, second_dated_event는 계속 충족되며, confirmed_source는 생성 시점과 동일한 이유로 미충족이다. owlbio-kyungdong-xtina와의 퍼지 매칭 점수(0.15)는 여전히 낮아 병합 사례가 아니다."
       },
       "resolution": null
     },
