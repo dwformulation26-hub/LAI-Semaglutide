@@ -36,7 +36,7 @@
     "data_point": "Q2 2026: SUBLOCADE net revenue $253M (+21% YoY), record 32,816 new patient starts, ~76% share of US LAI OUD category; >500,000 patients treated since 2018 launch",
     "data_point_ko": "2026년 2분기: SUBLOCADE 순매출 $253M(전년 대비 +21%), 신규 환자 투여 개시 사상 최대 32,816명, 미국 LAI 오피오이드 사용장애(OUD) 시장 점유율 약 76%; 2018년 출시 이후 누적 투여 환자 500,000명 이상",
     "last_updated": "2026-08-03",
-    "last_checked": "2026-10-04"
+    "last_checked": "2026-10-18"
   },
   "finding_history": [
     {
@@ -51,6 +51,21 @@
         "tier": 1
       },
       "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-04-24-001",
+      "date": "2026-04-24",
+      "type": "trial_data_readout",
+      "summary": "Indivior presented two new posters on SUBLOCADE at the ASAM 2026 Annual Conference (San Diego, Apr 23-26): a retrospective case-control study of 45,000+ OUD patients using Ontario administrative health data, in which SUBLOCADE accounted for the smallest share of non-fatal and fatal overdose events among all medications for opioid use disorder; and a provisional analysis of the ROUTE study (443 participants followed up to 12 months) showing patients in sustained 3-month remission on SUBLOCADE reported lower craving, withdrawal and pain, and better quality of life and employment, than those not in remission.",
+      "summary_ko": "Indivior는 ASAM 2026 연례 학회(샌디에이고, 4월 23-26일)에서 SUBLOCADE 관련 신규 포스터 2건을 발표했다. 하나는 온타리오 행정 보건 데이터를 활용해 오피오이드 사용장애(OUD) 환자 45,000명 이상을 대상으로 한 후향적 사례-대조 연구로, 모든 오피오이드 사용장애 치료제 중 SUBLOCADE가 비치명적·치명적 과다복용 사건 비중이 가장 낮았다. 다른 하나는 ROUTE 연구(참가자 443명, 최장 12개월 추적)의 중간 분석으로, SUBLOCADE로 3개월 지속 관해(remission)에 도달한 환자가 관해에 이르지 못한 환자보다 갈망, 금단, 통증이 낮고 삶의 질과 고용 상태가 더 양호했다고 보고했다.",
+      "source": {
+        "name": "Indivior Presents New Real World Data at ASAM 2026 Annual Conference",
+        "publication": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/04/24/3280930/0/en/Indivior-Presents-New-Real-World-Data-at-ASAM-2026-Annual-Conference",
+        "tier": 2
+      },
+      "confidence": "confirmed",
+      "verification_note": "Found via this run's Sunday-only Track A pass; event dated 2026-04-24 well predates this record's own last_checked (2026-10-04), so it is a real but late-discovered item, not a headline finding. Company-sponsored observational studies (association, not causation)."
     },
     {
       "id": "f-2026-04-30-001",

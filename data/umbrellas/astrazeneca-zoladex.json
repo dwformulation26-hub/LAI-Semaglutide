@@ -29,8 +29,8 @@
     "partner": null,
     "data_point": "42,000+ signature patient petition preceded AstraZeneca's reversal to indefinite free supply in Australia (2026-07-30)",
     "data_point_ko": "42,000명 이상이 서명한 환자 청원 이후 AstraZeneca가 호주에서 무기한 무상 공급으로 방침을 바꿨다(2026-07-30)",
-    "last_updated": "2026-08-19",
-    "last_checked": "2026-10-04"
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-10-18"
   },
   "finding_history": [
     {
@@ -84,6 +84,21 @@
         "tier": 1
       },
       "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-09-28-001",
+      "date": "2026-09-28",
+      "type": "regulatory",
+      "summary": "A voluntary recall of one lot (Lot YN0099, 296 cartons) of the Zoladex 3.6mg implant received a US FDA Class II classification, after distributor TerSera Therapeutics discovered the product had been left in a non-temperature-controlled trailer for over 24 hours; TerSera notified affected accounts by letter rather than a public press release. This is a distinct, manufacturing/distribution quality issue, separate from AstraZeneca's commercial PBS delisting of the same 3.6mg strength in Australia.",
+      "summary_ko": "Zoladex 3.6mg 임플란트의 1개 로트(Lot YN0099, 296 카톤)가 온도 조절이 되지 않는 트레일러에 24시간 넘게 방치된 것을 유통사 TerSera Therapeutics가 발견한 뒤, 미국 FDA로부터 자발적 Class II 등급 회수 판정을 받았다. TerSera는 별도의 공개 보도자료 없이 서한으로 관련 거래처에 통지했다. 이는 호주에서 같은 3.6mg 제형에 대한 AstraZeneca의 상업적 PBS 등재 삭제와는 별개의, 제조/유통 품질 문제이다.",
+      "source": {
+        "name": "Zoladex (goserelin) implant recalled due to improper temperature regulation",
+        "publication": "Pharmacy Learning Network",
+        "url": "https://www.hmpgloballearningnetwork.com/site/pln/news/zoladex-goserelin-implant-recalled-due-improper-temperature-regulation",
+        "tier": 2
+      },
+      "confidence": "unverified",
+      "verification_note": "Single-source only (no FDA Enforcement Report page or second independent outlet found this run), so logged as unverified per the Tier 1/2 confirmation rule despite the Tier-2 trade source. Older than this record's own freshness window (last_checked 2026-10-04), found via this run's Sunday-only Track A pass, so discovered-late rather than a headline item. The same source also cites an FDA Enforcement Report dated 2026-10-07 and gives an internally inconsistent lot-expiry date (Jan 2027 vs Jan 2028) that a direct FDA source should resolve on a future check."
     }
   ]
 }
