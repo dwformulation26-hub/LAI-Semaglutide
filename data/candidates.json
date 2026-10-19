@@ -726,15 +726,15 @@
       "status": "pending",
       "created_date": "2026-09-07",
       "follow_up": {
-        "last_checked": "2026-10-18",
-        "checks_run": 12,
+        "last_checked": "2026-10-20",
+        "checks_run": 13,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's weekly deep-pass re-search (query: Precision Antibiotics CarboCell DTU SPARK update 2026) again surfaced only the same SPARK Denmark academic project page and background, with no dates, trial results or funding figures beyond what is already on file -- nothing dated after the May 2026 dtu.dk release or the May 2026 JBJI paper. No IND filing, clinical trial registration, or other company-level dated event has been reported since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI.",
-        "evidence_ko": "이번 주기 주간 심층 재조사(검색어: Precision Antibiotics CarboCell DTU SPARK update 2026)에서도 동일한 SPARK Denmark 학술 프로젝트 페이지와 배경 정보만 확인됐을 뿐, 이미 확보된 2026년 5월 dtu.dk 보도자료나 2026년 5월 JBJI 논문 이후 날짜·임상시험 결과·자금 조달 규모의 새로운 내용은 없었다. 이후 IND 신청, 임상시험 등록 또는 그 외 회사 차원의 날짜 이벤트는 보고되지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다."
+        "evidence": "This run's daily cheap-pass re-search (query: Precision Antibiotics CarboCell DTU 2026) again surfaced only the Anders Elias Hansen SPARK Denmark/University of Copenhagen project page (no DTU affiliation shown on that page itself, no 2026 date), with nothing dated after the May 2026 dtu.dk release or the May 2026 JBJI paper already on file. No IND filing, clinical trial registration, or other company-level dated event has been reported since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI.",
+        "evidence_ko": "이번 주기 일간 저비용 재조사(검색어: Precision Antibiotics CarboCell DTU 2026)에서도 Anders Elias Hansen의 SPARK Denmark/코펜하겐대학교 프로젝트 페이지만 확인됐을 뿐(해당 페이지 자체에는 DTU 소속 표시가 없고 2026년 날짜도 없음), 이미 확보된 2026년 5월 dtu.dk 보도자료나 2026년 5월 JBJI 논문 이후 새로운 날짜 이벤트는 없었다. 이후 IND 신청, 임상시험 등록 또는 그 외 회사 차원의 날짜 이벤트는 보고되지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다."
       },
       "resolution": null
     },
@@ -1459,15 +1459,15 @@
       "status": "pending",
       "created_date": "2026-09-20",
       "follow_up": {
-        "last_checked": "2026-10-18",
-        "checks_run": 9,
+        "last_checked": "2026-10-20",
+        "checks_run": 10,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "Two independent Tier 2 outlets (BioSpace, BioPharma Dive) corroborate the same Aug 28, 2023 announcement that i2o Therapeutics acquired Intarcia's Medici osmotic-implant platform and a long-acting GLP-1/amylin(DACRA)/glucagon/PYY pipeline designed for twice-yearly dosing, clearing named_entity, technical_claim and confirmed_source. ITCA 650's FDA rejection (2023-09-21 advisory vote, 2024-08-23 refusal) remains the only further verified dated event and is left unresolved pending the admin's read on whether a rejection qualifies (see prior cycle's note). This run's weekly deep-pass re-search (query: i2o Therapeutics update news 2026) again found only the same 2023-era announcements, plus an unconfirmed, undated report of a separate $26M private placement tied to i2o's oral-delivery business (not the injectable Medici pipeline tracked here) -- not counted toward second_dated_event since it is neither dated nor on-topic. second_dated_event remains unmet on the same open judgment call.",
-        "evidence_ko": "독립적인 Tier 2 매체 2곳(BioSpace, BioPharma Dive)이 i2o Therapeutics가 Intarcia의 Medici 삼투압 임플란트 플랫폼과 연 2회 투여를 목표로 하는 장기지속형 GLP-1/아밀린(DACRA)/글루카곤/PYY 파이프라인을 인수했다는 2023년 8월 28일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. ITCA 650의 FDA 거부(2023-09-21 자문위 표결, 2024-08-23 최종 거부)는 여전히 유일한 추가 검증 날짜 이벤트로 남아 있으며, 거부가 조건을 충족하는지에 대한 관리자의 판단을 기다리고 있다(이전 주기 참고). 이번 주기 주간 심층 재조사(검색어: i2o Therapeutics update news 2026)에서도 동일한 2023년 발표들만 확인됐으며, 추가로 i2o의 경구 전달 사업(이 후보가 추적하는 주사형 Medici 파이프라인이 아님)과 관련된 것으로 보이는 미확인·날짜 미상의 $26M 규모 사모 증자 보도가 있었으나 날짜도 없고 주제와도 맞지 않아 second_dated_event에 반영하지 않았다. second_dated_event(두 번째 날짜 이벤트)는 동일한 미해결 판단 사안으로 여전히 미충족이다."
+        "evidence": "Two independent Tier 2 outlets (BioSpace, BioPharma Dive) corroborate the same Aug 28, 2023 announcement that i2o Therapeutics acquired Intarcia's Medici osmotic-implant platform and a long-acting GLP-1/amylin(DACRA)/glucagon/PYY pipeline designed for twice-yearly dosing, clearing named_entity, technical_claim and confirmed_source. ITCA 650's FDA rejection (2023-09-21 advisory vote, 2024-08-23 refusal) remains the only further verified dated event and is left unresolved pending the admin's read on whether a rejection qualifies (see prior cycle's note). This run's daily cheap-pass re-search (query: i2o Therapeutics Medici platform news October 2026) again found only the same 2023-era announcements plus older 2020-2023 Janssen/Sanofi/Colorcon oral-delivery partnership history -- no 2026 financing, clinical or regulatory update for the Medici-platform injectable pipeline could be found this cycle. second_dated_event remains unmet on the same open judgment call.",
+        "evidence_ko": "독립적인 Tier 2 매체 2곳(BioSpace, BioPharma Dive)이 i2o Therapeutics가 Intarcia의 Medici 삼투압 임플란트 플랫폼과 연 2회 투여를 목표로 하는 장기지속형 GLP-1/아밀린(DACRA)/글루카곤/PYY 파이프라인을 인수했다는 2023년 8월 28일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. ITCA 650의 FDA 거부(2023-09-21 자문위 표결, 2024-08-23 최종 거부)는 여전히 유일한 추가 검증 날짜 이벤트로 남아 있으며, 거부가 조건을 충족하는지에 대한 관리자의 판단을 기다리고 있다(이전 주기 참고). 이번 주기 일간 저비용 재조사(검색어: i2o Therapeutics Medici platform news October 2026)에서도 동일한 2023년 발표들과 2020-2023년 Janssen/Sanofi/Colorcon 경구 전달 파트너십 이력만 확인됐을 뿐, Medici 플랫폼 주사형 파이프라인에 대한 2026년 자금 조달·임상·규제 관련 새로운 내용은 없었다. second_dated_event(두 번째 날짜 이벤트)는 동일한 미해결 판단 사안으로 여전히 미충족이다."
       },
       "resolution": null
     },
