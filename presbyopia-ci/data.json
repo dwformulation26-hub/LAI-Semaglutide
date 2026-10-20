@@ -1,0 +1,3852 @@
+{
+ "meta": {
+  "asOf": "2026-10-20",
+  "asOfLabel": "20 Oct 2026",
+  "stageOrder": [
+   "Approved (US)",
+   "Approved (ex-US)",
+   "Off-label (other indication)",
+   "Filed",
+   "Licensed (pre-filing)",
+   "Phase 3",
+   "Phase 2",
+   "Phase 1",
+   "Preclinical",
+   "Discontinued / dormant"
+  ],
+  "method": "**Basis.** This dashboard keeps your June 2026 product, PK/PD, patent and market data (`data_products.py`) and adds a competitor-intelligence\nlayer (`data_intel.py`) from a web research refresh completed on **20 Oct 2026**, in three parallel streams:\n\n1. **Approved & filed products** — openFDA (drugsfda API), SEC filings (LENZ, Opus, AbbVie, Viatris), company press releases, trade press.\n2. **Global pipeline** — ClinicalTrials.gov, China CDE/NMPA reporting, HKEX filings, company sites.\n3. **Korea** — MFDS 의약품안전나라 (nedrug), DART, ClinicalTrials.gov, and Korean trade press (데일리팜, 약사공론, 메디칼타임즈, 메디파나, 뉴스핌, 아시아경제, 한국경제).\n\n**Threat score (1–5)** = threat to a new presbyopia-drop entrant in Korea, weighing commercial readiness, product profile, Korean channel\nstrength and overlap with combination/pilocarpine strategies. It is an analyst judgement, not a model output.\n\n**Dates marked \"expected\" are estimates**, shown as light segments in the Korea race chart.\n\n**Limits.** Some pages (drugs.com, Endpoints, S&P, Google Patents) could not be fetched directly; facts from them rest on search snippets and are\ntagged *Reported* or *Unverified*. Cross-trial comparisons in Head-to-Head are indicative only.",
+  "openQuestions": [
+   "Who licensed pilocarpine 1.2% to Jetema? (Taejoon is a circumstantial candidate only.)",
+   "Will Taejoon file CTO0307 itself? What concentration, and are the Phase 3 results positive?",
+   "Exact Kwangdong MFDS filing date (Sep vs Nov 2025) and the expected decision date.",
+   "Does Opus or Viatris hold Korean rights to RYZUMVI, and are they available?",
+   "When will Optus file QLOSI? (₩3.26B milestone is due on filing.)",
+   "Korean national-phase status of US8299079 / US8455494 and of the Somerset/Allergan pilo + brimonidine families.",
+   "Has India's PresVu actually launched? Did Tainkang get NMPA approval?",
+   "First Korean price point (비급여) once an approval lands."
+  ]
+ },
+ "summary": "Five drops are now FDA-approved for presbyopia, but the US has shown how hard this category is to commercialise: AbbVie discontinued the VUITY brand, VIZZ sold only $3.4M in H1 2026, and branded prices have converged on ~$79/month cash-pay. <b>Korea still has zero approved presbyopia drops</b>, with three NDAs in the queue (YUVEZZI/Kwangdong, VIZZ/Lotus-Alvogen, and a newly filed Jetema pilocarpine 1.2%). The domestic threat you suspected is real: <b>Taejoon Pharm's CTO0307 is a pilocarpine drop with a completed Korean Phase 3</b>, formulation IP and the deepest ophthalmology channel of any player, while Daewoo and Reyon already sell 1% pilocarpine off-label. First MFDS approval is expected in early 2027.",
+ "kpis": [
+  {
+   "label": "FDA-approved presbyopia drops",
+   "num": "5",
+   "sub": "RYZUMVI added 16 Oct 2026 · VUITY brand discontinued 2026"
+  },
+  {
+   "label": "MFDS-approved (Korea)",
+   "num": "0",
+   "sub": "First approval expected early 2027"
+  },
+  {
+   "label": "Korean NDAs under review",
+   "num": "3",
+   "sub": "YUVEZZI · VIZZ · Jetema pilocarpine 1.2%"
+  },
+  {
+   "label": "Assets tracked",
+   "num": "33",
+   "sub": "Korea, US, China, EU, India, Japan"
+  },
+  {
+   "label": "VIZZ net sales, H1 2026",
+   "num": "$3.4M",
+   "sub": "vs ~$45M 2026 consensus (Oct 2025)"
+  }
+ ],
+ "changes": [
+  {
+   "date": "16 Oct 2026",
+   "dir": "up",
+   "headline": "FDA approves RYZUMVI (phentolamine 0.75%) for presbyopia",
+   "impact": "5th approved drop; first non-cholinergic. Viatris is seeking a US partner; Asian rights partly with Opus.",
+   "sources": [
+    {
+     "label": "Viatris PR 2026-10-16",
+     "url": "https://www.placera.se/pressmeddelanden/viatris-viatris-receives-u-s-fda-approval-for-ryzumvi-for-the-treatment-of-presbyopia-20261016"
+    },
+    {
+     "label": "Opus PR 2026-10-16",
+     "url": "https://ir.opusgtx.com/press-releases/detail/546/"
+    }
+   ]
+  },
+  {
+   "date": "22 Sep 2026",
+   "dir": "up",
+   "headline": "Reyon's Opticarpine 1% approved (Daewoo-made) — 2nd off-label pilocarpine in Korea",
+   "impact": "More price pressure on pilocarpine in the clinic channel.",
+   "sources": [
+    {
+     "label": "약사공론 2026-09-23",
+     "url": "https://www.kpanews.co.kr/news/articleView.html?idxno=544805"
+    }
+   ]
+  },
+  {
+   "date": "Sep 2026",
+   "dir": "up",
+   "headline": "Daewoo submits presbyopia IND for Pilostar 1%",
+   "impact": "Formal indication still ≥2 years away.",
+   "sources": [
+    {
+     "label": "약사공론 2026-09-23",
+     "url": "https://www.kpanews.co.kr/news/articleView.html?idxno=544805"
+    }
+   ]
+  },
+  {
+   "date": "23 Jul 2026",
+   "dir": "up",
+   "headline": "Taejoon's CTO0307 revealed as pilocarpine; Phase 3 (n=167) completed Sep 2025",
+   "impact": "Confirms Taejoon as a domestic contender; NDA route not yet public.",
+   "sources": [
+    {
+     "label": "NCT07723716 (CTO0307)",
+     "url": "https://clinicaltrials.gov/study/NCT07723716"
+    },
+    {
+     "label": "헬스코리아뉴스 2025-11-10",
+     "url": "https://www.hkn24.com/news/articleView.html?idxno=347223"
+    }
+   ]
+  },
+  {
+   "date": "16 Jul 2026",
+   "dir": "up",
+   "headline": "Jetema files MFDS NDA for in-licensed pilocarpine 1.2% — not in your June build",
+   "impact": "Third Korean presbyopia NDA. Licensor undisclosed (possibly Taejoon — unverified).",
+   "sources": [
+    {
+     "label": "뉴스핌 2026-07-16",
+     "url": "https://www.newspim.com/news/view/20260716000452"
+    }
+   ]
+  },
+  {
+   "date": "20 Aug 2026",
+   "dir": "info",
+   "headline": "Lupin's VISUfarma licenses YUVEZZI for EU/UK (reported up to €75M)",
+   "impact": "Tenpoint now partnered across US, EU and Asia.",
+   "sources": [
+    {
+     "label": "Outsourced Pharma 2026-08-20",
+     "url": "https://www.outsourcedpharma.com/doc/lupin-and-tenpoint-therapeutics-strategic-partnership-commercialize-yuvezzi-european-united-kingdom-switzerland-norway-iceland-0001"
+    },
+    {
+     "label": "Free Press Journal – €75M",
+     "url": "https://www.freepressjournal.in/business/lupin-unit-signs-75-million-yuvezzi-licensing-deal-expands-eye-care-business-across-europe"
+    }
+   ]
+  },
+  {
+   "date": "Jun 2026",
+   "dir": "info",
+   "headline": "Everest Medicines takes VIZZ Greater China rights from Corxel; NMPA approval guided Q1 2027",
+   "impact": "An Asian approval would support Lotus's Korean dossier.",
+   "sources": [
+    {
+     "label": "Ophthalmology Times 2026-06-09",
+     "url": "https://www.optometrytimes.com/view/everest-medicines-acquires-greater-china-rights-aceclidine-presbyopia-eye-drop-vizz-"
+    }
+   ]
+  },
+  {
+   "date": "2026",
+   "dir": "down",
+   "headline": "AbbVie discontinues the VUITY brand; Amneal AB-generic on market since Aug 2025",
+   "impact": "First-in-class exits — a warning on cash-pay economics.",
+   "sources": [
+    {
+     "label": "openFDA drugsfda (queried 2026-10-20)",
+     "url": "https://api.fda.gov/drug/drugsfda.json"
+    },
+    {
+     "label": "Eyes On Eyecare guide (Jul 2026)",
+     "url": "https://eyesoneyecare.com/resources/ultimate-guide-presbyopia-drops/"
+    },
+    {
+     "label": "Optum Rx – generic Vuity Aug 2025",
+     "url": "https://business.optum.com/en/support/professionalrx-resources/newgenerics-uity-081125.html"
+    }
+   ]
+  },
+  {
+   "date": "Corrections",
+   "dir": "info",
+   "headline": "Data fixes to your June build",
+   "impact": "QLOSI NDA is 217836; YUVEZZI NDA is 220142; Optus–Orasis deal was Sep 2024 (₩24.37B), and QLOSI is still not filed in Korea; VIZZ Korea NDA filed by Lotus (Alvogen Korea = expected commercialiser).",
+   "sources": [
+    {
+     "label": "openFDA drugsfda (queried 2026-10-20)",
+     "url": "https://api.fda.gov/drug/drugsfda.json"
+    },
+    {
+     "label": "fnnews 2024-09-23",
+     "url": "https://www.fnnews.com/news/202409231644102301"
+    }
+   ]
+  }
+ ],
+ "takeaways": [
+  {
+   "title": "1 · The Korean window opens in 2027",
+   "body": "No product is approved yet. YUVEZZI (Kwangdong) is the favourite for first approval, followed by VIZZ and Jetema. The first entrant will set the 비급여 price anchor and prescriber habits — timing matters more than label nuance."
+  },
+  {
+   "title": "2 · Pilocarpine is commoditising locally",
+   "body": "Taejoon (Ph3 done), Jetema (filed), Daewoo and Reyon (off-label 1%) all sell or develop pilocarpine. A new pilocarpine-only product needs a clear edge: tolerability, duration, PF single-use cost, or Korean data."
+  },
+  {
+   "title": "3 · US demand is real but slow",
+   "body": "VIZZ: ~27k packs in Q2-26 and 75% repeat prescribers, but only $1.7M net sales. Pricing converged on $79/month and $198/quarter with direct-to-patient channels. Model Korean uptake conservatively."
+  },
+  {
+   "title": "4 · Differentiation axes are clear",
+   "body": "Duration (VIZZ 10 h; RYZUMVI evening dose), tolerability (YUVEZZI lowest redness; RYZUMVI no brow ache), PF single-use (all modern entrants), and Korean-specific dosing (Jetema 1.2%)."
+  },
+  {
+   "title": "5 · IP: 2030 is the pivotal year",
+   "body": "Tenpoint's core method-of-use patents (US8299079 / US8455494) expire May 2030 in the US, but a carbachol+brimonidine formulation patent runs to 2042 and Taejoon has filed on stabilised pilocarpine. Check Korean national-phase coverage."
+  },
+  {
+   "title": "6 · Unpartnered assets for Korea",
+   "body": "RYZUMVI (Opus keeps some Asian rights), Cloudbreak CBT-199 and the Chinese pilocarpine programmes have no known Korean partner. Arctic Vision holds dormant Korean rights to MicroLine."
+  }
+ ],
+ "competitors": [
+  {
+   "id": "K-YUV",
+   "product": "YUVEZZI 유베지 (Korea)",
+   "short": "Kwangdong · YUVEZZI",
+   "company": "Kwangdong Pharm. 광동제약",
+   "scope": "Korea",
+   "origin": "Korea (licensee) / UK-US originator",
+   "api": "Carbachol 2.75% + brimonidine tartrate 0.1%",
+   "formulation": "PF single-use vials, once daily",
+   "mechanism": "Miotic combo (carbachol + α2-agonist)",
+   "stage": "Filed",
+   "us_status": "FDA approved 2026-01-28 (NDA 220142)",
+   "kr_status": "MFDS NDA under review — filed Sep 2025 (Kwangdong/Korean press) or ~Nov 2025 (Tenpoint PR); not approved as of 2026-10-20",
+   "other_status": "Zhaoke holds Greater China/Korea/SE Asia; Korea sub-licensed to Kwangdong (DART contract date 2023-12-08)",
+   "duration": "Up to 8 h (BRIO-II); company cites up to 10 h",
+   "differentiator": "First NDA filed in Korea; FDA-approved dual-mechanism FDC; lowest hyperaemia (~3% vs ~11% carbachol alone); company says bridging study exempt.",
+   "weakness": "Kwangdong's revenue is beverage-led (제주삼다수 19.5% of 2024 sales) — thin ophthalmology detailing; brimonidine allergy risk flagged by Korean clinicians; exact filing date disputed.",
+   "latest": "Still under review (Newsway 2026-08-14). Stock doubled on FDA approval (Feb 2026).",
+   "next_milestone": "MFDS approval — expected early 2027 (estimate; KPA 2026-09-23 'early next year')",
+   "threat": 5,
+   "franchise": 2,
+   "confidence": "Verified",
+   "threat_why": "Most likely first MFDS approval; FDA-backed and directly overlaps any cholinergic + α2 combination strategy. First-mover will set price anchor and prescriber habits.",
+   "sources": [
+    {
+     "label": "Tenpoint PR – MFDS NDA (2025-11-05)",
+     "url": "https://www.biospace.com/press-releases/tenpoint-therapeutics-ltd-announces-submission-of-a-new-drug-application-for-brimochol-pf-for-the-treatment-of-presbyopia-to-the-mfds-in-south-korea"
+    },
+    {
+     "label": "The Ophthalmologist 2025-11-14",
+     "url": "https://theophthalmologist.com/issues/2025/articles/november/south-korean-inroads-for-presbyopia-treatment/"
+    },
+    {
+     "label": "아시아경제 2026-02-13",
+     "url": "https://www.asiae.co.kr/article/2026021309325117642"
+    },
+    {
+     "label": "한국경제 2026-02-13",
+     "url": "https://www.hankyung.com/article/2026021351981"
+    },
+    {
+     "label": "뉴스웨이 2026-08-14",
+     "url": "https://www.newsway.co.kr/news/view?ud=2026081314502227334"
+    },
+    {
+     "label": "데일리팜 2026-02-23",
+     "url": "https://dailypharm.com/user/news/335891"
+    },
+    {
+     "label": "약사공론 2026-09-23",
+     "url": "https://www.kpanews.co.kr/news/articleView.html?idxno=544805"
+    }
+   ]
+  },
+  {
+   "id": "K-VIZZ",
+   "product": "VIZZ 비즈 (Korea)",
+   "short": "Lotus · VIZZ",
+   "company": "Lotus Pharmaceutical → Alvogen Korea 알보젠코리아",
+   "scope": "Korea",
+   "origin": "Korea/Taiwan (licensee) / US originator",
+   "api": "Aceclidine 1.44%",
+   "formulation": "PF single-use vials, once daily, refrigerated",
+   "mechanism": "Miotic – aceclidine",
+   "stage": "Filed",
+   "us_status": "FDA approved 2025-07-31 (NDA 218585, NME)",
+   "kr_status": "MFDS NDA filed by Lotus 2025-12-01; under review",
+   "other_status": "Lotus holds Korea + 8 SE Asian countries (licence 2025-05-07; $5M upfront, ≤$120M milestones, 10–20% royalty). Thailand/Singapore filed Q1 2026.",
+   "duration": "Up to 10 h",
+   "differentiator": "Best label profile: pupil-selective, 10 h, minimal brow ache/myopic shift; NME with patents to 2034–2044.",
+   "weakness": "Alvogen Korea (2025 revenue ₩271.0B) has little ophthalmic presence; US uptake slow ($1.7M Q2-26 net sales); cold-chain storage.",
+   "latest": "Second presbyopia NDA in Korea; no MFDS decision yet.",
+   "next_milestone": "MFDS approval — expected 1H 2027 (estimate)",
+   "threat": 4,
+   "franchise": 2,
+   "confidence": "Verified",
+   "threat_why": "Strongest clinical profile of the Korean filers, but commercial capability in Korean ophthalmology is unproven.",
+   "sources": [
+    {
+     "label": "LENZ PR – MFDS NDA (2025-12-01)",
+     "url": "https://ir.lenz-tx.com/news-events/press-releases/detail/45/"
+    },
+    {
+     "label": "LENZ 10-Q Q2-26",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001815776/000181577626000052/lenz-20260630.htm"
+    },
+    {
+     "label": "데일리메디 2026-03-14",
+     "url": "https://dailymedi.com/news/news_view.php?ca_id=&wr_id=934662"
+    },
+    {
+     "label": "DART (전자공시)",
+     "url": "https://dart.fss.or.kr"
+    }
+   ]
+  },
+  {
+   "id": "K-JET",
+   "product": "Jetema Pilocarpine 1.2% 제테마필로카르핀점안액",
+   "short": "Jetema",
+   "company": "Jetema 제테마",
+   "scope": "Korea",
+   "origin": "Korea (in-licensed; licensor undisclosed)",
+   "api": "Pilocarpine HCl 1.2%",
+   "formulation": "Single-use, Rx-only",
+   "mechanism": "Miotic – pilocarpine",
+   "stage": "Filed",
+   "us_status": "—",
+   "kr_status": "MFDS NDA filed 2026-07-16; Korean Phase 3 completed; not approved as of 2026-10-20",
+   "other_status": "Exploring Asian markets",
+   "duration": "~6 h (company)",
+   "differentiator": "Strength 'optimised for Korean (higher-melanin) irises'; Korean Phase 3 data; first domestically sourced presbyopia NDA.",
+   "weakness": "Aesthetics company (toxin/filler, H1-26 revenue ₩36.1B) — no ophthalmic franchise; relies on own reps + unnamed ophthalmology CSO; licensor undisclosed.",
+   "latest": "NDA filed July 2026 — NEW since the June build.",
+   "next_milestone": "MFDS decision — mid/late 2027 (estimate)",
+   "threat": 4,
+   "franchise": 1,
+   "confidence": "Verified",
+   "threat_why": "Third NDA in the queue with local data; pilocarpine price point likely below imported brands. Licensor may be Taejoon (UNVERIFIED inference).",
+   "sources": [
+    {
+     "label": "뉴스핌 2026-06-26",
+     "url": "https://www.newspim.com/news/view/20260626000690"
+    },
+    {
+     "label": "뉴스핌 2026-07-16",
+     "url": "https://www.newspim.com/news/view/20260716000452"
+    },
+    {
+     "label": "Nate/뉴스핌 2026-07-03",
+     "url": "https://m.news.nate.com/view/20260703n17852"
+    },
+    {
+     "label": "DART (전자공시)",
+     "url": "https://dart.fss.or.kr"
+    }
+   ]
+  },
+  {
+   "id": "K-TJ",
+   "product": "CTO0307 (pilocarpine)",
+   "short": "Taejoon",
+   "company": "Taejoon Pharm. 태준제약",
+   "scope": "Korea",
+   "origin": "Korea (in-house)",
+   "api": "Pilocarpine (concentration undisclosed)",
+   "formulation": "Once-daily drop; patented stabilised composition (levocarnitine + xanthan gum for pH/viscosity stability)",
+   "mechanism": "Miotic – pilocarpine",
+   "stage": "Phase 3",
+   "us_status": "—",
+   "kr_status": "Phase 3 approved by MFDS 2024-06-18; completed 2025-09-25 (n=167); results unpublished; no NDA found",
+   "other_status": "Patent family priority ~2024-04-30 (WO2025230326A1 — number UNVERIFIED)",
+   "duration": "Not disclosed",
+   "differentiator": "Only Korean company with an in-house, completed domestic Phase 3; ophthalmology specialist since 1978 with deep clinic channel (뉴히알유니, 잘로스트, 브로낙, 디쿠아데이); formulation IP.",
+   "weakness": "No NDA confirmed; financials weakening (2025 revenue ₩94.7B, operating loss ₩-1.7B); TJO-087 dry-eye NDA rejected 2023.",
+   "latest": "Ingredient disclosed as pilocarpine on ClinicalTrials.gov 2026-07-23 (one week after Jetema's NDA).",
+   "next_milestone": "NDA filing (own or via partner) — timing UNVERIFIED",
+   "threat": 4,
+   "franchise": 5,
+   "confidence": "Verified",
+   "threat_why": "The domestic incumbent you flagged is real: Phase 3 done, IP, and the strongest Korean ophthalmic sales channel of any presbyopia player. May already be monetising via Jetema (UNVERIFIED).",
+   "sources": [
+    {
+     "label": "NCT07723716 (CTO0307)",
+     "url": "https://clinicaltrials.gov/study/NCT07723716"
+    },
+    {
+     "label": "메디칼타임즈 2024-06-19",
+     "url": "https://www.medicaltimes.com/Main/News/NewsView.html?ID=1159296"
+    },
+    {
+     "label": "헬스코리아뉴스 2025-11-10",
+     "url": "https://www.hkn24.com/news/articleView.html?idxno=347223"
+    },
+    {
+     "label": "데일리팜 2026-09-16",
+     "url": "https://dailypharm.com/user/news/342399"
+    },
+    {
+     "label": "뉴스더보이스 2021-10-18",
+     "url": "https://www.newsthevoice.com/news/articleView.html?idxno=23005"
+    }
+   ]
+  },
+  {
+   "id": "K-QLOSI",
+   "product": "QLOSI 클로시 (Korea)",
+   "short": "Optus · QLOSI",
+   "company": "Optus Pharm. 옵투스제약 (Samchundang group)",
+   "scope": "Korea",
+   "origin": "Korea (licensee) / Israel-US originator",
+   "api": "Pilocarpine HCl 0.4%",
+   "formulation": "PF single-use vials",
+   "mechanism": "Miotic – pilocarpine",
+   "stage": "Licensed (pre-filing)",
+   "us_status": "FDA approved 2023-10-17 (NDA 217836)",
+   "kr_status": "Licensed 2024-09-23 (₩24.37B); H1-26 report: '품목허가 신청준비' — NDA not filed",
+   "other_status": "—",
+   "duration": "Up to 8 h",
+   "differentiator": "Strong single-use eye-drop manufacturer (capacity 470M → 830M units/yr by mid-2027); lowest-dose pilocarpine.",
+   "weakness": "Late — not yet filed; launch likely 2028 (estimate). Pilocarpine 0.4% competes directly with cheaper local pilocarpine.",
+   "latest": "Only $6.1M upfront paid; ₩3.26B due on filing, ₩12.99B on approval.",
+   "next_milestone": "MFDS NDA submission (UNVERIFIED timing)",
+   "threat": 3,
+   "franchise": 4,
+   "confidence": "Verified",
+   "threat_why": "Good channel and capacity, but 12–18 months behind the filers.",
+   "sources": [
+    {
+     "label": "fnnews 2024-09-23",
+     "url": "https://www.fnnews.com/news/202409231644102301"
+    },
+    {
+     "label": "Orasis/Optus PR 2024-10-16",
+     "url": "https://www.prnewswire.com/news-releases/orasis-pharmaceuticals-announces-licensing-agreement-with-optus-pharmaceuticals-for-commercialization-of-qlosi-pilocarpine-hydrochloride-ophthalmic-solution-0-4-in-korea-302277027.html"
+    },
+    {
+     "label": "메디파나 2024-09-25",
+     "url": "https://www.medipana.com/article/view.php?news_idx=331660"
+    },
+    {
+     "label": "DART (전자공시)",
+     "url": "https://dart.fss.or.kr"
+    }
+   ]
+  },
+  {
+   "id": "K-DW",
+   "product": "Pilostar 필로스타점안액 1%",
+   "short": "Daewoo",
+   "company": "Daewoo Pharm. 대우제약",
+   "scope": "Korea",
+   "origin": "Korea (in-house generic)",
+   "api": "Pilocarpine 1%",
+   "formulation": "Single-use",
+   "mechanism": "Miotic – pilocarpine",
+   "stage": "Off-label (other indication)",
+   "us_status": "—",
+   "kr_status": "Approved 2025-08-28 (glaucoma/miosis); launched 2025-09-24; 비급여; presbyopia IND submitted ~Sep 2026",
+   "other_status": "Supplies Reyon's Opticarpine (CMO)",
+   "duration": "~4–6 h",
+   "differentiator": "Already in clinics; reps openly position it for presbyopia off-label; building new eye-drop plant.",
+   "weakness": "No presbyopia indication; formal trial ≥2 years → indication ~2028+ (estimate).",
+   "latest": "Presbyopia indication IND pending MFDS approval.",
+   "next_milestone": "IND approval → Phase 3 start (2027)",
+   "threat": 3,
+   "franchise": 3,
+   "confidence": "Verified",
+   "threat_why": "Sets a low off-label price anchor for pilocarpine in the clinic channel before any branded launch.",
+   "sources": [
+    {
+     "label": "데일리팜 – Pilostar launch",
+     "url": "https://dailypharm.com/user/news/1657"
+    },
+    {
+     "label": "약사공론 2025-10-31",
+     "url": "https://www.kpanews.co.kr/news/articleView.html?idxno=264607"
+    },
+    {
+     "label": "약사공론 2026-09-23",
+     "url": "https://www.kpanews.co.kr/news/articleView.html?idxno=544805"
+    },
+    {
+     "label": "헬스조선 via Daum 2026-03-10",
+     "url": "https://v.daum.net/v/20260310174101319"
+    },
+    {
+     "label": "MFDS 의약품안전나라",
+     "url": "https://nedrug.mfds.go.kr"
+    }
+   ]
+  },
+  {
+   "id": "K-REYON",
+   "product": "Opticarpine 옵티카르핀점안액 1%",
+   "short": "Reyon",
+   "company": "Reyon Pharm. 이연제약",
+   "scope": "Korea",
+   "origin": "Korea (Daewoo-manufactured)",
+   "api": "Pilocarpine 1%",
+   "formulation": "Single-use",
+   "mechanism": "Miotic – pilocarpine",
+   "stage": "Off-label (other indication)",
+   "us_status": "—",
+   "kr_status": "Approved 2026-09-22 (glaucoma) — NEW since the June build",
+   "other_status": "—",
+   "duration": "~4–6 h",
+   "differentiator": "Second off-label pilocarpine in Korean clinics.",
+   "weakness": "Generic, glaucoma-only label.",
+   "latest": "Approval 2026-09-22 (nedrug item 202602857).",
+   "next_milestone": "Launch",
+   "threat": 2,
+   "franchise": 2,
+   "confidence": "Verified",
+   "threat_why": "Adds price pressure to pilocarpine in the off-label channel.",
+   "sources": [
+    {
+     "label": "약사공론 2026-09-23",
+     "url": "https://www.kpanews.co.kr/news/articleView.html?idxno=544805"
+    },
+    {
+     "label": "MFDS 의약품안전나라",
+     "url": "https://nedrug.mfds.go.kr"
+    }
+   ]
+  },
+  {
+   "id": "G-VUITY",
+   "product": "VUITY",
+   "short": "VUITY",
+   "company": "AbbVie / Allergan",
+   "scope": "Global",
+   "origin": "US",
+   "api": "Pilocarpine HCl 1.25%",
+   "formulation": "BAK-preserved multi-dose",
+   "mechanism": "Miotic – pilocarpine",
+   "stage": "Approved (US)",
+   "us_status": "Approved 2021-10-28 (NDA 214028). Brand DISCONTINUED 2026 (FDA status 'Discontinued'; end of marketing ~2026-09-30)",
+   "kr_status": "Not filed",
+   "other_status": "No ex-US approvals found",
+   "duration": "Up to 6 h",
+   "differentiator": "First-in-class; created the category.",
+   "weakness": "Commercial failure — revenue never broken out; AbbVie also stopped AGN-241622; AB-rated generic (Amneal) since Aug 2025.",
+   "latest": "Brand withdrawn; generic pilocarpine 1.25% remains.",
+   "next_milestone": "—",
+   "threat": 1,
+   "franchise": 5,
+   "confidence": "Verified",
+   "threat_why": "Exited. Its failure is the main cautionary data point for cash-pay presbyopia drops.",
+   "sources": [
+    {
+     "label": "openFDA drugsfda (queried 2026-10-20)",
+     "url": "https://api.fda.gov/drug/drugsfda.json"
+    },
+    {
+     "label": "AbbVie PR 2021-10-29",
+     "url": "https://news.abbvie.com/2021-10-29-U-S-Food-and-Drug-Administration-Approves-VUITY-TM-pilocarpine-HCI-ophthalmic-solution-1-25-,-the-First-and-Only-Eye-Drop-to-Treat-Presbyopia-Age-Related-Blurry-Near-Vision"
+    },
+    {
+     "label": "Eyes On Eyecare guide (Jul 2026)",
+     "url": "https://eyesoneyecare.com/resources/ultimate-guide-presbyopia-drops/"
+    },
+    {
+     "label": "Healio 2026-07-20",
+     "url": "https://www.healio.com/news/ophthalmology/20260720/blog-exit-stage-left-is-abbvie-leaving-eye-care"
+    },
+    {
+     "label": "Endpoints – AbbVie culls 2nd-gen drop",
+     "url": "https://endpoints.news/after-cutting-back-on-vuity-last-fall-abbvie-culls-a-second-gen-presbyopia-eye-drop"
+    }
+   ]
+  },
+  {
+   "id": "G-AMNEAL",
+   "product": "Generic pilocarpine 1.25% (ANDA 217733)",
+   "short": "Amneal generic",
+   "company": "Amneal",
+   "scope": "Global",
+   "origin": "US",
+   "api": "Pilocarpine HCl 1.25%",
+   "formulation": "Multi-dose",
+   "mechanism": "Miotic – pilocarpine",
+   "stage": "Approved (US)",
+   "us_status": "ANDA approved 2025-04-28; AB-rated launch 2025-08-06",
+   "kr_status": "—",
+   "other_status": "Paragraph IV filed 2022-12-30 (applicant unnamed)",
+   "duration": "Up to 6 h",
+   "differentiator": "Low-cost AB-generic to VUITY.",
+   "weakness": "Same tolerability profile as VUITY.",
+   "latest": "Marketed.",
+   "next_milestone": "—",
+   "threat": null,
+   "franchise": 3,
+   "confidence": "Verified",
+   "sources": [
+    {
+     "label": "openFDA drugsfda (queried 2026-10-20)",
+     "url": "https://api.fda.gov/drug/drugsfda.json"
+    },
+    {
+     "label": "Optum Rx – generic Vuity Aug 2025",
+     "url": "https://business.optum.com/en/support/professionalrx-resources/newgenerics-uity-081125.html"
+    },
+    {
+     "label": "DrugPatentWatch – VUITY",
+     "url": "https://www.drugpatentwatch.com/p/tradename/VUITY"
+    }
+   ]
+  },
+  {
+   "id": "G-QLOSI",
+   "product": "QLOSI",
+   "short": "QLOSI",
+   "company": "Orasis Pharmaceuticals",
+   "scope": "Global",
+   "origin": "Israel / US",
+   "api": "Pilocarpine HCl 0.4%",
+   "formulation": "PF single-use vials",
+   "mechanism": "Miotic – pilocarpine",
+   "stage": "Approved (US)",
+   "us_status": "Approved 2023-10-17 (NDA 217836); launched 2025-04-07 (self-commercialised)",
+   "kr_status": "Optus licence (2024) — not filed",
+   "other_status": "Australia: 'BESKA' TGA NDA filed Jul 2026 (Aspen) — first ex-US filing",
+   "duration": "Up to 8 h",
+   "differentiator": "Lowest-dose pilocarpine; pupil-selective claim; no RD reports to FDA; ECP-first strategy; First-Fill-Free via BlinkRx.",
+   "weakness": "Private, no sales disclosed; only metric is 49.1% refill rate (Jul 2026).",
+   "latest": "$78M raised Oct 2024.",
+   "next_milestone": "TGA decision (Australia)",
+   "threat": 2,
+   "franchise": 1,
+   "confidence": "Verified",
+   "threat_why": "Indirect — threat in Korea runs through Optus.",
+   "sources": [
+    {
+     "label": "openFDA drugsfda (queried 2026-10-20)",
+     "url": "https://api.fda.gov/drug/drugsfda.json"
+    },
+    {
+     "label": "Orasis press releases",
+     "url": "https://orasis-pharma.com/press-releases"
+    },
+    {
+     "label": "TipRanks – Orasis AU NDA (Jul 2026)",
+     "url": "https://www.tipranks.com/news/private-companies/orasis-pharmaceuticals-deepens-qlosi-access-and-files-first-international-nda-for-presbyopia-drop"
+    }
+   ]
+  },
+  {
+   "id": "G-VIZZ",
+   "product": "VIZZ",
+   "short": "VIZZ",
+   "company": "LENZ Therapeutics",
+   "scope": "Global",
+   "origin": "US",
+   "api": "Aceclidine 1.44%",
+   "formulation": "PF single-use, refrigerated",
+   "mechanism": "Miotic – aceclidine",
+   "stage": "Approved (US)",
+   "us_status": "Approved 2025-07-31 (NDA 218585, NME). Net sales Q4-25 $1.59M · Q1-26 $1.65M · Q2-26 $1.74M",
+   "kr_status": "Lotus NDA under MFDS review (Dec 2025)",
+   "other_status": "EMA MAA validated (Mar 2026), MHRA (Apr 2026), China NMPA via Everest (approval guided Q1 2027), Canada (Théa, Jun 2026), Saudi SFDA (Jul 2026)",
+   "duration": "Up to 10 h",
+   "differentiator": "Longest duration of the miotics; pupil-selective; 9 ex-US filings; NCE exclusivity to 2030.",
+   "weakness": "Uptake far below consensus ($3.4M H1-26 vs ~$45M 2026E); market cap (~$113M) below cash; heavy SG&A.",
+   "latest": "Piper Sandler PT cut to $5 (2026-10-19).",
+   "next_milestone": "Q3-26 results (Nov 2026); EMA opinion",
+   "threat": 4,
+   "franchise": 2,
+   "confidence": "Verified",
+   "threat_why": "Most globally advanced; first non-pilocarpine approval likely in China and possibly Korea.",
+   "sources": [
+    {
+     "label": "openFDA drugsfda (queried 2026-10-20)",
+     "url": "https://api.fda.gov/drug/drugsfda.json"
+    },
+    {
+     "label": "LENZ Q4-25 PR (2026-03-24)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1815776/000181577626000008/a991q425pressrelease.htm"
+    },
+    {
+     "label": "LENZ Q1-26 PR (2026-05-11)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001815776/000181577626000035/a991q126pressrelease.htm"
+    },
+    {
+     "label": "LENZ Q2-26 PR (2026-08-11)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001815776/000181577626000051/a991q226pressrelease.htm"
+    },
+    {
+     "label": "LENZ 10-Q Q2-26",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001815776/000181577626000052/lenz-20260630.htm"
+    },
+    {
+     "label": "LENZ PR – EMA MAA (2026-03-10)",
+     "url": "https://ir.lenz-tx.com/news-events/press-releases/detail/50/lenz-therapeutics-announces-submission-of-marketing-authorization-application-to-european-medicines-agency-for-vizz-for-the-treatment-of-presbyopia"
+    },
+    {
+     "label": "Ophthalmology Times 2026-06-09",
+     "url": "https://www.optometrytimes.com/view/everest-medicines-acquires-greater-china-rights-aceclidine-presbyopia-eye-drop-vizz-"
+    },
+    {
+     "label": "S&P Global – VIZZ consensus (Oct 2025)",
+     "url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/2025/10/analysts-see-lenz-vizz-exceeding-usd1-billion-in-sales-by-2038"
+    }
+   ]
+  },
+  {
+   "id": "G-YUV",
+   "product": "YUVEZZI",
+   "short": "YUVEZZI",
+   "company": "Tenpoint Therapeutics (Visus)",
+   "scope": "Global",
+   "origin": "UK / US",
+   "api": "Carbachol 2.75% + brimonidine 0.1%",
+   "formulation": "PF single-use vials",
+   "mechanism": "Miotic combo (carbachol + α2-agonist)",
+   "stage": "Approved (US)",
+   "us_status": "Approved 2026-01-28 (NDA 220142); launched ~Apr 2026 at $79/30 vials, $198/90 (PHIL direct-to-patient)",
+   "kr_status": "Kwangdong NDA under review",
+   "other_status": "EU/UK/CH/NO/IS: VISUfarma (Lupin), MHRA filed Jul 2026. China: Hainan & Macau local approvals (Jun–Jul 2026); China Ph2 done Aug 2026. SG: AFT; VN: Senju; ID: PT Ferron",
+   "duration": "Up to 8 h (BRIO-II); company claims up to 10 h",
+   "differentiator": "Only FDA-approved dual-agent FDC; 12-month safety dataset (BRIO-II); lowest redness.",
+   "weakness": "Launched last into a cash-pay market at the same price as VIZZ; $150M Hercules debt; no sales disclosed.",
+   "latest": "$235M financing (Jan 2026).",
+   "next_milestone": "MHRA decision; China NMPA path",
+   "threat": 4,
+   "franchise": 2,
+   "confidence": "Verified",
+   "threat_why": "Dominant partner network in Asia (Zhaoke) and directly relevant to any combination strategy.",
+   "sources": [
+    {
+     "label": "openFDA drugsfda (queried 2026-10-20)",
+     "url": "https://api.fda.gov/drug/drugsfda.json"
+    },
+    {
+     "label": "BioPharma Dive 2026-01-29",
+     "url": "https://biopharmadive.com/news/tenpoint-yuvezzi-fda-approve-presbyopia-eye-drop/810743"
+    },
+    {
+     "label": "Managed Healthcare Exec 2026-04-03",
+     "url": "https://www.managedhealthcareexecutive.com/view/yuvezzi-launches-with-direct-to-patient-cost-of-198-for-90-days"
+    },
+    {
+     "label": "Tenpoint PR – MHRA (2026-07-13)",
+     "url": "https://www.biospace.com/press-releases/tenpoint-therapeutics-announces-united-kingdom-yuvezzi-submission-of-marketing-authorization-application-to-the-medicines-and-healthcare-products-regulatory-agency-mhra-for-the-treatment-of-blurry-close-up-vision-presbyopia-in-adults"
+    },
+    {
+     "label": "Outsourced Pharma 2026-08-20",
+     "url": "https://www.outsourcedpharma.com/doc/lupin-and-tenpoint-therapeutics-strategic-partnership-commercialize-yuvezzi-european-united-kingdom-switzerland-norway-iceland-0001"
+    },
+    {
+     "label": "Zhaoke interim 2026 (HKEX)",
+     "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0828/2026082803006.pdf"
+    }
+   ]
+  },
+  {
+   "id": "G-RYZ",
+   "product": "RYZUMVI (presbyopia)",
+   "short": "RYZUMVI",
+   "company": "Viatris / Opus Genetics",
+   "scope": "Global",
+   "origin": "US",
+   "api": "Phentolamine mesylate 0.75%",
+   "formulation": "PF single-use, refrigerated",
+   "mechanism": "α-antagonist (phentolamine)",
+   "stage": "Approved (US)",
+   "us_status": "Presbyopia sNDA APPROVED — announced 2026-10-16 (PDUFA 2026-10-17). No launch date/price; Viatris exploring a US partner",
+   "kr_status": "Not filed; Opus retains rights in 'certain Asian countries' (Korea status UNVERIFIED)",
+   "other_status": "No ex-US presbyopia filings found",
+   "duration": "Evening dose; primary endpoint at 12 h (company describes next-day effect)",
+   "differentiator": "First non-cholinergic presbyopia drop: no ciliary spasm, no brow ache, no myopic shift; evening dosing.",
+   "weakness": "Modest responder rate (27.2% vs 11.5%); conjunctival redness 21%; no committed US commercial partner.",
+   "latest": "FDA approval Oct 2026 — NEW since the June build.",
+   "next_milestone": "US partner / launch; LYNX-3 (dim-light) readout",
+   "threat": 3,
+   "franchise": 4,
+   "confidence": "Verified",
+   "threat_why": "Different mechanism could pair with a miotic; Asian rights possibly available — an in-licensing opportunity as much as a threat.",
+   "sources": [
+    {
+     "label": "Viatris PR 2026-10-16",
+     "url": "https://www.placera.se/pressmeddelanden/viatris-viatris-receives-u-s-fda-approval-for-ryzumvi-for-the-treatment-of-presbyopia-20261016"
+    },
+    {
+     "label": "Opus PR 2026-10-16",
+     "url": "https://ir.opusgtx.com/press-releases/detail/546/"
+    },
+    {
+     "label": "Pharmacy Times 2026-10-19",
+     "url": "https://www.pharmacytimes.com/view/fda-approves-phentolamine-eye-drop-for-presbyopia-in-adults"
+    },
+    {
+     "label": "Ophthalmology Times 2026-10-16",
+     "url": "https://www.ophthalmologytimes.com/view/fda-approves-phentolamine-ophthalmic-solution-0-75-ryzumvi-for-presbyopia"
+    },
+    {
+     "label": "Opus 10-Q Q2-26",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001228627/000162828026054381/ird-20260630.htm"
+    }
+   ]
+  },
+  {
+   "id": "G-PRESVU",
+   "product": "PresVu",
+   "short": "PresVu",
+   "company": "Entod Pharmaceuticals",
+   "scope": "Global",
+   "origin": "India",
+   "api": "Pilocarpine 1.25%",
+   "formulation": "Multi-dose bottle (Rs 345)",
+   "mechanism": "Miotic – pilocarpine",
+   "stage": "Approved (ex-US)",
+   "us_status": "—",
+   "kr_status": "—",
+   "other_status": "DCGI approval Aug 2024; suspended Sep 2024; suspension revoked Apr 2025 with conditions (specialist-only promotion, Phase IV)",
+   "duration": "Up to ~6 h",
+   "differentiator": "Very low price point.",
+   "weakness": "Regulatory/marketing restrictions; post-Jun 2025 launch UNVERIFIED.",
+   "latest": "Phase IV protocol approved 2025-04-16.",
+   "next_milestone": "Phase IV",
+   "threat": null,
+   "franchise": 2,
+   "confidence": "Reported",
+   "sources": [
+    {
+     "label": "Business Today 2024-09-11",
+     "url": "https://www.businesstoday.in/amp/industry/pharma/story/after-entod-pharmas-big-claims-dcgi-suspends-approval-for-presvu-eye-drops-company-to-contest-order-445492-2024-09-11"
+    },
+    {
+     "label": "ThePrint 2025-04-29",
+     "url": "https://theprint.in/health/as-cdsco-lifts-suspension-on-eye-drops-designed-to-replace-reading-glasses-makers-eye-june-launch/2608719/"
+    }
+   ]
+  },
+  {
+   "id": "G-EVEREST",
+   "product": "VIZZ (China)",
+   "short": "Everest · VIZZ",
+   "company": "Everest Medicines (from Corxel)",
+   "scope": "Global",
+   "origin": "China",
+   "api": "Aceclidine 1.44%",
+   "formulation": "PF single-use",
+   "mechanism": "Miotic – aceclidine",
+   "stage": "Filed",
+   "us_status": "—",
+   "kr_status": "—",
+   "other_status": "NMPA NDA submitted 2025 (Jul–Sep); China Ph3 met primary endpoint (74% ≥3 lines at 3 h, Oct 2024)",
+   "duration": "Up to 10 h",
+   "differentiator": "Likely first non-pilocarpine approval in China.",
+   "weakness": "—",
+   "latest": "Everest acquired Greater China rights Jun 2026.",
+   "next_milestone": "NMPA approval — guided Q1 2027",
+   "threat": 2,
+   "franchise": 3,
+   "confidence": "Verified",
+   "threat_why": "Signals Asian regulatory acceptance of aceclidine; strengthens Lotus's Korean dossier.",
+   "sources": [
+    {
+     "label": "Ophthalmology Times 2026-06-09",
+     "url": "https://www.optometrytimes.com/view/everest-medicines-acquires-greater-china-rights-aceclidine-presbyopia-eye-drop-vizz-"
+    },
+    {
+     "label": "Optometry Times – China Ph3 topline",
+     "url": "https://www.optometrytimes.com/view/corxel-and-lenz-therapeutics-announce-positive-topline-data-from-china-phase-3-presbyopia-trial-of-lnz100"
+    },
+    {
+     "label": "LENZ 10-Q Q2-26",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001815776/000181577626000052/lenz-20260630.htm"
+    }
+   ]
+  },
+  {
+   "id": "G-TAINKANG",
+   "product": "Pilocarpine 1.25% (Class 3)",
+   "short": "Tainkang",
+   "company": "Tainkang / Huabo Kaisheng",
+   "scope": "Global",
+   "origin": "China",
+   "api": "Pilocarpine HCl 1.25%",
+   "formulation": "Copy of VUITY",
+   "mechanism": "Miotic – pilocarpine",
+   "stage": "Filed",
+   "us_status": "—",
+   "kr_status": "—",
+   "other_status": "NMPA NDA accepted 2025-07-08 (CYHS2502428); China Ph3 n=240 enrolled Dec 2024",
+   "duration": "Up to ~6 h",
+   "differentiator": "Possibly first presbyopia drop approved in China.",
+   "weakness": "Topline not found.",
+   "latest": "Under NMPA review.",
+   "next_milestone": "NMPA approval",
+   "threat": 2,
+   "franchise": 2,
+   "confidence": "Reported",
+   "threat_why": "Low-cost Chinese pilocarpine could later be out-licensed into Korea.",
+   "sources": [
+    {
+     "label": "Sina 2025-07-08",
+     "url": "https://finance.sina.com.cn/stock/relnews/cn/2025-07-08/doc-infeurua3127099.shtml"
+    }
+   ]
+  },
+  {
+   "id": "G-ZHAOKE",
+   "product": "Brimochol PF / Carbachol PF (China)",
+   "short": "Zhaoke·Brimochol",
+   "company": "Zhaoke Ophthalmology",
+   "scope": "Global",
+   "origin": "China / HK",
+   "api": "Carbachol + brimonidine; carbachol alone",
+   "formulation": "PF",
+   "mechanism": "Miotic combo (carbachol + α2-agonist)",
+   "stage": "Phase 2",
+   "us_status": "—",
+   "kr_status": "Korea sub-licensed to Kwangdong",
+   "other_status": "China Ph2 NCT06948357 completed Aug 2026; Hainan (Jun 2026) and Macau local approvals",
+   "duration": "—",
+   "differentiator": "Holds Greater China, Korea, SE Asia rights from Visus ($15M + ≤$115M, 2022).",
+   "weakness": "NMPA route still needs Ph3.",
+   "latest": "Ph2 completed Aug 2026.",
+   "next_milestone": "China Ph3 / NDA (UNVERIFIED)",
+   "threat": null,
+   "franchise": 3,
+   "confidence": "Verified",
+   "sources": [
+    {
+     "label": "Zhaoke interim 2026 (HKEX)",
+     "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0828/2026082803006.pdf"
+    },
+    {
+     "label": "NCT06948357",
+     "url": "https://clinicaltrials.gov/study/NCT06948357"
+    },
+    {
+     "label": "BioWorld – Zhaoke/Visus 2022",
+     "url": "https://www.bioworld.com/articles/518881-zhaoke-licenses-asian-rights-to-visus-presbyopia-candidates-in-130m-deal"
+    },
+    {
+     "label": "VCBeat – PT Ferron (Nov 2025)",
+     "url": "https://www.vcbeathealth.com/article/2046"
+    }
+   ]
+  },
+  {
+   "id": "G-OCUM",
+   "product": "OT-802",
+   "short": "Ocumension OT-802",
+   "company": "Ocumension Therapeutics",
+   "scope": "Global",
+   "origin": "China",
+   "api": "Pilocarpine HCl 1.25%",
+   "formulation": "—",
+   "mechanism": "Miotic – pilocarpine",
+   "stage": "Phase 3",
+   "us_status": "—",
+   "kr_status": "—",
+   "other_status": "CDE Ph3 IND approved 2025; Ph3 start early 2026",
+   "duration": "—",
+   "differentiator": "In-house; strong China ophthalmology sales force.",
+   "weakness": "Me-too pilocarpine.",
+   "latest": "Ph3 recruiting (CTR20261783 — UNVERIFIED).",
+   "next_milestone": "Ph3 readout",
+   "threat": null,
+   "franchise": 4,
+   "confidence": "Reported",
+   "sources": [
+    {
+     "label": "Ocumension annual report (HKEX 2026-04-28)",
+     "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0428/2026042801494.pdf"
+    }
+   ]
+  },
+  {
+   "id": "G-CSPC",
+   "product": "Pilocarpine ophthalmic (CSPC)",
+   "short": "CSPC Ouyi",
+   "company": "CSPC Ouyi",
+   "scope": "Global",
+   "origin": "China",
+   "api": "Pilocarpine (strength UNVERIFIED)",
+   "formulation": "—",
+   "mechanism": "Miotic – pilocarpine",
+   "stage": "Phase 3",
+   "us_status": "—",
+   "kr_status": "—",
+   "other_status": "NCT06451666 (n≈330), status 'unknown'",
+   "duration": "—",
+   "differentiator": "—",
+   "weakness": "Registry stale since Jul 2024.",
+   "latest": "—",
+   "next_milestone": "UNVERIFIED",
+   "threat": null,
+   "franchise": 3,
+   "confidence": "Unverified",
+   "sources": [
+    {
+     "label": "NCT06451666",
+     "url": "https://clinicaltrials.gov/study/NCT06451666"
+    }
+   ]
+  },
+  {
+   "id": "G-KELUN",
+   "product": "Pilocarpine eye drops (Zhengke/Kelun)",
+   "short": "Kelun",
+   "company": "Nanjing Zhengke / Jiangxi Kelun",
+   "scope": "Global",
+   "origin": "China",
+   "api": "Pilocarpine",
+   "formulation": "—",
+   "mechanism": "Miotic – pilocarpine",
+   "stage": "Phase 3",
+   "us_status": "—",
+   "kr_status": "—",
+   "other_status": "CTR20242701",
+   "duration": "—",
+   "differentiator": "—",
+   "weakness": "Single recruitment-post source.",
+   "latest": "—",
+   "next_milestone": "UNVERIFIED",
+   "threat": null,
+   "franchise": 2,
+   "confidence": "Unverified",
+   "sources": [
+    {
+     "label": "Sohu – CTR20242701",
+     "url": "https://www.sohu.com/a/832899763_121130330"
+    }
+   ]
+  },
+  {
+   "id": "G-CLOUD",
+   "product": "CBT-199",
+   "short": "Cloudbreak",
+   "company": "Cloudbreak Pharma (ADS Therapeutics)",
+   "scope": "Global",
+   "origin": "China / US",
+   "api": "Undisclosed parasympathomimetic miotic in non-aqueous emulsion",
+   "formulation": "Non-aqueous emulsion",
+   "mechanism": "Miotic – other/undisclosed",
+   "stage": "Phase 2",
+   "us_status": "US IND cleared Feb 2026 for Ph2",
+   "kr_status": "Rights available (no deal found)",
+   "other_status": "—",
+   "duration": "—",
+   "differentiator": "Novel vehicle could extend residence time.",
+   "weakness": "Early; agent not named.",
+   "latest": "FDA safety review done 2026-04-30.",
+   "next_milestone": "Ph2 start",
+   "threat": 2,
+   "franchise": 1,
+   "confidence": "Reported",
+   "threat_why": "Unpartnered next-gen miotic — a possible in-licensing target as much as a threat.",
+   "sources": [
+    {
+     "label": "Eyes On Eyecare 2026-02-17",
+     "url": "https://glance.eyesoneyecare.com/stories/2026-02-17/fda-clears-cloudbreak-pharma-s-ind-for-phase-2-presbyopia-drop-trials/"
+    }
+   ]
+  },
+  {
+   "id": "G-NOVUS",
+   "product": "NV701",
+   "short": "Novus NV701",
+   "company": "Novus Vision",
+   "scope": "Global",
+   "origin": "US",
+   "api": "Pilocarpine 1.25% (new formulation)",
+   "formulation": "—",
+   "mechanism": "Miotic – pilocarpine",
+   "stage": "Phase 1",
+   "us_status": "Early Ph1 complete (NCT06783686, n=55, vs VUITY on pupil size)",
+   "kr_status": "—",
+   "other_status": "—",
+   "duration": "—",
+   "differentiator": "Reformulated pilocarpine.",
+   "weakness": "Unpublished.",
+   "latest": "—",
+   "next_milestone": "—",
+   "threat": null,
+   "franchise": 1,
+   "confidence": "Verified",
+   "sources": [
+    {
+     "label": "NCT06783686",
+     "url": "https://clinicaltrials.gov/study/NCT06783686"
+    }
+   ]
+  },
+  {
+   "id": "G-OPTALL",
+   "product": "PBO / PBOHB",
+   "short": "Optall PBO",
+   "company": "Optall Vision",
+   "scope": "Global",
+   "origin": "Mexico",
+   "api": "Pilocarpine + brimonidine + oxymetazoline (± HA, bromfenac)",
+   "formulation": "—",
+   "mechanism": "Miotic combo (pilocarpine + α-agonists)",
+   "stage": "Phase 1",
+   "us_status": "—",
+   "kr_status": "—",
+   "other_status": "NCT05006911 etc.; last updates 2021",
+   "duration": "—",
+   "differentiator": "Triple combination.",
+   "weakness": "Likely inactive.",
+   "latest": "—",
+   "next_milestone": "—",
+   "threat": null,
+   "franchise": 1,
+   "confidence": "Unverified",
+   "sources": [
+    {
+     "label": "NCT05006911",
+     "url": "https://clinicaltrials.gov/study/NCT05006911"
+    }
+   ]
+  },
+  {
+   "id": "G-CLX",
+   "product": "CLX-162",
+   "short": "CLX-162",
+   "company": "Cellix Bio / Akita Biomedical (inferred)",
+   "scope": "Global",
+   "origin": "US",
+   "api": "Pilocarpine lipoate salt",
+   "formulation": "—",
+   "mechanism": "Miotic + lens-softening",
+   "stage": "Preclinical",
+   "us_status": "—",
+   "kr_status": "—",
+   "other_status": "—",
+   "duration": "—",
+   "differentiator": "Dual mechanism in one salt.",
+   "weakness": "Lens-softening has failed clinically twice.",
+   "latest": "Better tolerated than lipoic acid choline ester (preclinical).",
+   "next_milestone": "IND (UNVERIFIED)",
+   "threat": null,
+   "franchise": 1,
+   "confidence": "Unverified",
+   "sources": [
+    {
+     "label": "PMC12629135",
+     "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12629135/"
+    }
+   ]
+  },
+  {
+   "id": "G-NYXLDP",
+   "product": "Nyxol + low-dose pilocarpine",
+   "short": "Nyxol+LDP",
+   "company": "Opus Genetics",
+   "scope": "Global",
+   "origin": "US",
+   "api": "Phentolamine 0.75% + pilocarpine 0.4%",
+   "formulation": "Sequential drops",
+   "mechanism": "α-antagonist + miotic",
+   "stage": "Discontinued / dormant",
+   "us_status": "VEGA-2 combo arms complete; not pursued",
+   "kr_status": "—",
+   "other_status": "—",
+   "duration": "—",
+   "differentiator": "VEGA-1: 61% ≥15 letters at 1 h with combo.",
+   "weakness": "No disclosed plan.",
+   "latest": "Absent from 2026 materials.",
+   "next_milestone": "—",
+   "threat": null,
+   "franchise": 2,
+   "confidence": "Reported",
+   "sources": [
+    {
+     "label": "NCT05646719 (VEGA-2)",
+     "url": "https://clinicaltrials.gov/study/NCT05646719"
+    }
+   ]
+  },
+  {
+   "id": "G-LNZ101",
+   "product": "LNZ101",
+   "short": "LNZ101",
+   "company": "LENZ Therapeutics",
+   "scope": "Global",
+   "origin": "US",
+   "api": "Aceclidine + brimonidine",
+   "formulation": "—",
+   "mechanism": "Miotic combo (aceclidine + α2-agonist)",
+   "stage": "Discontinued / dormant",
+   "us_status": "Ph3 completed; LNZ100 chosen",
+   "kr_status": "—",
+   "other_status": "—",
+   "duration": "—",
+   "differentiator": "—",
+   "weakness": "—",
+   "latest": "Never filed.",
+   "next_milestone": "—",
+   "threat": null,
+   "franchise": 2,
+   "confidence": "Reported",
+   "sources": [
+    {
+     "label": "LENZ 10-K FY25",
+     "url": "https://www.sec.gov/Archives/edgar/data/1815776/000181577626000011/lenz-20251231.htm"
+    }
+   ]
+  },
+  {
+   "id": "G-ARCTIC",
+   "product": "ARVN003 (MicroLine)",
+   "short": "Arctic Vision",
+   "company": "Arctic Vision (from Eyenovia)",
+   "scope": "Global",
+   "origin": "China",
+   "api": "Pilocarpine microdose via Optejet sprayer",
+   "formulation": "Device spray",
+   "mechanism": "Miotic – pilocarpine",
+   "stage": "Discontinued / dormant",
+   "us_status": "—",
+   "kr_status": "Licence covers Greater China AND Korea (Aug 2020)",
+   "other_status": "China Ph3 first patient 2022; no results",
+   "duration": "—",
+   "differentiator": "Device-based microdose.",
+   "weakness": "Originator abandoned MicroLine.",
+   "latest": "Probably dormant.",
+   "next_milestone": "—",
+   "threat": null,
+   "franchise": 2,
+   "confidence": "Unverified",
+   "sources": [
+    {
+     "label": "PharmaShots – ARVN003 Ph3",
+     "url": "https://pharmashots.com/13628/arctic-vision-reports-the-first-patient-enrollment-in-p-iii-clinical-trial-of-arvn003-for-the-treatment-of-presbyopia"
+    },
+    {
+     "label": "Hyperion DeFi 10-K FY25",
+     "url": "https://www.sec.gov/Archives/edgar/data/1682639/000110465926036286/hypd-20251231x10k.htm"
+    }
+   ]
+  },
+  {
+   "id": "G-MICROLINE",
+   "product": "MicroLine (US)",
+   "short": "MicroLine",
+   "company": "Eyenovia → Hyperion DeFi",
+   "scope": "Global",
+   "origin": "US",
+   "api": "Pilocarpine 2% via Optejet",
+   "formulation": "Device spray",
+   "mechanism": "Miotic – pilocarpine",
+   "stage": "Discontinued / dormant",
+   "us_status": "VISION-1/2 Ph3 done; NDA never filed; company pivoted to crypto treasury (Jul 2025)",
+   "kr_status": "—",
+   "other_status": "—",
+   "duration": "—",
+   "differentiator": "—",
+   "weakness": "Abandoned.",
+   "latest": "—",
+   "next_milestone": "—",
+   "threat": null,
+   "franchise": 1,
+   "confidence": "Verified",
+   "sources": [
+    {
+     "label": "Hyperion DeFi 10-K FY25",
+     "url": "https://www.sec.gov/Archives/edgar/data/1682639/000110465926036286/hypd-20251231x10k.htm"
+    }
+   ]
+  },
+  {
+   "id": "G-SANTEN",
+   "product": "STN1013600 (UDCA)",
+   "short": "Santen UDCA",
+   "company": "Santen",
+   "scope": "Global",
+   "origin": "Japan",
+   "api": "Ursodeoxycholic acid 0.1% / 0.3%",
+   "formulation": "BID",
+   "mechanism": "Lens-softening",
+   "stage": "Discontinued / dormant",
+   "us_status": "Ph2a OPSIS failed (DCNVA +4.1/+4.3 vs +4.4 letters placebo)",
+   "kr_status": "—",
+   "other_status": "—",
+   "duration": "—",
+   "differentiator": "—",
+   "weakness": "No efficacy.",
+   "latest": "—",
+   "next_milestone": "—",
+   "threat": null,
+   "franchise": 5,
+   "confidence": "Verified",
+   "sources": [
+    {
+     "label": "NCT05665387 (OPSIS)",
+     "url": "https://clinicaltrials.gov/study/NCT05665387"
+    }
+   ]
+  },
+  {
+   "id": "G-UNR844",
+   "product": "UNR844",
+   "short": "UNR844",
+   "company": "Novartis",
+   "scope": "Global",
+   "origin": "Switzerland",
+   "api": "Lipoic acid choline ester 1.5%",
+   "formulation": "—",
+   "mechanism": "Lens-softening",
+   "stage": "Discontinued / dormant",
+   "us_status": "Ph2b terminated — missed primary",
+   "kr_status": "—",
+   "other_status": "—",
+   "duration": "—",
+   "differentiator": "—",
+   "weakness": "—",
+   "latest": "—",
+   "next_milestone": "—",
+   "threat": null,
+   "franchise": 5,
+   "confidence": "Verified",
+   "sources": [
+    {
+     "label": "NCT04806503",
+     "url": "https://clinicaltrials.gov/study/NCT04806503"
+    }
+   ]
+  },
+  {
+   "id": "G-GLK302",
+   "product": "GLK-302 (iLution)",
+   "short": "Glaukos GLK-302",
+   "company": "Glaukos",
+   "scope": "Global",
+   "origin": "US",
+   "api": "Pilocarpine eyelid cream",
+   "formulation": "Topical dermal",
+   "mechanism": "Miotic – pilocarpine",
+   "stage": "Discontinued / dormant",
+   "us_status": "Ph2a done 2022; results never disclosed",
+   "kr_status": "—",
+   "other_status": "—",
+   "duration": "—",
+   "differentiator": "Drop-free delivery.",
+   "weakness": "Dormant.",
+   "latest": "—",
+   "next_milestone": "—",
+   "threat": null,
+   "franchise": 4,
+   "confidence": "Verified",
+   "sources": [
+    {
+     "label": "NCT05124275",
+     "url": "https://clinicaltrials.gov/study/NCT05124275"
+    }
+   ]
+  },
+  {
+   "id": "G-AGN241622",
+   "product": "AGN-241622",
+   "short": "AGN-241622",
+   "company": "AbbVie / Allergan",
+   "scope": "Global",
+   "origin": "US",
+   "api": "α2 pan-agonist",
+   "formulation": "—",
+   "mechanism": "α2-agonist",
+   "stage": "Discontinued / dormant",
+   "us_status": "Ph1/2 terminated (strategic)",
+   "kr_status": "—",
+   "other_status": "—",
+   "duration": "—",
+   "differentiator": "—",
+   "weakness": "—",
+   "latest": "—",
+   "next_milestone": "—",
+   "threat": null,
+   "franchise": 5,
+   "confidence": "Verified",
+   "sources": [
+    {
+     "label": "NCT04403763",
+     "url": "https://clinicaltrials.gov/study/NCT04403763"
+    },
+    {
+     "label": "Endpoints – AbbVie culls 2nd-gen drop",
+     "url": "https://endpoints.news/after-cutting-back-on-vuity-last-fall-abbvie-culls-a-second-gen-presbyopia-eye-drop"
+    }
+   ]
+  },
+  {
+   "id": "G-AGNOXY",
+   "product": "AGN-199201 + AGN-190584",
+   "short": "AGN oxy+pilo",
+   "company": "AbbVie / Allergan",
+   "scope": "Global",
+   "origin": "US",
+   "api": "Oxymetazoline + pilocarpine",
+   "formulation": "—",
+   "mechanism": "Miotic combo (pilocarpine + α-agonists)",
+   "stage": "Discontinued / dormant",
+   "us_status": "Ph2 2015–16; oxymetazoline added no benefit",
+   "kr_status": "—",
+   "other_status": "—",
+   "duration": "—",
+   "differentiator": "—",
+   "weakness": "—",
+   "latest": "—",
+   "next_milestone": "—",
+   "threat": null,
+   "franchise": 5,
+   "confidence": "Verified",
+   "sources": [
+    {
+     "label": "PMC9562347",
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9562347"
+    }
+   ]
+  }
+ ],
+ "korea": {
+  "summary": "Seven companies are positioned in Korea. Three imported products (YUVEZZI, VIZZ, QLOSI) come through licence chains; three domestic pilocarpine programmes (Taejoon, Jetema, Daewoo) and one Daewoo-made generic (Reyon) compete locally. MFDS nedrug shows no product with a presbyopia indication as of 20 Oct 2026; 약사공론 (23 Sep 2026) expects the first one in early 2027.",
+  "kpis": [
+   {
+    "label": "MFDS-approved presbyopia drops",
+    "num": "0",
+    "sub": "nedrug check 2026-10-20"
+   },
+   {
+    "label": "NDAs under review",
+    "num": "3",
+    "sub": "Kwangdong · Lotus/Alvogen · Jetema"
+   },
+   {
+    "label": "Domestic Phase 3 complete",
+    "num": "2",
+    "sub": "Taejoon CTO0307 · Jetema (licensed)"
+   },
+   {
+    "label": "Pilocarpine sold off-label",
+    "num": "2",
+    "sub": "Daewoo Pilostar · Reyon Opticarpine"
+   },
+   {
+    "label": "Est. presbyopes",
+    "num": "17–25M",
+    "sub": "Optus (2024) vs 한국경제 (2026) — neither HIRA-based"
+   }
+  ],
+  "race": [
+   {
+    "product": "YUVEZZI",
+    "company": "Kwangdong",
+    "segments": [
+     {
+      "phase": "License → NDA",
+      "start": "2023-12-08",
+      "end": "2025-09-15",
+      "note": "DART contract 2023-12-08; filed Sep 2025 (Korean press) / ~Nov 2025 (Tenpoint)"
+     },
+     {
+      "phase": "NDA review",
+      "start": "2025-09-15",
+      "end": "2026-10-20",
+      "note": "Under MFDS review"
+     },
+     {
+      "phase": "Expected review",
+      "start": "2026-10-20",
+      "end": "2027-03-01",
+      "note": "Estimate — 'early 2027' (약사공론)"
+     },
+     {
+      "phase": "Expected launch",
+      "start": "2027-03-01",
+      "end": "2027-12-31",
+      "note": "Estimate"
+     }
+    ],
+    "milestones": [
+     {
+      "date": "2026-01-28",
+      "label": "FDA approval"
+     }
+    ]
+   },
+   {
+    "product": "VIZZ",
+    "company": "Lotus / Alvogen Korea",
+    "segments": [
+     {
+      "phase": "License → NDA",
+      "start": "2025-05-07",
+      "end": "2025-12-01",
+      "note": "LENZ → Lotus licence; NDA 2025-12-01"
+     },
+     {
+      "phase": "NDA review",
+      "start": "2025-12-01",
+      "end": "2026-10-20",
+      "note": "Under MFDS review"
+     },
+     {
+      "phase": "Expected review",
+      "start": "2026-10-20",
+      "end": "2027-06-01",
+      "note": "Estimate"
+     },
+     {
+      "phase": "Expected launch",
+      "start": "2027-06-01",
+      "end": "2027-12-31",
+      "note": "Estimate"
+     }
+    ],
+    "milestones": [
+     {
+      "date": "2025-07-31",
+      "label": "FDA approval"
+     }
+    ]
+   },
+   {
+    "product": "Pilocarpine 1.2%",
+    "company": "Jetema",
+    "segments": [
+     {
+      "phase": "License → NDA",
+      "start": "2026-06-26",
+      "end": "2026-07-16",
+      "note": "Announced 2026-06-26; NDA 2026-07-16"
+     },
+     {
+      "phase": "NDA review",
+      "start": "2026-07-16",
+      "end": "2026-10-20",
+      "note": "Under MFDS review"
+     },
+     {
+      "phase": "Expected review",
+      "start": "2026-10-20",
+      "end": "2027-07-01",
+      "note": "Estimate"
+     },
+     {
+      "phase": "Expected launch",
+      "start": "2027-07-01",
+      "end": "2027-12-31",
+      "note": "Estimate"
+     }
+    ]
+   },
+   {
+    "product": "CTO0307",
+    "company": "Taejoon",
+    "segments": [
+     {
+      "phase": "Development",
+      "start": "2024-06-18",
+      "end": "2025-09-25",
+      "note": "Ph3 IND 2024-06-18; Ph3 2025-02-26 → 2025-09-25"
+     },
+     {
+      "phase": "Expected development",
+      "start": "2025-09-25",
+      "end": "2027-06-01",
+      "note": "NDA route not public (own filing or via partner — UNVERIFIED)"
+     }
+    ],
+    "milestones": [
+     {
+      "date": "2025-09-25",
+      "label": "Phase 3 complete"
+     },
+     {
+      "date": "2026-07-23",
+      "label": "Ingredient disclosed"
+     }
+    ]
+   },
+   {
+    "product": "QLOSI",
+    "company": "Optus",
+    "segments": [
+     {
+      "phase": "License → NDA",
+      "start": "2024-09-23",
+      "end": "2026-10-20",
+      "note": "Licensed 2024-09-23; still 'preparing NDA' (Aug 2026)"
+     },
+     {
+      "phase": "Expected review",
+      "start": "2026-10-20",
+      "end": "2028-03-01",
+      "note": "Estimate — filing ~2027 + ~12-month review"
+     },
+     {
+      "phase": "Expected launch",
+      "start": "2028-03-01",
+      "end": "2028-12-31",
+      "note": "Estimate"
+     }
+    ]
+   },
+   {
+    "product": "Pilostar 1% (glaucoma label)",
+    "company": "Daewoo",
+    "segments": [
+     {
+      "phase": "On market",
+      "start": "2025-09-24",
+      "end": "2029-12-31",
+      "note": "Approved 2025-08-28; launched 2025-09-24; off-label presbyopia use"
+     }
+    ]
+   },
+   {
+    "product": "Pilostar presbyopia indication",
+    "company": "Daewoo",
+    "segments": [
+     {
+      "phase": "Expected development",
+      "start": "2026-09-01",
+      "end": "2028-09-01",
+      "note": "IND submitted ~Sep 2026; ≥2-year trial"
+     }
+    ]
+   },
+   {
+    "product": "Opticarpine 1%",
+    "company": "Reyon",
+    "segments": [
+     {
+      "phase": "On market",
+      "start": "2026-09-22",
+      "end": "2029-12-31",
+      "note": "Approved 2026-09-22 (glaucoma)"
+     }
+    ]
+   }
+  ],
+  "companies": [
+   {
+    "company": "Taejoon Pharm.",
+    "company_ko": "태준제약",
+    "role": "Domestic developer · ophthalmology incumbent",
+    "threat": 4,
+    "focus": true,
+    "confidence": "Verified",
+    "facts": [
+     {
+      "k": "Asset",
+      "v": "CTO0307 — pilocarpine, once daily (concentration undisclosed). Developed in-house; no foreign in-licensing found."
+     },
+     {
+      "k": "Clinical",
+      "v": "MFDS Ph3 approval 2024-06-18 · Ph3 NCT07723716: randomised, quadruple-masked, vehicle-controlled, n=167, age 40–64, primary = ≥3-line mesopic binocular DCNVA at week 4 · ran 2025-02-26 → 2025-09-25 · results not posted"
+     },
+     {
+      "k": "IP",
+      "v": "'필로카르핀을 포함하는 점안 조성물' — levocarnitine + xanthan gum stabilise pilocarpine pH/viscosity; priority ~Apr 2024 (WO2025230326A1 — number UNVERIFIED)"
+     },
+     {
+      "k": "Financials (₩B)",
+      "v": "Revenue 111.0 → 104.1 → 94.7 (2023→2025) · operating profit 17.7 → 8.8 → −1.7 · R&D 17.8 (18.8% of sales) · listed equity holdings ₩152.2B (46% of assets) · private, family-owned"
+     },
+     {
+      "k": "Ophthalmic franchise",
+      "v": "Eye-care specialist since 1978; first Korean sterile eye-drop exporter to Europe; 잘로스트 exported to ~20 countries. 2020 Rx: 뉴히알유니 ₩23.4B, 브로낙 ₩5.5B, 잘로스트S ₩4.1B, 싸이포린엔 ₩3.2B. 디쿠아데이 5% approved 2025"
+     },
+     {
+      "k": "Setbacks",
+      "v": "TJO-087 dry-eye NDA rejected (2023); Phase 2 restart reported Oct 2025"
+     },
+     {
+      "k": "Watch",
+      "v": "Possible licensor behind Jetema's pilocarpine 1.2% NDA (UNVERIFIED — circumstantial: both pilocarpine, both Korean Ph3 complete, CTO0307 posted one week after Jetema's filing)"
+     }
+    ],
+    "threat_why": "Medium-High. The only Korean company with an in-house completed Phase 3, formulation IP and a top-tier ophthalmology channel. Weakening finances and no confirmed NDA temper the near-term threat.",
+    "sources": [
+     {
+      "label": "NCT07723716 (CTO0307)",
+      "url": "https://clinicaltrials.gov/study/NCT07723716"
+     },
+     {
+      "label": "메디칼타임즈 2024-06-19",
+      "url": "https://www.medicaltimes.com/Main/News/NewsView.html?ID=1159296"
+     },
+     {
+      "label": "헬스코리아뉴스 2025-11-10",
+      "url": "https://www.hkn24.com/news/articleView.html?idxno=347223"
+     },
+     {
+      "label": "데일리팜 2026-09-16",
+      "url": "https://dailypharm.com/user/news/342399"
+     },
+     {
+      "label": "뉴스더보이스 2021-10-18",
+      "url": "https://www.newsthevoice.com/news/articleView.html?idxno=23005"
+     },
+     {
+      "label": "메디칼타임즈 2025-05-02",
+      "url": "https://www.medicaltimes.com/Mobile/News/NewsView.html?ID=1163396"
+     },
+     {
+      "label": "메디파나 2023-06-23",
+      "url": "https://www.medipana.com/news/articleView.html?idxno=313520"
+     }
+    ]
+   },
+   {
+    "company": "Kwangdong Pharm.",
+    "company_ko": "광동제약",
+    "role": "Licensee — YUVEZZI",
+    "threat": 5,
+    "confidence": "Verified",
+    "facts": [
+     {
+      "k": "Asset",
+      "v": "YUVEZZI 유베지 (carbachol 2.75% + brimonidine 0.1%, PF) from Tenpoint via Zhaoke"
+     },
+     {
+      "k": "Licence",
+      "v": "DART contract date 2023-12-08 (announced Jan 2024); terms undisclosed"
+     },
+     {
+      "k": "MFDS",
+      "v": "NDA filed Sep 2025 (company/Korean press) vs ~Nov 2025 (Tenpoint PR) — first presbyopia NDA in Korea; still under review Aug 2026; bridging study exempt (company)"
+     },
+     {
+      "k": "Pricing",
+      "v": "Not disclosed. ~₩100k/month 비급여 circulates online (UNVERIFIED)"
+     },
+     {
+      "k": "Franchise",
+      "v": "Beverage-led revenue (제주삼다수 ₩319.7B, 19.5% of 2024 sales); in-licensed eye pipeline (NVK002 myopia, OCU400, Raxone)"
+     }
+    ],
+    "threat_why": "High/critical. Most likely first approval, FDA-backed product, and the regulatory lead. Weak ophthalmic detailing is its gap.",
+    "sources": [
+     {
+      "label": "아시아경제 2026-02-13",
+      "url": "https://www.asiae.co.kr/article/2026021309325117642"
+     },
+     {
+      "label": "한국경제 2026-02-13",
+      "url": "https://www.hankyung.com/article/2026021351981"
+     },
+     {
+      "label": "뉴스웨이 2026-08-14",
+      "url": "https://www.newsway.co.kr/news/view?ud=2026081314502227334"
+     },
+     {
+      "label": "데일리팜 2026-02-23",
+      "url": "https://dailypharm.com/user/news/335891"
+     },
+     {
+      "label": "Tenpoint PR – MFDS NDA (2025-11-05)",
+      "url": "https://www.biospace.com/press-releases/tenpoint-therapeutics-ltd-announces-submission-of-a-new-drug-application-for-brimochol-pf-for-the-treatment-of-presbyopia-to-the-mfds-in-south-korea"
+     }
+    ]
+   },
+   {
+    "company": "Lotus / Alvogen Korea",
+    "company_ko": "알보젠코리아",
+    "role": "Licensee — VIZZ",
+    "threat": 4,
+    "confidence": "Verified",
+    "facts": [
+     {
+      "k": "Asset",
+      "v": "VIZZ 비즈 (aceclidine 1.44%) from LENZ"
+     },
+     {
+      "k": "Licence",
+      "v": "LENZ → Lotus 2025-05-07: $5M upfront, ≤$120M milestones, 10–20% royalties (Korea + 8 SE Asian countries)"
+     },
+     {
+      "k": "MFDS",
+      "v": "NDA filed by Lotus 2025-12-01; under review"
+     },
+     {
+      "k": "Commercial",
+      "v": "Expected via Alvogen Korea (Lotus's Korean subsidiary). Alvogen Korea 2025 revenue ₩271.0B, OP ₩24.1B; little ophthalmic presence"
+     }
+    ],
+    "threat_why": "High. Best clinical profile; execution risk in Korean ophthalmology.",
+    "sources": [
+     {
+      "label": "LENZ PR – MFDS NDA (2025-12-01)",
+      "url": "https://ir.lenz-tx.com/news-events/press-releases/detail/45/"
+     },
+     {
+      "label": "LENZ 10-Q Q2-26",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001815776/000181577626000052/lenz-20260630.htm"
+     },
+     {
+      "label": "데일리메디 2026-03-14",
+      "url": "https://dailymedi.com/news/news_view.php?ca_id=&wr_id=934662"
+     }
+    ]
+   },
+   {
+    "company": "Jetema",
+    "company_ko": "제테마",
+    "role": "Licensee — pilocarpine 1.2% (NEW)",
+    "threat": 4,
+    "confidence": "Verified",
+    "facts": [
+     {
+      "k": "Asset",
+      "v": "제테마필로카르핀점안액1.2% — single-use, Rx; 'optimised for Korean irises'; ~6 h (company)"
+     },
+     {
+      "k": "Origin",
+      "v": "In-licensed (도입); licensor undisclosed in PRs and H1-26 report"
+     },
+     {
+      "k": "MFDS",
+      "v": "Announced 2026-06-26; NDA filed 2026-07-16; Korean Phase 3 complete"
+     },
+     {
+      "k": "Commercial",
+      "v": "Own reps + unnamed ophthalmology CSO; exploring Asia. H1-26 revenue ₩36.1B, OP ₩1.64B; aesthetics (toxin/filler) company"
+     }
+    ],
+    "threat_why": "Medium-High. Third filer with local data and likely lower price; no ophthalmic franchise.",
+    "sources": [
+     {
+      "label": "뉴스핌 2026-06-26",
+      "url": "https://www.newspim.com/news/view/20260626000690"
+     },
+     {
+      "label": "뉴스핌 2026-07-16",
+      "url": "https://www.newspim.com/news/view/20260716000452"
+     },
+     {
+      "label": "Nate/뉴스핌 2026-07-03",
+      "url": "https://m.news.nate.com/view/20260703n17852"
+     }
+    ]
+   },
+   {
+    "company": "Optus Pharm.",
+    "company_ko": "옵투스제약",
+    "role": "Licensee — QLOSI",
+    "threat": 3,
+    "confidence": "Verified",
+    "facts": [
+     {
+      "k": "Asset",
+      "v": "QLOSI 클로시 (pilocarpine 0.4%, PF) from Orasis"
+     },
+     {
+      "k": "Licence",
+      "v": "2024-09-23: ₩24.37B total — ₩8.12B upfront, ₩3.26B on NDA filing, ₩12.99B on approval; 15% royalty; 10-year term"
+     },
+     {
+      "k": "MFDS",
+      "v": "H1-26 report (2026-08-14): '품목허가 신청준비' — not yet filed"
+     },
+     {
+      "k": "Franchise",
+      "v": "KOSDAQ; 44.49% owned by 삼천당제약; single-use eye-drop specialist (ETC/CMO/export); capacity 470M → 830M units/yr by Jun 2027"
+     }
+    ],
+    "threat_why": "Medium. Strong manufacturing and channel but 12–18 months behind the filers.",
+    "sources": [
+     {
+      "label": "fnnews 2024-09-23",
+      "url": "https://www.fnnews.com/news/202409231644102301"
+     },
+     {
+      "label": "Orasis/Optus PR 2024-10-16",
+      "url": "https://www.prnewswire.com/news-releases/orasis-pharmaceuticals-announces-licensing-agreement-with-optus-pharmaceuticals-for-commercialization-of-qlosi-pilocarpine-hydrochloride-ophthalmic-solution-0-4-in-korea-302277027.html"
+     },
+     {
+      "label": "메디파나 2024-09-25",
+      "url": "https://www.medipana.com/article/view.php?news_idx=331660"
+     }
+    ]
+   },
+   {
+    "company": "Daewoo Pharm.",
+    "company_ko": "대우제약",
+    "role": "Domestic developer — off-label pilocarpine",
+    "threat": 3,
+    "confidence": "Verified",
+    "facts": [
+     {
+      "k": "Asset",
+      "v": "필로스타점안액 1% — approved 2025-08-28 (generic; glaucoma/miosis); launched 2025-09-24; Rx from 2025-11-03; 비급여"
+     },
+     {
+      "k": "Presbyopia",
+      "v": "Reps promote off-label presbyopia use; presbyopia IND submitted ~Sep 2026; trial ≥2 years"
+     },
+     {
+      "k": "Other",
+      "v": "Rebamipide 1.5% Ph3 done; new eye-drop plant; supplies Reyon's Opticarpine"
+     }
+    ],
+    "threat_why": "Medium. Already in clinics and sets a low price anchor; formal indication unlikely before ~2028.",
+    "sources": [
+     {
+      "label": "데일리팜 – Pilostar launch",
+      "url": "https://dailypharm.com/user/news/1657"
+     },
+     {
+      "label": "약사공론 2025-10-31",
+      "url": "https://www.kpanews.co.kr/news/articleView.html?idxno=264607"
+     },
+     {
+      "label": "약사공론 2026-09-23",
+      "url": "https://www.kpanews.co.kr/news/articleView.html?idxno=544805"
+     },
+     {
+      "label": "헬스조선 via Daum 2026-03-10",
+      "url": "https://v.daum.net/v/20260310174101319"
+     }
+    ]
+   },
+   {
+    "company": "Reyon Pharm.",
+    "company_ko": "이연제약",
+    "role": "Generic — off-label pilocarpine (NEW)",
+    "threat": 2,
+    "confidence": "Verified",
+    "facts": [
+     {
+      "k": "Asset",
+      "v": "옵티카르핀점안액 1% — approved 2026-09-22 (glaucoma); Daewoo-manufactured"
+     }
+    ],
+    "threat_why": "Low-Medium. Adds price competition in the off-label channel.",
+    "sources": [
+     {
+      "label": "약사공론 2026-09-23",
+      "url": "https://www.kpanews.co.kr/news/articleView.html?idxno=544805"
+     }
+    ]
+   }
+  ],
+  "chains": [
+   {
+    "product": "YUVEZZI 유베지",
+    "chain": [
+     "Tenpoint / Visus (UK-US)",
+     "Zhaoke Ophthalmology (HK)",
+     "Kwangdong 광동제약"
+    ],
+    "note": "Zhaoke licence 2022 ($15M + ≤$115M, Greater China/Korea/SE Asia); Kwangdong contract 2023-12-08."
+   },
+   {
+    "product": "VIZZ 비즈",
+    "chain": [
+     "LENZ (US)",
+     "Lotus Pharmaceutical (TW)",
+     "Alvogen Korea 알보젠코리아"
+    ],
+    "note": "Lotus licence 2025-05-07; Lotus filed MFDS NDA; Alvogen Korea expected to commercialise."
+   },
+   {
+    "product": "QLOSI 클로시",
+    "chain": [
+     "Orasis (IL-US)",
+     "Optus Pharm 옵투스제약"
+    ],
+    "note": "₩24.37B deal Sep 2024; NDA not yet filed."
+   },
+   {
+    "product": "Pilocarpine 1.2%",
+    "chain": [
+     "Undisclosed licensor (Taejoon? — UNVERIFIED)",
+     "Jetema 제테마"
+    ],
+    "note": "NDA filed 2026-07-16."
+   },
+   {
+    "product": "CTO0307",
+    "chain": [
+     "Taejoon 태준제약 (in-house)"
+    ],
+    "note": "Ph3 done; route to market not public."
+   },
+   {
+    "product": "Pilostar / Opticarpine",
+    "chain": [
+     "Daewoo 대우제약 (in-house, CMO)",
+     "Reyon 이연제약"
+    ],
+    "note": "Both glaucoma-labelled pilocarpine 1%."
+   },
+   {
+    "product": "MicroLine (dormant)",
+    "chain": [
+     "Eyenovia (US)",
+     "Arctic Vision (CN)"
+    ],
+    "note": "Aug 2020 licence includes Korea; programme probably dormant."
+   }
+  ],
+  "marketNotes": [
+   {
+    "title": "Price & reimbursement",
+    "body": "No official price exists for any presbyopia drop in Korea. Pilocarpine 1% is sold 비급여 (non-reimbursed). Clinicians are cautious: only 35–40% reach ≥3-line gain, and brimonidine carries a 5–25% delayed-allergy risk (헬스조선, Mar 2026)."
+   },
+   {
+    "title": "Ophthalmic peers (eye-drop revenue)",
+    "body": "Kukje: ₩45.5B (2025), ₩28.9B H1-26 (큐알론 ₩13.7B). Samil: ~₩40B (2021). Single-use latanoprost market ₩36B (2025). Santen Korea / Alcon / Allergan Korea figures not found."
+   }
+  ]
+ },
+ "events": [
+  {
+   "date": "2023-12-08",
+   "region": "Korea",
+   "type": "Deal",
+   "company": "Kwangdong",
+   "text": "Kwangdong signs Korean licence for Brimochol PF with Zhaoke (DART; announced Jan 2024)",
+   "sources": [
+    {
+     "label": "DART (전자공시)",
+     "url": "https://dart.fss.or.kr"
+    }
+   ]
+  },
+  {
+   "date": "2024-04-30",
+   "region": "Korea",
+   "type": "Corporate",
+   "company": "Taejoon",
+   "text": "Priority date of Taejoon's stabilised pilocarpine composition patent (approx.)",
+   "sources": [
+    {
+     "label": "헬스코리아뉴스 2025-11-10",
+     "url": "https://www.hkn24.com/news/articleView.html?idxno=347223"
+    }
+   ]
+  },
+  {
+   "date": "2024-06-18",
+   "region": "Korea",
+   "type": "Trial",
+   "company": "Taejoon",
+   "text": "MFDS approves Taejoon CTO0307 presbyopia Phase 3",
+   "sources": [
+    {
+     "label": "메디칼타임즈 2024-06-19",
+     "url": "https://www.medicaltimes.com/Main/News/NewsView.html?ID=1159296"
+    }
+   ]
+  },
+  {
+   "date": "2024-09-23",
+   "region": "Korea",
+   "type": "Deal",
+   "company": "Optus",
+   "text": "Optus licenses QLOSI from Orasis — ₩24.37B",
+   "sources": [
+    {
+     "label": "fnnews 2024-09-23",
+     "url": "https://www.fnnews.com/news/202409231644102301"
+    }
+   ]
+  },
+  {
+   "date": "2025-02-26",
+   "region": "Korea",
+   "type": "Trial",
+   "company": "Taejoon",
+   "text": "CTO0307 Phase 3 starts (n=167)",
+   "sources": [
+    {
+     "label": "NCT07723716 (CTO0307)",
+     "url": "https://clinicaltrials.gov/study/NCT07723716"
+    }
+   ]
+  },
+  {
+   "date": "2025-05-07",
+   "region": "Korea",
+   "type": "Deal",
+   "company": "Lotus",
+   "text": "LENZ licenses VIZZ to Lotus for Korea + SE Asia",
+   "sources": [
+    {
+     "label": "LENZ 10-Q Q2-26",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001815776/000181577626000052/lenz-20260630.htm"
+    }
+   ]
+  },
+  {
+   "date": "2025-08-28",
+   "region": "Korea",
+   "type": "Approval",
+   "company": "Daewoo",
+   "text": "MFDS approves Daewoo Pilostar 1% (glaucoma)",
+   "sources": [
+    {
+     "label": "MFDS 의약품안전나라",
+     "url": "https://nedrug.mfds.go.kr"
+    }
+   ]
+  },
+  {
+   "date": "2025-09",
+   "region": "Korea",
+   "type": "Filing",
+   "company": "Kwangdong",
+   "text": "Kwangdong files YUVEZZI NDA — first presbyopia NDA in Korea (Tenpoint PR dated ~2025-11-05)",
+   "sources": [
+    {
+     "label": "아시아경제 2026-02-13",
+     "url": "https://www.asiae.co.kr/article/2026021309325117642"
+    },
+    {
+     "label": "Tenpoint PR – MFDS NDA (2025-11-05)",
+     "url": "https://www.biospace.com/press-releases/tenpoint-therapeutics-ltd-announces-submission-of-a-new-drug-application-for-brimochol-pf-for-the-treatment-of-presbyopia-to-the-mfds-in-south-korea"
+    }
+   ]
+  },
+  {
+   "date": "2025-09-24",
+   "region": "Korea",
+   "type": "Launch",
+   "company": "Daewoo",
+   "text": "Pilostar launched; off-label presbyopia promotion",
+   "sources": [
+    {
+     "label": "데일리팜 – Pilostar launch",
+     "url": "https://dailypharm.com/user/news/1657"
+    }
+   ]
+  },
+  {
+   "date": "2025-09-25",
+   "region": "Korea",
+   "type": "Trial",
+   "company": "Taejoon",
+   "text": "CTO0307 Phase 3 completes",
+   "sources": [
+    {
+     "label": "NCT07723716 (CTO0307)",
+     "url": "https://clinicaltrials.gov/study/NCT07723716"
+    }
+   ]
+  },
+  {
+   "date": "2025-12-01",
+   "region": "Korea",
+   "type": "Filing",
+   "company": "Lotus",
+   "text": "Lotus files VIZZ NDA with MFDS",
+   "sources": [
+    {
+     "label": "LENZ PR – MFDS NDA (2025-12-01)",
+     "url": "https://ir.lenz-tx.com/news-events/press-releases/detail/45/"
+    }
+   ]
+  },
+  {
+   "date": "2026-02-19",
+   "region": "Korea",
+   "type": "Corporate",
+   "company": "Kwangdong / Optus",
+   "text": "Kwangdong limit-up two days running after YUVEZZI FDA approval; Optus limit-up 02-23",
+   "sources": [
+    {
+     "label": "데일리팜 2026-02-23",
+     "url": "https://dailypharm.com/user/news/335891"
+    }
+   ]
+  },
+  {
+   "date": "2026-06-26",
+   "region": "Korea",
+   "type": "Corporate",
+   "company": "Jetema",
+   "text": "Jetema announces in-licensed presbyopia drop with Korean Phase 3 complete",
+   "sources": [
+    {
+     "label": "뉴스핌 2026-06-26",
+     "url": "https://www.newspim.com/news/view/20260626000690"
+    }
+   ]
+  },
+  {
+   "date": "2026-07-16",
+   "region": "Korea",
+   "type": "Filing",
+   "company": "Jetema",
+   "text": "Jetema files NDA for pilocarpine 1.2%",
+   "sources": [
+    {
+     "label": "뉴스핌 2026-07-16",
+     "url": "https://www.newspim.com/news/view/20260716000452"
+    }
+   ]
+  },
+  {
+   "date": "2026-07-23",
+   "region": "Korea",
+   "type": "Trial",
+   "company": "Taejoon",
+   "text": "CTO0307 posted on ClinicalTrials.gov — ingredient revealed as pilocarpine",
+   "sources": [
+    {
+     "label": "NCT07723716 (CTO0307)",
+     "url": "https://clinicaltrials.gov/study/NCT07723716"
+    }
+   ]
+  },
+  {
+   "date": "2026-08-14",
+   "region": "Korea",
+   "type": "Corporate",
+   "company": "Optus",
+   "text": "Optus H1 report: QLOSI still 'preparing NDA'; YUVEZZI still under review",
+   "sources": [
+    {
+     "label": "뉴스웨이 2026-08-14",
+     "url": "https://www.newsway.co.kr/news/view?ud=2026081314502227334"
+    },
+    {
+     "label": "DART (전자공시)",
+     "url": "https://dart.fss.or.kr"
+    }
+   ]
+  },
+  {
+   "date": "2026-09",
+   "region": "Korea",
+   "type": "Trial",
+   "company": "Daewoo",
+   "text": "Daewoo submits presbyopia IND for Pilostar",
+   "sources": [
+    {
+     "label": "약사공론 2026-09-23",
+     "url": "https://www.kpanews.co.kr/news/articleView.html?idxno=544805"
+    }
+   ]
+  },
+  {
+   "date": "2026-09-22",
+   "region": "Korea",
+   "type": "Approval",
+   "company": "Reyon",
+   "text": "MFDS approves Reyon Opticarpine 1% (Daewoo-made)",
+   "sources": [
+    {
+     "label": "약사공론 2026-09-23",
+     "url": "https://www.kpanews.co.kr/news/articleView.html?idxno=544805"
+    }
+   ]
+  },
+  {
+   "date": "2021-10-28",
+   "region": "US",
+   "type": "Approval",
+   "company": "AbbVie",
+   "text": "FDA approves VUITY (first presbyopia drop)",
+   "sources": [
+    {
+     "label": "openFDA drugsfda (queried 2026-10-20)",
+     "url": "https://api.fda.gov/drug/drugsfda.json"
+    }
+   ]
+  },
+  {
+   "date": "2022-05-11",
+   "region": "China",
+   "type": "Deal",
+   "company": "Zhaoke",
+   "text": "Zhaoke licenses Brimochol for Greater China/Korea/SE Asia ($15M + ≤$115M)",
+   "sources": [
+    {
+     "label": "BioWorld – Zhaoke/Visus 2022",
+     "url": "https://www.bioworld.com/articles/518881-zhaoke-licenses-asian-rights-to-visus-presbyopia-candidates-in-130m-deal"
+    }
+   ]
+  },
+  {
+   "date": "2023-10-17",
+   "region": "US",
+   "type": "Approval",
+   "company": "Orasis",
+   "text": "FDA approves QLOSI (NDA 217836)",
+   "sources": [
+    {
+     "label": "openFDA drugsfda (queried 2026-10-20)",
+     "url": "https://api.fda.gov/drug/drugsfda.json"
+    }
+   ]
+  },
+  {
+   "date": "2024-08",
+   "region": "Other",
+   "type": "Approval",
+   "company": "Entod",
+   "text": "India DCGI approves PresVu (suspended Sep 2024; reinstated Apr 2025)",
+   "sources": [
+    {
+     "label": "Business Today 2024-09-11",
+     "url": "https://www.businesstoday.in/amp/industry/pharma/story/after-entod-pharmas-big-claims-dcgi-suspends-approval-for-presvu-eye-drops-company-to-contest-order-445492-2024-09-11"
+    },
+    {
+     "label": "ThePrint 2025-04-29",
+     "url": "https://theprint.in/health/as-cdsco-lifts-suspension-on-eye-drops-designed-to-replace-reading-glasses-makers-eye-june-launch/2608719/"
+    }
+   ]
+  },
+  {
+   "date": "2025-04-07",
+   "region": "US",
+   "type": "Launch",
+   "company": "Orasis",
+   "text": "QLOSI available to prescribe in the US",
+   "sources": [
+    {
+     "label": "Orasis press releases",
+     "url": "https://orasis-pharma.com/press-releases"
+    }
+   ]
+  },
+  {
+   "date": "2025-07-08",
+   "region": "China",
+   "type": "Filing",
+   "company": "Tainkang",
+   "text": "NMPA accepts Tainkang pilocarpine 1.25% NDA",
+   "sources": [
+    {
+     "label": "Sina 2025-07-08",
+     "url": "https://finance.sina.com.cn/stock/relnews/cn/2025-07-08/doc-infeurua3127099.shtml"
+    }
+   ]
+  },
+  {
+   "date": "2025-07-31",
+   "region": "US",
+   "type": "Approval",
+   "company": "LENZ",
+   "text": "FDA approves VIZZ (aceclidine, NME)",
+   "sources": [
+    {
+     "label": "openFDA drugsfda (queried 2026-10-20)",
+     "url": "https://api.fda.gov/drug/drugsfda.json"
+    }
+   ]
+  },
+  {
+   "date": "2025-08-06",
+   "region": "US",
+   "type": "Launch",
+   "company": "Amneal",
+   "text": "Amneal launches AB-rated generic pilocarpine 1.25%",
+   "sources": [
+    {
+     "label": "Optum Rx – generic Vuity Aug 2025",
+     "url": "https://business.optum.com/en/support/professionalrx-resources/newgenerics-uity-081125.html"
+    }
+   ]
+  },
+  {
+   "date": "2025-10",
+   "region": "US",
+   "type": "Launch",
+   "company": "LENZ",
+   "text": "VIZZ launch (samples/e-pharmacy); retail from Nov 2025",
+   "sources": [
+    {
+     "label": "LENZ 10-K FY25",
+     "url": "https://www.sec.gov/Archives/edgar/data/1815776/000181577626000011/lenz-20251231.htm"
+    }
+   ]
+  },
+  {
+   "date": "2026-01-28",
+   "region": "US",
+   "type": "Approval",
+   "company": "Tenpoint",
+   "text": "FDA approves YUVEZZI (NDA 220142)",
+   "sources": [
+    {
+     "label": "openFDA drugsfda (queried 2026-10-20)",
+     "url": "https://api.fda.gov/drug/drugsfda.json"
+    },
+    {
+     "label": "BioPharma Dive 2026-01-29",
+     "url": "https://biopharmadive.com/news/tenpoint-yuvezzi-fda-approve-presbyopia-eye-drop/810743"
+    }
+   ]
+  },
+  {
+   "date": "2026-02",
+   "region": "US",
+   "type": "Trial",
+   "company": "Cloudbreak",
+   "text": "FDA clears CBT-199 IND for Phase 2",
+   "sources": [
+    {
+     "label": "Eyes On Eyecare 2026-02-17",
+     "url": "https://glance.eyesoneyecare.com/stories/2026-02-17/fda-clears-cloudbreak-pharma-s-ind-for-phase-2-presbyopia-drop-trials/"
+    }
+   ]
+  },
+  {
+   "date": "2026-03-10",
+   "region": "EU/UK",
+   "type": "Filing",
+   "company": "LENZ",
+   "text": "LENZ submits VIZZ MAA to EMA (validated)",
+   "sources": [
+    {
+     "label": "LENZ PR – EMA MAA (2026-03-10)",
+     "url": "https://ir.lenz-tx.com/news-events/press-releases/detail/50/lenz-therapeutics-announces-submission-of-marketing-authorization-application-to-european-medicines-agency-for-vizz-for-the-treatment-of-presbyopia"
+    }
+   ]
+  },
+  {
+   "date": "2026-04",
+   "region": "US",
+   "type": "Launch",
+   "company": "Tenpoint",
+   "text": "YUVEZZI launches at $79/30 vials, $198/90 vials",
+   "sources": [
+    {
+     "label": "Managed Healthcare Exec 2026-04-03",
+     "url": "https://www.managedhealthcareexecutive.com/view/yuvezzi-launches-with-direct-to-patient-cost-of-198-for-90-days"
+    }
+   ]
+  },
+  {
+   "date": "2026-06",
+   "region": "China",
+   "type": "Approval",
+   "company": "Zhaoke",
+   "text": "YUVEZZI local approvals in Hainan (Boao) and Macau",
+   "sources": [
+    {
+     "label": "Zhaoke interim 2026 (HKEX)",
+     "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0828/2026082803006.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-06-07",
+   "region": "China",
+   "type": "Deal",
+   "company": "Everest",
+   "text": "Everest acquires VIZZ Greater China rights from Corxel",
+   "sources": [
+    {
+     "label": "Ophthalmology Times 2026-06-09",
+     "url": "https://www.optometrytimes.com/view/everest-medicines-acquires-greater-china-rights-aceclidine-presbyopia-eye-drop-vizz-"
+    }
+   ]
+  },
+  {
+   "date": "2026-07-13",
+   "region": "EU/UK",
+   "type": "Filing",
+   "company": "Tenpoint",
+   "text": "YUVEZZI MAA filed with UK MHRA",
+   "sources": [
+    {
+     "label": "Tenpoint PR – MHRA (2026-07-13)",
+     "url": "https://www.biospace.com/press-releases/tenpoint-therapeutics-announces-united-kingdom-yuvezzi-submission-of-marketing-authorization-application-to-the-medicines-and-healthcare-products-regulatory-agency-mhra-for-the-treatment-of-blurry-close-up-vision-presbyopia-in-adults"
+    }
+   ]
+  },
+  {
+   "date": "2026-07-15",
+   "region": "Other",
+   "type": "Filing",
+   "company": "Orasis",
+   "text": "BESKA (QLOSI) NDA accepted by Australia's TGA",
+   "sources": [
+    {
+     "label": "TipRanks – Orasis AU NDA (Jul 2026)",
+     "url": "https://www.tipranks.com/news/private-companies/orasis-pharmaceuticals-deepens-qlosi-access-and-files-first-international-nda-for-presbyopia-drop"
+    }
+   ]
+  },
+  {
+   "date": "2026-08-20",
+   "region": "EU/UK",
+   "type": "Deal",
+   "company": "Lupin / VISUfarma",
+   "text": "VISUfarma licenses YUVEZZI for EU/UK/CH/NO/IS",
+   "sources": [
+    {
+     "label": "Outsourced Pharma 2026-08-20",
+     "url": "https://www.outsourcedpharma.com/doc/lupin-and-tenpoint-therapeutics-strategic-partnership-commercialize-yuvezzi-european-united-kingdom-switzerland-norway-iceland-0001"
+    }
+   ]
+  },
+  {
+   "date": "2026-09-30",
+   "region": "US",
+   "type": "Corporate",
+   "company": "AbbVie",
+   "text": "VUITY brand end of marketing (NDC listing; UNVERIFIED)",
+   "sources": [
+    {
+     "label": "Eyes On Eyecare guide (Jul 2026)",
+     "url": "https://eyesoneyecare.com/resources/ultimate-guide-presbyopia-drops/"
+    }
+   ]
+  },
+  {
+   "date": "2026-10-16",
+   "region": "US",
+   "type": "Approval",
+   "company": "Viatris / Opus",
+   "text": "FDA approves RYZUMVI for presbyopia",
+   "sources": [
+    {
+     "label": "Viatris PR 2026-10-16",
+     "url": "https://www.placera.se/pressmeddelanden/viatris-viatris-receives-u-s-fda-approval-for-ryzumvi-for-the-treatment-of-presbyopia-20261016"
+    },
+    {
+     "label": "Opus PR 2026-10-16",
+     "url": "https://ir.opusgtx.com/press-releases/detail/546/"
+    }
+   ]
+  }
+ ],
+ "headToHead": [
+  {
+   "key": "VUITY",
+   "product": "VUITY",
+   "responder_pct": 26,
+   "vehicle_pct": 9,
+   "trial": "GEMINI 1 (from June build)",
+   "timepoint": "Day 30, ~3 h",
+   "duration_h": 6,
+   "ae_headache": null,
+   "ae_hyperemia": null,
+   "ae_irritation": null,
+   "ae_dim": null
+  },
+  {
+   "key": "QLOSI",
+   "product": "QLOSI",
+   "responder_pct": null,
+   "vehicle_pct": null,
+   "trial": "NEAR-1/2",
+   "timepoint": "—",
+   "duration_h": 8,
+   "ae_headache": null,
+   "ae_hyperemia": null,
+   "ae_irritation": null,
+   "ae_dim": null
+  },
+  {
+   "key": "VIZZ",
+   "product": "VIZZ",
+   "responder_pct": 71,
+   "vehicle_pct": null,
+   "trial": "CLARITY 1",
+   "timepoint": "30 min & 3 h",
+   "duration_h": 10,
+   "ae_headache": 13,
+   "ae_hyperemia": null,
+   "ae_irritation": 20,
+   "ae_dim": 16
+  },
+  {
+   "key": "YUVEZZI",
+   "product": "YUVEZZI",
+   "responder_pct": null,
+   "vehicle_pct": null,
+   "trial": "BRIO-I/II",
+   "timepoint": "—",
+   "duration_h": 8,
+   "ae_headache": null,
+   "ae_hyperemia": 2.8,
+   "ae_irritation": null,
+   "ae_dim": null
+  },
+  {
+   "key": "RYZUMVI",
+   "product": "RYZUMVI",
+   "responder_pct": 27.2,
+   "vehicle_pct": 11.5,
+   "trial": "VEGA-3",
+   "timepoint": "12 h, Day 8",
+   "duration_h": 12,
+   "ae_headache": null,
+   "ae_hyperemia": 21,
+   "ae_irritation": 16,
+   "ae_dim": null
+  }
+ ],
+ "aeLabels": {
+  "ae_headache": "Headache",
+  "ae_hyperemia": "Conjunctival hyperaemia / redness",
+  "ae_irritation": "Instillation-site irritation",
+  "ae_dim": "Dim vision"
+ },
+ "positioning": [
+  {
+   "Product": "VUITY",
+   "Mechanism": "Pilocarpine 1.25%",
+   "Dosing": "QD (BID allowed)",
+   "Duration": "≤6 h",
+   "PF": "No (BAK)",
+   "Storage": "Room temp",
+   "US price": "Generic available",
+   "Edge": "First-in-class",
+   "Liability": "Brand discontinued; brow ache; RD warnings"
+  },
+  {
+   "Product": "QLOSI",
+   "Mechanism": "Pilocarpine 0.4%",
+   "Dosing": "QD/BID or PRN",
+   "Duration": "≤8 h",
+   "PF": "Yes",
+   "Storage": "Room temp",
+   "US price": "~$79–149/30 vials (third-party)",
+   "Edge": "Low-dose tolerability",
+   "Liability": "No sales disclosed"
+  },
+  {
+   "Product": "VIZZ",
+   "Mechanism": "Aceclidine 1.44%",
+   "Dosing": "QD",
+   "Duration": "≤10 h",
+   "PF": "Yes",
+   "Storage": "Refrigerated",
+   "US price": "$79/25 doses · $198/3 mo",
+   "Edge": "Duration; pupil-selective",
+   "Liability": "Slow uptake; cold chain"
+  },
+  {
+   "Product": "YUVEZZI",
+   "Mechanism": "Carbachol + brimonidine",
+   "Dosing": "QD",
+   "Duration": "≤8 h (≤10 h claimed)",
+   "PF": "Yes",
+   "Storage": "Room temp",
+   "US price": "$79/30 vials · $198/90",
+   "Edge": "FDC; lowest redness",
+   "Liability": "Brimonidine allergy; late entrant"
+  },
+  {
+   "Product": "RYZUMVI",
+   "Mechanism": "Phentolamine 0.75%",
+   "Dosing": "QD at bedtime",
+   "Duration": "12 h endpoint",
+   "PF": "Yes",
+   "Storage": "Refrigerated",
+   "US price": "Not set",
+   "Edge": "No ciliary effects",
+   "Liability": "Modest efficacy; redness 21%; no US partner"
+  },
+  {
+   "Product": "Jetema pilo 1.2% (KR)",
+   "Mechanism": "Pilocarpine 1.2%",
+   "Dosing": "QD",
+   "Duration": "~6 h",
+   "PF": "Single-use",
+   "Storage": "—",
+   "US price": "n/a",
+   "Edge": "Korean data; Korean-iris dosing",
+   "Liability": "No ophthalmic franchise"
+  },
+  {
+   "Product": "Taejoon CTO0307 (KR)",
+   "Mechanism": "Pilocarpine (stabilised)",
+   "Dosing": "QD",
+   "Duration": "Not disclosed",
+   "PF": "—",
+   "Storage": "—",
+   "US price": "n/a",
+   "Edge": "Formulation IP; ophthalmic channel",
+   "Liability": "No NDA confirmed"
+  }
+ ],
+ "deals": [
+  {
+   "date": "2020-08",
+   "asset": "MicroLine",
+   "licensor": "Eyenovia",
+   "licensee": "Arctic Vision",
+   "territory": "Greater China + Korea",
+   "value_usd_m": null,
+   "value_text": "Undisclosed; programme dormant",
+   "label": "",
+   "sources": [
+    {
+     "label": "PharmaShots – ARVN003 Ph3",
+     "url": "https://pharmashots.com/13628/arctic-vision-reports-the-first-patient-enrollment-in-p-iii-clinical-trial-of-arvn003-for-the-treatment-of-presbyopia"
+    }
+   ]
+  },
+  {
+   "date": "2022",
+   "asset": "LNZ100/VIZZ",
+   "licensor": "LENZ",
+   "licensee": "Corxel (now Everest)",
+   "territory": "Greater China",
+   "value_usd_m": 110,
+   "value_text": "$15M upfront + $10M received + up to $85M milestones; 5–15% royalties",
+   "label": "VIZZ → Corxel/Everest (China)",
+   "sources": [
+    {
+     "label": "LENZ 10-Q Q2-26",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001815776/000181577626000052/lenz-20260630.htm"
+    }
+   ]
+  },
+  {
+   "date": "2022",
+   "asset": "Nyxol / RYZUMVI",
+   "licensor": "Ocuphire (Opus)",
+   "licensee": "Viatris",
+   "territory": "Global ex certain Asian countries",
+   "value_usd_m": 165,
+   "value_text": "$35M upfront + up to $130M milestones; royalties low-double-digit → low-20s %",
+   "label": "Phentolamine → Viatris",
+   "sources": [
+    {
+     "label": "Opus 10-Q Q2-26",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001228627/000162828026054381/ird-20260630.htm"
+    }
+   ]
+  },
+  {
+   "date": "2022-05-11",
+   "asset": "Brimochol PF",
+   "licensor": "Visus (Tenpoint)",
+   "licensee": "Zhaoke Ophthalmology",
+   "territory": "Greater China, Korea, SE Asia",
+   "value_usd_m": 130,
+   "value_text": "$15M upfront + up to $115M milestones",
+   "label": "Brimochol → Zhaoke (Asia)",
+   "sources": [
+    {
+     "label": "BioWorld – Zhaoke/Visus 2022",
+     "url": "https://www.bioworld.com/articles/518881-zhaoke-licenses-asian-rights-to-visus-presbyopia-candidates-in-130m-deal"
+    }
+   ]
+  },
+  {
+   "date": "2023-12-08",
+   "asset": "Brimochol PF / YUVEZZI",
+   "licensor": "Zhaoke",
+   "licensee": "Kwangdong",
+   "territory": "Korea",
+   "value_usd_m": null,
+   "value_text": "Undisclosed (DART)",
+   "label": "",
+   "sources": [
+    {
+     "label": "DART (전자공시)",
+     "url": "https://dart.fss.or.kr"
+    }
+   ]
+  },
+  {
+   "date": "2024-09-23",
+   "asset": "QLOSI",
+   "licensor": "Orasis",
+   "licensee": "Optus Pharm",
+   "territory": "Korea",
+   "value_usd_m": 18,
+   "value_text": "₩24.37B (~US$18M) + 15% royalty",
+   "label": "QLOSI → Optus (Korea)",
+   "sources": [
+    {
+     "label": "fnnews 2024-09-23",
+     "url": "https://www.fnnews.com/news/202409231644102301"
+    },
+    {
+     "label": "Orasis/Optus PR 2024-10-16",
+     "url": "https://www.prnewswire.com/news-releases/orasis-pharmaceuticals-announces-licensing-agreement-with-optus-pharmaceuticals-for-commercialization-of-qlosi-pilocarpine-hydrochloride-ophthalmic-solution-0-4-in-korea-302277027.html"
+    }
+   ]
+  },
+  {
+   "date": "2025-05-07",
+   "asset": "VIZZ",
+   "licensor": "LENZ",
+   "licensee": "Lotus Pharmaceutical",
+   "territory": "Korea + 8 SE Asian countries",
+   "value_usd_m": 125,
+   "value_text": "$5M upfront + up to $120M milestones; 10–20% royalties",
+   "label": "VIZZ → Lotus (Korea/SEA)",
+   "sources": [
+    {
+     "label": "LENZ 10-Q Q2-26",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001815776/000181577626000052/lenz-20260630.htm"
+    },
+    {
+     "label": "LENZ PR – MFDS NDA (2025-12-01)",
+     "url": "https://ir.lenz-tx.com/news-events/press-releases/detail/45/"
+    }
+   ]
+  },
+  {
+   "date": "2025-11",
+   "asset": "Brimochol PF",
+   "licensor": "Zhaoke",
+   "licensee": "PT Ferron",
+   "territory": "Indonesia",
+   "value_usd_m": null,
+   "value_text": "Undisclosed",
+   "label": "",
+   "sources": [
+    {
+     "label": "VCBeat – PT Ferron (Nov 2025)",
+     "url": "https://www.vcbeathealth.com/article/2046"
+    }
+   ]
+  },
+  {
+   "date": "2026-01",
+   "asset": "YUVEZZI",
+   "licensor": "Zhaoke",
+   "licensee": "AFT Pharmaceuticals / Senju",
+   "territory": "Singapore / Vietnam",
+   "value_usd_m": null,
+   "value_text": "Undisclosed",
+   "label": "",
+   "sources": [
+    {
+     "label": "Zhaoke interim 2026 (HKEX)",
+     "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0828/2026082803006.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-01",
+   "asset": "VIZZ",
+   "licensor": "LENZ",
+   "licensee": "Lunatus",
+   "territory": "Middle East",
+   "value_usd_m": null,
+   "value_text": "~$0.25M upfront",
+   "label": "",
+   "sources": [
+    {
+     "label": "LENZ Q1-26 PR (2026-05-11)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001815776/000181577626000035/a991q126pressrelease.htm"
+    }
+   ]
+  },
+  {
+   "date": "2026-06",
+   "asset": "VIZZ",
+   "licensor": "LENZ",
+   "licensee": "Laboratoires Théa",
+   "territory": "Canada",
+   "value_usd_m": 67.5,
+   "value_text": "$2.5M filing milestone + up to $65M (deal date not captured)",
+   "label": "VIZZ → Théa (Canada)",
+   "sources": [
+    {
+     "label": "LENZ Q2-26 PR (2026-08-11)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001815776/000181577626000051/a991q226pressrelease.htm"
+    }
+   ]
+  },
+  {
+   "date": "2026-06",
+   "asset": "VIZZ",
+   "licensor": "LENZ",
+   "licensee": "Arrotex",
+   "territory": "Australia / NZ",
+   "value_usd_m": null,
+   "value_text": "Upfront (undisclosed) + mid-double-digit gross-margin share",
+   "label": "",
+   "sources": [
+    {
+     "label": "LENZ 10-Q Q2-26",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001815776/000181577626000052/lenz-20260630.htm"
+    }
+   ]
+  },
+  {
+   "date": "2026-06-07",
+   "asset": "VIZZ",
+   "licensor": "Corxel",
+   "licensee": "Everest Medicines",
+   "territory": "Greater China",
+   "value_usd_m": null,
+   "value_text": "Rights transfer; $1.25M sublicence income to LENZ",
+   "label": "",
+   "sources": [
+    {
+     "label": "Ophthalmology Times 2026-06-09",
+     "url": "https://www.optometrytimes.com/view/everest-medicines-acquires-greater-china-rights-aceclidine-presbyopia-eye-drop-vizz-"
+    },
+    {
+     "label": "LENZ Q2-26 PR (2026-08-11)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001815776/000181577626000051/a991q226pressrelease.htm"
+    }
+   ]
+  },
+  {
+   "date": "2026-06-26",
+   "asset": "Pilocarpine 1.2%",
+   "licensor": "Undisclosed",
+   "licensee": "Jetema",
+   "territory": "Korea",
+   "value_usd_m": null,
+   "value_text": "Undisclosed",
+   "label": "",
+   "sources": [
+    {
+     "label": "뉴스핌 2026-06-26",
+     "url": "https://www.newspim.com/news/view/20260626000690"
+    }
+   ]
+  },
+  {
+   "date": "2026-07",
+   "asset": "QLOSI (BESKA)",
+   "licensor": "Orasis",
+   "licensee": "Aspen Pharmacare Australia",
+   "territory": "Australia",
+   "value_usd_m": null,
+   "value_text": "Undisclosed",
+   "label": "",
+   "sources": [
+    {
+     "label": "TipRanks – Orasis AU NDA (Jul 2026)",
+     "url": "https://www.tipranks.com/news/private-companies/orasis-pharmaceuticals-deepens-qlosi-access-and-files-first-international-nda-for-presbyopia-drop"
+    }
+   ]
+  },
+  {
+   "date": "2026-08-20",
+   "asset": "YUVEZZI",
+   "licensor": "Tenpoint",
+   "licensee": "VISUfarma (Lupin)",
+   "territory": "EU, UK, CH, NO, IS",
+   "value_usd_m": 81,
+   "value_text": "Up to €75M reported (~$81M) + equity in Visus + royalties",
+   "label": "YUVEZZI → VISUfarma (Europe)",
+   "sources": [
+    {
+     "label": "Outsourced Pharma 2026-08-20",
+     "url": "https://www.outsourcedpharma.com/doc/lupin-and-tenpoint-therapeutics-strategic-partnership-commercialize-yuvezzi-european-united-kingdom-switzerland-norway-iceland-0001"
+    },
+    {
+     "label": "Free Press Journal – €75M",
+     "url": "https://www.freepressjournal.in/business/lupin-unit-signs-75-million-yuvezzi-licensing-deal-expands-eye-care-business-across-europe"
+    }
+   ]
+  }
+ ],
+ "rights": [
+  {
+   "Product": "VUITY",
+   "US": "AbbVie ✓ (brand discontinued; generic)",
+   "EU/UK": "—",
+   "China": "—",
+   "Korea": "—",
+   "Other": "—"
+  },
+  {
+   "Product": "QLOSI",
+   "US": "Orasis ✓",
+   "EU/UK": "—",
+   "China": "—",
+   "Korea": "Optus ✎",
+   "Other": "Aspen AU ⏳"
+  },
+  {
+   "Product": "VIZZ",
+   "US": "LENZ ✓",
+   "EU/UK": "LENZ ⏳ (EMA, MHRA)",
+   "China": "Everest ⏳",
+   "Korea": "Lotus / Alvogen ⏳",
+   "Other": "Théa CA ⏳ · Lunatus ME ⏳ · Arrotex ANZ ✎ · Lotus SEA ⏳"
+  },
+  {
+   "Product": "YUVEZZI",
+   "US": "Tenpoint ✓",
+   "EU/UK": "VISUfarma ⏳ (MHRA)",
+   "China": "Zhaoke (Hainan/Macau ✓; NMPA Ph2)",
+   "Korea": "Kwangdong ⏳",
+   "Other": "AFT SG ✎ · Senju VN ✎ · PT Ferron ID ✎"
+  },
+  {
+   "Product": "RYZUMVI",
+   "US": "Viatris ✓ (Oct 2026)",
+   "EU/UK": "Viatris (no filing)",
+   "China": "Opus? (UNVERIFIED)",
+   "Korea": "Opus? (UNVERIFIED)",
+   "Other": "—"
+  },
+  {
+   "Product": "Jetema pilocarpine 1.2%",
+   "US": "—",
+   "EU/UK": "—",
+   "China": "—",
+   "Korea": "Jetema ⏳",
+   "Other": "Asia (exploring)"
+  },
+  {
+   "Product": "Taejoon CTO0307",
+   "US": "—",
+   "EU/UK": "—",
+   "China": "—",
+   "Korea": "Taejoon (Ph3 done)",
+   "Other": "—"
+  }
+ ],
+ "ip": [
+  {
+   "asset": "YUVEZZI",
+   "patent": "New-product exclusivity",
+   "holder": "Tenpoint",
+   "expiry": 2029,
+   "scope": "FDA exclusivity to 28 Jan 2029"
+  },
+  {
+   "asset": "YUVEZZI",
+   "patent": "US8299079",
+   "holder": "Visus (Tenpoint)",
+   "expiry": 2030,
+   "scope": "Method: parasympathomimetic + α-agonist for presbyopia (not Orange Book-listed per GreyB)"
+  },
+  {
+   "asset": "YUVEZZI",
+   "patent": "US8455494",
+   "holder": "Visus (Tenpoint)",
+   "expiry": 2030,
+   "scope": "Low-concentration pilocarpine/brimonidine; names phentolamine (Orange Book-listed)"
+  },
+  {
+   "asset": "VIZZ",
+   "patent": "NCE exclusivity",
+   "holder": "LENZ",
+   "expiry": 2030,
+   "scope": "NCE exclusivity to 31 Jul 2030"
+  },
+  {
+   "asset": "VIZZ",
+   "patent": "Orange Book patents",
+   "holder": "LENZ",
+   "expiry": 2034,
+   "scope": "Two OB patents to 24 Mar 2034 (presbyopia use); portfolio of 85+ patents runs to 2044 (+ up to 5-yr PTE)"
+  },
+  {
+   "asset": "RYZUMVI",
+   "patent": "Formulation family (US9795560 etc.)",
+   "holder": "Opus / Viatris",
+   "expiry": 2034,
+   "scope": "Formulation patents to Jan 2034; Paragraph IV stay to 3 Aug 2027 (mydriasis)"
+  },
+  {
+   "asset": "QLOSI",
+   "patent": "US9867810 family",
+   "holder": "Orasis",
+   "expiry": 2037,
+   "scope": "Ophthalmic compositions — 4 patents to 18 Aug 2037 (aggregator data)"
+  },
+  {
+   "asset": "VUITY",
+   "patent": "US10610518 / US11285134",
+   "holder": "AbbVie",
+   "expiry": 2039,
+   "scope": "Last expiry 2039-04-24 per Pharsight (UNVERIFIED); AB-generic already launched"
+  },
+  {
+   "asset": "RYZUMVI",
+   "patent": "US11400077",
+   "holder": "Opus / Viatris",
+   "expiry": 2039,
+   "scope": "Methods incl. treatment of presbyopia — to 25 Oct 2039"
+  },
+  {
+   "asset": "YUVEZZI",
+   "patent": "US12268662",
+   "holder": "Visus (Tenpoint)",
+   "expiry": 2042,
+   "scope": "Carbachol + brimonidine formulations — to 10 Nov 2042"
+  },
+  {
+   "asset": "VIZZ",
+   "patent": "Portfolio tail",
+   "holder": "LENZ",
+   "expiry": 2044,
+   "scope": "Latest-expiring aceclidine patents (10-K)"
+  },
+  {
+   "asset": "Taejoon CTO0307",
+   "patent": "WO2025230326 (UNVERIFIED no.)",
+   "holder": "Taejoon",
+   "expiry": 2045,
+   "scope": "Pilocarpine + levocarnitine + xanthan gum composition; expiry estimated as filing + 20 y"
+  }
+ ],
+ "ipNotes": [
+  {
+   "title": "VUITY: generic despite listed patents",
+   "body": "Amneal's AB-rated pilocarpine 1.25% launched Aug 2025 although Orange Book patents are listed to 2039 — the outcome of the 2022 Paragraph IV challenge is UNVERIFIED. Treat simple pilocarpine 1.25% as effectively off-patent in the US."
+  },
+  {
+   "title": "Tenpoint's 2030 cliff vs 2042 formulation",
+   "body": "The broad method-of-use claims (US8299079 / US8455494) expire May 2030. US12268662 then protects specific carbachol + brimonidine formulations to 2042. A pilocarpine + brimonidine product launching after 2030 may have more freedom to operate in the US — confirm Korean national-phase status for each family."
+  },
+  {
+   "title": "Holder discrepancy to resolve",
+   "body": "Your June build lists US11857539 / US11969410 / US12156868 under Somerset Therapeutics; the pipeline research associated the same numbers with Allergan/AbbVie. Verify assignees on USPTO Patent Center before relying on either."
+  },
+  {
+   "title": "Link fix needed",
+   "body": "The June build's WO2009/077736 row links to WO2022103250A1 — a different publication. Re-check the reference."
+  }
+ ],
+ "patents": [
+  {
+   "no": "US8299079",
+   "holder": "Visus Therapeutics (now Tenpoint)",
+   "status": "Active until 2030",
+   "scope": "Method of treating presbyopia using parasympathomimetics (pilocarpine, carbachol) combined with alpha agonist (brimonidine 0.05–3.0%) — broad method-of-use claim.",
+   "note": "Tenpoint now holds YUVEZZI + this foundational patent. May license, enforce, or both. Contact required before development.",
+   "ref": "https://patents.google.com/patent/US8299079"
+  },
+  {
+   "no": "US11857539",
+   "holder": "Somerset Therapeutics LLC",
+   "status": "Active until 2043",
+   "scope": "Gel formulation — pilo >1% + brim 0.05–0.2% with polyethoxylated castor oil",
+   "note": "",
+   "ref": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/11857539"
+  },
+  {
+   "no": "US11969410",
+   "holder": "Somerset Therapeutics LLC",
+   "status": "Active until 2043",
+   "scope": "Low pH formulation — pH 3–5.5, pilo 1.15–3% + brim 0.05–0.18%, BAK 0.003–0.02%",
+   "note": "",
+   "ref": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/11969410"
+  },
+  {
+   "no": "US12156868",
+   "holder": "Somerset Therapeutics LLC",
+   "status": "Active until 2043",
+   "scope": "Solution formulation — pilo 1.15–2.5% + brim 0.05–0.18%, viscosity enhancer 0.1–1%",
+   "note": "",
+   "ref": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/12156868"
+  },
+  {
+   "no": "WO2009/077736",
+   "holder": "Unknown",
+   "status": "Active until 2027–2028",
+   "scope": "Combination of pilocarpine + brimonidine (or iopidine) for presbyopia, myopia, hypermetropia, low night vision. National phase status varies by country including Korea.",
+   "note": "Check whether applied in Korean territory. Active time 1–2 years from now — inline with development timeline.",
+   "ref": "https://patents.google.com/patent/WO2022103250A1"
+  },
+  {
+   "no": "US8455494",
+   "holder": "Visus Therapeutics (now Tenpoint)",
+   "status": "Active until May 2030",
+   "scope": "Brimonidine <0.2%; pilocarpine <0.5% or even <0.1%; also covers phentolamine as alpha antagonist. Continuation of US8299079 detailing chemical concentrations.",
+   "note": "Explicit naming of very low pilocarpine concentrations (<0.1%) means Tenpoint IP potentially reaches micro-dose formulations that might otherwise seem safely distant from the claimed range.",
+   "ref": "https://patents.google.com/patent/US8455494"
+  }
+ ],
+ "revenue": [
+  {
+   "key": "VIZZ",
+   "product": "VIZZ (LENZ)",
+   "period": "Q4 2025",
+   "usd_m": 1.588,
+   "volume": ">20,000 filled Rx",
+   "prescribers": ">6,500"
+  },
+  {
+   "key": "VIZZ",
+   "product": "VIZZ (LENZ)",
+   "period": "Q1 2026",
+   "usd_m": 1.651,
+   "volume": "~25,000 paid Rx",
+   "prescribers": ">10,000 (~60% repeat)"
+  },
+  {
+   "key": "VIZZ",
+   "product": "VIZZ (LENZ)",
+   "period": "Q2 2026",
+   "usd_m": 1.736,
+   "volume": "~27,000 packs",
+   "prescribers": ">13,000 (~75% repeat)"
+  }
+ ],
+ "tractionNotes": [
+  {
+   "title": "Only LENZ discloses sales",
+   "body": "AbbVie never broke out VUITY; Orasis and Tenpoint are private. QLOSI's only metric is a 49.1% refill rate (Jul 2026). No public IQVIA script data was found."
+  },
+  {
+   "title": "Consensus reset",
+   "body": "Visible Alpha consensus (Oct 2025) had ~$45M VIZZ sales in 2026 and $1.1B peak by 2038; H1-26 actual was $3.4M. Piper Sandler cut its target to $5 (19 Oct 2026); LENZ market cap (~$113M) sits below its $220M cash."
+  },
+  {
+   "title": "Price convergence",
+   "body": "VIZZ and YUVEZZI both sell at $79/month or $198/quarter cash-pay via direct-to-patient channels (Amazon, PHIL, BlinkRx, telehealth)."
+  }
+ ],
+ "marketNotes": [
+  {
+   "title": "Analyst market sizes disagree",
+   "body": "2025–26 vendor estimates range from ~$1.6B (myopia + presbyopia drops, Coherent) to $10–20B (all presbyopia treatment). Methods are opaque — use product-level revenue (above) as the reality check."
+  }
+ ],
+ "products": [
+  {
+   "brand": "VUITY®",
+   "generic": "Pilocarpine hydrochloride ophthalmic solution 1.25%",
+   "company": "Allergan / AbbVie",
+   "approval_status": "FDA Approved",
+   "approval_date": "October 28, 2021",
+   "approval_note": "First-ever FDA-approved presbyopia eye drop. Brand discontinued by AbbVie in 2026; Amneal AB-rated generic (ANDA 217733) launched Aug 2025.",
+   "nda_number": "NDA 214028",
+   "application_type": "NDA — 505(b)(1)",
+   "active_ingredient": "Pilocarpine hydrochloride",
+   "concentration": "1.25% (12.5 mg/mL)",
+   "drug_class": "Cholinergic muscarinic M3 receptor agonist (partial)",
+   "moa": "Partial M3 muscarinic receptor agonist. Activates M3 on iris sphincter → miosis (pinhole effect). Simultaneously activates M3 on ciliary muscle → zonule relaxation → lens thickening → accommodation. Partial-agonist ceiling self-limits spasm risk compared to carbachol.",
+   "technology": "pH-buffered low-viscosity isotonic solution; BAK-preserved multi-dose bottle",
+   "dosing": "1 drop each eye once daily. Second dose possible 3–6 h after first. Separate from other drops by ≥5 min.",
+   "dosage_form": "2.5 mL multi-dose bottle",
+   "onset": "As early as 15 min",
+   "duration": "Up to 6 hours",
+   "storage": "Room temperature 15–25°C",
+   "preservative": "BAK 0.0075%",
+   "ph_range": "3.5–5.5",
+   "excipients": [
+    {
+     "name": "Benzalkonium chloride (BAK) 0.0075%",
+     "role": "Preservative",
+     "function": "Antimicrobial for multi-dose bottle. Disrupts microbial cell membranes. Lowest BAK concentration among BAK-preserved ophthalmic products; risk of chronic corneal epithelial toxicity with long-term daily use."
+    },
+    {
+     "name": "Boric acid",
+     "role": "Buffer",
+     "function": "Maintains pH 3.5–5.5 preventing pilocarpine hydrolysis to inactive isopilocarpine. Mild antimicrobial."
+    },
+    {
+     "name": "Sodium citrate dihydrate",
+     "role": "Buffer / Chelating",
+     "function": "Chelates divalent metal ions (Ca²⁺, Fe²⁺) that catalyze oxidative degradation. Softens acidity sting on instillation."
+    },
+    {
+     "name": "Sodium chloride",
+     "role": "Tonicity agent",
+     "function": "Adjusts osmolality to ~280–320 mOsm/kg. Minimises instillation discomfort."
+    },
+    {
+     "name": "Purified water",
+     "role": "Vehicle",
+     "function": "Aqueous vehicle, USP grade."
+    },
+    {
+     "name": "HCl / NaOH",
+     "role": "pH adjuster",
+     "function": "Titrates final pH to 3.5–5.5 during manufacturing."
+    }
+   ],
+   "key_trials": [
+    {
+     "name": "GEMINI 1 (Phase 3)",
+     "citation": "Waring GO et al. JAMA Ophthalmol. 2022;140:363–371",
+     "design": "RCT, double-masked, vehicle-controlled, 30 days, n=354",
+     "primary_endpoint": "≥3-line mesopic DCNVA gain + <5-letter BCDVA loss",
+     "result": "~26% achieved ≥3-line gain vs ~9% vehicle. Onset Day 1. Peak ~1h. Duration up to 6h."
+    },
+    {
+     "name": "GEMINI 2 (Phase 3)",
+     "citation": "Confirmatory — supported NDA submission",
+     "design": "Identical design to GEMINI 1",
+     "primary_endpoint": "Same composite endpoint",
+     "result": "Confirmed GEMINI 1 results. Both trials supported FDA approval Oct 2021."
+    }
+   ],
+   "efficacy_summary": "~26% ≥3-line mesopic DCNVA gain vs ~9% vehicle. Onset 15 min, peak ~1h, duration up to 6h. Distance vision preserved.",
+   "contraindications": "Known hypersensitivity. Caution: iritis, narrow anterior chamber angle, history of retinal disease.",
+   "molecular_formula": "C₁₁H₁₆N₂O₂ · HCl",
+   "molecular_weight": "244.72 g/mol",
+   "key": "VUITY",
+   "side_effects": [
+    {
+     "ae": "Headache / brow ache",
+     "incidence": ">5%",
+     "note": "Rapid ciliary muscle contraction (spasm). Most common discontinuation reason."
+    },
+    {
+     "ae": "Conjunctival hyperemia",
+     "incidence": ">5%",
+     "note": "Cholinergic-mediated vasodilation."
+    },
+    {
+     "ae": "Blurred vision",
+     "incidence": "Common",
+     "note": "Transient; shortly after instillation."
+    },
+    {
+     "ae": "Dim / dark vision",
+     "incidence": "Common",
+     "note": "Miosis reduces light entry; worse in low-light settings."
+    },
+    {
+     "ae": "Myopic shift",
+     "incidence": "Up to −1.75 D",
+     "note": "Over-accommodation; temporary distance blurring."
+    },
+    {
+     "ae": "Retinal detachment / tear",
+     "incidence": "Rare",
+     "note": "Case reports post-approval. Higher risk in myopes. Retinal exam recommended before initiating therapy."
+    }
+   ],
+   "status": "FDA Approved 2021 · brand discontinued 2026",
+   "updates": [
+    "FDA action date was 2021-10-28.",
+    "AbbVie discontinued the brand in 2026; Amneal's AB-rated generic launched Aug 2025."
+   ]
+  },
+  {
+   "brand": "QLOSI™",
+   "generic": "Pilocarpine hydrochloride ophthalmic solution 0.4%",
+   "company": "Orasis Pharmaceuticals / Optus Pharma (Korea)",
+   "approval_status": "FDA Approved",
+   "approval_date": "October 17, 2023",
+   "approval_note": "Second approved; lowest-concentration pilocarpine; PF unit-dose. US launch Apr 2025. Korea: Optus licence Sep 2024 (₩24.37B), MFDS NDA not yet filed (Aug 2026). Australia: BESKA NDA filed Jul 2026.",
+   "nda_number": "NDA 217836",
+   "application_type": "NDA — 505(b)(1)",
+   "active_ingredient": "Pilocarpine hydrochloride",
+   "concentration": "0.4% (4 mg/mL)",
+   "drug_class": "Cholinergic muscarinic M3 receptor agonist (partial, low-dose)",
+   "moa": "Same M3 agonism as Vuity but 0.4% concentration. Sits below the ciliary spasm threshold while above the miosis efficacy threshold. Polysorbate 80 enhances corneal penetration at this low concentration. PRN use possible — designed for on-demand dosing.",
+   "technology": "Low-dose miotic; PF unit-dose vial; polysorbate 80 penetration enhancer system",
+   "dosing": "1 drop each eye once daily or as needed. Single-use vial — discard after use.",
+   "dosage_form": "0.3 mL PF unit-dose vials",
+   "onset": "Within 30 min",
+   "duration": "Up to 8 hours",
+   "storage": "Room temperature 15–30°C",
+   "preservative": "None (PF)",
+   "ph_range": "~5.0–5.5",
+   "excipients": [
+    {
+     "name": "Polysorbate 80",
+     "role": "Solubilizer / Penetration enhancer",
+     "function": "Enhances corneal penetration at low pilocarpine concentration by loosening tight junctions and improving drug partitioning into corneal lipid layers. Critical for maintaining efficacy at 0.4%."
+    },
+    {
+     "name": "Boric acid",
+     "role": "Buffer",
+     "function": "Maintains acidic pH (5.0–5.5) stabilising pilocarpine against hydrolysis."
+    },
+    {
+     "name": "Mannitol",
+     "role": "Tonicity agent / Stabiliser",
+     "function": "Provides isotonicity without chloride ions. Avoids chloride-catalysed pilocarpine oxidation. Also mild antioxidant."
+    },
+    {
+     "name": "Sodium chloride",
+     "role": "Tonicity co-agent",
+     "function": "Fine-tunes osmolality to physiological range."
+    },
+    {
+     "name": "HCl / NaOH",
+     "role": "pH adjuster",
+     "function": "Titrates to pH 5.0–5.5."
+    },
+    {
+     "name": "Water for injection",
+     "role": "Vehicle",
+     "function": "USP WFI — highest purity for sterile PF unit-dose."
+    }
+   ],
+   "key_trials": [
+    {
+     "name": "NEAR-1 & NEAR-2 (Phase 3)",
+     "citation": "Holland E et al. Clin Ther. 2024;46:104–113",
+     "design": "Two multicenter, double-masked, vehicle-controlled trials. Oct 2020–Feb 2022. 35 US sites.",
+     "primary_endpoint": "≥3-line mesopic DCNVA + <5-letter BCDVA loss",
+     "result": "Both trials met primary and secondary endpoints. Duration up to 8h. Lower brow ache vs 1.25% formulations."
+    }
+   ],
+   "efficacy_summary": "Both NEAR-1 and NEAR-2 met primary endpoints. Duration up to 8h. Lower side effect burden vs Vuity due to reduced concentration.",
+   "contraindications": "Known hypersensitivity. Caution: iritis, narrow angle, retinal disease.",
+   "molecular_formula": "C₁₁H₁₆N₂O₂ · HCl",
+   "molecular_weight": "244.72 g/mol",
+   "key": "QLOSI",
+   "side_effects": [
+    {
+     "ae": "Headache / brow ache",
+     "incidence": "Lower than Vuity",
+     "note": "Reduced ciliary spasm at 0.4%."
+    },
+    {
+     "ae": "Dim vision",
+     "incidence": "Common (class)",
+     "note": "Miosis reduces light entry."
+    },
+    {
+     "ae": "Eye irritation",
+     "incidence": "Mild",
+     "note": "Less than BAK-preserved products."
+    },
+    {
+     "ae": "Myopic shift",
+     "incidence": "Reduced vs Vuity",
+     "note": "Less ciliary stimulation."
+    },
+    {
+     "ae": "Retinal detachment",
+     "incidence": "Rare (class warning)",
+     "note": "Retained for all miotics."
+    }
+   ],
+   "status": "FDA Approved 2023-10-17 · NDA 217836",
+   "updates": [
+    "Correct NDA is 217836 (not 215962).",
+    "Korea: Optus licence was Sep 2024 (₩24.37B) and the MFDS NDA is still not filed.",
+    "Australia: BESKA NDA filed with TGA (Jul 2026)."
+   ]
+  },
+  {
+   "brand": "VIZZ™",
+   "generic": "Aceclidine ophthalmic solution 1.44%",
+   "company": "LENZ Therapeutics (Nasdaq: LENZ)",
+   "approval_status": "FDA Approved",
+   "approval_date": "July 31, 2025",
+   "approval_note": "First FDA-approved aceclidine; first once-daily drop with ≤10h efficacy; new chemical entity (NCE). Korea: LENZ → Lotus licence May 2025 (Alvogen Korea expected commercialiser); Lotus filed MFDS NDA 1 Dec 2025.",
+   "nda_number": "NDA 218585",
+   "application_type": "NDA — 505(b)(1) — NCE",
+   "active_ingredient": "Aceclidine hydrochloride (≡ 1.44% aceclidine)",
+   "concentration": "1.75% aceclidine HCl (17.82 mg/mL)",
+   "drug_class": "Iris-selective cholinergic muscarinic M3 agonist (pupil-selective miotic)",
+   "moa": "Aceclidine binds M3 receptors with preferential selectivity for iris sphincter over ciliary muscle. Stronger/longer pupil constriction (sub-2mm) than pilocarpine with markedly less ciliary stimulation. Hypromellose extends ocular surface residence time → 10h duration. No myopic shift, minimal brow ache.",
+   "technology": "Iris-selective NCE; viscous solution with hypromellose for extended contact time; refrigerated PF unit-dose",
+   "dosing": "1 drop each eye once daily. Effect within 30 min. Discard single-use vial after use.",
+   "dosage_form": "PF unit-dose vials (refrigerated)",
+   "onset": "Within 30 min",
+   "duration": "Up to 10 hours",
+   "storage": "Refrigerated 2–8°C. Do not freeze.",
+   "preservative": "None (PF)",
+   "ph_range": "4.5–5.5",
+   "excipients": [
+    {
+     "name": "Polysorbate 80",
+     "role": "Solubilizer / Wetting",
+     "function": "Solubilises aceclidine HCl, enhances corneal penetration. Wetting agent improving drug-ocular surface contact."
+    },
+    {
+     "name": "Mannitol",
+     "role": "Tonicity / Stabiliser",
+     "function": "Primary tonicity agent (~280–320 mOsm/kg). Lower metal ion-catalysed degradation risk vs NaCl. Mild antioxidant."
+    },
+    {
+     "name": "Hypromellose (HPMC)",
+     "role": "Viscosity / Bioadhesive",
+     "function": "KEY efficacy excipient. Increases viscosity (~15–25 cP), slows nasolacrimal drainage → extended ocular surface residence time → major contributor to 10h duration advantage. Also lubricates."
+    },
+    {
+     "name": "Edetate disodium (EDTA·2Na)",
+     "role": "Chelating / Penetration aid",
+     "function": "Sequesters divalent metals (Ca²⁺, Fe²⁺) preventing oxidative degradation. Chelates Ca²⁺ from tight junctions → increased corneal permeability."
+    },
+    {
+     "name": "Sodium citrate dihydrate",
+     "role": "Buffer",
+     "function": "Citrate buffer maintains pH 4.5–5.5. Better tolerated than phosphate at equivalent molarity."
+    },
+    {
+     "name": "HCl / NaOH",
+     "role": "pH adjuster",
+     "function": "Titrates to 4.5–5.5. Aceclidine (pKa ~9.5) most stable at acidic pH."
+    },
+    {
+     "name": "Water for injection",
+     "role": "Vehicle",
+     "function": "USP WFI for sterile PF unit-dose."
+    }
+   ],
+   "key_trials": [
+    {
+     "name": "CLARITY 1 (Phase 3)",
+     "citation": "NCT05656027 · n=466 · 42 days",
+     "design": "RCT, double-masked, vehicle-controlled, once daily, multicenter",
+     "primary_endpoint": "≥3-line mesopic DCNVA + <5-letter BCDVA loss",
+     "result": "Met all primary & secondary endpoints (p<0.0001). 71% gained ≥3 lines at 30 min and 3h. 40% maintained at 10h."
+    },
+    {
+     "name": "CLARITY 2 (Phase 3)",
+     "citation": "NCT06045299 · n=466 · 42 days",
+     "design": "Confirmatory RCT, double-masked, vehicle-controlled",
+     "primary_endpoint": "Same composite",
+     "result": "All endpoints met. 70–75% pooled ≥3-line vs ~10–15% vehicle. No serious treatment-related AEs in 30,000+ treatment days."
+    },
+    {
+     "name": "CLARITY 3 (6-month safety)",
+     "citation": "NCT05753189 · n=217",
+     "design": "Open-label 6-month safety extension",
+     "primary_endpoint": "Long-term safety",
+     "result": "Well-tolerated at 6 months. No tachyphylaxis. Sustained efficacy confirmed."
+    }
+   ],
+   "efficacy_summary": "70–75% ≥3-line DCNVA gain vs ~10–15% vehicle. Onset 30 min. Duration up to 10h — longest approved. No myopic shift. No serious AEs in 30,000+ treatment days.",
+   "contraindications": "Known hypersensitivity to aceclidine or excipients. Caution: iritis, narrow anterior chamber angle.",
+   "molecular_formula": "C₉H₁₅NO₂ · HCl",
+   "molecular_weight": "205.68 g/mol",
+   "key": "VIZZ",
+   "side_effects": [
+    {
+     "ae": "Instillation site irritation",
+     "incidence": "~20%",
+     "note": "Transient, mild, self-resolving. Related to acidic pH."
+    },
+    {
+     "ae": "Dim vision",
+     "incidence": "~16%",
+     "note": "Miosis reduces light entry; expected class effect."
+    },
+    {
+     "ae": "Headache",
+     "incidence": "~13%",
+     "note": "Significantly lower than pilocarpine; minimal ciliary stimulation."
+    },
+    {
+     "ae": "Eye redness",
+     "incidence": "Low",
+     "note": "Minimal hyperemia."
+    },
+    {
+     "ae": "Myopic shift",
+     "incidence": "Minimal to none",
+     "note": "Iris-selective mechanism avoids significant ciliary stimulation."
+    }
+   ],
+   "status": "FDA Approved 2025-07-31 · launched Oct 2025",
+   "updates": [
+    "Korea NDA was filed by Lotus on 2025-12-01; Alvogen Korea is the expected commercialiser.",
+    "China rights moved from Corxel to Everest (Jun 2026); NMPA approval guided Q1 2027. EMA MAA validated Mar 2026."
+   ]
+  },
+  {
+   "brand": "YUVEZZI™",
+   "generic": "Carbachol 2.75% / Brimonidine tartrate 0.1% ophthalmic solution",
+   "company": "Tenpoint Therapeutics (Visus) / Kwangdong Pharma (Korea)",
+   "approval_status": "FDA Approved",
+   "approval_date": "January 28, 2026",
+   "approval_note": "First FDA-approved dual-agent FDC for presbyopia. Korea: Kwangdong licence (DART contract 8 Dec 2023), MFDS NDA filed Sep–Nov 2025 — first presbyopia NDA in Korea.",
+   "nda_number": "NDA 220142",
+   "application_type": "NDA — 505(b)(2) — Fixed-dose combination",
+   "active_ingredient": "Carbachol 2.75% + Brimonidine tartrate 0.1%",
+   "concentration": "Carbachol: 27.5 mg/mL (2.75%) | Brimonidine tartrate: 1.0 mg/mL (0.1%)",
+   "drug_class": "FDC: Full muscarinic+nicotinic agonist (carbachol) + presynaptic α2-adrenergic agonist (brimonidine)",
+   "moa": "CARBACHOL (full M3+nicotinic agonist): Directly contracts iris sphincter → strong miosis. Contracts ciliary muscle → accommodation. Full agonism gives stronger, longer miosis than pilocarpine.\n\nBRIMONIDINE (presynaptic α2 agonist): Blocks α2 receptors at iris dilator nerve terminals → inhibits NE release → dilator silenced. Also (1) relaxes tonic ciliary tension → reduces carbachol brow ache, (2) vasoconstricts conjunctiva → reduces redness (2.8% vs 10.7% carbachol alone), (3) increases cholinergic bioavailability in aqueous ~50%.\n\nNet: stronger sustained miosis than either drug alone, lower side effects than carbachol monotherapy.",
+   "technology": "Dual-pathway FDC; parasympathetic (M3) + sympathetic (α2) simultaneous targeting; PF unit-dose",
+   "dosing": "1 drop each eye once daily. Single-use vial — discard after opening.",
+   "dosage_form": "0.3 mL PF unit-dose vials",
+   "onset": "30–60 min",
+   "duration": "Up to 8 hours",
+   "storage": "Room temperature 20–25°C. Protect from light.",
+   "preservative": "None (PF)",
+   "ph_range": "~6.5–7.5",
+   "excipients": [
+    {
+     "name": "Sodium chloride",
+     "role": "Tonicity agent",
+     "function": "Adjusts osmolality (~280–320 mOsm/kg). Both APIs are stable in isotonic NaCl solution."
+    },
+    {
+     "name": "Sodium phosphate monobasic",
+     "role": "Buffer",
+     "function": "Maintains pH 6.5–7.5 where both carbachol and brimonidine tartrate are chemically stable. Phosphate buffer well-tolerated ophthalmically."
+    },
+    {
+     "name": "HCl / NaOH",
+     "role": "pH adjuster",
+     "function": "Fine-tunes pH. Carbachol stable at pH 5–8; brimonidine at pH 6–8. pH chosen to satisfy both APIs."
+    },
+    {
+     "name": "Water for injection",
+     "role": "Vehicle",
+     "function": "USP WFI for sterile PF unit-dose."
+    }
+   ],
+   "key_trials": [
+    {
+     "name": "BRIO-I (Phase 3 — combination superiority)",
+     "citation": "NCT05270863 · Tenpoint Therapeutics",
+     "design": "3-arm RCT: YUVEZZI vs carbachol alone vs brimonidine alone",
+     "primary_endpoint": "Combination superiority over each active monotherapy (FDA FDC requirement)",
+     "result": "YUVEZZI superior to both individual active components. Met FDA combination superiority requirement."
+    },
+    {
+     "name": "BRIO-II (Phase 3 — 12-month safety)",
+     "citation": "NCT05270876 · 72,000+ treatment days",
+     "design": "Vehicle-controlled, 12-month — longest presbyopia safety study to date",
+     "primary_endpoint": "≥3-line BUNVA improvement; 12-month safety",
+     "result": "All near vision endpoints met sustained over 8h. Hyperemia 2.8% vs 10.7% carbachol alone. No serious AEs in 72,000+ treatment days."
+    }
+   ],
+   "efficacy_summary": "Superior to both monotherapies. ≥3-line BUNVA over 8h sustained. Lowest hyperemia (2.8%). 72,000+ treatment-day safety dataset — most extensive in category.",
+   "contraindications": "Known hypersensitivity. CONTRAINDICATED in young children. Caution: antihypertensives, MAO inhibitors, iritis.",
+   "molecular_formula": "Carbachol: C₆H₁₅ClN₂O₂ (MW 182.65) | Brimonidine tartrate: C₁₁H₁₀BrN₅·C₄H₆O₆ (MW 442.24)",
+   "molecular_weight": "Carbachol: 182.65 g/mol | Brimonidine tartrate: 442.24 g/mol",
+   "key": "YUVEZZI",
+   "side_effects": [
+    {
+     "ae": "Ocular hyperemia",
+     "incidence": "2.8% — lowest of all drops",
+     "note": "Brimonidine vasoconstriction offsets carbachol hyperemia."
+    },
+    {
+     "ae": "Brow ache / headache",
+     "incidence": "Reduced vs carbachol alone",
+     "note": "Brimonidine dampens carbachol ciliary spasm."
+    },
+    {
+     "ae": "Dim vision",
+     "incidence": "Common (class)",
+     "note": "Expected."
+    },
+    {
+     "ae": "Myopic shift",
+     "incidence": "Possible, reduced",
+     "note": "Brimonidine's ciliary relaxation partially offsets carbachol-driven shift."
+    },
+    {
+     "ae": "Dry mouth (brimonidine)",
+     "incidence": "Uncommon",
+     "note": "α2 effect on salivary glands; low risk at 0.1%."
+    },
+    {
+     "ae": "CNS / hypotension",
+     "incidence": "Rare at 0.1%",
+     "note": "Monitor in elderly or antihypertensive users."
+    },
+    {
+     "ae": "Young children",
+     "incidence": "CONTRAINDICATED",
+     "note": "Brimonidine crosses immature blood-brain barrier → CNS depression."
+    }
+   ],
+   "status": "FDA Approved 2026-01-28 · NDA 220142",
+   "updates": [
+    "Correct NDA is 220142 (sponsor of record: Visus).",
+    "Kwangdong's MFDS NDA date is reported as Sep 2025 (Korean press) and ~Nov 2025 (Tenpoint)."
+   ]
+  },
+  {
+   "brand": "Ryzumvi®",
+   "generic": "Phentolamine mesylate ophthalmic solution 0.75%",
+   "company": "Viatris / Opus Genetics",
+   "approval_status": "FDA Approved (mydriasis reversal) | Presbyopia: approved Oct 2026",
+   "approval_date": "Sep 25, 2023 (mydriasis) | Presbyopia: Oct 16, 2026",
+   "approval_note": "Approved for mydriasis reversal (NDA 217064). Presbyopia sNDA accepted Feb 25, 2026 and APPROVED (announced Oct 16, 2026, one day before PDUFA). Same formulation; indication expansion. Viatris exploring a US commercial partner.",
+   "nda_number": "NDA 217064",
+   "application_type": "NDA — 505(b)(2) (original); sNDA (presbyopia indication expansion)",
+   "active_ingredient": "Phentolamine mesylate",
+   "concentration": "0.75% (10 mg/mL mesylate ≡ 7.5 mg/mL free base)",
+   "drug_class": "Non-selective α1/α2-adrenergic antagonist (alpha-blocker)",
+   "moa": "PRIMARY — α1 postsynaptic blockade at iris dilator: Blocks α1 receptors on iris dilator → dilator cannot contract → sphincter acts unopposed → passive pupil constriction. NO direct sphincter activation. NO ciliary muscle involvement.\n\nSECONDARY — α2 blockade at sphincter: Blocks inhibitory α2 on sphincter → releases brake → adds indirect sphincter activation.\n\nCONSEQUENCE: No brow ache (no ciliary spasm), no myopic shift (no ciliary contraction), no retinal traction risk. Effect lasts up to 20h from a single EVENING dose.",
+   "technology": "α1/α2 antagonist; ultra-minimalist PF formulation with nitrogen overlay to prevent oxidation; evening dosing; refrigerated",
+   "dosing": "1 drop each eye once daily IN THE EVENING. 20h duration covers following morning/day. Nasolacrimal duct occlusion recommended.",
+   "dosage_form": "0.31 mL PF unit-dose vials (5 per foil pouch, 6 pouches per carton)",
+   "onset": "60–90 min after evening instillation",
+   "duration": "Up to 20 hours",
+   "storage": "Refrigerated 2–8°C. After opening pouch: up to 25°C for 14 days. Do not freeze.",
+   "preservative": "None (PF)",
+   "ph_range": "4.5–5.5",
+   "excipients": [
+    {
+     "name": "Mannitol",
+     "role": "Tonicity / Antioxidant",
+     "function": "Primary tonicity agent. CRITICAL: used instead of NaCl because chloride ions catalyse phentolamine oxidation. Mannitol also acts as mild hydroxyl radical scavenger — secondary antioxidant function preserving potency."
+    },
+    {
+     "name": "Sodium acetate trihydrate",
+     "role": "Buffer",
+     "function": "Acetate buffer maintains pH 4.5–5.5 where phentolamine is most chemically stable. Low-molarity acetate (5–25 mM) minimises instillation sting while providing adequate pH control."
+    },
+    {
+     "name": "HCl / NaOH",
+     "role": "pH adjuster",
+     "function": "Titrates to 4.5–5.5 satisfying acetate buffer range and phentolamine stability simultaneously."
+    },
+    {
+     "name": "Water for injection",
+     "role": "Vehicle",
+     "function": "Metal-ion free USP WFI — critical given phentolamine's metal-catalysed oxidation sensitivity."
+    },
+    {
+     "name": "Nitrogen gas (headspace)",
+     "role": "Antioxidant atmosphere",
+     "function": "UNIQUE FEATURE — vial headspace filled with nitrogen before sealing. Eliminates dissolved oxygen preventing phentolamine air oxidation. Only approved ophthalmic drug with this feature. Explains why unit-dose format is required: once opened, nitrogen atmosphere is lost."
+    }
+   ],
+   "key_trials": [
+    {
+     "name": "VEGA-3 (Phase 3 presbyopia — primary pivotal)",
+     "citation": "Viatris/Opus Genetics · n=545 · 40 US sites",
+     "design": "RCT, double-masked, placebo-controlled, once-daily EVENING dose, 6-week + 48-week safety follow-up",
+     "primary_endpoint": "≥3-line DCNVA + <5-letter BCDVA loss at 12h post-dose, Day 8",
+     "result": "MET: 27.2% vs 11.5% placebo (p<0.0001). Secondary: 20.6% vs 6.1% at 1h Day 1 (p=0.0002). Patient-reported outcomes significant at Days 3, 8, Week 6. No serious treatment-related AEs. No tachyphylaxis at 6 weeks."
+    },
+    {
+     "name": "VEGA-2 (Phase 3 presbyopia — second pivotal)",
+     "citation": "n=333, ages 40–64",
+     "design": "Phase 3 with phentolamine ± adjunctive pilocarpine arm",
+     "primary_endpoint": "Near VA improvement",
+     "result": "Met primary endpoint. Phentolamine alone and with low-dose pilocarpine both significantly improved near VA."
+    },
+    {
+     "name": "MIRA-2 + MIRA-3 (Phase 3 — mydriasis reversal, approved)",
+     "citation": "n=553 combined, age 12–80",
+     "design": "Two pivotal RCTs for mydriasis reversal",
+     "primary_endpoint": "Return to baseline pupil at 60 and 90 min",
+     "result": "Both met. Supported NDA 217064 approval Sep 2023. Established safety infrastructure for sNDA."
+    }
+   ],
+   "efficacy_summary": "VEGA-3: 27.2% ≥3-line DCNVA at 12h Day 8 vs 11.5% placebo (p<0.0001). Evening dose provides up to 20h near vision — effect present on waking. No brow ache. No myopic shift. Presbyopia indication approved Oct 2026 (label AEs: conjunctival redness 21%, instillation irritation 16%).",
+   "contraindications": "Known hypersensitivity. Active uveitis/iritis. Caution: antihypertensives, cardiac conditions, MAO inhibitors. Presbyopia indication approved Oct 2026 — dose once daily at bedtime.",
+   "molecular_formula": "C₁₇H₁₉N₃O · CH₃SO₃H (mesylate) | C₁₇H₁₉N₃O (free base)",
+   "molecular_weight": "377.46 g/mol (mesylate) | 281.36 g/mol (free base)",
+   "key": "RYZUMVI",
+   "side_effects": [
+    {
+     "ae": "Systemic hypotension",
+     "incidence": "Low risk at ophthalmic dose",
+     "note": "α-blockade lowers BP; caution with antihypertensives. Nasolacrimal occlusion recommended."
+    },
+    {
+     "ae": "Dim vision at night",
+     "incidence": "Possible",
+     "note": "Miosis reduces light; minimised by evening dosing (patient asleep during peak)."
+    },
+    {
+     "ae": "Uveitis — CONTRAINDICATED",
+     "incidence": "Absolute",
+     "note": "Risk of synechiae in inflamed eyes."
+    },
+    {
+     "ae": "Reflex tachycardia",
+     "incidence": "Rare",
+     "note": "Compensatory HR increase from α-blockade."
+    },
+    {
+     "ae": "Refrigeration requirement",
+     "incidence": "Compliance concern",
+     "note": "Only presbyopia drug requiring cold-chain storage."
+    }
+   ],
+   "status": "FDA Approved for presbyopia — announced 2026-10-16",
+   "updates": [
+    "The presbyopia sNDA was approved one day before the 17 Oct 2026 PDUFA date.",
+    "Label: once daily at bedtime; most common AEs conjunctival redness 21%, instillation irritation 16%. Viatris is seeking a US partner."
+   ]
+  }
+ ],
+ "pkpd": [
+  {
+   "drug": "Pilocarpine",
+   "study": "28-day GLP ocular toxicology",
+   "model": "NZW rabbit · 5–7/sex/group · BID × 28 days",
+   "endpoint": "Ocular safety (Draize); histopathology; iris response",
+   "result": "NOAEL = 1.0% pilocarpine BID. Slow iris responses observed at NOAEL — non-adverse and reversible. No histopathological findings at any dose.",
+   "ref": "https://cdn.clinicaltrials.gov/large-docs/15/NCT02780115/Prot_001.pdf",
+   "ref_short": "NCT02780115 Protocol"
+  },
+  {
+   "drug": "Pilocarpine",
+   "study": "Single-dose ocular PK",
+   "model": "Dutch-belted rabbit · Single bilateral dose · Fixed vs unfixed combo",
+   "endpoint": "Ocular PK: Cmax, Tmax, AUC in aqueous humor and iris/ciliary body",
+   "result": "Comparable ocular PK between fixed-combination and unfixed sequential dosing. Supports safety of 1.5% pilocarpine without hypromellose.",
+   "ref": "https://cdn.clinicaltrials.gov/large-docs/15/NCT02780115/Prot_001.pdf",
+   "ref_short": "NCT02780115 Protocol"
+  },
+  {
+   "drug": "Pilocarpine",
+   "study": "Ocular tissue PK",
+   "model": "NZW rabbit tolerability + PK arms · Single topical dose",
+   "endpoint": "Pilocarpine detectability: aqueous humor, iris, lens; Draize scoring",
+   "result": "Pilocarpine detectable in ocular tissues up to 8h post-dose. No corneal, iridial, or conjunctival adverse effects. Tmax ~0.5h in aqueous humor.",
+   "ref": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12629135/",
+   "ref_short": "PMC12629135"
+  },
+  {
+   "drug": "Pilocarpine",
+   "study": "Accommodation PD model",
+   "model": "Young adult rhesus monkey · Topical 0.5% pilocarpine ± oxymetazoline",
+   "endpoint": "Pupil diameter; accommodative amplitude (refractometry); time to peak accommodative response",
+   "result": "0.5% pilocarpine caused measurable decrease in pupil size and increase in accommodative amplitude. Co-admin with oxymetazoline delayed time to peak accommodative response.",
+   "ref": "https://cdn.clinicaltrials.gov/large-docs/28/NCT02595528/Prot_001.pdf",
+   "ref_short": "NCT02595528 Protocol"
+  },
+  {
+   "drug": "Pilocarpine",
+   "study": "Systemic PK — Vuity NDA (clinical)",
+   "model": "Human n=22 presbyopes · 1 drop/eye QD × 30 days",
+   "endpoint": "Plasma Cmax, AUC₀₋τ,ss, Tmax, t½ at steady state",
+   "result": "Cmax,ss = 1.95 ng/mL; AUC₀₋τ,ss = 4.14 ng·hr/mL; median Tmax = 0.3h; t½ ~3–4h. Systemic exposure very low — not expected to contribute to efficacy or toxicity.",
+   "ref": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/214028Orig1s003lbl.pdf",
+   "ref_short": "FDA Label NDA 214028"
+  },
+  {
+   "drug": "Brimonidine",
+   "study": "Comparative ocular PK",
+   "model": "Albino rabbit + Dutch-belted (pigmented) · Single 35µL drop 0.5% ¹⁴C-brimonidine",
+   "endpoint": "Aqueous humor Cmax, Tmax; iris-ciliary body concentration over time; melanin binding",
+   "result": "Aqueous Cmax: 2.16 µg/mL (albino) vs 1.52 µg/mL (pigmented) at Tmax 0.67h. Aqueous t½ ~1h (albino). Pigmented iris-ciliary body: peak 20.1 µg-eq/g at 1.5h; terminal t½ = 160h (melanin depot effect).",
+   "ref": "https://pubmed.ncbi.nlm.nih.gov/7587958/",
+   "ref_short": "PMID 7587958"
+  },
+  {
+   "drug": "Brimonidine",
+   "study": "Tissue distribution",
+   "model": "Monkey, rabbit, rat · Single + multiple doses · 0.2% and 0.5% topical",
+   "endpoint": "Drug concentration in cornea, aqueous humor, iris-ciliary body, vitreous, retina/choroid, optic nerve; radioactivity by tissue type",
+   "result": "Higher and more prolonged drug levels in pigmented vs non-pigmented tissues across all species. Multiple dosing led to drug accumulation in pigmented tissues. Posterior segment levels adequate to activate α2 receptors without retinal vasoconstriction.",
+   "ref": "https://pubmed.ncbi.nlm.nih.gov/11901096/",
+   "ref_short": "PMID 11901096"
+  },
+  {
+   "drug": "Brimonidine",
+   "study": "Selectivity pharmacology — receptor binding",
+   "model": "In vitro receptor binding assays (multiple species tissues)",
+   "endpoint": "α2 vs α1 binding selectivity ratio; comparison vs clonidine and apraclonidine",
+   "result": "Brimonidine is 1,000× more selective for α2 vs α1. 7–12× more α2-selective than clonidine. 23–32× more selective than apraclonidine. Not mydriatic (unlike apraclonidine).",
+   "ref": "https://www.sciencedirect.com/science/article/abs/pii/S0039625796820273",
+   "ref_short": "ScienceDirect"
+  },
+  {
+   "drug": "Brimonidine",
+   "study": "Systemic PK — Alphagan P label (clinical)",
+   "model": "Human n=14 · Single drop 0.15%/eye",
+   "endpoint": "Plasma Cmax, AUC₀₋∞, Tmax after single topical dose",
+   "result": "Cmax = 73 ± 19 pg/mL; AUC₀₋∞ = 375 ± 89 pg·hr/mL; Tmax = 1.7 ± 0.7h. ~27× lower systemic exposure than pilocarpine on a mass basis.",
+   "ref": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2006/021262s018lbl.pdf",
+   "ref_short": "FDA Label NDA 021262"
+  },
+  {
+   "drug": "Carbachol + Brimonidine",
+   "study": "Nonclinical PK/PD of Brimochol — ARVO 2022",
+   "model": "Dutch-belted rabbit · n=4/group · Single unilateral 35µL: Brimochol vs carbachol 2.75% alone vs PBS",
+   "endpoint": "Pupil diameter by digital pupillometer under 4 lighting conditions (scotopic, low mesopic, high mesopic, photopic); carbachol concentration in iris/ciliary body",
+   "result": "Brimochol sustained pupil reduction for 12h vs shorter duration with carbachol alone. Greater pupil reduction at all 4 lighting levels. Brimonidine increased carbachol concentration in iris/ciliary body (~50% higher AUC) — mechanistically explains enhanced and prolonged PD effect. Ocular tolerance profile also improved vs carbachol alone.",
+   "ref": "https://iovs.arvojournals.org/article.aspx?articleid=2780074",
+   "ref_short": "ARVO 2022 / IOVS"
+  }
+ ],
+ "pipelineSummary": "Beyond the five FDA approvals, activity has shifted to <b>ex-US filings</b> (VIZZ in 9 territories, YUVEZZI via Zhaoke and VISUfarma) and to <b>China</b>, where no presbyopia drop is yet approved and four pilocarpine programmes plus aceclidine are racing. Lens-softening has failed twice (Novartis UNR844, Santen UDCA). Genuinely new clinical-stage mechanisms are scarce: Cloudbreak's CBT-199 is the main novel-vehicle miotic."
+}
