@@ -1,6 +1,12 @@
-# Presbyopia Drop Intelligence
+# Presbyopia Drop Intelligence · 노안 점안제 경쟁 인텔리전스
 
-A static competitor-intelligence dashboard for pharmacological presbyopia eye drops, covering Korea and global competitors. It has no build step and no dependencies: `index.html`, `styles.css`, `app.js` and `data.json`.
+A static competitor-intelligence dashboard for pharmacological presbyopia eye drops, covering Korea and global competitors. It is available in English and Korean (EN / 한국어). It has no build step and no dependencies: `index.html`, `styles.css`, `i18n.js`, `app.js`, `data.json` (English) and `data.ko.json` (Korean).
+
+## Language
+
+The **EN / 한국어** switch in the header changes both the interface and every research record. The page remembers the choice per browser.
+
+To share a link in a set language, add `?lang=ko` or `?lang=en`, for example `https://<your-app>.vercel.app/?lang=ko#korea`. Without a setting, Korean-language browsers open in Korean.
 
 ## Tabs
 
@@ -29,7 +35,7 @@ cd presbyopia-ci && python3 -m http.server 8000   # open http://localhost:8000
 
 ## Update the data
 
-Edit `data.json` and redeploy. The page renders whatever the file contains. The main collections are:
+Edit `data.json` (English) and `data.ko.json` (Korean) together, then redeploy. The two files share the same structure: IDs, dates, numbers, stages and source links are identical, and only the display text differs. Interface labels are in `i18n.js`. The page renders whatever the file contains. The main collections are:
 
 - `competitors`: one record per asset, with `threat` scored 1–5 (threat to a new entrant in Korea)
 - `korea.race`: rows for the Gantt chart; any phase starting with "Expected" is drawn as an estimate

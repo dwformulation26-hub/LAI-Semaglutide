@@ -242,4 +242,10 @@ details[open] > summary::before { content: "▾ "; }
 .lang { flex: none; }
 .lang button { padding: 5px 10px; font-size: 12.5px; }
 @media (max-width: 860px) { .top-inner { row-gap: 0; } .tabs { order: 3; flex-basis: 100%; justify-content: flex-start; padding-bottom: 6px; } }
+@media (max-width: 860px) {
+  .top-inner { flex-wrap: wrap; }
+  .brand { flex: 1 1 0; min-width: 0; }
+  .brand > div { min-width: 0; }
+  .brand-title, .brand-sub { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+}
 :lang(ko) body, html:lang(ko) { word-break: keep-all; }
