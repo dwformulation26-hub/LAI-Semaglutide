@@ -30,8 +30,8 @@
     "partner_ko": "공개된 파트너 없음; 회사는 2026년 내 기술이전(라이선스)/기술수출 계약을 추진 중이라고 밝혔다",
     "data_point": "DK-LADS is a microsphere-based DDS platform ('extends drug half-life, minimizes blood concentration fluctuations'); lead obesity candidate DKF-MB501 targets 3+ months of effect from a single injection",
     "data_point_ko": "DK-LADS는 미립구 기반 DDS 플랫폼('약물 반감기를 연장하고 혈중 농도 변동을 최소화')이며, 선도 비만 후보물질 DKF-MB501은 단회 주사로 3개월 이상 효과 지속을 목표로 한다",
-    "last_updated": "2026-03-30",
-    "last_checked": "2026-10-19"
+    "last_updated": "2026-10-06",
+    "last_checked": "2026-10-22"
   },
   "finding_history": [
     {
@@ -72,6 +72,21 @@
         "tier": 2
       },
       "confidence": "unverified"
+    },
+    {
+      "id": "f-2026-10-06-001",
+      "date": "2026-10-06",
+      "date_basis": "inferred",
+      "type": "trial_data_readout",
+      "summary": "At CPHI Worldwide 2026 in Milan (Oct 6-8), Dongkook Pharmaceutical presented Phase 3 clinical results for the 3-month formulation of its Lorelin Depot Injection 11.25mg (leuprorelin), built on its in-house DK-LADS microsphere platform. The report did not disclose specific trial figures or endpoints.",
+      "summary_ko": "동국제약은 밀라노에서 열린 CPHI Worldwide 2026(10월 6~8일)에서 자체 미립구 기반 DK-LADS 플랫폼으로 개발한 '로렐린데포주 11.25mg'(류프로렐린) 3개월 제형의 임상 3상 결과를 발표했다. 보도에는 구체적인 시험 수치나 평가지표는 공개되지 않았다.",
+      "source": {
+        "name": "Dailypharm",
+        "url": "https://www.dailypharm.com/user/news/343450",
+        "tier": 2
+      },
+      "confidence": "unverified",
+      "verification_note": "Read via WebFetch of a 2026-10-15 Dailypharm recap of the Oct 6-8 CPHI Worldwide 2026 event; the exact day within the three-day event isn't stated, so date_basis is inferred from the event's start date. The record's own freshness window closed at its prior last_checked (2026-10-19), so this is logged as discovered-late rather than a headline item."
     }
   ]
 }

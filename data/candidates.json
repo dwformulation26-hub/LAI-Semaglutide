@@ -726,15 +726,15 @@
       "status": "pending",
       "created_date": "2026-09-07",
       "follow_up": {
-        "last_checked": "2026-10-20",
-        "checks_run": 13,
+        "last_checked": "2026-10-22",
+        "checks_run": 14,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's daily cheap-pass re-search (query: Precision Antibiotics CarboCell DTU 2026) again surfaced only the Anders Elias Hansen SPARK Denmark/University of Copenhagen project page (no DTU affiliation shown on that page itself, no 2026 date), with nothing dated after the May 2026 dtu.dk release or the May 2026 JBJI paper already on file. No IND filing, clinical trial registration, or other company-level dated event has been reported since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI.",
-        "evidence_ko": "이번 주기 일간 저비용 재조사(검색어: Precision Antibiotics CarboCell DTU 2026)에서도 Anders Elias Hansen의 SPARK Denmark/코펜하겐대학교 프로젝트 페이지만 확인됐을 뿐(해당 페이지 자체에는 DTU 소속 표시가 없고 2026년 날짜도 없음), 이미 확보된 2026년 5월 dtu.dk 보도자료나 2026년 5월 JBJI 논문 이후 새로운 날짜 이벤트는 없었다. 이후 IND 신청, 임상시험 등록 또는 그 외 회사 차원의 날짜 이벤트는 보고되지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다."
+        "evidence": "This run's daily cheap-pass re-search (query: Precision Antibiotics CarboCell DTU update 2026) again surfaced only the same Anders Elias Hansen SPARK Denmark/University of Copenhagen project page (no DTU affiliation shown on that page itself, no 2026 date), with nothing dated after the May 2026 dtu.dk release or the May 2026 JBJI paper already on file. No IND filing, clinical trial registration, or other company-level dated event has been reported since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI.",
+        "evidence_ko": "이번 주기 일간 저비용 재조사(검색어: Precision Antibiotics CarboCell DTU update 2026)에서도 동일한 Anders Elias Hansen의 SPARK Denmark/코펜하겐대학교 프로젝트 페이지만 확인됐을 뿐(해당 페이지 자체에는 DTU 소속 표시가 없고 2026년 날짜도 없음), 이미 확보된 2026년 5월 dtu.dk 보도자료나 2026년 5월 JBJI 논문 이후 새로운 날짜 이벤트는 없었다. 이후 IND 신청, 임상시험 등록 또는 그 외 회사 차원의 날짜 이벤트는 보고되지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다."
       },
       "resolution": null
     },
@@ -1459,15 +1459,15 @@
       "status": "pending",
       "created_date": "2026-09-20",
       "follow_up": {
-        "last_checked": "2026-10-21",
-        "checks_run": 11,
+        "last_checked": "2026-10-22",
+        "checks_run": 12,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "Two independent Tier 2 outlets (BioSpace, BioPharma Dive) corroborate the same Aug 28, 2023 announcement that i2o Therapeutics acquired Intarcia's Medici osmotic-implant platform and a long-acting GLP-1/amylin(DACRA)/glucagon/PYY pipeline designed for twice-yearly dosing, clearing named_entity, technical_claim and confirmed_source. ITCA 650's FDA rejection (2023-09-21 advisory vote, 2024-08-23 refusal) remains the only further verified dated event and is left unresolved pending the admin's read on whether a rejection qualifies (see prior cycle's note). This run's daily cheap-pass re-search (query: i2o Therapeutics long-acting injectable update news) again found only the same 2023 Kurt Graves CEO/corporate-update announcement and older 2020-2023 Series A/Sanofi/Janssen oral-delivery partnership history -- no 2026 financing, clinical or regulatory update for the Medici-platform injectable pipeline could be found this cycle. second_dated_event remains unmet on the same open judgment call.",
-        "evidence_ko": "독립적인 Tier 2 매체 2곳(BioSpace, BioPharma Dive)이 i2o Therapeutics가 Intarcia의 Medici 삼투압 임플란트 플랫폼과 연 2회 투여를 목표로 하는 장기지속형 GLP-1/아밀린(DACRA)/글루카곤/PYY 파이프라인을 인수했다는 2023년 8월 28일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. ITCA 650의 FDA 거부(2023-09-21 자문위 표결, 2024-08-23 최종 거부)는 여전히 유일한 추가 검증 날짜 이벤트로 남아 있으며, 거부가 조건을 충족하는지에 대한 관리자의 판단을 기다리고 있다(이전 주기 참고). 이번 주기 일간 저비용 재조사(검색어: i2o Therapeutics long-acting injectable update news)에서도 동일한 2023년 Kurt Graves CEO·기업 업데이트 발표와 2020-2023년 시리즈 A/Sanofi/Janssen 경구 전달 파트너십 이력만 확인됐을 뿐, Medici 플랫폼 주사형 파이프라인에 대한 2026년 자금 조달·임상·규제 관련 새로운 내용은 없었다. second_dated_event(두 번째 날짜 이벤트)는 동일한 미해결 판단 사안으로 여전히 미충족이다."
+        "evidence": "Two independent Tier 2 outlets (BioSpace, BioPharma Dive) corroborate the same Aug 28, 2023 announcement that i2o Therapeutics acquired Intarcia's Medici osmotic-implant platform and a long-acting GLP-1/amylin(DACRA)/glucagon/PYY pipeline designed for twice-yearly dosing, clearing named_entity, technical_claim and confirmed_source. ITCA 650's FDA rejection (2023-09-21 advisory vote, 2024-08-23 refusal) remains the only further verified dated event and is left unresolved pending the admin's read on whether a rejection qualifies (see prior cycle's note). This run's daily cheap-pass re-search (query: i2o Therapeutics long-acting injectable update news 2026) again found only i2o's own oral-delivery-focused company profile and the same 2020-2023 Series A/Sanofi/Janssen/Colorcon Ventures history -- no 2026 financing, clinical or regulatory update for the Medici-platform injectable pipeline could be found this cycle. second_dated_event remains unmet on the same open judgment call.",
+        "evidence_ko": "독립적인 Tier 2 매체 2곳(BioSpace, BioPharma Dive)이 i2o Therapeutics가 Intarcia의 Medici 삼투압 임플란트 플랫폼과 연 2회 투여를 목표로 하는 장기지속형 GLP-1/아밀린(DACRA)/글루카곤/PYY 파이프라인을 인수했다는 2023년 8월 28일 발표를 교차 확인해, named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)를 충족했다. ITCA 650의 FDA 거부(2023-09-21 자문위 표결, 2024-08-23 최종 거부)는 여전히 유일한 추가 검증 날짜 이벤트로 남아 있으며, 거부가 조건을 충족하는지에 대한 관리자의 판단을 기다리고 있다(이전 주기 참고). 이번 주기 일간 저비용 재조사(검색어: i2o Therapeutics long-acting injectable update news 2026)에서도 i2o의 경구 전달 중심 기업 소개 페이지와 2020-2023년 시리즈 A/Sanofi/Janssen/Colorcon Ventures 이력만 확인됐을 뿐, Medici 플랫폼 주사형 파이프라인에 대한 2026년 자금 조달·임상·규제 관련 새로운 내용은 없었다. second_dated_event(두 번째 날짜 이벤트)는 동일한 미해결 판단 사안으로 여전히 미충족이다."
       },
       "resolution": null
     },
@@ -1638,6 +1638,65 @@
         "unmet": ["confirmed_source", "second_dated_event"],
         "evidence": "Named entity (AstraZeneca, whose scientists co-authored the paper with STFC's ISIS Neutron and Muon Source) and a concrete technical claim (a reversible self-assembly depot for cotadutide, AstraZeneca's GLP-1/glucagon dual agonist, with controlled burst release) clear named_entity and technical_claim. Only one source (a single peer-reviewed Journal of Controlled Release paper) has been found so far, so confirmed_source is unmet pending an independent second source or a company statement; only one dated event (the 2025 publication, exact day unknown) is on file, so second_dated_event is also unmet. This run's first weekly deep-pass re-search (query: AstraZeneca cotadutide long-acting depot 2026 update) found important context that weakens rather than strengthens the case: AstraZeneca discontinued cotadutide itself as a clinical program years ago (a Phase 2b/3 NASH trial was stopped after enrolling only 45 of a planned 1,860 patients, and the company pivoted to its once-weekly AZD9550 instead), so this candidate is academic/preclinical depot-formulation research on a molecule the originator no longer develops clinically, not an active company program. No new dated event surfaced. Fuzzy match to the existing astrazeneca-zoladex umbrella is low (0.15) -- same parent company, but an unrelated molecule (goserelin implant) and delivery technology -- not a merge case.",
         "evidence_ko": "명확한 주체(AstraZeneca -- 소속 과학자들이 STFC의 ISIS Neutron and Muon Source와 공동 저술)와 구체적 기술 근거(AstraZeneca의 GLP-1/글루카곤 이중 작용제 코타두타이드에 대한 가역적 자기조립 데포로, 초기 과다 방출(burst)을 제어)가 named_entity(명확한 주체)와 technical_claim(구체적 기술 근거)을 충족한다. 지금까지는 단일 출처(Journal of Controlled Release의 동료 심사 논문 1건)만 확인되어, 독립적인 두 번째 출처나 회사 발표가 나오기 전까지 confirmed_source(확인된 출처)는 미충족이다. 또한 날짜가 확인된 이벤트가 1건(2025년 발행, 정확한 날짜 미확인)뿐이어서 second_dated_event(두 번째 날짜 이벤트)도 미충족이다. 이번 주기 첫 주간 심층 재조사(검색어: AstraZeneca cotadutide long-acting depot 2026 update)에서 이 사례를 뒷받침하기보다 약화시키는 중요한 맥락을 확인했다: AstraZeneca는 수년 전 코타두타이드 자체를 임상 프로그램에서 중단했다(임상 2b/3상 NASH 시험이 계획된 1,860명 중 45명만 등록한 채 중단됐고, 회사는 대신 주 1회 AZD9550으로 방향을 전환했다). 즉 이 후보는 원개발사가 더 이상 임상적으로 개발하지 않는 분자에 대한 학술/전임상 제형 연구이며, 활성 회사 프로그램이 아니다. 새로운 날짜 이벤트는 나타나지 않았다. 기존 astrazeneca-zoladex 엄브렐라와의 퍼지 매칭 점수는 낮다(0.15) -- 모회사는 같지만 분자(고세렐린 임플란트)와 전달 기술이 무관하여 병합 사례가 아니다."
+      },
+      "resolution": null
+    },
+    {
+      "id": "cand-2026-10-22-001",
+      "detected_name": "Amgen -- MariTide (maridebart cafraglutide, AMG 133)",
+      "detected_aliases": [
+        "Amgen",
+        "MariTide",
+        "Maridebart cafraglutide",
+        "AMG 133",
+        "AMG133"
+      ],
+      "entity_type_guess": [
+        "company",
+        "asset"
+      ],
+      "evidence": [
+        {
+          "source": {
+            "name": "Inside Amgen's Phase 3 MARITIME Program: Advancing the Future of Obesity Care",
+            "publication": "Amgen",
+            "url": "https://www.amgen.com/stories/2025/06/inside-amgens-phase-3-maritime-program---advancing-the-future-of-obesity-care",
+            "tier": 1
+          },
+          "snippet": "Amgen describes MariTide (maridebart cafraglutide), an antibody-peptide conjugate that antagonizes the GIP receptor and activates the GLP-1 receptor, as under study in the Phase 3 MARITIME program as a monthly or even less frequent injection, with MARITIME-1 (overweight/obesity) and MARITIME-2 (type 2 diabetes with overweight/obesity) as its core studies, plus planned Phase 3 studies in cardiovascular disease, heart failure, kidney disease and obstructive sleep apnea.",
+          "snippet_ko": "암젠은 GIP 수용체를 차단하고 GLP-1 수용체를 활성화하는 항체-펩타이드 접합체인 MariTide(maridebart cafraglutide)를 임상 3상 MARITIME 프로그램에서 월 1회 또는 그보다 더 뜸한 주사로 연구하고 있다고 밝혔다. 핵심 연구는 MARITIME-1(과체중/비만)과 MARITIME-2(제2형 당뇨를 동반한 과체중/비만)이며, 심혈관질환, 심부전, 신장질환, 폐쇄성 수면무호흡증에 대한 임상 3상 연구도 계획되어 있다.",
+          "date": "2025-06-20",
+          "date_basis": "stated"
+        },
+        {
+          "source": {
+            "name": "Amgen Reports Second Quarter 2026 Financial Results",
+            "publication": "Amgen (SEC Form 8-K)",
+            "url": "https://www.sec.gov/Archives/edgar/data/0000318154/000031815426000124/amgn-20260630earningsrelea.htm",
+            "tier": 1
+          },
+          "snippet": "In its Q2 2026 earnings release, Amgen said MariTide's long-acting design supports starting on monthly dosing and remaining on treatment with as few as 4 or 6 doses per year, and described nine ongoing Phase 3 MARITIME studies (MARITIME-1, MARITIME-2, MARITIME-CV, MARITIME-HF, MARITIME-OSA-1, MARITIME-OSA-2, MARITIME-SWITCH, and two long-term extensions), plus three more Phase 3 type 2 diabetes studies to start within 2026.",
+          "snippet_ko": "암젠은 2026년 2분기 실적발표에서 MariTide의 장기지속형 설계가 월 1회 투여로 시작해 연 4회 또는 6회 투여만으로 치료를 유지할 수 있도록 지원한다고 밝혔으며, 진행 중인 임상 3상 MARITIME 연구 9건(MARITIME-1, MARITIME-2, MARITIME-CV, MARITIME-HF, MARITIME-OSA-1, MARITIME-OSA-2, MARITIME-SWITCH 및 장기 연장연구 2건)과 2026년 내 추가로 시작할 제2형 당뇨병 대상 임상 3상 연구 3건을 설명했다.",
+          "date": "2026-08-04",
+          "date_basis": "stated"
+        }
+      ],
+      "fuzzy_match": {
+        "closest_umbrella_id": null,
+        "score": 0.0
+      },
+      "status": "ready_for_promotion",
+      "created_date": "2026-10-22",
+      "follow_up": {
+        "last_checked": null,
+        "checks_run": 0,
+        "near_bar": false
+      },
+      "promotion_bar": {
+        "cleared": ["named_entity", "technical_claim", "confirmed_source", "second_dated_event"],
+        "unmet": [],
+        "evidence": "Discovered via this run's Track B1 cross-class query (an LAI-formulation Korean query about ultra-long-acting obesity injectable microspheres), which named Amgen's MariTide alongside once-monthly/quarterly dosing language; a follow-up code query confirmed MariTide (maridebart cafraglutide, a GIPR-antagonist/GLP-1R-agonist antibody-peptide conjugate) clears all four conditions on company-only Tier 1 sources: Amgen's own June 2025 MARITIME program story names the entity and the technical claim (monthly-or-less-frequent injection design, Phase 3 MARITIME-1/2 plus planned CV/HF/kidney/OSA studies), and Amgen's Aug 4, 2026 Q2 earnings release independently confirms both the long-acting dosing claim (as few as 4-6 doses/year) and nine ongoing Phase 3 MARITIME studies -- a stage-bearing event (Phase 3) that alone would satisfy second_dated_event, and two distinct dated Tier 1 sources besides. No existing umbrella covers Amgen or any GIPR/GLP-1R conjugate, so fuzzy_match is negligible -- not a merge case.",
+        "evidence_ko": "이번 주기 Track B1 크로스클래스 검색(초장기 지속형 비만 주사제 미립구를 다룬 국문 검색어)에서 암젠의 MariTide가 월 1회/분기 1회 투여 관련 표현과 함께 언급되어 발견했으며, 후속 코드 검색을 통해 MariTide(maridebart cafraglutide, GIPR 길항제/GLP-1R 작용제 항체-펩타이드 접합체)가 오직 회사 자체의 Tier 1 출처만으로 네 가지 조건을 모두 충족함을 확인했다: 암젠의 2025년 6월 MARITIME 프로그램 소개 글이 주체와 기술 근거(월 1회 또는 그보다 더 뜸한 주사 설계, 임상 3상 MARITIME-1/2 및 계획된 심혈관·심부전·신장·수면무호흡 연구)를 명시하며, 암젠의 2026년 8월 4일 2분기 실적발표가 장기지속형 투여 주장(연 4~6회 투여)과 진행 중인 임상 3상 MARITIME 연구 9건을 독립적으로 재확인한다 -- 이는 그 자체로 개발 단계를 나타내는 이벤트(임상 3상)로 second_dated_event를 단독으로 충족시키며, 별개의 날짜가 있는 Tier 1 출처 2건이 추가로 존재한다. 암젠이나 GIPR/GLP-1R 접합체를 다루는 기존 엄브렐라가 없어 퍼지 매칭 점수는 미미하다 -- 병합 사례가 아니다."
       },
       "resolution": null
     }
