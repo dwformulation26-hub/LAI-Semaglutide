@@ -726,15 +726,15 @@
       "status": "pending",
       "created_date": "2026-09-07",
       "follow_up": {
-        "last_checked": "2026-10-22",
-        "checks_run": 14,
+        "last_checked": "2026-10-23",
+        "checks_run": 15,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's daily cheap-pass re-search (query: Precision Antibiotics CarboCell DTU update 2026) again surfaced only the same Anders Elias Hansen SPARK Denmark/University of Copenhagen project page (no DTU affiliation shown on that page itself, no 2026 date), with nothing dated after the May 2026 dtu.dk release or the May 2026 JBJI paper already on file. No IND filing, clinical trial registration, or other company-level dated event has been reported since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI.",
-        "evidence_ko": "이번 주기 일간 저비용 재조사(검색어: Precision Antibiotics CarboCell DTU update 2026)에서도 동일한 Anders Elias Hansen의 SPARK Denmark/코펜하겐대학교 프로젝트 페이지만 확인됐을 뿐(해당 페이지 자체에는 DTU 소속 표시가 없고 2026년 날짜도 없음), 이미 확보된 2026년 5월 dtu.dk 보도자료나 2026년 5월 JBJI 논문 이후 새로운 날짜 이벤트는 없었다. 이후 IND 신청, 임상시험 등록 또는 그 외 회사 차원의 날짜 이벤트는 보고되지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다."
+        "evidence": "This run's daily cheap-pass re-search (query: Precision Antibiotics CarboCell DTU 2026) again surfaced only the same Anders Elias Hansen SPARK Denmark/University of Copenhagen project page (no DTU affiliation shown on that page itself, no 2026 date), with nothing dated after the May 2026 dtu.dk release or the May 2026 JBJI paper already on file. No IND filing, clinical trial registration, or other company-level dated event has been reported since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI.",
+        "evidence_ko": "이번 주기 일간 저비용 재조사(검색어: Precision Antibiotics CarboCell DTU 2026)에서도 동일한 Anders Elias Hansen의 SPARK Denmark/코펜하겐대학교 프로젝트 페이지만 확인됐을 뿐(해당 페이지 자체에는 DTU 소속 표시가 없고 2026년 날짜도 없음), 이미 확보된 2026년 5월 dtu.dk 보도자료나 2026년 5월 JBJI 논문 이후 새로운 날짜 이벤트는 없었다. 이후 IND 신청, 임상시험 등록 또는 그 외 회사 차원의 날짜 이벤트는 보고되지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다."
       },
       "resolution": null
     },
@@ -1584,15 +1584,15 @@
       "status": "pending",
       "created_date": "2026-10-04",
       "follow_up": {
-        "last_checked": "2026-10-21",
-        "checks_run": 6,
+        "last_checked": "2026-10-23",
+        "checks_run": 7,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "second_dated_event"],
         "unmet": ["confirmed_source"],
-        "evidence": "This run's daily cheap-pass re-search (query: HLB Pharmaceutical GLP-1 long-acting injectable update 2026) surfaced no HLB-specific results at all -- only general 2026 GLP-1 market commentary and an unrelated ADA 2026 berobenatide release with no sponsor named. No new dated event beyond the 2026-04-28 Mepsgen NanoCalibur MOU already on file. named_entity, technical_claim and second_dated_event remain cleared; confirmed_source remains unmet for the same reason as at creation. Fuzzy match to owlbio-kyungdong-xtina (0.15) remains low -- not a merge case.",
-        "evidence_ko": "이번 주기 일간 저비용 재조사(검색어: HLB Pharmaceutical GLP-1 long-acting injectable update 2026)에서는 HLB 관련 결과가 전혀 확인되지 않았다 -- 2026년 GLP-1 시장 동향에 대한 일반 기사와 스폰서가 명시되지 않은 ADA 2026 베로베나타이드 보도만 나타났다. 이미 파일에 있는 2026-04-28 멥스젠 NanoCalibur MOU 이후 새로운 날짜 이벤트는 없다. named_entity, technical_claim, second_dated_event는 계속 충족되며, confirmed_source는 생성 시점과 동일한 이유로 미충족이다. owlbio-kyungdong-xtina와의 퍼지 매칭 점수(0.15)는 여전히 낮아 병합 사례가 아니다."
+        "evidence": "This run's daily cheap-pass re-search (query: HLB제약 SMEB 장기지속형) surfaced only already-known SMEB platform background and HLB's lead clinical-stage long-acting asset HLBP-024 -- a Phase 1 (Korea) long-acting apixaban injectable, not a GLP-1/incretin program, so it doesn't newly confirm the GLP-1 LAI pipeline claim. No new dated event or additional source naming semaglutide/tirzepatide/liraglutide on SMEB was found beyond the 2025-06-10 Medipana piece already on file. named_entity, technical_claim and second_dated_event remain cleared; confirmed_source remains unmet -- still only the single Medipana source names the GLP-1 claim specifically. Fuzzy match to owlbio-kyungdong-xtina (0.15) remains low -- not a merge case.",
+        "evidence_ko": "이번 주기 일간 저비용 재조사(검색어: HLB제약 SMEB 장기지속형)에서는 이미 알려진 SMEB 플랫폼 배경과 HLB의 임상 단계 선도 자산인 HLBP-024만 확인됐다 -- 이는 국내 임상 1상 단계의 장기지속형 아픽사반 주사제로, GLP-1/인크레틴 프로그램이 아니므로 GLP-1 LAI 파이프라인 주장을 새로 확인해주지 않는다. 이미 파일에 있는 2025-06-10 메디파나 기사 이후 세마글루타이드/터제파타이드/리라글루타이드를 SMEB와 연결한 새로운 날짜 이벤트나 추가 출처는 없었다. named_entity, technical_claim, second_dated_event는 계속 충족되며, confirmed_source는 여전히 미충족이다 -- GLP-1 관련 주장을 구체적으로 명시한 출처는 여전히 메디파나 단일 출처뿐이다. owlbio-kyungdong-xtina와의 퍼지 매칭 점수(0.15)는 여전히 낮아 병합 사례가 아니다."
       },
       "resolution": null
     },

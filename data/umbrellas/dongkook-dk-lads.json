@@ -22,8 +22,8 @@
     "stage_evidence": "Preclinical/formulation research; Phase 1 for the lead obesity candidate is only targeted for 2027.",
     "stage_evidence_ko": "전임상/제형 연구 단계다. 선도 비만 후보물질의 임상 1상은 2027년을 목표로 하고 있을 뿐이다.",
     "molecule_class": [],
-    "molecule_evidence": "A single Korean-language trade source says both semaglutide and tirzepatide are under consideration for DKF-MB501; no source names either for the candidate itself. Ambiguous, so left unassigned.",
-    "molecule_evidence_ko": "국문 전문지 단일 출처는 DKF-MB501에 세마글루타이드와 터제파타이드가 모두 검토되고 있다고 전했으나, 후보물질 자체에 대해 둘 중 하나를 명시한 출처는 없다. 모호하므로 미지정으로 남겼다.",
+    "molecule_evidence": "A March 2026 report said both semaglutide and tirzepatide were under consideration for DKF-MB501; a July 2026 Dailian feature instead names semaglutide specifically as the molecule loaded into DK-LADS. Both are single-source Tier 2 claims, short of the two-independent-source bar, so left unassigned.",
+    "molecule_evidence_ko": "2026년 3월 보도는 DKF-MB501에 세마글루타이드와 터제파타이드가 모두 검토되고 있다고 전했으나, 2026년 7월 데일리안 기사는 DK-LADS에 탑재된 분자를 세마글루타이드로 구체적으로 명시했다. 양쪽 모두 단일 출처(Tier 2)에 불과해 2개 독립 출처 기준에는 미달하므로 미지정으로 남겼다.",
     "dosing_target": "Monthly, extending toward quarterly",
     "dosing_target_ko": "월 1회, 3개월 1회로 연장 추진",
     "partner": "None disclosed; company states it is pursuing a licensing/technology-export deal within 2026",
@@ -31,7 +31,7 @@
     "data_point": "DK-LADS is a microsphere-based DDS platform ('extends drug half-life, minimizes blood concentration fluctuations'); lead obesity candidate DKF-MB501 targets 3+ months of effect from a single injection",
     "data_point_ko": "DK-LADS는 미립구 기반 DDS 플랫폼('약물 반감기를 연장하고 혈중 농도 변동을 최소화')이며, 선도 비만 후보물질 DKF-MB501은 단회 주사로 3개월 이상 효과 지속을 목표로 한다",
     "last_updated": "2026-10-06",
-    "last_checked": "2026-10-22"
+    "last_checked": "2026-10-23"
   },
   "finding_history": [
     {
@@ -87,6 +87,16 @@
       },
       "confidence": "unverified",
       "verification_note": "Read via WebFetch of a 2026-10-15 Dailypharm recap of the Oct 6-8 CPHI Worldwide 2026 event; the exact day within the three-day event isn't stated, so date_basis is inferred from the event's start date. The record's own freshness window closed at its prior last_checked (2026-10-19), so this is logged as discovered-late rather than a headline item."
+    },
+    {
+      "id": "f-2026-07-15-001",
+      "date": "2026-07-15",
+      "type": "trial_data_readout",
+      "summary": "A Dailian feature on Dongkook's 20-year in-house DDS strategy names semaglutide specifically as the molecule loaded into DKF-MB501's DK-LADS microsphere platform, targeting a once-monthly injection in place of today's once-weekly dosing, with Phase 1 entry still targeted for 2027. The article frames AstraZeneca's exenatide-based Bydureon, discontinued in 2024, as the precedent a semaglutide-based microsphere is meant to improve on.",
+      "summary_ko": "동국제약의 20년 자체 DDS 전략을 다룬 데일리안 기사는 DKF-MB501의 DK-LADS 미립구 플랫폼에 탑재된 분자를 세마글루타이드로 구체적으로 명시했다. 현재의 주 1회 투여를 월 1회로 늘리는 것이 목표이며, 임상 1상 진입은 여전히 2027년을 목표로 한다. 기사는 2024년 단종된 아스트라제네카의 엑세나타이드 기반 바이두리온을 세마글루타이드 기반 미립구가 개선하고자 하는 선례로 제시한다.",
+      "source": { "name": "Dailian", "publication": "Dailian", "url": "https://www.dailian.co.kr/news/view/1667434", "tier": 2 },
+      "confidence": "unverified",
+      "verification_note": "Found via this run's search for the Dongkook alias; read directly via WebFetch. Dated 2026-07-15, well before this record's own freshness window, so logged as discovered-late."
     }
   ]
 }
