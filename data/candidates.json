@@ -726,15 +726,15 @@
       "status": "pending",
       "created_date": "2026-09-07",
       "follow_up": {
-        "last_checked": "2026-10-25",
-        "checks_run": 16,
+        "last_checked": "2026-10-26",
+        "checks_run": 17,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's daily cheap-pass re-search (query: Precision Antibiotics CarboCell DTU 2026) again surfaced only the same Anders Elias Hansen SPARK Denmark/University of Copenhagen project page (no DTU affiliation shown on that page itself, no 2026 date), with nothing dated after the May 2026 dtu.dk release or the May 2026 JBJI paper already on file. No IND filing, clinical trial registration, or other company-level dated event has been reported since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI. [2026-10-25 weekly deep-pass recheck: query 'Precision Antibiotics DTU spinout long-acting' again surfaced only the same May 2026 DTU release; no new dated event, second_dated_event still unmet.]",
-        "evidence_ko": "이번 주기 일간 저비용 재조사(검색어: Precision Antibiotics CarboCell DTU 2026)에서도 동일한 Anders Elias Hansen의 SPARK Denmark/코펜하겐대학교 프로젝트 페이지만 확인됐을 뿐(해당 페이지 자체에는 DTU 소속 표시가 없고 2026년 날짜도 없음), 이미 확보된 2026년 5월 dtu.dk 보도자료나 2026년 5월 JBJI 논문 이후 새로운 날짜 이벤트는 없었다. 이후 IND 신청, 임상시험 등록 또는 그 외 회사 차원의 날짜 이벤트는 보고되지 않았다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다. [2026-10-25 주간 심층 재조사: 'Precision Antibiotics DTU spinout long-acting' 검색에서도 기존 2026년 5월 DTU 보도자료만 재확인됐으며 새로운 날짜 이벤트는 없어 second_dated_event는 여전히 미충족이다.]"
+        "evidence": "This run's daily cheap-pass re-search (query: Precision Antibiotics DTU spinout update 2026) again surfaced only the same May 2026 dtu.dk release and background on the CarboCell G/C gentamicin/clindamycin depot already on file -- no IND filing, trial registration, or other company-level dated event since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI.",
+        "evidence_ko": "이번 주기 일간 저비용 재조사(검색어: Precision Antibiotics DTU spinout update 2026)에서도 이미 확보된 2026년 5월 dtu.dk 보도자료와 CarboCell G/C 겐타마이신/클린다마이신 데포 관련 배경 정보만 재확인됐다 -- IND 신청, 임상시험 등록 또는 그 외 회사 차원의 날짜 이벤트는 없었다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다."
       },
       "resolution": null
     },
@@ -1597,15 +1597,15 @@
       "status": "pending",
       "created_date": "2026-10-04",
       "follow_up": {
-        "last_checked": "2026-10-25",
-        "checks_run": 8,
+        "last_checked": "2026-10-26",
+        "checks_run": 9,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "second_dated_event"],
         "unmet": ["confirmed_source"],
-        "evidence": "This run's weekly deep-pass re-search (query: HLB제약 GLP-1 SMEB 미립구 2026) surfaced one new item: a single-source (IB토마토, paywalled, Tier 3) report that Korea's Patent Trial and Appeal Board cancelled HLB's liraglutide PLGA microsphere patent in mid-2026 for overlapping with Dongkook prior art -- per the article a setback for one of the five SMEB pipeline assets, not a platform-wide invalidation. This doesn't bear on the semaglutide/tirzepatide claim the confirmed_source gap concerns, and isn't independently corroborated, so it's logged as context rather than changing the bar. named_entity, technical_claim and second_dated_event remain cleared; confirmed_source remains unmet -- still only the single 2025-06-10 Medipana source names the GLP-1 claim specifically. Fuzzy match to owlbio-kyungdong-xtina (0.15) remains low -- not a merge case.",
-        "evidence_ko": "이번 주기 주간 심층 재조사(검색어: HLB제약 GLP-1 SMEB 미립구 2026)에서 새로운 항목 하나가 확인됐다: 특허심판원이 2026년 중반 HLB의 리라글루타이드 PLGA 미립구 특허를 동국제약 선행기술과의 중복을 이유로 취소했다는 단일 출처(IB토마토, 유료, Tier 3) 보도다. 기사에 따르면 5개 SMEB 파이프라인 자산 중 하나에 대한 타격이며 플랫폼 전체의 무효화는 아니다. 이는 confirmed_source 미충족의 핵심인 세마글루타이드/터제파타이드 주장과는 무관하고 이번 주기에 독립적으로 교차 확인되지도 않아, 기준을 바꾸기보다는 참고 맥락으로 기록한다. named_entity, technical_claim, second_dated_event는 계속 충족되며, confirmed_source는 여전히 미충족이다 -- GLP-1 관련 주장을 구체적으로 명시한 출처는 여전히 2025-06-10 메디파나 단일 출처뿐이다. owlbio-kyungdong-xtina와의 퍼지 매칭 점수(0.15)는 여전히 낮아 병합 사례가 아니다."
+        "evidence": "This run's daily cheap-pass re-search (query: HLB Pharmaceutical GLP-1 long-acting news October 2026) surfaced only the 2021 Humedix/HLB SMEB long-acting-injectable partnership background already on file, with no 2026 update on that program's status and nothing new on the semaglutide/tirzepatide claim. named_entity, technical_claim and second_dated_event remain cleared; confirmed_source remains unmet -- still only the single 2025-06-10 Medipana source names the GLP-1 claim specifically. Fuzzy match to owlbio-kyungdong-xtina (0.15) remains low -- not a merge case.",
+        "evidence_ko": "이번 주기 일간 저비용 재조사(검색어: HLB Pharmaceutical GLP-1 long-acting news October 2026)에서는 이미 파일에 있는 2021년 휴메딕스/HLB SMEB 장기지속형 주사제 파트너십 배경 정보만 확인됐으며, 해당 프로그램의 2026년 업데이트나 세마글루타이드/터제파타이드 주장과 관련한 새로운 내용은 없었다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), second_dated_event(두 번째 날짜 이벤트)는 계속 충족되며, confirmed_source(확인된 출처)는 여전히 미충족이다 -- GLP-1 관련 주장을 구체적으로 명시한 출처는 여전히 2025-06-10 메디파나 단일 출처뿐이다. owlbio-kyungdong-xtina와의 퍼지 매칭 점수(0.15)는 여전히 낮아 병합 사례가 아니다."
       },
       "resolution": null
     },

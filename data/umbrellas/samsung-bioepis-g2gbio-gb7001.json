@@ -63,8 +63,8 @@
     "partner_ko": "삼성바이오에피스 / 에피스넥스랩(장기지속형 세마글루타이드 자산 전체 라이선스 + 두 번째 자산 옵션 + 비공개 자산 3개 추가에 대한 우선협상권); Boehringer Ingelheim(2025년 1월부터 별도의 LAI 펩타이드 제형 공동 개발, 2026년 7월 확대); 셀트리온(InnoBioLAMP 항체 SC 플랫폼 MOU)",
     "data_point": "InnoLAMP: <5% initial drug burst in first 24h; serum concentrations maintained beyond 28 days in rodent models, shown for the licensed semaglutide asset (GB-7001) and, per the ADA 2026 dual/triple-agonist dataset, for CagriSema (amylin/GLP-1), tirzepatide, and retatrutide, each loaded near its full per-dose payload (CagriSema ~9.6mg, tirzepatide 15mg, retatrutide 12mg)",
     "data_point_ko": "InnoLAMP: 첫 24시간 초기 약물 방출(burst) 5% 미만; 설치류 모델에서 라이선스된 세마글루타이드 자산(GB-7001)과, ADA 2026 이중/삼중 작용제 데이터셋에 따른 카그리세마(아밀린/GLP-1), 터제파타이드, 레타트루타이드에서 혈중 농도가 28일 이상 유지됐으며, 각각 최대 용량에 가깝게 탑재됐다(카그리세마 약 9.6mg, 터제파타이드 15mg, 레타트루타이드 12mg)",
-    "last_updated": "2026-09-22",
-    "last_checked": "2026-10-22"
+    "last_updated": "2026-10-19",
+    "last_checked": "2026-10-26"
   },
   "finding_history": [
     {
@@ -272,6 +272,22 @@
       },
       "confidence": "confirmed",
       "verification_note": "Correction to f-2026-06-08-001's molecule list, found via this run's Track B1 cross-class and other_incretin watchlist queries (rows 10-14); the event predates the freshness window (ADA 2026, 2026-06-08) so this is a discovered-late item, not headline news. Read from search snippets only -- view.asiae.co.kr, edaily.co.kr and etoday.co.kr all returned EGRESS_BLOCKED or are already on the blocked list this run."
+    },
+    {
+      "id": "f-2026-10-19-001",
+      "date": "2026-10-19",
+      "type": "deal_partnership",
+      "molecules": [],
+      "summary": "G2GBio signed a roughly 12-month material-transfer and platform-evaluation agreement with China's UBT to assess whether InnoLAMP can convert an undisclosed UBT drug candidate into a long-acting injectable. UBT251 itself -- UBT's GLP-1/GIP/glucagon triple agonist already out-licensed to Novo Nordisk -- was not confirmed as the specific candidate under evaluation; deal terms and the candidate's identity were not disclosed. Shares rose roughly 12-13% on the announcement.",
+      "summary_ko": "지투지바이오(G2GBio)가 중국 UBT와 약 12개월 기간의 물질이전 및 플랫폼 평가 계약을 체결했다. InnoLAMP를 적용해 UBT의 비공개 후보물질을 장기지속형 주사제로 전환할 수 있는지 평가하는 계약이다. UBT가 이미 노보노디스크에 기술이전한 GLP-1/GIP/글루카곤 삼중 작용제 UBT251 자체가 평가 대상임은 확인되지 않았으며, 계약 조건과 후보물질의 정체는 공개되지 않았다. 발표 이후 주가는 약 12-13% 상승했다.",
+      "source": {
+        "name": "Dailypharm (corroborated by Specialtimes, finance-scope.com)",
+        "publication": "Dailypharm",
+        "url": "https://www.dailypharm.com/user/news/343574",
+        "tier": 2
+      },
+      "confidence": "confirmed",
+      "verification_note": "Found via this run's Track A breadth-first query of the InnoLAMP platform alias; announced 2026-10-19, predating this run's freshness window (window_start 2026-10-23), so this is a discovered-late item, not headline news. Not counted toward molecule_class -- the candidate under evaluation is undisclosed and UBT251 itself was not confirmed as the specific asset."
     }
   ]
 }
