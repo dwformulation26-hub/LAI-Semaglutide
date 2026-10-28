@@ -30,9 +30,24 @@
     "data_point": "Phase 2/3 PK, safety and tolerability study against Vraylar capsules in schizophrenia; estimated completion Dec 2027.",
     "data_point_ko": "조현병 환자 대상 Vraylar 캡슐 대비 임상 2/3상 PK, 안전성 및 내약성 시험. 예상 완료 2027년 12월.",
     "last_updated": "2026-07-23",
-    "last_checked": "2026-10-26"
+    "last_checked": "2026-10-29"
   },
   "finding_history": [
+    {
+      "id": "f-2025-03-04-001",
+      "date": "2025-03-04",
+      "type": "trial_data_readout",
+      "summary": "An earlier, previously untracked Indian registry record (CTRI/2025/02/081389) shows Bostal Drug Delivery ran a single-arm, single-dose Phase 1 PK study of B2227 extended-release injectable suspension at a 90 mg subcutaneous bi-monthly dose in 12 schizophrenia patients, starting March 4, 2025 -- a year before the Phase 2/3 NCT07722728 study this record already tracks.",
+      "summary_ko": "이전에는 추적되지 않았던 인도 임상시험 등록 기록(CTRI/2025/02/081389)에 따르면, Bostal Drug Delivery는 조현병 환자 12명을 대상으로 B2227 서방형 주사용 현탁액 90 mg을 2개월 간격 피하 투여하는 단일군, 단회 투여 임상 1상 PK 시험을 2025년 3월 4일부터 진행했다 -- 이 기록이 이미 추적 중인 임상 2/3상 NCT07722728 시험보다 1년 앞선다.",
+      "source": {
+        "name": "CTRI/2025/02/081389 (via MedPath trial aggregator)",
+        "publication": "MedPath",
+        "url": "https://trial.medpath.com/clinical-trial/90e58b318a880c09/ctri/2025/02/081389-b2227-extended-release-injectable-schizophrenia",
+        "tier": 3
+      },
+      "confidence": "unverified",
+      "verification_note": "Read via a Tier 3 aggregator mirroring the CTRI registry record, not the CTRI site itself; the aggregator lists the study as active/not recruiting as of its last update, but that status is not independently confirmed here."
+    },
     {
       "id": "f-2026-07-23-001",
       "date": "2026-07-23",
