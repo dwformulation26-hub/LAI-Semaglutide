@@ -726,15 +726,15 @@
       "status": "pending",
       "created_date": "2026-09-07",
       "follow_up": {
-        "last_checked": "2026-10-29",
-        "checks_run": 20,
+        "last_checked": "2026-10-30",
+        "checks_run": 21,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "confirmed_source"],
         "unmet": ["second_dated_event"],
-        "evidence": "This run's daily cheap-pass re-search (query: Precision Antibiotics long-acting injectable DTU) again surfaced only the same dtu.dk release describing the CarboCell G/C gentamicin+clindamycin depot -- no IND filing, trial registration, or other new company-level dated event since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI.",
-        "evidence_ko": "이번 주기 일간 저비용 재조사(검색어: Precision Antibiotics long-acting injectable DTU)에서도 CarboCell G/C 겐타마이신+클린다마이신 데포를 설명하는 기존 dtu.dk 보도자료만 재확인됐다 -- IND 신청, 임상시험 등록 또는 그 외 새로운 회사 차원의 날짜 이벤트는 없었다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다."
+        "evidence": "This run's daily cheap-pass re-search (query: Precision Antibiotics long-acting injectable DTU) again surfaced only the same dtu.dk release describing the CarboCell G/C gentamicin+clindamycin depot -- no IND filing, trial registration, or other new company-level dated event since. named_entity, technical_claim and confirmed_source remain cleared; second_dated_event remains unmet for the same reason as prior cycles. SCOPE CAVEAT STILL APPLIES: a local, implant-site antibiotic depot for post-fracture infection, not a systemic chronic-disease LAI. [2026-10-30 cheap-pass recheck: same query again returned only the May 2026 dtu.dk article; no change.]",
+        "evidence_ko": "이번 주기 일간 저비용 재조사(검색어: Precision Antibiotics long-acting injectable DTU)에서도 CarboCell G/C 겐타마이신+클린다마이신 데포를 설명하는 기존 dtu.dk 보도자료만 재확인됐다 -- IND 신청, 임상시험 등록 또는 그 외 새로운 회사 차원의 날짜 이벤트는 없었다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), confirmed_source(확인된 출처)는 계속 충족되며, second_dated_event(두 번째 날짜 이벤트)는 이전 주기와 동일한 이유로 미충족이다. 범위 관련 유의사항은 여전히 적용된다: 이는 전신 만성질환 LAI가 아니라 골절 후 감염을 위한 국소 이식 부위 항생제 데포다. [2026-10-30 저비용 재조사: 동일 검색어에서 2026년 5월 dtu.dk 기사만 다시 확인됐으며 변동 없음.]"
       },
       "resolution": null
     },
@@ -1597,15 +1597,15 @@
       "status": "pending",
       "created_date": "2026-10-04",
       "follow_up": {
-        "last_checked": "2026-10-29",
-        "checks_run": 12,
+        "last_checked": "2026-10-30",
+        "checks_run": 13,
         "near_bar": true
       },
       "promotion_bar": {
         "cleared": ["named_entity", "technical_claim", "second_dated_event"],
         "unmet": ["confirmed_source"],
-        "evidence": "This run's daily cheap-pass re-search (query: HLB Pharmaceutical GLP-1 long-acting microsphere semaglutide tirzepatide) again surfaced the same two unconfirmed-applicant patent families (EP4104820, EP4635483A1) plus general tirzepatide/semaglutide background noise -- neither result named HLB as applicant, so nothing new was added. named_entity, technical_claim and second_dated_event remain cleared; confirmed_source remains unmet -- still only the single 2025-06-10 Medipana source names the GLP-1 claim specifically. Fuzzy match to owlbio-kyungdong-xtina (0.15) remains low -- not a merge case.",
-        "evidence_ko": "이번 주기 일간 저비용 재조사(검색어: HLB Pharmaceutical GLP-1 long-acting microsphere semaglutide tirzepatide)에서도 동일한 출원인 미확인 특허 2건(EP4104820, EP4635483A1)과 일반적인 티르제파타이드/세마글루타이드 배경 정보만 재확인됐다 -- 두 결과 모두 출원인이 HLB로 명시되지 않아 추가된 내용은 없다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), second_dated_event(두 번째 날짜 이벤트)는 계속 충족되며, confirmed_source(확인된 출처)는 여전히 미충족이다 -- GLP-1 관련 주장을 구체적으로 명시한 출처는 여전히 2025-06-10 메디파나 단일 출처뿐이다. owlbio-kyungdong-xtina와의 퍼지 매칭 점수(0.15)는 여전히 낮아 병합 사례가 아니다."
+        "evidence": "This run's daily cheap-pass re-search (query: HLB Pharmaceutical GLP-1 long-acting microsphere semaglutide tirzepatide) again surfaced only the same two unconfirmed-applicant European patent publications (EP4104820, EP4552634NWA1) plus generic semaglutide/tirzepatide background -- neither patent result named HLB as applicant, and no HLB-specific news turned up. named_entity, technical_claim and second_dated_event remain cleared; confirmed_source remains unmet -- still only the single 2025-06-10 Medipana source names the GLP-1 claim specifically. Fuzzy match to owlbio-kyungdong-xtina (0.15) remains low -- not a merge case.",
+        "evidence_ko": "이번 주기 일간 저비용 재조사(검색어: HLB Pharmaceutical GLP-1 long-acting microsphere semaglutide tirzepatide)에서도 동일한 출원인 미확인 유럽 특허 공개공보 2건(EP4104820, EP4552634NWA1)과 일반적인 세마글루타이드/티르제파타이드 배경 정보만 재확인됐다 -- 두 특허 결과 모두 출원인이 HLB로 명시되지 않았고, HLB 관련 신규 소식도 없었다. named_entity(명확한 주체), technical_claim(구체적 기술 근거), second_dated_event(두 번째 날짜 이벤트)는 계속 충족되며, confirmed_source(확인된 출처)는 여전히 미충족이다 -- GLP-1 관련 주장을 구체적으로 명시한 출처는 여전히 2025-06-10 메디파나 단일 출처뿐이다. owlbio-kyungdong-xtina와의 퍼지 매칭 점수(0.15)는 여전히 낮아 병합 사례가 아니다."
       },
       "resolution": null
     },
