@@ -19,8 +19,8 @@
     "Atrigel"
   ],
   "current_status": {
-    "stage": "Approved & marketed (US/UK/Global); Indivior entered an all-stock merger-of-equals agreement with Supernus Pharmaceuticals (announced Aug 3, 2026), combined company to trade as Supernus, expected to close Q4 2026",
-    "stage_ko": "승인 및 시판(미국/영국/글로벌); Indivior는 Supernus Pharmaceuticals와 전액 주식 교환 방식의 대등합병 계약을 체결했으며(2026년 8월 3일 발표), 합병 회사는 Supernus로 거래되고 2026년 4분기 완료 예정이다",
+    "stage": "Approved & marketed (US/UK/Global); Indivior's and Supernus's shareholders both approved the all-stock merger of equals on Oct 15, 2026, expected to close on or about Nov 2, 2026, with the combined company renamed Supernus, Inc.",
+    "stage_ko": "승인 및 시판(미국/영국/글로벌); Indivior와 Supernus 양사 주주가 2026년 10월 15일 전액 주식 교환 방식 대등합병을 승인했으며, 2026년 11월 2일경 완료되어 합병 회사는 Supernus, Inc.로 사명이 변경될 예정이다",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Approved and marketed in US/UK/Global; the Supernus merger is a corporate event, not a development-stage change.",
     "stage_evidence_ko": "미국/영국/글로벌에서 승인 및 시판 중이다. Supernus 합병은 기업 이벤트로, 개발 단계 변화가 아니다.",
@@ -35,8 +35,8 @@
     "partner_ko": "Tolmar(Atrigel 데포 생산); 합병 추진 중인 파트너 Supernus Pharmaceuticals",
     "data_point": "Q2 2026: SUBLOCADE net revenue $253M (+21% YoY), record 32,816 new patient starts, ~76% share of US LAI OUD category; >500,000 patients treated since 2018 launch",
     "data_point_ko": "2026년 2분기: SUBLOCADE 순매출 $253M(전년 대비 +21%), 신규 환자 투여 개시 사상 최대 32,816명, 미국 LAI 오피오이드 사용장애(OUD) 시장 점유율 약 76%; 2018년 출시 이후 누적 투여 환자 500,000명 이상",
-    "last_updated": "2026-08-03",
-    "last_checked": "2026-10-25"
+    "last_updated": "2026-10-15",
+    "last_checked": "2026-11-01"
   },
   "finding_history": [
     {
@@ -105,6 +105,21 @@
         "tier": 1
       },
       "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-10-15-001",
+      "date": "2026-10-15",
+      "type": "deal_partnership",
+      "summary": "Indivior and Supernus shareholders both voted to approve the previously announced all-stock merger of equals; Indivior's own 10-Q confirms the approval and the combined company will be renamed Supernus, Inc. The merger is expected to close on or about Nov 2, 2026.",
+      "summary_ko": "Indivior와 Supernus 양사 주주들이 앞서 발표된 전액 주식 교환 방식 대등합병을 승인하는 투표를 가결했다. Indivior의 10-Q 공시는 이 승인을 확인하며, 합병 회사는 Supernus, Inc.로 사명을 변경할 예정이다. 합병은 2026년 11월 2일경 완료될 것으로 예상된다.",
+      "source": {
+        "name": "Indivior Pharmaceuticals, Inc. Form 10-Q (Q3 2026)",
+        "publication": "SEC EDGAR",
+        "url": "https://www.sec.gov/Archives/edgar/data/0001625297/000162828026068013/indv-20260930.htm",
+        "tier": 1
+      },
+      "confidence": "confirmed",
+      "verification_note": "Shareholder vote occurred 2026-10-15, before this umbrella's prior last_checked (2026-10-25); discovered this run via the Sunday-only Track A pass -- real news, found late."
     }
   ]
 }
