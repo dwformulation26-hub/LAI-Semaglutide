@@ -35,9 +35,19 @@
     "data_point": "Q2 2026: Brixadi royalties to Camurus SEK 127M (+42% YoY, +20% QoQ); Brixadi held ~32% share of US LAI buprenorphine equivalized units in Q1 2026, vs 26% a year earlier",
     "data_point_ko": "2026년 2분기: Camurus가 받은 Brixadi 로열티 SEK 127M(전년 대비 +42%, 전 분기 대비 +20%). Brixadi는 2026년 1분기 미국 LAI 부프레노르핀 환산 단위 기준 점유율 약 32%를 기록해 1년 전 26%에서 상승했다",
     "last_updated": "2026-07-15",
-    "last_checked": "2026-11-01"
+    "last_checked": "2026-11-08"
   },
   "finding_history": [
+    {
+      "id": "f-2026-03-17-001",
+      "date": "2026-03-17",
+      "type": "trial_data_readout",
+      "summary": "An NIH-funded randomized trial (the MOMs Study, 140 participants, 13 US sites, 2020-2024), published in JAMA Internal Medicine, found weekly extended-release Brixadi significantly more effective than sublingual buprenorphine for illicit-opioid abstinence during pregnancy (82.5% vs 72.6%) and fewer serious adverse events in both pregnancy (8.7% vs 26.8%) and postpartum (6.0% vs 18.6%).",
+      "summary_ko": "NIH 지원 무작위 임상시험(MOMs Study, 140명 참가, 미국 13개 기관, 2020-2024년 진행)이 JAMA Internal Medicine에 발표됐다. 주 1회 투여하는 서방형 Brixadi는 설하 부프레노르핀 대비 임신 중 불법 오피오이드 금단율이 유의하게 높았고(82.5% 대 72.6%), 중대한 이상반응도 임신 중(8.7% 대 26.8%)과 산후(6.0% 대 18.6%) 모두에서 더 적었다.",
+      "source": { "name": "JAMA Internal Medicine (Winhusen et al., 2026;186(5):533-543)", "publication": "JAMA Internal Medicine", "url": "https://www.contemporaryobgyn.net/view/weekly-extended-release-buprenorphine-vs-sublingual-for-opioid-use-disorder-in-pregnancy", "tier": 2 },
+      "confidence": "confirmed",
+      "verification_note": "Corroborated independently by news.vumc.org's 2026-04-10 coverage of the same trial; full JAMA article not directly fetched, figures taken from secondary-source excerpts of the abstract."
+    },
     {
       "id": "f-2025-09-12-001",
       "date": "2025-09-12",

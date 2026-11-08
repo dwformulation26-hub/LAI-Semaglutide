@@ -19,8 +19,8 @@
     "Atrigel"
   ],
   "current_status": {
-    "stage": "Approved & marketed (US/UK/Global); Indivior's and Supernus's shareholders both approved the all-stock merger of equals on Oct 15, 2026, expected to close on or about Nov 2, 2026, with the combined company renamed Supernus, Inc.",
-    "stage_ko": "승인 및 시판(미국/영국/글로벌); Indivior와 Supernus 양사 주주가 2026년 10월 15일 전액 주식 교환 방식 대등합병을 승인했으며, 2026년 11월 2일경 완료되어 합병 회사는 Supernus, Inc.로 사명이 변경될 예정이다",
+    "stage": "Approved & marketed (US/UK/Global); the Indivior-Supernus all-stock merger of equals completed Nov 2, 2026, and the combined company began trading as Supernus, Inc. (Nasdaq: SUPN) on Nov 3, 2026",
+    "stage_ko": "승인 및 시판(미국/영국/글로벌); Indivior와 Supernus의 전액 주식 교환 방식 대등합병이 2026년 11월 2일 완료되었으며, 합병 회사는 2026년 11월 3일부터 Supernus, Inc.(나스닥: SUPN)로 거래를 시작했다",
     "stage_label": "Approved / marketed",
     "stage_evidence": "Approved and marketed in US/UK/Global; the Supernus merger is a corporate event, not a development-stage change.",
     "stage_evidence_ko": "미국/영국/글로벌에서 승인 및 시판 중이다. Supernus 합병은 기업 이벤트로, 개발 단계 변화가 아니다.",
@@ -31,12 +31,12 @@
     "molecule_evidence_ko": "탑재 약물이 인크레틴 및 비만 펩타이드 영역 밖에 있어, 전달 플랫폼 근거로 추적한다.",
     "dosing_target": "Monthly (subcutaneous depot)",
     "dosing_target_ko": "월 1회(피하 데포)",
-    "partner": "Tolmar (Atrigel depot manufacturing); pending merger partner Supernus Pharmaceuticals",
-    "partner_ko": "Tolmar(Atrigel 데포 생산); 합병 추진 중인 파트너 Supernus Pharmaceuticals",
+    "partner": "Tolmar (Atrigel depot manufacturing); merged Nov 2, 2026 into Supernus, Inc. (former Supernus Pharmaceuticals + Indivior)",
+    "partner_ko": "Tolmar(Atrigel 데포 생산); 2026년 11월 2일 Supernus, Inc.(구 Supernus Pharmaceuticals + Indivior)로 합병됨",
     "data_point": "Q2 2026: SUBLOCADE net revenue $253M (+21% YoY), record 32,816 new patient starts, ~76% share of US LAI OUD category; >500,000 patients treated since 2018 launch",
     "data_point_ko": "2026년 2분기: SUBLOCADE 순매출 $253M(전년 대비 +21%), 신규 환자 투여 개시 사상 최대 32,816명, 미국 LAI 오피오이드 사용장애(OUD) 시장 점유율 약 76%; 2018년 출시 이후 누적 투여 환자 500,000명 이상",
     "last_updated": "2026-10-15",
-    "last_checked": "2026-11-01"
+    "last_checked": "2026-11-08"
   },
   "finding_history": [
     {
@@ -120,6 +120,16 @@
       },
       "confidence": "confirmed",
       "verification_note": "Shareholder vote occurred 2026-10-15, before this umbrella's prior last_checked (2026-10-25); discovered this run via the Sunday-only Track A pass -- real news, found late."
+    },
+    {
+      "id": "f-2026-11-02-001",
+      "date": "2026-11-02",
+      "type": "deal_partnership",
+      "summary": "The previously announced Indivior-Supernus all-stock merger of equals completed. The combined company operates as Supernus, Inc. and began trading on Nasdaq under SUPN on Nov 3, 2026; former Indivior shareholders hold ~56.5% and former Supernus shareholders ~43.5% on a fully diluted basis. SUBLOCADE continues as one of the combined company's core products.",
+      "summary_ko": "앞서 발표된 Indivior-Supernus 전액 주식 교환 방식 대등합병이 완료됐다. 합병 회사는 Supernus, Inc.로 운영되며 2026년 11월 3일부터 나스닥에서 SUPN으로 거래를 시작했다. 완전 희석 기준으로 구 Indivior 주주가 약 56.5%, 구 Supernus 주주가 약 43.5%를 보유한다. SUBLOCADE는 합병 회사의 핵심 제품 중 하나로 계속된다.",
+      "source": { "name": "Supernus and Indivior Complete Merger, Creating Diversified CNS Biopharmaceutical Company", "publication": "BioSpace", "url": "https://www.biospace.com/deals/supernus-and-indivior-merge-to-create-cns-mega-company-with-11-approved-drugs", "tier": 2 },
+      "confidence": "confirmed",
+      "verification_note": "Corroborated by rttnews.com and fiercepharma.com independent coverage of the same closing."
     }
   ]
 }
