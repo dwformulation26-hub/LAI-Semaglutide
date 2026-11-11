@@ -1,0 +1,1435 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>BGM vs Competitor PK</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+Condensed:wght@600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a lab-report page. Sticky section rail on the left (wide screens), one reading column on the right;
+   each asset keeps one colour everywhere (0504 blue, 1812 orange, 2102 aqua); comparators are grey. */
+:root {
+  --bg: #f4f6f8; --surface: #ffffff; --surface-2: #eef1f5; --ink: #111a26; --ink-2: #47525f; --ink-3: #7b8591;
+  --line: #dde2e8; --line-2: #c3cad3; --accent: #0f4c81;
+  --c0504: #2a78d6; --c0504-lo: #86b6ef; --c0504-hi: #104281;
+  --c1812: #eb6834; --c1812-lo: #f4ad8c; --c1812-hi: #9c3d14;
+  --c2102: #1baf7a; --cmp: #7b8591; --cmp-2: #6250d6; --cmp-3: #a9b1bb;
+  --good: #0b7a3b; --warn: #a15c00; --bad: #b3261e;
+  --good-bg: #e3f4ea; --warn-bg: #fdf0d9; --bad-bg: #fbe6e4; --info-bg: #e6eff9;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --display: "IBM Plex Sans Condensed", "IBM Plex Sans", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --shadow: 0 1px 2px rgba(17, 26, 38, .06);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1319; --surface: #161c24; --surface-2: #1e2630; --ink: #e8edf2; --ink-2: #b4bdc8; --ink-3: #808b98;
+    --line: #2a333e; --line-2: #3a4553; --accent: #8fc1f2;
+    --c0504: #3987e5; --c0504-lo: #1c5cab; --c0504-hi: #9ec5f4;
+    --c1812: #d95926; --c1812-lo: #8f3a17; --c1812-hi: #f5b08e;
+    --c2102: #199e70; --cmp: #8b95a1; --cmp-2: #9085e9; --cmp-3: #56616e;
+    --good: #5fd08c; --warn: #f0b24a; --bad: #f08b84;
+    --good-bg: #12301f; --warn-bg: #3a2a0c; --bad-bg: #3b1917; --info-bg: #14283f;
+    --shadow: none; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1319; --surface: #161c24; --surface-2: #1e2630; --ink: #e8edf2; --ink-2: #b4bdc8; --ink-3: #808b98;
+  --line: #2a333e; --line-2: #3a4553; --accent: #8fc1f2;
+  --c0504: #3987e5; --c0504-lo: #1c5cab; --c0504-hi: #9ec5f4;
+  --c1812: #d95926; --c1812-lo: #8f3a17; --c1812-hi: #f5b08e;
+  --c2102: #199e70; --cmp: #8b95a1; --cmp-2: #9085e9; --cmp-3: #56616e;
+  --good: #5fd08c; --warn: #f0b24a; --bad: #f08b84;
+  --good-bg: #12301f; --warn-bg: #3a2a0c; --bad-bg: #3b1917; --info-bg: #14283f;
+  --shadow: none; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { background: var(--bg); color: var(--ink); font: 15px/1.55 var(--sans); margin: 0; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-underline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+.wrap { max-width: 1280px; margin: 0 auto; padding-block: 0 72px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; grid-template-columns: 208px minmax(0, 1fr); gap: 0 40px; }
+/* masthead */
+.mast { grid-column: 1 / -1; padding-block: 36px 28px; border-bottom: 1px solid var(--line); margin-bottom: 28px; }
+.eyebrow { font: 600 11.5px/1 var(--mono); letter-spacing: .09em; text-transform: uppercase; color: var(--ink-3); }
+.mast h1 { font: 600 clamp(28px, 4.4vw, 44px)/1.08 var(--display); letter-spacing: -.01em; margin: 12px 0 10px; text-wrap: balance; }
+.mast p.lede { max-width: 68ch; color: var(--ink-2); font-size: 16px; margin: 0; }
+.mast-meta { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 18px; font-size: 13px; color: var(--ink-3); }
+.mast-meta b { color: var(--ink-2); font-weight: 500; }
+/* rail */
+.rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 20px); align-self: start; font-size: 13.5px; }
+.rail a { display: flex; gap: 8px; align-items: center; padding: 6px 10px; border-radius: 6px; color: var(--ink-2); text-decoration: none; border-left: 2px solid transparent; }
+.rail a:hover { background: var(--surface-2); color: var(--ink); }
+.rail a.on { color: var(--ink); font-weight: 600; background: var(--surface); border-left-color: var(--accent); }
+.rail .k { width: 8px; height: 8px; border-radius: 2px; flex: none; background: var(--line-2); }
+.rail .rail-h { font: 600 11px/1 var(--mono); letter-spacing: .09em; text-transform: uppercase; color: var(--ink-3); padding: 14px 10px 6px; }
+main { min-width: 0; display: flex; flex-direction: column; gap: 56px; }
+@media (max-width: 900px) {
+  .wrap { grid-template-columns: minmax(0, 1fr); }
+  .rail { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); display: flex; gap: 4px; overflow-x: auto;
+    margin: 0 -16px 20px; padding: 8px 16px; border-bottom: 1px solid var(--line); scrollbar-width: none; }
+  .rail .rail-h { display: none; }
+  .rail a { white-space: nowrap; border-left: 0; border-bottom: 2px solid transparent; border-radius: 6px 6px 0 0; }
+  .rail a.on { border-bottom-color: var(--accent); }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+}
+/* sections */
+section > header { margin-bottom: 20px; }
+.tag { display: inline-flex; align-items: center; gap: 7px; font: 600 11.5px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.tag i { width: 9px; height: 9px; border-radius: 2px; background: var(--k, var(--line-2)); }
+h2 { font: 600 clamp(22px, 3vw, 30px)/1.15 var(--display); margin: 8px 0 8px; text-wrap: balance; }
+h3 { font: 600 17px/1.3 var(--sans); margin: 0 0 4px; text-wrap: balance; }
+h4 { font: 600 12px/1.2 var(--mono); letter-spacing: .07em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 8px; }
+p { margin: 0 0 10px; } p:last-child { margin-bottom: 0; }
+.sub { color: var(--ink-2); max-width: 72ch; }
+.note { font-size: 12.5px; color: var(--ink-3); max-width: 86ch; }
+.stack { display: flex; flex-direction: column; gap: 20px; }
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.split { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+.split-pk { grid-template-columns: minmax(0, 2.6fr) minmax(0, 1fr); } .split-pk .stats { grid-template-columns: minmax(0, 1fr); }
+.ctl { display: inline-flex; align-items: center; gap: 8px; }
+table.t { min-width: 520px; } .tip table { min-width: 0; }
+@media (max-width: 1020px) { .split-pk { grid-template-columns: minmax(0, 1fr); } .split-pk .stats { grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); } .grid3 { grid-template-columns: minmax(0, 1fr); } .split { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 720px) { .grid2 { grid-template-columns: minmax(0, 1fr); } }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; box-shadow: var(--shadow); min-width: 0; }
+.panel > .panel-h { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
+.panel-h .cap { color: var(--ink-2); font-size: 13.5px; margin: 0; max-width: 70ch; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin-bottom: 10px; }
+.controls label, .ctl-l { font-size: 12px; color: var(--ink-3); font-family: var(--mono); letter-spacing: .04em; text-transform: uppercase; }
+.seg { display: inline-flex; background: var(--surface-2); border-radius: 7px; padding: 2px; gap: 2px; flex-wrap: wrap; }
+.seg button { font: 500 13px/1 var(--sans); color: var(--ink-2); background: transparent; border: 0; padding: 7px 11px; border-radius: 5px; cursor: pointer; }
+.seg button:hover { color: var(--ink); }
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 0 0 1px var(--line-2); font-weight: 600; }
+/* asset cards */
+.asset { border-top: 3px solid var(--k); display: flex; flex-direction: column; gap: 12px; }
+.asset .name { font: 600 22px/1.1 var(--display); }
+.asset .mech { color: var(--ink-2); font-size: 13.5px; }
+.asset .big { font: 600 34px/1 var(--display); letter-spacing: -.01em; }
+.asset .big small { display: block; font: 400 12.5px/1.35 var(--sans); color: var(--ink-2); letter-spacing: 0; margin-top: 6px; }
+.asset ul { margin: 0; padding-left: 18px; font-size: 13.5px; color: var(--ink-2); }
+.asset li { margin-bottom: 4px; }
+.pill { display: inline-flex; align-items: center; gap: 6px; font: 600 11.5px/1 var(--sans); padding: 5px 9px; border-radius: 99px; background: var(--surface-2); color: var(--ink-2); white-space: nowrap; }
+.pill.good { background: var(--good-bg); color: var(--good); } .pill.warn { background: var(--warn-bg); color: var(--warn); }
+.pill.bad { background: var(--bad-bg); color: var(--bad); } .pill.info { background: var(--info-bg); color: var(--accent); }
+.kv { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 14px; font-size: 13.5px; margin: 0; }
+.kv dt { color: var(--ink-3); } .kv dd { margin: 0; font-variant-numeric: tabular-nums; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 10px; }
+.stat { background: var(--surface-2); border-radius: 8px; padding: 10px 12px; }
+.stat b { display: block; font: 600 20px/1.15 var(--display); font-variant-numeric: tabular-nums; }
+.stat span { font-size: 12px; color: var(--ink-2); line-height: 1.3; display: block; margin-top: 3px; }
+.callout { border-left: 3px solid var(--accent); background: var(--info-bg); padding: 12px 16px; border-radius: 0 8px 8px 0; font-size: 14px; }
+.callout.warn { border-color: var(--warn); background: var(--warn-bg); }
+.callout b { font-weight: 600; }
+ul.tight { margin: 0; padding-left: 18px; } ul.tight li { margin-bottom: 6px; }
+/* tables */
+.tw { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+table.t { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+table.t th { text-align: left; font: 600 11px/1.25 var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--ink-3); background: var(--surface-2); padding: 9px 10px; white-space: nowrap; }
+table.t td { padding: 8px 10px; border-top: 1px solid var(--line); vertical-align: top; }
+table.t td.n, table.t th.n { text-align: right; white-space: nowrap; }
+table.t tr.hl td { background: var(--info-bg); }
+table.t td b { font-weight: 600; }
+table.t .muted, .muted { color: var(--ink-3); }
+.src { font: 500 11px/1 var(--mono); color: var(--ink-3); vertical-align: super; text-decoration: none; margin-left: 2px; }
+a.src:hover { color: var(--accent); }
+.ev { font: 600 10.5px/1 var(--mono); letter-spacing: .05em; text-transform: uppercase; padding: 3px 6px; border-radius: 4px; border: 1px solid var(--line-2); color: var(--ink-2); white-space: nowrap; }
+.ev.pub { border-color: var(--good); color: var(--good); } .ev.co { border-color: var(--warn); color: var(--warn); }
+.ev.dig { border-style: dashed; } .ev.mod { border-style: dotted; border-color: var(--cmp-2); color: var(--cmp-2); }
+/* timeline */
+.tl { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 0 16px; font-size: 13.5px; }
+.tl .d { font: 500 12px/1.6 var(--mono); color: var(--ink-3); text-align: right; padding: 7px 0; }
+.tl .e { border-left: 2px solid var(--line-2); padding: 6px 0 6px 16px; position: relative; }
+.tl .e::before { content: ""; position: absolute; left: -6px; top: 13px; width: 10px; height: 10px; border-radius: 50%; background: var(--k, var(--line-2)); border: 2px solid var(--surface); }
+.tl .e.future::before { background: var(--surface); border-color: var(--k, var(--line-2)); }
+/* charts */
+.chart { position: relative; min-width: 0; }
+.chart svg { display: block; overflow: visible; touch-action: pan-y; }
+.chart .grid { stroke: var(--line); stroke-width: 1; } .chart .grid.minor { stroke-dasharray: 2 4; opacity: .7; }
+.chart .base { stroke: var(--line-2); stroke-width: 1; }
+.chart .ref { stroke: var(--ink-3); stroke-width: 1; stroke-dasharray: 5 4; }
+.chart .band { fill: var(--surface-2); }
+.chart .cross { stroke: var(--ink-3); stroke-width: 1; }
+.chart .err { stroke: var(--ink-2); stroke-width: 1.25; }
+.chart text { font-family: var(--sans); fill: var(--ink-3); font-size: 11.5px; font-variant-numeric: tabular-nums; }
+.chart text.axis-l { fill: var(--ink-2); font-size: 12px; } .chart text.cat { fill: var(--ink-2); }
+.chart text.val { fill: var(--ink); font-size: 11.5px; font-weight: 600; }
+.chart text.dlabel { fill: var(--ink-2); font-size: 11.5px; font-weight: 500; }
+.chart .bar { cursor: default; } .chart .bar:hover, .chart .bar:focus { filter: brightness(1.12); outline: none; }
+.chart .hit { cursor: crosshair; } .chart .hit:focus { outline: none; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-bottom: 6px; font-size: 12.5px; color: var(--ink-2); }
+.legend-item { display: inline-flex; align-items: center; gap: 6px; }
+.sw-bar { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.tip { position: fixed; z-index: 50; pointer-events: none; background: var(--ink); color: var(--bg); border-radius: 8px; padding: 9px 11px; font-size: 12.5px; line-height: 1.4; max-width: 300px; box-shadow: 0 6px 20px rgba(0, 0, 0, .22); }
+.tip .tip-h { font-weight: 600; margin-bottom: 4px; }
+.tip table { border-collapse: collapse; } .tip td { padding: 1px 0; } .tip td + td { text-align: right; padding-left: 14px; font-variant-numeric: tabular-nums; font-weight: 600; }
+.tip .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; border: 1px solid var(--bg); }
+.tip .tip-u { opacity: .72; font-size: 11.5px; margin-top: 4px; }
+/* sim */
+.sim-grid { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 20px; }
+@media (max-width: 820px) { .sim-grid { grid-template-columns: minmax(0, 1fr); } }
+.field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 14px; }
+.field output { font: 600 14px/1 var(--mono); color: var(--ink); }
+.field .row { display: flex; justify-content: space-between; align-items: baseline; }
+input[type=range] { width: 100%; accent-color: var(--accent); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips button { font: 500 12.5px/1 var(--sans); padding: 6px 10px; border-radius: 99px; border: 1px solid var(--line-2); background: var(--surface); color: var(--ink-2); cursor: pointer; }
+.chips button:hover { border-color: var(--accent); color: var(--ink); }
+details.more { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 4px; }
+details.more summary { cursor: pointer; font-weight: 600; font-size: 13.5px; color: var(--ink-2); }
+details.more[open] summary { margin-bottom: 10px; }
+ol.refs { padding-left: 26px; font-size: 13px; color: var(--ink-2); columns: 2; column-gap: 36px; margin: 0; }
+ol.refs li { margin-bottom: 7px; break-inside: avoid; overflow-wrap: anywhere; }
+@media (max-width: 820px) { ol.refs { columns: 1; } }
+.gap-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+.gap { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; font-size: 13.5px; }
+.gap b { display: block; margin-bottom: 3px; }
+.gap .who { font: 500 11px/1 var(--mono); color: var(--ink-3); text-transform: uppercase; letter-spacing: .05em; display: block; margin-bottom: 6px; }
+/* tabs */
+.ev-tabs { display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 1px solid var(--line); margin-bottom: 20px; }
+.tab-btn { font: 600 14.5px/1 var(--sans); color: var(--ink-3); background: transparent; border: 0; border-bottom: 2px solid transparent; padding: 11px 15px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; margin-bottom: -1px; }
+.tab-btn:hover { color: var(--ink); }
+.tab-btn[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--tabk, var(--accent)); }
+.tab-btn .k { width: 9px; height: 9px; border-radius: 2px; background: var(--tabk, var(--line-2)); }
+.ev-panel { display: flex; flex-direction: column; gap: 20px; }
+.langseg { margin-left: 12px; }
+.langseg button { font-weight: 600; min-width: 40px; }
+:lang(ko) body, [lang="ko"] { word-break: keep-all; line-break: strict; }
+.lead { font-size: 16px; color: var(--ink); max-width: 76ch; margin: 0 0 4px; }
+.lead b, .lead strong { font-weight: 600; }
+.bottom-line { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--surface); }
+.bottom-line > div { padding: 14px 16px; border-top: 3px solid var(--k, var(--accent)); }
+.bottom-line > div + div { border-left: 1px solid var(--line); }
+.bottom-line h4 { color: var(--ink); font: 600 13px/1.3 var(--sans); letter-spacing: 0; text-transform: none; margin-bottom: 5px; }
+.bottom-line p { font-size: 13px; color: var(--ink-2); margin: 0; }
+@media (max-width: 760px) { .bottom-line > div + div { border-left: 0; } }
+table.t th.ahead { font-size: 12px; letter-spacing: .02em; }
+@media print { .rail { display: none; } .wrap { display: block; } .panel { break-inside: avoid; } .ev-panel[hidden] { display: flex !important; } }
+
+/* ---- additions for the PK comparison page ---- */
+.wrap.solo { grid-template-columns: 180px minmax(0, 1fr); }
+@media (max-width: 900px) { .wrap.solo { grid-template-columns: minmax(0, 1fr); } }
+.vs { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; align-items: stretch; }
+@media (max-width: 980px) { .vs { grid-template-columns: minmax(0, 1fr); } }
+.vs > .panel { display: flex; flex-direction: column; gap: 10px; border-top: 3px solid var(--k, var(--line-2)); }
+.side-h { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; }
+.side-h .who { font: 600 11px/1 var(--mono); letter-spacing: .09em; text-transform: uppercase; color: var(--ink-3); }
+.side-h h3 { font: 600 21px/1.15 var(--display); margin: 4px 0 0; }
+.side-meta { font-size: 12.5px; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; min-height: 22px; }
+select.pick { font: 500 13.5px/1.2 var(--sans); color: var(--ink); background: var(--surface-2); border: 1px solid var(--line-2); border-radius: 7px; padding: 7px 30px 7px 10px; max-width: 100%;
+  appearance: none; -webkit-appearance: none; cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, var(--ink-3) 50%), linear-gradient(135deg, var(--ink-3) 50%, transparent 50%);
+  background-position: calc(100% - 15px) 52%, calc(100% - 10px) 52%; background-size: 5px 5px; background-repeat: no-repeat; }
+select.pick:hover { border-color: var(--accent); }
+.empty { border: 1px dashed var(--line-2); border-radius: 8px; padding: 28px 18px; text-align: center; color: var(--ink-2); font-size: 13.5px; background: var(--surface-2); min-height: 220px;
+  display: flex; flex-direction: column; justify-content: center; gap: 6px; }
+.empty b { color: var(--ink); font-size: 14.5px; }
+.stats.s4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 560px) { .stats.s4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.stat.na b { color: var(--ink-3); }
+.shared { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 0px); z-index: 4; background: var(--bg); padding: 10px 0; margin: -10px 0 0; border-bottom: 1px solid var(--line); }
+@media (max-width: 900px) { .shared { position: static; } }
+.ratio { font: 600 12px/1 var(--mono); padding: 3px 6px; border-radius: 4px; background: var(--surface-2); color: var(--ink-2); }
+table.t td.k0504 { box-shadow: inset 3px 0 0 var(--c0504); } table.t td.k1812 { box-shadow: inset 3px 0 0 var(--c1812); }
+table.t td.kcmp { box-shadow: inset 3px 0 0 var(--cmp); }
+.cls { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 6px; vertical-align: 0; }
+.chart .pt { cursor: pointer; } .chart .pt:hover, .chart .pt:focus { outline: none; stroke-width: 3; }
+.chart text.plab { fill: var(--ink-2); font-size: 11px; font-weight: 500; }
+.chart text.plab.b { fill: var(--ink); font-weight: 600; }
+.mini { font-size: 12px; color: var(--ink-3); }
+#atlas-table { min-width: 1180px; }
+#atlas-table td:first-child { min-width: 170px; }
+#h2h { min-width: 560px; }
+#h2h td:not(:first-child) { min-width: 180px; }
+#atlas-table td { max-width: 200px; }
+#atlas-table td:nth-child(9) { max-width: 300px; min-width: 220px; font-size: 12.5px; color: var(--ink-2); }
+#atlas-table td:nth-child(4), #atlas-table td:nth-child(5) { min-width: 110px; }
+</style>
+</head>
+<body>
+<div class="wrap solo">
+<header class="mast">
+  <div class="seg langseg" data-key="lang" aria-label="Language" style="float:right">
+    <button data-v="en" aria-pressed="true">EN</button><button data-v="ko" aria-pressed="false">한국어</button>
+  </div>
+  <div class="eyebrow" data-ko="PK 비교 · 공개 자료 기준, 2026년 11월 11일">PK comparison · public sources, cut-off 11 Nov 2026</div>
+  <h1 data-ko="BrightGene 에셋 vs 경쟁 품목: 반감기와 PK 나란히 보기">BrightGene assets vs competitors: half-life and PK, side by side</h1>
+  <p class="lede" data-ko="세 장의 그래픽만 담았다. 분자·기술별 반감기, BGM 에셋 PK와 경쟁 품목 PK의 나란히 비교, 그리고 경쟁 품목 PK 전체 표. 해석은 별도 슬라이드에 있다.">Three graphics only: half-life by molecule and technology, BGM asset PK next to competitor PK, and the full competitor PK table. The interpretation lives in the slide deck.</p>
+  <div class="mast-meta"><span data-ko="근거 태그: <span class='ev pub'>Published</span> 동료심사·라벨·등록 · <span class='ev co'>Company</span> 기업 공시·학회 · <span class='ev dig'>Digitised</span> 공개 그림에서 추출 · <span class='ev mod'>Model</span> 공개 파라미터로 자체 계산">Evidence tags: <span class="ev pub">Published</span> peer-reviewed, label or registry · <span class="ev co">Company</span> press release, deck or congress · <span class="ev dig">Digitised</span> read off a published figure · <span class="ev mod">Model</span> our calculation from published parameters</span></div>
+</header>
+
+<nav class="rail" aria-label="Sections">
+  <div class="rail-h" data-ko="그래픽">Graphics</div>
+  <a href="#half"><span class="k"></span><span data-ko="반감기">Half-life</span></a>
+  <a href="#vs"><span class="k" style="background:var(--c0504)"></span><span data-ko="BGM vs 경쟁 PK">BGM vs competitor PK</span></a>
+  <a href="#atlas"><span class="k" style="background:var(--cmp)"></span><span data-ko="경쟁 품목 PK">Competitor PK</span></a>
+  <div class="rail-h" data-ko="근거">Evidence</div>
+  <a href="#sources"><span class="k"></span><span data-ko="출처">Sources</span></a>
+</nav>
+
+<main>
+<!-- ============ HALF-LIFE ============ -->
+<section id="half">
+  <header>
+    <span class="tag"><i></i><span data-ko="반감기">Half-life</span></span>
+    <h2 data-ko="분자·기술별 말단 반감기, 일 단위 단일 축">Terminal half-life by molecule and technology, on one scale in days</h2>
+  </header>
+  <div class="panel">
+    <div class="panel-h"><div><p class="cap" data-ko="종과 연구가 다르므로 막대는 크기 비교용이며 동일 조건 비교가 아니다. 범위가 보고된 경우 중앙값을 막대로, 범위는 마우스오버로 표시. 점선 막대 = 예측치.">Species and studies differ, so bars show magnitude, not a like-for-like comparison. Where a range is reported the bar is its midpoint; hover for the range and source. Dashed bars are predictions.</p></div></div>
+    <div class="controls">
+      <span class="ctl"><span class="ctl-l" data-ko="종">Species</span><span class="seg" data-key="sp" id="half-sp"><button data-v="human" aria-pressed="true" data-ko="인체">Human</button><button data-v="animal" aria-pressed="false" data-ko="동물">Animal</button><button data-v="all" aria-pressed="false" data-ko="전체">All</button></span></span>
+      <span class="ctl"><span class="ctl-l" data-ko="기술">Route</span><span class="seg" data-key="f" id="half-f"><button data-v="all" aria-pressed="true" data-ko="전체">All</button><button data-v="s" aria-pressed="false" data-ko="단일 지질">Single lipid</button><button data-v="m" aria-pressed="false" data-ko="분자 개량">Engineered</button><button data-v="d" aria-pressed="false" data-ko="데포">Depot</button></span></span>
+      <span class="ctl"><span class="ctl-l" data-ko="정렬">Sort</span><span class="seg" data-key="sort" id="half-sort"><button data-v="group" aria-pressed="true" data-ko="기술별">By route</button><button data-v="val" aria-pressed="false" data-ko="값">By value</button></span></span>
+    </div>
+    <div id="half-chart"></div>
+    <p class="note" id="half-note" style="margin-top:8px"></p>
+  </div>
+</section>
+
+<!-- ============ SIDE BY SIDE ============ -->
+<section id="vs">
+  <header>
+    <span class="tag"><i style="--k:var(--c0504)"></i><span data-ko="BGM vs 경쟁 PK">BGM vs competitor PK</span></span>
+    <h2 data-ko="같은 종, 같은 축: 왼쪽 BGM 에셋, 오른쪽 경쟁 품목">Same species, same axes: BGM asset on the left, competitor on the right</h2>
+    <p class="sub" data-ko="두 차트는 시간축과 농도축을 공유하므로 곡선 모양과 높이를 바로 비교할 수 있다. 경쟁 품목 곡선은 공개 그림 추출값이 있으면 그것을, 없으면 공개된 t½·Tmax·Cmax로 1-구획 흡수 모델을 그린 것이다.">Both charts share their time and concentration axes, so shape and height compare directly. A competitor curve is digitised where a published figure exists; otherwise it is a one-compartment absorption model drawn through the published t½, Tmax and Cmax.</p>
+  </header>
+  <div class="stack">
+    <div class="controls shared" id="vs-shared">
+      <span class="ctl"><span class="ctl-l" data-ko="종">Species</span><span class="seg" data-key="sp"><button data-v="rat" aria-pressed="false" data-ko="랫드">Rat</button><button data-v="monkey" aria-pressed="false" data-ko="원숭이">Monkey</button><button data-v="human" aria-pressed="true" data-ko="인체">Human</button></span></span>
+      <span class="ctl"><span class="ctl-l" data-ko="Y축">Y axis</span><span class="seg" data-key="scale"><button data-v="log" aria-pressed="false" data-ko="로그">Log</button><button data-v="linear" aria-pressed="true" data-ko="선형">Linear</button></span></span>
+      <span class="ctl"><span class="ctl-l" data-ko="값">Values</span><span class="seg" data-key="val"><button data-v="raw" aria-pressed="false" data-ko="측정값">ng/mL</button><button data-v="norm" aria-pressed="false" data-ko="÷ 용량">÷ dose</button><button data-v="pct" aria-pressed="true" data-ko="최고치 대비 %">% of peak</button></span></span>
+      <span class="ctl"><span class="ctl-l" data-ko="시간">Time</span><span class="seg" data-key="win"><button data-v="fit" aria-pressed="true" data-ko="공통">Shared</button><button data-v="own" aria-pressed="false" data-ko="개별">Own</button></span></span>
+    </div>
+    <div class="vs">
+      <div class="panel" id="side-l" style="--k:var(--c0504)">
+        <div class="side-h"><div><div class="who" data-ko="BGM 에셋">BGM asset</div><h3 id="l-title">BGM0504</h3></div>
+          <select class="pick" id="l-pick" aria-label="BGM asset"></select></div>
+        <div class="side-meta" id="l-meta"></div>
+        <div id="l-chart"></div>
+        <div class="stats s4" id="l-stats"></div>
+        <p class="note" id="l-src"></p>
+      </div>
+      <div class="panel" id="side-r" style="--k:var(--cmp)">
+        <div class="side-h"><div><div class="who" data-ko="경쟁 품목">Competitor</div><h3 id="r-title">Tirzepatide</h3></div>
+          <select class="pick" id="r-pick" aria-label="Competitor"></select></div>
+        <div class="side-meta" id="r-meta"></div>
+        <div id="r-chart"></div>
+        <div class="stats s4" id="r-stats"></div>
+        <p class="note" id="r-src"></p>
+      </div>
+    </div>
+    <div class="stack">
+      <div class="panel">
+        <div class="panel-h"><div><h3 data-ko="겹쳐 보기: 최고치 대비 %">Overlay, as % of each product's own peak</h3><p class="cap" data-ko="효력이 다른 분자를 농도로 비교하지 않고 곡선 모양만 비교한다. 정상상태는 각 품목의 허가·개발 투여 간격으로 반복 투여한 모델. <span class='ev mod'>Model</span>">Compares shape only, since potency differs between molecules. Steady state repeats each product at its own labelled or development interval. <span class="ev mod">Model</span></p></div>
+          <div class="seg" data-key="ov" id="ov-seg"><button data-v="single" aria-pressed="true" data-ko="단회">Single dose</button><button data-v="ss" aria-pressed="false" data-ko="정상상태">Steady state</button></div></div>
+        <div id="ov-chart"></div>
+        <p class="note" id="ov-note"></p>
+      </div>
+      <div class="panel">
+        <div class="panel-h"><div><h3 data-ko="파라미터 맞대기">Parameters head to head</h3><p class="cap" id="h2h-cap"></p></div></div>
+        <div class="tw"><table class="t" id="h2h"></table></div>
+        <p class="note" id="h2h-note" style="margin-top:8px"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPETITOR PK ATLAS ============ -->
+<section id="atlas">
+  <header>
+    <span class="tag"><i style="--k:var(--cmp)"></i><span data-ko="경쟁 품목 PK">Competitor PK</span></span>
+    <h2 data-ko="경쟁 품목 PK: 흡수 속도 대 소실 속도">Competitor PK: how fast it appears, how long it stays</h2>
+  </header>
+  <div class="stack">
+    <div class="panel">
+      <div class="panel-h"><div><h3 data-ko="인체 Tmax 대 말단 반감기">Human Tmax against terminal half-life</h3><p class="cap" data-ko="두 축 모두 로그. 오른쪽 위로 갈수록 흡수가 느리고(데포·플립플롭) 오래 남는다. 점을 누르면 위 나란히 비교의 오른쪽에 그 품목이 열린다.">Both axes are logarithmic. Up and to the right means slower absorption (depot, flip-flop) and longer exposure. Click a point to open it on the right side of the comparison above.</p></div>
+        <div class="seg" data-key="sp" id="map-sp"><button data-v="human" aria-pressed="true" data-ko="인체">Human</button><button data-v="animal" aria-pressed="false" data-ko="동물">Animal</button></div></div>
+      <div id="map-chart"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-h"><div><h3 data-ko="경쟁 품목 PK 파라미터 전체">Every competitor PK parameter we could source</h3><p class="cap" data-ko="행마다 근거 태그와 출처 번호. 빈칸(–)은 공개 자료에서 찾지 못한 값이다.">Each row carries its evidence tag and source number. A dash means no public value was found.</p></div>
+        <div class="seg" data-key="f" id="tab-f"><button data-v="all" aria-pressed="true" data-ko="전체">All</button><button data-v="s" aria-pressed="false" data-ko="단일 지질">Single lipid</button><button data-v="m" aria-pressed="false" data-ko="분자 개량">Engineered</button><button data-v="d" aria-pressed="false" data-ko="데포">Depot</button><button data-v="bgm" aria-pressed="false">BGM</button></div></div>
+      <div class="tw"><table class="t" id="atlas-table"></table></div>
+      <p class="note" style="margin-top:8px" data-ko="t½·Tmax는 보고 단위 그대로, 괄호는 범위. Cmax는 표시 용량에서의 값. 집단·용량·추정법이 연구마다 달라 직접 비교는 불가.">t½ and Tmax as reported, ranges in brackets. Cmax is at the dose shown. Populations, doses and methods differ by study, so rows are not directly comparable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOURCES ============ -->
+<section id="sources">
+  <header>
+    <span class="tag"><i></i><span data-ko="출처">Sources</span></span>
+    <h2 data-ko="출처와 한계">Sources and limits</h2>
+  </header>
+  <div class="stack">
+    <div class="gap-list" id="limits"></div>
+    <ol class="refs" id="refs"></ol>
+  </div>
+</section>
+</main>
+</div>
+<script>
+
+/* ---------- tiny SVG chart engine (no dependencies) ---------- */
+const NS = 'http://www.w3.org/2000/svg';
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+/* i18n: t(en, ko) returns the string for the current language (English fallback) */
+let LANG = 'en';
+function t(en, ko) { return LANG === 'ko' && ko != null ? ko : en; }
+function svgEl(tag, attrs = {}, parent) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) if (attrs[k] !== undefined && attrs[k] !== null) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+function h(tag, attrs = {}, html) {
+  const e = document.createElement(tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (html !== undefined) e.innerHTML = html;
+  return e;
+}
+const fmtNum = (v, d) => {
+  if (v === null || v === undefined || isNaN(v)) return '–';
+  if (d !== undefined) return v.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
+  const a = Math.abs(v);
+  if (a >= 100) return Math.round(v).toLocaleString('en-US');
+  if (a >= 10) return v.toLocaleString('en-US', { maximumFractionDigits: 1 });
+  if (a >= 1) return v.toLocaleString('en-US', { maximumFractionDigits: 2 });
+  return v.toLocaleString('en-US', { maximumSignificantDigits: 3 });
+};
+const sgn = (v, d = 1) => (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toFixed(d);
+
+/* tooltip (one shared element) */
+const tip = h('div', { class: 'tip', role: 'status' });
+tip.hidden = true;
+document.body.appendChild(tip);
+function showTip(html, cx, cy) {
+  tip.innerHTML = html;
+  tip.hidden = false;
+  const r = tip.getBoundingClientRect(), vw = document.documentElement.clientWidth;
+  let x = cx + 14, y = cy + 14;
+  if (x + r.width > vw - 8) x = cx - r.width - 14;
+  if (x < 8) x = 8;
+  if (y + r.height > window.innerHeight - 8) y = cy - r.height - 14;
+  tip.style.left = x + 'px';
+  tip.style.top = Math.max(8, y) + 'px';
+}
+function hideTip() { tip.hidden = true; }
+
+function niceTicks(lo, hi, n = 5) {
+  const span = hi - lo, step0 = span / n, mag = Math.pow(10, Math.floor(Math.log10(step0)));
+  const step = [1, 2, 2.5, 5, 10].map(m => m * mag).find(s => span / s <= n + 0.5) || 10 * mag;
+  const t = [];
+  for (let v = Math.ceil(lo / step - 1e-9) * step; v <= hi + step * 1e-6; v += step) t.push(+v.toFixed(10));
+  return t;
+}
+function legend(host, items) {
+  const el = h('div', { class: 'legend' });
+  items.forEach(it => {
+    const sw = it.kind === 'bar'
+      ? `<span class="sw sw-bar" style="background:${it.color}"></span>`
+      : `<svg class="sw" width="26" height="10" aria-hidden="true"><line x1="1" y1="5" x2="25" y2="5" stroke="${it.color}" stroke-width="2" stroke-dasharray="${it.dash || ''}"/><circle cx="13" cy="5" r="3" fill="${it.hollow ? 'var(--surface)' : it.color}" stroke="${it.color}" stroke-width="1.5"/></svg>`;
+    el.appendChild(h('span', { class: 'legend-item' }, sw + `<span>${it.name}</span>`));
+  });
+  host.appendChild(el);
+}
+
+/* ---- line chart ----
+ cfg: { series:[{name,color,dash,hollow,points:[[x,y]],label}], x:{label,ticks,min,max,fmt}, y:{label,log,min,max,ticks,fmt,unit},
+        height, refLines:[{y,label}], bands:[{x0,x1,label}], tipTitle:(x)=>str, noLegend } */
+function lineChart(host, cfg) {
+  host.innerHTML = '';
+  host.classList.add('chart');
+  if (!cfg.noLegend && cfg.series.length > 1) legend(host, cfg.series);
+  const W = Math.max(300, host.clientWidth || 640), H = cfg.height || 340;
+  const narrow = W < 480;
+  const m = { t: 14, r: cfg.directLabels && !narrow ? 96 : 16, b: 44, l: 58 };
+  const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, width: '100%', height: H, role: 'img', 'aria-label': cfg.aria || '' }, host);
+  const xs = cfg.series.flatMap(s => s.points.map(p => p[0]));
+  const ys = cfg.series.flatMap(s => s.points.map(p => p[1])).filter(v => !cfg.y.log || v > 0);
+  const x0 = cfg.x.min ?? Math.min(...xs), x1 = cfg.x.max ?? Math.max(...xs);
+  let y0, y1, yt;
+  if (cfg.y.log) {
+    y0 = cfg.y.min ?? Math.pow(10, Math.floor(Math.log10(Math.min(...ys))));
+    y1 = cfg.y.max ?? Math.pow(10, Math.ceil(Math.log10(Math.max(...ys))));
+    yt = []; for (let v = y0; v <= y1 * 1.0001; v *= 10) yt.push(v);
+  } else {
+    y0 = cfg.y.min ?? Math.min(0, Math.min(...ys)); y1 = cfg.y.max ?? Math.max(...ys);
+    yt = cfg.y.ticks || niceTicks(y0, y1, 5);
+    if (cfg.y.max === undefined) y1 = Math.max(y1, yt[yt.length - 1] + (yt[1] - yt[0]) * (y1 > yt[yt.length - 1] ? 1 : 0));
+    if (cfg.y.max === undefined && y1 > yt[yt.length - 1]) yt.push(yt[yt.length - 1] + (yt[1] - yt[0]));
+    y1 = Math.max(y1, yt[yt.length - 1]); y0 = Math.min(y0, yt[0]);
+  }
+  const px = v => m.l + (v - x0) / (x1 - x0) * (W - m.l - m.r);
+  const py = v => cfg.y.log
+    ? H - m.b - (Math.log10(Math.max(v, y0)) - Math.log10(y0)) / (Math.log10(y1) - Math.log10(y0)) * (H - m.t - m.b)
+    : H - m.b - (v - y0) / (y1 - y0) * (H - m.t - m.b);
+  const yf = cfg.y.fmt || (v => fmtNum(v));
+  const xf = cfg.x.fmt || (v => v);
+  (cfg.bands || []).forEach(b => {
+    svgEl('rect', { x: px(b.x0), y: m.t, width: px(b.x1) - px(b.x0), height: H - m.t - m.b, class: 'band' }, svg);
+    if (b.label) svgEl('text', { x: px(b.x0) + 4, y: m.t + 12, class: 'axis-t' }, svg).textContent = b.label;
+  });
+  yt.forEach(v => {
+    svgEl('line', { x1: m.l, x2: W - m.r, y1: py(v), y2: py(v), class: v === 0 ? 'base' : 'grid' }, svg);
+    svgEl('text', { x: m.l - 8, y: py(v) + 4, 'text-anchor': 'end', class: 'axis-t' }, svg).textContent = yf(v);
+  });
+  if (cfg.y.log) yt.slice(0, -1).forEach(v => [2, 5].forEach(k =>
+    svgEl('line', { x1: m.l, x2: W - m.r, y1: py(v * k), y2: py(v * k), class: 'grid minor' }, svg)));
+  let xt = cfg.x.ticks || niceTicks(x0, x1, narrow ? 4 : 7);
+  if (narrow && xt.length > 7) xt = xt.filter((_, i) => i % 2 === 0);
+  xt.forEach(v => {
+    svgEl('line', { x1: px(v), x2: px(v), y1: H - m.b, y2: H - m.b + 4, class: 'base' }, svg);
+    svgEl('text', { x: px(v), y: H - m.b + 17, 'text-anchor': 'middle', class: 'axis-t' }, svg).textContent = xf(v);
+  });
+  svgEl('line', { x1: m.l, x2: W - m.r, y1: H - m.b, y2: H - m.b, class: 'base' }, svg);
+  svgEl('text', { x: (m.l + W - m.r) / 2, y: H - 6, 'text-anchor': 'middle', class: 'axis-l' }, svg).textContent = cfg.x.label || '';
+  const yl = svgEl('text', { x: 13, y: (m.t + H - m.b) / 2, 'text-anchor': 'middle', class: 'axis-l', transform: `rotate(-90 13 ${(m.t + H - m.b) / 2})` }, svg);
+  yl.textContent = cfg.y.label || '';
+  (cfg.refLines || []).forEach(r => {
+    svgEl('line', { x1: m.l, x2: W - m.r, y1: py(r.y), y2: py(r.y), class: 'ref' }, svg);
+    svgEl('text', { x: W - m.r - 4, y: py(r.y) - 5, 'text-anchor': 'end', class: 'axis-t' }, svg).textContent = r.label;
+  });
+  const labelYs = [];
+  cfg.series.forEach(s => {
+    const pts = s.points.filter(p => !cfg.y.log || p[1] > 0);
+    const d = pts.map((p, i) => (i ? 'L' : 'M') + px(p[0]).toFixed(1) + ' ' + py(p[1]).toFixed(1)).join('');
+    svgEl('path', { d, fill: 'none', stroke: s.color, 'stroke-width': 2, 'stroke-dasharray': s.dash || '', 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }, svg);
+    if (!s.noMarkers) pts.forEach(p => svgEl('circle', { cx: px(p[0]), cy: py(p[1]), r: 3, fill: s.hollow ? 'var(--surface)' : s.color, stroke: s.hollow ? s.color : 'var(--surface)', 'stroke-width': 1.25 }, svg));
+    if (cfg.directLabels && !narrow && pts.length) {
+      let ly = py(pts[pts.length - 1][1]) + 4;
+      labelYs.forEach(o => { if (Math.abs(o - ly) < 12) ly = o + (ly >= o ? 12 : -12); });
+      labelYs.push(ly);
+      svgEl('text', { x: px(pts[pts.length - 1][0]) + 8, y: ly, class: 'dlabel' }, svg).textContent = s.label || s.name;
+    }
+  });
+  /* hover layer */
+  const ux = [...new Set(xs)].sort((a, b) => a - b);
+  const cross = svgEl('line', { y1: m.t, y2: H - m.b, class: 'cross', visibility: 'hidden' }, svg);
+  const dots = cfg.series.map(s => svgEl('circle', { r: 5, fill: s.color, stroke: 'var(--surface)', 'stroke-width': 2, visibility: 'hidden' }, svg));
+  const hit = svgEl('rect', { x: m.l, y: m.t, width: W - m.l - m.r, height: H - m.t - m.b, fill: 'transparent', tabindex: 0, class: 'hit' }, svg);
+  function at(x, cx, cy) {
+    cross.setAttribute('x1', px(x)); cross.setAttribute('x2', px(x)); cross.setAttribute('visibility', 'visible');
+    let rows = '';
+    cfg.series.forEach((s, i) => {
+      const p = s.points.find(q => q[0] === x);
+      if (p && (!cfg.y.log || p[1] > 0)) {
+        dots[i].setAttribute('cx', px(x)); dots[i].setAttribute('cy', py(p[1])); dots[i].setAttribute('visibility', 'visible');
+        rows += `<tr><td><span class="dot" style="background:${s.color}"></span>${s.name}</td><td>${(cfg.tipFmt || yf)(p[1], s)}</td></tr>`;
+      } else dots[i].setAttribute('visibility', 'hidden');
+    });
+    showTip(`<div class="tip-h">${cfg.tipTitle ? cfg.tipTitle(x) : xf(x)}</div><table>${rows}</table>${cfg.y.unit ? `<div class="tip-u">${cfg.y.unit}</div>` : ''}`, cx, cy);
+  }
+  let ki = 0;
+  hit.addEventListener('pointermove', e => {
+    const r = svg.getBoundingClientRect(), sx = (e.clientX - r.left) * (W / r.width);
+    let best = ux[0];
+    ux.forEach(v => { if (Math.abs(px(v) - sx) < Math.abs(px(best) - sx)) best = v; });
+    ki = ux.indexOf(best); at(best, e.clientX, e.clientY);
+  });
+  const off = () => { cross.setAttribute('visibility', 'hidden'); dots.forEach(d => d.setAttribute('visibility', 'hidden')); hideTip(); };
+  hit.addEventListener('pointerleave', off);
+  hit.addEventListener('blur', off);
+  hit.addEventListener('keydown', e => {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    e.preventDefault();
+    ki = Math.min(ux.length - 1, Math.max(0, ki + (e.key === 'ArrowRight' ? 1 : -1)));
+    const r = svg.getBoundingClientRect();
+    at(ux[ki], r.left + px(ux[ki]) * r.width / W, r.top + m.t + 20);
+  });
+}
+
+/* ---- bar chart (vertical, grouped; supports negative values) ----
+ cfg: { groups:[{label, sub, bars:[{name,value,color,hatch,tip,err}]}], y:{label,min,max,fmt,ticks}, height, legendItems, valueFmt, slim } */
+function barChart(host, cfg) {
+  host.innerHTML = '';
+  host.classList.add('chart');
+  if (cfg.legendItems) legend(host, cfg.legendItems.map(i => ({ ...i, kind: 'bar' })));
+  const W = Math.max(280, host.clientWidth || 640), H = cfg.height || 300;
+  const narrow = W < 480;
+  const gw0 = (W - 60) / cfg.groups.length;
+  const maxLab = Math.max(...cfg.groups.map(g => Math.max(g.label.length, (g.sub || '').length))) * 6.3;
+  const rot = maxLab > gw0 - 6;
+  const m = { t: 22, r: 10, b: rot ? 22 + Math.max(...cfg.groups.map(g => g.label.length)) * 6.3 * 0.66 : cfg.groups.some(g => g.sub) ? 52 : 38, l: 50 };
+  const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, width: '100%', height: H, role: 'img', 'aria-label': cfg.aria || '' }, host);
+  const vals = cfg.groups.flatMap(g => g.bars.map(b => b.value + (b.err && b.value > 0 ? b.err : 0)));
+  let y0 = cfg.y.min ?? Math.min(0, ...vals), y1 = cfg.y.max ?? Math.max(0, ...vals);
+  const yt = cfg.y.ticks || niceTicks(y0, y1, 5);
+  y0 = Math.min(y0, yt[0]); y1 = Math.max(y1, yt[yt.length - 1]);
+  const py = v => m.t + (y1 - v) / (y1 - y0) * (H - m.t - m.b);
+  const yf = cfg.y.fmt || (v => fmtNum(v));
+  const vf = cfg.valueFmt || yf;
+  yt.forEach(v => {
+    svgEl('line', { x1: m.l, x2: W - m.r, y1: py(v), y2: py(v), class: v === 0 ? 'base' : 'grid' }, svg);
+    svgEl('text', { x: m.l - 8, y: py(v) + 4, 'text-anchor': 'end', class: 'axis-t' }, svg).textContent = yf(v);
+  });
+  const yl = svgEl('text', { x: 12, y: (m.t + H - m.b) / 2, 'text-anchor': 'middle', class: 'axis-l', transform: `rotate(-90 12 ${(m.t + H - m.b) / 2})` }, svg);
+  yl.textContent = cfg.y.label || '';
+  const gw = (W - m.l - m.r) / cfg.groups.length;
+  cfg.groups.forEach((g, gi) => {
+    const n = g.bars.length, inner = gw * (n > 1 ? 0.84 : 0.6), bw = Math.min(cfg.maxBar || 46, inner / n - 2);
+    const start = m.l + gi * gw + (gw - (bw + 2) * n + 2) / 2;
+    g.bars.forEach((b, bi) => {
+      const x = start + bi * (bw + 2), yv = py(b.value), yz = py(0);
+      const top = Math.min(yv, yz), hgt = Math.max(1, Math.abs(yv - yz));
+      const r = Math.min(4, bw / 2, hgt);
+      const d = b.value >= 0
+        ? `M${x} ${yz}V${top + r}q0 ${-r} ${r} ${-r}h${bw - 2 * r}q${r} 0 ${r} ${r}V${yz}Z`
+        : `M${x} ${yz}V${top + hgt - r}q0 ${r} ${r} ${r}h${bw - 2 * r}q${r} 0 ${r} ${-r}V${yz}Z`;
+      const bar = svgEl('path', { d, fill: b.color, class: 'bar' + (b.hatch ? ' hatch' : ''), tabindex: 0 }, svg);
+      if (b.hatch) { bar.setAttribute('fill', 'var(--surface)'); bar.setAttribute('stroke', b.color); bar.setAttribute('stroke-width', 1.5); bar.setAttribute('stroke-dasharray', '4 3'); }
+      if (b.err) {
+        const ye = py(b.value + (b.value >= 0 ? b.err : -b.err));
+        svgEl('line', { x1: x + bw / 2, x2: x + bw / 2, y1: yv, y2: ye, class: 'err' }, svg);
+        svgEl('line', { x1: x + bw / 2 - 4, x2: x + bw / 2 + 4, y1: ye, y2: ye, class: 'err' }, svg);
+      }
+      if (!(cfg.slim && narrow) && bw >= 22) {
+        const ty = b.value >= 0 ? top - 5 - (b.err ? Math.abs(py(b.err) - py(0)) : 0) : top + hgt + 13;
+        svgEl('text', { x: x + bw / 2, y: ty, 'text-anchor': 'middle', class: 'val' }, svg).textContent = (b.approx ? '≈' : '') + vf(b.value);
+      }
+      const html = `<div class="tip-h">${g.tipLabel || (g.label + (g.sub ? ' · ' + g.sub : ''))}</div><table><tr><td><span class="dot" style="background:${b.color}"></span>${b.name}</td><td>${(b.approx ? '≈ ' : '') + vf(b.value)}</td></tr></table>${b.tip ? `<div class="tip-u">${b.tip}</div>` : ''}`;
+      bar.addEventListener('pointermove', e => showTip(html, e.clientX, e.clientY));
+      bar.addEventListener('pointerleave', hideTip);
+      bar.addEventListener('focus', () => { const r2 = bar.getBoundingClientRect(); showTip(html, r2.right, r2.top); });
+      bar.addEventListener('blur', hideTip);
+    });
+    const lx = m.l + gi * gw + gw / 2, ly = H - m.b + 16;
+    const t = svgEl('text', rot ? { x: lx + 4, y: ly - 4, 'text-anchor': 'end', class: 'axis-t cat', transform: `rotate(-40 ${lx + 4} ${ly - 4})` } : { x: lx, y: ly, 'text-anchor': 'middle', class: 'axis-t cat' }, svg); t.textContent = g.label;
+    if (g.sub && !rot) svgEl('text', { x: lx, y: ly + 14, 'text-anchor': 'middle', class: 'axis-t' }, svg).textContent = g.sub;
+  });
+}
+
+/* segmented controls: <div class="seg" data-key="k"><button data-v="a" aria-pressed="true"> */
+function bindSeg(root, state, onChange) {
+  $$('.seg', root).forEach(seg => {
+    const key = seg.dataset.key;
+    $$('button', seg).forEach(b => b.addEventListener('click', () => {
+      state[key] = b.dataset.v;
+      $$('button', seg).forEach(o => o.setAttribute('aria-pressed', o === b));
+      onChange();
+    }));
+  });
+}
+const redraws = [];
+function onResize(fn) { redraws.push(fn); fn(); }
+let rT; window.addEventListener('resize', () => { clearTimeout(rT); rT = setTimeout(() => redraws.forEach(f => f()), 120); });
+/* ---------- horizontal bar chart (many labelled rows) ----------
+ cfg: { rows:[{label,sub,value,color,hatch,valText,tip,missing}], x:{max,ticks,label,fmt}, refLines:[{x,label}], bands:[{x0,x1,label,cls}], legendItems, marker:{x,label} } */
+function hbarChart(host, cfg) {
+  host.innerHTML = '';
+  host.classList.add('chart');
+  if (cfg.legendItems) legend(host, cfg.legendItems.map(i => ({ ...i, kind: 'bar' })));
+  const W = Math.max(280, host.clientWidth || 640), narrow = W < 520;
+  const rh = cfg.rowH || 26, m = { t: 26, r: narrow ? 58 : 150, b: cfg.bands ? 40 : 22, l: narrow ? 118 : 200 };
+  const H = m.t + m.b + rh * cfg.rows.length;
+  const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, width: '100%', height: H, role: 'img', 'aria-label': cfg.aria || '' }, host);
+  const x1 = cfg.x.max, px = v => m.l + Math.min(v, x1) / x1 * (W - m.l - m.r);
+  const xf = cfg.x.fmt || (v => v);
+  (cfg.bands || []).forEach(b => {
+    svgEl('rect', { x: px(b.x0), y: m.t, width: px(b.x1) - px(b.x0), height: H - m.t - m.b, class: 'band ' + (b.cls || '') }, svg);
+    svgEl('text', { x: (px(b.x0) + px(b.x1)) / 2, y: H - m.b + 16, 'text-anchor': 'middle', class: 'axis-t' }, svg).textContent = narrow ? b.short || b.label : b.label;
+  });
+  cfg.x.ticks.forEach(v => {
+    svgEl('line', { x1: px(v), x2: px(v), y1: m.t, y2: H - m.b, class: v === 0 ? 'base' : 'grid' }, svg);
+    svgEl('text', { x: px(v), y: m.t - 8, 'text-anchor': 'middle', class: 'axis-t' }, svg).textContent = xf(v);
+  });
+  svgEl('text', { x: 0, y: m.t - 8, class: 'axis-l' }, svg).textContent = narrow ? '' : cfg.x.label || '';
+  (cfg.refLines || []).forEach(r => {
+    svgEl('line', { x1: px(r.x), x2: px(r.x), y1: m.t, y2: H - m.b, class: 'ref' }, svg);
+    svgEl('text', { x: px(r.x) + 5, y: m.t + 12, class: 'axis-t' }, svg).textContent = narrow ? r.short || r.label : r.label;
+  });
+  cfg.rows.forEach((r, i) => {
+    const y = m.t + i * rh + 5, bh = rh - 10;
+    const lab = svgEl('text', { x: m.l - 8, y: y + bh / 2 + 4, 'text-anchor': 'end', class: 'axis-t cat' }, svg);
+    lab.textContent = narrow && r.label.length > 19 ? r.label.slice(0, 18) + '…' : r.label;
+    const html = `<div class="tip-h">${r.label}</div><table><tr><td><span class="dot" style="background:${r.color}"></span>${cfg.x.label || ''}</td><td>${r.missing ? t('not disclosed','미공개') : (r.hatch ? '≈ ' : '') + xf(r.value)}</td></tr></table>${r.tip ? `<div class="tip-u">${r.tip}</div>` : ''}`;
+    let el;
+    if (r.missing) {
+      el = svgEl('text', { x: m.l + 6, y: y + bh / 2 + 4, class: 'val', tabindex: 0 }, svg); el.textContent = t('Not disclosed','미공개');
+    } else {
+      const w = Math.max(2, px(r.value) - m.l), rr = Math.min(4, w / 2);
+      el = svgEl('path', { d: `M${m.l} ${y}h${w - rr}q${rr} 0 ${rr} ${rr}v${bh - 2 * rr}q0 ${rr} ${-rr} ${rr}h${-(w - rr)}Z`, fill: r.color, class: 'bar', tabindex: 0 }, svg);
+      if (r.hatch) { el.setAttribute('fill', 'var(--surface)'); el.setAttribute('stroke', r.color); el.setAttribute('stroke-width', 1.5); el.setAttribute('stroke-dasharray', '4 3'); }
+      svgEl('text', { x: px(r.value) + 6, y: y + bh / 2 + 4, class: 'val' }, svg).textContent = (r.hatch ? '≈' : '') + (r.valText && !narrow ? r.valText : xf(r.value));
+    }
+    el.addEventListener('pointermove', e => showTip(html, e.clientX, e.clientY));
+    el.addEventListener('pointerleave', hideTip);
+    el.addEventListener('focus', () => { const b = el.getBoundingClientRect(); showTip(html, b.right, b.top); });
+    el.addEventListener('blur', hideTip);
+  });
+  if (cfg.marker) {
+    const x = px(cfg.marker.x);
+    svgEl('line', { x1: x, x2: x, y1: m.t - 2, y2: H - m.b, stroke: 'var(--ink)', 'stroke-width': 2 }, svg);
+    svgEl('path', { d: `M${x - 5} ${m.t - 4}h10l-5 7Z`, fill: 'var(--ink)' }, svg);
+  }
+}
+const C = { b: 'var(--c0504)', bLo: 'var(--c0504-lo)', bHi: 'var(--c0504-hi)', o: 'var(--c1812)', oLo: 'var(--c1812-lo)', oHi: 'var(--c1812-hi)', g: 'var(--c2102)', cmp: 'var(--cmp)', cmp2: 'var(--cmp-2)', cmp3: 'var(--cmp-3)', ink: 'var(--ink-2)' };
+const VIO = 'var(--cmp-2)';
+/* Human PK: T2D patients, Ph2a (Jin 2026). Digitised from the published mean ± SD figure. */
+const HUMAN_PK = {
+  title: 'Humans with type 2 diabetes (Phase 2a), weekly SC', titleKo: '제2형 당뇨 환자 (2a상), 주 1회 SC', n: 'n = 11–12 per dose', nKo: '용량당 n = 11–12', unit: 'mg', tUnit: 'h',
+  src: 'Digitised from the mean concentration–time figure of the Phase 2a T2D paper (Jin 2026). Read-off error is about ±5%; the first hours after dosing are less certain. The paper reports t½ and Tmax in text; absolute Cmax and AUC sit in a supplement that was not accessible.',
+  srcKo: '2a상 T2D 논문(Jin 2026)의 평균 농도–시간 그림에서 수치 추출. 추출 오차 약 ±5%; 투여 직후 몇 시간은 불확실성이 큼. 논문은 t½·Tmax를 본문에 보고하며, 절대 Cmax·AUC는 접근 불가한 부록에 있음.',
+  tableNoteKo: '≈ 표시 행은 공개 수치가 아니라 추출 곡선에서 읽은 값. Tmax·t½는 논문 본문 인용.',
+  statsKo: [['109–160 h', '4번째 목표용량 후 말단 반감기 (4.5–6.7일); 티르제파타이드 라벨 약 5일'],
+    ['≈ 24 h', '모든 용량에서 Tmax; 티르제파타이드 라벨 24 h (8–72 h)'],
+    ['≈ 2.1–2.4×', '주 1회 투여 시 최고–최저 변동 (추출값)'],
+    ['0.92', '첫 목표용량 후 Cmax 거듭제곱모델 기울기 (90% CI 0.79–1.05); 4번째는 0.65']],
+  first: { t: [0, 2, 4, 8, 12, 24, 36, 48, 72, 120, 168], xticks: [0, 24, 48, 72, 96, 120, 144, 168], doses: [
+    { d: 5, c: [100, 195, 290, 400, 445, 487, 473, 452, 411, 300, 207] },
+    { d: 10, c: [200, 330, 500, 760, 860, 1005, 1003, 937, 838, 578, 432] },
+    { d: 15, c: [430, 520, 700, 1005, 1170, 1450, 1473, 1440, 1282, 960, 655] }] },
+  fourth: { t: [0, 2, 4, 8, 12, 24, 36, 48, 72, 120, 168], xticks: [0, 24, 48, 72, 96, 120, 144, 168], doses: [
+    { d: 5, c: [253, 325, 425, 530, 575, 610, 585, 557, 510, 370, 257] },
+    { d: 10, c: [500, 590, 780, 940, 1005, 1128, 1140, 1075, 975, 720, 505] },
+    { d: 15, c: [780, 850, 1020, 1285, 1420, 1585, 1683, 1625, 1462, 1125, 787] }] },
+  table: { head: ['5 mg', '10 mg', '15 mg'], rows: [
+    ['Peak after 4th target dose (ng/mL)', '≈ 610', '≈ 1,140', '≈ 1,680'],
+    ['Trough at 168 h (ng/mL)', '≈ 257', '≈ 505', '≈ 787'],
+    ['Peak ÷ trough', '≈ 2.4', '≈ 2.3', '≈ 2.1'],
+    ['Peak ÷ dose (ng/mL per mg)', '≈ 122', '≈ 114', '≈ 112'],
+    ['Peak, 4th ÷ 1st target dose', '≈ 1.25', '≈ 1.13', '≈ 1.14'],
+    ['Tmax (reported)', 'about 24 h', 'about 24 h', 'about 24 h'],
+    ['t½ after 4th target dose (reported)', '109–160 h across doses', '', '']] },
+  tableNote: 'Rows marked ≈ are read from the digitised curve, not published values. Tmax and t½ are quoted from the paper text.',
+  stats: [['109–160 h', 'Terminal t½ after the 4th target dose (4.5–6.7 days); tirzepatide label: about 5 days'],
+    ['≈ 24 h', 'Tmax at every dose; tirzepatide label: 24 h (8–72 h)'],
+    ['≈ 2.1–2.4×', 'Peak-to-trough swing on weekly dosing (digitised)'],
+    ['0.92', 'Cmax power-model slope after the 1st target dose (90% CI 0.79–1.05); 0.65 after the 4th']]
+};
+
+/* ---------- BGM0504 PK explorer ---------- */
+const PK = {
+  rat: {
+    title: 'Sprague-Dawley rat, single SC dose', titleKo: 'Sprague-Dawley 랫드, 단회 SC 투여', n: 'n = 6 per group (3 M / 3 F)', nKo: '군당 n = 6 (수컷 3 / 암컷 3)', unit: 'mg/kg', tUnit: 'h',
+    src: 'Digitised from Yuan 2024, Fig. 10a (sex-averaged). Trapezoidal AUC of the digitised points is within 5% of the published AUC0-last for every dose.', srcKo: 'Yuan 2024 Fig. 10a에서 수치 추출(암·수 평균). 추출 점의 사다리꼴 AUC는 모든 용량에서 공개 AUC0-last의 5% 이내.',
+    t: [0.5, 1, 2, 4, 8, 12, 24, 48, 72, 96, 120], xticks: [0, 24, 48, 72, 96, 120],
+    doses: [
+      { d: 0.3, c: [65, 115, 180, 300, 570, 720, 814, 320, 100, 31, 11] },
+      { d: 1.5, c: [335, 565, 925, 1500, 2400, 3000, 3830, 1500, 460, 135, 42] },
+      { d: 7.5, c: [2300, 3000, 4800, 7300, 10500, 13000, 15100, 6100, 2100, 680, 250] }],
+    table: {
+      head: ['IV 0.2', 'SC 0.3', 'SC 1.5', 'SC 7.5'],
+      rows: [
+        ['C0 / Cmax (ng/mL)', '4,650 ± 411', '814 ± 111', '3,830 ± 705', '15,100 ± 1,750'],
+        ['Tmax (h)', '–', '24.0 ± 0.0', '24.0 ± 0.0', '20.0 ± 6.2'],
+        ['t½ (h)', '13.6 ± 2.3', '14.5 ± 1.4', '13.4 ± 1.5', '14.7 ± 2.4'],
+        ['Vdss (L/kg)', '0.0648', '–', '–', '–'],
+        ['CL (mL/min/kg)', '0.0680', '–', '–', '–'],
+        ['AUC0-24 (ng·h/mL)', '38,800', '14,100', '63,900', '269,000'],
+        ['AUC0-last (ng·h/mL)', '49,800', '33,200', '153,000', '637,000'],
+        ['AUC0-inf (ng·h/mL)', '50,000', '33,400', '154,000', '643,000'],
+        ['SC bioavailability', '–', '44.5%', '41.1%', '34.3%']]
+    },
+    auc: [33200, 153000, 637000], cmax: [814, 3830, 15100]
+  },
+  monkey: {
+    title: 'Cynomolgus monkey, single SC dose', titleKo: '사이노몰거스 원숭이, 단회 SC 투여', n: 'n = 6 per group (3 M / 3 F)', nKo: '군당 n = 6 (수컷 3 / 암컷 3)', unit: 'mg/kg', tUnit: 'h',
+    src: 'Digitised from Yuan 2024, Fig. 10b (sex-averaged; male and female curves overlap). Trapezoidal AUC of the digitised points is within 2% of the published AUC0-last for every dose.', srcKo: 'Yuan 2024 Fig. 10b에서 수치 추출(암·수 평균; 암·수 곡선 중첩). 추출 점의 사다리꼴 AUC는 모든 용량에서 공개 AUC0-last의 2% 이내.',
+    t: [0.5, 1, 4, 6, 8, 12, 24, 48, 72, 96, 120, 168, 240, 312], xticks: [0, 48, 96, 144, 192, 240, 288],
+    doses: [
+      { d: 0.2, c: [45, 105, 520, 760, 980, 1350, 1440, 980, 672, 452, 281, 127, 36, 9.5] },
+      { d: 1, c: [260, 450, 2600, 3630, 4520, 5700, 5970, 4520, 2860, 1850, 1240, 585, 180, 52] },
+      { d: 5, c: [2500, 3800, 14500, 19000, 23500, 29800, 33500, 24000, 16500, 10000, 6800, 3000, 1050, 320] }],
+    table: {
+      head: ['IV 0.1', 'SC 0.2', 'SC 1', 'SC 5'],
+      rows: [
+        ['C0 / Cmax (ng/mL)', '2,860 ± 261', '1,440 ± 109', '5,970 ± 1,090', '33,500 ± 3,060'],
+        ['Tmax (h)', '–', '16.0 ± 6.2', '22.0 ± 14.0', '20.0 ± 6.2'],
+        ['t½ (h)', '37.9 ± 2.5', '38.7 ± 1.8', '41.7 ± 2.9', '43.4 ± 5.9'],
+        ['Vdss (L/kg)', '0.0608', '–', '–', '–'],
+        ['CL (mL/min/kg)', '0.0207', '–', '–', '–'],
+        ['AUC0-24 (ng·h/mL)', '34,600', '26,100', '109,000', '603,000'],
+        ['AUC0-last (ng·h/mL)', '80,400', '113,000', '488,000', '2,720,000'],
+        ['AUC0-inf (ng·h/mL)', '81,100', '113,000', '491,000', '2,740,000'],
+        ['SC bioavailability', '–', '69.7%', '60.5%', '67.6%']]
+    },
+    auc: [113000, 488000, 2720000], cmax: [1440, 5970, 33500]
+  },
+  human: HUMAN_PK
+};
+/* ---------- BGM1812 rat PK (Zong 2025, Fig. 4A) ---------- */
+const RAT1812 = {
+  t: [0.25, 0.5, 1, 2, 4, 8, 24, 36, 48, 72, 96],
+  s: [
+    { name: 'BGM1812', color: C.o, c: [150, 350, 1100, 1700, 2950, 4650, 5303, 3950, 2800, 1150, 600] },
+    { name: 'Petrelintide', color: C.cmp, dash: '6 4', c: [200, 450, 700, 1000, 1700, 2980, 4850, 3880, 3070, 1530, 850] },
+    { name: 'BGM1802', color: C.cmp3, hollow: true, c: [100, 250, 500, 800, 1370, 2670, 4863, 3950, 3000, 1450, 780] },
+    { name: 'BGM1813', color: C.cmp2, hollow: true, dash: '2 3', c: [150, 400, 750, 1200, 2550, 4850, 5385, 3220, 2580, 1180, 590] }]
+};
+
+/* =====================================================================
+   PRODUCT DATA. BrightGene values are carried over from the asset dossier
+   (Yuan 2024, Jin 2026, Zong 2025); competitor values from the Nov 2026 PK research.
+   ===================================================================== */
+const curvesFromPK = sp => ({ t: PK[sp].t, unit: 'mg/kg', ev: 'dig', doses: PK[sp].doses, note: PK[sp].src, noteKo: PK[sp].srcKo });
+const BGM = [
+  { id: 'bgm0504', name: 'BGM0504', sponsor: 'BrightGene', cls: 'bgm', color: C.b, ramp: [C.bLo, C.b, C.bHi], mech: 'GLP-1R / GIPR dual agonist', mechKo: 'GLP-1R / GIPR 이중 작용제',
+    interval: 'weekly', intervalKo: '주 1회', tau: 168,
+    curves: {
+      rat: curvesFromPK('rat'), monkey: curvesFromPK('monkey'),
+      human: { unit: 'mg', ev: 'dig', note: HUMAN_PK.src, noteKo: HUMAN_PK.srcKo, visits: {
+        first: { t: HUMAN_PK.first.t, unit: 'mg', ev: 'dig', doses: HUMAN_PK.first.doses, note: HUMAN_PK.src, noteKo: HUMAN_PK.srcKo },
+        fourth: { t: HUMAN_PK.fourth.t, unit: 'mg', ev: 'dig', doses: HUMAN_PK.fourth.doses, note: HUMAN_PK.src, noteKo: HUMAN_PK.srcKo } } } },
+    sp: {
+      human: { pop: 'T2D, Phase 2a', popKo: '제2형 당뇨, 2a상', n: 'n = 11–12 per dose', dose: 15, unit: 'mg', doseTxt: '5 / 10 / 15 mg weekly', th: [109, 160], thTxt: '109–160 h', tmax: 24, tmaxTxt: '≈ 24 h',
+        cmax: 1680, cmaxTxt: '≈ 610 / 1,140 / 1,680 ng/mL after 4th target dose (digitised)', aucTxt: 'Supplement, not accessible', F: null,
+        other: 'Peak ÷ trough ≈ 2.1–2.4 on weekly dosing (digitised); Cmax power-model slope 0.92 after 1st target dose.', otherKo: '주 1회 투여 시 최고 ÷ 최저 ≈ 2.1–2.4 (추출값); 첫 목표용량 후 Cmax 거듭제곱 기울기 0.92.',
+        thNote: 'After the 4th target dose; tirzepatide label ≈ 5 days.', thNoteKo: '4번째 목표용량 후; 티르제파타이드 라벨 ≈ 5일.', ev: 'pub', src: [1] },
+      monkey: { pop: 'Cynomolgus, single SC', popKo: '사이노몰거스, 단회 SC', n: 'n = 6 per group', dose: 1, unit: 'mg/kg', doseTxt: '0.2 / 1 / 5 mg/kg', th: [38.7, 43.4], thTxt: '38.7–43.4 h', tmax: 22, tmaxR: [16, 22], tmaxTxt: '16–22 h',
+        cmax: 5970, cmaxTxt: '1,440 / 5,970 / 33,500 ng/mL', aucTxt: 'AUC0-inf 113,000 / 491,000 / 2,740,000 ng·h/mL', F: '61–70%', other: 'IV t½ 37.9 h; Vss 0.061 L/kg; flat t½ across a 25-fold dose range.', otherKo: 'IV t½ 37.9 h; Vss 0.061 L/kg; 25배 용량 범위에서 반감기 일정.', ev: 'pub', src: [3] },
+      rat: { pop: 'Sprague-Dawley, single SC', popKo: 'SD 랫드, 단회 SC', n: 'n = 6 per group', dose: 1.5, unit: 'mg/kg', doseTxt: '0.3 / 1.5 / 7.5 mg/kg', th: [13.4, 14.7], thTxt: '13.4–14.7 h', tmax: 24, tmaxR: [20, 24], tmaxTxt: '20–24 h',
+        cmax: 3830, cmaxTxt: '814 / 3,830 / 15,100 ng/mL', aucTxt: 'AUC0-inf 33,400 / 154,000 / 643,000 ng·h/mL', F: '34–45%', other: 'IV t½ 13.6 h; Vss 0.065 L/kg.', otherKo: 'IV t½ 13.6 h; Vss 0.065 L/kg.', ev: 'pub', src: [3] } } },
+  { id: 'bgm1812', name: 'BGM1812', sponsor: 'BrightGene', cls: 'bgm', color: C.o, ramp: [C.o], mech: 'Amylin / calcitonin receptor agonist', mechKo: '아밀린 / 칼시토닌 수용체 작용제',
+    interval: 'weekly (or every 2 weeks)', intervalKo: '주 1회 (또는 2주 1회)', tau: 168,
+    curves: { rat: { t: RAT1812.t, unit: 'mg/kg', ev: 'dig', doses: [{ d: 1, c: RAT1812.s[0].c }],
+      note: 'Male SD rats, n = 3, SC 1 mg/kg in PBS pH 7.4. Digitised from Zong 2025, Fig. 4A; trapezoidal AUC of the digitised points (≈266,000) matches the published AUC0-t (264,931 h·ng/mL).',
+      noteKo: '수컷 SD 랫드, n = 3, PBS pH 7.4에 SC 1 mg/kg. Zong 2025 Fig. 4A에서 추출; 추출점 사다리꼴 AUC(≈266,000)가 공개 AUC0-t(264,931 h·ng/mL)와 일치.' } },
+    sp: {
+      human: { pop: 'Phase 1 (CN, US), 0.3–7.2 mg weekly', popKo: '1상 (중국·미국), 주 1회 0.3–7.2 mg', missingTxt: 'Human half-life not disclosed. BrightGene says only that it "supports weekly or every-two-week dosing"; a BrightGene patent reports 274–363 h for an unnamed analogue.',
+        missingTxtKo: '인체 반감기 미공개. BrightGene는 "주 1회 또는 2주 1회 투여를 지지한다"고만 밝혔고, BrightGene 특허는 이름 없는 유사체에 대해 274–363 h를 보고한다.', doseTxt: '0.3–7.2 mg weekly', ev: 'co', src: [4, 5] },
+      rat: { pop: 'Male SD rat, single SC', popKo: '수컷 SD 랫드, 단회 SC', n: 'n = 3', dose: 1, unit: 'mg/kg', doseTxt: '1 mg/kg', th: [21], thTxt: '≈ 21 h', tmax: 24, tmaxTxt: '24 h',
+        cmax: 5303, cmaxTxt: '≈ 5,300 ng/mL', aucTxt: 'AUC0-t 264,931 h·ng/mL', F: null, other: 'Same study ran petrelintide side by side (see the competitor panel, rat).', otherKo: '같은 연구에서 페트렐린타이드를 나란히 측정 (경쟁 패널, 랫드 참조).', ev: 'pub', src: [6] } } }
+];
+
+/* ---------- weekly single-lipidated incretins (cls s) ---------- */
+const CMP_S = [
+  { id: 'tirzepatide', name: 'Tirzepatide', sponsor: 'Lilly', cls: 's', mech: 'GLP-1R / GIPR dual agonist', mechKo: 'GLP-1R / GIPR 이중 작용제', interval: 'weekly', intervalKo: '주 1회', tau: 168,
+    sp: {
+      human: { pop: 'Healthy; projected steady state', popKo: '건강인; 정상상태 예측', n: 'n = 65 (5 mg pen study)', dose: 5, unit: 'mg', doseTxt: '5 mg weekly (2.5–15 mg)', th: [106, 124], thTxt: '106–124 h (label ≈ 5 d)', tmax: 24, tmaxR: [8, 72], tmaxTxt: '24 h (8–72)', ss: true,
+        cmax: 1100, cmaxTxt: '647 ng/mL single dose → 1,100 ng/mL projected steady state (5 mg)', aucTxt: 'AUC0-inf 126,000 ng·h/mL (5 mg single); Cavg,ss 491–1,470 ng/mL at 5–15 mg', F: '80%',
+        other: 'CL/F 0.06 L/h, V/F 9.7 L (obesity). Accumulation 1.58–1.7 after 4 weekly doses. Peer-reviewed SAD (n = 5): Cmax 397 ng/mL, t½ 123 h at 5 mg. Steady-state Cmax is the dossier projection (single Cmax × 1.7).',
+        otherKo: 'CL/F 0.06 L/h, V/F 9.7 L (비만). 주 1회 4회 투여 후 축적 1.58–1.7. 동료심사 SAD(n = 5): 5 mg에서 Cmax 397 ng/mL, t½ 123 h. 정상상태 Cmax는 허가자료 예측치(단회 Cmax × 1.7).',
+        thNote: 'SAD 106–124 h; popPK 5.4 d.', thNoteKo: 'SAD 106–124 h; 집단 PK 5.4일.', ev: 'pub', src: [30, 31, 32, 34] },
+      monkey: { pop: 'Cynomolgus, single SC', popKo: '사이노몰거스, 단회 SC', n: 'n = 2 per route', dose: 0.2, unit: 'mg/kg', doseTxt: '0.2 mg/kg', th: [55], thTxt: '55 h (IV 56 h)', tmax: 8, tmaxTxt: '8 h',
+        cmax: 3090, cmaxTxt: '3,090 ng/mL', aucTxt: 'AUC0-inf 276,000 ng·h/mL', F: '83%', other: 'Plasma protein binding 99.15%. Ascletis ran a tirzepatide control at 57.1 h in its ASC35 study.', otherKo: '혈장 단백 결합 99.15%. Ascletis ASC35 연구의 티르제파타이드 대조는 57.1 h.', ev: 'pub', src: [33] },
+      rat: { pop: 'Male rat, single SC ([14C])', popKo: '수컷 랫드, 단회 SC ([14C])', n: 'n = 3 per time point', dose: 3, unit: 'mg/kg', doseTxt: '3 mg/kg', th: [9.03], thTxt: '9.0 h', tmax: 6, tmaxTxt: '6 h',
+        cmax: 19600, cmaxTxt: '19,600 ng/mL', aucTxt: 'AUC0-inf 478,000 ng·h/mL', F: null, other: 'Sparse-sampling radiolabel study; radioactivity t½ 25.6 h. No rat IV study reported.', otherKo: '희소 채혈 방사표지 연구; 방사능 t½ 25.6 h. 랫드 IV 연구 없음.', ev: 'pub', src: [33] } } },
+  { id: 'semaglutide', name: 'Semaglutide 2.4 mg', sponsor: 'Novo Nordisk', cls: 's', mech: 'GLP-1R agonist', mechKo: 'GLP-1R 작용제', interval: 'weekly', intervalKo: '주 1회', tau: 168,
+    sp: {
+      human: { pop: 'Healthy, steady state', popKo: '건강인, 정상상태', n: 'n = 29', dose: 2.4, unit: 'mg', doseTxt: '2.4 mg weekly', th: [155], thTxt: '155 h (label ≈ 1 wk)', tmax: 24, tmaxR: [3, 48], tmaxTxt: '24 h (3–48)', ss: true,
+        cmax: 485, cmaxTxt: '118 nmol/L = 485 ng/mL (Cmax,ss)', aucTxt: 'AUC0-168,ss 14,572 nmol·h/L = 59,900 ng·h/mL', F: '89%',
+        other: 'Trough 250 ng/mL, so peak ÷ trough ≈ 1.9 (our calculation). Cavg,ss in obesity ≈ 75 nmol/L = 309 ng/mL; 7.2 mg ≈ 946 ng/mL. CL/F 0.040–0.048 L/h. Cagrilintide does not change semaglutide exposure (CagriSema).',
+        otherKo: '최저 250 ng/mL → 최고 ÷ 최저 ≈ 1.9 (자체 계산). 비만 Cavg,ss ≈ 75 nmol/L = 309 ng/mL; 7.2 mg ≈ 946 ng/mL. CL/F 0.040–0.048 L/h. 카그릴린타이드는 세마글루타이드 노출에 영향 없음(CagriSema).', ev: 'pub', src: [35, 36, 39] },
+      monkey: { pop: 'Cynomolgus, SC', popKo: '사이노몰거스, SC', dose: null, unit: 'mg/kg', doseTxt: 'not stated', th: [51], thTxt: '51 h', tmax: 24, tmaxTxt: '≈ 24 h', cmax: null, cmaxTxt: 'Not in EPAR text', aucTxt: null, F: '86%', other: 'Elimination not limited by SC absorption.', otherKo: '소실이 SC 흡수에 의해 제한되지 않음.', ev: 'pub', src: [37] },
+      minipig: { pop: 'Minipig, SC', popKo: '미니피그, SC', doseTxt: 'not stated', th: [46.1], thTxt: '46.1 h (IV)', tmax: 24, tmaxTxt: '≈ 24 h', cmax: null, F: '94%', other: 'SC MRT 63.6 h.', otherKo: 'SC MRT 63.6 h.', ev: 'pub', src: [37, 38] },
+      rat: { pop: 'Rat, SC', popKo: '랫드, SC', doseTxt: 'not stated', th: [11], thTxt: '11 h', tmax: 2.5, tmaxR: [2, 3], tmaxTxt: '2–3 h', cmax: null, F: null, other: 'Short rat t½ needed once-daily dosing in toxicology studies.', otherKo: '랫드 t½가 짧아 독성시험에서 1일 1회 투여 필요.', ev: 'pub', src: [37] } } }
+];
+
+/* ---------- amylin analogues. nmol/L converted with PubChem MW: cagrilintide 4409, petrelintide 4192, eloralintide 4526 ---------- */
+const CMP_A = [
+  { id: 'petrelintide', name: 'Petrelintide', sponsor: 'Zealand / Roche', cls: 's', grp: 'amy', mech: 'Amylin analogue, neutral-pH formulation', mechKo: '아밀린 유사체, 중성 pH 제형', interval: 'weekly', intervalKo: '주 1회', tau: 168,
+    curves: { rat: { t: RAT1812.t, unit: 'mg/kg', ev: 'dig', doses: [{ d: 1, c: RAT1812.s[1].c }],
+      note: 'Same study as BGM1812 (Zong 2025, Fig. 4A): male SD rats, n = 3, SC 1 mg/kg in PBS pH 7.4. The fairest like-for-like comparison on this page.',
+      noteKo: 'BGM1812와 같은 연구(Zong 2025, Fig. 4A): 수컷 SD 랫드, n = 3, PBS pH 7.4에 SC 1 mg/kg. 이 페이지에서 가장 공정한 동일 조건 비교.' } },
+    sp: {
+      human: { pop: 'Obesity, MAD week 15 (steady state)', popKo: '비만, MAD 15주 (정상상태)', n: 'n = 12 per cohort', dose: 2.4, unit: 'mg', doseTxt: '2.4 mg weekly (0.6–9 mg)', th: [213, 257], thTxt: '213–257 h', tmax: 24, tmaxR: [23.4, 28.1], tmaxTxt: '≈ 24 h', ss: true,
+        cmax: 654, cmaxTxt: '156 nmol/L = 654 ng/mL (Cmax,ss, 2.4 mg)', aucTxt: 'AUCτ,ss 21,200 nmol·h/L = 88,900 ng·h/mL (2.4 mg)', F: '77%',
+        other: 'SAD (healthy men) Tmax falls from 108 h at 0.04 mg to 28 h at 2.4 mg. CLss/F 0.025–0.027 L/h; Vz/F 8.7–9.7 L. Accumulation ≈ 2.5–2.8 (our calculation). Dose-proportional 0.6–9 mg.',
+        otherKo: 'SAD(건강 남성) Tmax는 0.04 mg 108 h → 2.4 mg 28 h로 감소. CLss/F 0.025–0.027 L/h; Vz/F 8.7–9.7 L. 축적 ≈ 2.5–2.8 (자체 계산). 0.6–9 mg 용량 비례.', ev: 'pub', src: [42] },
+      monkey: { pop: 'NHP, single SC (buffer)', popKo: '영장류, 단회 SC (완충액)', n: 'n = 3', dose: 0.5, unit: 'mg/kg', doseTxt: '0.5 mg/kg', th: [135], thTxt: '135 h', tmax: null, cmax: null,
+        other: 'Control arm in the Ascletis ASC36 study.', otherKo: 'Ascletis ASC36 연구의 대조군.', ev: 'co', src: [18] },
+      rat: { pop: 'Male SD rat, single SC', popKo: '수컷 SD 랫드, 단회 SC', n: 'n = 3', dose: 1, unit: 'mg/kg', doseTxt: '1 mg/kg', th: [26], thTxt: '≈ 26 h (33.8 h in Zealand\'s study)', tmax: 24, tmaxTxt: '24 h',
+        cmax: 4850, cmaxTxt: '≈ 4,850 ng/mL', aucTxt: null, F: null,
+        other: 't½ ≈ 26 h is our log-linear fit to the digitised 48–96 h points; Zealand\'s own rat study (30 nmol/kg) reports 33.8 h.', otherKo: 't½ ≈ 26 h는 추출된 48–96 h 점의 로그선형 적합(자체 계산); Zealand 자체 랫드 연구(30 nmol/kg)는 33.8 h.', ev: 'dig', src: [6, 43] } } },
+  { id: 'cagrilintide', name: 'Cagrilintide', sponsor: 'Novo Nordisk', cls: 's', grp: 'amy', mech: 'Amylin / calcitonin (DACRA)', mechKo: '아밀린 / 칼시토닌 (DACRA)', interval: 'weekly', intervalKo: '주 1회', tau: 168,
+    sp: {
+      human: { pop: 'BMI 27–39.9, with semaglutide 2.4 mg, steady state', popKo: 'BMI 27–39.9, 세마글루타이드 2.4 mg 병용, 정상상태', n: 'n ≈ 12 per cohort', dose: 4.5, unit: 'mg', doseTxt: '0.16–4.5 mg weekly', th: [159, 195], thTxt: '159–195 h', tmax: 48, tmaxR: [24, 72], tmaxTxt: '24–72 h', ss: true,
+        cmax: 750, cmaxTxt: '6.14–170 nmol/L = 27–750 ng/mL (0.16–4.5 mg, steady state)', aucTxt: 'AUC0–168 926–24,271 nmol·h/L', F: null,
+        other: 'Dose-proportional. Does not change semaglutide exposure. Population t½ ≈ 180 h; no renal or hepatic effect.', otherKo: '용량 비례. 세마글루타이드 노출에 영향 없음. 집단 t½ ≈ 180 h; 신·간 장애 영향 없음.', ev: 'pub', src: [39, 40] },
+      monkey: { pop: 'Cynomolgus, single SC', popKo: '사이노몰거스, 단회 SC', n: 'n = 3', dose: 0.088, unit: 'mg/kg', doseTxt: '20 nmol/kg (0.088 mg/kg)', th: [62], thTxt: '62.0 h', tmax: 48, tmaxTxt: '48 h',
+        cmax: 1314, cmaxTxt: '298 nmol/L = 1,314 ng/mL', aucTxt: '39,345 nmol·h/L', F: null, other: 'Lilly head-to-head comparator in the eloralintide paper. CL/F 0.52 mL/h/kg.', otherKo: '엘로랄린타이드 논문의 Lilly 직접 비교 대조. CL/F 0.52 mL/h/kg.', ev: 'pub', src: [41] },
+      rat: { pop: 'Rat, single SC', popKo: '랫드, 단회 SC', n: 'n = 3', dose: 0.132, unit: 'mg/kg', doseTxt: '30 nmol/kg (0.132 mg/kg)', th: [26.8], thTxt: '26.8 h', tmax: 12, tmaxTxt: '12 h',
+        cmax: 436, cmaxTxt: '98.8 nmol/L = 436 ng/mL', aucTxt: '5,000 nmol·h/L', F: null, other: 'CL/F 6.7 mL/h/kg.', otherKo: 'CL/F 6.7 mL/h/kg.', ev: 'pub', src: [41] } } },
+  { id: 'eloralintide', name: 'Eloralintide', sponsor: 'Lilly', cls: 's', grp: 'amy', mech: 'AMY1R-selective amylin agonist', mechKo: 'AMY1R 선택적 아밀린 작용제', interval: 'weekly', intervalKo: '주 1회', tau: 168,
+    sp: {
+      human: { pop: 'Healthy, SAD', popKo: '건강인, SAD', n: 'n = 6 per cohort', dose: 12, unit: 'mg', doseTxt: '12 mg single (0.04–12 mg)', th: [310, 366], thTxt: '310–366 h', tmax: 96, tmaxR: [72, 132], tmaxTxt: '72–132 h',
+        cmax: 1030, cmaxTxt: '1,030 ng/mL (12 mg)', aucTxt: 'AUC0–∞ 648,000 ng·h/mL (12 mg)', F: null,
+        other: 'AUC dose-proportional 0.4–12 mg; Cmax less than proportional (slope 0.79). CL/F ≈ 0.019 L/h (our calculation). MAD 1.2–12 mg weekly: dose-proportional at steady state.', otherKo: 'AUC 0.4–12 mg 용량 비례; Cmax는 비례 미만(기울기 0.79). CL/F ≈ 0.019 L/h (자체 계산). MAD 1.2–12 mg 주 1회: 정상상태 용량 비례.', ev: 'pub', src: [41, 44] },
+      monkey: { pop: 'Cynomolgus, single SC', popKo: '사이노몰거스, 단회 SC', n: 'n = 3', dose: 0.091, unit: 'mg/kg', doseTxt: '20 nmol/kg (0.091 mg/kg)', th: [159], thTxt: '159 h', tmax: 64, tmaxTxt: '64 h',
+        cmax: 611, cmaxTxt: '135 nmol/L = 611 ng/mL', aucTxt: '35,037 nmol·h/L', F: null, other: 'About 2.6× cagrilintide\'s monkey t½ in the same lab.', otherKo: '같은 연구소 카그릴린타이드 원숭이 t½의 약 2.6배.', ev: 'pub', src: [41] },
+      rat: { pop: 'Rat, single SC', popKo: '랫드, 단회 SC', n: 'n = 3', dose: 0.136, unit: 'mg/kg', doseTxt: '30 nmol/kg (0.136 mg/kg)', th: [52.8], thTxt: '52.8 h', tmax: 24, tmaxTxt: '24 h',
+        cmax: 661, cmaxTxt: '146 nmol/L = 661 ng/mL', aucTxt: '14,182 nmol·h/L', F: null, other: 'CL/F 2.1 mL/h/kg.', otherKo: 'CL/F 2.1 mL/h/kg.', ev: 'pub', src: [41] } } },
+  { id: 'abbv295', name: 'ABBV-295', sponsor: 'AbbVie (ex-Gubra)', cls: 's', grp: 'amy', mech: 'Long-acting amylin analogue', mechKo: '장기지속형 아밀린 유사체', interval: 'weekly to monthly', intervalKo: '주 1회 – 월 1회', tau: 168,
+    sp: { human: { pop: 'Phase 1 SAD / MAD (BMI 27–35)', popKo: '1상 SAD / MAD (BMI 27–35)', n: '45 active in MAD', dose: 6, unit: 'mg', doseTxt: 'SAD to 6 mg; MAD 4–14 mg QW, 8 mg Q4W', th: [257, 295], thTxt: '10.7–12.3 d', tmax: 36, tmaxR: [24, 48.1], tmaxTxt: '24–48 h',
+      cmax: null, cmaxTxt: 'Not disclosed', aucTxt: null, F: null, other: 'Dose-proportional exposure. SAD t½ 270 h. Cmax, AUC and accumulation not disclosed.', otherKo: '노출 용량 비례. SAD t½ 270 h. Cmax·AUC·축적 미공개.', ev: 'co', src: [45, 46] } } },
+  { id: 'met233i', name: 'MET-233i', sponsor: 'Metsera / Pfizer', cls: 'm', grp: 'amy', mech: 'Amylin, dual lipidation', mechKo: '아밀린, 이중 지질화', interval: 'monthly', intervalKo: '월 1회', tau: 672,
+    sp: { human: { pop: 'BMI ≈ 32, Phase 1', popKo: 'BMI ≈ 32, 1상', n: 'n = 80', dose: 1.2, unit: 'mg', doseTxt: 'SAD 0.15–2.4 mg; MAD to 1.2 mg QW ×5', th: [456], thTxt: '19 d, observed', tmax: null,
+      cmax: null, aucTxt: null, F: null, other: '"Observed half-life" is time from dose to 50% of Cmax, not a terminal t½. Dose-linear; about 3× accumulation over 5 weekly doses.', otherKo: '"관찰 반감기"는 투여부터 Cmax의 50%까지의 시간으로 말단 t½가 아니다. 용량 선형; 주 1회 5회 투여 동안 약 3배 축적.',
+      thNote: 'Dose-to-50%-of-Cmax, not terminal.', thNoteKo: '투여→Cmax 50% 시간, 말단 아님.', ev: 'co', src: [47] } } },
+  { id: 'amycretin', name: 'Amycretin (zenagamtide)', sponsor: 'Novo Nordisk', cls: 's', grp: 'amy', mech: 'Unimolecular GLP-1 + amylin', mechKo: '단일분자 GLP-1 + 아밀린', interval: 'weekly SC / daily oral', intervalKo: '주 1회 SC / 1일 1회 경구', tau: 168,
+    sp: { human: { pop: 'Obesity, SC Phase 1b/2a', popKo: '비만, SC 1b/2a상', n: 'n = 125', doseTxt: '1.25–60 mg weekly SC', missingTxt: 'SC t½, Tmax and Cmax are not in the abstract and the full text was not accessible.', missingTxtKo: 'SC t½·Tmax·Cmax는 초록에 없고 전문은 접근 불가.',
+      other: 'Oral (50 mg twice daily): t½ 92–100 h, Cmax 140.7 nmol/L, via a review of the Lancet paper; not checked against the primary text.', otherKo: '경구(50 mg 1일 2회): t½ 92–100 h, Cmax 140.7 nmol/L — Lancet 논문 리뷰 인용, 원문 미확인.', ev: 'pub', src: [48, 49, 50] } } }
+];
+
+/* ---------- engineered molecules (cls m) ---------- */
+const CMP_M = [
+  { id: 'maritide', name: 'MariTide', sponsor: 'Amgen', cls: 'm', mech: 'Anti-GIPR antibody + 2 GLP-1 peptides', mechKo: '항-GIPR 항체 + GLP-1 펩타이드 2개', interval: 'monthly', intervalKo: '월 1회', tau: 672,
+    sp: {
+      human: { pop: 'Obesity, Phase 1 SAD/MAD', popKo: '비만, 1상 SAD/MAD', n: 'n = 6 per SAD cohort', dose: 140, unit: 'mg', doseTxt: 'SAD 21–840 mg; MAD 140–420 mg Q4W', th: [343, 396], thTxt: '14.3–16.5 d (intact)', tmax: 125, tmaxR: [96, 168], tmaxTxt: '≈ 5 d (4–7 d)',
+        cmax: null, cmaxTxt: 'Not tabulated', aucTxt: 'AUC0–28 after 3rd dose: 214 / 443 / 1,220 day·µg/mL (140 / 280 / 420 mg, intact)', F: 'IV cohort run, not reported',
+        other: 'Total antibody t½ 21–24 d; intact (peptide still attached) 14–16 d. Exposure ≈ dose-proportional. MW 153.5 kDa: per ng/mL it is about 32× fewer molecules than a 4.8 kDa peptide.',
+        otherKo: '총 항체 t½ 21–24일, 펩타이드 결합형(intact) 14–16일. 노출 ≈ 용량 비례. 분자량 153.5 kDa — 같은 ng/mL에서 4.8 kDa 펩타이드 대비 분자 수 약 1/32.', thNote: 'Intact conjugate; total antibody 21–24 d.', thNoteKo: '결합형 기준; 총 항체 21–24일.', ev: 'pub', src: [10] },
+      monkey: { pop: 'Obese male cynomolgus, single SC', popKo: '비만 수컷 사이노몰거스, 단회 SC', n: 'n = 5', dose: 1, unit: 'mg/kg', doseTxt: '1 mg/kg', th: [189], thTxt: '189 h (7.9 d)', tmax: 96, tmaxTxt: '96 h',
+        cmax: 4340, cmaxTxt: '4,340 ng/mL (intact)', aucTxt: 'AUCinf 1,580 µg·h/mL (intact)', F: null,
+        other: 'Lean female cyno 3 mg/kg: t½ 207 h intact / 292 h total, Tmax 96 / 48 h, Cmax 24.8 µg/mL intact. Concentrations are mass-based for a 153.5 kDa molecule.', otherKo: '정상체중 암컷 3 mg/kg: t½ 결합형 207 h / 총 292 h, Tmax 96 / 48 h, Cmax 결합형 24.8 µg/mL. 153.5 kDa 분자의 질량 기준 농도.', ev: 'pub', src: [10, 11] },
+      mouse: { pop: 'CD-1 mouse, IV', popKo: 'CD-1 마우스, IV', n: 'n = 3', dose: 5, unit: 'mg/kg', doseTxt: '5 mg/kg IV', th: [118], thTxt: '118 h (intact)', tmax: null, cmaxTxt: 'C0 127 µg/mL', aucTxt: 'AUCinf 8,840 µg·h/mL', F: null, other: 'Total antibody t½ 206 h.', otherKo: '총 항체 t½ 206 h.', ev: 'pub', src: [10] } } },
+  { id: 'met097i', name: 'MET-097i (PF-08653944)', sponsor: 'Metsera / Pfizer', cls: 'm', mech: 'GLP-1, dual lipidation (HALO)', mechKo: 'GLP-1, 이중 지질화 (HALO)', interval: 'weekly → monthly', intervalKo: '주 1회 → 월 1회', tau: 672,
+    sp: { human: { pop: 'Overweight / obesity, Phase 1–2a', popKo: '과체중·비만, 1–2a상', n: 'n = 125 (Ph1); 120 (Ph2a)', dose: 1.2, unit: 'mg', doseTxt: '0.16–1.6 mg single; 0.2–1.2 mg weekly', th: [360, 384], thTxt: '15–16 d (380 h in Ph1)', tmax: null, tmaxTxt: null,
+      cmax: null, cmaxTxt: null, aucTxt: null, F: null, other: 'Dose-linear PK; exposure about 4× over the first weeks of weekly dosing. VESPER-1 Cmax/Tmax due on the registry around Apr 2027.', otherKo: '용량 선형 PK; 주 1회 투여 초기 수 주간 노출 약 4배. VESPER-1 Cmax/Tmax는 2027년 4월경 등록부 공개 예정.',
+      thNote: 'Company figure; no peer-reviewed PK yet.', thNoteKo: '기업 수치; 동료심사 PK 없음.', ev: 'co', src: [12, 13] } } },
+  { id: 'zovaglutide', name: 'Zovaglutide (ZT002)', sponsor: 'QL Biopharm', cls: 'm', mech: 'GLP-1, dual fatty-acid acylation', mechKo: 'GLP-1, 이중 지방산 아실화', interval: 'every 2–4 weeks', intervalKo: '2–4주 1회', tau: 672,
+    sp: { human: { pop: 'Healthy adults, SAD', popKo: '건강인, SAD', n: '6 active + 2 placebo per cohort', dose: 0.26, unit: 'mg/kg', doseTxt: '0.03–0.26 mg/kg single', th: [260, 273], thTxt: '260–273 h', tmax: null,
+      cmax: null, aucTxt: null, F: null, other: 'Exposure dose-proportional. Preclinical t½ 2–4× semaglutide in mouse, rat, minipig and monkey (no numbers). Phase 2 used 80 or 160 mg Q2W/Q4W.', otherKo: '노출 용량 비례. 전임상 t½는 마우스·랫드·미니피그·원숭이에서 세마글루타이드의 2–4배(수치 없음). 2상은 80 또는 160 mg Q2W/Q4W.',
+      thNote: 'ADA 2024 abstract 119-OR.', thNoteKo: 'ADA 2024 초록 119-OR.', ev: 'co', src: [14] } } }
+];
+
+/* ---------- depots and controlled release (cls d) ---------- */
+const OBS = 'Ascletis reports an "observed t½": time for concentration to fall to 50% of Cmax, not a terminal half-life.';
+const OBSKO = 'Ascletis의 "관찰 t½"는 농도가 Cmax의 50%로 떨어지는 시간이며 말단 반감기가 아니다.';
+const CMP_D = [
+  { id: 'asc30a', name: 'ASC30 depot (treatment)', sponsor: 'Ascletis', cls: 'd', mech: 'Small-molecule GLP-1 agonist, SC depot', mechKo: '저분자 GLP-1 작용제, SC 데포', interval: 'monthly', intervalKo: '월 1회', tau: 672,
+    sp: { human: { pop: 'Obesity, US Phase 1b', popKo: '비만, 미국 1b상', n: 'n = 8', dose: 100, unit: 'mg', doseTxt: '100 mg single SC', th: [1100], thTxt: '1,100 h (46 d), observed', tmax: 168.5, tmaxR: [3, 529.6], tmaxTxt: '168.5 h median (3–530)',
+      cmax: 18.9, cmaxTxt: '18.9 ± 10.0 ng/mL', aucTxt: 'AUCinf 15,500 ± 2,750 h·ng/mL', F: null, other: OBS + ' Cmax : C(day 29) = 1.5 : 1. Phase 2 formulation A2 missed therapeutic exposure.', otherKo: OBSKO + ' Cmax : C(29일) = 1.5 : 1. 2상 A2 제형은 치료 노출 미달.',
+      thNote: OBS, thNoteKo: OBSKO, ev: 'co', src: [15] } } },
+  { id: 'asc30b', name: 'ASC30 depot (maintenance)', sponsor: 'Ascletis', cls: 'd', mech: 'Small-molecule GLP-1 agonist, SC depot', mechKo: '저분자 GLP-1 작용제, SC 데포', interval: 'quarterly', intervalKo: '3개월 1회', tau: 2016,
+    sp: { human: { pop: 'Obesity, US Phase 1b', popKo: '비만, 미국 1b상', n: 'n = 8', dose: 100, unit: 'mg', doseTxt: '100 mg single SC', th: [1810], thTxt: '1,810 h (75 d), observed', tmax: 407.6, tmaxR: [119.3, 1007.6], tmaxTxt: '408 h median (119–1,008)',
+      cmax: 13.2, cmaxTxt: '13.2 ± 3.3 ng/mL', aucTxt: 'AUCinf 21,200 ± 8,850 h·ng/mL', F: null, other: OBS + ' Cmax : C(day 85) = 2.5 : 1.', otherKo: OBSKO + ' Cmax : C(85일) = 2.5 : 1.',
+      thNote: OBS, thNoteKo: OBSKO, ev: 'co', src: [15, 16] } } },
+  { id: 'asc35', name: 'ASC35 depot', sponsor: 'Ascletis', cls: 'd', mech: 'GLP-1/GIP peptide, self-assembling lipid depot', mechKo: 'GLP-1/GIP 펩타이드, 자가조립 지질 데포', interval: 'monthly (intended)', intervalKo: '월 1회 (목표)', tau: 672,
+    sp: {
+      monkey: { pop: 'NHP, single SC', popKo: '영장류, 단회 SC', n: 'n = 3', dose: 0.5, unit: 'mg/kg', doseTxt: '0.5 mg/kg', th: [328], thTxt: '328 h (13.7 d)', tmax: null, cmax: null,
+        aucTxt: 'SC 1 mg/kg AUC0–288h 511,000 h·ng/mL (177% of tirzepatide)', F: null, other: 'Tirzepatide control 57.1 h. In the ASC36_35 co-formulation ASC35 reaches 721 h, likely a different formulation.', otherKo: '티르제파타이드 대조 57.1 h. ASC36_35 복합 제형에서 ASC35는 721 h — 다른 제형일 가능성.', ev: 'co', src: [17, 19] },
+      predicted: { pop: 'Company prediction', popKo: '기업 예측', th: [768], thTxt: '≈ 32 d predicted', pred: true, thNote: 'Scaled ×2.3 from tirzepatide NHP → human. Not measured.', thNoteKo: '티르제파타이드 영장류→인체 ×2.3 스케일. 실측 아님.', ev: 'co', src: [17] } } },
+  { id: 'asc36', name: 'ASC36 depot (amylin)', sponsor: 'Ascletis', cls: 'd', mech: 'Amylin peptide, SC depot', mechKo: '아밀린 펩타이드, SC 데포', interval: 'monthly (intended)', intervalKo: '월 1회 (목표)', tau: 672,
+    sp: {
+      monkey: { pop: 'NHP, single SC', popKo: '영장류, 단회 SC', n: 'n = 3', dose: 0.5, unit: 'mg/kg', doseTxt: '0.5 mg/kg', th: [768], thTxt: '768 h (32 d), observed', tmax: null, cmax: null, aucTxt: null, F: null,
+        other: 'Petrelintide control (0.5 mg/kg, buffer) 135 h. Co-formulated with ASC35: 781 h.', otherKo: '페트렐린타이드 대조(0.5 mg/kg, 완충액) 135 h. ASC35와 복합 제형 시 781 h.', thNote: OBS, thNoteKo: OBSKO, ev: 'co', src: [18, 19] },
+      predicted: { pop: 'Company prediction', popKo: '기업 예측', th: [1776], thTxt: '≈ 74 d predicted', pred: true, thNote: 'From the Aug 2026 portfolio deck cited in the asset dossier; not re-verified in this pass.', thNoteKo: '에셋 도시에가 인용한 2026년 8월 포트폴리오 자료; 이번에 재확인하지 못함.', ev: 'co', src: [28] } } },
+  { id: 'camurus', name: 'CAM2056', sponsor: 'Camurus', cls: 'd', mech: 'Semaglutide in FluidCrystal lipid depot', mechKo: '세마글루타이드 FluidCrystal 지질 데포', interval: 'monthly', intervalKo: '월 1회', tau: 672,
+    sp: { human: { pop: 'BMI 27–39.9, Phase 1b', popKo: 'BMI 27–39.9, 1b상', n: 'n = 80', doseTxt: 'up to 15 mg monthly', missingTxt: 'No numeric PK published. Camurus says Cmax was similar to weekly semaglutide at a 4× higher monthly dose, with a longer Tmax.',
+      missingTxtKo: '수치 PK 미공개. Camurus는 월 4배 용량에서 Cmax가 주 1회 세마글루타이드와 비슷하고 Tmax가 더 길다고만 밝힘.', other: 'Day 85 weight change −9.3% (10 mg) vs −5.2% weekly semaglutide. Phase 2b (10 or 20 mg Q4W) dosed Nov 2026.', otherKo: '85일 체중 변화 −9.3% (10 mg) vs 주 1회 세마글루타이드 −5.2%. 2b상(10 또는 20 mg Q4W) 2026년 11월 투여 개시.', ev: 'co', src: [20] } } },
+  { id: 'prolynx', name: 'MS~semaglutide', sponsor: 'ProLynx', cls: 'd', mech: 'Semaglutide on hydrogel microspheres, cleavable linker', mechKo: '하이드로겔 미립구 + 절단성 링커 세마글루타이드', interval: 'monthly (simulated)', intervalKo: '월 1회 (시뮬레이션)', tau: 672,
+    sp: { mouse: { pop: 'Mouse, single SC', popKo: '마우스, 단회 SC', n: 'n = 3–6 per time point', dose: 400, unit: 'nmol/kg', doseTxt: '400 and 2,000 nmol/kg', th: [865], thTxt: '36 d (95% CI 30–44)', tmax: null, cmax: null,
+      cmaxTxt: '1.2 nM per nmol/kg', aucTxt: '1,080 nM·h per nmol/kg', F: '92% vs semaglutide (rel.)', other: 'Release set by linker chemistry (in vitro t½ 13.3 h at pH 9.4 → ≈1,330 h at pH 7.4). Simulated human monthly 5–15 mg holds weekly-semaglutide Cmin.', otherKo: '방출은 링커 화학이 결정 (시험관 pH 9.4에서 t½ 13.3 h → pH 7.4에서 ≈1,330 h). 인체 월 5–15 mg 시뮬레이션은 주 1회 세마글루타이드 Cmin 유지.', ev: 'pub', src: [21] } } },
+  { id: 'npm139', name: 'NPM-139 implant', sponsor: 'Vivani', cls: 'd', mech: 'Semaglutide subdermal implant', mechKo: '세마글루타이드 피하 임플란트', interval: '6-monthly (intended)', intervalKo: '6개월 1회 (목표)', tau: 4368,
+    sp: { rat: { pop: 'SD rat, single implant', popKo: 'SD 랫드, 단회 임플란트', missingTxt: 'No PK numbers. About 20% weight loss lasting 231 days from one implant. SLIM-1 (n = 20, 4 weeks) topline expected Nov 2026.', missingTxtKo: 'PK 수치 없음. 임플란트 1회로 약 20% 체중 감소가 231일 지속. SLIM-1 (n = 20, 4주) 결과 2026년 11월 예정.', ev: 'co', src: [22, 23] } } },
+  { id: 'ivl', name: 'IVL3021 / IVL3024', sponsor: 'Inventage Lab', cls: 'd', mech: 'PLGA microspheres (semaglutide / tirzepatide)', mechKo: 'PLGA 미립구 (세마글루타이드 / 티르제파타이드)', interval: 'monthly+', intervalKo: '월 1회 이상', tau: 672,
+    sp: { minipig: { pop: 'Minipig, single SC', popKo: '미니피그, 단회 SC', missingTxt: 'No Cmax, AUC or burst disclosed. Semaglutide: stable level > 42 days; tirzepatide: stable exposure 2 months, no initial release.', missingTxtKo: 'Cmax·AUC·burst 미공개. 세마글루타이드: 42일 이상 안정 농도; 티르제파타이드: 2개월 안정 노출, 초기 방출 없음.', ev: 'co', src: [24] } } },
+  { id: 'pt403', name: 'PT403 (SmartDepot)', sponsor: 'Peptron', cls: 'd', mech: 'Semaglutide microspheres', mechKo: '세마글루타이드 미립구', interval: 'monthly', intervalKo: '월 1회', tau: 672,
+    sp: { human: { pop: 'Healthy adults, Phase 1 IND (Aug 2026)', popKo: '건강인, 1상 IND (2026년 8월)', doseTxt: 'single SC, 3 cohorts (n = 22)', missingTxt: 'No PK numbers. An 8 vs 8 pilot was shown at ADA 2026 without values.', missingTxtKo: 'PK 수치 없음. ADA 2026에서 8 대 8 파일럿을 수치 없이 발표.', ev: 'co', src: [25] } } },
+  { id: 'gb7001', name: 'GB-7001 (InnoLAMP)', sponsor: 'G2G Bio', cls: 'd', mech: 'Semaglutide microspheres', mechKo: '세마글루타이드 미립구', interval: 'monthly', intervalKo: '월 1회', tau: 672,
+    sp: { rat: { pop: 'Rat and minipig, single SC', popKo: '랫드·미니피그, 단회 SC', missingTxt: 'No Cmax or AUC. Release to 28 days without burst or lag; quantifiable to 56 days; 18% drug load. Company reports peak-to-trough 1.25 vs 1.81 for weekly Ozempic.', missingTxtKo: 'Cmax·AUC 없음. burst·지연 없이 28일 방출, 56일까지 정량; 약물 함량 18%. 기업 발표 최고/최저 1.25 (주 1회 오젬픽 1.81).', ev: 'co', src: [26] } } },
+  { id: 'bydureon', name: 'Exenatide ER (Bydureon BCise)', sponsor: 'AstraZeneca (marketed)', cls: 'd', mech: 'Exenatide, PLGA microspheres', mechKo: '엑세나타이드, PLGA 미립구', interval: 'weekly', intervalKo: '주 1회', tau: 168,
+    sp: { human: { pop: 'T2D, label', popKo: '제2형 당뇨, 라벨', doseTxt: '2 mg weekly', tmaxTxt: 'Peak week 6–7 (single dose)', missingTxt: 'Reference depot. Steady state about week 10 at ≈ 208 pg/mL; below quantification about 10 weeks after stopping.', missingTxtKo: '참고 데포. 약 10주에 정상상태 ≈ 208 pg/mL; 중단 약 10주 후 정량한계 미만.', other: 'CL/F 9.1 L/h. Marketed PLGA reference for how slowly a microsphere reaches steady state.', otherKo: 'CL/F 9.1 L/h. 미립구가 정상상태에 도달하는 속도의 시판 PLGA 기준.', ev: 'pub', src: [27] } } }
+];
+
+/* [id, citation, url, link text] */
+const REFS = [
+  [1, 'Jin, et al. BGM0504 Phase 2a in T2D. Diabetes Obes Metab 2026;28(8):7073–82.', 'https://doi.org/10.1111/dom.70849', 'doi:10.1111/dom.70849'],
+  [2, 'Fan, et al. BGM0504 Phase 1a. Diabetes Obes Metab 2025;27(4):2110–19.', 'https://doi.org/10.1111/dom.16203', 'doi:10.1111/dom.16203'],
+  [3, 'Yuan J, et al. BGM0504 nonclinical PK (rat, monkey). Sci Rep 2024;14:16680.', 'https://doi.org/10.1038/s41598-024-66998-8', 'doi:10.1038/s41598-024-66998-8'],
+  [4, 'BrightGene announcement 2026-063, 7 Aug 2026 (BGM1812 Phase 1).', 'https://static.cninfo.com.cn/finalpage/2026-08-07/1225462081.PDF', 'cninfo PDF'],
+  [5, 'WO2026124626A1, amylin analogues and combinations (BrightGene).', 'https://patents.google.com/patent/WO2026124626A1/en', 'Google Patents'],
+  [6, 'Zong L, et al. BGM1812 discovery, rat PK vs petrelintide. J Med Chem 2025;68:14907–18.', 'https://doi.org/10.1021/acs.jmedchem.5c01120', 'doi:10.1021/acs.jmedchem.5c01120'],
+  [10, 'Véniant MM, et al. MariTide (AMG 133) Phase 1 and nonclinical PK. Nat Metab 2024;6:290–303.', 'https://doi.org/10.1038/s42255-023-00966-w', 'doi:10.1038/s42255-023-00966-w'],
+  [11, 'Wu B, et al. Discovery of AMG 133. J Med Chem 2026;69:9348–62.', 'https://doi.org/10.1021/acs.jmedchem.6c00032', 'doi:10.1021/acs.jmedchem.6c00032'],
+  [12, 'Metsera press release, 24 Sep 2024: MET-097 Phase 1 (t½ 380 h).', 'https://www.biospace.com/press-releases/metsera-reports-highly-competitive-results-from-ongoing-trial-of-novel-potential-once-monthly-injectable-glp-1-receptor-agonist-met-097', 'BioSpace'],
+  [13, 'BioPharma Dive, 7 Jan 2025: MET-097i Phase 2a (t½ 15–16 d).', 'https://biopharmadive.com/news/metsera-long-acting-GLP1-mounjaro-zepbound/736638', 'BioPharma Dive'],
+  [14, 'ZT002 first-in-human. Diabetes 2024;73(Suppl 1):119-OR (read via search excerpts).', 'https://diabetesjournals.org/diabetes/article/73/Supplement_1/119-OR/155504/', 'Abstract'],
+  [15, 'Ascletis ASC30 SC Phase 1b poster, ObesityWeek 2025.', 'https://www.ascletis.com/data/upload/ueditor/20251030/Poster_ASC30_SQ_obesity_week_Obesity_week.pdf', 'Poster PDF'],
+  [16, 'Ascletis press release, 9 Sep 2025: ASC30 maintenance formulation, observed t½ 75 days.', 'https://www.biospace.com/press-releases/ascletis-announces-ultra-long-acting-subcutaneous-depot-maintenance-formulation-of-small-molecule-glp-1r-agonist-asc30-demonstrated-an-observed-half-life-of-75-days-in-participants-with-obesity', 'BioSpace'],
+  [17, 'Ascletis ASC35 poster, EASO 2026; selection release 12 Oct 2025.', 'https://www.ascletis.com/data/upload/pdf/EASO-2026-ASC35.pdf', 'Poster PDF'],
+  [18, 'Ascletis ASC36 poster, EASO 2026.', 'https://www.ascletis.com/data/upload/pdf/EASO-2026-ASC36.pdf', 'Poster PDF'],
+  [19, 'Ascletis press release, 2 Oct 2026 (EASD 2026): ASC36_35FDC.', 'https://www.taiwannews.com.tw/en/news/6450966', 'Taiwan News'],
+  [20, 'Camurus press release, 10 Nov 2025: CAM2056 Phase 1b topline.', 'https://www.camurus.com/media/press-releases/2025/camurus-reports-positive-topline-results-for-cam2056-semaglutide-monthly-depot/', 'Camurus'],
+  [21, 'Schneider EL, …, Santi DV. Once-monthly semaglutide on hydrogel microspheres. PNAS 2024;121:e2415815121.', 'https://doi.org/10.1073/pnas.2415815121', 'doi:10.1073/pnas.2415815121'],
+  [22, 'Vivani press release, 5 Aug 2025: NPM-139 preclinical, NPM-115 LIBERATE-1.', 'https://www.biospace.com/press-releases/vivani-medical-announces-rapid-advancement-of-npm-139-a-novel-semaglutide-implant-following-positive-weight-loss-data-from-an-ongoing-preclinical-study-of-npm-139-and-promising-results-from-the-liberate-1-phase-1-clinical-study-of-npm-115', 'BioSpace'],
+  [23, 'Vivani press release, 6 Aug 2026: SLIM-1 dosing complete.', 'https://www.santelog.com/actualites-sante-nasdaq/vivani-medical-announces-successful-dosing-all-participants-slim-1-phase-1', 'Release'],
+  [24, 'Inventage Lab IVL3021 / IVL3024 minipig data (Herald Business 1 Jun 2026; Hankyung 8 Jun 2026).', 'https://biz.heraldcorp.com/article/10774917', 'Herald Business'],
+  [25, 'Peptron PT403 Phase 1 IND, Edaily 25 Aug 2026.', 'https://en.edaily.co.kr/news/eda202608255585', 'Edaily'],
+  [26, 'G2G Bio GB-7001: Diabetes 2023;72(Suppl 1):78-LB; Edaily 17 Jun 2026.', 'https://en.edaily.co.kr/news/eda202606175111', 'Edaily'],
+  [27, 'Bydureon BCise (exenatide ER) US label, 2025.', 'https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/209210s025lbl.pdf', 'FDA label'],
+  [28, 'Ascletis portfolio deck, Aug 2026 (cited in the asset dossier; not re-verified).', 'https://www.ascletis.com/data/upload/admin/20260810/6a79f2f46c535.pdf', 'Deck'],
+  [30, 'Zepbound and Mounjaro US prescribing information, rev. 08/2026.', 'https://pi.lilly.com/us/zepbound-uspi.pdf', 'Label'],
+  [31, 'Coskun T, et al. LY3298176 (tirzepatide) discovery and Phase 1. Mol Metab 2018;18:3–14.', 'https://doi.org/10.1016/j.molmet.2018.09.009', 'doi:10.1016/j.molmet.2018.09.009'],
+  [32, 'Mounjaro KwikPen Module 2.7.2, clinical pharmacology summary (MHRA FOI 24/252).', 'https://assets.publishing.service.gov.uk/media/669fc161fc8e12ac3edb02cf/FOI_24_252__Module_2.7.2_Summary-clin-pharm_Mounjaro_KwikPen_-_PLGB_148950340-0345.pdf', 'MHRA PDF'],
+  [33, 'Mounjaro EPAR, EMA/791310/2022 (nonclinical PK tables 2.6.4).', 'https://www.ema.europa.eu/en/documents/assessment-report/mounjaro-epar-public-assessment-report_en.pdf', 'EMA'],
+  [34, 'Schneck K, Urva S. Tirzepatide population PK. CPT Pharmacometrics Syst Pharmacol 2024.', 'https://doi.org/10.1002/psp4.13099', 'doi:10.1002/psp4.13099'],
+  [35, 'Wegovy US prescribing information, rev. 06/2026.', 'https://www.novo-pi.com/wegovy.pdf', 'Label'],
+  [36, 'Wegovy EPAR, EMA/112307/2022 (study 4590 steady-state PK).', 'https://www.ema.europa.eu/en/documents/assessment-report/wegovy-epar-public-assessment-report_en.pdf', 'EMA'],
+  [37, 'Ozempic EPAR, EMA/CHMP/715701/2017 (nonclinical PK).', 'https://www.ema.europa.eu/en/documents/assessment-report/ozempic-epar-public-assessment-report_en.pdf', 'EMA'],
+  [38, 'Lau J, et al. Discovery of semaglutide. J Med Chem 2015;58:7370–80.', 'https://doi.org/10.1021/acs.jmedchem.5b00726', 'doi:10.1021/acs.jmedchem.5b00726'],
+  [39, 'Enebo LB, et al. Cagrilintide + semaglutide Phase 1b. Lancet 2021;397:1736–48.', 'https://doi.org/10.1016/S0140-6736(21)00845-X', 'doi:10.1016/S0140-6736(21)00845-X'],
+  [40, 'Cagrilintide clinical pharmacology (renal, hepatic impairment). Clin Pharmacokinet 2026.', 'https://doi.org/10.1007/s40262-026-01654-0', 'doi:10.1007/s40262-026-01654-0']
+];
+const LIMITS = [
+  { who: 'Comparability', whoKo: '비교 가능성', h: 'Different studies, populations and assays', hKo: '연구·집단·분석법이 모두 다름', p: 'Healthy vs obese vs T2D, single dose vs steady state, intact vs total drug. Side-by-side charts show magnitude and shape, not a bioequivalence comparison.', pKo: '건강인·비만·T2D, 단회·정상상태, 결합형·총 약물이 섞여 있다. 나란히 비교는 크기와 모양을 보여줄 뿐 생물학적 동등성 비교가 아니다.' },
+  { who: 'Model curves', whoKo: '모델 곡선', h: 'Dashed curves are ours', hKo: '점선 곡선은 자체 계산', p: 'Where no figure was digitised, the curve is a one-compartment first-order absorption model through the published t½ and Tmax, scaled to the published Cmax. It has no burst phase and no variability.', pKo: '추출한 그림이 없으면 공개 t½·Tmax를 지나는 1-구획 1차 흡수 모델을 공개 Cmax로 스케일했다. 초기 방출(burst)과 변동은 반영하지 않는다.' },
+  { who: 'Depots', whoKo: '데포', h: 'Depot half-lives are apparent', hKo: '데포 반감기는 겉보기 값', p: 'For a depot the slope reflects release, not elimination (flip-flop). Ascletis reports an "observed t½" (time to fall to 50% of Cmax), which is not a terminal half-life.', pKo: '데포의 기울기는 소실이 아니라 방출을 반영한다(플립플롭). Ascletis의 "관찰 t½"는 Cmax의 50%로 떨어지는 시간이며 말단 반감기가 아니다.' },
+  { who: 'Not disclosed', whoKo: '미공개', h: 'Most depots have no numbers yet', hKo: '대부분의 데포는 수치 미공개', p: 'CAM2056, PT403, Inventage, G2G Bio and Vivani have no numeric PK in public. BGM1812 human t½ is undisclosed. Vivani SLIM-1 and Ascletis ASC36_35FDC readouts are due late 2026 to Q1 2027.', pKo: 'CAM2056, PT403, Inventage, G2G Bio, Vivani는 공개 수치 PK가 없다. BGM1812 인체 반감기 미공개. Vivani SLIM-1과 Ascletis ASC36_35FDC 결과는 2026년 말–2027년 1분기 예정.' }
+];
+REFS.push(
+  [41, 'Eloralintide discovery and Phase 1 SAD, with cagrilintide rat/monkey comparator. Mol Metab 2025:102271.', 'https://doi.org/10.1016/j.molmet.2025.102271', 'doi:10.1016/j.molmet.2025.102271'],
+  [42, 'Olsen MB, et al. Petrelintide SAD/MAD and absolute bioavailability. Diabetes Obes Metab 2026.', 'https://doi.org/10.1111/dom.70753', 'doi:10.1111/dom.70753'],
+  [43, 'Petrelintide discovery, rat PK. J Med Chem 2025.', 'https://doi.org/10.1021/acs.jmedchem.5c01185', 'doi:10.1021/acs.jmedchem.5c01185'],
+  [44, 'Eloralintide MAD in overweight/obesity. Diabetes Obes Metab 2026.', 'https://doi.org/10.1111/dom.70439', 'doi:10.1111/dom.70439'],
+  [45, 'Gubra press release, 13 Nov 2024: GUBamy Phase 1 SAD (t½ 270 h).', 'https://inderes.dk/releases/gubra-announces-positive-gubamy-phase-1-sad-data', 'Release'],
+  [46, 'AbbVie press release, 30 Sep 2026: ABBV-295 Phase 1 at EASD 2026 (LBA 87).', 'https://news.abbvie.com/2026-09-30-AbbVie-Presents-Detailed-Phase-1-Data-for-ABBV-295,-a-Long-Acting-Amylin-Analog,-Demonstrating-Favorable-Tolerability-and-Pharmacokinetic-Profile-at-EASD-2026', 'AbbVie'],
+  [47, 'Metsera press release, 9 Jun 2025: MET-233i Phase 1 (observed t½ 19 d).', 'https://www.biospace.com/press-releases/metsera-announces-positive-phase-1-data-of-first-in-class-once-monthly-amylin-candidate-met-233i', 'BioSpace'],
+  [48, 'Gasiorek A, et al. Oral amycretin Phase 1. Lancet 2025;406:135–48.', 'https://doi.org/10.1016/S0140-6736(25)01176-6', 'doi:10.1016/S0140-6736(25)01176-6'],
+  [49, 'Dahl K, et al. SC amycretin Phase 1b/2a. Lancet 2025;406:149–62.', 'https://doi.org/10.1016/S0140-6736(25)01185-7', 'doi:10.1016/S0140-6736(25)01185-7'],
+  [50, 'Amycretin review. Diabetes Ther 2026 (secondary source for oral PK).', 'https://doi.org/10.1007/s13300-026-01921-0', 'doi:10.1007/s13300-026-01921-0']
+);
+
+const PROD = [...BGM, ...CMP_S.map(p => ({ grp: "inc", ...p })), ...CMP_A, ...CMP_M.map(p => ({ grp: "eng", ...p })), ...CMP_D.map(p => ({ grp: "dep", ...p }))];
+
+/* =====================================================================
+   PK comparison page logic. Data lives in PROD (data block above).
+   Species entry fields: pop, dose, unit, doseTxt, n, th:[lo,hi] h, tmax h, tmaxTxt,
+   cmax ng/mL at dose, cmaxTxt, aucTxt, F, other, ev, src:[ref ids], pred
+   ===================================================================== */
+const CLS = { bgm: { en: 'BrightGene', ko: 'BrightGene' }, s: { en: 'Single lipidation', ko: '단일 지질화' }, m: { en: 'Engineered molecule', ko: '분자 개량' }, d: { en: 'Depot / controlled release', ko: '데포·방출 제어' } };
+const CLSCOL = { s: C.cmp3, m: C.cmp, d: VIO };
+const SPN = { human: ['Human', '인체'], monkey: ['Monkey', '원숭이'], rat: ['Rat', '랫드'], mouse: ['Mouse', '마우스'], minipig: ['Minipig', '미니피그'], dog: ['Dog', '개'], predicted: ['Predicted human', '인체 예측'] };
+const spName = s => t(...(SPN[s] || [s, s]));
+const ANIMAL = ['rat', 'monkey', 'minipig', 'dog', 'mouse'];
+const prodColor = p => p.color || (p.cls === 'bgm' ? C.b : CLSCOL[p.cls]);
+const byId = id => PROD.find(p => p.id === id);
+const mid = a => Array.isArray(a) ? (a[0] + a[a.length - 1]) / 2 : a;
+const tx = (o, k) => (LANG === 'ko' && o[k + 'Ko'] != null ? o[k + 'Ko'] : o[k]);
+const evTag = ev => ({ pub: '<span class="ev pub">Published</span>', co: '<span class="ev co">Company</span>', dig: '<span class="ev dig">Digitised</span>', mod: '<span class="ev mod">Model</span>' }[ev] || '');
+const srcLinks = ids => (ids || []).map(i => `<a class="src" href="#r${i}">${i}</a>`).join('');
+const fmtH = h => h == null ? '–' : h >= 72 ? `${fmtNum(h)} h (${fmtNum(h / 24, h / 24 >= 10 ? 0 : 1)} d)` : `${fmtNum(h)} h`;
+
+/* ---------- one-compartment first-order absorption model ---------- */
+function rates(thH, tmaxH) {
+  const ks = Math.LN2 / thH;
+  const tm = Math.max(0.25, tmaxH || 1);
+  if (tm >= 1 / ks * 0.995) return { ks, kf: ks * 1.02 };
+  let lo = ks * 1.0001, hi = 200;
+  const f = k => Math.log(k / ks) / (k - ks) - tm;
+  for (let i = 0; i < 80; i++) { const m = Math.sqrt(lo * hi); if (f(m) > 0) lo = m; else hi = m; }
+  return { ks, kf: Math.sqrt(lo * hi) };
+}
+function shape(thH, tmaxH) {
+  const { ks, kf } = rates(thH, tmaxH);
+  const raw = x => x <= 0 ? 0 : Math.exp(-ks * x) - Math.exp(-kf * x);
+  const tp = Math.log(kf / ks) / (kf - ks), pk = raw(tp);
+  return x => raw(x) / pk; /* 1.0 at Tmax */
+}
+function ssShape(thH, tmaxH, tau, tEnd) {
+  const c1 = shape(thH, tmaxH), N = Math.min(400, Math.ceil(10 * thH / tau) + 2);
+  return x => { let s = 0; for (let j = -N; j * tau <= x; j++) s += c1(x - j * tau); return s; };
+}
+function grid(W, n = 96, extra = []) {
+  const g = new Set([0]);
+  for (let i = 1; i <= n; i++) g.add(+(W * i / n).toFixed(3));
+  extra.forEach(v => { if (v > 0 && v < W) g.add(+v.toFixed(3)); });
+  return [...g].sort((a, b) => a - b);
+}
+function modelWindow(e) { return Math.max(2.2 * (e.tmax || 24), 5 * mid(e.th)); }
+
+/* ---------- curves for one side ---------- */
+/* returns { series:[{name,label,color,dash,points,dose}], ev, W, unit, note, empty } */
+function sideCurves(p, sp, opts) {
+  const e = p.sp[sp];
+  const ramp = p.ramp || [prodColor(p)];
+  if (p.curves && p.curves[sp]) {
+    let cv = p.curves[sp];
+    if (cv.visits) cv = cv.visits[opts.visit] || cv.visits.first;
+    const series = cv.doses.map((d, i) => ({ name: `${p.name} ${d.d} ${cv.unit}`, label: `${d.d} ${cv.unit}`, dose: d.d, color: ramp[Math.min(ramp.length - 1, cv.doses.length === 1 ? ramp.length - 1 : i)], dash: p.dash,
+      points: cv.t.map((x, j) => [x, d.c[j]]).filter(q => q[1] != null) }));
+    return { series, ev: cv.ev || 'dig', W: Math.max(...cv.t), unit: cv.unit, note: tx(cv, 'note') };
+  }
+  if (!e || !e.th || e.tmax == null) return { empty: true };
+  const th = mid(e.th);
+  const ss = !!(e.ss && p.tau);
+  const W = ss ? p.tau : modelWindow(e);
+  let f;
+  if (ss) { const s = ssShape(th, e.tmax, p.tau), off = p.tau * 30, mx = Math.max(...grid(p.tau, 300).map(x => s(x + off))); f = x => s(x + off) / mx; }
+  else f = shape(th, e.tmax);
+  const g = grid(W, 96, [e.tmax]);
+  const scale = e.cmax != null ? e.cmax : null;
+  const series = [{ name: `${p.name} ${e.dose ? e.dose + ' ' + e.unit : ''}`.trim(), label: e.dose ? `${e.dose} ${e.unit}` : p.name, dose: e.dose, color: ramp[ramp.length - 1], dash: '5 3', noMarkers: true,
+    points: g.map(x => [x, scale != null ? f(x) * scale : f(x) * 100]) }];
+  const how = ss ? t(`one dosing interval at steady state (weekly dosing), scaled to the reported Cmax,ss`, `정상상태 1회 투여 간격(주 1회), 보고된 Cmax,ss로 스케일`) : null;
+  return { series, ev: 'mod', W, unit: e.unit, model: true, noAbs: scale == null, ss,
+    note: t(`Model curve: one-compartment, first-order absorption, drawn through t½ ${fmtNum(th)} h and Tmax ${fmtNum(e.tmax)} h` + (ss ? `; ${how}.` : scale != null ? `, scaled to the reported Cmax.` : `. No Cmax was published, so only % of peak is available.`),
+      `모델 곡선: 1-구획 1차 흡수, t½ ${fmtNum(th)} h·Tmax ${fmtNum(e.tmax)} h 통과` + (ss ? `; ${how}.` : scale != null ? `, 보고된 Cmax로 스케일.` : `. Cmax 미공개로 최고치 대비 %만 표시.`)) };
+}
+function transform(cur, mode) {
+  if (cur.empty) return cur;
+  let note = '';
+  let m = mode;
+  if (cur.noAbs && m !== 'pct') { m = 'pct'; note = t('No absolute concentration published: shown as % of peak.', '절대 농도 미공개: 최고치 대비 %로 표시.'); }
+  const series = cur.series.map(s => {
+    let pts = s.points;
+    if (m === 'norm') pts = pts.map(q => [q[0], q[1] / s.dose]);
+    if (m === 'pct') { const mx = Math.max(...pts.map(q => q[1])); pts = pts.map(q => [q[0], q[1] / mx * 100]); }
+    return { ...s, points: pts };
+  });
+  return { ...cur, series, mode: m, fallback: note };
+}
+
+/* ---------- side-by-side state ---------- */
+const vsState = { sp: 'human', scale: 'linear', val: 'pct', win: 'fit', l: 'bgm0504', r: 'tirzepatide', visit: 'fourth', ov: 'single' };
+function fillPicks() {
+  const lp = $('#l-pick'), rp = $('#r-pick');
+  lp.innerHTML = PROD.filter(p => p.cls === 'bgm').map(p => `<option value="${p.id}">${p.name}</option>`).join('');
+  const GRP = { inc: ['GLP-1-class, weekly', 'GLP-1 계열, 주 1회'], amy: ['Amylin analogues', '아밀린 유사체'], eng: ['Engineered, monthly', '분자 개량, 월 1회'], dep: ['Depots and implants', '데포·임플란트'] };
+  rp.innerHTML = ['inc', 'amy', 'eng', 'dep'].map(c => `<optgroup label="${t(...GRP[c])}">` +
+    PROD.filter(p => p.grp === c).map(p => {
+      const has = !!(p.sp[vsState.sp] && p.sp[vsState.sp].th) || !!(p.curves && p.curves[vsState.sp]);
+      return `<option value="${p.id}">${p.name}${has ? '' : ' · ' + t('no ' + spName(vsState.sp).toLowerCase() + ' data', spName(vsState.sp) + ' 데이터 없음')}</option>`;
+    }).join('') + '</optgroup>').join('');
+  lp.value = vsState.l; rp.value = vsState.r;
+}
+function statTiles(host, p, sp) {
+  const e = p.sp[sp] || {};
+  const cmaxPerDose = e.cmax != null && e.dose ? fmtNum(e.cmax / e.dose) : null;
+  const tiles = [
+    [e.th ? (e.th.length > 1 && e.th[0] !== e.th[1] ? `${fmtNum(e.th[0])}–${fmtNum(e.th[1])} h` : `${fmtNum(e.th[0])} h`) : null, t('Terminal t½', '말단 반감기') + (e.th && e.th[0] >= 72 ? ` · ${fmtNum(mid(e.th) / 24, 1)} ${t('d', '일')}` : '')],
+    [e.tmax != null ? fmtH(e.tmax).replace(/ \(.*/, '') : null, 'Tmax' + (e.tmaxR ? ` (${fmtNum(e.tmaxR[0])}–${fmtNum(e.tmaxR[1])} h)` : '')],
+    [cmaxPerDose, t(`Cmax ÷ dose (ng/mL per ${e.unit || 'mg'})`, `Cmax ÷ 용량 (ng/mL / ${e.unit || 'mg'})`)],
+    [e.F || null, t('SC bioavailability', 'SC 생체이용률')]];
+  host.innerHTML = '';
+  tiles.forEach(s => host.appendChild(h('div', { class: 'stat' + (s[0] ? '' : ' na') }, `<b>${s[0] || '–'}</b><span>${s[1]}</span>`)));
+}
+function emptyState(host, p, sp) {
+  host.innerHTML = '';
+  host.classList.remove('chart');
+  const others = PROD.filter(q => q.cls !== 'bgm' && ((q.sp[sp] && q.sp[sp].th) || (q.curves && q.curves[sp])));
+  const e0 = p.sp[sp];
+  const msg = e0 && e0.missingTxt ? tx(e0, 'missingTxt') : e0 && e0.th ? t(`Only the half-life (${e0.thTxt || fmtH(mid(e0.th))}) is public; with no Tmax or Cmax there is no curve to draw.`, `반감기(${e0.thTxt || fmtH(mid(e0.th))})만 공개됨 — Tmax·Cmax가 없어 곡선을 그릴 수 없다.`) : t(`No public ${spName(sp).toLowerCase()} PK for ${p.name}.`, `${p.name}의 공개 ${spName(sp)} PK 없음.`);
+  const el = h('div', { class: 'empty' }, `<b>${t('Not disclosed', '미공개')}</b><span>${msg}</span>`);
+  if (p.cls !== 'bgm' && others.length) {
+    const chips = h('div', { class: 'chips', style: 'justify-content:center;margin-top:6px' });
+    others.slice(0, 8).forEach(q => { const b = h('button', { type: 'button' }, q.name); b.addEventListener('click', () => { vsState.r = q.id; drawVS(); }); chips.appendChild(b); });
+    el.appendChild(h('span', { class: 'mini' }, t(`With ${spName(sp).toLowerCase()} data:`, `${spName(sp)} 데이터 보유:`)));
+    el.appendChild(chips);
+  }
+  host.appendChild(el);
+}
+function xAxisFor(W) {
+  if (W <= 240) { const step = W <= 100 ? 12 : 24; const tk = []; for (let v = 0; v <= W + 1e-6; v += step) tk.push(v); return { ticks: tk, label: t('Time after dose (h)', '투여 후 시간 (h)'), fmt: v => v }; }
+  const days = niceTicks(0, W / 24, 6).filter(d => d * 24 <= W * 1.0001);
+  return { ticks: days.map(d => d * 24), label: t('Time after dose (days)', '투여 후 시간 (일)'), fmt: v => fmtNum(v / 24) };
+}
+function yDomain(sets, mode, scale) {
+  const ys = sets.flatMap(s => s.series.flatMap(x => x.points.map(q => q[1]))).filter(v => v > 0);
+  if (!ys.length) return {};
+  if (scale === 'log') {
+    const lo = Math.pow(10, Math.floor(Math.log10(Math.max(Math.min(...ys), Math.max(...ys) / 1e4))));
+    return { min: lo, max: Math.pow(10, Math.ceil(Math.log10(Math.max(...ys)))) };
+  }
+  const tk = niceTicks(0, Math.max(...ys) * 1.02, 5);
+  return { min: 0, max: tk[tk.length - 1], ticks: tk };
+}
+function yLabel(mode, unit) {
+  if (mode === 'pct') return t('% of peak', '최고치 대비 %');
+  if (mode === 'norm') return t(`ng/mL per ${unit}`, `ng/mL / ${unit}`);
+  return t('Plasma concentration (ng/mL)', '혈장 농도 (ng/mL)');
+}
+function drawSide(key, p, cur, dom, W) {
+  const host = $(`#${key}-chart`);
+  $(`#${key}-title`).textContent = p.name;
+  const e = p.sp[vsState.sp];
+  if (cur.empty) {
+    emptyState(host, p, vsState.sp);
+    $(`#${key}-meta`).innerHTML = `<span class="pill">${spName(vsState.sp)}</span>`;
+    $(`#${key}-src`).innerHTML = e && e.src ? srcLinks(e.src) : '';
+  } else {
+    host.classList.add('chart');
+    const xa = xAxisFor(W);
+    const unitTxt = cur.mode === 'pct' ? '%' : cur.mode === 'norm' ? `ng/mL / ${cur.unit}` : 'ng/mL';
+    lineChart(host, {
+      series: cur.series, height: 320, directLabels: cur.series.length > 1, noLegend: true,
+      aria: `${p.name} concentration–time, ${vsState.sp}`,
+      x: { ...xa, min: 0, max: W },
+      y: { label: yLabel(cur.mode, cur.unit), log: vsState.scale === 'log', unit: unitTxt, ...dom },
+      tipTitle: x => x >= 72 ? t(`${fmtNum(x)} h (day ${fmtNum(x / 24, 1)})`, `${fmtNum(x)} h (${fmtNum(x / 24, 1)}일)`) : t(`${fmtNum(x)} h after dose`, `투여 후 ${fmtNum(x)} h`),
+      tipFmt: v => cur.mode === 'pct' ? fmtNum(v, 0) + '%' : fmtNum(v)
+    });
+    const pop = e ? tx(e, 'pop') : '';
+    $(`#${key}-meta`).innerHTML = `<span class="pill">${spName(vsState.sp)}</span>${pop ? `<span>${pop}</span>` : ''}${e && e.n ? `<span class="muted">${e.n}</span>` : ''}${evTag(cur.ev)}${cur.fallback ? `<span class="pill warn">${cur.fallback}</span>` : ''}`;
+    $(`#${key}-src`).innerHTML = (cur.note || '') + ' ' + (e && e.src ? srcLinks(e.src) : '');
+  }
+  statTiles($(`#${key}-stats`), p, vsState.sp);
+}
+function drawVS() {
+  const vs = $('#l-visit'); if (vs) vs.hidden = !(vsState.l === 'bgm0504' && vsState.sp === 'human');
+  fillPicks();
+  const L = byId(vsState.l), R = byId(vsState.r);
+  $('#side-r').style.setProperty('--k', prodColor(R));
+  const lc = transform(sideCurves(L, vsState.sp, vsState), vsState.val);
+  const rc = transform(sideCurves(R, vsState.sp, vsState), vsState.val);
+  const live = [lc, rc].filter(c => !c.empty);
+  const sameMode = live.length === 2 && lc.mode === rc.mode && (lc.mode !== 'norm' || lc.unit === rc.unit);
+  const shared = vsState.win === 'fit';
+  const Wsh = Math.max(...live.map(c => c.W), 24);
+  const domL = sameMode ? yDomain(live, lc.mode, vsState.scale) : yDomain([lc].filter(c => !c.empty), lc.mode, vsState.scale);
+  const domR = sameMode ? domL : yDomain([rc].filter(c => !c.empty), rc.mode, vsState.scale);
+  drawSide('l', L, lc, domL, shared ? Wsh : lc.W);
+  drawSide('r', R, rc, domR, shared ? Wsh : rc.W);
+  drawOverlay(L, R);
+  drawH2H(L, R);
+}
+
+/* ---------- overlay (% of own peak, model) ---------- */
+function drawOverlay(L, R) {
+  const sp = vsState.sp, host = $('#ov-chart');
+  const items = [L, R].map(p => ({ p, e: p.sp[sp] })).filter(o => o.e && o.e.th && o.e.tmax != null);
+  $('#ov-seg').hidden = sp !== 'human';
+  const mode = sp === 'human' ? vsState.ov : 'single';
+  if (!items.length) { host.innerHTML = `<div class="empty"><b>${t('Nothing to overlay', '겹칠 데이터 없음')}</b><span>${t('Neither side has a published half-life for this species.', '이 종에서 양쪽 모두 공개 반감기가 없다.')}</span></div>`; $('#ov-note').textContent = ''; return; }
+  let W;
+  if (mode === 'ss') W = Math.max(...items.map(o => o.p.tau || 168)) * 2;
+  else W = Math.max(...items.map(o => modelWindow(o.e)));
+  const g = grid(W, 120, items.map(o => o.e.tmax));
+  const series = items.map((o, i) => {
+    const th = mid(o.e.th);
+    let f;
+    if (mode === 'ss') { const tau = o.p.tau || 168; const s = ssShape(th, o.e.tmax, tau); const vals = grid(tau, 200).map(x => s(x + tau * 20)); const mx = Math.max(...vals); f = x => s(x + tau * 20) / mx; }
+    else f = shape(th, o.e.tmax);
+    return { name: o.p.name + (mode === 'ss' ? ` · ${tx(o.p, 'interval')}` : ''), color: i === 0 && o.p.cls === 'bgm' ? prodColor(o.p) : (o.p.cls === 'bgm' ? prodColor(o.p) : 'var(--ink-2)'), dash: o.p.cls === 'bgm' ? '' : '6 4', noMarkers: true,
+      points: g.map(x => [x, f(x) * 100]) };
+  });
+  const xa = xAxisFor(W);
+  lineChart(host, { series, height: 280, aria: 'Overlay of concentration–time shapes, % of peak',
+    x: { ...xa, min: 0, max: W }, y: { label: t('% of peak', '최고치 대비 %'), min: 0, max: 100, ticks: [0, 25, 50, 75, 100], unit: '%' },
+    tipFmt: v => fmtNum(v, 0) + '%', tipTitle: x => x >= 72 ? `${fmtNum(x)} h · ${t('day', '')} ${fmtNum(x / 24, 1)}${t('', '일')}` : `${fmtNum(x)} h` });
+  if (mode === 'ss') {
+    const txts = items.map(o => { const tr = troughPct(o.p, o.e); return `${o.p.name}: ${t('trough', '최저')} ≈ ${fmtNum(tr, 0)}% ${t('of peak at', '(최고치 대비),')} ${tx(o.p, 'interval')}`; });
+    $('#ov-note').innerHTML = txts.join(' · ') + '. ' + t('Model only: real profiles also carry absorption variability and, for depots, an initial burst.', '모델값: 실제 프로파일에는 흡수 변동과 데포의 초기 방출(burst)이 더해진다.');
+  } else $('#ov-note').innerHTML = t('Single dose, both drawn by the same model from their published t½ and Tmax, so differences are shape, not assay.', '단회 투여, 양쪽 모두 공개 t½·Tmax로 같은 모델을 적용 — 차이는 분석법이 아닌 곡선 모양.') + (sp !== 'human' ? ' ' + t('Steady state is shown for humans only.', '정상상태는 인체에서만 표시.') : '');
+}
+function troughPct(p, e) {
+  const tau = p.tau || 168, s = ssShape(mid(e.th), e.tmax, tau);
+  const vals = grid(tau, 300).map(x => s(x + tau * 20));
+  return Math.min(...vals) / Math.max(...vals) * 100;
+}
+
+/* ---------- head-to-head table ---------- */
+function drawH2H(L, R) {
+  const sp = vsState.sp, a = L.sp[sp] || {}, b = R.sp[sp] || {};
+  const ratio = (x, y) => (x && y) ? `<span class="ratio">×${fmtNum(y / x, y / x >= 10 ? 0 : 1)}</span>` : '';
+  const cpd = e => e.cmax != null && e.dose ? fmtNum(e.cmax / e.dose) + ` <span class="muted">/${e.unit}</span>` : '–';
+  const rows = [
+    [t('Population', '집단'), tx(a, 'pop') || '–', tx(b, 'pop') || '–', ''],
+    [t('Dose', '용량'), a.doseTxt || '–', b.doseTxt || '–', ''],
+    [t('Terminal t½', '말단 반감기'), a.thTxt || (a.th ? fmtH(mid(a.th)) : '–'), b.thTxt || (b.th ? fmtH(mid(b.th)) : '–'), ratio(a.th && mid(a.th), b.th && mid(b.th))],
+    ['Tmax', a.tmaxTxt || (a.tmax != null ? fmtH(a.tmax) : '–'), b.tmaxTxt || (b.tmax != null ? fmtH(b.tmax) : '–'), ratio(a.tmax, b.tmax)],
+    ['Cmax', a.cmaxTxt || '–', b.cmaxTxt || '–', ''],
+    [t('Cmax ÷ dose (ng/mL)', 'Cmax ÷ 용량 (ng/mL)'), cpd(a), cpd(b), ''],
+    ['AUC', a.aucTxt || '–', b.aucTxt || '–', ''],
+    [t('SC bioavailability', 'SC 생체이용률'), a.F || '–', b.F || '–', '']];
+  if (sp === 'human') {
+    rows.push([t('Dosing interval', '투여 간격'), tx(L, 'interval') || '–', tx(R, 'interval') || '–', '']);
+    rows.push([t('Trough ÷ peak at steady state', '정상상태 최저 ÷ 최고'), a.th && a.tmax != null ? `≈ ${fmtNum(troughPct(L, a), 0)}% ${evTag('mod')}` : '–', b.th && b.tmax != null ? `≈ ${fmtNum(troughPct(R, b), 0)}% ${evTag('mod')}` : '–', '']);
+  }
+  $('#h2h').innerHTML = `<thead><tr><th>${t('Parameter', '파라미터')}</th><th>${L.name}</th><th>${R.name}</th><th class="n">${t('Comp ÷ BGM', '경쟁 ÷ BGM')}</th></tr></thead><tbody>` +
+    rows.map(r => `<tr><td class="muted">${r[0]}</td><td class="k0504">${r[1]}</td><td class="kcmp">${r[2]}</td><td class="n">${r[3]}</td></tr>`).join('') + '</tbody>';
+  $('#h2h-cap').innerHTML = t(`${spName(sp)}. Values as reported; ratios use range midpoints.`, `${spName(sp)}. 보고값 그대로; 비율은 범위 중앙값 기준.`);
+  $('#h2h-note').innerHTML = [a, b].map((e, i) => e.other ? `<b>${[L, R][i].name}:</b> ${tx(e, 'other')}` : '').filter(Boolean).join('<br>');
+}
+
+/* ---------- half-life chart ---------- */
+const halfState = { sp: 'human', f: 'all', sort: 'group' };
+function halfRows() {
+  const rows = [];
+  PROD.forEach(p => Object.entries(p.sp).forEach(([sp, e]) => {
+    const isHum = sp === 'human' || sp === 'predicted';
+    if (halfState.sp === 'human' && !isHum) return;
+    if (halfState.sp === 'animal' && isHum) return;
+    if (halfState.f !== 'all' && p.cls !== halfState.f && p.cls !== 'bgm') return;
+    if (!e.th && !(e.missingTxt && p.cls === 'bgm')) return;
+    if (!e.th && sp !== 'human') return;
+    const lab = p.name + (halfState.sp !== 'human' && sp !== 'human' ? ` · ${spName(sp).toLowerCase()}` : '') + (sp === 'predicted' ? ` · ${t('predicted', '예측')}` : '');
+    const rng = e.th ? (e.th[0] === e.th[e.th.length - 1] ? fmtH(e.th[0]) : `${fmtNum(e.th[0])}–${fmtNum(e.th[e.th.length - 1])} h`) : '';
+    rows.push({ label: lab, value: e.th ? mid(e.th) / 24 : 0, color: p.cls === 'bgm' ? prodColor(p) : CLSCOL[p.cls], hatch: !!e.pred || sp === 'predicted', missing: !e.th, cls: p.cls, order: PROD.indexOf(p),
+      tip: (e.th ? `${spName(sp)} · ${rng}. ` : '') + (tx(e, 'thNote') || tx(e, 'missingTxt') || '') + ` ${e.ev ? '[' + { pub: 'Published', co: 'Company', dig: 'Digitised', mod: 'Model' }[e.ev] + ']' : ''}`,
+      valText: e.th ? fmtNum(mid(e.th) / 24) + ' d · ' + spName(sp).toLowerCase() : '' });
+  }));
+  const go = { bgm: 0, s: 1, m: 2, d: 3 };
+  if (halfState.sort === 'val') rows.sort((a, b) => (b.missing ? -1 : 0) - (a.missing ? -1 : 0) || a.value - b.value);
+  else rows.sort((a, b) => go[a.cls] - go[b.cls] || a.value - b.value);
+  return rows;
+}
+function drawHalf() {
+  const rows = halfRows();
+  const mx = Math.max(...rows.map(r => r.value), 7);
+  const ticks = mx <= 21 ? [0, 7, 14, 21] : mx <= 35 ? [0, 7, 14, 21, 28, 35] : [0, 7, 14, 28, 42, 56, 70, 84].filter(v => v <= Math.ceil(mx / 14) * 14 + 0.1);
+  hbarChart($('#half-chart'), {
+    aria: 'Terminal half-life by molecule and technology, in days',
+    legendItems: [{ name: 'BGM0504', color: C.b }, { name: 'BGM1812', color: C.o }, { name: t('Single lipidation', '단일 지질화'), color: C.cmp3 }, { name: t('Engineered molecule', '분자 개량'), color: C.cmp }, { name: t('Depot or controlled release', '데포·방출 제어'), color: VIO }],
+    rows, x: { max: ticks[ticks.length - 1], ticks, label: t('Terminal half-life (days)', '말단 반감기 (일)'), fmt: v => fmtNum(v) + (LANG === 'ko' ? '일' : ' d') },
+    refLines: halfState.sp !== 'animal' && ticks[ticks.length - 1] >= 19 ? [{ x: 19, label: t('Human albumin turnover ≈ 19 d', '인체 알부민 회전 ≈ 19일'), short: t('Albumin ≈19 d', '알부민 ≈19일') }] : []
+  });
+  $('#half-note').innerHTML = halfState.sp === 'human'
+    ? t('Depot values are apparent (absorption-limited) half-lives: the depot, not the molecule, sets the slope. Engineered molecules sit just below albumin turnover; depots are the only route past it.', '데포 값은 흡수 제한(플립플롭)에 의한 겉보기 반감기 — 분자가 아니라 데포가 기울기를 정한다. 분자 개량은 알부민 회전 바로 아래, 데포만이 그 위로 넘어간다.')
+    : t('Animal half-lives are far shorter than human ones and scale differently by species; compare within a species only.', '동물 반감기는 인체보다 훨씬 짧고 종마다 다르게 스케일된다 — 같은 종 안에서만 비교.');
+}
+
+/* ---------- scatter: Tmax vs t½ ---------- */
+const mapState = { sp: 'human' };
+function drawMap() {
+  const host = $('#map-chart');
+  host.innerHTML = ''; host.classList.add('chart');
+  legend(host, [{ name: 'BrightGene', color: C.b, kind: 'bar' }, { name: t('Single lipidation', '단일 지질화'), color: C.cmp3, kind: 'bar' }, { name: t('Engineered molecule', '분자 개량'), color: C.cmp, kind: 'bar' }, { name: t('Depot or controlled release', '데포·방출 제어'), color: VIO, kind: 'bar' }]);
+  const pts = [];
+  PROD.forEach(p => Object.entries(p.sp).forEach(([sp, e]) => {
+    if (!e.th || e.tmax == null) return;
+    if (mapState.sp === 'human' ? sp !== 'human' : !ANIMAL.includes(sp)) return;
+    pts.push({ p, sp, e, x: mid(e.th), y: e.tmax, xr: e.th, yr: e.tmaxR || [e.tmax, e.tmax] });
+  }));
+  const W = Math.max(300, host.clientWidth || 640), H = 400, narrow = W < 520;
+  const m = { t: 16, r: narrow ? 16 : 30, b: 46, l: 58 };
+  const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, width: '100%', height: H, role: 'img', 'aria-label': 'Tmax versus terminal half-life' }, host);
+  const xs = pts.flatMap(q => q.xr), ys = pts.flatMap(q => q.yr);
+  const lg = Math.log10;
+  const x0 = Math.pow(10, lg(Math.min(...xs)) - 0.12), x1 = Math.pow(10, lg(Math.max(...xs)) + 0.12);
+  const y0 = Math.pow(10, lg(Math.min(...ys)) - 0.15), y1 = Math.pow(10, lg(Math.max(...ys)) + 0.15);
+  const px = v => m.l + (lg(v) - lg(x0)) / (lg(x1) - lg(x0)) * (W - m.l - m.r);
+  const py = v => H - m.b - (lg(v) - lg(y0)) / (lg(y1) - lg(y0)) * (H - m.t - m.b);
+  const logTicks = (a, b) => { const out = []; for (let d = Math.floor(lg(a)); d <= Math.ceil(lg(b)); d++) [1, 2, 5].forEach(k => { const u = k * Math.pow(10, d); if (u >= a && u <= b) out.push([u, k]); }); return out; };
+  logTicks(x0, x1).forEach(([u, k]) => {
+    svgEl('line', { x1: px(u), x2: px(u), y1: m.t, y2: H - m.b, class: k === 1 ? 'grid' : 'grid minor' }, svg);
+    if (k !== 2 || !narrow) svgEl('text', { x: px(u), y: H - m.b + 17, 'text-anchor': 'middle', class: 'axis-t' }, svg).textContent = `${fmtNum(u)} h`;
+  });
+  logTicks(y0, y1).forEach(([u, k]) => {
+    svgEl('line', { x1: m.l, x2: W - m.r, y1: py(u), y2: py(u), class: k === 1 ? 'grid' : 'grid minor' }, svg);
+    svgEl('text', { x: m.l - 8, y: py(u) + 4, 'text-anchor': 'end', class: 'axis-t' }, svg).textContent = `${fmtNum(u)} h`;
+  });
+  /* reference: 1 week and 1 month half-lives */
+  if (mapState.sp === 'human') [[168, t('t½ 1 week', 't½ 1주')], [720, t('t½ 30 days', 't½ 30일')]].forEach(r => {
+    if (r[0] < x0 || r[0] > x1) return;
+    svgEl('line', { x1: px(r[0]), x2: px(r[0]), y1: m.t, y2: H - m.b, class: 'ref' }, svg);
+    svgEl('text', { x: px(r[0]) + 4, y: m.t + 11, class: 'axis-t' }, svg).textContent = r[1];
+  });
+  svgEl('line', { x1: m.l, x2: W - m.r, y1: H - m.b, y2: H - m.b, class: 'base' }, svg);
+  svgEl('text', { x: (m.l + W - m.r) / 2, y: H - 6, 'text-anchor': 'middle', class: 'axis-l' }, svg).textContent = t('Terminal half-life (h, log)', '말단 반감기 (h, 로그)');
+  const yl = svgEl('text', { x: 13, y: (m.t + H - m.b) / 2, 'text-anchor': 'middle', class: 'axis-l', transform: `rotate(-90 13 ${(m.t + H - m.b) / 2})` }, svg);
+  yl.textContent = t('Tmax (h, log)', 'Tmax (h, 로그)');
+  const placed = [];
+  const dotsXY = pts.map(q => ({ x: px(q.x), y: py(q.y) }));
+  pts.sort((a, b) => (a.p.cls === 'bgm') - (b.p.cls === 'bgm')).forEach(q => {
+    const col = q.p.cls === 'bgm' ? prodColor(q.p) : CLSCOL[q.p.cls];
+    const cx = px(q.x), cy = py(q.y);
+    if (q.xr[0] !== q.xr[q.xr.length - 1]) svgEl('line', { x1: px(q.xr[0]), x2: px(q.xr[q.xr.length - 1]), y1: cy, y2: cy, stroke: col, 'stroke-width': 2, opacity: .55 }, svg);
+    if (q.yr[0] !== q.yr[1]) svgEl('line', { x1: cx, x2: cx, y1: py(q.yr[0]), y2: py(q.yr[1]), stroke: col, 'stroke-width': 2, opacity: .55 }, svg);
+    const isB = q.p.cls === 'bgm';
+    const shapeEl = q.sp === 'monkey' ? svgEl('rect', { x: cx - 5.5, y: cy - 5.5, width: 11, height: 11, rx: 2, fill: col, stroke: 'var(--surface)', 'stroke-width': 1.5, class: 'pt', tabindex: 0 }, svg)
+      : svgEl('circle', { cx, cy, r: isB ? 7 : 6, fill: q.e.pred ? 'var(--surface)' : col, stroke: q.e.pred ? col : 'var(--surface)', 'stroke-width': q.e.pred ? 2 : 1.5, class: 'pt', tabindex: 0 }, svg);
+    const lab = q.p.name + (mapState.sp === 'animal' ? ` (${spName(q.sp).toLowerCase()})` : '');
+    if (!narrow || isB) {
+      const wq = lab.length * 6.1 + 4;
+      const cands = [[10, 4, 'start'], [-10, 4, 'end'], [0, -11, 'middle'], [0, 19, 'middle'], [10, -9, 'start'], [10, 17, 'start'], [-10, -9, 'end'], [-10, 17, 'end']];
+      const box = (lx, ly, an) => { const x = an === 'start' ? lx : an === 'end' ? lx - wq : lx - wq / 2; return { x, y: ly - 10, w: wq, h: 13 }; };
+      const hits = b => placed.some(o => b.x < o.x + o.w && b.x + b.w > o.x && b.y < o.y + o.h && b.y + b.h > o.y)
+        || dotsXY.some(d => d.x > b.x - 6 && d.x < b.x + b.w + 6 && d.y > b.y - 6 && d.y < b.y + b.h + 6)
+        || b.x < m.l || b.x + b.w > W - 2;
+      let pick = cands.map(c => [cx + c[0], cy + c[1], c[2]]).find(c => !hits(box(...c))) || [cx + 10, cy + 4, 'start'];
+      placed.push(box(...pick));
+      svgEl('text', { x: pick[0], y: pick[1], 'text-anchor': pick[2], class: 'plab' + (isB ? ' b' : '') }, svg).textContent = lab;
+    }
+    const html = `<div class="tip-h">${q.p.name} · ${spName(q.sp)}</div><table><tr><td>t½</td><td>${q.e.thTxt || fmtH(q.x)}</td></tr><tr><td>Tmax</td><td>${q.e.tmaxTxt || fmtH(q.y)}</td></tr></table><div class="tip-u">${tx(q.e, 'pop') || ''}${q.p.cls !== 'bgm' ? ' · ' + t('click to compare', '클릭하여 비교') : ''}</div>`;
+    shapeEl.addEventListener('pointermove', ev => showTip(html, ev.clientX, ev.clientY));
+    shapeEl.addEventListener('pointerleave', hideTip);
+    shapeEl.addEventListener('focus', () => { const r = shapeEl.getBoundingClientRect(); showTip(html, r.right, r.top); });
+    shapeEl.addEventListener('blur', hideTip);
+    const open = () => {
+      if (q.p.cls === 'bgm') vsState.l = q.p.id; else vsState.r = q.p.id;
+      vsState.sp = q.sp; syncSeg($('#vs-shared'), vsState); drawVS(); $('#vs').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    };
+    shapeEl.addEventListener('click', open);
+    shapeEl.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); open(); } });
+  });
+}
+function syncSeg(root, state) { $$('.seg', root).forEach(seg => $$('button', seg).forEach(b => b.setAttribute('aria-pressed', state[seg.dataset.key] === b.dataset.v))); }
+
+/* ---------- atlas table ---------- */
+const tabState = { f: 'all' };
+function drawAtlas() {
+  const order = ['human', 'predicted', 'monkey', 'minipig', 'dog', 'rat', 'mouse'];
+  const rows = [];
+  PROD.filter(p => tabState.f === 'all' ? true : p.cls === tabState.f).forEach(p => {
+    Object.entries(p.sp).sort((a, b) => order.indexOf(a[0]) - order.indexOf(b[0])).forEach(([sp, e], i) => rows.push({ p, sp, e, first: i === 0 }));
+  });
+  const head = [t('Product (sponsor)', '품목 (개발사)'), t('Species · population', '종 · 집단'), t('Dose', '용량'), 't½', 'Tmax', 'Cmax', 'AUC', t('SC F', 'SC F'), t('Notes', '비고'), t('Evidence', '근거')];
+  $('#atlas-table').innerHTML = `<thead><tr>${head.map(x => `<th>${x}</th>`).join('')}</tr></thead><tbody>` + rows.map(r => {
+    const col = r.p.cls === 'bgm' ? prodColor(r.p) : CLSCOL[r.p.cls];
+    const e = r.e;
+    return `<tr${r.p.cls === 'bgm' ? ' class="hl"' : ''}><td>${r.first ? `<span class="cls" style="background:${col}"></span><b>${r.p.name}</b><br><span class="muted">${r.p.sponsor} · ${tx(r.p, 'mech')}</span>` : ''}</td>` +
+      `<td><b>${spName(r.sp)}</b>${e.pop ? '<br><span class="muted">' + tx(e, 'pop') + '</span>' : ''}</td><td>${e.doseTxt || '–'}</td>` +
+      `<td>${e.thTxt || (e.th ? fmtH(mid(e.th)) : "–")}</td><td>${e.tmaxTxt || (e.tmax != null ? fmtH(e.tmax) : '–')}</td><td>${e.cmaxTxt || '–'}</td><td>${e.aucTxt || '–'}</td><td>${e.F || '–'}</td>` +
+      `<td style="min-width:200px">${tx(e, 'other') || tx(e, 'missingTxt') || ''}</td><td>${evTag(e.ev)}${srcLinks(e.src)}</td></tr>`;
+  }).join('') + '</tbody>';
+}
+
+/* ---------- sources & limits ---------- */
+function drawRefs() {
+  $('#refs').innerHTML = REFS.map(r => `<li id="r${r[0]}" value="${r[0]}">${r[1]} ${r[2] ? `<a href="${r[2]}" target="_blank" rel="noopener">${r[3] || 'link'}</a>` : ''}</li>`).join('');
+  $('#limits').innerHTML = LIMITS.map(l => `<div class="gap"><span class="who">${tx(l, 'who')}</span><b>${tx(l, 'h')}</b>${tx(l, 'p')}</div>`).join('');
+}
+
+/* ---------- wiring ---------- */
+bindSeg($('#vs-shared'), vsState, drawVS);
+bindSeg($('#ov-seg').parentElement, vsState, drawVS);
+bindSeg($('#half-sp').closest('.controls'), halfState, drawHalf);
+bindSeg($('#map-sp').parentElement, mapState, drawMap);
+bindSeg($('#tab-f').parentElement, tabState, drawAtlas);
+$('#l-pick').addEventListener('change', e => {
+  vsState.l = e.target.value;
+  const g = byId(vsState.r).grp;
+  if (vsState.l === 'bgm1812' && g !== 'amy') vsState.r = 'petrelintide';
+  if (vsState.l === 'bgm0504' && g === 'amy') vsState.r = 'tirzepatide';
+  drawVS();
+});
+$('#r-pick').addEventListener('change', e => { vsState.r = e.target.value; drawVS(); });
+const visitSeg = h('span', { class: 'seg', 'data-key': 'visit', id: 'l-visit' }, `<button data-v="first" aria-pressed="false">${'1st target dose'}</button><button data-v="fourth" aria-pressed="true">${'4th target dose'}</button>`);
+$('#l-meta').after(visitSeg);
+$$('button', visitSeg).forEach(b => b.addEventListener('click', () => { vsState.visit = b.dataset.v; $$('button', visitSeg).forEach(o => o.setAttribute('aria-pressed', o === b)); drawVS(); }));
+function drawAll() {
+  $$('#l-visit button').forEach((b, i) => b.textContent = i ? t('4th target dose', '4번째 목표용량') : t('1st target dose', '첫 목표용량'));
+  drawHalf(); drawVS(); drawMap(); drawAtlas(); drawRefs();
+}
+onResize(() => { drawHalf(); drawVS(); drawMap(); });
+
+/* ---------- language toggle (EN / 한국어) ---------- */
+function applyLang(lang) {
+  LANG = lang === 'ko' ? 'ko' : 'en';
+  document.documentElement.lang = LANG;
+  $$('[data-ko]').forEach(el => {
+    if (el.dataset.en == null) el.dataset.en = el.innerHTML;
+    el.innerHTML = LANG === 'ko' ? el.dataset.ko : el.dataset.en;
+  });
+  $$('.langseg button').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === LANG));
+  drawAll();
+  try { localStorage.setItem('pkcmp-lang', LANG); } catch (e) {}
+}
+$$('.langseg button').forEach(b => b.addEventListener('click', () => applyLang(b.dataset.v)));
+let lang0 = 'en';
+try { if (localStorage.getItem('pkcmp-lang') === 'ko') lang0 = 'ko'; } catch (e) {}
+if (location.hash === '#ko') lang0 = 'ko';
+applyLang(lang0);
+
+/* ---------- scroll spy ---------- */
+const links = $$('.rail a'), secs = links.map(a => $(a.getAttribute('href')));
+const spy = () => {
+  let cur = 0;
+  secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top < 140) cur = i; });
+  links.forEach((a, i) => a.classList.toggle('on', i === cur));
+};
+window.addEventListener('scroll', spy, { passive: true });
+spy();
+</script>
+</body>
+</html>
