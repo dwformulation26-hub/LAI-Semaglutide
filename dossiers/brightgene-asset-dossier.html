@@ -198,6 +198,9 @@ ol.refs li { margin-bottom: 7px; break-inside: avoid; overflow-wrap: anywhere; }
 .tab-btn[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--tabk, var(--accent)); }
 .tab-btn .k { width: 9px; height: 9px; border-radius: 2px; background: var(--tabk, var(--line-2)); }
 .ev-panel { display: flex; flex-direction: column; gap: 20px; }
+.langseg { margin-left: 12px; }
+.langseg button { font-weight: 600; min-width: 40px; }
+:lang(ko) body, [lang="ko"] { word-break: keep-all; line-break: strict; }
 .lead { font-size: 16px; color: var(--ink); max-width: 76ch; margin: 0 0 4px; }
 .lead b, .lead strong { font-weight: 600; }
 .bottom-line { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--surface); }
@@ -213,83 +216,86 @@ table.t th.ahead { font-size: 12px; letter-spacing: .02em; }
 <body>
 <div class="wrap">
 <header class="mast">
-  <div class="eyebrow">Asset &amp; long-acting feasibility review · public sources, cut-off 11 Nov 2026</div>
-  <h1>A long-acting BrightGene asset: worth doing, possible, and with which molecule</h1>
-  <p class="lede">The planning premise is that Daewoong applies a long-acting formulation to BGM0504, BGM1812 or BGM2102. This page works that decision end to end: how good the three assets are, whether a longer interval is even feasible, and which molecule and platform to pair.</p>
+  <div class="seg langseg" data-key="lang" aria-label="Language" style="float:right">
+    <button data-v="en" aria-pressed="true">EN</button><button data-v="ko" aria-pressed="false">한국어</button>
+  </div>
+  <div class="eyebrow" data-ko="에셋 &amp; 장기지속형 타당성 검토 · 공개 자료 기준, 2026년 11월 11일">Asset &amp; long-acting feasibility review · public sources, cut-off 11 Nov 2026</div>
+  <h1 data-ko="BrightGene 에셋의 장기지속형 전환: 할 가치가 있는가, 가능한가, 어떤 분자로 할 것인가">A long-acting BrightGene asset: worth doing, possible, and with which molecule</h1>
+  <p class="lede" data-ko="기획 전제는 대웅제약이 BGM0504, BGM1812 또는 BGM2102에 장기지속형 제형을 적용한다는 것이다. 이 페이지는 그 의사결정을 처음부터 끝까지 따져본다 — 세 에셋이 얼마나 우수한지, 투여 간격 연장이 과연 가능한지, 그리고 어떤 분자와 플랫폼을 짝지어야 하는지.">The planning premise is that Daewoong applies a long-acting formulation to BGM0504, BGM1812 or BGM2102. This page works that decision end to end: how good the three assets are, whether a longer interval is even feasible, and which molecule and platform to pair.</p>
 </header>
 
 <nav class="rail" aria-label="Sections">
-  <div class="rail-h">The decision</div>
-  <a href="#premise"><span class="k"></span>Bottom line</a>
-  <a href="#candidates"><span class="k"></span>The three assets</a>
-  <div class="rail-h">Can we make it long-acting</div>
-  <a href="#feasible"><span class="k"></span>The ceiling</a>
-  <a href="#fit"><span class="k"></span>Does the dose fit</a>
-  <a href="#tradeoff"><span class="k"></span>What a depot costs</a>
-  <a href="#plan"><span class="k"></span>The plan</a>
-  <div class="rail-h">Evidence</div>
-  <a href="#evidence"><span class="k"></span>Asset data</a>
-  <a href="#landscape"><span class="k"></span>Landscape</a>
-  <a href="#sources"><span class="k"></span>Gaps &amp; sources</a>
+  <div class="rail-h" data-ko="의사결정">The decision</div>
+  <a href="#premise"><span class="k"></span><span data-ko="핵심 결론">Bottom line</span></a>
+  <a href="#candidates"><span class="k"></span><span data-ko="세 에셋">The three assets</span></a>
+  <div class="rail-h" data-ko="장기지속형 전환 가능성">Can we make it long-acting</div>
+  <a href="#feasible"><span class="k"></span><span data-ko="반감기 한계">The ceiling</span></a>
+  <a href="#fit"><span class="k"></span><span data-ko="용량이 들어가는가">Does the dose fit</span></a>
+  <a href="#tradeoff"><span class="k"></span><span data-ko="데포의 득실">What a depot costs</span></a>
+  <a href="#plan"><span class="k"></span><span data-ko="실행 방안">The plan</span></a>
+  <div class="rail-h" data-ko="근거 자료">Evidence</div>
+  <a href="#evidence"><span class="k"></span><span data-ko="에셋 데이터">Asset data</span></a>
+  <a href="#landscape"><span class="k"></span><span data-ko="경쟁 구도">Landscape</span></a>
+  <a href="#sources"><span class="k"></span><span data-ko="미공개 항목 &amp; 출처">Gaps &amp; sources</span></a>
 </nav>
 
 <main>
 <!-- ============ PREMISE / BOTTOM LINE ============ -->
 <section id="premise">
   <header>
-    <span class="tag"><i></i>Bottom line</span>
-    <h2>Four conclusions, before the detail</h2>
+    <span class="tag"><i></i><span data-ko="핵심 결론">Bottom line</span></span>
+    <h2 data-ko="세부 내용에 앞서, 네 가지 결론">Four conclusions, before the detail</h2>
   </header>
   <div class="stack">
-    <p class="lead">The extended-interval race has already moved past formulation: nearly every monthly rival got there by changing the <b>molecule</b> — a second lipid, an antibody — not by putting a weekly molecule in a depot. A depot is still worth building, but only on three conditions, and they point to one molecule.</p>
+    <p class="lead" data-ko="투여 간격 연장 경쟁은 이미 제형 단계를 넘어섰다. 월 1회에 도달한 경쟁 품목은 거의 모두 제형이 아니라 <b>분자</b>를 바꿔서 — 두 번째 지질, 항체 등 — 도달했지, 주 1회 분자를 데포에 넣어서가 아니다. 데포 개발은 여전히 가치가 있으나, 세 가지 조건에서만 그렇고, 그 조건은 하나의 분자를 가리킨다.">The extended-interval race has already moved past formulation: nearly every monthly rival got there by changing the <b>molecule</b> — a second lipid, an antibody — not by putting a weekly molecule in a depot. A depot is still worth building, but only on three conditions, and they point to one molecule.</p>
     <div class="bottom-line">
-      <div style="--k:var(--c0504)"><h4>BGM0504 is the strong asset</h4><p>−19.2% at 52 weeks, tirzepatide-like PK, NDA under review in China. But too potent-per-milligram to make monthly: only the 5 mg dose fits a depot, and it is salt-insoluble.</p></div>
-      <div style="--k:var(--c1812)"><h4>BGM1812 is the right one to make long-acting</h4><p>A low-dose (0.3–7.2 mg) amylin agonist — the only BrightGene molecule whose payload fits a depot or a microneedle patch. Thinly disclosed, so data is the gate.</p></div>
-      <div style="--k:var(--c2102)"><h4>BGM2102 is a concept, and already contested</h4><p>One rat abstract (−28%, additive not synergistic). A competitor (Ascletis) already has the same combination concept in the clinic, monthly.</p></div>
-      <div style="--k:var(--accent)"><h4>Position it as maintenance</h4><p>The one clinical depot (ASC30) traded depth of effect for tolerability and durability. A depot's win is adherence, not percentage lost.</p></div>
+      <div style="--k:var(--c0504)"><h4 data-ko="BGM0504 — 가장 강력한 에셋">BGM0504 is the strong asset</h4><p data-ko="52주차 −19.2%, 티르제파타이드 유사 PK, 중국 허가 심사 중. 그러나 mg당 역가가 너무 높아 월 1회 전환이 어렵다 — 데포에 들어가는 용량은 5 mg뿐이고, 염 용액에서 거의 녹지 않는다.">−19.2% at 52 weeks, tirzepatide-like PK, NDA under review in China. But too potent-per-milligram to make monthly: only the 5 mg dose fits a depot, and it is salt-insoluble.</p></div>
+      <div style="--k:var(--c1812)"><h4 data-ko="BGM1812 — 장기지속형에 가장 적합">BGM1812 is the right one to make long-acting</h4><p data-ko="저용량(0.3–7.2 mg) 아밀린 작용제로, 데포나 마이크로니들 패치에 탑재 용량이 맞는 유일한 BrightGene 분자다. 공개 데이터가 적어 데이터 확보가 관문이다.">A low-dose (0.3–7.2 mg) amylin agonist — the only BrightGene molecule whose payload fits a depot or a microneedle patch. Thinly disclosed, so data is the gate.</p></div>
+      <div style="--k:var(--c2102)"><h4 data-ko="BGM2102 — 아직 개념 단계이며 이미 경쟁 중">BGM2102 is a concept, and already contested</h4><p data-ko="랫드 초록 1건(−28%, 상승효과가 아닌 단순 가산). 경쟁사(Ascletis)가 동일한 복합제 개념을 이미 월 1회로 임상에 진입시켰다.">One rat abstract (−28%, additive not synergistic). A competitor (Ascletis) already has the same combination concept in the clinic, monthly.</p></div>
+      <div style="--k:var(--accent)"><h4 data-ko="유지요법으로 포지셔닝할 것">Position it as maintenance</h4><p data-ko="유일한 임상 데포(ASC30)는 감소 폭을 내주는 대신 내약성과 지속성을 얻었다. 데포의 강점은 감소율이 아니라 복약 지속성이다.">The one clinical depot (ASC30) traded depth of effect for tolerability and durability. A depot's win is adherence, not percentage lost.</p></div>
     </div>
-    <p class="note">Evidence is tagged throughout: <span class="ev pub">Published</span> peer-reviewed or registry · <span class="ev co">Company</span> disclosure, not peer-reviewed · <span class="ev dig">Digitised</span> read off a published figure · <span class="ev mod">Model</span> our own calculation. Charts are interactive — hover or use arrow keys.</p>
+    <p class="note" data-ko="근거는 전체에 걸쳐 태그로 표시한다: <span class='ev pub'>Published</span> 동료심사 또는 등록정보 · <span class='ev co'>Company</span> 기업 공시(동료심사 아님) · <span class='ev dig'>Digitised</span> 공개 그림에서 수치 추출 · <span class='ev mod'>Model</span> 자체 계산. 차트는 인터랙티브하다 — 마우스오버 또는 방향키 사용.">Evidence is tagged throughout: <span class="ev pub">Published</span> peer-reviewed or registry · <span class="ev co">Company</span> disclosure, not peer-reviewed · <span class="ev dig">Digitised</span> read off a published figure · <span class="ev mod">Model</span> our own calculation. Charts are interactive — hover or use arrow keys.</p>
   </div>
 </section>
 
 <!-- ============ CANDIDATES ============ -->
 <section id="candidates">
   <header>
-    <span class="tag"><i></i>The three assets</span>
-    <h2>Everything that matters, side by side</h2>
+    <span class="tag"><i></i><span data-ko="세 에셋">The three assets</span></span>
+    <h2 data-ko="중요한 모든 것을 한눈에">Everything that matters, side by side</h2>
   </header>
   <div class="tw"><table class="t">
     <thead><tr><th></th><th class="ahead" style="color:var(--c0504)">BGM0504</th><th class="ahead" style="color:var(--c1812)">BGM1812</th><th class="ahead" style="color:var(--c2102)">BGM2102</th></tr></thead>
     <tbody>
-      <tr><td class="muted">Mechanism</td><td>GLP-1R / GIPR dual agonist (tirzepatide-derived)</td><td>Amylin / calcitonin receptor agonist (petrelintide-derived)</td><td>Fixed-dose combination of the other two</td></tr>
-      <tr><td class="muted">Stage</td><td><span class="pill good">NDA under review, China</span></td><td><span class="pill info">Phase 2 starting</span></td><td><span class="pill warn">Preclinical, IND prep</span></td></tr>
-      <tr><td class="muted">Best efficacy</td><td><b>−19.2%</b> at 52 wk, 15 mg (Ph3, N=652)</td><td><b>−8.4 / −9.2%</b> placebo-adj., 1–4 wk (Ph1)</td><td><b>−28%</b> in DIO rats (one abstract)</td></tr>
-      <tr><td class="muted">Weekly dose</td><td>5 / 10 / 15 mg</td><td>0.3–7.2 mg</td><td>combination</td></tr>
-      <tr><td class="muted">Human t½</td><td>109–160 h</td><td class="muted">not disclosed — ask first</td><td>n/a</td></tr>
-      <tr><td class="muted">Key risk</td><td>GI: diarrhoea 75% at 15 mg (T2D Ph2a); 2-week titration</td><td>Thin data; calcitonin-receptor (calcium/bone) unaddressed</td><td>One data point; effect is additive, not synergistic</td></tr>
-      <tr class="hl"><td class="muted">Long-acting fit</td><td><b>Only at 5 mg</b> — dose and solubility cap it</td><td><b>Fits</b> — low payload suits a depot or patch</td><td>Depends on both components</td></tr>
-      <tr><td class="muted">Rights</td><td>China licensed to CR Sanjiu; ex-China open</td><td>Open (outside the Sanjiu deal)</td><td>Open (combinations excluded from Sanjiu)</td></tr>
+      <tr><td class="muted" data-ko="기전">Mechanism</td><td data-ko="GLP-1R / GIPR 이중 작용제 (티르제파타이드 유래)">GLP-1R / GIPR dual agonist (tirzepatide-derived)</td><td data-ko="아밀린 / 칼시토닌 수용체 작용제 (페트렐린타이드 유래)">Amylin / calcitonin receptor agonist (petrelintide-derived)</td><td data-ko="나머지 두 분자의 고정용량 복합제">Fixed-dose combination of the other two</td></tr>
+      <tr><td class="muted" data-ko="단계">Stage</td><td><span class="pill good" data-ko="중국 허가 심사 중">NDA under review, China</span></td><td><span class="pill info" data-ko="임상 2상 착수">Phase 2 starting</span></td><td><span class="pill warn" data-ko="전임상, IND 준비 중">Preclinical, IND prep</span></td></tr>
+      <tr><td class="muted" data-ko="최대 효능">Best efficacy</td><td><b>−19.2%</b> <span data-ko="52주차, 15 mg (3상, N=652)">at 52 wk, 15 mg (Ph3, N=652)</span></td><td><b>−8.4 / −9.2%</b> <span data-ko="위약 보정, 1–4주 (1상)">placebo-adj., 1–4 wk (Ph1)</span></td><td><b>−28%</b> <span data-ko="DIO 랫드 (초록 1건)">in DIO rats (one abstract)</span></td></tr>
+      <tr><td class="muted" data-ko="주간 용량">Weekly dose</td><td data-ko="5 / 10 / 15 mg">5 / 10 / 15 mg</td><td data-ko="0.3–7.2 mg">0.3–7.2 mg</td><td data-ko="복합">combination</td></tr>
+      <tr><td class="muted" data-ko="인체 반감기">Human t½</td><td data-ko="109–160 h">109–160 h</td><td class="muted" data-ko="미공개 — 가장 먼저 요청">not disclosed — ask first</td><td data-ko="해당 없음">n/a</td></tr>
+      <tr><td class="muted" data-ko="핵심 리스크">Key risk</td><td data-ko="위장관: 15 mg에서 설사 75% (T2D 2상); 2주 간격 적정">GI: diarrhoea 75% at 15 mg (T2D Ph2a); 2-week titration</td><td data-ko="데이터 부족; 칼시토닌 수용체(칼슘/골) 미검토">Thin data; calcitonin-receptor (calcium/bone) unaddressed</td><td data-ko="데이터 1건; 효과는 상승이 아닌 가산">One data point; effect is additive, not synergistic</td></tr>
+      <tr class="hl"><td class="muted" data-ko="장기지속형 적합성">Long-acting fit</td><td><b data-ko="5 mg에서만">Only at 5 mg</b> <span data-ko="— 용량과 용해도가 한계">— dose and solubility cap it</span></td><td><b data-ko="적합">Fits</b> <span data-ko="— 낮은 탑재량이 데포·패치에 적합">— low payload suits a depot or patch</span></td><td data-ko="두 성분 모두에 좌우됨">Depends on both components</td></tr>
+      <tr><td class="muted" data-ko="권리">Rights</td><td data-ko="중국은 CR Sanjiu에 라이선스; 중국 외 지역은 미계약">China licensed to CR Sanjiu; ex-China open</td><td data-ko="미계약 (Sanjiu 계약 대상 외)">Open (outside the Sanjiu deal)</td><td data-ko="미계약 (복합제는 Sanjiu 계약에서 제외)">Open (combinations excluded from Sanjiu)</td></tr>
     </tbody>
   </table></div>
-  <p class="note">Full PK, clinical and formulation data for each asset is in <a href="#evidence">Asset data</a>. Figures: Ph3 announcement 2026-029<a class="src" href="#r6">6</a>, BGM1812 Ph1 notice 2026-063<a class="src" href="#r9">9</a>, ADA 2025 abstract 1993-LB.<a class="src" href="#r8">8</a></p>
+  <p class="note" data-ko="각 에셋의 전체 PK·임상·제형 데이터는 <a href='#evidence'>에셋 데이터</a>에 있다. 수치 출처: 3상 공시 2026-029<a class='src' href='#r6'>6</a>, BGM1812 1상 공시 2026-063<a class='src' href='#r9'>9</a>, ADA 2025 초록 1993-LB.<a class='src' href='#r8'>8</a>">Full PK, clinical and formulation data for each asset is in <a href="#evidence">Asset data</a>. Figures: Ph3 announcement 2026-029<a class="src" href="#r6">6</a>, BGM1812 Ph1 notice 2026-063<a class="src" href="#r9">9</a>, ADA 2025 abstract 1993-LB.<a class="src" href="#r8">8</a></p>
 </section>
 
 <!-- ============ FEASIBLE / CEILING ============ -->
 <section id="feasible">
   <header>
-    <span class="tag"><i></i>Can we make it long-acting · the ceiling</span>
-    <h2>Weekly does not simply become monthly</h2>
+    <span class="tag"><i></i><span data-ko="장기지속형 전환 가능성 · 반감기 한계">Can we make it long-acting · the ceiling</span></span>
+    <h2 data-ko="주 1회가 그냥 월 1회가 되지는 않는다">Weekly does not simply become monthly</h2>
   </header>
   <div class="stack">
-    <p class="lead">Both BrightGene injectables ride on albumin: a C20 diacid borrows albumin's roughly one-week turnover. That is a <b>ceiling, not a dial</b> — more lipid buys no more time. Every monthly rival got past it by using a bigger carrier (an antibody) or a slower outlet (a depot).</p>
+    <p class="lead" data-ko="BrightGene의 두 주사제 모두 알부민에 의존한다: C20 이산(diacid)이 알부민의 약 1주 회전율을 빌려 쓴다. 이는 <b>조절 가능한 다이얼이 아니라 한계(ceiling)</b>다 — 지질을 더해도 시간은 더 늘지 않는다. 월 1회에 도달한 경쟁 품목은 모두 더 큰 운반체(항체)나 더 느린 배출(데포)로 이 한계를 넘었다.">Both BrightGene injectables ride on albumin: a C20 diacid borrows albumin's roughly one-week turnover. That is a <b>ceiling, not a dial</b> — more lipid buys no more time. Every monthly rival got past it by using a bigger carrier (an antibody) or a slower outlet (a depot).</p>
     <div class="panel">
-      <div class="panel-h"><div><h3>Half-life by molecule and technology</h3><p class="cap">One scale in days. Species and studies differ, so bars show magnitude, not a like-for-like comparison; hover for the source value. <span class="ev pub">Published</span> <span class="ev co">Company</span></p></div>
-        <div class="seg" data-key="f" id="half-seg"><button data-v="all" aria-pressed="true">All</button><button data-v="human" aria-pressed="false">Human only</button><button data-v="s" aria-pressed="false">Single lipid</button><button data-v="m" aria-pressed="false">Engineered</button><button data-v="d" aria-pressed="false">Depots</button></div></div>
+      <div class="panel-h"><div><h3 data-ko="분자·기술별 반감기">Half-life by molecule and technology</h3><p class="cap" data-ko="단위는 일(day), 단일 축. 종과 연구가 달라 크기 비교용이며 동일 조건 비교는 아니다; 마우스오버 시 원 수치 표시. <span class='ev pub'>Published</span> <span class='ev co'>Company</span>">One scale in days. Species and studies differ, so bars show magnitude, not a like-for-like comparison; hover for the source value. <span class="ev pub">Published</span> <span class="ev co">Company</span></p></div>
+        <div class="seg" data-key="f" id="half-seg"><button data-v="all" aria-pressed="true" data-ko="전체">All</button><button data-v="human" aria-pressed="false" data-ko="인체만">Human only</button><button data-v="s" aria-pressed="false" data-ko="단일 지질">Single lipid</button><button data-v="m" aria-pressed="false" data-ko="분자 개량">Engineered</button><button data-v="d" aria-pressed="false" data-ko="데포">Depots</button></div></div>
       <div id="half-chart"></div>
     </div>
     <div class="grid2">
-      <div class="callout warn"><b>BGM1812's half-life is the one number nobody has.</b> The Phase 1 notice and the paper say only that it supports weekly or every-two-week dosing; a BrightGene patent reports 274–363 h for an unnamed analogue. Every long-acting decision for this molecule hinges on it — ask first.<a class="src" href="#r13">13</a></div>
-      <div class="callout"><b>A translational edge, if we use a release-controlled depot.</b> ProLynx's linker releases by chemistry, not biology, so its rate should carry from mouse to human — an easier regulatory argument than diffusion-controlled release.<a class="src" href="#r40">40</a></div>
+      <div class="callout warn"><b data-ko="BGM1812의 반감기는 아무도 가진 적 없는 그 하나의 수치다.">BGM1812's half-life is the one number nobody has.</b> <span data-ko="1상 공시와 논문은 주 1회 또는 2주 1회 투여를 지지한다고만 밝힌다; BrightGene 특허에는 미명시 유사체에 대해 274–363시간이 보고되어 있다. 이 분자의 모든 장기지속형 의사결정이 여기에 달려 있다 — 가장 먼저 요청할 것.">The Phase 1 notice and the paper say only that it supports weekly or every-two-week dosing; a BrightGene patent reports 274–363 h for an unnamed analogue. Every long-acting decision for this molecule hinges on it — ask first.</span><a class="src" href="#r13">13</a></div>
+      <div class="callout"><b data-ko="방출 제어형 데포를 쓴다면 번역(translation) 측면의 이점이 있다.">A translational edge, if we use a release-controlled depot.</b> <span data-ko="ProLynx의 링커는 생물학이 아닌 화학으로 방출되므로 방출 속도가 마우스에서 인체로 이어질 것으로 본다 — 확산 제어형보다 규제 측면에서 설명하기 쉬운 논거다.">ProLynx's linker releases by chemistry, not biology, so its rate should carry from mouse to human — an easier regulatory argument than diffusion-controlled release.</span><a class="src" href="#r40">40</a></div>
     </div>
   </div>
 </section>
@@ -297,24 +303,24 @@ table.t th.ahead { font-size: 12px; letter-spacing: .02em; }
 <!-- ============ FIT ============ -->
 <section id="fit">
   <header>
-    <span class="tag"><i></i>Can we make it long-acting · payload</span>
-    <h2>Does a monthly dose physically fit in one injection?</h2>
+    <span class="tag"><i></i><span data-ko="장기지속형 전환 가능성 · 탑재 용량">Can we make it long-acting · payload</span></span>
+    <h2 data-ko="월 1회 용량이 한 번의 주사에 물리적으로 들어가는가?">Does a monthly dose physically fit in one injection?</h2>
   </header>
   <div class="stack">
-    <p class="lead">A monthly shot must carry about four weekly doses; approved peptide depots deliver 2–30 mg. Set a dose and interval — the marker shows where it lands. <span class="ev mod">Model</span></p>
+    <p class="lead" data-ko="월 1회 주사는 주간 용량의 약 4배를 담아야 하며, 허가된 펩타이드 데포는 2–30 mg를 전달한다. 용량과 간격을 설정하면 — 표식(marker)이 어디에 놓이는지 보여준다. <span class='ev mod'>Model</span>">A monthly shot must carry about four weekly doses; approved peptide depots deliver 2–30 mg. Set a dose and interval — the marker shows where it lands. <span class="ev mod">Model</span></p>
     <div class="panel">
       <div class="sim-grid">
         <div>
-          <div class="field"><span class="ctl-l">Start from</span>
+          <div class="field"><span class="ctl-l" data-ko="시작 값">Start from</span>
             <div class="chips" id="fit-presets">
               <button data-d="15">0504 · 15 mg</button><button data-d="10">0504 · 10 mg</button><button data-d="5">0504 · 5 mg</button>
               <button data-d="7.2">1812 · 7.2 mg</button><button data-d="2.4">1812 · 2.4 mg</button>
             </div></div>
-          <div class="field"><div class="row"><label for="fit-dose" class="ctl-l">Weekly dose</label><output id="fit-dose-o"></output></div><input type="range" id="fit-dose" min="0.3" max="15" step="0.1" value="15"></div>
-          <div class="field"><span class="ctl-l">Interval</span>
-            <div class="seg" data-key="weeks" id="fit-weeks"><button data-v="2" aria-pressed="false">2 wk</button><button data-v="4" aria-pressed="true">4 wk</button><button data-v="8" aria-pressed="false">8 wk</button><button data-v="12" aria-pressed="false">12 wk</button></div></div>
-          <div class="field"><div class="row"><label for="fit-conc" class="ctl-l">Concentration</label><output id="fit-conc-o"></output></div><input type="range" id="fit-conc" min="5" max="100" step="1" value="20"></div>
-          <div class="field"><div class="row"><label for="fit-load" class="ctl-l">Microsphere loading</label><output id="fit-load-o"></output></div><input type="range" id="fit-load" min="5" max="40" step="1" value="20"></div>
+          <div class="field"><div class="row"><label for="fit-dose" class="ctl-l" data-ko="주간 용량">Weekly dose</label><output id="fit-dose-o"></output></div><input type="range" id="fit-dose" min="0.3" max="15" step="0.1" value="15"></div>
+          <div class="field"><span class="ctl-l" data-ko="투여 간격">Interval</span>
+            <div class="seg" data-key="weeks" id="fit-weeks"><button data-v="2" aria-pressed="false" data-ko="2주">2 wk</button><button data-v="4" aria-pressed="true" data-ko="4주">4 wk</button><button data-v="8" aria-pressed="false" data-ko="8주">8 wk</button><button data-v="12" aria-pressed="false" data-ko="12주">12 wk</button></div></div>
+          <div class="field"><div class="row"><label for="fit-conc" class="ctl-l" data-ko="농도">Concentration</label><output id="fit-conc-o"></output></div><input type="range" id="fit-conc" min="5" max="100" step="1" value="20"></div>
+          <div class="field"><div class="row"><label for="fit-load" class="ctl-l" data-ko="마이크로스피어 약물 적재율">Microsphere loading</label><output id="fit-load-o"></output></div><input type="range" id="fit-load" min="5" max="40" step="1" value="20"></div>
         </div>
         <div class="stack" style="gap:12px">
           <div id="fit-chart"></div>
@@ -323,38 +329,38 @@ table.t th.ahead { font-size: 12px; letter-spacing: .02em; }
         </div>
       </div>
     </div>
-    <div class="callout warn"><b>Solubility is the harder wall.</b> BGM0504 is nearly insoluble in water and falls to 1.04 mg/mL in saline; reaching even 20 mg/mL needs propylene glycol at pH 7.2–7.6.<a class="src" href="#r11">11</a> So BGM0504 fits only at 5 mg — which delivered 14.3% in Phase 3, not 19.2%. BGM1812's whole dose range fits comfortably.</div>
+    <div class="callout warn"><b data-ko="용해도가 부피보다 더 큰 벽이다.">Solubility is the harder wall.</b> <span data-ko="BGM0504는 물에 거의 녹지 않고 염 용액에서는 1.04 mg/mL까지 떨어진다; 20 mg/mL에 도달하려면 pH 7.2–7.6의 프로필렌글리콜이 필요하다.">BGM0504 is nearly insoluble in water and falls to 1.04 mg/mL in saline; reaching even 20 mg/mL needs propylene glycol at pH 7.2–7.6.</span><a class="src" href="#r11">11</a> <span data-ko="따라서 BGM0504는 5 mg에서만 맞으며 — 이는 3상에서 19.2%가 아닌 14.3%를 기록한 용량이다. BGM1812는 전체 용량 범위가 무리 없이 들어간다.">So BGM0504 fits only at 5 mg — which delivered 14.3% in Phase 3, not 19.2%. BGM1812's whole dose range fits comfortably.</span></div>
   </div>
 </section>
 
 <!-- ============ TRADE-OFF ============ -->
 <section id="tradeoff">
   <header>
-    <span class="tag"><i></i>Can we make it long-acting · the trade</span>
-    <h2>What a depot buys, what it costs, and the chemistry traps</h2>
+    <span class="tag"><i></i><span data-ko="장기지속형 전환 가능성 · 득실">Can we make it long-acting · the trade</span></span>
+    <h2 data-ko="데포가 주는 것, 치르는 대가, 그리고 화학적 함정">What a depot buys, what it costs, and the chemistry traps</h2>
   </header>
   <div class="stack">
-    <p class="lead">One depot in this class has human efficacy data: Ascletis' ASC30, a 24-week Phase 2 with three monthly doses and no titration. It states the trade plainly.</p>
+    <p class="lead" data-ko="이 계열에서 인체 효능 데이터를 가진 데포는 하나뿐이다: Ascletis의 ASC30 — 적정 없이 월 1회 3회 투여한 24주 2상. 득실을 분명히 보여준다.">One depot in this class has human efficacy data: Ascletis' ASC30, a 24-week Phase 2 with three monthly doses and no titration. It states the trade plainly.</p>
     <div class="split">
       <div class="panel">
-        <div class="panel-h"><div><h3>Placebo-adjusted weight loss: depot vs long-acting molecules</h3><p class="cap">Company toplines, different trials and time points. <span class="ev co">Company</span><a class="src" href="#r49">49</a><a class="src" href="#r52">52</a></p></div></div>
+        <div class="panel-h"><div><h3 data-ko="위약 보정 체중 감소: 데포 vs 장기지속형 분자">Placebo-adjusted weight loss: depot vs long-acting molecules</h3><p class="cap" data-ko="기업 공시 topline, 서로 다른 임상·시점. <span class='ev co'>Company</span>">Company toplines, different trials and time points. <span class="ev co">Company</span><a class="src" href="#r49">49</a><a class="src" href="#r52">52</a></p></div></div>
         <div id="depot-chart"></div>
       </div>
       <div class="stack" style="gap:14px">
-        <div class="panel" style="border-top:3px solid var(--good)"><h4>Buys</h4><ul class="tight" style="margin-top:6px;font-size:13.5px"><li>Tolerability no weekly product matches — every GI event grade 1, zero adverse-event discontinuations</li><li>Durability — 5.8% held four months after the last dose</li><li>No titration needed</li></ul></div>
-        <div class="panel" style="border-top:3px solid var(--bad)"><h4>Costs</h4><ul class="tight" style="margin-top:6px;font-size:13.5px"><li>Depth: 6.3% vs 11–14% for weekly/monthly molecules</li><li>Formulation risk: 1 of 2 ASC30 formulations missed exposure</li><li>Cannot be titrated or reversed inside an interval</li></ul></div>
+        <div class="panel" style="border-top:3px solid var(--good)"><h4 data-ko="얻는 것">Buys</h4><ul class="tight" style="margin-top:6px;font-size:13.5px"><li data-ko="주 1회 제품이 따라올 수 없는 내약성 — 모든 위장관 이상반응이 1등급, 이상반응에 의한 중단 0건">Tolerability no weekly product matches — every GI event grade 1, zero adverse-event discontinuations</li><li data-ko="지속성 — 마지막 투여 4개월 뒤에도 5.8% 유지">Durability — 5.8% held four months after the last dose</li><li data-ko="적정 불필요">No titration needed</li></ul></div>
+        <div class="panel" style="border-top:3px solid var(--bad)"><h4 data-ko="치르는 대가">Costs</h4><ul class="tight" style="margin-top:6px;font-size:13.5px"><li data-ko="감소 폭: 주 1회·월 1회 분자의 11–14% 대비 6.3%">Depth: 6.3% vs 11–14% for weekly/monthly molecules</li><li data-ko="제형 리스크: ASC30 두 제형 중 하나는 노출에 도달하지 못함">Formulation risk: 1 of 2 ASC30 formulations missed exposure</li><li data-ko="투여 간격 내 적정·중단(되돌림) 불가">Cannot be titrated or reversed inside an interval</li></ul></div>
       </div>
     </div>
     <div class="grid2">
       <div class="panel" style="border-top:3px solid var(--c0504)">
-        <h3>BGM0504 in PLGA: the Lys20 trap</h3>
-        <p style="margin-top:6px;font-size:14px">PLGA's acidic degradation acylates free amines. BGM0504 was designed with its lipid on Lys40, leaving Lys20 free — a month in a PLGA depot could re-acylate Lys20 and undo the potency gain the molecule was built for.<a class="src" href="#r43">43</a></p>
-        <p class="note"><b>Cheap screen:</b> incubate in degrading PLGA, check Lys20 by LC-MS. If it fails, use a neutral hydrogel instead.</p>
+        <h3 data-ko="BGM0504와 PLGA: Lys20 함정">BGM0504 in PLGA: the Lys20 trap</h3>
+        <p style="margin-top:6px;font-size:14px" data-ko="PLGA의 산성 분해 산물은 자유 아민을 아실화한다. BGM0504는 지질을 Lys40에 두고 Lys20을 자유로 남기도록 설계되었다 — PLGA 데포에서 한 달을 두면 Lys20이 다시 아실화되어 이 분자가 얻으려던 역가 이점을 되돌릴 수 있다.">PLGA's acidic degradation acylates free amines. BGM0504 was designed with its lipid on Lys40, leaving Lys20 free — a month in a PLGA depot could re-acylate Lys20 and undo the potency gain the molecule was built for.<a class="src" href="#r43">43</a></p>
+        <p class="note"><b data-ko="저비용 스크리닝:">Cheap screen:</b> <span data-ko="분해 중인 PLGA에서 배양 후 LC-MS로 Lys20을 확인. 문제가 있으면 중성 하이드로겔로 대체.">incubate in degrading PLGA, check Lys20 by LC-MS. If it fails, use a neutral hydrogel instead.</span></p>
       </div>
       <div class="panel" style="border-top:3px solid var(--c1812)">
-        <h3>BGM1812 at concentration: aggregation</h3>
-        <p style="margin-top:6px;font-size:14px">Amylins fibrillate and dimerise, both concentration-driven (an analogue in Zealand's work hit 42% dimer at 20 mg/mL). A depot needs ~4× the weekly dose in the same volume. BGM1812's anti-fibrillation claim rests on α-methylation, but no quantitative data is published.<a class="src" href="#r29">29</a></p>
-        <p class="note"><b>Cheap screen:</b> thioflavin-T and SEC at 1 and 20 mg/mL under the petrelintide conditions.</p>
+        <h3 data-ko="BGM1812와 고농도: 응집">BGM1812 at concentration: aggregation</h3>
+        <p style="margin-top:6px;font-size:14px" data-ko="아밀린은 섬유화·이량체화하며 둘 다 농도 의존적이다(Zealand 연구의 한 유사체는 20 mg/mL에서 이량체 42% 형성). 데포는 같은 부피에 주간 용량의 약 4배가 필요하다. BGM1812의 섬유화 억제 주장은 α-메틸화에 근거하나 정량 데이터는 공개되지 않았다.">Amylins fibrillate and dimerise, both concentration-driven (an analogue in Zealand's work hit 42% dimer at 20 mg/mL). A depot needs ~4× the weekly dose in the same volume. BGM1812's anti-fibrillation claim rests on α-methylation, but no quantitative data is published.<a class="src" href="#r29">29</a></p>
+        <p class="note"><b data-ko="저비용 스크리닝:">Cheap screen:</b> <span data-ko="페트렐린타이드 조건을 그대로 적용해 1 및 20 mg/mL에서 thioflavin-T와 SEC 측정.">thioflavin-T and SEC at 1 and 20 mg/mL under the petrelintide conditions.</span></p>
       </div>
     </div>
   </div>
@@ -363,38 +369,38 @@ table.t th.ahead { font-size: 12px; letter-spacing: .02em; }
 <!-- ============ PLAN ============ -->
 <section id="plan">
   <header>
-    <span class="tag"><i></i>The plan</span>
-    <h2>Pair the molecule to the platform, and lead with BGM1812</h2>
+    <span class="tag"><i></i><span data-ko="실행 방안">The plan</span></span>
+    <h2 data-ko="분자와 플랫폼을 짝짓고, BGM1812를 선두로">Pair the molecule to the platform, and lead with BGM1812</h2>
   </header>
   <div class="stack">
-    <div class="callout"><b>The cleanest fit in the analysis.</b> If the Daewoong platform in scope is the microneedle patch (a few milligrams), lead with BGM1812: its entire range is 0.3–7.2 mg, while BGM0504's top dose is six times the semaglutide load the patch was built for. For a depot, BGM1812 or BGM0504 at the 5 mg equivalent — never a 15 mg-equivalent monthly BGM0504.</div>
+    <div class="callout"><b data-ko="이번 분석에서 가장 깔끔한 조합.">The cleanest fit in the analysis.</b> <span data-ko="대상 대웅 플랫폼이 마이크로니들 패치(수 mg 수준)라면 BGM1812를 선두로: 전체 범위가 0.3–7.2 mg인 반면 BGM0504 최고 용량은 패치가 설계된 세마글루타이드 적재량의 6배다. 데포라면 BGM1812 또는 5 mg 상당의 BGM0504 — 15 mg 상당의 월 1회 BGM0504는 결코 안 된다.">If the Daewoong platform in scope is the microneedle patch (a few milligrams), lead with BGM1812: its entire range is 0.3–7.2 mg, while BGM0504's top dose is six times the semaglutide load the patch was built for. For a depot, BGM1812 or BGM0504 at the 5 mg equivalent — never a 15 mg-equivalent monthly BGM0504.</span></div>
     <div class="grid2">
       <div class="panel">
-        <h3>Ask BrightGene, in order</h3>
+        <h3 data-ko="BrightGene에 요청할 사항 (우선순위 순)">Ask BrightGene, in order</h3>
         <ol class="tight" style="margin-top:8px;font-size:14px;padding-left:20px">
-          <li><b>BGM1812's measured half-life</b> and <b>BGM0504's solubility ceiling</b> — these decide whether there is a programme.</li>
-          <li>BGM1812's accumulation ratio and BGM0504's absolute SC bioavailability.</li>
-          <li>A single-assay potency head-to-head (the 1.8×/2.2× claims use an in-house comparator).</li>
-          <li>The full ADA 2025 BGM2102 poster — N, schedule, statistics.</li>
-          <li>Their answer to Ascletis' ASC36_35FDC, already in the clinic monthly.</li>
+          <li><b data-ko="BGM1812의 측정 반감기">BGM1812's measured half-life</b> <span data-ko="와">and</span> <b data-ko="BGM0504의 용해도 한계">BGM0504's solubility ceiling</b> <span data-ko="— 프로그램 성립 여부를 가른다.">— these decide whether there is a programme.</span></li>
+          <li data-ko="BGM1812의 축적비, BGM0504의 절대 피하 생체이용률.">BGM1812's accumulation ratio and BGM0504's absolute SC bioavailability.</li>
+          <li data-ko="동일 분석법 기반 역가 직접 비교 (1.8×/2.2× 주장은 자사 비교 기준치를 사용).">A single-assay potency head-to-head (the 1.8×/2.2× claims use an in-house comparator).</li>
+          <li data-ko="ADA 2025 BGM2102 포스터 전문 — N, 투여 스케줄, 통계.">The full ADA 2025 BGM2102 poster — N, schedule, statistics.</li>
+          <li data-ko="이미 월 1회로 임상에 진입한 Ascletis ASC36_35FDC에 대한 BrightGene의 대응.">Their answer to Ascletis' ASC36_35FDC, already in the clinic monthly.</li>
         </ol>
       </div>
       <div class="panel">
-        <h3>Do in parallel</h3>
+        <h3 data-ko="병행할 사항">Do in parallel</h3>
         <ul class="tight" style="margin-top:8px;font-size:14px">
-          <li><b>Run the two cheap screens</b> — PLGA acylation on BGM0504, fibrillation on BGM1812 — before choosing a platform.</li>
-          <li><b>Frame the product as maintenance, not induction</b> — it removes the titration problem instead of engineering around it.</li>
-          <li><b>Freedom-to-operate</b> on the Korean microsphere players (Peptron, Inventage, G2G Bio) and Ascletis' self-assembling depot.</li>
-          <li><b>Decide what it wins on besides interval</b> — Pfizer is monthly by molecule, orforglipron is oral, BGM0504's own tablet is in Phase 2.</li>
+          <li><b data-ko="두 저비용 스크리닝 실시">Run the two cheap screens</b> <span data-ko="— 플랫폼 선정 전 BGM0504 PLGA 아실화와 BGM1812 섬유화 확인.">— PLGA acylation on BGM0504, fibrillation on BGM1812 — before choosing a platform.</span></li>
+          <li><b data-ko="제품을 도입요법이 아닌 유지요법으로 설정">Frame the product as maintenance, not induction</b> <span data-ko="— 적정 문제를 우회하는 대신 제거한다.">— it removes the titration problem instead of engineering around it.</span></li>
+          <li><b data-ko="특허 자유도(FTO)">Freedom-to-operate</b> <span data-ko="— 한국 마이크로스피어 업체(Peptron, Inventage, G2G Bio)와 Ascletis 자가조립 데포 대상.">on the Korean microsphere players (Peptron, Inventage, G2G Bio) and Ascletis' self-assembling depot.</span></li>
+          <li><b data-ko="투여 간격 외의 차별점 결정">Decide what it wins on besides interval</b> <span data-ko="— Pfizer는 분자로 월 1회를 구현했고, orforglipron은 경구이며, BGM0504 자체 경구정은 2상에 있다.">— Pfizer is monthly by molecule, orforglipron is oral, BGM0504's own tablet is in Phase 2.</span></li>
         </ul>
       </div>
     </div>
     <div class="tw"><table class="t">
-      <thead><tr><th>Platform in scope</th><th>Best-fit molecule</th><th>Why</th></tr></thead>
+      <thead><tr><th data-ko="대상 플랫폼">Platform in scope</th><th data-ko="최적 분자">Best-fit molecule</th><th data-ko="근거">Why</th></tr></thead>
       <tbody>
-        <tr><td>Daewoong / Daewoong Therapeutics microneedle patch</td><td style="color:var(--c1812)"><b>BGM1812</b></td><td>Patch carries a few mg; BGM1812's range fits, BGM0504's 15 mg does not<a class="src" href="#r46">46</a></td></tr>
-        <tr><td>Daewoong / Tionlab Quject Sphere depot</td><td style="color:var(--c1812)"><b>BGM1812</b> or <b>BGM0504 5 mg</b></td><td>Being proven on 2.4 mg semaglutide; BGM1812 is a close payload match<a class="src" href="#r45">45</a></td></tr>
-        <tr><td>PLGA microspheres (if pursued)</td><td style="color:var(--c1812)"><b>BGM1812</b></td><td>Avoids the BGM0504 Lys20 acylation risk; FTO check needed vs Korean players<a class="src" href="#r47">47</a></td></tr>
+        <tr><td data-ko="대웅 / 대웅테라퓨틱스 마이크로니들 패치">Daewoong / Daewoong Therapeutics microneedle patch</td><td style="color:var(--c1812)"><b>BGM1812</b></td><td data-ko="패치는 수 mg 수준; BGM1812 범위는 적합하나 BGM0504 15 mg은 부적합">Patch carries a few mg; BGM1812's range fits, BGM0504's 15 mg does not<a class="src" href="#r46">46</a></td></tr>
+        <tr><td data-ko="대웅 / Tionlab Quject Sphere 데포">Daewoong / Tionlab Quject Sphere depot</td><td style="color:var(--c1812)"><b>BGM1812</b> <span data-ko="또는">or</span> <b>BGM0504 5 mg</b></td><td data-ko="세마글루타이드 2.4 mg으로 검증 중; BGM1812는 탑재량이 근접">Being proven on 2.4 mg semaglutide; BGM1812 is a close payload match<a class="src" href="#r45">45</a></td></tr>
+        <tr><td data-ko="PLGA 마이크로스피어 (추진 시)">PLGA microspheres (if pursued)</td><td style="color:var(--c1812)"><b>BGM1812</b></td><td data-ko="BGM0504 Lys20 아실화 리스크를 회피; 한국 업체 대상 FTO 확인 필요">Avoids the BGM0504 Lys20 acylation risk; FTO check needed vs Korean players<a class="src" href="#r47">47</a></td></tr>
       </tbody>
     </table></div>
   </div>
@@ -403,9 +409,9 @@ table.t th.ahead { font-size: 12px; letter-spacing: .02em; }
 <!-- ============ EVIDENCE (TABBED) ============ -->
 <section id="evidence">
   <header>
-    <span class="tag"><i></i>Evidence</span>
-    <h2>Asset data</h2>
-    <p class="sub">The supporting detail behind the comparison. One asset at a time.</p>
+    <span class="tag"><i></i><span data-ko="근거 자료">Evidence</span></span>
+    <h2 data-ko="에셋 데이터">Asset data</h2>
+    <p class="sub" data-ko="비교를 뒷받침하는 세부 자료. 한 번에 한 에셋씩.">The supporting detail behind the comparison. One asset at a time.</p>
   </header>
   <div class="ev-tabs" role="tablist" id="ev-tabs">
     <button class="tab-btn" role="tab" data-tab="a0504" aria-selected="true" style="--tabk:var(--c0504)"><span class="k" style="background:var(--c0504)"></span>BGM0504</button>
@@ -415,19 +421,19 @@ table.t th.ahead { font-size: 12px; letter-spacing: .02em; }
 
   <!-- ===== 0504 ===== -->
   <div class="ev-panel" role="tabpanel" data-tab="a0504">
-    <p class="lead">A tirzepatide follower, de-risked by its own clinical package. Potency, albumin binding and human PK all sit close to tirzepatide; the open question is GI tolerability under fast titration.</p>
+    <p class="lead" data-ko="자사 임상 패키지로 리스크가 낮아진 티르제파타이드 후속 분자. 역가, 알부민 결합, 인체 PK가 모두 티르제파타이드에 근접하며, 열린 문제는 빠른 적정 하에서의 위장관 내약성이다.">A tirzepatide follower, de-risked by its own clinical package. Potency, albumin binding and human PK all sit close to tirzepatide; the open question is GI tolerability under fast titration.</p>
     <div class="stats">
-      <div class="stat"><b>2–3×</b><span>tirzepatide potency at GLP-1R / GIPR (cAMP EC50)</span></div>
-      <div class="stat"><b>109–160 h</b><span>human t½; Tmax ≈ 24 h, like tirzepatide</span></div>
-      <div class="stat"><b>&gt;99.4%</b><span>plasma protein binding</span></div>
-      <div class="stat"><b>48.9%</b><span>lost ≥20% at 15 mg, Ph3 wk 52</span></div>
+      <div class="stat"><b>2–3×</b><span data-ko="GLP-1R / GIPR 역가 (티르제파타이드 대비, cAMP EC50)">tirzepatide potency at GLP-1R / GIPR (cAMP EC50)</span></div>
+      <div class="stat"><b>109–160 h</b><span data-ko="인체 반감기; Tmax ≈ 24 h, 티르제파타이드와 유사">human t½; Tmax ≈ 24 h, like tirzepatide</span></div>
+      <div class="stat"><b>&gt;99.4%</b><span data-ko="혈장 단백 결합률">plasma protein binding</span></div>
+      <div class="stat"><b>48.9%</b><span data-ko="15 mg, 3상 52주차 ≥20% 감소 비율">lost ≥20% at 15 mg, Ph3 wk 52</span></div>
     </div>
     <div class="panel" id="pk">
       <div class="controls">
-        <span class="ctl"><span class="ctl-l">Species</span><span class="seg" data-key="species"><button data-v="rat" aria-pressed="false">Rat</button><button data-v="monkey" aria-pressed="true">Monkey</button><button data-v="human" aria-pressed="false">Human</button></span></span>
-        <span class="ctl"><span class="ctl-l">Y axis</span><span class="seg" data-key="scale"><button data-v="log" aria-pressed="true">Log</button><button data-v="linear" aria-pressed="false">Linear</button></span></span>
-        <span class="ctl"><span class="ctl-l">Values</span><span class="seg" data-key="norm"><button data-v="raw" aria-pressed="true">Measured</button><button data-v="norm" aria-pressed="false">÷ dose</button></span></span>
-        <span class="seg" data-key="visit" id="pk-visit" hidden><button data-v="first" aria-pressed="true">1st target dose</button><button data-v="fourth" aria-pressed="false">4th target dose</button></span>
+        <span class="ctl"><span class="ctl-l" data-ko="종">Species</span><span class="seg" data-key="species"><button data-v="rat" aria-pressed="false" data-ko="랫드">Rat</button><button data-v="monkey" aria-pressed="true" data-ko="원숭이">Monkey</button><button data-v="human" aria-pressed="false" data-ko="인체">Human</button></span></span>
+        <span class="ctl"><span class="ctl-l" data-ko="Y축">Y axis</span><span class="seg" data-key="scale"><button data-v="log" aria-pressed="true" data-ko="로그">Log</button><button data-v="linear" aria-pressed="false" data-ko="선형">Linear</button></span></span>
+        <span class="ctl"><span class="ctl-l" data-ko="값">Values</span><span class="seg" data-key="norm"><button data-v="raw" aria-pressed="true" data-ko="측정값">Measured</button><button data-v="norm" aria-pressed="false" data-ko="÷ 용량">÷ dose</button></span></span>
+        <span class="seg" data-key="visit" id="pk-visit" hidden><button data-v="first" aria-pressed="true" data-ko="첫 목표용량">1st target dose</button><button data-v="fourth" aria-pressed="false" data-ko="4번째 목표용량">4th target dose</button></span>
       </div>
       <div class="split split-pk">
         <div>
@@ -442,50 +448,50 @@ table.t th.ahead { font-size: 12px; letter-spacing: .02em; }
     </div>
     <div class="grid2">
       <div class="panel">
-        <div class="panel-h"><div><h3>Efficacy by dose</h3></div>
-          <div class="seg" data-key="trial" id="eff-seg"><button data-v="ph3" aria-pressed="true">Ph3</button><button data-v="ph2" aria-pressed="false">Ph2</button><button data-v="t2d" aria-pressed="false">T2D</button><button data-v="ph1" aria-pressed="false">Ph1</button></div></div>
+        <div class="panel-h"><div><h3 data-ko="용량별 효능">Efficacy by dose</h3></div>
+          <div class="seg" data-key="trial" id="eff-seg"><button data-v="ph3" aria-pressed="true" data-ko="3상">Ph3</button><button data-v="ph2" aria-pressed="false" data-ko="2상">Ph2</button><button data-v="t2d" aria-pressed="false">T2D</button><button data-v="ph1" aria-pressed="false" data-ko="1상">Ph1</button></div></div>
         <div id="eff-chart"></div>
         <p class="note" id="eff-cap"></p>
       </div>
       <div class="panel">
-        <div class="panel-h"><div><h3>GI tolerability vs rivals</h3><p class="cap">Share reporting the event. BGM0504 from Phase 2; Phase 3 rates undisclosed. <span class="ev pub">Published</span></p></div>
-          <div class="seg" data-key="ev" id="gi-seg"><button data-v="n" aria-pressed="true">Nausea</button><button data-v="v" aria-pressed="false">Vomiting</button><button data-v="d" aria-pressed="false">Diarrhoea</button></div></div>
+        <div class="panel-h"><div><h3 data-ko="위장관 내약성 vs 경쟁 품목">GI tolerability vs rivals</h3><p class="cap" data-ko="해당 이상반응 보고 비율. BGM0504는 2상 기준; 3상 비율 미공개. <span class='ev pub'>Published</span>">Share reporting the event. BGM0504 from Phase 2; Phase 3 rates undisclosed. <span class="ev pub">Published</span></p></div>
+          <div class="seg" data-key="ev" id="gi-seg"><button data-v="n" aria-pressed="true" data-ko="오심">Nausea</button><button data-v="v" aria-pressed="false" data-ko="구토">Vomiting</button><button data-v="d" aria-pressed="false" data-ko="설사">Diarrhoea</button></div></div>
         <div id="gi-chart"></div>
       </div>
     </div>
     <div class="panel">
-      <div class="panel-h"><div><h3>Cross-trial weight loss, Chinese &amp; East Asian populations</h3><p class="cap">Not head-to-head — durations and estimands differ. <span class="ev pub">Published</span> <span class="ev co">Company</span></p></div>
-        <div class="seg" data-key="mode" id="bench-seg"><button data-v="abs" aria-pressed="true">From baseline</button><button data-v="adj" aria-pressed="false">Minus placebo</button></div></div>
+      <div class="panel-h"><div><h3 data-ko="교차 임상 체중 감소, 중국·동아시아 인구집단">Cross-trial weight loss, Chinese &amp; East Asian populations</h3><p class="cap" data-ko="직접 비교 아님 — 기간과 추정량(estimand)이 다름. <span class='ev pub'>Published</span> <span class='ev co'>Company</span>">Not head-to-head — durations and estimands differ. <span class="ev pub">Published</span> <span class="ev co">Company</span></p></div>
+        <div class="seg" data-key="mode" id="bench-seg"><button data-v="abs" aria-pressed="true" data-ko="기저 대비">From baseline</button><button data-v="adj" aria-pressed="false" data-ko="위약 보정">Minus placebo</button></div></div>
       <div id="bench-chart"></div>
-      <p class="note">The only direct tirzepatide comparison (NCT06911203: BGM0504 <b>25 mg</b> vs tirzepatide 15 mg) finished Jan 2026 and is unreported.<a class="src" href="#r26">26</a></p>
+      <p class="note" data-ko="유일한 티르제파타이드 직접 비교(NCT06911203: BGM0504 <b>25 mg</b> vs 티르제파타이드 15 mg)는 2026년 1월 종료되었으나 미발표.">The only direct tirzepatide comparison (NCT06911203: BGM0504 <b>25 mg</b> vs tirzepatide 15 mg) finished Jan 2026 and is unreported.<a class="src" href="#r26">26</a></p>
     </div>
-    <div class="callout warn"><b>Tolerability is the watch item.</b> Phase 2 vomiting at 15 mg (31%) is above tirzepatide's in SURMOUNT-CN (20%), and titration was 2-weekly vs tirzepatide's 4. But Phase 3 adverse-event discontinuation was only 0.7–1.7%, which argues against a serious problem. Diarrhoea reached 75% at 15 mg in the T2D Ph2a.</div>
+    <div class="callout warn"><b data-ko="내약성이 주시 항목이다.">Tolerability is the watch item.</b> <span data-ko="2상 15 mg에서 구토(31%)가 SURMOUNT-CN의 티르제파타이드(20%)보다 높고, 적정은 4주가 아닌 2주 간격이었다. 다만 3상의 이상반응에 의한 중단은 0.7–1.7%에 불과해 심각한 문제는 아님을 시사한다. T2D 2상에서는 15 mg 설사가 75%에 달했다.">Phase 2 vomiting at 15 mg (31%) is above tirzepatide's in SURMOUNT-CN (20%), and titration was 2-weekly vs tirzepatide's 4. But Phase 3 adverse-event discontinuation was only 0.7–1.7%, which argues against a serious problem. Diarrhoea reached 75% at 15 mg in the T2D Ph2a.</span></div>
     <details class="more">
-      <summary>Full clinical programme, responders &amp; cardiometabolic detail</summary>
+      <summary data-ko="전체 임상 프로그램, 반응자 및 심혈관대사 세부">Full clinical programme, responders &amp; cardiometabolic detail</summary>
       <div class="stack" style="gap:16px;margin-top:12px">
         <div class="grid2">
-          <div class="panel"><div class="panel-h"><div><h3>Phase 2 responders, wk 24</h3><p class="cap"><span class="ev co">Company</span><a class="src" href="#r5">5</a></p></div></div><div id="resp-chart"></div></div>
-          <div class="panel"><h3>Phase 3 cardiometabolic, wk 52 (pooled)</h3><p class="cap" style="color:var(--ink-2);font-size:13px">Company<a class="src" href="#r6">6</a></p>
-            <div class="stats" style="margin-top:10px"><div class="stat"><b>−12.8 / −6.8</b><span>SBP / DBP, mmHg</span></div><div class="stat"><b>−33.6%</b><span>Triglycerides</span></div><div class="stat"><b>−12.7%</b><span>LDL-C</span></div><div class="stat"><b>−16.5 cm</b><span>Waist, 15 mg</span></div></div></div>
+          <div class="panel"><div class="panel-h"><div><h3 data-ko="2상 반응자, 24주차">Phase 2 responders, wk 24</h3><p class="cap"><span class="ev co">Company</span><a class="src" href="#r5">5</a></p></div></div><div id="resp-chart"></div></div>
+          <div class="panel"><h3 data-ko="3상 심혈관대사 지표, 52주차 (통합)">Phase 3 cardiometabolic, wk 52 (pooled)</h3><p class="cap" style="color:var(--ink-2);font-size:13px"><span data-ko="기업 공시">Company</span><a class="src" href="#r6">6</a></p>
+            <div class="stats" style="margin-top:10px"><div class="stat"><b>−12.8 / −6.8</b><span data-ko="수축기 / 이완기 혈압, mmHg">SBP / DBP, mmHg</span></div><div class="stat"><b>−33.6%</b><span data-ko="중성지방">Triglycerides</span></div><div class="stat"><b>−12.7%</b><span data-ko="LDL 콜레스테롤">LDL-C</span></div><div class="stat"><b>−16.5 cm</b><span data-ko="허리둘레, 15 mg">Waist, 15 mg</span></div></div></div>
         </div>
         <div class="tw"><table class="t">
-          <thead><tr><th>Study</th><th>Design</th><th class="n">N</th><th>Result or status</th></tr></thead>
+          <thead><tr><th data-ko="연구">Study</th><th data-ko="설계">Design</th><th class="n">N</th><th data-ko="결과 또는 상태">Result or status</th></tr></thead>
           <tbody>
-            <tr><td>Ph1a healthy<a class="src" href="#r2">2</a></td><td>DB, placebo; single + 2-step escalation</td><td class="n">40</td><td>Cmax/AUC dose-linear; mild–moderate GI</td></tr>
-            <tr><td>Ph2a T2D · NCT06974825<a class="src" href="#r3">3</a></td><td>DB vs placebo + open-label semaglutide</td><td class="n">64</td><td>HbA1c −1.72/−1.94/−2.48 vs −1.43 (sema), +0.28 (pbo); 15 mg beat sema</td></tr>
-            <tr><td>Ph2 obesity · NCT06973681<a class="src" href="#r4">4</a></td><td>DB, placebo; 24 wk</td><td class="n">120</td><td>−10.7/−16.1/−18.3%; 1 SAE; no AE withdrawals</td></tr>
-            <tr class="hl"><td><b>Ph3 obesity · NCT06704581</b><a class="src" href="#r6">6</a></td><td>DB, placebo; 52 wk, 41 sites</td><td class="n">652</td><td><b>−14.3/−17.3/−19.2% vs −3.1%</b>; NDA accepted Jun 2026</td></tr>
-            <tr><td>Ph3 T2D (×2) · NCT06716203/16216</td><td>mono &amp; add-on vs semaglutide</td><td class="n">744</td><td>Primary completion Nov 2026; T2D NDA guided Q4 2026</td></tr>
-            <tr><td>Oral tablet Ph1/Ph2 · NCT07658560</td><td>once-daily, Macoral platform</td><td class="n">155/200</td><td>Ph1 −2.7 to −8.2% (US); Ph2 enrolled, readout 2027</td></tr>
+            <tr><td data-ko="1a상 건강인">Ph1a healthy<a class="src" href="#r2">2</a></td><td data-ko="이중맹검, 위약; 단회 + 2단계 증량">DB, placebo; single + 2-step escalation</td><td class="n">40</td><td data-ko="Cmax/AUC 용량 비례; 경증–중등도 위장관">Cmax/AUC dose-linear; mild–moderate GI</td></tr>
+            <tr><td data-ko="2a상 T2D">Ph2a T2D · NCT06974825<a class="src" href="#r3">3</a></td><td data-ko="이중맹검 위약 + 공개 세마글루타이드">DB vs placebo + open-label semaglutide</td><td class="n">64</td><td data-ko="HbA1c −1.72/−1.94/−2.48 vs −1.43(세마), +0.28(위약); 15 mg이 세마 상회">HbA1c −1.72/−1.94/−2.48 vs −1.43 (sema), +0.28 (pbo); 15 mg beat sema</td></tr>
+            <tr><td data-ko="2상 비만">Ph2 obesity · NCT06973681<a class="src" href="#r4">4</a></td><td data-ko="이중맹검, 위약; 24주">DB, placebo; 24 wk</td><td class="n">120</td><td data-ko="−10.7/−16.1/−18.3%; 중대 이상반응 1건; 이상반응 중단 없음">−10.7/−16.1/−18.3%; 1 SAE; no AE withdrawals</td></tr>
+            <tr class="hl"><td><b data-ko="3상 비만">Ph3 obesity · NCT06704581</b><a class="src" href="#r6">6</a></td><td data-ko="이중맹검, 위약; 52주, 41개 기관">DB, placebo; 52 wk, 41 sites</td><td class="n">652</td><td><b>−14.3/−17.3/−19.2% vs −3.1%</b>; <span data-ko="2026년 6월 NDA 접수">NDA accepted Jun 2026</span></td></tr>
+            <tr><td data-ko="3상 T2D (2건)">Ph3 T2D (×2) · NCT06716203/16216</td><td data-ko="단독요법 및 세마글루타이드 대비 병용">mono &amp; add-on vs semaglutide</td><td class="n">744</td><td data-ko="주요 완료 2026년 11월; T2D NDA 2026년 4분기 가이던스">Primary completion Nov 2026; T2D NDA guided Q4 2026</td></tr>
+            <tr><td data-ko="경구정 1상/2상">Oral tablet Ph1/Ph2 · NCT07658560</td><td data-ko="1일 1회, Macoral 플랫폼">once-daily, Macoral platform</td><td class="n">155/200</td><td data-ko="1상 −2.7~−8.2%(미국); 2상 등록 완료, 2027년 결과">Ph1 −2.7 to −8.2% (US); Ph2 enrolled, readout 2027</td></tr>
           </tbody>
         </table></div>
         <div class="tw"><table class="t">
-          <thead><tr><th>Formulation</th><th>Buffer / pH</th><th>Tonicity</th><th>Preservative</th><th>Presentation</th></tr></thead>
+          <thead><tr><th data-ko="제형">Formulation</th><th data-ko="완충액 / pH">Buffer / pH</th><th data-ko="등장화제">Tonicity</th><th data-ko="보존제">Preservative</th><th data-ko="제품 형태">Presentation</th></tr></thead>
           <tbody>
-            <tr><td><b>BGM0504 single-dose</b><a class="src" href="#r10">10</a></td><td>Na phosphate; pH 7.2–7.6</td><td>Propylene glycol; no NaCl</td><td>None</td><td>NDA covers 2.5/5/10/15 mg</td></tr>
-            <tr><td><b>BGM0504 multi-dose</b><a class="src" href="#r11">11</a></td><td>Same</td><td>Same</td><td>Phenol or m-cresol</td><td>Cartridge pen</td></tr>
-            <tr><td>Tirzepatide<a class="src" href="#r22">22</a></td><td>Na phosphate; pH 6.5–7.5</td><td>NaCl</td><td>None (single-dose)</td><td>Autoinjector / vial</td></tr>
-            <tr><td>Semaglutide 2.4 mg<a class="src" href="#r23">23</a></td><td>Na phosphate; pH ≈7.4</td><td>NaCl</td><td>None (single-dose)</td><td>Autoinjector</td></tr>
+            <tr><td><b data-ko="BGM0504 단회용">BGM0504 single-dose</b><a class="src" href="#r10">10</a></td><td data-ko="인산나트륨; pH 7.2–7.6">Na phosphate; pH 7.2–7.6</td><td data-ko="프로필렌글리콜; NaCl 없음">Propylene glycol; no NaCl</td><td data-ko="없음">None</td><td data-ko="NDA는 2.5/5/10/15 mg 포함">NDA covers 2.5/5/10/15 mg</td></tr>
+            <tr><td><b data-ko="BGM0504 다회용">BGM0504 multi-dose</b><a class="src" href="#r11">11</a></td><td data-ko="동일">Same</td><td data-ko="동일">Same</td><td data-ko="페놀 또는 m-크레졸">Phenol or m-cresol</td><td data-ko="카트리지 펜">Cartridge pen</td></tr>
+            <tr><td data-ko="티르제파타이드">Tirzepatide<a class="src" href="#r22">22</a></td><td data-ko="인산나트륨; pH 6.5–7.5">Na phosphate; pH 6.5–7.5</td><td>NaCl</td><td data-ko="없음(단회용)">None (single-dose)</td><td data-ko="오토인젝터 / 바이알">Autoinjector / vial</td></tr>
+            <tr><td data-ko="세마글루타이드 2.4 mg">Semaglutide 2.4 mg<a class="src" href="#r23">23</a></td><td data-ko="인산나트륨; pH ≈7.4">Na phosphate; pH ≈7.4</td><td>NaCl</td><td data-ko="없음(단회용)">None (single-dose)</td><td data-ko="오토인젝터">Autoinjector</td></tr>
           </tbody>
         </table></div>
       </div>
@@ -494,53 +500,53 @@ table.t th.ahead { font-size: 12px; letter-spacing: .02em; }
 
   <!-- ===== 1812 ===== -->
   <div class="ev-panel" role="tabpanel" data-tab="a1812" hidden>
-    <p class="lead">About twice petrelintide's potency, soluble and fibril-free at neutral pH — but the human package is one paper and two company notices. Rat PK matches petrelintide; the human half-life has never been disclosed as a number.</p>
+    <p class="lead" data-ko="페트렐린타이드 대비 약 2배 역가, 중성 pH에서 가용성·섬유화 없음 — 그러나 인체 패키지는 논문 1편과 기업 공시 2건뿐이다. 랫드 PK는 페트렐린타이드와 유사하며, 인체 반감기는 수치로 공개된 적이 없다.">About twice petrelintide's potency, soluble and fibril-free at neutral pH — but the human package is one paper and two company notices. Rat PK matches petrelintide; the human half-life has never been disclosed as a number.</p>
     <div class="grid2">
       <div class="panel">
-        <div class="panel-h"><div><h3>Optimisation series</h3><p class="cap">EC50 ÷ petrelintide, same run. Lower-left is better. <span class="ev pub">Published</span><a class="src" href="#r7">7</a></p></div></div>
+        <div class="panel-h"><div><h3 data-ko="최적화 시리즈">Optimisation series</h3><p class="cap" data-ko="동일 실험 내 EC50 ÷ 페트렐린타이드. 좌하단일수록 우수. <span class='ev pub'>Published</span>">EC50 ÷ petrelintide, same run. Lower-left is better. <span class="ev pub">Published</span><a class="src" href="#r7">7</a></p></div></div>
         <div id="opt-chart"></div>
-        <p class="note">BGM1812: AMY3R 0.627 nM, CTR 2.27 nM, soluble &gt;66 mg/mL at pH 7.4 — the only analogue clearly better at both receptors.</p>
+        <p class="note" data-ko="BGM1812: AMY3R 0.627 nM, CTR 2.27 nM, pH 7.4에서 용해도 &gt;66 mg/mL — 두 수용체 모두에서 뚜렷이 우수한 유일한 유사체.">BGM1812: AMY3R 0.627 nM, CTR 2.27 nM, soluble &gt;66 mg/mL at pH 7.4 — the only analogue clearly better at both receptors.</p>
       </div>
       <div class="panel">
-        <div class="panel-h"><div><h3>Rat, single SC 1 mg/kg</h3></div>
+        <div class="panel-h"><div><h3 data-ko="랫드, 단회 SC 1 mg/kg">Rat, single SC 1 mg/kg</h3></div>
           <div class="controls" style="margin:0">
-            <div class="seg" data-key="view" id="r1812-seg"><button data-v="pk" aria-pressed="true">PK</button><button data-v="bw" aria-pressed="false">Weight</button><button data-v="fi" aria-pressed="false">Food</button></div>
-            <div class="seg" data-key="scale" id="r1812-scale"><button data-v="linear" aria-pressed="true">Linear</button><button data-v="log" aria-pressed="false">Log</button></div>
+            <div class="seg" data-key="view" id="r1812-seg"><button data-v="pk" aria-pressed="true">PK</button><button data-v="bw" aria-pressed="false" data-ko="체중">Weight</button><button data-v="fi" aria-pressed="false" data-ko="섭식">Food</button></div>
+            <div class="seg" data-key="scale" id="r1812-scale"><button data-v="linear" aria-pressed="true" data-ko="선형">Linear</button><button data-v="log" aria-pressed="false" data-ko="로그">Log</button></div>
           </div></div>
         <div id="r1812-chart"></div>
         <p class="note" id="r1812-cap"></p>
       </div>
     </div>
     <div class="panel">
-      <div class="panel-h"><div><h3>DIO rat, 28 days: fat lost, lean share preserved</h3><p class="cap">n=10/group, SC every 3 days ×10. Read from the published graphs. <span class="ev dig">Digitised</span><a class="src" href="#r7">7</a></p></div>
-        <div class="seg" data-key="view" id="dio-seg"><button data-v="time" aria-pressed="true">Time course</button><button data-v="bl" aria-pressed="false">From baseline</button><button data-v="lean" aria-pressed="false">Lean mass</button><button data-v="fat" aria-pressed="false">Fat mass</button></div></div>
+      <div class="panel-h"><div><h3 data-ko="DIO 랫드, 28일: 지방 감소, 제지방 비율 유지">DIO rat, 28 days: fat lost, lean share preserved</h3><p class="cap" data-ko="군당 n=10, 3일마다 SC ×10회. 공개 그래프에서 추출. <span class='ev dig'>Digitised</span>">n=10/group, SC every 3 days ×10. Read from the published graphs. <span class="ev dig">Digitised</span><a class="src" href="#r7">7</a></p></div>
+        <div class="seg" data-key="view" id="dio-seg"><button data-v="time" aria-pressed="true" data-ko="시간 경과">Time course</button><button data-v="bl" aria-pressed="false" data-ko="기저 대비">From baseline</button><button data-v="lean" aria-pressed="false" data-ko="제지방량">Lean mass</button><button data-v="fat" aria-pressed="false" data-ko="지방량">Fat mass</button></div></div>
       <div id="dio-chart"></div>
-      <p class="note">At 0.04 mg/kg BGM1812 loses more than petrelintide and about as much as cagrilintide, with a larger lean-mass share.</p>
+      <p class="note" data-ko="0.04 mg/kg에서 BGM1812는 페트렐린타이드보다 많이, 카그릴린타이드와 비슷하게 감소시키며 제지방 비율이 더 높다.">At 0.04 mg/kg BGM1812 loses more than petrelintide and about as much as cagrilintide, with a larger lean-mass share.</p>
     </div>
     <div class="grid2">
-      <div class="callout"><b>Phase 1 (ranges only).</b> Two 60-subject studies, 0.3–7.2 mg weekly, no titration: placebo-adjusted −1.9 to −8.4% (China), −0.2 to −9.2% (US); ≥5% loss in 70–86% at the top doses; no serious events.<a class="src" href="#r9">9</a></div>
-      <div class="callout warn"><b>What a reviewer will ask.</b> Calcium and bone markers (BGM1812 is more potent at the calcitonin receptor than petrelintide), human t½ and nausea/vomiting rates, and whether the lean-mass claim holds in humans — cagrilintide's did not.<a class="src" href="#r37">37</a></div>
+      <div class="callout"><b data-ko="1상 (범위만 공개).">Phase 1 (ranges only).</b> <span data-ko="각 60명 대상 2건, 0.3–7.2 mg 주 1회, 적정 없음: 위약 보정 −1.9~−8.4%(중국), −0.2~−9.2%(미국); 고용량에서 70–86%가 ≥5% 감소; 중대 이상반응 없음.">Two 60-subject studies, 0.3–7.2 mg weekly, no titration: placebo-adjusted −1.9 to −8.4% (China), −0.2 to −9.2% (US); ≥5% loss in 70–86% at the top doses; no serious events.</span><a class="src" href="#r9">9</a></div>
+      <div class="callout warn"><b data-ko="검토자가 물을 사항.">What a reviewer will ask.</b> <span data-ko="칼슘·골 지표(BGM1812는 페트렐린타이드보다 칼시토닌 수용체 역가가 높음), 인체 반감기와 오심·구토 비율, 그리고 제지방 유지 주장이 인체에서도 성립하는지 — 카그릴린타이드는 성립하지 않았다.">Calcium and bone markers (BGM1812 is more potent at the calcitonin receptor than petrelintide), human t½ and nausea/vomiting rates, and whether the lean-mass claim holds in humans — cagrilintide's did not.</span><a class="src" href="#r37">37</a></div>
     </div>
   </div>
 
   <!-- ===== 2102 ===== -->
   <div class="ev-panel" role="tabpanel" data-tab="a2102" hidden>
-    <p class="lead">The combination case is one rat study; everything else is undisclosed. The −28% equals the sum of the single agents, so the data show additivity, not synergy.</p>
+    <p class="lead" data-ko="복합제의 근거는 랫드 연구 1건이며 나머지는 모두 미공개다. −28%는 단일 성분들의 합과 같아, 데이터는 상승효과가 아닌 가산을 보여준다.">The combination case is one rat study; everything else is undisclosed. The −28% equals the sum of the single agents, so the data show additivity, not synergy.</p>
     <div class="split">
       <div class="panel">
-        <div class="panel-h"><div><h3>DIO rat body weight</h3><p class="cap">Redrawn from disclosed numbers. <span class="ev co">Company</span><a class="src" href="#r8">8</a></p></div>
-          <div class="seg" data-key="src" id="combo-seg"><button data-v="ada" aria-pressed="true">ADA 2025</button><button data-v="pat" aria-pressed="false">Patent</button></div></div>
+        <div class="panel-h"><div><h3 data-ko="DIO 랫드 체중">DIO rat body weight</h3><p class="cap" data-ko="공개 수치로 재작도. <span class='ev co'>Company</span>">Redrawn from disclosed numbers. <span class="ev co">Company</span><a class="src" href="#r8">8</a></p></div>
+          <div class="seg" data-key="src" id="combo-seg"><button data-v="ada" aria-pressed="true">ADA 2025</button><button data-v="pat" aria-pressed="false" data-ko="특허">Patent</button></div></div>
         <div id="combo-chart"></div>
-        <p class="note" id="combo-add">Company says deeper and longer-lasting than sema+cagrilintide or amycretin, with no numbers for those arms.</p>
+        <p class="note" id="combo-add" data-ko="기업은 세마+카그릴린타이드 또는 아미크레틴보다 더 깊고 오래 지속된다고 밝히나, 해당 비교군의 수치는 제시하지 않는다.">Company says deeper and longer-lasting than sema+cagrilintide or amycretin, with no numbers for those arms.</p>
       </div>
       <div class="panel">
-        <h3>Why the formulation logic holds</h3>
+        <h3 data-ko="제형 논리가 성립하는 이유">Why the formulation logic holds</h3>
         <ul class="tight" style="margin-top:8px;font-size:13.5px">
-          <li>BGM0504 at pH 7.2–7.6 and BGM1812 fibril-free at pH 6.5–7.5 overlap at ≈7.2–7.5 — a single-chamber product is plausible, unlike CagriSema's dual chamber.<a class="src" href="#r24">24</a></li>
-          <li>Component half-lives differ (rat 14 h vs 21 h), so a single depot would need component-specific release rates.</li>
-          <li>Unknown: whether BGM1812 tolerates the propylene-glycol, preservative vehicle BGM0504 needs.</li>
+          <li data-ko="BGM0504는 pH 7.2–7.6, BGM1812는 pH 6.5–7.5에서 섬유화 없음 — ≈7.2–7.5에서 겹쳐 단일 챔버 제품이 가능하며, CagriSema의 이중 챔버와 대비된다.">BGM0504 at pH 7.2–7.6 and BGM1812 fibril-free at pH 6.5–7.5 overlap at ≈7.2–7.5 — a single-chamber product is plausible, unlike CagriSema's dual chamber.<a class="src" href="#r24">24</a></li>
+          <li data-ko="성분 반감기가 다르므로(랫드 14 h vs 21 h) 단일 데포는 성분별 방출 속도가 필요하다.">Component half-lives differ (rat 14 h vs 21 h), so a single depot would need component-specific release rates.</li>
+          <li data-ko="미확인: BGM1812가 BGM0504에 필요한 프로필렌글리콜·보존제 용매를 견디는지 여부.">Unknown: whether BGM1812 tolerates the propylene-glycol, preservative vehicle BGM0504 needs.</li>
         </ul>
-        <p class="note" style="margin-top:10px"><b>Status:</b> IND being prepared (CN, US); no clearance, registry entry or first-in-human date. Dose ratio, co-formulation and toxicology undisclosed.<a class="src" href="#r38">38</a></p>
+        <p class="note" style="margin-top:10px"><b data-ko="상태:">Status:</b> <span data-ko="IND 준비 중(중국·미국); 승인·등록·FIH 일정 없음. 용량비, 복합 제형, 독성 미공개.">IND being prepared (CN, US); no clearance, registry entry or first-in-human date. Dose ratio, co-formulation and toxicology undisclosed.</span><a class="src" href="#r38">38</a></p>
       </div>
     </div>
   </div>
@@ -549,61 +555,61 @@ table.t th.ahead { font-size: 12px; letter-spacing: .02em; }
 <!-- ============ LANDSCAPE ============ -->
 <section id="landscape">
   <header>
-    <span class="tag"><i></i>Landscape</span>
-    <h2>The amylin and combination field moved into Phase 3 in 2026</h2>
+    <span class="tag"><i></i><span data-ko="경쟁 구도">Landscape</span></span>
+    <h2 data-ko="아밀린·복합제 영역은 2026년 임상 3상에 진입했다">The amylin and combination field moved into Phase 3 in 2026</h2>
   </header>
   <div class="panel">
-    <div class="controls"><span class="ctl-l">Show</span>
-      <div class="seg" data-key="f" id="land-seg"><button data-v="all" aria-pressed="true">All</button><button data-v="amylin" aria-pressed="false">Amylin</button><button data-v="combo" aria-pressed="false">Combinations</button><button data-v="monthly" aria-pressed="false">Monthly / depot</button></div></div>
+    <div class="controls"><span class="ctl-l" data-ko="표시">Show</span>
+      <div class="seg" data-key="f" id="land-seg"><button data-v="all" aria-pressed="true" data-ko="전체">All</button><button data-v="amylin" aria-pressed="false" data-ko="아밀린">Amylin</button><button data-v="combo" aria-pressed="false" data-ko="복합제">Combinations</button><button data-v="monthly" aria-pressed="false" data-ko="월 1회 / 데포">Monthly / depot</button></div></div>
     <div class="tw"><table class="t" id="land-table">
-      <thead><tr><th>Asset (sponsor)</th><th>Mechanism</th><th>Stage</th><th>Interval · t½</th><th>Best data</th><th>Notes</th></tr></thead>
+      <thead><tr><th data-ko="품목 (개발사)">Asset (sponsor)</th><th data-ko="기전">Mechanism</th><th data-ko="단계">Stage</th><th data-ko="간격 · 반감기">Interval · t½</th><th data-ko="최대 데이터">Best data</th><th data-ko="비고">Notes</th></tr></thead>
       <tbody>
-        <tr class="hl" data-c="amylin"><td><b>BGM1812</b> (BrightGene)</td><td>Amylin / calcitonin</td><td>Ph2 starting</td><td>Weekly · not disclosed</td><td>−8.4 / −9.2% (Ph1)</td><td>GI mostly grade 1</td></tr>
-        <tr data-c="amylin"><td>Cagrilintide (Novo)</td><td>Amylin / calcitonin</td><td>Ph3</td><td>Weekly · 159–195 h</td><td>−11.8% at 68 wk</td><td>pH 4 formulation</td></tr>
-        <tr data-c="amylin"><td>Petrelintide (Zealand/Roche)</td><td>Amylin / calcitonin</td><td>Ph3</td><td>Weekly · ~10 d</td><td>−10.7% at 42 wk</td><td>Neutral pH; GI disc. 1.5%</td></tr>
-        <tr data-c="amylin"><td>Eloralintide (Lilly)</td><td>AMY1R-selective</td><td>Ph3</td><td>Weekly · 13–15 d</td><td>−20.1% at 48 wk</td><td>Nausea up to 64%</td></tr>
-        <tr data-c="amylin monthly"><td>ABBV-295 (AbbVie/Gubra)</td><td>Amylin</td><td>Ph2</td><td>Weekly–monthly · 10.7–12.3 d</td><td>−7.8 to −9.8% (12 wk)</td><td>—</td></tr>
-        <tr data-c="amylin monthly"><td>MET-233i (Pfizer)</td><td>Amylin</td><td>Ph2b</td><td>Monthly · 19 d</td><td>−8.4% at day 36</td><td>Combinable in solution</td></tr>
-        <tr data-c="combo"><td>CagriSema (Novo)</td><td>GLP-1 + amylin</td><td>NDA filed</td><td>Weekly</td><td>−20.4% at 68 wk</td><td>Dual chamber; GI 80%</td></tr>
-        <tr data-c="combo"><td>Eloralintide + tirzepatide (Lilly)</td><td>GLP-1/GIP + amylin</td><td>Ph3 (Oct 2026)</td><td>Weekly</td><td>−23.3% at 48 wk</td><td>AE discontinuation 11–27%</td></tr>
-        <tr data-c="combo"><td>Zenagamtide (Novo)</td><td>GLP-1 + amylin (one molecule)</td><td>Ph3</td><td>Weekly SC / oral</td><td>−24.3% at 36 wk</td><td>Frequent GI</td></tr>
-        <tr class="hl" data-c="combo monthly"><td><b>BGM2102</b> (BrightGene)</td><td>GLP-1/GIP + amylin</td><td>Preclinical</td><td>Weekly intended</td><td>−28% DIO rat</td><td>—</td></tr>
-        <tr data-c="monthly"><td>MariTide (Amgen)</td><td>GLP-1 / GIPR-antagonist antibody</td><td>Ph3</td><td>Monthly</td><td>Ph3 data 2027</td><td>Antibody, not a formulation</td></tr>
-        <tr data-c="monthly"><td>ASC30 / ASC35 / ASC36i (Ascletis)</td><td>Depots (GLP-1, GLP-1/GIP, amylin)</td><td>Ph2 / Ph1</td><td>Monthly–quarterly</td><td>ASC30 6.3% (Ph2)</td><td>The closest depot template<a class="src" href="#r48">48</a></td></tr>
-        <tr data-c="monthly"><td>CAM2056 (Camurus)</td><td>Semaglutide depot</td><td>Ph2b</td><td>Monthly</td><td>−9.3% at day 85</td><td>Lilly added amylin rights Jun 2026<a class="src" href="#r36">36</a></td></tr>
+        <tr class="hl" data-c="amylin"><td><b>BGM1812</b> (BrightGene)</td><td data-ko="아밀린 / 칼시토닌">Amylin / calcitonin</td><td data-ko="2상 착수">Ph2 starting</td><td data-ko="주 1회 · 미공개">Weekly · not disclosed</td><td data-ko="−8.4 / −9.2% (1상)">−8.4 / −9.2% (Ph1)</td><td data-ko="위장관 대부분 1등급">GI mostly grade 1</td></tr>
+        <tr data-c="amylin"><td>Cagrilintide (Novo)</td><td data-ko="아밀린 / 칼시토닌">Amylin / calcitonin</td><td data-ko="3상">Ph3</td><td data-ko="주 1회 · 159–195 h">Weekly · 159–195 h</td><td data-ko="68주차 −11.8%">−11.8% at 68 wk</td><td data-ko="pH 4 제형">pH 4 formulation</td></tr>
+        <tr data-c="amylin"><td>Petrelintide (Zealand/Roche)</td><td data-ko="아밀린 / 칼시토닌">Amylin / calcitonin</td><td data-ko="3상">Ph3</td><td data-ko="주 1회 · 약 10일">Weekly · ~10 d</td><td data-ko="42주차 −10.7%">−10.7% at 42 wk</td><td data-ko="중성 pH; 위장관 중단 1.5%">Neutral pH; GI disc. 1.5%</td></tr>
+        <tr data-c="amylin"><td>Eloralintide (Lilly)</td><td data-ko="AMY1R 선택적">AMY1R-selective</td><td data-ko="3상">Ph3</td><td data-ko="주 1회 · 13–15일">Weekly · 13–15 d</td><td data-ko="48주차 −20.1%">−20.1% at 48 wk</td><td data-ko="오심 최대 64%">Nausea up to 64%</td></tr>
+        <tr data-c="amylin monthly"><td>ABBV-295 (AbbVie/Gubra)</td><td data-ko="아밀린">Amylin</td><td data-ko="2상">Ph2</td><td data-ko="주 1회–월 1회 · 10.7–12.3일">Weekly–monthly · 10.7–12.3 d</td><td data-ko="12주차 −7.8~−9.8%">−7.8 to −9.8% (12 wk)</td><td>—</td></tr>
+        <tr data-c="amylin monthly"><td>MET-233i (Pfizer)</td><td data-ko="아밀린">Amylin</td><td data-ko="2b상">Ph2b</td><td data-ko="월 1회 · 19일">Monthly · 19 d</td><td data-ko="36일차 −8.4%">−8.4% at day 36</td><td data-ko="용액 내 병용 가능">Combinable in solution</td></tr>
+        <tr data-c="combo"><td>CagriSema (Novo)</td><td data-ko="GLP-1 + 아밀린">GLP-1 + amylin</td><td data-ko="NDA 접수">NDA filed</td><td data-ko="주 1회">Weekly</td><td data-ko="68주차 −20.4%">−20.4% at 68 wk</td><td data-ko="이중 챔버; 위장관 80%">Dual chamber; GI 80%</td></tr>
+        <tr data-c="combo"><td>Eloralintide + tirzepatide (Lilly)</td><td data-ko="GLP-1/GIP + 아밀린">GLP-1/GIP + amylin</td><td data-ko="3상 (2026.10)">Ph3 (Oct 2026)</td><td data-ko="주 1회">Weekly</td><td data-ko="48주차 −23.3%">−23.3% at 48 wk</td><td data-ko="이상반응 중단 11–27%">AE discontinuation 11–27%</td></tr>
+        <tr data-c="combo"><td>Zenagamtide (Novo)</td><td data-ko="GLP-1 + 아밀린 (단일 분자)">GLP-1 + amylin (one molecule)</td><td data-ko="3상">Ph3</td><td data-ko="주 1회 SC / 경구">Weekly SC / oral</td><td data-ko="36주차 −24.3%">−24.3% at 36 wk</td><td data-ko="위장관 이상반응 빈번">Frequent GI</td></tr>
+        <tr class="hl" data-c="combo monthly"><td><b>BGM2102</b> (BrightGene)</td><td data-ko="GLP-1/GIP + 아밀린">GLP-1/GIP + amylin</td><td data-ko="전임상">Preclinical</td><td data-ko="주 1회 목표">Weekly intended</td><td data-ko="DIO 랫드 −28%">−28% DIO rat</td><td>—</td></tr>
+        <tr data-c="monthly"><td>MariTide (Amgen)</td><td data-ko="GLP-1 / GIPR 길항 항체">GLP-1 / GIPR-antagonist antibody</td><td data-ko="3상">Ph3</td><td data-ko="월 1회">Monthly</td><td data-ko="3상 데이터 2027">Ph3 data 2027</td><td data-ko="제형이 아닌 항체">Antibody, not a formulation</td></tr>
+        <tr data-c="monthly"><td>ASC30 / ASC35 / ASC36i (Ascletis)</td><td data-ko="데포 (GLP-1, GLP-1/GIP, 아밀린)">Depots (GLP-1, GLP-1/GIP, amylin)</td><td data-ko="2상 / 1상">Ph2 / Ph1</td><td data-ko="월 1회–분기 1회">Monthly–quarterly</td><td data-ko="ASC30 6.3% (2상)">ASC30 6.3% (Ph2)</td><td data-ko="가장 근접한 데포 템플릿">The closest depot template<a class="src" href="#r48">48</a></td></tr>
+        <tr data-c="monthly"><td>CAM2056 (Camurus)</td><td data-ko="세마글루타이드 데포">Semaglutide depot</td><td data-ko="2b상">Ph2b</td><td data-ko="월 1회">Monthly</td><td data-ko="85일차 −9.3%">−9.3% at day 85</td><td data-ko="Lilly가 2026년 6월 아밀린 권리 추가">Lilly added amylin rights Jun 2026<a class="src" href="#r36">36</a></td></tr>
       </tbody>
     </table></div>
-    <p class="note" style="margin-top:8px">Durations and estimands differ, so figures are not directly comparable. Sources under Gaps &amp; sources.<a class="src" href="#r29">29</a><a class="src" href="#r30">30</a><a class="src" href="#r31">31</a></p>
+    <p class="note" style="margin-top:8px" data-ko="기간과 추정량이 다르므로 수치는 직접 비교할 수 없다. 출처는 미공개 항목 &amp; 출처 참조.">Durations and estimands differ, so figures are not directly comparable. Sources under Gaps &amp; sources.<a class="src" href="#r29">29</a><a class="src" href="#r30">30</a><a class="src" href="#r31">31</a></p>
   </div>
 </section>
 
 <!-- ============ GAPS & SOURCES ============ -->
 <section id="sources">
   <header>
-    <span class="tag"><i></i>Gaps &amp; sources</span>
-    <h2>What is missing, and where it comes from</h2>
+    <span class="tag"><i></i><span data-ko="미공개 항목 &amp; 출처">Gaps &amp; sources</span></span>
+    <h2 data-ko="빠져 있는 것, 그리고 출처">What is missing, and where it comes from</h2>
   </header>
   <div class="stack">
     <div class="gap-list">
-      <div class="gap"><span class="who">BGM1812</span><b>Human half-life</b>The single number that gates the whole long-acting decision.</div>
-      <div class="gap"><span class="who">BGM0504</span><b>Solubility ceiling &amp; Phase 3 AE table</b>Measured max concentration; per-dose GI rates and estimand.</div>
-      <div class="gap"><span class="who">BGM0504</span><b>Tirzepatide head-to-head</b>NCT06911203 (25 mg) finished Jan 2026, unreported.</div>
-      <div class="gap"><span class="who">BGM2102</span><b>Full ADA poster &amp; co-formulation data</b>N, schedule, dose ratio, stability of each peptide in the mix.</div>
-      <div class="gap"><span class="who">Both</span><b>Toxicology</b>No NOAEL or GLP package is public for either molecule.</div>
-      <div class="gap"><span class="who">Corporate</span><b>Rights &amp; funding</b>Ex-China territories open; US Phase 3 (~RMB 2.1bn) unfunded; controlling shareholder on bail.</div>
+      <div class="gap"><span class="who">BGM1812</span><b data-ko="인체 반감기">Human half-life</b><span data-ko="장기지속형 의사결정 전체를 가르는 단 하나의 수치.">The single number that gates the whole long-acting decision.</span></div>
+      <div class="gap"><span class="who">BGM0504</span><b data-ko="용해도 한계 &amp; 3상 이상반응 표">Solubility ceiling &amp; Phase 3 AE table</b><span data-ko="측정된 최대 농도; 용량별 위장관 비율과 추정량.">Measured max concentration; per-dose GI rates and estimand.</span></div>
+      <div class="gap"><span class="who">BGM0504</span><b data-ko="티르제파타이드 직접 비교">Tirzepatide head-to-head</b><span data-ko="NCT06911203(25 mg)는 2026년 1월 종료되었으나 미발표.">NCT06911203 (25 mg) finished Jan 2026, unreported.</span></div>
+      <div class="gap"><span class="who">BGM2102</span><b data-ko="ADA 포스터 전문 &amp; 복합 제형 데이터">Full ADA poster &amp; co-formulation data</b><span data-ko="N, 투여 스케줄, 용량비, 혼합 내 각 펩타이드 안정성.">N, schedule, dose ratio, stability of each peptide in the mix.</span></div>
+      <div class="gap"><span class="who" data-ko="공통">Both</span><b data-ko="독성">Toxicology</b><span data-ko="두 분자 모두 NOAEL이나 GLP 패키지가 공개되지 않음.">No NOAEL or GLP package is public for either molecule.</span></div>
+      <div class="gap"><span class="who" data-ko="기업">Corporate</span><b data-ko="권리 &amp; 자금">Rights &amp; funding</b><span data-ko="중국 외 지역 미계약; 미국 3상(약 RMB 21억) 미확보; 지배주주 보석 중.">Ex-China territories open; US Phase 3 (~RMB 2.1bn) unfunded; controlling shareholder on bail.</span></div>
     </div>
     <details class="more">
-      <summary>Corrections to the earlier drafts</summary>
+      <summary data-ko="이전 초안에 대한 수정 사항">Corrections to the earlier drafts</summary>
       <ul class="tight" style="font-size:13.5px;color:var(--ink-2);margin-top:10px">
-        <li>Phase 2a T2D placebo HbA1c is <b>+0.28%</b>, not −0.28%.</li>
-        <li>Phase 3 headline −19.2% is the primary (full-analysis) figure; −19.3% is per-protocol.</li>
-        <li>The Hong Kong listing was <b>terminated 30 Sep 2026</b> — the prospectus is an application proof, not a completed listing.</li>
-        <li>BGM2102 first-in-human timing (US Q4 2026, China early 2027) could not be confirmed; filings say IND is still being advanced.</li>
-        <li>The 1.8×/2.2× BGM1812 potency claims rest on BrightGene's in-house petrelintide value; an independent lab measures petrelintide as more potent.</li>
+        <li data-ko="2a상 T2D 위약 HbA1c는 −0.28%가 아니라 <b>+0.28%</b>.">Phase 2a T2D placebo HbA1c is <b>+0.28%</b>, not −0.28%.</li>
+        <li data-ko="3상 대표 수치 −19.2%는 주요(전체 분석) 값이며, −19.3%는 per-protocol.">Phase 3 headline −19.2% is the primary (full-analysis) figure; −19.3% is per-protocol.</li>
+        <li data-ko="홍콩 상장은 <b>2026년 9월 30일 철회</b>됨 — 투자설명서는 상장 신청본이지 완료된 상장이 아님.">The Hong Kong listing was <b>terminated 30 Sep 2026</b> — the prospectus is an application proof, not a completed listing.</li>
+        <li data-ko="BGM2102 FIH 시점(미국 2026년 4분기, 중국 2027년 초)은 확인 불가; 공시는 IND가 아직 추진 중이라고만 함.">BGM2102 first-in-human timing (US Q4 2026, China early 2027) could not be confirmed; filings say IND is still being advanced.</li>
+        <li data-ko="1.8×/2.2× BGM1812 역가 주장은 BrightGene 자사 페트렐린타이드 기준치에 근거하며, 독립 실험실은 페트렐린타이드를 더 높은 역가로 측정.">The 1.8×/2.2× BGM1812 potency claims rest on BrightGene's in-house petrelintide value; an independent lab measures petrelintide as more potent.</li>
       </ul>
     </details>
     <details class="more">
-      <summary>Sources (55)</summary>
+      <summary data-ko="출처 (55건)">Sources (55)</summary>
       <ol class="refs" style="margin-top:12px">
         <li id="r1">Yuan J, et al. Sci Rep 2024;14:16680. <a href="https://doi.org/10.1038/s41598-024-66998-8">doi:10.1038/s41598-024-66998-8</a></li>
         <li id="r2">Fan, et al. Diabetes Obes Metab 2025;27(4):2110–19. <a href="https://doi.org/10.1111/dom.16203">doi:10.1111/dom.16203</a></li>
@@ -637,7 +643,7 @@ table.t th.ahead { font-size: 12px; letter-spacing: .02em; }
         <li id="r49">Ascletis ASC30 Phase 2 topline. <a href="https://www.biospace.com/press-releases/ascletis-announces-positive-topline-results-from-u-s-phase-ii-24-week-study-for-its-ultra-long-acting-subcutaneous-depot-formulations-of-small-molecule-glp-1r-agonist-asc30-for-obesity">Press release</a></li>
         <li id="r52">Amgen MariTide Phase 2, ADA 2025. <a href="https://www.amgen.com/newsroom/press-releases/2025/06/results-from-amgens-phase-2-obesity-study-of-monthly-maritide-presented-at-the-american-diabetes-association-85th-scientific-sessions">Press release</a></li>
       </ol>
-      <p class="note">Full 55-reference list (including GLORY, STEP 7, SURMOUNT-CN, Vivani, Metsera, Korean MFDS and BrightGene primary filings) is in the companion research files; the key sources are above. Patent and company details read via automated summaries should be checked against the documents before external use.</p>
+      <p class="note" data-ko="전체 55개 참고문헌 목록(GLORY, STEP 7, SURMOUNT-CN, Vivani, Metsera, 한국 MFDS 및 BrightGene 1차 공시 포함)은 동반 리서치 파일에 있으며, 핵심 출처는 위와 같다. 자동 요약으로 확인한 특허·기업 세부 사항은 외부 사용 전 원문 대조가 필요하다.">Full 55-reference list (including GLORY, STEP 7, SURMOUNT-CN, Vivani, Metsera, Korean MFDS and BrightGene primary filings) is in the companion research files; the key sources are above. Patent and company details read via automated summaries should be checked against the documents before external use.</p>
     </details>
   </div>
 </section>
@@ -648,6 +654,9 @@ table.t th.ahead { font-size: 12px; letter-spacing: .02em; }
 const NS = 'http://www.w3.org/2000/svg';
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+/* i18n: t(en, ko) returns the string for the current language (English fallback) */
+let LANG = 'en';
+function t(en, ko) { return LANG === 'ko' && ko != null ? ko : en; }
 function svgEl(tag, attrs = {}, parent) {
   const e = document.createElementNS(NS, tag);
   for (const k in attrs) if (attrs[k] !== undefined && attrs[k] !== null) e.setAttribute(k, attrs[k]);
@@ -888,8 +897,14 @@ let rT; window.addEventListener('resize', () => { clearTimeout(rT); rT = setTime
 
 /* Human PK: T2D patients, Ph2a (Jin 2026). Digitised from the published mean ± SD figure. */
 const HUMAN_PK = {
-  title: 'Humans with type 2 diabetes (Phase 2a), weekly SC', n: 'n = 11–12 per dose', unit: 'mg', tUnit: 'h',
+  title: 'Humans with type 2 diabetes (Phase 2a), weekly SC', titleKo: '제2형 당뇨 환자 (2a상), 주 1회 SC', n: 'n = 11–12 per dose', nKo: '용량당 n = 11–12', unit: 'mg', tUnit: 'h',
   src: 'Digitised from the mean concentration–time figure of the Phase 2a T2D paper (Jin 2026). Read-off error is about ±5%; the first hours after dosing are less certain. The paper reports t½ and Tmax in text; absolute Cmax and AUC sit in a supplement that was not accessible.',
+  srcKo: '2a상 T2D 논문(Jin 2026)의 평균 농도–시간 그림에서 수치 추출. 추출 오차 약 ±5%; 투여 직후 몇 시간은 불확실성이 큼. 논문은 t½·Tmax를 본문에 보고하며, 절대 Cmax·AUC는 접근 불가한 부록에 있음.',
+  tableNoteKo: '≈ 표시 행은 공개 수치가 아니라 추출 곡선에서 읽은 값. Tmax·t½는 논문 본문 인용.',
+  statsKo: [['109–160 h', '4번째 목표용량 후 말단 반감기 (4.5–6.7일); 티르제파타이드 라벨 약 5일'],
+    ['≈ 24 h', '모든 용량에서 Tmax; 티르제파타이드 라벨 24 h (8–72 h)'],
+    ['≈ 2.1–2.4×', '주 1회 투여 시 최고–최저 변동 (추출값)'],
+    ['0.92', '첫 목표용량 후 Cmax 거듭제곱모델 기울기 (90% CI 0.79–1.05); 4번째는 0.65']],
   first: { t: [0, 2, 4, 8, 12, 24, 36, 48, 72, 120, 168], xticks: [0, 24, 48, 72, 96, 120, 144, 168], doses: [
     { d: 5, c: [100, 195, 290, 400, 445, 487, 473, 452, 411, 300, 207] },
     { d: 10, c: [200, 330, 500, 760, 860, 1005, 1003, 937, 838, 578, 432] },
@@ -918,8 +933,8 @@ const C = { b: 'var(--c0504)', bLo: 'var(--c0504-lo)', bHi: 'var(--c0504-hi)', o
   g: 'var(--c2102)', cmp: 'var(--cmp)', cmp2: 'var(--cmp-2)', cmp3: 'var(--cmp-3)', ink: 'var(--ink-2)' };
 const PK = {
   rat: {
-    title: 'Sprague-Dawley rat, single SC dose', n: 'n = 6 per group (3 M / 3 F)', unit: 'mg/kg', tUnit: 'h',
-    src: 'Digitised from Yuan 2024, Fig. 10a (sex-averaged). Trapezoidal AUC of the digitised points is within 5% of the published AUC0-last for every dose.',
+    title: 'Sprague-Dawley rat, single SC dose', titleKo: 'Sprague-Dawley 랫드, 단회 SC 투여', n: 'n = 6 per group (3 M / 3 F)', nKo: '군당 n = 6 (수컷 3 / 암컷 3)', unit: 'mg/kg', tUnit: 'h',
+    src: 'Digitised from Yuan 2024, Fig. 10a (sex-averaged). Trapezoidal AUC of the digitised points is within 5% of the published AUC0-last for every dose.', srcKo: 'Yuan 2024 Fig. 10a에서 수치 추출(암·수 평균). 추출 점의 사다리꼴 AUC는 모든 용량에서 공개 AUC0-last의 5% 이내.',
     t: [0.5, 1, 2, 4, 8, 12, 24, 48, 72, 96, 120], xticks: [0, 24, 48, 72, 96, 120],
     doses: [
       { d: 0.3, c: [65, 115, 180, 300, 570, 720, 814, 320, 100, 31, 11] },
@@ -941,8 +956,8 @@ const PK = {
     auc: [33200, 153000, 637000], cmax: [814, 3830, 15100]
   },
   monkey: {
-    title: 'Cynomolgus monkey, single SC dose', n: 'n = 6 per group (3 M / 3 F)', unit: 'mg/kg', tUnit: 'h',
-    src: 'Digitised from Yuan 2024, Fig. 10b (sex-averaged; male and female curves overlap). Trapezoidal AUC of the digitised points is within 2% of the published AUC0-last for every dose.',
+    title: 'Cynomolgus monkey, single SC dose', titleKo: '사이노몰거스 원숭이, 단회 SC 투여', n: 'n = 6 per group (3 M / 3 F)', nKo: '군당 n = 6 (수컷 3 / 암컷 3)', unit: 'mg/kg', tUnit: 'h',
+    src: 'Digitised from Yuan 2024, Fig. 10b (sex-averaged; male and female curves overlap). Trapezoidal AUC of the digitised points is within 2% of the published AUC0-last for every dose.', srcKo: 'Yuan 2024 Fig. 10b에서 수치 추출(암·수 평균; 암·수 곡선 중첩). 추출 점의 사다리꼴 AUC는 모든 용량에서 공개 AUC0-last의 2% 이내.',
     t: [0.5, 1, 4, 6, 8, 12, 24, 48, 72, 96, 120, 168, 240, 312], xticks: [0, 48, 96, 144, 192, 240, 288],
     doses: [
       { d: 0.2, c: [45, 105, 520, 760, 980, 1350, 1440, 980, 672, 452, 281, 127, 36, 9.5] },
@@ -984,28 +999,28 @@ function drawPK() {
   lineChart($('#pk-chart'), {
     series, directLabels: true, height: 380,
     aria: `BGM0504 plasma concentration versus time, ${sp.title}`,
-    x: { label: isH ? 'Time after dose (h)' : 'Time after dose (h)', ticks: set.xticks || sp.xticks, min: 0 },
-    y: { label: norm ? `Concentration ÷ dose (ng/mL per ${sp.unit})` : 'Plasma concentration (ng/mL)', log: pkState.scale === 'log',
-      unit: norm ? `ng/mL per ${sp.unit}` : 'ng/mL', min: pkState.scale === 'log' ? undefined : 0 },
-    tipTitle: x => `${x} h after dose`
+    x: { label: t('Time after dose (h)', '투여 후 시간 (h)'), ticks: set.xticks || sp.xticks, min: 0 },
+    y: { label: norm ? t(`Concentration ÷ dose (ng/mL per ${sp.unit})`, `농도 ÷ 용량 (ng/mL / ${sp.unit})`) : t('Plasma concentration (ng/mL)', '혈장 농도 (ng/mL)'), log: pkState.scale === 'log',
+      unit: norm ? `ng/mL / ${sp.unit}` : 'ng/mL', min: pkState.scale === 'log' ? undefined : 0 },
+    tipTitle: x => t(`${x} h after dose`, `투여 후 ${x} h`)
   });
-  $('#pk-title').textContent = sp.title + (isH ? ` · ${pkState.visit === 'first' ? 'first dose at target level' : 'fourth dose at target level'}` : '');
-  $('#pk-n').textContent = sp.n;
-  $('#pk-src').textContent = sp.src;
+  $('#pk-title').textContent = t(sp.title, sp.titleKo) + (isH ? ` · ${pkState.visit === 'first' ? t('first dose at target level', '목표용량 첫 투여') : t('fourth dose at target level', '목표용량 4번째 투여')}` : '');
+  $('#pk-n').textContent = t(sp.n, sp.nKo);
+  $('#pk-src').textContent = t(sp.src, sp.srcKo);
   /* table */
   const tb = sp.table;
-  $('#pk-table').innerHTML = `<thead><tr><th>Parameter</th>${tb.head.map(c => `<th class="n">${c}</th>`).join('')}</tr></thead><tbody>` +
+  $('#pk-table').innerHTML = `<thead><tr><th>${t('Parameter', '파라미터')}</th>${tb.head.map(c => `<th class="n">${c}</th>`).join('')}</tr></thead><tbody>` +
     tb.rows.map(r => `<tr><td>${r[0]}</td>${r.slice(1).map(c => `<td class="n">${c}</td>`).join('')}</tr>`).join('') + '</tbody>';
-  $('#pk-table-note').innerHTML = sp.tableNote || 'Mean ± SEM, sexes combined. Published values, reproduced as reported.';
+  $('#pk-table-note').innerHTML = t(sp.tableNote, sp.tableNoteKo) || t('Mean ± SEM, sexes combined. Published values, reproduced as reported.', '평균 ± SEM, 암·수 통합. 공개 수치를 그대로 재현.');
   /* insight tiles */
   const st = $('#pk-stats'); st.innerHTML = '';
-  (sp.stats || (() => {
+  ((LANG === 'ko' && sp.statsKo) || sp.stats || (() => {
     const d = sp.doses.map(x => x.d), b = powerSlope(d, sp.auc), bc = powerSlope(d, sp.cmax);
     return [
-      [b.toFixed(2), 'AUC power-model slope β (1.00 = dose-proportional)'],
-      [bc.toFixed(2), 'Cmax power-model slope β'],
-      [pkState.species === 'rat' ? '13–15 h' : '38–43 h', 'Terminal t½, flat across a 25-fold dose range'],
-      [pkState.species === 'rat' ? '34–45%' : '61–70%', 'SC bioavailability vs IV']];
+      [b.toFixed(2), t('AUC power-model slope β (1.00 = dose-proportional)', 'AUC 거듭제곱모델 기울기 β (1.00 = 용량 비례)')],
+      [bc.toFixed(2), t('Cmax power-model slope β', 'Cmax 거듭제곱모델 기울기 β')],
+      [pkState.species === 'rat' ? '13–15 h' : '38–43 h', t('Terminal t½, flat across a 25-fold dose range', '말단 반감기, 25배 용량 범위에서 일정')],
+      [pkState.species === 'rat' ? '34–45%' : '61–70%', t('SC bioavailability vs IV', 'IV 대비 피하 생체이용률')]];
   })()).forEach(s => st.appendChild(h('div', { class: 'stat' }, `<b>${s[0]}</b><span>${s[1]}</span>`)));
 }
 
@@ -1030,25 +1045,25 @@ function draw1812() {
     lineChart($('#r1812-chart'), {
       series: RAT1812.s.map(s => ({ ...s, points: RAT1812.t.map((t, i) => [t, s.c[i]]) })), height: 340, directLabels: false,
       aria: 'BGM1812 and comparators plasma concentration in rats',
-      x: { label: 'Time after dose (h)', ticks: [0, 12, 24, 36, 48, 60, 72, 84, 96], min: 0 },
-      y: { label: 'Plasma concentration (ng/mL)', log: r1812State.scale === 'log', unit: 'ng/mL', min: r1812State.scale === 'log' ? 100 : 0 },
-      tipTitle: x => `${x} h after dose`
+      x: { label: t('Time after dose (h)','투여 후 시간 (h)'), ticks: [0, 12, 24, 36, 48, 60, 72, 84, 96], min: 0 },
+      y: { label: t('Plasma concentration (ng/mL)','혈장 농도 (ng/mL)'), log: r1812State.scale === 'log', unit: 'ng/mL', min: r1812State.scale === 'log' ? 100 : 0 },
+      tipTitle: x => t(`${x} h after dose`,`투여 후 ${x} h`)
     });
   } else {
     const d = SD1812[v];
     lineChart($('#r1812-chart'), {
       series: RAT1812.s.map(s => ({ ...s, points: d.t.map((t, i) => [t, d[s.name][i]]) })), height: 340,
       aria: v === 'bw' ? 'Body weight change after a single dose' : 'Daily food intake after a single dose',
-      x: { label: 'Treatment day', ticks: d.t },
-      y: v === 'bw' ? { label: 'Body weight change (%)', min: -25, max: 0, ticks: [-25, -20, -15, -10, -5, 0], unit: '% vs day 1', fmt: x => x.toFixed(0) }
-        : { label: 'Food intake (g/day)', min: 0, max: 30, ticks: [0, 5, 10, 15, 20, 25, 30], unit: 'g/day' },
-      tipFmt: x => v === 'bw' ? sgn(x) + '%' : x.toFixed(1), tipTitle: x => `Day ${x}`
+      x: { label: t('Treatment day','투여 일차'), ticks: d.t },
+      y: v === 'bw' ? { label: t('Body weight change (%)','체중 변화 (%)'), min: -25, max: 0, ticks: [-25, -20, -15, -10, -5, 0], unit: t('% vs day 1','% (1일차 대비)'), fmt: x => x.toFixed(0) }
+        : { label: t('Food intake (g/day)','섭식량 (g/일)'), min: 0, max: 30, ticks: [0, 5, 10, 15, 20, 25, 30], unit: 'g/일' },
+      tipFmt: x => v === 'bw' ? sgn(x) + '%' : x.toFixed(1), tipTitle: x => t(`Day ${x}`,`${x}일차`)
     });
   }
   $('#r1812-cap').textContent = v === 'pk'
-    ? 'Male SD rats, n = 3 per peptide, SC 1 mg/kg in 10 mM PBS pH 7.4. Digitised from Zong 2025, Fig. 4A; trapezoidal AUC of the digitised BGM1812 points (≈266,000) matches the published AUC0-t (264,931 h·ng/mL).'
-    : v === 'bw' ? 'Same single 1 mg/kg dose in lean rats. BGM1812 reaches about −20% by day 3 versus about −13% for petrelintide (p < 0.01 for maximum loss). Digitised from Fig. 4C.'
-      : 'Food intake is almost abolished for two days after one 1 mg/kg dose and recovers on days 3–4. Digitised from Fig. 4B.';
+    ? t('Male SD rats, n = 3 per peptide, SC 1 mg/kg in 10 mM PBS pH 7.4. Digitised from Zong 2025, Fig. 4A; trapezoidal AUC of the digitised BGM1812 points (≈266,000) matches the published AUC0-t (264,931 h·ng/mL).','수컷 SD 랫드, 펩타이드당 n = 3, 10 mM PBS pH 7.4에 SC 1 mg/kg. Zong 2025 Fig. 4A에서 추출; 추출 BGM1812 점의 사다리꼴 AUC(≈266,000)는 공개 AUC0-t(264,931 h·ng/mL)와 일치.')
+    : v === 'bw' ? t('Same single 1 mg/kg dose in lean rats. BGM1812 reaches about −20% by day 3 versus about −13% for petrelintide (p < 0.01 for maximum loss). Digitised from Fig. 4C.','마른 랫드에 동일 단회 1 mg/kg. BGM1812는 3일차에 약 −20%로, 페트렐린타이드 약 −13% 대비(최대 감소 p < 0.01). Fig. 4C에서 추출.')
+      : t('Food intake is almost abolished for two days after one 1 mg/kg dose and recovers on days 3–4. Digitised from Fig. 4B.','1 mg/kg 단회 투여 후 이틀간 섭식이 거의 중단되고 3–4일차에 회복. Fig. 4B에서 추출.');
 }
 
 /* ---------- BGM1812 DIO rat (Zong 2025, Fig. 5) ---------- */
@@ -1069,18 +1084,18 @@ function drawDIO() {
     lineChart(host, {
       series: DIO.s.map(s => ({ ...s, label: s.name, points: DIO.t.map((t, i) => [t, s.c[i]]) })), height: 360, directLabels: true,
       aria: 'DIO rat body weight relative to vehicle over 28 days',
-      x: { label: 'Study day (SC dose every 3 days × 10)', ticks: [1, 4, 7, 10, 13, 16, 19, 22, 25, 28], min: 1, max: 28 },
-      y: { label: 'Body weight, % of vehicle', min: 75, max: 100, ticks: [75, 80, 85, 90, 95, 100], unit: '% of vehicle group', fmt: x => x.toFixed(0) },
-      tipFmt: x => x.toFixed(1) + '%', tipTitle: x => `Day ${x}`
+      x: { label: t('Study day (SC dose every 3 days × 10)','연구 일차 (3일마다 SC ×10회)'), ticks: [1, 4, 7, 10, 13, 16, 19, 22, 25, 28], min: 1, max: 28 },
+      y: { label: t('Body weight, % of vehicle','체중, 대조군 대비 %'), min: 75, max: 100, ticks: [75, 80, 85, 90, 95, 100], unit: t('% of vehicle group','대조군 대비 %'), fmt: x => x.toFixed(0) },
+      tipFmt: x => x.toFixed(1) + '%', tipTitle: x => t(`Day ${x}`,`${x}일차`)
     });
   } else {
-    const defs = { bl: ['Body weight change from baseline, day 30 (%)', x => sgn(x, 0) + '%', [-20, -15, -10, -5, 0, 5, 10, 15]],
-      lean: ['Lean mass change (percentage points of body weight)', x => sgn(x), [-3, -2, -1, 0, 1, 2, 3, 4]],
-      fat: ['Fat mass change (percentage points of body weight)', x => sgn(x), [-8, -6, -4, -2, 0, 2, 4]] }[v];
+    const defs = { bl: [t('Body weight change from baseline, day 30 (%)','기저 대비 체중 변화, 30일차 (%)'), x => sgn(x, 0) + '%', [-20, -15, -10, -5, 0, 5, 10, 15]],
+      lean: [t('Lean mass change (percentage points of body weight)','제지방량 변화 (체중 대비 %p)'), x => sgn(x), [-3, -2, -1, 0, 1, 2, 3, 4]],
+      fat: [t('Fat mass change (percentage points of body weight)','지방량 변화 (체중 대비 %p)'), x => sgn(x), [-8, -6, -4, -2, 0, 2, 4]] }[v];
     barChart(host, {
       height: 340, aria: defs[0], maxBar: 54,
       groups: DIO.s.map(s => ({ label: s.name.replace(/ (0\.\d+)$/, ''), sub: s.name.match(/0\.\d+$/)?.[0] ? s.name.match(/0\.\d+$/)[0] + ' mg/kg' : '',
-        tipLabel: s.name + (s.key === 'veh' ? '' : ' mg/kg'), bars: [{ name: defs[0], value: s[v], color: s.color, approx: true, tip: 'Read from the published bar chart' }] })),
+        tipLabel: s.name + (s.key === 'veh' ? '' : ' mg/kg'), bars: [{ name: defs[0], value: s[v], color: s.color, approx: true, tip: t('Read from the published bar chart','공개 막대그래프에서 판독') }] })),
       y: { label: defs[0], ticks: defs[2], fmt: x => x.toFixed(0) }, valueFmt: defs[1]
     });
   }
@@ -1121,26 +1136,27 @@ function drawSim() {
 /* ---------- BGM0504 clinical ---------- */
 const doseRamp = [C.bLo, C.b, C.bHi];
 const TRIALS = {
-  ph3: { cap: 'Phase 3 obesity, 52 weeks, N = 652, 41 sites in China. Full analysis set; the estimand is not disclosed. Baseline 96.2 kg, BMI 33.9.',
-    ylab: 'Body weight change at week 52 (%)', ticks: [-25, -20, -15, -10, -5, 0], fmt: v => sgn(v) + '%',
+  ph3: { cap: 'Phase 3 obesity, 52 weeks, N = 652, 41 sites in China. Full analysis set; the estimand is not disclosed. Baseline 96.2 kg, BMI 33.9.', capKo: '비만 3상, 52주, N = 652, 중국 41개 기관. 전체 분석집단; 추정량 미공개. 기저 96.2 kg, BMI 33.9.',
+    ylab: 'Body weight change at week 52 (%)', ylabKo: '52주차 체중 변화 (%)', ticks: [-25, -20, -15, -10, -5, 0], fmt: v => sgn(v) + '%',
     bars: [['Placebo', -3.1, C.cmp3], ['5 mg', -14.3, C.bLo], ['10 mg', -17.3, C.b], ['15 mg', -19.2, C.bHi]] },
-  ph2: { cap: 'Phase 2 obesity, 24 weeks at target dose, N = 120 (30 per arm). Published in Diabetes Obes Metab 2026.',
-    ylab: 'Body weight change at week 24 (%)', ticks: [-25, -20, -15, -10, -5, 0], fmt: v => sgn(v, 2) + '%',
+  ph2: { cap: 'Phase 2 obesity, 24 weeks at target dose, N = 120 (30 per arm). Published in Diabetes Obes Metab 2026.', capKo: '비만 2상, 목표용량 24주, N = 120 (군당 30). Diabetes Obes Metab 2026 게재.',
+    ylab: 'Body weight change at week 24 (%)', ylabKo: '24주차 체중 변화 (%)', ticks: [-25, -20, -15, -10, -5, 0], fmt: v => sgn(v, 2) + '%',
     bars: [['Placebo', 0.13, C.cmp3], ['5 mg', -10.68, C.bLo], ['10 mg', -16.07, C.b], ['15 mg', -18.33, C.bHi]] },
-  t2d: { cap: 'Phase 2a type 2 diabetes, 12 weeks at target dose, N = 64. Open-label semaglutide 1 mg as reference. Baseline HbA1c 7.8–8.3%.',
-    ylab: 'HbA1c change at week 12 (percentage points)', ticks: [-3, -2.5, -2, -1.5, -1, -0.5, 0, 0.5], fmt: v => sgn(v, 2),
+  t2d: { cap: 'Phase 2a type 2 diabetes, 12 weeks at target dose, N = 64. Open-label semaglutide 1 mg as reference. Baseline HbA1c 7.8–8.3%.', capKo: '제2형 당뇨 2a상, 목표용량 12주, N = 64. 공개표지 세마글루타이드 1 mg 참조군. 기저 HbA1c 7.8–8.3%.',
+    ylab: 'HbA1c change at week 12 (percentage points)', ylabKo: '12주차 HbA1c 변화 (%p)', ticks: [-3, -2.5, -2, -1.5, -1, -0.5, 0, 0.5], fmt: v => sgn(v, 2),
     bars: [['Placebo', 0.28, C.cmp3], ['Semaglutide 1 mg', -1.43, C.cmp], ['5 mg', -1.72, C.bLo], ['10 mg', -1.94, C.b], ['15 mg', -2.48, C.bHi]] },
-  ph1: { cap: 'Phase 1a healthy volunteers, N = 40: one 2.5 mg dose, or two weekly steps up to the target dose. Values from secondary summaries of Fan 2025; not re-verified against the full text.',
-    ylab: 'Body weight change (%)', ticks: [-12, -10, -8, -6, -4, -2, 0], fmt: v => sgn(v, 2) + '%',
+  ph1: { cap: 'Phase 1a healthy volunteers, N = 40: one 2.5 mg dose, or two weekly steps up to the target dose. Values from secondary summaries of Fan 2025; not re-verified against the full text.', capKo: '1a상 건강인, N = 40: 2.5 mg 단회 또는 목표용량까지 2단계 주간 증량. Fan 2025 2차 요약 수치; 원문 미대조.',
+    ylab: 'Body weight change (%)', ylabKo: '체중 변화 (%)', ticks: [-12, -10, -8, -6, -4, -2, 0], fmt: v => sgn(v, 2) + '%',
     bars: [['2.5 mg', -3.24, C.cmp3], ['5 mg', -6.26, C.bLo], ['10 mg', -7.09, C.b], ['15 mg', -8.30, C.bHi]] }
 };
 const effState = { trial: 'ph3' };
 function drawEff() {
-  const t = TRIALS[effState.trial];
-  barChart($('#eff-chart'), { height: 310, aria: t.ylab, maxBar: 64,
-    groups: t.bars.map(b => ({ label: b[0], bars: [{ name: t.ylab, value: b[1], color: b[2] }] })),
-    y: { label: t.ylab, ticks: t.ticks, fmt: v => String(v) }, valueFmt: t.fmt });
-  $('#eff-cap').textContent = t.cap;
+  const tr = TRIALS[effState.trial];
+  const yl = t(tr.ylab, tr.ylabKo);
+  barChart($('#eff-chart'), { height: 310, aria: yl, maxBar: 64,
+    groups: tr.bars.map(b => ({ label: b[0], bars: [{ name: yl, value: b[1], color: b[2] }] })),
+    y: { label: yl, ticks: tr.ticks, fmt: v => String(v) }, valueFmt: tr.fmt });
+  $('#eff-cap').textContent = t(tr.cap, tr.capKo);
 }
 function drawTime() { /* placebo-subtracted, Ph2 obesity, company announcement 2024-080 */
   lineChart($('#time-chart'), { height: 300, directLabels: true,
@@ -1154,8 +1170,8 @@ function drawResp() {
   const R = [['≥5%', 87, 93, 100], ['≥10%', 57, 77, 86], ['≥15%', 20, 57, 66], ['≥20%', 3, 27, 35], ['≥25%', null, 13, 20], ['≥30%', null, 3, 7]];
   barChart($('#resp-chart'), { height: 300, aria: 'Share of participants reaching weight-loss thresholds', slim: true,
     legendItems: [{ name: '5 mg', color: C.bLo }, { name: '10 mg', color: C.b }, { name: '15 mg', color: C.bHi }],
-    groups: R.map(r => ({ label: r[0], tipLabel: `Lost ${r[0]} of body weight`, bars: [5, 10, 15].map((d, i) => r[i + 1] === null ? null : { name: d + ' mg', value: r[i + 1], color: doseRamp[i] }).filter(Boolean) })),
-    y: { label: 'Participants (%)', min: 0, max: 100, ticks: [0, 25, 50, 75, 100] }, valueFmt: v => v + '%' });
+    groups: R.map(r => ({ label: r[0], tipLabel: t(`Lost ${r[0]} of body weight`,`체중 ${r[0]} 감소`), bars: [5, 10, 15].map((d, i) => r[i + 1] === null ? null : { name: d + ' mg', value: r[i + 1], color: doseRamp[i] }).filter(Boolean) })),
+    y: { label: t('Participants (%)','대상자 비율 (%)'), min: 0, max: 100, ticks: [0, 25, 50, 75, 100] }, valueFmt: v => v + '%' });
 }
 /* cross-trial benchmark: [label, sub, drug, change, placebo, wk, n, estimand, own] */
 const BENCH = [
@@ -1171,8 +1187,8 @@ const benchState = { mode: 'abs' };
 function drawBench() {
   const adj = benchState.mode === 'adj';
   barChart($('#bench-chart'), { height: 340, aria: 'Cross-trial comparison of weight loss', maxBar: 58,
-    groups: BENCH.map(b => ({ label: b[0], sub: b[1], bars: [{ name: adj ? 'Placebo-subtracted' : 'Change from baseline', value: +(adj ? b[2] - b[3] : b[2]).toFixed(2), color: b[5] ? (b[0].includes('15') ? C.bHi : C.b) : C.cmp, tip: b[4] + (adj ? '' : `. Placebo arm: ${sgn(b[3])}%`) }] })),
-    y: { label: adj ? 'Weight change minus placebo (points)' : 'Weight change from baseline (%)', min: -25, max: 0, ticks: [-25, -20, -15, -10, -5, 0], fmt: v => String(v) }, valueFmt: v => sgn(v) + '%' });
+    groups: BENCH.map(b => ({ label: b[0], sub: b[1], bars: [{ name: adj ? t('Placebo-subtracted','위약 보정') : t('Change from baseline','기저 대비 변화'), value: +(adj ? b[2] - b[3] : b[2]).toFixed(2), color: b[5] ? (b[0].includes('15') ? C.bHi : C.b) : C.cmp, tip: b[4] + (adj ? '' : `. Placebo arm: ${sgn(b[3])}%`) }] })),
+    y: { label: adj ? t('Weight change minus placebo (points)','위약 대비 체중 변화 (%p)') : t('Weight change from baseline (%)','기저 대비 체중 변화 (%)'), min: -25, max: 0, ticks: [-25, -20, -15, -10, -5, 0], fmt: v => String(v) }, valueFmt: v => sgn(v) + '%' });
 }
 /* GI tolerability: [label, sub, nausea, vomiting, diarrhoea, own, note] */
 const GI = [
@@ -1187,12 +1203,12 @@ const GI = [
 ];
 const giState = { ev: 'n' };
 function drawGI() {
-  const k = { n: 2, v: 3, d: 4 }[giState.ev], nm = { n: 'Nausea', v: 'Vomiting', d: 'Diarrhoea' }[giState.ev];
+  const k = { n: 2, v: 3, d: 4 }[giState.ev], nm = t({ n: 'Nausea', v: 'Vomiting', d: 'Diarrhoea' }[giState.ev], { n: '오심', v: '구토', d: '설사' }[giState.ev]);
   const rows = GI.map(g => g.slice());
   if (giState.ev === 'd') { rows[0][4] = 38.5; rows[1][4] = 36.4; rows[2][4] = 75.0; rows.slice(0, 3).forEach(r => { r[1] = 'Ph2a T2D'; r[6] = 'Phase 2a T2D, 12 weeks at target, n = 11–13, 2-week titration steps. Obesity-trial diarrhoea rates were not accessible'; }); }
   barChart($('#gi-chart'), { height: 320, aria: nm + ' incidence across trials', maxBar: 54,
     groups: rows.map(g => ({ label: g[0], sub: g[1], bars: [{ name: nm, value: g[k], color: g[5] ? doseRamp[[' 5 mg', ' 10 mg', ' 15 mg'].findIndex(d => g[0].endsWith(d))] : C.cmp, tip: g[6] }] })),
-    y: { label: `Participants reporting ${nm.toLowerCase()} (%)`, min: 0, max: 80, ticks: [0, 20, 40, 60, 80] }, valueFmt: v => v.toFixed(1) + '%' });
+    y: { label: t(`Participants reporting ${nm.toLowerCase()} (%)`,`${nm} 보고 비율 (%)`), min: 0, max: 80, ticks: [0, 20, 40, 60, 80] }, valueFmt: v => v.toFixed(1) + '%' });
 }
 /* potency */
 function drawPot() {
@@ -1213,11 +1229,11 @@ function drawSpecies() {
 const comboState = { src: 'ada' };
 function drawCombo() {
   const d = comboState.src === 'ada'
-    ? [['BGM1812 alone', -13, C.o, '0.4 mg/kg as printed (possibly 0.04)'], ['BGM0504 alone', -15, C.b, '0.15 mg/kg'], ['Combination', -28, C.g, 'ADA 2025 abstract 1993-LB; duration and N not given']]
-    : [['Combination', -22.7, C.g, 'Patent WO2026124626A1: DIO rat, day 13. Read via an automated summary; arm details not checked']];
+    ? [[t('BGM1812 alone','BGM1812 단독'), -13, C.o, '0.4 mg/kg as printed (possibly 0.04)'], [t('BGM0504 alone','BGM0504 단독'), -15, C.b, '0.15 mg/kg'], [t('Combination','복합'), -28, C.g, 'ADA 2025 abstract 1993-LB; duration and N not given']]
+    : [[t('Combination','복합'), -22.7, C.g, 'Patent WO2026124626A1: DIO rat, day 13. Read via an automated summary; arm details not checked']];
   barChart($('#combo-chart'), { height: 300, aria: 'DIO rat weight loss, combination versus single agents', maxBar: 80,
-    groups: d.map(b => ({ label: b[0], bars: [{ name: 'Body weight change', value: b[1], color: b[2], tip: b[3] }] })),
-    y: { label: 'Body weight change (%)', min: -35, max: 0, ticks: [-35, -30, -25, -20, -15, -10, -5, 0], fmt: v => String(v) }, valueFmt: v => sgn(v, v % 1 ? 1 : 0) + '%' });
+    groups: d.map(b => ({ label: b[0], bars: [{ name: t('Body weight change','체중 변화'), value: b[1], color: b[2], tip: b[3] }] })),
+    y: { label: t('Body weight change (%)','체중 변화 (%)'), min: -35, max: 0, ticks: [-35, -30, -25, -20, -15, -10, -5, 0], fmt: v => String(v) }, valueFmt: v => sgn(v, v % 1 ? 1 : 0) + '%' });
   const ref = $('#combo-add'); if (ref) ref.hidden = comboState.src !== 'ada';
 }
 /* optimisation scatter (Zong 2025, Tables 2/4/6) */
@@ -1230,16 +1246,16 @@ function drawOpt() {
   const lo = 0.4, hi = 2.6, lg = v => (Math.log(v) - Math.log(lo)) / (Math.log(hi) - Math.log(lo));
   const px = v => m.l + lg(v) * (W - m.l - m.r), py = v => H - m.b - lg(v) * (H - m.t - m.b);
   svgEl('rect', { x: px(lo), y: py(1), width: px(1) - px(lo), height: py(lo) - py(1), class: 'band' }, svg);
-  svgEl('text', { x: px(lo) + 6, y: py(1) + 15, class: 'axis-t' }, svg).textContent = 'More potent at both receptors';
+  svgEl('text', { x: px(lo) + 6, y: py(1) + 15, class: 'axis-t' }, svg).textContent = t('More potent at both receptors','두 수용체 모두에서 더 강함');
   [0.5, 1, 2].forEach(v => {
     svgEl('line', { x1: px(v), x2: px(v), y1: m.t, y2: H - m.b, class: v === 1 ? 'ref' : 'grid' }, svg);
     svgEl('line', { x1: m.l, x2: W - m.r, y1: py(v), y2: py(v), class: v === 1 ? 'ref' : 'grid' }, svg);
     svgEl('text', { x: px(v), y: H - m.b + 16, 'text-anchor': 'middle', class: 'axis-t' }, svg).textContent = v + '×';
     svgEl('text', { x: m.l - 8, y: py(v) + 4, 'text-anchor': 'end', class: 'axis-t' }, svg).textContent = v + '×';
   });
-  svgEl('text', { x: (m.l + W - m.r) / 2, y: H - 6, 'text-anchor': 'middle', class: 'axis-l' }, svg).textContent = 'AMY3R EC50 ÷ petrelintide, same run (log scale)';
+  svgEl('text', { x: (m.l + W - m.r) / 2, y: H - 6, 'text-anchor': 'middle', class: 'axis-l' }, svg).textContent = t('AMY3R EC50 ÷ petrelintide, same run (log scale)','AMY3R EC50 ÷ 페트렐린타이드, 동일 실험 (로그)');
   const cy = (m.t + H - m.b) / 2;
-  svgEl('text', { x: 13, y: cy, 'text-anchor': 'middle', class: 'axis-l', transform: `rotate(-90 13 ${cy})` }, svg).textContent = 'CTR EC50 ÷ petrelintide';
+  svgEl('text', { x: 13, y: cy, 'text-anchor': 'middle', class: 'axis-l', transform: `rotate(-90 13 ${cy})` }, svg).textContent = t('CTR EC50 ÷ petrelintide','CTR EC50 ÷ 페트렐린타이드');
   SERIES.forEach(s => {
     const lead = s[0] === 'BGM1812';
     const c = svgEl('circle', { cx: px(s[1]), cy: py(s[2]), r: lead ? 8 : 6, fill: lead ? C.o : 'var(--surface)', stroke: lead ? 'var(--surface)' : C.cmp, 'stroke-width': 2, tabindex: 0, class: 'bar' }, svg);
@@ -1279,10 +1295,10 @@ function hbarChart(host, cfg) {
     const y = m.t + i * rh + 5, bh = rh - 10;
     const lab = svgEl('text', { x: m.l - 8, y: y + bh / 2 + 4, 'text-anchor': 'end', class: 'axis-t cat' }, svg);
     lab.textContent = narrow && r.label.length > 19 ? r.label.slice(0, 18) + '…' : r.label;
-    const html = `<div class="tip-h">${r.label}</div><table><tr><td><span class="dot" style="background:${r.color}"></span>${cfg.x.label || ''}</td><td>${r.missing ? 'not disclosed' : (r.hatch ? '≈ ' : '') + xf(r.value)}</td></tr></table>${r.tip ? `<div class="tip-u">${r.tip}</div>` : ''}`;
+    const html = `<div class="tip-h">${r.label}</div><table><tr><td><span class="dot" style="background:${r.color}"></span>${cfg.x.label || ''}</td><td>${r.missing ? t('not disclosed','미공개') : (r.hatch ? '≈ ' : '') + xf(r.value)}</td></tr></table>${r.tip ? `<div class="tip-u">${r.tip}</div>` : ''}`;
     let el;
     if (r.missing) {
-      el = svgEl('text', { x: m.l + 6, y: y + bh / 2 + 4, class: 'val', tabindex: 0 }, svg); el.textContent = 'Not disclosed';
+      el = svgEl('text', { x: m.l + 6, y: y + bh / 2 + 4, class: 'val', tabindex: 0 }, svg); el.textContent = t('Not disclosed','미공개');
     } else {
       const w = Math.max(2, px(r.value) - m.l), rr = Math.min(4, w / 2);
       el = svgEl('path', { d: `M${m.l} ${y}h${w - rr}q${rr} 0 ${rr} ${rr}v${bh - 2 * rr}q0 ${rr} ${-rr} ${rr}h${-(w - rr)}Z`, fill: r.color, class: 'bar', tabindex: 0 }, svg);
@@ -1329,28 +1345,28 @@ function drawHalf() {
   const rows = HALF.filter(r => f === 'all' || (f === 'human' ? r[3] === 'human' : r[2] === f));
   hbarChart($('#half-chart'), {
     aria: 'Terminal half-life by molecule and technology, in days',
-    legendItems: [{ name: 'BGM0504', color: C.b }, { name: 'BGM1812', color: C.o }, { name: 'Single lipidation', color: C.cmp3 }, { name: 'Engineered molecule', color: C.cmp }, { name: 'Depot or controlled release', color: VIO }],
+    legendItems: [{ name: 'BGM0504', color: C.b }, { name: 'BGM1812', color: C.o }, { name: t('Single lipidation', '단일 지질화'), color: C.cmp3 }, { name: t('Engineered molecule', '분자 개량'), color: C.cmp }, { name: t('Depot or controlled release', '데포·방출 제어'), color: VIO }],
     rows: rows.map(r => ({ label: r[0], value: r[1], color: r[4], hatch: !!r[6], missing: !!r[7], tip: r[5],
-      valText: fmtNum(r[1]) + ' d · ' + r[3] })),
-    x: { max: 80, ticks: [0, 7, 14, 28, 56, 80], label: 'Terminal half-life (days)', fmt: v => fmtNum(v) + ' d' },
-    refLines: [{ x: 19, label: 'Albumin turnover, about 19 days', short: 'Albumin ≈19 d' }]
+      valText: fmtNum(r[1]) + ' d · ' + t(r[3], { human: '인체', monkey: '원숭이', mouse: '마우스', predicted: '예측' }[r[3]]) })),
+    x: { max: 80, ticks: [0, 7, 14, 28, 56, 80], label: t('Terminal half-life (days)', '말단 반감기 (일)'), fmt: v => fmtNum(v) + ' d' },
+    refLines: [{ x: 19, label: t('Albumin turnover, about 19 days', '알부민 회전율, 약 19일'), short: t('Albumin ≈19 d', '알부민 ≈19일') }]
   });
 }
 
 /* ---------- depot versus molecule: placebo-adjusted weight loss ---------- */
 function drawDepot() {
   const d = [
-    ['ASC30 depot, week 12', 6.3, VIO, 'Three monthly 400 mg depot doses, no lead-in. Primary time point.'],
-    ['ASC30 depot, week 16', 7.5, VIO, 'Peak, two months after the last dose'],
-    ['ASC30 depot, week 24', 5.8, VIO, 'Four months after the last dose'],
-    ['PF-08653944 weekly, week 28', 11.3, C.cmp, 'MET-097i: 12 weekly doses'],
-    ['PF-08653944 monthly, week 28', 12.3, C.cmp, 'Weekly dosing, then switched to monthly'],
-    ['MariTide monthly, week 52', 13.7, C.cmp, 'Mid-range dose, treatment-policy estimand'],
-    ['Zovaglutide 160 mg Q4W, week 24', 13.8, C.cmp, 'Monthly by dual acylation']];
-  hbarChart($('#depot-chart'), { aria: 'Placebo-adjusted weight loss: depot versus monthly and weekly molecules',
-    legendItems: [{ name: 'Depot (ASC30)', color: VIO }, { name: 'Long-acting molecule', color: C.cmp }],
+    [t('ASC30 depot, week 12','ASC30 데포, 12주차'), 6.3, VIO, 'Three monthly 400 mg depot doses, no lead-in. Primary time point.'],
+    [t('ASC30 depot, week 16','ASC30 데포, 16주차'), 7.5, VIO, 'Peak, two months after the last dose'],
+    [t('ASC30 depot, week 24','ASC30 데포, 24주차'), 5.8, VIO, 'Four months after the last dose'],
+    [t('PF-08653944 weekly, week 28','PF-08653944 주 1회, 28주차'), 11.3, C.cmp, 'MET-097i: 12 weekly doses'],
+    [t('PF-08653944 monthly, week 28','PF-08653944 월 1회, 28주차'), 12.3, C.cmp, 'Weekly dosing, then switched to monthly'],
+    [t('MariTide monthly, week 52','MariTide 월 1회, 52주차'), 13.7, C.cmp, 'Mid-range dose, treatment-policy estimand'],
+    [t('Zovaglutide 160 mg Q4W, week 24','Zovaglutide 160 mg Q4W, 24주차'), 13.8, C.cmp, 'Monthly by dual acylation']];
+  hbarChart($('#depot-chart'), { aria: 'Placebo-adjusted weight loss',
+    legendItems: [{ name: t('Depot (ASC30)','데포 (ASC30)'), color: VIO }, { name: t('Long-acting molecule','장기지속형 분자'), color: C.cmp }],
     rows: d.map(r => ({ label: r[0], value: r[1], color: r[2], tip: r[3] })),
-    x: { max: 16, ticks: [0, 4, 8, 12, 16], label: 'Placebo-adjusted weight loss (%)', fmt: v => fmtNum(v) + '%' } });
+    x: { max: 16, ticks: [0, 4, 8, 12, 16], label: t('Placebo-adjusted weight loss (%)','위약 보정 체중 감소 (%)'), fmt: v => fmtNum(v) + '%' } });
 }
 
 /* ---------- dose-fit calculator ---------- */
@@ -1361,18 +1377,18 @@ function drawFit() {
   const s = fitState, mass = s.dose * s.weeks, vol = mass / s.conc, ms = mass / (s.load / 100);
   $('#fit-dose-o').textContent = s.dose.toFixed(1) + ' mg'; $('#fit-load-o').textContent = s.load + '%'; $('#fit-conc-o').textContent = s.conc + ' mg/mL';
   $('#fit-stats').innerHTML = [
-    [fmtNum(mass) + ' mg', `Peptide per injection (${s.weeks} × weekly dose)`],
-    [fmtNum(vol) + ' mL', `Injection volume as a ${s.conc} mg/mL solution or suspension`],
-    [fmtNum(mass) + ' mg/mL', 'Concentration needed for a 1 mL injection'],
-    [fmtNum(ms) + ' mg', `Microsphere mass at ${s.load}% drug loading`]
+    [fmtNum(mass) + ' mg', t(`Peptide per injection (${s.weeks} × weekly dose)`, `주사 1회당 펩타이드 (주간 용량 × ${s.weeks})`)],
+    [fmtNum(vol) + ' mL', t(`Injection volume as a ${s.conc} mg/mL solution or suspension`, `${s.conc} mg/mL 용액·현탁액 기준 주사 부피`)],
+    [fmtNum(mass) + ' mg/mL', t('Concentration needed for a 1 mL injection','1 mL 주사에 필요한 농도')],
+    [fmtNum(ms) + ' mg', t(`Microsphere mass at ${s.load}% drug loading`, `약물 적재율 ${s.load}% 기준 마이크로스피어 질량`)]
   ].map(x => `<div class="stat"><b>${x[0]}</b><span>${x[1]}</span></div>`).join('');
-  const v = mass <= 30 && vol <= 2 ? ['good', 'Within the range approved peptide depots deliver (2–30 mg)'] : mass <= 40 && vol <= 2 ? ['warn', 'Marginal: above any approved peptide depot, at the 2 mL practical limit'] : ['bad', vol > 2 && mass <= 30 ? 'Peptide mass fits, but the volume exceeds 2 mL at this concentration' : 'Does not fit: beyond any approved peptide depot'];
+  const v = mass <= 30 && vol <= 2 ? ['good', t('Within the range approved peptide depots deliver (2–30 mg)','허가 펩타이드 데포 전달 범위 내 (2–30 mg)')] : mass <= 40 && vol <= 2 ? ['warn', t('Marginal: above any approved peptide depot, at the 2 mL practical limit','경계: 허가 데포를 상회, 실용 한계 2 mL 수준')] : ['bad', vol > 2 && mass <= 30 ? t('Peptide mass fits, but the volume exceeds 2 mL at this concentration','펩타이드 질량은 맞으나 이 농도에서 부피가 2 mL 초과') : t('Does not fit: beyond any approved peptide depot','부적합: 허가 펩타이드 데포 범위 초과')];
   $('#fit-verdict').className = 'pill ' + v[0]; $('#fit-verdict').textContent = v[1];
   hbarChart($('#fit-chart'), { aria: 'Peptide mass per injection against what approved depots deliver',
-    rows: FITREF.map(r => ({ label: r[0], value: r[1] * s.weeks, color: r[2], tip: `${r[1]} mg weekly × ${s.weeks} weeks` }))
-      .concat([{ label: 'Exenatide ER (marketed)', value: 2, color: C.cmp3, tip: 'Bydureon: 2 mg weekly in PLGA microspheres at about 5% loading' }, { label: 'Octreotide LAR (marketed)', value: 30, color: C.cmp3, tip: 'Sandostatin LAR: up to 30 mg monthly in 2 mL' }]),
-    x: { max: Math.max(70, Math.ceil(15 * s.weeks / 10) * 10), ticks: niceTicks(0, Math.max(70, Math.ceil(15 * s.weeks / 10) * 10), 7), label: 'Peptide per injection (mg)', fmt: v2 => fmtNum(v2) + ' mg' },
-    bands: [{ x0: 0, x1: 30, label: 'Delivered by approved depots (2–30 mg)', short: 'Approved range' }], marker: { x: mass } });
+    rows: FITREF.map(r => ({ label: LANG==='ko' ? r[0].replace('weekly','주 1회') : r[0], value: r[1] * s.weeks, color: r[2], tip: t(`${r[1]} mg weekly × ${s.weeks} weeks`, `${r[1]} mg 주 1회 × ${s.weeks}주`) }))
+      .concat([{ label: t('Exenatide ER (marketed)','엑세나타이드 ER (시판)'), value: 2, color: C.cmp3, tip: 'Bydureon: 2 mg weekly in PLGA microspheres at about 5% loading' }, { label: t('Octreotide LAR (marketed)','옥트레오타이드 LAR (시판)'), value: 30, color: C.cmp3, tip: 'Sandostatin LAR: up to 30 mg monthly in 2 mL' }]),
+    x: { max: Math.max(70, Math.ceil(15 * s.weeks / 10) * 10), ticks: niceTicks(0, Math.max(70, Math.ceil(15 * s.weeks / 10) * 10), 7), label: t('Peptide per injection (mg)','주사 1회당 펩타이드 (mg)'), fmt: v2 => fmtNum(v2) + ' mg' },
+    bands: [{ x0: 0, x1: 30, label: t('Delivered by approved depots (2–30 mg)','허가 데포 전달 범위 (2–30 mg)'), short: t('Approved range','허가 범위') }], marker: { x: mass } });
 }
 function initLA() {
   bindSeg($('#half-seg').parentElement, halfState, drawHalf);
@@ -1420,6 +1436,28 @@ onResize(() => { if (activeTab) (TABDRAWS[activeTab] || []).forEach(f => f()); }
 $$('details.more').forEach(d => d.addEventListener('toggle', () => {
   if (d.open && activeTab) (TABDRAWS[activeTab] || []).forEach(f => f());
 }));
+
+/* ---------- language toggle (EN / 한국어) ---------- */
+function redrawVisible() {
+  [drawHalf, drawFit, drawDepot].forEach(f => { try { f(); } catch (e) {} });
+  if (activeTab) (TABDRAWS[activeTab] || []).forEach(f => { try { f(); } catch (e) {} });
+}
+function applyLang(lang) {
+  LANG = lang === 'ko' ? 'ko' : 'en';
+  document.documentElement.lang = LANG;
+  $$('[data-ko]').forEach(el => {
+    if (el.dataset.en == null) el.dataset.en = el.innerHTML;
+    el.innerHTML = LANG === 'ko' ? el.dataset.ko : el.dataset.en;
+  });
+  $$('.langseg button').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === LANG));
+  redrawVisible();
+  try { localStorage.setItem('dossier-lang', LANG); } catch (e) {}
+}
+$$('.langseg button').forEach(b => b.addEventListener('click', () => applyLang(b.dataset.v)));
+let lang0 = 'en';
+try { if (localStorage.getItem('dossier-lang') === 'ko') lang0 = 'ko'; } catch (e) {}
+if (location.hash === '#ko') lang0 = 'ko';
+applyLang(lang0);
 
 /* ---------- scroll spy ---------- */
 const links = $$('.rail a'), secs = links.map(a => $(a.getAttribute('href')));
