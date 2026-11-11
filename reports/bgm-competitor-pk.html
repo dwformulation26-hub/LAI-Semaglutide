@@ -243,13 +243,30 @@ table.t td.kcmp { box-shadow: inset 3px 0 0 var(--cmp); }
 .chart text.plab { fill: var(--ink-2); font-size: 11px; font-weight: 500; }
 .chart text.plab.b { fill: var(--ink); font-weight: 600; }
 .mini { font-size: 12px; color: var(--ink-3); }
-#atlas-table { min-width: 1180px; }
-#atlas-table td:first-child { min-width: 170px; }
 #h2h { min-width: 560px; }
 #h2h td:not(:first-child) { min-width: 180px; }
-#atlas-table td { max-width: 200px; }
-#atlas-table td:nth-child(9) { max-width: 300px; min-width: 220px; font-size: 12.5px; color: var(--ink-2); }
-#atlas-table td:nth-child(4), #atlas-table td:nth-child(5) { min-width: 110px; }
+#atlas-table { min-width: 860px; }
+#atlas-table td { vertical-align: top; }
+#atlas-table td.n { font-variant-numeric: tabular-nums; }
+#atlas-table td.nw { white-space: nowrap; }
+#atlas-table .sub2 { display: block; font-size: 11.5px; color: var(--ink-3); font-weight: 400; margin-top: 2px; }
+#atlas-table td:nth-child(2) { min-width: 140px; max-width: 170px; } #atlas-table td:nth-child(3) { min-width: 130px; max-width: 165px; font-size: 12.5px; color: var(--ink-2); }
+#atlas-table th.sortable { padding: 0; }
+#atlas-table th.sortable button { all: unset; box-sizing: border-box; display: block; width: 100%; padding: 9px 10px; cursor: pointer; text-align: inherit; font: inherit; letter-spacing: inherit; color: inherit; }
+#atlas-table th.sortable button:hover { color: var(--ink); } #atlas-table th.sortable button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+#atlas-table th[aria-sort="ascending"], #atlas-table th[aria-sort="descending"] { color: var(--ink); }
+#atlas-table td.tog { width: 28px; padding-right: 0; }
+#atlas-table td.tog button { font: 600 12px/1 var(--sans); width: 22px; height: 22px; border-radius: 5px; border: 1px solid var(--line-2); background: var(--surface); color: var(--ink-2); cursor: pointer; }
+#atlas-table td.tog button:hover { border-color: var(--accent); color: var(--ink); }
+#atlas-table tr.notes td { border-top: 0; padding-top: 0; font-size: 12.5px; color: var(--ink-2); }
+#atlas-table .notes-in { position: sticky; left: 10px; max-width: min(88ch, calc(100vw - 96px)); }
+#atlas-table tr.sep td { padding: 0; height: 6px; background: var(--surface-2); }
+#atlas-table .pill { font-size: 11px; padding: 4px 7px; }
+ul.nonum { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; }
+ul.nonum li { background: var(--surface-2); border-radius: 8px; padding: 10px 12px; font-size: 13px; color: var(--ink-2); }
+ul.nonum li b { color: var(--ink); }
+#atlas-table th .hu { display: block; text-transform: none; letter-spacing: 0; font-weight: 500; color: var(--ink-3); margin-top: 2px; }
+#atlas-table th { vertical-align: bottom; white-space: normal; }
 </style>
 </head>
 <body>
@@ -353,10 +370,14 @@ table.t td.kcmp { box-shadow: inset 3px 0 0 var(--cmp); }
       <div id="map-chart"></div>
     </div>
     <div class="panel">
-      <div class="panel-h"><div><h3 data-ko="경쟁 품목 PK 파라미터 전체">Every competitor PK parameter we could source</h3><p class="cap" data-ko="행마다 근거 태그와 출처 번호. 빈칸(–)은 공개 자료에서 찾지 못한 값이다.">Each row carries its evidence tag and source number. A dash means no public value was found.</p></div>
-        <div class="seg" data-key="f" id="tab-f"><button data-v="all" aria-pressed="true" data-ko="전체">All</button><button data-v="s" aria-pressed="false" data-ko="단일 지질">Single lipid</button><button data-v="m" aria-pressed="false" data-ko="분자 개량">Engineered</button><button data-v="d" aria-pressed="false" data-ko="데포">Depot</button><button data-v="bgm" aria-pressed="false">BGM</button></div></div>
+      <div class="panel-h"><div><h3 data-ko="PK 파라미터 표">PK parameters, one species at a time</h3><p class="cap" data-ko="한 칸에 한 값, 단위 통일(ng/mL, ng·h/mL). 열 제목을 누르면 정렬, ▸를 누르면 비고. BGM 에셋은 항상 맨 위에 고정.">One value per cell in common units (ng/mL, ng·h/mL). Click a column heading to sort, ▸ for notes. BGM assets stay pinned at the top.</p></div></div>
+      <div class="controls">
+        <span class="ctl"><span class="ctl-l" data-ko="종">Species</span><span class="seg" data-key="sp" id="tab-sp"><button data-v="human" aria-pressed="true" data-ko="인체">Human</button><button data-v="monkey" aria-pressed="false" data-ko="원숭이">Monkey</button><button data-v="rat" aria-pressed="false" data-ko="랫드">Rat</button><button data-v="other" aria-pressed="false" data-ko="기타·예측">Other / predicted</button></span></span>
+        <span class="ctl"><span class="ctl-l" data-ko="분류">Class</span><span class="seg" data-key="g" id="tab-g"><button data-v="all" aria-pressed="true" data-ko="전체">All</button><button data-v="inc" aria-pressed="false" data-ko="GLP-1 주 1회">GLP-1 weekly</button><button data-v="amy" aria-pressed="false" data-ko="아밀린">Amylin</button><button data-v="eng" aria-pressed="false" data-ko="분자 개량">Engineered</button><button data-v="dep" aria-pressed="false" data-ko="데포">Depot</button></span></span>
+      </div>
       <div class="tw"><table class="t" id="atlas-table"></table></div>
-      <p class="note" style="margin-top:8px" data-ko="t½·Tmax는 보고 단위 그대로, 괄호는 범위. Cmax는 표시 용량에서의 값. 집단·용량·추정법이 연구마다 달라 직접 비교는 불가.">t½ and Tmax as reported, ranges in brackets. Cmax is at the dose shown. Populations, doses and methods differ by study, so rows are not directly comparable.</p>
+      <p class="note" id="atlas-foot" style="margin-top:8px"></p>
+      <div id="atlas-nonum" style="margin-top:16px"></div>
     </div>
   </div>
 </section>
@@ -793,7 +814,7 @@ const BGM = [
       note: 'Male SD rats, n = 3, SC 1 mg/kg in PBS pH 7.4. Digitised from Zong 2025, Fig. 4A; trapezoidal AUC of the digitised points (≈266,000) matches the published AUC0-t (264,931 h·ng/mL).',
       noteKo: '수컷 SD 랫드, n = 3, PBS pH 7.4에 SC 1 mg/kg. Zong 2025 Fig. 4A에서 추출; 추출점 사다리꼴 AUC(≈266,000)가 공개 AUC0-t(264,931 h·ng/mL)와 일치.' } },
     sp: {
-      human: { pop: 'Phase 1 (CN, US), 0.3–7.2 mg weekly', popKo: '1상 (중국·미국), 주 1회 0.3–7.2 mg', missingTxt: 'Human half-life not disclosed. BrightGene says only that it "supports weekly or every-two-week dosing"; a BrightGene patent reports 274–363 h for an unnamed analogue.',
+      human: { pop: 'Phase 1 (CN, US)', popKo: '1상 (중국·미국)', missingTxt: 'Human half-life not disclosed. BrightGene says only that it "supports weekly or every-two-week dosing"; a BrightGene patent reports 274–363 h for an unnamed analogue.',
         missingTxtKo: '인체 반감기 미공개. BrightGene는 "주 1회 또는 2주 1회 투여를 지지한다"고만 밝혔고, BrightGene 특허는 이름 없는 유사체에 대해 274–363 h를 보고한다.', doseTxt: '0.3–7.2 mg weekly', ev: 'co', src: [4, 5] },
       rat: { pop: 'Male SD rat, single SC', popKo: '수컷 SD 랫드, 단회 SC', n: 'n = 3', dose: 1, unit: 'mg/kg', doseTxt: '1 mg/kg', th: [21], thTxt: '≈ 21 h', tmax: 24, tmaxTxt: '24 h',
         cmax: 5303, cmaxTxt: '≈ 5,300 ng/mL', aucTxt: 'AUC0-t 264,931 h·ng/mL', F: null, other: 'Same study ran petrelintide side by side (see the competitor panel, rat).', otherKo: '같은 연구에서 페트렐린타이드를 나란히 측정 (경쟁 패널, 랫드 참조).', ev: 'pub', src: [6] } } }
@@ -803,7 +824,7 @@ const BGM = [
 const CMP_S = [
   { id: 'tirzepatide', name: 'Tirzepatide', sponsor: 'Lilly', cls: 's', mech: 'GLP-1R / GIPR dual agonist', mechKo: 'GLP-1R / GIPR 이중 작용제', interval: 'weekly', intervalKo: '주 1회', tau: 168,
     sp: {
-      human: { pop: 'Healthy; projected steady state', popKo: '건강인; 정상상태 예측', n: 'n = 65 (5 mg pen study)', dose: 5, unit: 'mg', doseTxt: '5 mg weekly (2.5–15 mg)', th: [106, 124], thTxt: '106–124 h (label ≈ 5 d)', tmax: 24, tmaxR: [8, 72], tmaxTxt: '24 h (8–72)', ss: true,
+      human: { pop: 'Healthy volunteers', popKo: '건강인', n: 'n = 65 (5 mg pen study)', dose: 5, unit: 'mg', doseTxt: '5 mg weekly (2.5–15 mg)', th: [106, 124], thTxt: '106–124 h (label ≈ 5 d)', tmax: 24, tmaxR: [8, 72], tmaxTxt: '24 h (8–72)', ss: true,
         cmax: 1100, cmaxTxt: '647 ng/mL single dose → 1,100 ng/mL projected steady state (5 mg)', aucTxt: 'AUC0-inf 126,000 ng·h/mL (5 mg single); Cavg,ss 491–1,470 ng/mL at 5–15 mg', F: '80%',
         other: 'CL/F 0.06 L/h, V/F 9.7 L (obesity). Accumulation 1.58–1.7 after 4 weekly doses. Peer-reviewed SAD (n = 5): Cmax 397 ng/mL, t½ 123 h at 5 mg. Steady-state Cmax is the dossier projection (single Cmax × 1.7).',
         otherKo: 'CL/F 0.06 L/h, V/F 9.7 L (비만). 주 1회 4회 투여 후 축적 1.58–1.7. 동료심사 SAD(n = 5): 5 mg에서 Cmax 397 ng/mL, t½ 123 h. 정상상태 Cmax는 허가자료 예측치(단회 Cmax × 1.7).',
@@ -814,7 +835,7 @@ const CMP_S = [
         cmax: 19600, cmaxTxt: '19,600 ng/mL', aucTxt: 'AUC0-inf 478,000 ng·h/mL', F: null, other: 'Sparse-sampling radiolabel study; radioactivity t½ 25.6 h. No rat IV study reported.', otherKo: '희소 채혈 방사표지 연구; 방사능 t½ 25.6 h. 랫드 IV 연구 없음.', ev: 'pub', src: [33] } } },
   { id: 'semaglutide', name: 'Semaglutide 2.4 mg', sponsor: 'Novo Nordisk', cls: 's', mech: 'GLP-1R agonist', mechKo: 'GLP-1R 작용제', interval: 'weekly', intervalKo: '주 1회', tau: 168,
     sp: {
-      human: { pop: 'Healthy, steady state', popKo: '건강인, 정상상태', n: 'n = 29', dose: 2.4, unit: 'mg', doseTxt: '2.4 mg weekly', th: [155], thTxt: '155 h (label ≈ 1 wk)', tmax: 24, tmaxR: [3, 48], tmaxTxt: '24 h (3–48)', ss: true,
+      human: { pop: 'Healthy volunteers', popKo: '건강인', n: 'n = 29', dose: 2.4, unit: 'mg', doseTxt: '2.4 mg weekly', th: [155], thTxt: '155 h (label ≈ 1 wk)', tmax: 24, tmaxR: [3, 48], tmaxTxt: '24 h (3–48)', ss: true,
         cmax: 485, cmaxTxt: '118 nmol/L = 485 ng/mL (Cmax,ss)', aucTxt: 'AUC0-168,ss 14,572 nmol·h/L = 59,900 ng·h/mL', F: '89%',
         other: 'Trough 250 ng/mL, so peak ÷ trough ≈ 1.9 (our calculation). Cavg,ss in obesity ≈ 75 nmol/L = 309 ng/mL; 7.2 mg ≈ 946 ng/mL. CL/F 0.040–0.048 L/h. Cagrilintide does not change semaglutide exposure (CagriSema).',
         otherKo: '최저 250 ng/mL → 최고 ÷ 최저 ≈ 1.9 (자체 계산). 비만 Cavg,ss ≈ 75 nmol/L = 309 ng/mL; 7.2 mg ≈ 946 ng/mL. CL/F 0.040–0.048 L/h. 카그릴린타이드는 세마글루타이드 노출에 영향 없음(CagriSema).', ev: 'pub', src: [35, 36, 39] },
@@ -830,7 +851,7 @@ const CMP_A = [
       note: 'Same study as BGM1812 (Zong 2025, Fig. 4A): male SD rats, n = 3, SC 1 mg/kg in PBS pH 7.4. The fairest like-for-like comparison on this page.',
       noteKo: 'BGM1812와 같은 연구(Zong 2025, Fig. 4A): 수컷 SD 랫드, n = 3, PBS pH 7.4에 SC 1 mg/kg. 이 페이지에서 가장 공정한 동일 조건 비교.' } },
     sp: {
-      human: { pop: 'Obesity, MAD week 15 (steady state)', popKo: '비만, MAD 15주 (정상상태)', n: 'n = 12 per cohort', dose: 2.4, unit: 'mg', doseTxt: '2.4 mg weekly (0.6–9 mg)', th: [213, 257], thTxt: '213–257 h', tmax: 24, tmaxR: [23.4, 28.1], tmaxTxt: '≈ 24 h', ss: true,
+      human: { pop: 'Obesity, MAD week 15', popKo: '비만, MAD 15주', n: 'n = 12 per cohort', dose: 2.4, unit: 'mg', doseTxt: '2.4 mg weekly (0.6–9 mg)', th: [213, 257], thTxt: '213–257 h', tmax: 24, tmaxR: [23.4, 28.1], tmaxTxt: '≈ 24 h', ss: true,
         cmax: 654, cmaxTxt: '156 nmol/L = 654 ng/mL (Cmax,ss, 2.4 mg)', aucTxt: 'AUCτ,ss 21,200 nmol·h/L = 88,900 ng·h/mL (2.4 mg)', F: '77%',
         other: 'SAD (healthy men) Tmax falls from 108 h at 0.04 mg to 28 h at 2.4 mg. CLss/F 0.025–0.027 L/h; Vz/F 8.7–9.7 L. Accumulation ≈ 2.5–2.8 (our calculation). Dose-proportional 0.6–9 mg.',
         otherKo: 'SAD(건강 남성) Tmax는 0.04 mg 108 h → 2.4 mg 28 h로 감소. CLss/F 0.025–0.027 L/h; Vz/F 8.7–9.7 L. 축적 ≈ 2.5–2.8 (자체 계산). 0.6–9 mg 용량 비례.', ev: 'pub', src: [42] },
@@ -841,7 +862,7 @@ const CMP_A = [
         other: 't½ ≈ 26 h is our log-linear fit to the digitised 48–96 h points; Zealand\'s own rat study (30 nmol/kg) reports 33.8 h.', otherKo: 't½ ≈ 26 h는 추출된 48–96 h 점의 로그선형 적합(자체 계산); Zealand 자체 랫드 연구(30 nmol/kg)는 33.8 h.', ev: 'dig', src: [6, 43] } } },
   { id: 'cagrilintide', name: 'Cagrilintide', sponsor: 'Novo Nordisk', cls: 's', grp: 'amy', mech: 'Amylin / calcitonin (DACRA)', mechKo: '아밀린 / 칼시토닌 (DACRA)', interval: 'weekly', intervalKo: '주 1회', tau: 168,
     sp: {
-      human: { pop: 'BMI 27–39.9, with semaglutide 2.4 mg, steady state', popKo: 'BMI 27–39.9, 세마글루타이드 2.4 mg 병용, 정상상태', n: 'n ≈ 12 per cohort', dose: 4.5, unit: 'mg', doseTxt: '0.16–4.5 mg weekly', th: [159, 195], thTxt: '159–195 h', tmax: 48, tmaxR: [24, 72], tmaxTxt: '24–72 h', ss: true,
+      human: { pop: 'BMI 27–39.9, with semaglutide 2.4 mg', popKo: 'BMI 27–39.9, 세마글루타이드 2.4 mg 병용', n: 'n ≈ 12 per cohort', dose: 4.5, unit: 'mg', doseTxt: '0.16–4.5 mg weekly', th: [159, 195], thTxt: '159–195 h', tmax: 48, tmaxR: [24, 72], tmaxTxt: '24–72 h', ss: true,
         cmax: 750, cmaxTxt: '6.14–170 nmol/L = 27–750 ng/mL (0.16–4.5 mg, steady state)', aucTxt: 'AUC0–168 926–24,271 nmol·h/L', F: null,
         other: 'Dose-proportional. Does not change semaglutide exposure. Population t½ ≈ 180 h; no renal or hepatic effect.', otherKo: '용량 비례. 세마글루타이드 노출에 영향 없음. 집단 t½ ≈ 180 h; 신·간 장애 영향 없음.', ev: 'pub', src: [39, 40] },
       monkey: { pop: 'Cynomolgus, single SC', popKo: '사이노몰거스, 단회 SC', n: 'n = 3', dose: 0.088, unit: 'mg/kg', doseTxt: '20 nmol/kg (0.088 mg/kg)', th: [62], thTxt: '62.0 h', tmax: 48, tmaxTxt: '48 h',
@@ -988,6 +1009,47 @@ REFS.push(
   [49, 'Dahl K, et al. SC amycretin Phase 1b/2a. Lancet 2025;406:149–62.', 'https://doi.org/10.1016/S0140-6736(25)01185-7', 'doi:10.1016/S0140-6736(25)01185-7'],
   [50, 'Amycretin review. Diabetes Ther 2026 (secondary source for oral PK).', 'https://doi.org/10.1007/s13300-026-01921-0', 'doi:10.1007/s13300-026-01921-0']
 );
+
+/* ---------- structured table values (one number per cell, common units) ----------
+   st: 'single' | 'ss' (steady state); cmax ng/mL and auc ng·h/mL at the dose shown; aucK: interval label;
+   F: SC bioavailability %, [lo, hi] for a range; obs: half-life is "observed" (dose → 50% of Cmax), not terminal.
+   nmol/L converted with MW (semaglutide 4113.6, cagrilintide 4409, petrelintide 4192, eloralintide 4526). */
+const TB = {
+  'bgm0504:human': { st: 'ss', cmax: 1680, cmaxDig: true },
+  'bgm0504:monkey': { st: 'single', auc: 491000, aucK: 'inf', F: [61, 70] },
+  'bgm0504:rat': { st: 'single', auc: 154000, aucK: 'inf', F: [34, 45] },
+  'bgm1812:rat': { st: 'single', cmaxDig: true, auc: 264931, aucK: '0–t' },
+  'tirzepatide:human': { st: 'single', cmax: 647, auc: 126000, aucK: 'inf', F: 80 },
+  'tirzepatide:monkey': { st: 'single', auc: 276000, aucK: 'inf', F: 83 },
+  'tirzepatide:rat': { st: 'single', auc: 478000, aucK: 'inf' },
+  'semaglutide:human': { st: 'ss', auc: 59900, aucK: 'τ', F: 89 },
+  'semaglutide:monkey': { st: 'single', F: 86 },
+  'semaglutide:minipig': { st: 'single', F: 94 },
+  'semaglutide:rat': { st: 'single' },
+  'petrelintide:human': { st: 'ss', auc: 88900, aucK: 'τ', F: 77 },
+  'petrelintide:monkey': { st: 'single' },
+  'petrelintide:rat': { st: 'single', cmaxDig: true },
+  'cagrilintide:human': { st: 'ss', auc: 107000, aucK: 'τ' },
+  'cagrilintide:monkey': { st: 'single', auc: 173500, aucK: 'inf' },
+  'cagrilintide:rat': { st: 'single', auc: 22000, aucK: 'inf' },
+  'eloralintide:human': { st: 'single', auc: 648000, aucK: 'inf' },
+  'eloralintide:monkey': { st: 'single', auc: 158600, aucK: 'inf' },
+  'eloralintide:rat': { st: 'single', auc: 64200, aucK: 'inf' },
+  'abbv295:human': { st: 'ss' },
+  'met233i:human': { st: 'ss', obs: true },
+  'maritide:human': { st: 'single', doseShow: '21–840 mg' },
+  'maritide:monkey': { st: 'single', auc: 1580000, aucK: 'inf' },
+  'maritide:mouse': { st: 'single', route: 'IV' },
+  'met097i:human': { st: 'ss' },
+  'zovaglutide:human': { st: 'single', doseShow: '0.03–0.26 mg/kg' },
+  'asc30a:human': { st: 'single', auc: 15500, aucK: 'inf', obs: true },
+  'asc30b:human': { st: 'single', auc: 21200, aucK: 'inf', obs: true },
+  'asc35:monkey': { st: 'single' },
+  'asc35:predicted': { obs: false },
+  'asc36:monkey': { st: 'single', obs: true },
+  'asc36:predicted': {},
+  'prolynx:mouse': { st: 'single' }
+};
 
 const PROD = [...BGM, ...CMP_S.map(p => ({ grp: "inc", ...p })), ...CMP_A, ...CMP_M.map(p => ({ grp: "eng", ...p })), ...CMP_D.map(p => ({ grp: "dep", ...p }))];
 
@@ -1355,24 +1417,84 @@ function drawMap() {
 }
 function syncSeg(root, state) { $$('.seg', root).forEach(seg => $$('button', seg).forEach(b => b.setAttribute('aria-pressed', state[seg.dataset.key] === b.dataset.v))); }
 
-/* ---------- atlas table ---------- */
-const tabState = { f: 'all' };
-function drawAtlas() {
-  const order = ['human', 'predicted', 'monkey', 'minipig', 'dog', 'rat', 'mouse'];
-  const rows = [];
-  PROD.filter(p => tabState.f === 'all' ? true : p.cls === tabState.f).forEach(p => {
-    Object.entries(p.sp).sort((a, b) => order.indexOf(a[0]) - order.indexOf(b[0])).forEach(([sp, e], i) => rows.push({ p, sp, e, first: i === 0 }));
-  });
-  const head = [t('Product (sponsor)', '품목 (개발사)'), t('Species · population', '종 · 집단'), t('Dose', '용량'), 't½', 'Tmax', 'Cmax', 'AUC', t('SC F', 'SC F'), t('Notes', '비고'), t('Evidence', '근거')];
-  $('#atlas-table').innerHTML = `<thead><tr>${head.map(x => `<th>${x}</th>`).join('')}</tr></thead><tbody>` + rows.map(r => {
-    const col = r.p.cls === 'bgm' ? prodColor(r.p) : CLSCOL[r.p.cls];
-    const e = r.e;
-    return `<tr${r.p.cls === 'bgm' ? ' class="hl"' : ''}><td>${r.first ? `<span class="cls" style="background:${col}"></span><b>${r.p.name}</b><br><span class="muted">${r.p.sponsor} · ${tx(r.p, 'mech')}</span>` : ''}</td>` +
-      `<td><b>${spName(r.sp)}</b>${e.pop ? '<br><span class="muted">' + tx(e, 'pop') + '</span>' : ''}</td><td>${e.doseTxt || '–'}</td>` +
-      `<td>${e.thTxt || (e.th ? fmtH(mid(e.th)) : "–")}</td><td>${e.tmaxTxt || (e.tmax != null ? fmtH(e.tmax) : '–')}</td><td>${e.cmaxTxt || '–'}</td><td>${e.aucTxt || '–'}</td><td>${e.F || '–'}</td>` +
-      `<td style="min-width:200px">${tx(e, 'other') || tx(e, 'missingTxt') || ''}</td><td>${evTag(e.ev)}${srcLinks(e.src)}</td></tr>`;
-  }).join('') + '</tbody>';
+/* ---------- atlas table: one value per cell, one species at a time ---------- */
+const tabState = { sp: 'human', g: 'all', sort: 'th', dir: 1, open: new Set() };
+const TABSP = { human: ['human'], monkey: ['monkey'], rat: ['rat'], other: ['mouse', 'minipig', 'dog', 'predicted'] };
+const rng = (lo, hi, d) => lo == null ? null : (hi != null && hi !== lo ? `${fmtNum(lo, d)}–${fmtNum(hi, d)}` : fmtNum(lo, d));
+function tabRow(p, sp, e) {
+  const x = Object.assign({}, e, TB[p.id + ':' + sp] || {});
+  const dose = typeof x.dose === 'number' ? x.dose : null;
+  if (typeof x.F === 'string') { const m = x.F.match(/^(\d+)(?:–(\d+))?%/); x.F = m ? (m[2] ? [+m[1], +m[2]] : +m[1]) : null; }
+  const F = x.F == null ? null : Array.isArray(x.F) ? x.F : [x.F];
+  const hasNum = !!(x.th || x.tmax != null || x.cmax != null || x.auc != null);
+  return { p, sp, e, x, hasNum,
+    k: { th: x.th ? mid(x.th) : null, tmax: x.tmax ?? null, cmax: x.cmax ?? null, cpd: x.cmax != null && dose ? x.cmax / dose : null, auc: x.auc ?? null, F: F ? mid(F) : null, name: p.name } };
 }
+function drawAtlas() {
+  const sps = TABSP[tabState.sp];
+  const all = [];
+  PROD.forEach(p => sps.forEach(sp => { if (p.sp[sp]) all.push(tabRow(p, sp, p.sp[sp])); }));
+  const inG = r => r.p.cls === 'bgm' || tabState.g === 'all' || r.p.grp === tabState.g;
+  const bgm = all.filter(r => r.p.cls === 'bgm');
+  const cmp = all.filter(r => r.p.cls !== 'bgm' && r.hasNum && inG(r));
+  const sk = tabState.sort, dir = tabState.dir;
+  cmp.sort((a, b) => sk === 'name' ? dir * a.k.name.localeCompare(b.k.name)
+    : (a.k[sk] == null) - (b.k[sk] == null) || dir * ((a.k[sk] ?? 0) - (b.k[sk] ?? 0)));
+  const cols = [
+    ['', null], [t('Product', '품목'), 'name'], [t('Population', '집단'), null], [t('Dose', '용량'), null],
+    ['t½<span class="hu">h</span>', 'th'], ['Tmax<span class="hu">h</span>', 'tmax'], ['Cmax<span class="hu">ng/mL</span>', 'cmax'], [t('Cmax ÷ dose', 'Cmax ÷ 용량') + '<span class="hu">ng/mL per dose</span>', 'cpd'], ['AUC<span class="hu">ng·h/mL</span>', 'auc'], [t('SC F', 'SC F') + '<span class="hu">%</span>', 'F'], [t('Source', '출처'), null]];
+  const NC = cols.length;
+  const th = cols.map(([lab, key], i) => {
+    if (!key) return `<th${i >= 4 && i <= 9 ? ' class="n"' : ''}>${lab}</th>`;
+    const on = tabState.sort === key, arrow = on ? (tabState.dir > 0 ? ' ↑' : ' ↓') : '';
+    return `<th class="${i >= 4 ? 'n ' : ''}sortable" aria-sort="${on ? (tabState.dir > 0 ? 'ascending' : 'descending') : 'none'}"><button type="button" data-sort="${key}">${lab}${arrow}</button></th>`;
+  }).join('');
+  const sub = (a, b) => b ? `<span class="sub2">${b}</span>` : '';
+  const row = r => {
+    const { p, sp, e, x } = r, key = p.id + ':' + sp, open = tabState.open.has(key);
+    const col = p.cls === 'bgm' ? prodColor(p) : CLSCOL[p.cls];
+    const notes = [tx(e, 'thNote'), tx(e, 'other'), tx(e, 'missingTxt')].filter(Boolean);
+    const unitDose = x.dose != null && x.unit ? `/${x.unit}` : '';
+    const stTxt = x.st === 'ss' ? t('steady state', '정상상태') : x.st === 'single' ? t('single dose', '단회') : sp === 'predicted' ? t('prediction', '예측') : '';
+    const isMid = x.tmaxR && x.tmax != null && Math.abs(x.tmax - mid(x.tmaxR)) < 0.01 * mid(x.tmaxR);
+    const tmaxMain = isMid ? rng(x.tmaxR[0], x.tmaxR[1]) : x.tmax != null ? fmtNum(x.tmax) : null;
+    const tmaxSub = x.tmaxR && !isMid ? `${fmtNum(x.tmaxR[0])}–${fmtNum(x.tmaxR[1])}` : null;
+    const thMain = x.th ? rng(x.th[0], x.th[x.th.length - 1]) + (x.obs ? '<sup>*</sup>' : '') : null;
+    const thSub = x.th && mid(x.th) >= 48 ? `≈ ${fmtNum(mid(x.th) / 24, 1)} d` : null;
+    const cells = r.hasNum ? [
+      `<td class="n">${thMain || '–'}${sub(0, thSub)}</td>`,
+      `<td class="n">${tmaxMain || '–'}${sub(0, tmaxSub)}</td>`,
+      `<td class="n">${x.cmax != null ? (x.cmaxDig ? '≈ ' : '') + fmtNum(x.cmax) : '–'}</td>`,
+      `<td class="n">${r.k.cpd != null ? fmtNum(r.k.cpd) + sub(0, unitDose) : '–'}</td>`,
+      `<td class="n">${x.auc != null ? fmtNum(x.auc) + sub(0, 'AUC' + (x.aucK === 'inf' ? '<sub>0–∞</sub>' : `<sub>${x.aucK}</sub>`)) : '–'}</td>`,
+      `<td class="n">${x.F ? (Array.isArray(x.F) ? rng(x.F[0], x.F[1]) : x.F) : '–'}</td>`].join('')
+      : `<td colspan="6" class="muted">${t('Not disclosed', '미공개')}</td>`;
+    const doseTxt = x.doseShow || (x.dose != null ? `${fmtNum(x.dose)} ${x.unit}` : (e.doseTxt || '–'));
+    return `<tr class="${p.cls === 'bgm' ? 'hl ' : ''}main">` +
+      `<td class="tog">${notes.length ? `<button type="button" data-open="${key}" aria-expanded="${open}" aria-label="${t('Notes', '비고')}">${open ? '▾' : '▸'}</button>` : ''}</td>` +
+      `<td><span class="cls" style="background:${col}"></span><b>${p.name}</b>${sub(0, p.sponsor)}</td>` +
+      `<td>${tx(e, 'pop') || spName(sp)}${sub(0, e.n)}</td><td class="nw">${doseTxt}${sub(0, [x.route, stTxt].filter(Boolean).join(' · '))}</td>` +
+      cells + `<td class="srccell">${evTag(e.ev)}<br>${srcLinks(e.src)}</td></tr>` +
+      (open ? `<tr class="notes${p.cls === 'bgm' ? ' hl' : ''}"><td></td><td colspan="${NC - 1}"><div class="notes-in">${notes.join(' ')}</div></td></tr>` : '');
+  };
+  const body = bgm.map(row).join('') + (bgm.length && cmp.length ? `<tr class="sep"><td colspan="${NC}"></td></tr>` : '') + cmp.map(row).join('');
+  $('#atlas-table').innerHTML = `<thead><tr>${th}</tr></thead><tbody>${body || `<tr><td colspan="${NC}" class="muted">${t('No values for this selection.', '이 조건에 값 없음.')}</td></tr>`}</tbody>`;
+  $('#atlas-foot').innerHTML = t('<sup>*</sup> Observed half-life: time from dose to 50% of Cmax (Ascletis, Metsera), not a terminal half-life. ≈ read from a digitised figure. Cmax and AUC are at the dose shown; Cmax ÷ dose is only comparable within a species and dosing state.',
+    '<sup>*</sup> 관찰 반감기: 투여부터 Cmax의 50%까지 시간(Ascletis, Metsera)으로 말단 반감기가 아님. ≈ 공개 그림에서 추출. Cmax·AUC는 표시 용량 기준; Cmax ÷ 용량은 같은 종·같은 투여 상태 안에서만 비교 가능.');
+  /* products disclosed without numbers, any species */
+  const nonum = [];
+  PROD.filter(p => p.cls !== 'bgm' && (tabState.g === 'all' || p.grp === tabState.g)).forEach(p => {
+    if (Object.entries(p.sp).some(([sp, e]) => tabRow(p, sp, e).hasNum)) return;
+    const [sp, e] = Object.entries(p.sp)[0];
+    nonum.push(`<li><b>${p.name}</b> <span class="muted">· ${p.sponsor} · ${spName(sp)}</span><br>${tx(e, 'missingTxt') || ''} ${tx(e, 'other') || ''} ${evTag(e.ev)}${srcLinks(e.src)}</li>`);
+  });
+  $('#atlas-nonum').innerHTML = nonum.length ? `<h4>${t('Disclosed without PK numbers', 'PK 수치 없이 공개된 품목')}</h4><ul class="nonum">${nonum.join('')}</ul>` : '';
+}
+$('#atlas-table').addEventListener('click', ev => {
+  const s = ev.target.closest('[data-sort]'), o = ev.target.closest('[data-open]');
+  if (s) { const k = s.dataset.sort; tabState.dir = tabState.sort === k ? -tabState.dir : (k === 'name' ? 1 : -1); tabState.sort = k; drawAtlas(); }
+  if (o) { const k = o.dataset.open; tabState.open.has(k) ? tabState.open.delete(k) : tabState.open.add(k); drawAtlas(); const b = $(`[data-open="${k}"]`); if (b) b.focus(); }
+});
 
 /* ---------- sources & limits ---------- */
 function drawRefs() {
@@ -1385,7 +1507,7 @@ bindSeg($('#vs-shared'), vsState, drawVS);
 bindSeg($('#ov-seg').parentElement, vsState, drawVS);
 bindSeg($('#half-sp').closest('.controls'), halfState, drawHalf);
 bindSeg($('#map-sp').parentElement, mapState, drawMap);
-bindSeg($('#tab-f').parentElement, tabState, drawAtlas);
+bindSeg($('#tab-sp').closest('.controls'), tabState, drawAtlas);
 $('#l-pick').addEventListener('change', e => {
   vsState.l = e.target.value;
   const g = byId(vsState.r).grp;
