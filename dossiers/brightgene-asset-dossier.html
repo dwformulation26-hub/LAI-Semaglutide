@@ -230,7 +230,7 @@ table.t th.ahead { font-size: 12px; letter-spacing: .02em; }
   <a href="#candidates"><span class="k"></span><span data-ko="세 에셋">The three assets</span></a>
   <div class="rail-h" data-ko="장기지속형 전환 가능성">Can we make it long-acting</div>
   <a href="#feasible"><span class="k"></span><span data-ko="반감기 한계">The ceiling</span></a>
-  <a href="#fit"><span class="k"></span><span data-ko="용량이 들어가는가">Does the dose fit</span></a>
+  <a href="#approaches"><span class="k"></span><span data-ko="경쟁사 LAI 기술">LAI technologies</span></a>
   <a href="#tradeoff"><span class="k"></span><span data-ko="데포의 득실">What a depot costs</span></a>
   <a href="#plan"><span class="k"></span><span data-ko="실행 방안">The plan</span></a>
   <div class="rail-h" data-ko="근거 자료">Evidence</div>
@@ -300,36 +300,30 @@ table.t th.ahead { font-size: 12px; letter-spacing: .02em; }
   </div>
 </section>
 
-<!-- ============ FIT ============ -->
-<section id="fit">
+<!-- ============ APPROACHES ============ -->
+<section id="approaches">
   <header>
-    <span class="tag"><i></i><span data-ko="장기지속형 전환 가능성 · 탑재 용량">Can we make it long-acting · payload</span></span>
-    <h2 data-ko="월 1회 용량이 한 번의 주사에 물리적으로 들어가는가?">Does a monthly dose physically fit in one injection?</h2>
+    <span class="tag"><i></i><span data-ko="장기지속형 전환 가능성 · 접근 방식">Can we make it long-acting · approaches</span></span>
+    <h2 data-ko="업계는 어떤 기술로 투여 간격을 늘렸는가">How the field reaches a longer interval, and by which route</h2>
   </header>
   <div class="stack">
-    <p class="lead" data-ko="월 1회 주사는 주간 용량의 약 4배를 담아야 하며, 허가된 펩타이드 데포는 2–30 mg를 전달한다. 용량과 간격을 설정하면 — 표식(marker)이 어디에 놓이는지 보여준다. <span class='ev mod'>Model</span>">A monthly shot must carry about four weekly doses; approved peptide depots deliver 2–30 mg. Set a dose and interval — the marker shows where it lands. <span class="ev mod">Model</span></p>
-    <div class="panel">
-      <div class="sim-grid">
-        <div>
-          <div class="field"><span class="ctl-l" data-ko="시작 값">Start from</span>
-            <div class="chips" id="fit-presets">
-              <button data-d="15">0504 · 15 mg</button><button data-d="10">0504 · 10 mg</button><button data-d="5">0504 · 5 mg</button>
-              <button data-d="7.2">1812 · 7.2 mg</button><button data-d="2.4">1812 · 2.4 mg</button>
-            </div></div>
-          <div class="field"><div class="row"><label for="fit-dose" class="ctl-l" data-ko="주간 용량">Weekly dose</label><output id="fit-dose-o"></output></div><input type="range" id="fit-dose" min="0.3" max="15" step="0.1" value="15"></div>
-          <div class="field"><span class="ctl-l" data-ko="투여 간격">Interval</span>
-            <div class="seg" data-key="weeks" id="fit-weeks"><button data-v="2" aria-pressed="false" data-ko="2주">2 wk</button><button data-v="4" aria-pressed="true" data-ko="4주">4 wk</button><button data-v="8" aria-pressed="false" data-ko="8주">8 wk</button><button data-v="12" aria-pressed="false" data-ko="12주">12 wk</button></div></div>
-          <div class="field"><div class="row"><label for="fit-conc" class="ctl-l" data-ko="농도">Concentration</label><output id="fit-conc-o"></output></div><input type="range" id="fit-conc" min="5" max="100" step="1" value="20"></div>
-          <div class="field"><div class="row"><label for="fit-load" class="ctl-l" data-ko="마이크로스피어 약물 적재율">Microsphere loading</label><output id="fit-load-o"></output></div><input type="range" id="fit-load" min="5" max="40" step="1" value="20"></div>
-        </div>
-        <div class="stack" style="gap:12px">
-          <div id="fit-chart"></div>
-          <div class="stats" id="fit-stats"></div>
-          <div><span class="pill" id="fit-verdict"></span></div>
-        </div>
-      </div>
-    </div>
-    <div class="callout warn"><b data-ko="용해도가 부피보다 더 큰 벽이다.">Solubility is the harder wall.</b> <span data-ko="BGM0504는 물에 거의 녹지 않고 염 용액에서는 1.04 mg/mL까지 떨어진다; 20 mg/mL에 도달하려면 pH 7.2–7.6의 프로필렌글리콜이 필요하다.">BGM0504 is nearly insoluble in water and falls to 1.04 mg/mL in saline; reaching even 20 mg/mL needs propylene glycol at pH 7.2–7.6.</span><a class="src" href="#r11">11</a> <span data-ko="따라서 BGM0504는 5 mg에서만 맞으며 — 이는 3상에서 19.2%가 아닌 14.3%를 기록한 용량이다. BGM1812는 전체 용량 범위가 무리 없이 들어간다.">So BGM0504 fits only at 5 mg — which delivered 14.3% in Phase 3, not 19.2%. BGM1812's whole dose range fits comfortably.</span></div>
+    <p class="lead" data-ko="투여 간격 연장에는 크게 두 길이 있다 — 분자를 바꾸거나(두 번째 지질, 항체), 제형에 담아 서서히 내보내거나(데포, 임플란트). 아래는 각 회사의 기술과 접근, 그리고 우리에게 주는 함의다.">There are two broad routes to a longer interval — change the molecule (a second lipid, an antibody) or meter it out from a formulation (a depot, an implant). Below is each company's technology, its approach, and what it means for us.</p>
+    <div class="tw"><table class="t">
+      <thead><tr><th data-ko="기술">Technology</th><th data-ko="대표 사례 (회사)">Example (company)</th><th data-ko="작동 방식">How it works</th><th data-ko="간격">Interval</th><th data-ko="단계">Stage</th><th data-ko="우리에게 주는 함의">What it means for us</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td data-ko="마이크로니들 패치"><b>Microneedle patch</b></td><td data-ko="대웅테라퓨틱스">Daewoong Therapeutics</td><td data-ko="동전 크기 패치에 약 100개 바늘; 비열(非熱) 공정">~100 needles on a coin-sized patch; non-thermal process</td><td data-ko="주 1회(유지요법 목표)">Weekly (maintenance goal)</td><td data-ko="1상">Ph1</td><td data-ko="자사 플랫폼. 탑재량이 수 mg로 제한 → BGM1812에 적합, BGM0504 15 mg에는 부적합">Our own platform. Payload-limited to a few mg → fits BGM1812, not BGM0504 15 mg<a class="src" href="#r46">46</a></td></tr>
+        <tr class="hl"><td data-ko="피하 데포 (Quject Sphere)"><b>SC depot (Quject Sphere)</b></td><td data-ko="대웅 / Tionlab">Daewoong / Tionlab</td><td data-ko="CURE 공정 기반 마이크로스피어 데포">Microsphere depot via the CURE process</td><td data-ko="월 1회">Monthly</td><td data-ko="IND 제출(2026.4)">IND filed (Apr 2026)</td><td data-ko="자사 월 1회 데포. 세마글루타이드 2.4 mg로 검증 중 → BGM1812가 탑재량 근접">Our own monthly depot, being proven on 2.4 mg semaglutide → BGM1812 is a close payload match<a class="src" href="#r45">45</a></td></tr>
+        <tr><td data-ko="이중 지방산 아실화">Dual fatty-acid acylation</td><td data-ko="Zovaglutide (QL); MET-097i·MET-233i (Pfizer)">Zovaglutide (QL); MET-097i·MET-233i (Pfizer)</td><td data-ko="한 분자에 두 번째 알부민 결합 모티프">A second albumin-binding motif on one peptide</td><td data-ko="월 1회 / 16–19일">Monthly / 16–19 d</td><td data-ko="3상 / 2b상">Ph3 / Ph2b</td><td data-ko="제형이 아닌 의약화학. 월 1회가 목표라면 데포보다 저렴할 수 있으나 제형팀의 영역은 아님">Medicinal chemistry, not formulation. Cheaper than a depot if monthly is the goal, but not a formulation team's route<a class="src" href="#r53">53</a></td></tr>
+        <tr><td data-ko="항체 접합">Antibody conjugation</td><td>MariTide (Amgen)</td><td data-ko="GLP-1 펩타이드 2개를 단 항-GIPR IgG1; FcRn 재순환">Anti-GIPR IgG1 carrying two GLP-1 peptides; FcRn recycling</td><td data-ko="월 1회">Monthly</td><td data-ko="3상">Ph3</td><td data-ko="효과적이나 전혀 다른 분자 — 제형으로 접근할 수 있는 길이 아님">Effective, but a different molecule — not a route a formulation team owns<a class="src" href="#r52">52</a></td></tr>
+        <tr class="hl"><td data-ko="자가조립 지질 데포"><b>Self-assembling lipid depot</b></td><td data-ko="ASC35·ASC36i (Ascletis)">ASC35·ASC36i (Ascletis)</td><td data-ko="주사 부위에서 펩타이드가 지질 데포로 자가조립">Peptide self-assembles into a lipid depot at the injection site</td><td data-ko="월 1회–분기 1회">Monthly–quarterly</td><td data-ko="1상">Ph1</td><td data-ko="우리가 만들려는 것과 가장 가까운 템플릿 — 단, 경쟁사 소유">The closest template to what we would build — but competitor-owned<a class="src" href="#r48">48</a></td></tr>
+        <tr class="hl"><td data-ko="피하 데포 (ULAP)"><b>SC depot (ULAP)</b></td><td data-ko="ASC30 (Ascletis)">ASC30 (Ascletis)</td><td data-ko="비공개; 저분자 GLP-1 작용제 데포">Undisclosed; small-molecule GLP-1 agonist depot</td><td data-ko="월 1회 치료, 분기 1회 유지">Monthly tx, quarterly maint.</td><td data-ko="2상 완료">Ph2 done</td><td data-ko="이 계열에서 유일한 인체 효능 데이터(아래 득실 참조)">The only human efficacy data from a depot in this class (see trade below)<a class="src" href="#r49">49</a></td></tr>
+        <tr><td data-ko="지질 액정 데포">Lipid liquid-crystal depot</td><td data-ko="CAM2056 (Camurus)">CAM2056 (Camurus)</td><td data-ko="FluidCrystal에 세마글루타이드">Semaglutide in FluidCrystal</td><td data-ko="월 1회">Monthly</td><td data-ko="2b상">Ph2b</td><td data-ko="시판 펩타이드판(版). Lilly가 GIP/GLP-1 권리 보유, 2026년 6월 아밀린 추가">The marketed-peptide version. Lilly holds GIP/GLP-1 rights and added amylin in Jun 2026<a class="src" href="#r36">36</a></td></tr>
+        <tr><td data-ko="절단형 링커 하이드로겔">Cleavable-linker hydrogel</td><td data-ko="MS~세마글루타이드 (ProLynx)">MS~semaglutide (ProLynx)</td><td data-ko="β-제거 링커로 펩타이드를 하이드로겔에 결합; 화학으로 방출 속도 결정">β-eliminative linker; release rate set by chemistry</td><td data-ko="월 1회">Monthly</td><td data-ko="마우스">Mouse</td><td data-ko="방출이 종(種) 비의존적 → 번역 논거 유리. 단, 공유결합 개질 → 신규 분자로 간주될 가능성">Species-independent release → easier translation. But it modifies the peptide covalently → likely a new molecular entity<a class="src" href="#r40">40</a></td></tr>
+        <tr><td data-ko="PLGA 마이크로스피어">PLGA microspheres</td><td data-ko="IVL3021·3024 (Inventage), SmartDepot (Peptron), InnoLAMP (G2G Bio)">IVL3021·3024 (Inventage), SmartDepot (Peptron), InnoLAMP (G2G Bio)</td><td data-ko="폴리에스터 마이크로스피어">Polyester microspheres</td><td data-ko="월 1회(주장)">Monthly (claimed)</td><td data-ko="전임상–1상">Preclin–Ph1</td><td data-ko="미니피그에서 티르제파타이드 2개월 지속 입증. 단, BGM0504 Lys20 아실화 위험(아래 참조)">Held tirzepatide 2 months in minipigs. But BGM0504 Lys20 acylation risk (see below)<a class="src" href="#r47">47</a></td></tr>
+        <tr><td data-ko="피하 임플란트">Subdermal implant</td><td data-ko="NPM-115·139 (Vivani)">NPM-115·139 (Vivani)</td><td data-ko="NanoPortal 임플란트">NanoPortal implant</td><td data-ko="6개월–연 1회">6-monthly–annual</td><td data-ko="1상 / 전임상">Ph1 / preclin</td><td data-ko="버스트 없음; 삽입·제거가 장벽">No burst; placement and removal are the barrier<a class="src" href="#r54">54</a></td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout warn"><b data-ko="어떤 기술이든 탑재량과 용해도가 먼저다.">Whatever the technology, payload and solubility come first.</b> <span data-ko="월 1회 주사는 주간 용량의 약 4배를 한 번에 담아야 한다. BGM0504는 물에 거의 녹지 않고 염 용액에서 1.04 mg/mL까지 떨어져 20 mg/mL에도 프로필렌글리콜이 필요하다">A monthly shot must carry about four weekly doses at once. BGM0504 is nearly insoluble in water and falls to 1.04 mg/mL in saline, so even 20 mg/mL needs propylene glycol</span><a class="src" href="#r11">11</a> <span data-ko="— 따라서 데포에 들어가는 BGM0504 용량은 5 mg뿐이며, 이는 3상에서 19.2%가 아닌 14.3%를 기록한 용량이다. BGM1812는 저용량이라 어느 플랫폼에도 들어간다.">— so only the 5 mg BGM0504 dose fits a depot, and that delivered 14.3% in Phase 3, not 19.2%. BGM1812's low dose fits any of these platforms.</span></div>
   </div>
 </section>
 
@@ -642,6 +636,8 @@ table.t th.ahead { font-size: 12px; letter-spacing: .02em; }
         <li id="r48">Ascletis portfolio deck, Aug 2026 (ASC30/35/36i/36_35FDC). <a href="https://www.ascletis.com/data/upload/admin/20260810/6a79f2f46c535.pdf">Deck</a></li>
         <li id="r49">Ascletis ASC30 Phase 2 topline. <a href="https://www.biospace.com/press-releases/ascletis-announces-positive-topline-results-from-u-s-phase-ii-24-week-study-for-its-ultra-long-acting-subcutaneous-depot-formulations-of-small-molecule-glp-1r-agonist-asc30-for-obesity">Press release</a></li>
         <li id="r52">Amgen MariTide Phase 2, ADA 2025. <a href="https://www.amgen.com/newsroom/press-releases/2025/06/results-from-amgens-phase-2-obesity-study-of-monthly-maritide-presented-at-the-american-diabetes-association-85th-scientific-sessions">Press release</a></li>
+        <li id="r53">Pfizer / Metsera: MET-097i ultra-long GLP-1 Phase 2b &amp; MET-233i amylin Phase 1. <a href="https://www.pfizer.com/news/press-release/press-release-detail/pfizers-ultra-long-acting-injectable-glp-1-ra-shows-robust">Pfizer</a>; <a href="https://www.biospace.com/press-releases/metsera-announces-positive-phase-1-data-of-first-in-class-once-monthly-amylin-candidate-met-233i">Metsera</a></li>
+        <li id="r54">Vivani Medical: NPM-139 semaglutide implant &amp; NPM-115 LIBERATE-1. <a href="https://investors.vivani.com/investors/news-events/press-releases/detail/198/vivani-medical-announces-rapid-advancement-of-npm-139-a">Press release</a></li>
       </ol>
       <p class="note" data-ko="전체 55개 참고문헌 목록(GLORY, STEP 7, SURMOUNT-CN, Vivani, Metsera, 한국 MFDS 및 BrightGene 1차 공시 포함)은 동반 리서치 파일에 있으며, 핵심 출처는 위와 같다. 자동 요약으로 확인한 특허·기업 세부 사항은 외부 사용 전 원문 대조가 필요하다.">Full 55-reference list (including GLORY, STEP 7, SURMOUNT-CN, Vivani, Metsera, Korean MFDS and BrightGene primary filings) is in the companion research files; the key sources are above. Patent and company details read via automated summaries should be checked against the documents before external use.</p>
     </details>
@@ -1392,11 +1388,7 @@ function drawFit() {
 }
 function initLA() {
   bindSeg($('#half-seg').parentElement, halfState, drawHalf);
-  const wk = { weeks: '4' };
-  bindSeg($('#fit-weeks').parentElement, wk, () => { fitState.weeks = +wk.weeks; drawFit(); });
-  [['dose', '#fit-dose'], ['load', '#fit-load'], ['conc', '#fit-conc']].forEach(([k, id]) => $(id).addEventListener('input', e => { fitState[k] = +e.target.value; drawFit(); }));
-  $$('#fit-presets button').forEach(b => b.addEventListener('click', () => { fitState.dose = +b.dataset.d; $('#fit-dose').value = fitState.dose; drawFit(); }));
-  [drawHalf, drawDepot, drawFit].forEach(onResize);
+  [drawHalf, drawDepot].forEach(onResize);
 }
 
 /* ---------- interactive controls ---------- */
@@ -1439,7 +1431,7 @@ $$('details.more').forEach(d => d.addEventListener('toggle', () => {
 
 /* ---------- language toggle (EN / 한국어) ---------- */
 function redrawVisible() {
-  [drawHalf, drawFit, drawDepot].forEach(f => { try { f(); } catch (e) {} });
+  [drawHalf, drawDepot].forEach(f => { try { f(); } catch (e) {} });
   if (activeTab) (TABDRAWS[activeTab] || []).forEach(f => { try { f(); } catch (e) {} });
 }
 function applyLang(lang) {
