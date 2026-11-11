@@ -220,6 +220,13 @@ ol.refs li { margin-bottom: 7px; break-inside: avoid; overflow-wrap: anywhere; }
   <a href="#formulation"><span class="k"></span>Formulation</a>
   <a href="#interval"><span class="k"></span>Dosing interval</a>
   <a href="#landscape"><span class="k"></span>Landscape</a>
+  <div class="rail-h">Long-acting strategy</div>
+  <a href="#la-routes"><span class="k"></span>Routes</a>
+  <a href="#la-depot"><span class="k"></span>Depot evidence</a>
+  <a href="#la-fit"><span class="k"></span>Dose fit</a>
+  <a href="#la-risks"><span class="k"></span>Risks</a>
+  <a href="#la-korea"><span class="k"></span>Korea &amp; plan</a>
+  <div class="rail-h">Company</div>
   <a href="#company"><span class="k"></span>Company and IP</a>
   <a href="#gaps"><span class="k"></span>Gaps</a>
   <a href="#sources"><span class="k"></span>Sources</a>
@@ -689,6 +696,201 @@ ol.refs li { margin-bottom: 7px; break-inside: avoid; overflow-wrap: anywhere; }
   </div>
 </section>
 
+<!-- ================= LONG-ACTING: ROUTES ================= -->
+<section id="la-routes">
+  <header>
+    <span class="tag"><i></i>Long-acting strategy · who got there</span>
+    <h2>Monthly dosing has mostly been reached by changing the molecule, not the formulation</h2>
+    <p class="sub">The planning premise is that Daewoong applies a long-acting formulation to BGM0504, BGM1812 or BGM2102. This part of the dossier asks what the competition has already done, how far it got and what it cost, and then works out what that means for each molecule. It builds on the Formulation Planning competitor review (cut-off 5 Nov 2026); figures are as compiled there unless a source is given.</p>
+  </header>
+  <div class="stack">
+    <div class="split">
+      <div class="panel">
+        <div class="panel-h"><div><h3>Half-life by molecule and technology</h3><p class="cap">One scale in days to show magnitude. Species and studies differ, so bars are not directly comparable; hover for the source value. <span class="ev pub">Published</span> <span class="ev co">Company</span><a class="src" href="#r42">42</a><a class="src" href="#r48">48</a><a class="src" href="#r40">40</a></p></div>
+          <div class="seg" data-key="f" id="half-seg"><button data-v="all" aria-pressed="true">All</button><button data-v="human" aria-pressed="false">Human only</button><button data-v="s" aria-pressed="false">Single lipid</button><button data-v="m" aria-pressed="false">Engineered</button><button data-v="d" aria-pressed="false">Depots</button></div></div>
+        <div id="half-chart"></div>
+      </div>
+      <div class="stack" style="gap:16px">
+        <div class="panel">
+          <h3>Why weekly does not simply become monthly</h3>
+          <p style="margin-top:8px">Both BrightGene injectables get their duration from a C20 diacid that binds albumin reversibly, so the peptide rides on albumin's turnover instead of its own. That is a ceiling, not a dial: once the molecule tracks albumin, more lipid adds no more time.</p>
+          <p>In bioreactor terms the molecule already matches the residence time of the vessel. Going longer needs a bigger vessel (an antibody recycled by FcRn) or a slower outlet (a reservoir that releases more slowly than the body eliminates).</p>
+          <p class="note">Where the ceiling sits depends on the peptide. Singly lipidated GLP-1 and GIP agonists stop at 5–7 days. Singly lipidated amylins already reach 10–14 days in humans, and dual lipidation takes both classes to 16–19 days, close to albumin itself. Nothing that relies on albumin goes further.</p>
+        </div>
+        <div class="callout warn"><b>BGM1812's half-life has never been disclosed as a number.</b> The Phase 1 notice, both registry entries and the paper say only that it supports weekly or every-two-week dosing. A BrightGene patent reports 274–363 h for an unnamed analogue. Every long-acting decision for this molecule depends on that number, so it is the first thing to ask for.</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Routes to extended dosing</h3>
+      <div class="tw" style="margin-top:10px"><table class="t">
+        <thead><tr><th>Route</th><th>Example</th><th>How</th><th>Interval</th><th>Stage</th><th>What it tells us</th></tr></thead>
+        <tbody>
+          <tr><td><b>Dual fatty-acid acylation</b></td><td>Zovaglutide (ZT002), QL Biopharmaceutical</td><td>Second albumin-binding motif on one peptide</td><td>Monthly</td><td>Phase 3 HORIZON-1</td><td>A Chinese company reached monthly by medicinal chemistry alone: 13.8% at 160 mg every 4 weeks, about 1.3% GI discontinuation. If BrightGene's goal is monthly, this may be cheaper than a depot.</td></tr>
+          <tr><td><b>Dual acylation (HALO)</b></td><td>MET-097i and MET-233i, Pfizer (ex-Metsera)</td><td>Stabilised dual lipidation approaching albumin's half-life</td><td>16 and 19 days</td><td>Phase 3 / Phase 2b</td><td>MET-233i is the direct precedent for making an amylin monthly by chemistry. The most relevant comparator for BGM1812.<a class="src" href="#r34">34</a><a class="src" href="#r53">53</a></td></tr>
+          <tr><td><b>Antibody conjugation</b></td><td>MariTide, Amgen</td><td>Anti-GIPR IgG1 carrying two GLP-1 peptides; FcRn recycling</td><td>Monthly; 8-weekly explored</td><td>Phase 3 MARITIME</td><td>Effective, but a different molecule. Not a route a formulation team owns.<a class="src" href="#r52">52</a></td></tr>
+          <tr class="hl"><td><b>Self-assembling lipid depot</b></td><td>ASC35 and ASC36i, Ascletis</td><td>Peptide formulated to self-assemble into a lipid depot at the injection site</td><td>Monthly to quarterly</td><td>Phase 1</td><td>Monkey half-lives of 14 and 32 days against 57 h for tirzepatide and 128 h for MET-233i. The closest template to what we would build, and it belongs to a competitor.<a class="src" href="#r48">48</a><a class="src" href="#r51">51</a></td></tr>
+          <tr class="hl"><td><b>Subcutaneous depot (ULAP)</b></td><td>ASC30, Ascletis</td><td>Not disclosed; small-molecule GLP-1 agonist</td><td>Monthly treatment, quarterly maintenance</td><td>Phase 2 complete</td><td>The only placebo-controlled efficacy data from a depot in this class. See the next section.<a class="src" href="#r49">49</a></td></tr>
+          <tr><td><b>Lipid liquid-crystal depot</b></td><td>CAM2056, Camurus</td><td>Semaglutide in FluidCrystal</td><td>Monthly</td><td>Phase 2b started Nov 2026</td><td>The marketed-peptide version of the same idea. Lilly holds FluidCrystal rights for GIP/GLP-1 agonists and added amylin agonists in June 2026.<a class="src" href="#r36">36</a></td></tr>
+          <tr><td><b>Cleavable-linker hydrogel</b></td><td>MS~semaglutide, ProLynx</td><td>β-eliminative linker tethering the peptide to hydrogel microspheres</td><td>Monthly</td><td>Mouse</td><td>Release rate is set by linker chemistry, so it should not depend on species. It modifies the peptide covalently, so regulators would probably treat it as a new molecular entity.<a class="src" href="#r40">40</a></td></tr>
+          <tr><td><b>PLGA microspheres</b></td><td>IVL3021 / IVL3024 (Inventage), InnoLAMP (G2G Bio), SmartDepot (Peptron)</td><td>Polyester microspheres</td><td>Monthly claimed</td><td>Preclinical to Phase 1</td><td>IVL3024 held tirzepatide for two months in minipigs with no burst, the best public proof that a GLP-1/GIP agonist can live in a microsphere. See the chemistry trap below.<a class="src" href="#r47">47</a></td></tr>
+          <tr><td><b>Subdermal implant</b></td><td>NPM-115 and NPM-139, Vivani</td><td>NanoPortal implant</td><td>6 months to annual</td><td>Phase 1 / preclinical</td><td>No burst; 9-week human PK for exenatide; about 20% weight loss held beyond 6 months in rats for semaglutide. Placement and removal are the barrier.<a class="src" href="#r54">54</a></td></tr>
+        </tbody></table></div>
+    </div>
+    <div class="callout"><b>A translational point in our favour.</b> Because the ProLynx linker releases by base-catalysed chemistry and not by biology, its authors argue the release rate carries straight from mouse to human. For a team that has had to defend minipig-versus-monkey dose conversion to a regulator, a depot whose release is rate-controlled is an easier argument than one controlled by diffusion.</div>
+  </div>
+</section>
+
+<!-- ================= LONG-ACTING: DEPOT EVIDENCE ================= -->
+<section id="la-depot">
+  <header>
+    <span class="tag"><i></i>Long-acting strategy · clinical depot evidence</span>
+    <h2>A depot buys tolerability and durability and gives up depth of effect</h2>
+    <p class="sub">Ascletis ran a 24-week, double-blind, placebo-controlled US Phase 2 of its ASC30 subcutaneous depot in 65 adults: three 400 mg doses on days 1, 29 and 57 with no weekly lead-in, then no further dosing to week 24. One of the two formulations tested never reached therapeutic exposure; the other (A1) is shown here.<a class="src" href="#r49">49</a><a class="src" href="#r50">50</a></p>
+  </header>
+  <div class="stack">
+    <div class="split">
+      <div class="panel">
+        <div class="panel-h"><div><h3>Placebo-adjusted weight loss: the depot against long-acting molecules</h3><p class="cap">Company toplines from different trials and time points. <span class="ev co">Company</span><a class="src" href="#r49">49</a><a class="src" href="#r52">52</a><a class="src" href="#r53">53</a><a class="src" href="#r42">42</a></p></div></div>
+        <div id="depot-chart"></div>
+        <p class="note">A second depot has human weight data without a placebo arm: Camurus's monthly semaglutide depot CAM2056 lost 9.3% at day 85 against 5.2% on weekly semaglutide in a Phase 1b.<a class="src" href="#r36">36</a> That result is for a marketed peptide and points the other way on depth of effect, so the ASC30 trade-off may be specific to that product.</p>
+      </div>
+      <div class="stack" style="gap:16px">
+        <div class="panel" style="border-top:3px solid var(--good)">
+          <h3>What the depot bought</h3>
+          <ul class="tight" style="margin-top:8px;font-size:14px">
+            <li><b>Tolerability no weekly product matches.</b> Every GI event was grade 1. No discontinuation for adverse events in any arm. No hepatic or ECG signal.</li>
+            <li><b>Durability.</b> Weight loss peaked at 7.5% two months after the last dose and was still 5.8% four months after it.</li>
+            <li><b>No titration.</b> It did this without a weekly lead-in, the thing a depot is supposed to be bad at.</li>
+          </ul>
+        </div>
+        <div class="panel" style="border-top:3px solid var(--bad)">
+          <h3>What it cost</h3>
+          <ul class="tight" style="margin-top:8px;font-size:14px">
+            <li><b>Depth of effect.</b> 6.3% at the week-12 primary, against 11–14% for the weekly and monthly molecules.</li>
+            <li><b>Formulation risk.</b> One of two formulations failed on exposure in humans.</li>
+            <li><b>Small and company-reported.</b> n = 65, topline only, no per-arm sizes or confidence intervals.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="callout"><b>The design brief that follows.</b> A depot in this class is a way to make a weight-loss drug easier to stay on, not stronger. That points to positioning a long-acting BrightGene asset as maintenance after titration on the weekly product, which is also how BrightGene frames BGM2102. Ascletis has already taken that concept into the clinic: ASC36_35FDC, a monthly amylin plus a monthly GLP-1/GIP agonist in one injection, has an FDA IND and has started Phase 1.<a class="src" href="#r48">48</a></div>
+  </div>
+</section>
+
+<!-- ================= LONG-ACTING: DOSE FIT ================= -->
+<section id="la-fit">
+  <header>
+    <span class="tag"><i></i>Long-acting strategy · payload</span>
+    <h2>Does a monthly dose fit in one injection? BGM1812 does; BGM0504 only at its lowest dose</h2>
+    <p class="sub">This gate can be settled with arithmetic. A monthly injection has to carry about four weekly doses. Approved peptide microsphere depots deliver between 2 mg (exenatide, about 5% loading) and 30 mg (octreotide, in 2 mL) per injection. Set a dose and see where it lands. <span class="ev mod">Model</span></p>
+  </header>
+  <div class="panel">
+    <div class="sim-grid">
+      <div>
+        <div class="field"><span class="ctl-l">Start from</span>
+          <div class="chips" id="fit-presets">
+            <button data-d="15">BGM0504 15 mg</button><button data-d="10">BGM0504 10 mg</button><button data-d="5">BGM0504 5 mg</button>
+            <button data-d="7.2">BGM1812 7.2 mg</button><button data-d="2.4">BGM1812 2.4 mg</button>
+          </div></div>
+        <div class="field"><div class="row"><label for="fit-dose" class="ctl-l">Weekly dose</label><output id="fit-dose-o"></output></div><input type="range" id="fit-dose" min="0.3" max="15" step="0.1" value="15"></div>
+        <div class="field"><span class="ctl-l">Dosing interval</span>
+          <div class="seg" data-key="weeks" id="fit-weeks"><button data-v="2" aria-pressed="false">2 weeks</button><button data-v="4" aria-pressed="true">4 weeks</button><button data-v="8" aria-pressed="false">8 weeks</button><button data-v="12" aria-pressed="false">12 weeks</button></div></div>
+        <div class="field"><div class="row"><label for="fit-conc" class="ctl-l">Achievable concentration</label><output id="fit-conc-o"></output></div><input type="range" id="fit-conc" min="5" max="100" step="1" value="20"></div>
+        <div class="field"><div class="row"><label for="fit-load" class="ctl-l">Microsphere drug loading</label><output id="fit-load-o"></output></div><input type="range" id="fit-load" min="5" max="40" step="1" value="20"></div>
+      </div>
+      <div class="stack" style="gap:12px">
+        <div id="fit-chart"></div>
+        <div class="stats" id="fit-stats"></div>
+        <div><span class="pill" id="fit-verdict"></span></div>
+      </div>
+    </div>
+    <p class="note" style="margin-top:12px">Assumes the dose per injection equals the weekly dose times the interval, with no saving from smoother exposure, and a 2 mL practical ceiling for a subcutaneous depot. The black marker is the scenario you set. 20 mg/mL is the worked example in BrightGene's formulation patent.<a class="src" href="#r10">10</a></p>
+  </div>
+  <div class="callout warn" style="margin-top:16px"><b>Solubility is a harder limit than volume.</b> Reaching 60 mg/mL means a large jump in concentration. BrightGene's own multi-dose patent says BGM0504 is nearly insoluble in water, that isotonic saline cuts its solubility to 1.04 mg/mL, and that it takes phosphate buffer with propylene glycol at pH 7.2–7.6 to reach the 20 mg/mL worked example.<a class="src" href="#r11">11</a> BGM0504 at 5 mg weekly is the only dose of that molecule that clears the gate, and it delivered 14.3% in Phase 3, not 19.2%.</div>
+</section>
+
+<!-- ================= LONG-ACTING: RISKS ================= -->
+<section id="la-risks">
+  <header>
+    <span class="tag"><i></i>Long-acting strategy · technical risks</span>
+    <h2>Each molecule has its own chemistry trap, and a depot cannot be titrated</h2>
+  </header>
+  <div class="stack">
+    <div class="grid2">
+      <div class="panel" style="border-top:3px solid var(--c0504)">
+        <h3>BGM0504 in PLGA: the Lys20 question</h3>
+        <p style="margin-top:8px">PLGA degrades into acidic oligomers that build up inside the particle and acylate accessible primary amines on the peptide. Octreotide released from PLGA microspheres was only about 25% unmodified over 95 days, and exenatide showed progressive pH-dependent acylation in rats.<a class="src" href="#r43">43</a></p>
+        <p>BGM0504 exists because its fatty acid was moved off Lys20 and onto Lys40, since acylating Lys20 costs receptor potency. A PLGA depot would hold a free, reactive Lys20 in an acylating environment for a month, and could undo the very potency gain the molecule was designed for.</p>
+        <p class="note"><b>Cheap test:</b> incubate in a degrading PLGA film or blank microspheres and screen for glycolic-acid adducts by LC-MS, checking Lys20 specifically. Leuprolide, which has no free primary amine, showed none at 28 days, so this is a decisive, inexpensive experiment. If it fails, move off polyester: a more hydrophilic polyester (PLHMGA) raised unmodified octreotide recovery above 65–70%, and a polymer-nanoparticle hydrogel held both tirzepatide and semaglutide for 43 days in rats with no burst, through a 21G needle.<a class="src" href="#r41">41</a></p>
+      </div>
+      <div class="panel" style="border-top:3px solid var(--c1812)">
+        <h3>BGM1812 at concentration: aggregation</h3>
+        <p style="margin-top:8px">Amylin analogues fibrillate and dimerise, and both grow with concentration. In Zealand's petrelintide work an intermediate analogue formed 27% dimer at 1 mg/mL and 42% at 20 mg/mL after two weeks at 40 °C, pH 7.0.<a class="src" href="#r29">29</a></p>
+        <p>A depot needs about four times the weekly dose in the same or less volume, which puts the molecule into that concentration range. BGM1812's anti-fibrillation claim rests on α-methylation at Leu12 and Phe15, which is sound chemistry, but no quantitative fibrillation or dimerisation data has been published.</p>
+        <p class="note"><b>Cheap test:</b> run thioflavin-T and size-exclusion chromatography at 1 and 20 mg/mL, two weeks at 40 °C, pH 7.0, mirroring the petrelintide conditions so the numbers are comparable.</p>
+      </div>
+    </div>
+    <div class="callout warn"><b>Handle one potency claim with care.</b> BrightGene reports BGM1812 at AMY3R 0.627 nM against its own petrelintide value of 1.126 nM and calls that 1.8× more potent. Zealand's published value for petrelintide is AMY3R 0.33 nM. Different assays, so not directly comparable, but an independent lab measures petrelintide as more potent than BrightGene measures BGM1812. The 1.8× and 2.2× claims rest on BrightGene's in-house comparator; do not repeat them without that caveat, and ask for a single-assay head-to-head.<a class="src" href="#r29">29</a></div>
+    <div class="panel">
+      <h3>A depot cannot be titrated, and that decides the positioning</h3>
+      <p class="cap" style="color:var(--ink-2);font-size:13.5px;margin-top:4px">GI events in this class track dose and escalation speed. Every weekly product manages them with titration. A depot cannot be titrated within an interval and cannot be withdrawn if a patient reacts.</p>
+      <div class="tw" style="margin-top:12px"><table class="t">
+        <thead><tr><th>Constraint</th><th>Evidence</th><th>Consequence for a BrightGene depot</th></tr></thead>
+        <tbody>
+          <tr><td>No titration inside an interval</td><td>MariTide needed an 8-week, three-step ramp (21 → 35 → 70 mg) to control GI discontinuations even as a monthly molecule, and still saw up to 7.8% in Phase 2 escalation arms<a class="src" href="#r52">52</a></td><td>Either develop several depot strengths given in sequence, or position the depot as maintenance after the patient has titrated on weekly BGM0504</td></tr>
+          <tr><td>Cannot be reversed</td><td>Slow clearance means the effect cannot be stopped; the literature calls for explicit discontinuation guidance and no overlap when switching long-acting agents<a class="src" href="#r44">44</a></td><td>A label and practice burden the weekly product does not carry; also matters for pregnancy, surgery and acute illness</td></tr>
+          <tr><td>Trough drives effect, burst drives harm</td><td>Response tracks cumulative exposure and steady signalling; the aim is to minimise peak-to-trough swing. A polymer-nanoparticle hydrogel released only 0.41–1.09% over 21 days<a class="src" href="#r41">41</a></td><td>Burst control is the single most important formulation specification</td></tr>
+          <tr><td>Missed doses matter more</td><td>Fewer injections narrow the margin for a missed dose and remove the ability to adjust</td><td>Favours maintenance in stable, adherent patients, not induction in new starters</td></tr>
+        </tbody></table></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LONG-ACTING: KOREA + PLAN ================= -->
+<section id="la-korea">
+  <header>
+    <span class="tag"><i></i>Long-acting strategy · Korea and the plan</span>
+    <h2>Pair the molecule to the platform on payload, and lead with BGM1812 for a microneedle</h2>
+    <p class="sub">The Korean long-acting field is crowded, and Daewoong has two of its own platforms that could apply here. Payload arithmetic decides which molecule each one suits.</p>
+  </header>
+  <div class="stack">
+    <div class="panel">
+      <div class="tw"><table class="t">
+        <thead><tr><th>Organisation</th><th>Platform</th><th>Active and interval</th><th>Stage</th><th>Relevance</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><b>Daewoong / Tionlab</b></td><td>Quject Sphere depot (CURE process)</td><td>Semaglutide, monthly</td><td>IND filed Apr 2026; first dosing targeted before year-end</td><td>Our own monthly depot, being proven on a 2.4 mg weekly peptide. Applying it to BGM0504 15 mg is a six-fold jump in payload; to BGM1812 it is a close match.<a class="src" href="#r45">45</a></td></tr>
+          <tr class="hl"><td><b>Daewoong / Daewoong Therapeutics</b></td><td>Microneedle patch, about 100 needles on a coin-sized patch</td><td>Semaglutide patch, weekly; maintenance indication planned</td><td>Phase 1; global exclusive licence signed Feb 2026</td><td>Payload-limited to a few milligrams. <b>Fits BGM1812's 0.3–7.2 mg range well and BGM0504's 15 mg badly.</b><a class="src" href="#r46">46</a></td></tr>
+          <tr><td>Peptron</td><td>SmartDepot PLGA</td><td>PT403 semaglutide; PT404 tirzepatide</td><td>Early clinical; PT404 with Lilly</td><td>A competitor for the same role, already with Lilly. Its Korean patent claims 1–3 month dosing but tested no monthly efficacy group, a freedom-to-operate point that cuts both ways.<a class="src" href="#r47">47</a></td></tr>
+          <tr><td>Inventage Lab / Yuhan</td><td>IVL-DrugFluidic microspheres</td><td>IVL3021 semaglutide; IVL3024 tirzepatide</td><td>Phase 1 IND in Australia, Oct 2026</td><td>The closest Korean analogue to a BGM0504 depot; IVL3024's two-month minipig exposure with no burst is the best public feasibility proof for the class.<a class="src" href="#r47">47</a></td></tr>
+          <tr><td>G2G Bio</td><td>InnoLAMP microspheres</td><td>Semaglutide, tirzepatide, retatrutide</td><td>Preclinical</td><td>A potential alternative partner, and holder of the prior patent cited against Peptron.</td></tr>
+          <tr><td>Dongguk</td><td>DK-LADS microspheres</td><td>Semaglutide, tirzepatide</td><td>Preclinical; Phase 1 targeted 2027</td><td>Shows how crowded the domestic field is.</td></tr>
+        </tbody></table></div>
+      <p class="note" style="margin-top:8px">Korea's MFDS has separately approved Phase 3 trials for orforglipron, AZD6234, petrelintide, zenagamtide and CT-388, so the market will be contested by imported late-stage assets regardless.<a class="src" href="#r55">55</a></p>
+    </div>
+    <div class="callout"><b>The cleanest technical fit in this whole analysis.</b> If the Daewoong technology in scope is the microneedle patch, lead with BGM1812, not BGM0504. The patch carries a few milligrams; BGM1812's entire clinical range is 0.3–7.2 mg; BGM0504's top dose is more than six times the semaglutide dose the patch was built around. BGM1812 is also the molecule where a weekly-to-biweekly or monthly claim is already in the company's narrative, and it had no grade 3 or serious adverse events in its Chinese Phase 1.</div>
+
+    <div class="panel">
+      <h3>What to do, in order</h3>
+      <div class="grid2" style="margin-top:12px">
+        <ul class="tight" style="font-size:14px">
+          <li><b>Ask BrightGene for two numbers:</b> BGM1812's measured half-life and BGM0504's solubility ceiling in their own system. They decide whether there is a programme at all. Add BGM1812's accumulation ratio and BGM0504's absolute SC bioavailability.</li>
+          <li><b>Run the PLGA acylation screen on BGM0504</b> before choosing a platform. Cheap, fast, and a positive result rules out the obvious platform and saves a year.</li>
+          <li><b>Measure BGM1812's fibrillation and dimerisation</b> at 1 and 20 mg/mL under the petrelintide conditions, so the numbers are comparable to published work.</li>
+          <li><b>Frame the target product as maintenance, not induction.</b> Every depot datapoint says so, and it removes the titration problem instead of engineering around it.</li>
+        </ul>
+        <ul class="tight" style="font-size:14px">
+          <li><b>Pair molecule to platform on payload.</b> Microneedle → BGM1812. Depot → BGM0504 at the 5 mg equivalent, or BGM1812. Do not promise a 15 mg-equivalent monthly BGM0504 depot.</li>
+          <li><b>Get a freedom-to-operate opinion</b> covering Peptron, G2G Bio and Inventage before a microsphere route in Korea, and ask what IP position Ascletis's self-assembling depot creates.</li>
+          <li><b>Put ASC36_35FDC to BrightGene</b> and ask for their answer: a competitor has the BGM2102 concept in the clinic, monthly, while BGM2102 is preclinical and weekly. Their response tests their own timeline.</li>
+          <li><b>Decide what the product wins on besides interval.</b> Pfizer reaches monthly with a molecule, orforglipron is oral, and BGM0504's own tablet is in Phase 2. Interval alone is no longer a differentiator.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- ================= COMPANY ================= -->
 <section id="company">
   <header>
@@ -824,7 +1026,24 @@ ol.refs li { margin-bottom: 7px; break-inside: avoid; overflow-wrap: anywhere; }
     <li id="r37">REDEFINE 1 body-composition substudy, ECO 2026. <a href="https://www.pharmaceutical-technology.com/analyst-comment/eco-2026-redefine-1-cagrisema-body-composition/">Analyst comment</a></li>
     <li id="r38">BrightGene 2026 half-year report (31 Aug 2026) and Q3 2026 coverage. <a href="https://www.cs.com.cn/ssgs/01/2026/10/29/detail_2026102910048349.html">cs.com.cn</a></li>
     <li id="r39">BrightGene 2025 annual report summary. <a href="http://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20260319/b8256357dba546eca301a5c1320eb4cd.PDF">cninfo PDF</a></li>
+    <li id="r40">Santi DV, et al. The limitation of lipidation: converting semaglutide from weekly to monthly dosing (ProLynx; bioRxiv 2024). <a href="https://www.biorxiv.org/content/10.1101/2024.08.10.607458v1.full.pdf">Preprint PDF</a></li>
+    <li id="r41">d'Aquino AI, et al. Long-acting polymer-nanoparticle hydrogel depots of tirzepatide and semaglutide (bioRxiv 2025). <a href="https://www.biorxiv.org/content/10.1101/2025.07.02.662867v1.full">Preprint</a></li>
+    <li id="r42">Zovaglutide (ZT002), QL Biopharmaceutical — monthly GLP-1 agonist, Phase 3 HORIZON-1 (company and secondary coverage, as compiled in the competitor review).</li>
+    <li id="r43">Mumtaz S, Afzal AM. The stability–release paradox in long-acting peptide delivery (PLGA acylation). Pharmaceutics 2026;18(10):1306. <a href="https://www.mdpi.com/1999-4923/18/10/1306">MDPI</a></li>
+    <li id="r44">Saldivar-Ceron HI, et al. Once-monthly and extended-interval incretin, amylin and THRβ therapies. Scientia Pharmaceutica 2026;94(1):21. <a href="https://www.mdpi.com/2218-0532/94/1/21">MDPI</a></li>
+    <li id="r45">Daewoong / Tionlab Quject Sphere monthly semaglutide depot; Herald Business, 2026. <a href="https://biz.heraldcorp.com/article/10774917">Article</a></li>
+    <li id="r46">Daewoong licenses microneedle technology for obesity, 25 Feb 2026. <a href="https://www.koreabiomed.com/news/articleView.html?idxno=30720">Korea Biomedical Review</a></li>
+    <li id="r47">Korean long-acting GLP-1 microsphere programmes (Peptron, Inventage, G2G Bio). <a href="https://www.koreabiomed.com/news/articleView.html?idxno=31960">Korea Biomedical Review</a>; <a href="https://en.edaily.co.kr/news/eda202610165046/">Edaily (Peptron)</a>; <a href="https://en.edaily.co.kr/news/eda202610285541/">Edaily (IVL3021 IND)</a></li>
+    <li id="r48">Ascletis metabolic-disease portfolio deck, Aug 2026 (ASC30, ASC35, ASC36i, ASC36_35FDC). <a href="https://www.ascletis.com/data/upload/admin/20260810/6a79f2f46c535.pdf">Deck PDF</a></li>
+    <li id="r49">Ascletis: positive topline from the US Phase 2 24-week ASC30 subcutaneous depot study. <a href="https://www.biospace.com/press-releases/ascletis-announces-positive-topline-results-from-u-s-phase-ii-24-week-study-for-its-ultra-long-acting-subcutaneous-depot-formulations-of-small-molecule-glp-1r-agonist-asc30-for-obesity">Press release</a></li>
+    <li id="r50">Fierce Biotech: Ascletis eyes quarterly GLP-1 dosing after the Phase 2 readout. <a href="https://www.fiercebiotech.com/biotech/ascletis-posts-phase-2-obesity-data-touts-potential-quarterly-glp-1-dosing">Article</a></li>
+    <li id="r51">Ascletis: FDA IND clearance for Phase 1 of once-monthly ASC35. <a href="https://www.prnewswire.com/news-releases/ascletis-announces-us-fda-ind-clearance-for-phase-i-study-of-once-monthly-subcutaneously-administered-glp-1rgipr-dual-peptide-agonist-asc35-for-the-treatment-of-obesity-302807534.html">PR Newswire</a></li>
+    <li id="r52">Amgen: Phase 2 obesity results for monthly MariTide, ADA 2025. <a href="https://www.amgen.com/newsroom/press-releases/2025/06/results-from-amgens-phase-2-obesity-study-of-monthly-maritide-presented-at-the-american-diabetes-association-85th-scientific-sessions">Press release</a></li>
+    <li id="r53">Pfizer / Metsera: PF-08653944 (MET-097i) ultra-long-acting GLP-1 Phase 2b and MET-233i amylin Phase 1. <a href="https://www.pfizer.com/news/press-release/press-release-detail/pfizers-ultra-long-acting-injectable-glp-1-ra-shows-robust">Pfizer</a>; <a href="https://www.biospace.com/press-releases/metsera-announces-positive-phase-1-data-of-first-in-class-once-monthly-amylin-candidate-met-233i">Metsera MET-233i</a></li>
+    <li id="r54">Vivani Medical: NPM-139 semaglutide implant and NPM-115 LIBERATE-1. <a href="https://investors.vivani.com/investors/news-events/press-releases/detail/198/vivani-medical-announces-rapid-advancement-of-npm-139-a">Press release</a></li>
+    <li id="r55">Biopharma APAC obesity pipeline report (Korean MFDS Phase 3 approvals), 2 Nov 2026. <a href="https://www.biotimes.co.kr/news/articleView.html?idxno=35798">Biotimes</a></li>
   </ol>
+  <p class="note" style="margin-top:14px">References 40–55 support the long-acting strategy sections and come from the companion Formulation Planning competitor review. Half-life figures there are drawn from different species and studies and are labelled accordingly; company toplines are not peer-reviewed.</p>
 </section>
 </main>
 </div>
@@ -1435,6 +1654,139 @@ function drawOpt() {
   });
 }
 
+/* ---------- horizontal bar chart (many labelled rows) ----------
+ cfg: { rows:[{label,sub,value,color,hatch,valText,tip,missing}], x:{max,ticks,label,fmt}, refLines:[{x,label}], bands:[{x0,x1,label,cls}], legendItems, marker:{x,label} } */
+function hbarChart(host, cfg) {
+  host.innerHTML = '';
+  host.classList.add('chart');
+  if (cfg.legendItems) legend(host, cfg.legendItems.map(i => ({ ...i, kind: 'bar' })));
+  const W = Math.max(280, host.clientWidth || 640), narrow = W < 520;
+  const rh = cfg.rowH || 26, m = { t: 26, r: narrow ? 58 : 150, b: cfg.bands ? 40 : 22, l: narrow ? 118 : 200 };
+  const H = m.t + m.b + rh * cfg.rows.length;
+  const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, width: '100%', height: H, role: 'img', 'aria-label': cfg.aria || '' }, host);
+  const x1 = cfg.x.max, px = v => m.l + Math.min(v, x1) / x1 * (W - m.l - m.r);
+  const xf = cfg.x.fmt || (v => v);
+  (cfg.bands || []).forEach(b => {
+    svgEl('rect', { x: px(b.x0), y: m.t, width: px(b.x1) - px(b.x0), height: H - m.t - m.b, class: 'band ' + (b.cls || '') }, svg);
+    svgEl('text', { x: (px(b.x0) + px(b.x1)) / 2, y: H - m.b + 16, 'text-anchor': 'middle', class: 'axis-t' }, svg).textContent = narrow ? b.short || b.label : b.label;
+  });
+  cfg.x.ticks.forEach(v => {
+    svgEl('line', { x1: px(v), x2: px(v), y1: m.t, y2: H - m.b, class: v === 0 ? 'base' : 'grid' }, svg);
+    svgEl('text', { x: px(v), y: m.t - 8, 'text-anchor': 'middle', class: 'axis-t' }, svg).textContent = xf(v);
+  });
+  svgEl('text', { x: 0, y: m.t - 8, class: 'axis-l' }, svg).textContent = narrow ? '' : cfg.x.label || '';
+  (cfg.refLines || []).forEach(r => {
+    svgEl('line', { x1: px(r.x), x2: px(r.x), y1: m.t, y2: H - m.b, class: 'ref' }, svg);
+    svgEl('text', { x: px(r.x) + 5, y: H - m.b - 5, class: 'axis-t' }, svg).textContent = narrow ? r.short || r.label : r.label;
+  });
+  cfg.rows.forEach((r, i) => {
+    const y = m.t + i * rh + 5, bh = rh - 10;
+    const lab = svgEl('text', { x: m.l - 8, y: y + bh / 2 + 4, 'text-anchor': 'end', class: 'axis-t cat' }, svg);
+    lab.textContent = narrow && r.label.length > 19 ? r.label.slice(0, 18) + '…' : r.label;
+    const html = `<div class="tip-h">${r.label}</div><table><tr><td><span class="dot" style="background:${r.color}"></span>${cfg.x.label || ''}</td><td>${r.missing ? 'not disclosed' : (r.hatch ? '≈ ' : '') + xf(r.value)}</td></tr></table>${r.tip ? `<div class="tip-u">${r.tip}</div>` : ''}`;
+    let el;
+    if (r.missing) {
+      el = svgEl('text', { x: m.l + 6, y: y + bh / 2 + 4, class: 'val', tabindex: 0 }, svg); el.textContent = 'Not disclosed';
+    } else {
+      const w = Math.max(2, px(r.value) - m.l), rr = Math.min(4, w / 2);
+      el = svgEl('path', { d: `M${m.l} ${y}h${w - rr}q${rr} 0 ${rr} ${rr}v${bh - 2 * rr}q0 ${rr} ${-rr} ${rr}h${-(w - rr)}Z`, fill: r.color, class: 'bar', tabindex: 0 }, svg);
+      if (r.hatch) { el.setAttribute('fill', 'var(--surface)'); el.setAttribute('stroke', r.color); el.setAttribute('stroke-width', 1.5); el.setAttribute('stroke-dasharray', '4 3'); }
+      svgEl('text', { x: px(r.value) + 6, y: y + bh / 2 + 4, class: 'val' }, svg).textContent = (r.hatch ? '≈' : '') + (r.valText && !narrow ? r.valText : xf(r.value));
+    }
+    el.addEventListener('pointermove', e => showTip(html, e.clientX, e.clientY));
+    el.addEventListener('pointerleave', hideTip);
+    el.addEventListener('focus', () => { const b = el.getBoundingClientRect(); showTip(html, b.right, b.top); });
+    el.addEventListener('blur', hideTip);
+  });
+  if (cfg.marker) {
+    const x = px(cfg.marker.x);
+    svgEl('line', { x1: x, x2: x, y1: m.t - 2, y2: H - m.b, stroke: 'var(--ink)', 'stroke-width': 2 }, svg);
+    svgEl('path', { d: `M${x - 5} ${m.t - 4}h10l-5 7Z`, fill: 'var(--ink)' }, svg);
+  }
+}
+
+/* ---------- half-life by technology ---------- */
+const VIO = 'var(--cmp-2)';
+/* [label, days, route, species, colour, detail, predicted, missing]  route: s = single lipidation, m = engineered molecule, d = depot / release-controlled */
+const HALF = [
+  ['Tirzepatide', 5, 's', 'human', C.cmp3, 'Human, about 5 days (US label). 57 h in monkey.'],
+  ['BGM0504', 5.6, 's', 'human', C.b, 'Human, 109–160 h after the 4th target dose (midpoint shown)'],
+  ['Semaglutide', 6.7, 's', 'human', C.cmp3, 'Human, about 160 h'],
+  ['Cagrilintide', 7.4, 's', 'human', C.cmp3, 'Human, 159–195 h'],
+  ['Petrelintide', 9.8, 's', 'human', C.cmp3, 'Human, 213–257 h'],
+  ['ABBV-295', 11.5, 's', 'human', C.cmp3, 'Human, 10.7–12.3 days'],
+  ['Eloralintide', 14.1, 's', 'human', C.cmp3, 'Human, 310–366 h'],
+  ['BGM1812', 0, 's', 'human', C.o, 'The company says only that it "supports weekly or every-two-week dosing". A BrightGene patent reports 274–363 h for an unnamed analogue.', 0, 1],
+  ['Zovaglutide (ZT002)', 11.1, 'm', 'human', C.cmp, 'Human, 260–273 h. Dual fatty-acid acylation.'],
+  ['MET-097i', 16, 'm', 'human', C.cmp, 'Human. Dual lipidation (HALO platform).'],
+  ['MET-233i (amylin)', 19, 'm', 'human', C.cmp, 'Human, "observed half-life". Dual lipidation.'],
+  ['ASC35 depot', 13.7, 'd', 'monkey', VIO, 'Monkey, 328 h. Self-assembling lipid depot of a GLP-1/GIP agonist.'],
+  ['MS~semaglutide', 26, 'd', 'mouse', VIO, 'Mouse. Cleavable linker on hydrogel microspheres (ProLynx); release rate set by linker chemistry.'],
+  ['ASC36i depot (amylin)', 32, 'd', 'monkey', VIO, 'Monkey, 768 h'],
+  ['ASC35, predicted human', 32, 'd', 'predicted', VIO, 'Company prediction, not measured', 1],
+  ['ASC30 SC depot', 60, 'd', 'human', VIO, 'Human, 46–75 days. Small-molecule GLP-1 agonist in a depot.'],
+  ['ASC36i, predicted human', 74, 'd', 'predicted', VIO, 'Company prediction, not measured', 1]
+];
+const halfState = { f: 'all' };
+function drawHalf() {
+  const f = halfState.f;
+  const rows = HALF.filter(r => f === 'all' || (f === 'human' ? r[3] === 'human' : r[2] === f));
+  hbarChart($('#half-chart'), {
+    aria: 'Terminal half-life by molecule and technology, in days',
+    legendItems: [{ name: 'BGM0504', color: C.b }, { name: 'BGM1812', color: C.o }, { name: 'Single lipidation', color: C.cmp3 }, { name: 'Engineered molecule', color: C.cmp }, { name: 'Depot or controlled release', color: VIO }],
+    rows: rows.map(r => ({ label: r[0], value: r[1], color: r[4], hatch: !!r[6], missing: !!r[7], tip: r[5],
+      valText: fmtNum(r[1]) + ' d · ' + r[3] })),
+    x: { max: 80, ticks: [0, 7, 14, 28, 56, 80], label: 'Terminal half-life (days)', fmt: v => fmtNum(v) + ' d' },
+    refLines: [{ x: 19, label: 'Albumin turnover, about 19 days', short: 'Albumin ≈19 d' }]
+  });
+}
+
+/* ---------- depot versus molecule: placebo-adjusted weight loss ---------- */
+function drawDepot() {
+  const d = [
+    ['ASC30 depot, week 12', 6.3, VIO, 'Three monthly 400 mg depot doses, no lead-in. Primary time point.'],
+    ['ASC30 depot, week 16', 7.5, VIO, 'Peak, two months after the last dose'],
+    ['ASC30 depot, week 24', 5.8, VIO, 'Four months after the last dose'],
+    ['PF-08653944 weekly, week 28', 11.3, C.cmp, 'MET-097i: 12 weekly doses'],
+    ['PF-08653944 monthly, week 28', 12.3, C.cmp, 'Weekly dosing, then switched to monthly'],
+    ['MariTide monthly, week 52', 13.7, C.cmp, 'Mid-range dose, treatment-policy estimand'],
+    ['Zovaglutide 160 mg Q4W, week 24', 13.8, C.cmp, 'Monthly by dual acylation']];
+  hbarChart($('#depot-chart'), { aria: 'Placebo-adjusted weight loss: depot versus monthly and weekly molecules',
+    legendItems: [{ name: 'Depot (ASC30)', color: VIO }, { name: 'Long-acting molecule', color: C.cmp }],
+    rows: d.map(r => ({ label: r[0], value: r[1], color: r[2], tip: r[3] })),
+    x: { max: 16, ticks: [0, 4, 8, 12, 16], label: 'Placebo-adjusted weight loss (%)', fmt: v => fmtNum(v) + '%' } });
+}
+
+/* ---------- dose-fit calculator ---------- */
+const fitState = { dose: 15, weeks: 4, load: 20, conc: 20, name: 'BGM0504 15 mg' };
+const FITREF = [['BGM0504 15 mg weekly', 15, C.bHi], ['BGM0504 10 mg weekly', 10, C.b], ['BGM0504 5 mg weekly', 5, C.bLo], ['BGM1812 7.2 mg weekly', 7.2, C.oHi], ['BGM1812 2.4 mg weekly', 2.4, C.o],
+  ['Semaglutide 2.4 mg weekly', 2.4, C.cmp3]];
+function drawFit() {
+  const s = fitState, mass = s.dose * s.weeks, vol = mass / s.conc, ms = mass / (s.load / 100);
+  $('#fit-dose-o').textContent = s.dose.toFixed(1) + ' mg'; $('#fit-load-o').textContent = s.load + '%'; $('#fit-conc-o').textContent = s.conc + ' mg/mL';
+  $('#fit-stats').innerHTML = [
+    [fmtNum(mass) + ' mg', `Peptide per injection (${s.weeks} × weekly dose)`],
+    [fmtNum(vol) + ' mL', `Injection volume as a ${s.conc} mg/mL solution or suspension`],
+    [fmtNum(mass) + ' mg/mL', 'Concentration needed for a 1 mL injection'],
+    [fmtNum(ms) + ' mg', `Microsphere mass at ${s.load}% drug loading`]
+  ].map(x => `<div class="stat"><b>${x[0]}</b><span>${x[1]}</span></div>`).join('');
+  const v = mass <= 30 && vol <= 2 ? ['good', 'Within the range approved peptide depots deliver (2–30 mg)'] : mass <= 40 && vol <= 2 ? ['warn', 'Marginal: above any approved peptide depot, at the 2 mL practical limit'] : ['bad', vol > 2 && mass <= 30 ? 'Peptide mass fits, but the volume exceeds 2 mL at this concentration' : 'Does not fit: beyond any approved peptide depot'];
+  $('#fit-verdict').className = 'pill ' + v[0]; $('#fit-verdict').textContent = v[1];
+  hbarChart($('#fit-chart'), { aria: 'Peptide mass per injection against what approved depots deliver',
+    rows: FITREF.map(r => ({ label: r[0], value: r[1] * s.weeks, color: r[2], tip: `${r[1]} mg weekly × ${s.weeks} weeks` }))
+      .concat([{ label: 'Exenatide ER (marketed)', value: 2, color: C.cmp3, tip: 'Bydureon: 2 mg weekly in PLGA microspheres at about 5% loading' }, { label: 'Octreotide LAR (marketed)', value: 30, color: C.cmp3, tip: 'Sandostatin LAR: up to 30 mg monthly in 2 mL' }]),
+    x: { max: Math.max(70, Math.ceil(15 * s.weeks / 10) * 10), ticks: niceTicks(0, Math.max(70, Math.ceil(15 * s.weeks / 10) * 10), 7), label: 'Peptide per injection (mg)', fmt: v2 => fmtNum(v2) + ' mg' },
+    bands: [{ x0: 0, x1: 30, label: 'Delivered by approved depots (2–30 mg)', short: 'Approved range' }], marker: { x: mass } });
+}
+function initLA() {
+  bindSeg($('#half-seg').parentElement, halfState, drawHalf);
+  const wk = { weeks: '4' };
+  bindSeg($('#fit-weeks').parentElement, wk, () => { fitState.weeks = +wk.weeks; drawFit(); });
+  [['dose', '#fit-dose'], ['load', '#fit-load'], ['conc', '#fit-conc']].forEach(([k, id]) => $(id).addEventListener('input', e => { fitState[k] = +e.target.value; drawFit(); }));
+  $$('#fit-presets button').forEach(b => b.addEventListener('click', () => { fitState.dose = +b.dataset.d; $('#fit-dose').value = fitState.dose; drawFit(); }));
+  [drawHalf, drawDepot, drawFit].forEach(onResize);
+}
+
 /* ---------- half-life of amylin agonists ---------- */
 function drawHL() {
   const d = [['Cagrilintide', 7.4, C.cmp, '159–195 h', 0], ['Petrelintide', 9.8, C.cmp, '213–257 h', 0], ['ABBV-295', 11.5, C.cmp, '10.7–12.3 days', 0],
@@ -1463,6 +1815,7 @@ simState.th = 5.6; simState.ta = 0.2;
 const landState = { f: 'all' };
 bindSeg($('#land-seg').parentElement, landState, () => $$('#land-table tbody tr').forEach(tr => { tr.hidden = landState.f !== 'all' && !tr.dataset.c.split(' ').includes(landState.f); }));
 [drawPot, drawSpecies, drawPK, drawEff, drawTime, drawResp, drawBench, drawGI, drawOpt, draw1812, drawDIO, drawHL, drawCombo, drawSim].forEach(onResize);
+initLA();
 /* scroll spy */
 const links = $$('.rail a'), secs = links.map(a => $(a.getAttribute('href')));
 const spy = () => {
