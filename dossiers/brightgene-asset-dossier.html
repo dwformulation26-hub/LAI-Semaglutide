@@ -1,0 +1,1476 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BrightGene Asset Dossier</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+Condensed:wght@600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a lab-report page. Sticky section rail on the left (wide screens), one reading column on the right;
+   each asset keeps one colour everywhere (0504 blue, 1812 orange, 2102 aqua); comparators are grey. */
+:root {
+  --bg: #f4f6f8; --surface: #ffffff; --surface-2: #eef1f5; --ink: #111a26; --ink-2: #47525f; --ink-3: #7b8591;
+  --line: #dde2e8; --line-2: #c3cad3; --accent: #0f4c81;
+  --c0504: #2a78d6; --c0504-lo: #86b6ef; --c0504-hi: #104281;
+  --c1812: #eb6834; --c1812-lo: #f4ad8c; --c1812-hi: #9c3d14;
+  --c2102: #1baf7a; --cmp: #7b8591; --cmp-2: #6250d6; --cmp-3: #a9b1bb;
+  --good: #0b7a3b; --warn: #a15c00; --bad: #b3261e;
+  --good-bg: #e3f4ea; --warn-bg: #fdf0d9; --bad-bg: #fbe6e4; --info-bg: #e6eff9;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --display: "IBM Plex Sans Condensed", "IBM Plex Sans", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --shadow: 0 1px 2px rgba(17, 26, 38, .06);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1319; --surface: #161c24; --surface-2: #1e2630; --ink: #e8edf2; --ink-2: #b4bdc8; --ink-3: #808b98;
+    --line: #2a333e; --line-2: #3a4553; --accent: #8fc1f2;
+    --c0504: #3987e5; --c0504-lo: #1c5cab; --c0504-hi: #9ec5f4;
+    --c1812: #d95926; --c1812-lo: #8f3a17; --c1812-hi: #f5b08e;
+    --c2102: #199e70; --cmp: #8b95a1; --cmp-2: #9085e9; --cmp-3: #56616e;
+    --good: #5fd08c; --warn: #f0b24a; --bad: #f08b84;
+    --good-bg: #12301f; --warn-bg: #3a2a0c; --bad-bg: #3b1917; --info-bg: #14283f;
+    --shadow: none; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1319; --surface: #161c24; --surface-2: #1e2630; --ink: #e8edf2; --ink-2: #b4bdc8; --ink-3: #808b98;
+  --line: #2a333e; --line-2: #3a4553; --accent: #8fc1f2;
+  --c0504: #3987e5; --c0504-lo: #1c5cab; --c0504-hi: #9ec5f4;
+  --c1812: #d95926; --c1812-lo: #8f3a17; --c1812-hi: #f5b08e;
+  --c2102: #199e70; --cmp: #8b95a1; --cmp-2: #9085e9; --cmp-3: #56616e;
+  --good: #5fd08c; --warn: #f0b24a; --bad: #f08b84;
+  --good-bg: #12301f; --warn-bg: #3a2a0c; --bad-bg: #3b1917; --info-bg: #14283f;
+  --shadow: none; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { background: var(--bg); color: var(--ink); font: 15px/1.55 var(--sans); margin: 0; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-underline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+.wrap { max-width: 1280px; margin: 0 auto; padding-block: 0 72px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; grid-template-columns: 208px minmax(0, 1fr); gap: 0 40px; }
+/* masthead */
+.mast { grid-column: 1 / -1; padding-block: 36px 28px; border-bottom: 1px solid var(--line); margin-bottom: 28px; }
+.eyebrow { font: 600 11.5px/1 var(--mono); letter-spacing: .09em; text-transform: uppercase; color: var(--ink-3); }
+.mast h1 { font: 600 clamp(28px, 4.4vw, 44px)/1.08 var(--display); letter-spacing: -.01em; margin: 12px 0 10px; text-wrap: balance; }
+.mast p.lede { max-width: 68ch; color: var(--ink-2); font-size: 16px; margin: 0; }
+.mast-meta { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 18px; font-size: 13px; color: var(--ink-3); }
+.mast-meta b { color: var(--ink-2); font-weight: 500; }
+/* rail */
+.rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 20px); align-self: start; font-size: 13.5px; }
+.rail a { display: flex; gap: 8px; align-items: center; padding: 6px 10px; border-radius: 6px; color: var(--ink-2); text-decoration: none; border-left: 2px solid transparent; }
+.rail a:hover { background: var(--surface-2); color: var(--ink); }
+.rail a.on { color: var(--ink); font-weight: 600; background: var(--surface); border-left-color: var(--accent); }
+.rail .k { width: 8px; height: 8px; border-radius: 2px; flex: none; background: var(--line-2); }
+.rail .rail-h { font: 600 11px/1 var(--mono); letter-spacing: .09em; text-transform: uppercase; color: var(--ink-3); padding: 14px 10px 6px; }
+main { min-width: 0; display: flex; flex-direction: column; gap: 56px; }
+@media (max-width: 900px) {
+  .wrap { grid-template-columns: minmax(0, 1fr); }
+  .rail { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); display: flex; gap: 4px; overflow-x: auto;
+    margin: 0 -16px 20px; padding: 8px 16px; border-bottom: 1px solid var(--line); scrollbar-width: none; }
+  .rail .rail-h { display: none; }
+  .rail a { white-space: nowrap; border-left: 0; border-bottom: 2px solid transparent; border-radius: 6px 6px 0 0; }
+  .rail a.on { border-bottom-color: var(--accent); }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+}
+/* sections */
+section > header { margin-bottom: 20px; }
+.tag { display: inline-flex; align-items: center; gap: 7px; font: 600 11.5px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.tag i { width: 9px; height: 9px; border-radius: 2px; background: var(--k, var(--line-2)); }
+h2 { font: 600 clamp(22px, 3vw, 30px)/1.15 var(--display); margin: 8px 0 8px; text-wrap: balance; }
+h3 { font: 600 17px/1.3 var(--sans); margin: 0 0 4px; text-wrap: balance; }
+h4 { font: 600 12px/1.2 var(--mono); letter-spacing: .07em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 8px; }
+p { margin: 0 0 10px; } p:last-child { margin-bottom: 0; }
+.sub { color: var(--ink-2); max-width: 72ch; }
+.note { font-size: 12.5px; color: var(--ink-3); max-width: 86ch; }
+.stack { display: flex; flex-direction: column; gap: 20px; }
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.split { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+.split-pk { grid-template-columns: minmax(0, 2.6fr) minmax(0, 1fr); } .split-pk .stats { grid-template-columns: minmax(0, 1fr); }
+.ctl { display: inline-flex; align-items: center; gap: 8px; }
+table.t { min-width: 520px; } .tip table { min-width: 0; }
+@media (max-width: 1020px) { .split-pk { grid-template-columns: minmax(0, 1fr); } .split-pk .stats { grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); } .grid3 { grid-template-columns: minmax(0, 1fr); } .split { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 720px) { .grid2 { grid-template-columns: minmax(0, 1fr); } }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; box-shadow: var(--shadow); min-width: 0; }
+.panel > .panel-h { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
+.panel-h .cap { color: var(--ink-2); font-size: 13.5px; margin: 0; max-width: 70ch; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin-bottom: 10px; }
+.controls label, .ctl-l { font-size: 12px; color: var(--ink-3); font-family: var(--mono); letter-spacing: .04em; text-transform: uppercase; }
+.seg { display: inline-flex; background: var(--surface-2); border-radius: 7px; padding: 2px; gap: 2px; flex-wrap: wrap; }
+.seg button { font: 500 13px/1 var(--sans); color: var(--ink-2); background: transparent; border: 0; padding: 7px 11px; border-radius: 5px; cursor: pointer; }
+.seg button:hover { color: var(--ink); }
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 0 0 1px var(--line-2); font-weight: 600; }
+/* asset cards */
+.asset { border-top: 3px solid var(--k); display: flex; flex-direction: column; gap: 12px; }
+.asset .name { font: 600 22px/1.1 var(--display); }
+.asset .mech { color: var(--ink-2); font-size: 13.5px; }
+.asset .big { font: 600 34px/1 var(--display); letter-spacing: -.01em; }
+.asset .big small { display: block; font: 400 12.5px/1.35 var(--sans); color: var(--ink-2); letter-spacing: 0; margin-top: 6px; }
+.asset ul { margin: 0; padding-left: 18px; font-size: 13.5px; color: var(--ink-2); }
+.asset li { margin-bottom: 4px; }
+.pill { display: inline-flex; align-items: center; gap: 6px; font: 600 11.5px/1 var(--sans); padding: 5px 9px; border-radius: 99px; background: var(--surface-2); color: var(--ink-2); white-space: nowrap; }
+.pill.good { background: var(--good-bg); color: var(--good); } .pill.warn { background: var(--warn-bg); color: var(--warn); }
+.pill.bad { background: var(--bad-bg); color: var(--bad); } .pill.info { background: var(--info-bg); color: var(--accent); }
+.kv { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 14px; font-size: 13.5px; margin: 0; }
+.kv dt { color: var(--ink-3); } .kv dd { margin: 0; font-variant-numeric: tabular-nums; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 10px; }
+.stat { background: var(--surface-2); border-radius: 8px; padding: 10px 12px; }
+.stat b { display: block; font: 600 20px/1.15 var(--display); font-variant-numeric: tabular-nums; }
+.stat span { font-size: 12px; color: var(--ink-2); line-height: 1.3; display: block; margin-top: 3px; }
+.callout { border-left: 3px solid var(--accent); background: var(--info-bg); padding: 12px 16px; border-radius: 0 8px 8px 0; font-size: 14px; }
+.callout.warn { border-color: var(--warn); background: var(--warn-bg); }
+.callout b { font-weight: 600; }
+ul.tight { margin: 0; padding-left: 18px; } ul.tight li { margin-bottom: 6px; }
+/* tables */
+.tw { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+table.t { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+table.t th { text-align: left; font: 600 11px/1.25 var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--ink-3); background: var(--surface-2); padding: 9px 10px; white-space: nowrap; position: sticky; top: 0; }
+table.t td { padding: 8px 10px; border-top: 1px solid var(--line); vertical-align: top; }
+table.t td.n, table.t th.n { text-align: right; white-space: nowrap; }
+table.t tr.hl td { background: var(--info-bg); }
+table.t td b { font-weight: 600; }
+table.t .muted, .muted { color: var(--ink-3); }
+.src { font: 500 11px/1 var(--mono); color: var(--ink-3); vertical-align: super; text-decoration: none; margin-left: 2px; }
+a.src:hover { color: var(--accent); }
+.ev { font: 600 10.5px/1 var(--mono); letter-spacing: .05em; text-transform: uppercase; padding: 3px 6px; border-radius: 4px; border: 1px solid var(--line-2); color: var(--ink-2); white-space: nowrap; }
+.ev.pub { border-color: var(--good); color: var(--good); } .ev.co { border-color: var(--warn); color: var(--warn); }
+.ev.dig { border-style: dashed; } .ev.mod { border-style: dotted; border-color: var(--cmp-2); color: var(--cmp-2); }
+/* timeline */
+.tl { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 0 16px; font-size: 13.5px; }
+.tl .d { font: 500 12px/1.6 var(--mono); color: var(--ink-3); text-align: right; padding: 7px 0; }
+.tl .e { border-left: 2px solid var(--line-2); padding: 6px 0 6px 16px; position: relative; }
+.tl .e::before { content: ""; position: absolute; left: -6px; top: 13px; width: 10px; height: 10px; border-radius: 50%; background: var(--k, var(--line-2)); border: 2px solid var(--surface); }
+.tl .e.future::before { background: var(--surface); border-color: var(--k, var(--line-2)); }
+/* charts */
+.chart { position: relative; min-width: 0; }
+.chart svg { display: block; overflow: visible; touch-action: pan-y; }
+.chart .grid { stroke: var(--line); stroke-width: 1; } .chart .grid.minor { stroke-dasharray: 2 4; opacity: .7; }
+.chart .base { stroke: var(--line-2); stroke-width: 1; }
+.chart .ref { stroke: var(--ink-3); stroke-width: 1; stroke-dasharray: 5 4; }
+.chart .band { fill: var(--surface-2); }
+.chart .cross { stroke: var(--ink-3); stroke-width: 1; }
+.chart .err { stroke: var(--ink-2); stroke-width: 1.25; }
+.chart text { font-family: var(--sans); fill: var(--ink-3); font-size: 11.5px; font-variant-numeric: tabular-nums; }
+.chart text.axis-l { fill: var(--ink-2); font-size: 12px; } .chart text.cat { fill: var(--ink-2); }
+.chart text.val { fill: var(--ink); font-size: 11.5px; font-weight: 600; }
+.chart text.dlabel { fill: var(--ink-2); font-size: 11.5px; font-weight: 500; }
+.chart .bar { cursor: default; } .chart .bar:hover, .chart .bar:focus { filter: brightness(1.12); outline: none; }
+.chart .hit { cursor: crosshair; } .chart .hit:focus { outline: none; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-bottom: 6px; font-size: 12.5px; color: var(--ink-2); }
+.legend-item { display: inline-flex; align-items: center; gap: 6px; }
+.sw-bar { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.tip { position: fixed; z-index: 50; pointer-events: none; background: var(--ink); color: var(--bg); border-radius: 8px; padding: 9px 11px; font-size: 12.5px; line-height: 1.4; max-width: 300px; box-shadow: 0 6px 20px rgba(0, 0, 0, .22); }
+.tip .tip-h { font-weight: 600; margin-bottom: 4px; }
+.tip table { border-collapse: collapse; } .tip td { padding: 1px 0; } .tip td + td { text-align: right; padding-left: 14px; font-variant-numeric: tabular-nums; font-weight: 600; }
+.tip .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; border: 1px solid var(--bg); }
+.tip .tip-u { opacity: .72; font-size: 11.5px; margin-top: 4px; }
+/* sim */
+.sim-grid { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 20px; }
+@media (max-width: 820px) { .sim-grid { grid-template-columns: minmax(0, 1fr); } }
+.field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 14px; }
+.field output { font: 600 14px/1 var(--mono); color: var(--ink); }
+.field .row { display: flex; justify-content: space-between; align-items: baseline; }
+input[type=range] { width: 100%; accent-color: var(--accent); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips button { font: 500 12.5px/1 var(--sans); padding: 6px 10px; border-radius: 99px; border: 1px solid var(--line-2); background: var(--surface); color: var(--ink-2); cursor: pointer; }
+.chips button:hover { border-color: var(--accent); color: var(--ink); }
+details.more { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 4px; }
+details.more summary { cursor: pointer; font-weight: 600; font-size: 13.5px; color: var(--ink-2); }
+details.more[open] summary { margin-bottom: 10px; }
+ol.refs { padding-left: 26px; font-size: 13px; color: var(--ink-2); columns: 2; column-gap: 36px; margin: 0; }
+ol.refs li { margin-bottom: 7px; break-inside: avoid; overflow-wrap: anywhere; }
+@media (max-width: 820px) { ol.refs { columns: 1; } }
+.gap-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+.gap { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; font-size: 13.5px; }
+.gap b { display: block; margin-bottom: 3px; }
+.gap .who { font: 500 11px/1 var(--mono); color: var(--ink-3); text-transform: uppercase; letter-spacing: .05em; display: block; margin-bottom: 6px; }
+@media print { .rail { display: none; } .wrap { display: block; } .panel { break-inside: avoid; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="mast">
+  <div class="eyebrow">Asset research dossier · public-source review</div>
+  <h1>BrightGene incretin and amylin assets: BGM0504, BGM1812, BGM2102</h1>
+  <p class="lede">A weekly GLP-1/GIP agonist under NDA review in China, a weekly amylin agonist entering Phase 2, and the fixed-dose combination of the two. This page collects what is published, what the company has only stated, and what is still missing.</p>
+  <div class="mast-meta">
+    <span><b>Data cut-off</b> 11 Nov 2026</span>
+    <span><b>Sponsor</b> BrightGene Bio-Medical Technology (博瑞医药, 688166.SH), Suzhou</span>
+    <span><b>Evidence tags</b> <span class="ev pub">Published</span> <span class="ev co">Company</span> <span class="ev dig">Digitised</span> <span class="ev mod">Model</span></span>
+  </div>
+</header>
+
+<nav class="rail" aria-label="Sections">
+  <div class="rail-h">Overview</div>
+  <a href="#summary"><span class="k"></span>Summary</a>
+  <div class="rail-h">Assets</div>
+  <a href="#bgm0504"><span class="k" style="background:var(--c0504)"></span>BGM0504</a>
+  <a href="#pk"><span class="k" style="background:var(--c0504)"></span>PK explorer</a>
+  <a href="#clinical"><span class="k" style="background:var(--c0504)"></span>Clinical</a>
+  <a href="#bgm1812"><span class="k" style="background:var(--c1812)"></span>BGM1812</a>
+  <a href="#bgm2102"><span class="k" style="background:var(--c2102)"></span>BGM2102</a>
+  <div class="rail-h">Context</div>
+  <a href="#formulation"><span class="k"></span>Formulation</a>
+  <a href="#interval"><span class="k"></span>Dosing interval</a>
+  <a href="#landscape"><span class="k"></span>Landscape</a>
+  <a href="#company"><span class="k"></span>Company and IP</a>
+  <a href="#gaps"><span class="k"></span>Gaps</a>
+  <a href="#sources"><span class="k"></span>Sources</a>
+</nav>
+
+<main>
+<!-- ================= SUMMARY ================= -->
+<section id="summary">
+  <header>
+    <span class="tag"><i></i>Summary</span>
+    <h2>One late-stage asset carries the story; the amylin half is early and thinly disclosed</h2>
+  </header>
+  <div class="stack">
+    <div class="grid3">
+      <article class="panel asset" style="--k:var(--c0504)">
+        <div><div class="name">BGM0504</div><div class="mech">GLP-1R / GIPR dual agonist · weekly SC · oral tablet in Phase 2</div></div>
+        <span class="pill good">NDA under review in China (accepted 12 Jun 2026)</span>
+        <div class="big">−19.2%<small>body weight at 52 weeks on 15 mg versus −3.1% on placebo (Phase 3, N = 652)</small></div>
+        <ul>
+          <li>Tirzepatide-like PK in humans: t½ 109–160 h, Tmax about 24 h.</li>
+          <li>Cross-trial, weight loss is level with or ahead of tirzepatide in Chinese patients; no head-to-head result is public.</li>
+          <li>GI event rates for Phase 3 are not disclosed. Diarrhoea reached 75% at 15 mg in the T2D Phase 2a.</li>
+        </ul>
+      </article>
+      <article class="panel asset" style="--k:var(--c1812)">
+        <div><div class="name">BGM1812</div><div class="mech">Amylin / calcitonin receptor agonist · weekly SC, possibly every two weeks</div></div>
+        <span class="pill info">Phase 1 complete (CN, US) · Phase 2 ongoing</span>
+        <div class="big">−8.4% to −9.2%<small>best placebo-adjusted weight loss after 1–4 weekly doses, no titration (Phase 1, 60 subjects per country)</small></div>
+        <ul>
+          <li>About 2× petrelintide potency in vitro, soluble above 66 mg/mL at pH 7.4, no fibrils at pH 6.5–7.5.</li>
+          <li>Rat PK matches petrelintide; human half-life is not published by the company.</li>
+          <li>No per-dose human data, no adverse-event rates, no toxicology.</li>
+        </ul>
+      </article>
+      <article class="panel asset" style="--k:var(--c2102)">
+        <div><div class="name">BGM2102</div><div class="mech">Fixed-dose combination of BGM0504 + BGM1812 · SC</div></div>
+        <span class="pill warn">Preclinical · IND being prepared (CN, US)</span>
+        <div class="big">−28%<small>body weight in DIO rats versus −15% and −13% for the single agents (one conference abstract)</small></div>
+        <ul>
+          <li>Both peptides are soluble at neutral pH, so a single-chamber product is plausible. No co-formulation data are public.</li>
+          <li>Component half-lives differ (rat 14 h vs 21 h); dose ratio, PK interaction and toxicology are undisclosed.</li>
+          <li>Outside the China Resources Sanjiu licence, so rights are unencumbered.</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="split">
+      <div class="panel">
+        <h3>What a reviewer should take away</h3>
+        <ul class="tight" style="margin-top:10px">
+          <li><b>BGM0504 is a credible tirzepatide follower.</b> Potency, protein binding, animal PK and human PK all sit close to tirzepatide. The 52-week result (−19.2%) is the strongest disclosed for a GLP-1/GIP agonist in a Chinese population, with the caveat that the estimand is undisclosed.</li>
+          <li><b>Tolerability is the open question.</b> Phase 2 vomiting at 15 mg (31%) is above tirzepatide's in SURMOUNT-CN (20%), and titration steps were two weeks rather than four. Phase 3 discontinuation for adverse events was low (0.7–1.7%), which argues against a serious problem.</li>
+          <li><b>The amylin programme rests on one paper and two company notices.</b> BGM1812's preclinical package is sound but small (n = 3 rat PK, one DIO study). The Phase 1 notice gives ranges only.</li>
+          <li><b>BGM2102 is a concept with one data point.</b> The −28% figure comes from an abstract without N, duration or statistics, and its BGM1812 dose (0.4 mg/kg) is inconsistent with the same abstract's dose range.</li>
+          <li><b>Formulation is where the assets are most distinctive for us.</b> BGM0504 is formulated at pH 7.2–7.6 in propylene glycol without NaCl; BGM1812 is stable at neutral pH. That avoids the pH mismatch that forces CagriSema into a dual-chamber pen.</li>
+          <li><b>Corporate risk is real.</b> The Hong Kong listing was terminated on 30 Sep 2026, the controlling shareholder has been on bail since June 2026, and the US Phase 3 (estimated RMB 2.1bn) is unfunded. Ex-China rights appear to be available.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Programme timeline</h3>
+        <div class="tl" style="margin-top:12px">
+          <div class="d">Jul 2024</div><div class="e" style="--k:var(--c0504)">BGM0504 preclinical package published (Sci Rep)</div>
+          <div class="d">Oct 2024</div><div class="e" style="--k:var(--c0504)">Phase 2 obesity topline: −18.5% vs placebo at 24 weeks</div>
+          <div class="d">Jun 2025</div><div class="e" style="--k:var(--c2102)">ADA: BGM1812 and combination DIO-rat data</div>
+          <div class="d">Aug 2025</div><div class="e" style="--k:var(--c0504)">China licence to China Resources Sanjiu (injection only)</div>
+          <div class="d">Mar 2026</div><div class="e" style="--k:var(--c0504)">Oral tablet Phase 1 topline (CN, US)</div>
+          <div class="d">May 2026</div><div class="e" style="--k:var(--c0504)">Phase 3 obesity topline: −19.2% at 52 weeks</div>
+          <div class="d">Jun 2026</div><div class="e" style="--k:var(--c0504)">Obesity NDA accepted by NMPA (2.5 / 5 / 10 / 15 mg)</div>
+          <div class="d">Aug 2026</div><div class="e" style="--k:var(--c1812)">BGM1812 Phase 1 results (CN, US)</div>
+          <div class="d">Sep 2026</div><div class="e">Hong Kong listing terminated</div>
+          <div class="d">Q4 2026</div><div class="e future" style="--k:var(--c0504)">T2D Phase 3 primary completion; T2D NDA guided</div>
+          <div class="d">2027</div><div class="e future" style="--k:var(--c0504)">Obesity approval and launch (broker expectation, not company guidance)</div>
+          <div class="d">Open</div><div class="e future" style="--k:var(--c2102)">BGM2102 first-in-human: IND in preparation, no date confirmed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BGM0504 ================= -->
+<section id="bgm0504">
+  <header>
+    <span class="tag" style="--k:var(--c0504)"><i></i>BGM0504 · molecule and preclinical</span>
+    <h2>A tirzepatide-derived peptide with the lipid moved to a new C-terminal lysine</h2>
+    <p class="sub">BGM0504 keeps tirzepatide's 39-residue backbone, adds a lysine at position 40 and moves the fatty-diacid side chain from Lys20 to Lys40. The compound patent family (WO2022199629, priority March 2021) covers it; the US patent was granted in February 2025 and should run to March 2042.<a class="src" href="#r12">12</a></p>
+  </header>
+  <div class="stack">
+    <div class="grid2">
+      <div class="panel">
+        <div class="panel-h"><div><h3>In vitro: two to three times tirzepatide at both receptors</h3><p class="cap">cAMP assay, n = 3. Albumin affinity is essentially the same, which is the basis for a similar half-life. <span class="ev pub">Published</span><a class="src" href="#r1">1</a></p></div></div>
+        <div id="pot-chart"></div>
+        <p class="note">Plasma protein binding above 99.4%. HSA KD is plotted ÷100 so the three comparisons share one axis; hover for actual values.</p>
+      </div>
+      <div class="panel">
+        <div class="panel-h"><div><h3>Half-life scales across species as expected for an albumin binder</h3><p class="cap">Terminal t½ after SC dosing. Clearance falls from 0.068 mL/min/kg in rat to 0.021 in monkey. <span class="ev pub">Published</span><a class="src" href="#r1">1</a><a class="src" href="#r3">3</a></p></div></div>
+        <div id="species-chart"></div>
+        <p class="note">Human bar is the midpoint of the reported 109–160 h range. Tirzepatide's label half-life is about 5 days (120 h).<a class="src" href="#r22">22</a></p>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Pharmacology studies in animals</h3>
+      <div class="tw" style="margin-top:10px"><table class="t">
+        <thead><tr><th>Study</th><th>Model</th><th>Dosing</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td>Glucose lowering</td><td>db/db mice, n = 11 per group</td><td>0.05 / 0.15 / 0.5 mg/kg SC every 3 days for 31 days; tirzepatide 0.15 mg/kg</td><td>Dose-dependent glucose fall within 24 h (about −62 / −69 / −75% vs vehicle, read from graph; tirzepatide about −43%). Effect at 0.5 mg/kg lasted 48 h. Insulin lower (p ≤ 0.05).</td></tr>
+          <tr><td>Body weight, food intake</td><td>db/db mice</td><td>Same</td><td>Early dose-dependent drop, stable after day 3–4. Percentages not reported.</td></tr>
+          <tr><td>NASH</td><td>STZ + high-fat-diet mice</td><td>Several doses; tirzepatide 0.15 mg/kg</td><td>ALT lower than with tirzepatide; liver cholesterol and triglycerides near normal; fibrosis area about 55% of model at 0.15 mg/kg.</td></tr>
+          <tr><td>Toxicology</td><td colspan="2" class="muted">Not published</td><td class="muted">NOAEL, GLP toxicology and safety pharmacology are not in the public domain.</td></tr>
+        </tbody></table></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PK EXPLORER ================= -->
+<section id="pk">
+  <header>
+    <span class="tag" style="--k:var(--c0504)"><i></i>BGM0504 · pharmacokinetics</span>
+    <h2>PK explorer: rat, monkey and human concentration–time profiles</h2>
+    <p class="sub">Switch species, change the axis, or divide by dose. If the dose-normalised curves sit on top of each other, exposure is dose-proportional. Hover or use the arrow keys to read values.</p>
+  </header>
+  <div class="panel">
+    <div class="controls">
+      <span class="ctl"><span class="ctl-l">Species</span>
+      <div class="seg" data-key="species"><button data-v="rat" aria-pressed="false">Rat</button><button data-v="monkey" aria-pressed="true">Monkey</button><button data-v="human" aria-pressed="false">Human</button></div></span>
+      <span class="ctl"><span class="ctl-l">Y axis</span>
+      <div class="seg" data-key="scale"><button data-v="log" aria-pressed="true">Log</button><button data-v="linear" aria-pressed="false">Linear</button></div></span>
+      <span class="ctl"><span class="ctl-l">Values</span>
+      <div class="seg" data-key="norm"><button data-v="raw" aria-pressed="true">Measured</button><button data-v="norm" aria-pressed="false">÷ dose</button></div></span>
+      <div class="seg" data-key="visit" id="pk-visit" hidden><button data-v="first" aria-pressed="true">1st target dose</button><button data-v="fourth" aria-pressed="false">4th target dose</button></div>
+    </div>
+    <div class="split split-pk">
+      <div>
+        <div class="panel-h" style="margin-bottom:6px"><div><h3 id="pk-title"></h3><p class="cap"><span id="pk-n"></span> · <span class="ev dig">Digitised</span></p></div></div>
+        <div id="pk-chart"></div>
+        <p class="note" id="pk-src" style="margin-top:8px"></p>
+      </div>
+      <div class="stats" id="pk-stats"></div>
+    </div>
+    <div class="tw" style="margin-top:16px"><table class="t" id="pk-table"></table></div>
+    <p class="note" id="pk-table-note" style="margin-top:8px"></p>
+  </div>
+  <div class="callout" style="margin-top:16px"><b>Reading across species.</b> Rat and monkey show linear, sex-independent PK with a Tmax near 24 h. In patients the weekly peak-to-trough swing is about 2.1–2.4×, and steady state is reached by the fourth dose. Nothing here separates BGM0504 from tirzepatide; the animal studies used a 20 mM citrate pH 7.0 vehicle, not the commercial formulation.</div>
+</section>
+
+<!-- ================= CLINICAL ================= -->
+<section id="clinical">
+  <header>
+    <span class="tag" style="--k:var(--c0504)"><i></i>BGM0504 · clinical</span>
+    <h2>Clear dose response from Phase 1 to Phase 3, with tolerability data still partial</h2>
+  </header>
+  <div class="stack">
+    <div class="grid2">
+      <div class="panel">
+        <div class="panel-h"><div><h3>Efficacy by dose</h3></div>
+          <div class="seg" data-key="trial" id="eff-seg"><button data-v="ph3" aria-pressed="true">Phase 3</button><button data-v="ph2" aria-pressed="false">Phase 2</button><button data-v="t2d" aria-pressed="false">T2D Ph2a</button><button data-v="ph1" aria-pressed="false">Phase 1</button></div></div>
+        <div id="eff-chart"></div>
+        <p class="note" id="eff-cap"></p>
+      </div>
+      <div class="panel">
+        <div class="panel-h"><div><h3>Phase 2: weight loss had not plateaued at 24 weeks</h3><p class="cap">Placebo-subtracted change by weeks at target dose. <span class="ev co">Company</span><a class="src" href="#r5">5</a></p></div></div>
+        <div id="time-chart"></div>
+        <p class="note">Only three time points are disclosed. The paper reports −10.68 / −16.07 / −18.33% "from baseline" with placebo +0.13%, almost identical to these placebo-subtracted figures, so one of the two labels is probably loose.<a class="src" href="#r4">4</a></p>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="panel">
+        <div class="panel-h"><div><h3>Phase 2 responders at week 24</h3><p class="cap">Share of participants reaching each weight-loss threshold. <span class="ev co">Company</span><a class="src" href="#r5">5</a></p></div></div>
+        <div id="resp-chart"></div>
+        <p class="note">Phase 3 at 52 weeks, 15 mg: 94.6% lost ≥5%, 67.3% lost ≥15% and 48.9% lost ≥20%. Other Phase 3 thresholds and the placebo rates are not disclosed.<a class="src" href="#r6">6</a></p>
+      </div>
+      <div class="panel">
+        <h3>Phase 3 cardiometabolic changes, week 52</h3>
+        <p class="cap" style="color:var(--ink-2);font-size:13.5px">Pooled across 5, 10 and 15 mg. <span class="ev co">Company</span><a class="src" href="#r6">6</a></p>
+        <div class="stats" style="margin-top:12px">
+          <div class="stat"><b>−12.8 / −6.8</b><span>Systolic / diastolic BP, mmHg</span></div>
+          <div class="stat"><b>−33.6%</b><span>Triglycerides</span></div>
+          <div class="stat"><b>−12.7%</b><span>LDL cholesterol</span></div>
+          <div class="stat"><b>+7.3%</b><span>HDL cholesterol</span></div>
+          <div class="stat"><b>−70.7</b><span>Uric acid, µmol/L</span></div>
+          <div class="stat"><b>−16.5 cm</b><span>Waist at 15 mg (placebo −3.3)</span></div>
+          <div class="stat"><b>+0.3 to +3.9%</b><span>Bone mineral density (whole body to hip)</span></div>
+          <div class="stat"><b>0.7–1.7%</b><span>Stopped for adverse events</span></div>
+        </div>
+        <p class="note" style="margin-top:10px">In participants with uncontrolled hypertension at baseline, BP fell 22.9 / 12.9 mmHg by week 36 and 92.9% reached target. No hypoglycaemia was reported.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-h"><div><h3>Cross-trial benchmark in Chinese and East Asian populations</h3><p class="cap">Top-line weight change in registration-style trials. Not head-to-head: durations, baselines and statistical estimands differ. Hover a bar for trial details. <span class="ev pub">Published</span> <span class="ev co">Company</span><a class="src" href="#r6">6</a><a class="src" href="#r18">18</a><a class="src" href="#r19">19</a><a class="src" href="#r20">20</a><a class="src" href="#r21">21</a></p></div>
+        <div class="seg" data-key="mode" id="bench-seg"><button data-v="abs" aria-pressed="true">From baseline</button><button data-v="adj" aria-pressed="false">Minus placebo</button></div></div>
+      <div id="bench-chart"></div>
+      <p class="note">BGM0504's Phase 3 was registered with week 36 as the primary time point, while the topline reports week 52 as primary. The only direct comparison with tirzepatide (NCT06911203: BGM0504 <b>25 mg</b> vs tirzepatide 15 mg, BMI 35–45, N = 96) finished in January 2026 and has not been reported.<a class="src" href="#r26">26</a></p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-h"><div><h3>GI tolerability against the same benchmarks</h3><p class="cap">Share of participants reporting the event at any time. BGM0504 figures are from Phase 2; Phase 3 event rates have not been released. <span class="ev pub">Published</span><a class="src" href="#r3">3</a><a class="src" href="#r4">4</a><a class="src" href="#r18">18</a><a class="src" href="#r19">19</a><a class="src" href="#r20">20</a><a class="src" href="#r21">21</a></p></div>
+        <div class="seg" data-key="ev" id="gi-seg"><button data-v="n" aria-pressed="true">Nausea</button><button data-v="v" aria-pressed="false">Vomiting</button><button data-v="d" aria-pressed="false">Diarrhoea</button></div></div>
+      <div id="gi-chart"></div>
+      <div class="callout warn" style="margin-top:10px"><b>Titration is the likely driver.</b> BGM0504 trials stepped the dose every two weeks (2.5 → 5 → 10 → 15 mg); tirzepatide steps every four. In the T2D Phase 2a, 75% of the 15 mg arm had diarrhoea and the authors themselves suggest slower titration. Injection-site reactions were 0 / 12.9 / 13.8% in Phase 2. Anti-drug antibodies appeared in 1/13, 5/11 and 3/12 patients, none neutralising.</div>
+    </div>
+
+    <div class="panel">
+      <h3>Clinical programme at a glance</h3>
+      <div class="tw" style="margin-top:10px"><table class="t">
+        <thead><tr><th>Study</th><th>Design</th><th class="n">N</th><th>Doses</th><th>Result or status</th></tr></thead>
+        <tbody>
+          <tr><td>Phase 1a, healthy<a class="src" href="#r2">2</a></td><td>Double-blind, placebo; single dose then 2-step weekly escalation</td><td class="n">40</td><td>2.5–15 mg</td><td>Cmax and AUC dose-linear; mild to moderate GI events</td></tr>
+          <tr><td>Phase 2a, T2D · NCT06974825<a class="src" href="#r3">3</a></td><td>Double-blind vs placebo + open-label semaglutide 1 mg; 12 wk at target</td><td class="n">64</td><td>5 / 10 / 15 mg</td><td>HbA1c −1.72 / −1.94 / −2.48 vs −1.43 (semaglutide), +0.28 (placebo); 15 mg beat semaglutide (p = 0.033); HbA1c &lt; 6.5% in 75% at 15 mg</td></tr>
+          <tr><td>Phase 2, obesity · NCT06973681<a class="src" href="#r4">4</a></td><td>Double-blind, placebo; 24 wk at target</td><td class="n">120</td><td>5 / 10 / 15 mg</td><td>−10.7 / −16.1 / −18.3%; waist −8.9 / −12.7 / −14.4 cm; 1 serious event; no withdrawals for adverse events</td></tr>
+          <tr class="hl"><td><b>Phase 3, obesity</b> · NCT06704581<a class="src" href="#r6">6</a></td><td>Double-blind, placebo; 41 sites; 52 wk</td><td class="n">652</td><td>5 / 10 / 15 mg</td><td><b>−14.3 / −17.3 / −19.2% vs −3.1%</b>; NDA accepted 12 Jun 2026</td></tr>
+          <tr><td>Phase 3, T2D monotherapy · NCT06716203</td><td>Double-blind vs placebo; HbA1c at wk 32</td><td class="n">207</td><td>5 / 10 mg</td><td>Primary completion listed Nov 2026; no results</td></tr>
+          <tr><td>Phase 3, T2D add-on · NCT06716216</td><td>Open-label vs semaglutide 1 mg on metformin ± SU</td><td class="n">537</td><td>5 / 10 mg</td><td>Primary completion listed Nov 2026; T2D NDA guided for Q4 2026</td></tr>
+          <tr><td>Phase 3, BRIGHT-1 · NCT07743983</td><td>Open-label vs semaglutide 1 mg; early T2D with obesity; remission endpoint at wk 64</td><td class="n">372</td><td>15 mg</td><td>Recruiting since Sep 2026; completion 2028</td></tr>
+          <tr><td>Phase 2 vs tirzepatide · NCT06911203</td><td>Open-label, 26 wk, BMI 35–45</td><td class="n">96</td><td>25 mg vs tirzepatide 15 mg</td><td>Completed Jan 2026; <b>not reported</b></td></tr>
+          <tr><td>US bridging Phase 1 · NCT06714955</td><td>Double-blind, placebo; 10 wk</td><td class="n">30</td><td>10 / 15 mg</td><td>Completed Mar 2025; end-of-Phase-2 meeting held; US Phase 3 undecided</td></tr>
+          <tr><td>Ex-China Phase 3s</td><td>Indonesia T2D (NCT07064486, N = 152); Korea obesity (approved)</td><td class="n">–</td><td>–</td><td>Indonesia due H2 2027</td></tr>
+          <tr><td>Clinical pharmacology</td><td>Renal impairment; gastric emptying and DDI (metformin, warfarin); multi-dose vs single-dose pen bioequivalence (N = 144)</td><td class="n">–</td><td>–</td><td>All completed; no results posted</td></tr>
+        </tbody></table></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-h"><div><h3>Oral BGM0504 tablet</h3><p class="cap">Once daily, built on the Macoral® platform of affiliate Shenzhen Aoli Biotech: an acid-protective excipient (Soteria®), a tight-junction permeation enhancer (Phloral®) and an enzyme inhibitor in a freeze-dried fast-release tablet. The enhancer's chemistry and human oral bioavailability are not disclosed. <span class="ev co">Company</span><a class="src" href="#r28">28</a></p></div></div>
+      <div class="stats">
+        <div class="stat"><b>−1.0 to −5.6%</b><span>China Phase 1, 10–80 mg, 4 weeks, N = 75</span></div>
+        <div class="stat"><b>−2.7 to −8.2%</b><span>US Phase 1, 20–80 mg, 5–8 weeks, N = 80</span></div>
+        <div class="stat"><b>2–3 weeks</b><span>to steady state; exposure roughly linear</span></div>
+        <div class="stat"><b>0</b><span>GI events at 10 and 20 mg (China)</span></div>
+        <div class="stat"><b>N = 200</b><span>Phase 2 obesity, 20 weeks, fully enrolled; readout expected 2027</span></div>
+      </div>
+      <p class="note" style="margin-top:10px">The US and China weight figures are not comparable because treatment lasted longer in the US study. A food-effect study (20 mg, N = 144) has completed without posted results. The tablet is excluded from the Sanjiu licence.</p>
+    </div>
+  </div>
+</section>
+<!-- ================= BGM1812 ================= -->
+<section id="bgm1812">
+  <header>
+    <span class="tag" style="--k:var(--c1812)"><i></i>BGM1812 · amylin / calcitonin receptor agonist</span>
+    <h2>A petrelintide analogue with about twice the potency and the same neutral-pH behaviour</h2>
+    <p class="sub">BGM1812 came out of three rounds of structure-guided optimisation starting from petrelintide, using two methylation strategies. Formula C<sub>182</sub>H<sub>299</sub>N<sub>49</sub>O<sub>61</sub>, MW 4,149.6. The sequence is not public; a 2026 BrightGene patent describes 37-residue analogues with a 2–7 lactam bridge, a C20 diacid–γGlu side chain and α-methyl residues at positions 12 and 15.<a class="src" href="#r7">7</a><a class="src" href="#r13">13</a></p>
+  </header>
+  <div class="stack">
+    <div class="grid2">
+      <div class="panel">
+        <div class="panel-h"><div><h3>Optimisation series: BGM1812 is the only analogue clearly better at both receptors</h3><p class="cap">Each point is one analogue, plotted as its EC50 relative to petrelintide run in the same assay. Lower-left is better. <span class="ev pub">Published</span><a class="src" href="#r7">7</a></p></div></div>
+        <div id="opt-chart"></div>
+        <p class="note">HEK-293 cells expressing human AMY3R or CTR, TR-FRET cAMP readout. BGM1812: AMY3R 0.627 nM, CTR 2.27 nM, solubility above 66.5 mg/mL at pH 7.4. Petrelintide's own EC50 drifted between runs (3.0 → 1.8 → 1.1 nM), so only same-run ratios are comparable.</p>
+      </div>
+      <div class="panel">
+        <div class="panel-h"><div><h3>Rat, single SC 1 mg/kg</h3></div>
+          <div class="controls" style="margin:0">
+            <div class="seg" data-key="view" id="r1812-seg"><button data-v="pk" aria-pressed="true">Plasma PK</button><button data-v="bw" aria-pressed="false">Body weight</button><button data-v="fi" aria-pressed="false">Food intake</button></div>
+            <div class="seg" data-key="scale" id="r1812-scale"><button data-v="linear" aria-pressed="true">Linear</button><button data-v="log" aria-pressed="false">Log</button></div>
+          </div></div>
+        <div id="r1812-chart"></div>
+        <p class="note" id="r1812-cap"></p>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Rat PK parameters versus petrelintide and sister analogues</h3>
+      <div class="tw" style="margin-top:10px"><table class="t">
+        <thead><tr><th>Peptide, SC 1 mg/kg</th><th class="n">t½ (h)</th><th class="n">Tmax (h)</th><th class="n">Cmax (ng/mL)</th><th class="n">AUC0-t (h·ng/mL)</th><th class="n">AUC0-∞ (h·ng/mL)</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><b>BGM1812</b></td><td class="n">21.1</td><td class="n">24</td><td class="n">5,303</td><td class="n">264,931</td><td class="n">282,265</td></tr>
+          <tr><td>Petrelintide (BGM1801)</td><td class="n">26.2</td><td class="n">24</td><td class="n">4,850</td><td class="n">254,046</td><td class="n">286,517</td></tr>
+          <tr><td>BGM1802</td><td class="n">25.5</td><td class="n">24</td><td class="n">4,863</td><td class="n">246,942</td><td class="n">277,262</td></tr>
+          <tr><td>BGM1813</td><td class="n">22.8</td><td class="n">24</td><td class="n">5,385</td><td class="n">253,285</td><td class="n">273,057</td></tr>
+        </tbody></table></div>
+      <p class="note" style="margin-top:8px">Male rats only, n = 3, one dose level, no IV arm: bioavailability and dose proportionality cannot be judged. Zealand's own rat half-life for petrelintide is 33.8 h under different conditions.<a class="src" href="#r29">29</a> No monkey PK is published.</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-h"><div><h3>DIO rat, 28 days: dose-dependent weight loss with fat lost and lean share preserved</h3><p class="cap">Male DIO rats, 60% fat diet, n = 10 per group, SC every 3 days × 10 doses. All values read from the published graphs. <span class="ev dig">Digitised</span><a class="src" href="#r7">7</a></p></div>
+        <div class="seg" data-key="view" id="dio-seg"><button data-v="time" aria-pressed="true">Time course</button><button data-v="bl" aria-pressed="false">Change from baseline</button><button data-v="lean" aria-pressed="false">Lean mass</button><button data-v="fat" aria-pressed="false">Fat mass</button></div></div>
+      <div id="dio-chart"></div>
+      <p class="note">Doses in mg/kg. At 0.04 mg/kg BGM1812 loses more weight than petrelintide (85% vs 89% of vehicle) and about the same as cagrilintide, with a larger gain in lean share. Cagrilintide was dosed from a pH 4 acetate/mannitol vehicle; the others from 10 mM phosphate. 0.04 mg/kg is about 9.6 nmol/kg, inside the 3–15 nmol/kg range Zealand used for petrelintide. The paper states 50 rats but 6 groups × 10 = 60; the body-composition method is not given.</p>
+    </div>
+
+    <div class="grid2">
+      <div class="panel">
+        <h3>Phase 1 in humans: ranges only</h3>
+        <p class="cap" style="color:var(--ink-2);font-size:13.5px">Two placebo-controlled single- and multiple-dose studies, 60 subjects each, 0.3–7.2 mg weekly for 1–4 weeks without titration. <span class="ev co">Company</span><a class="src" href="#r9">9</a></p>
+        <div class="tw" style="margin-top:10px"><table class="t">
+          <thead><tr><th></th><th>China · NCT07294235</th><th>US · NCT07224399</th></tr></thead>
+          <tbody>
+            <tr><td>Population</td><td>Healthy and overweight; mean 74.4 kg, BMI 26.8, 38% women</td><td>BMI 28.6–36.2</td></tr>
+            <tr><td>Placebo-adjusted weight</td><td><b>−1.9 to −8.4%</b> (all doses p &lt; 0.05)</td><td><b>−0.2 to −9.2%</b></td></tr>
+            <tr><td>Lost ≥5%</td><td>70.0–85.7% at 2.4–7.2 mg</td><td class="muted">Not given</td></tr>
+            <tr><td>Safety</td><td>No grade ≥3 or serious events, no withdrawals; GI events mostly grade 1</td><td>No serious events; GI most common</td></tr>
+            <tr><td>PK</td><td colspan="2">Roughly linear; "half-life supports weekly or every-two-week dosing". No values.</td></tr>
+          </tbody></table></div>
+        <p class="note" style="margin-top:8px">For scale: eloralintide lost up to 11.3% (placebo-adjusted) in a 12-week untitrated Phase 1, ABBV-295 7.8–9.8% at 12 weeks, MET-233i 8.4% at day 36.<a class="src" href="#r30">30</a><a class="src" href="#r33">33</a><a class="src" href="#r34">34</a> BGM1812's figures over 1–4 weeks are in that range, in a lighter cohort.</p>
+      </div>
+      <div class="panel">
+        <div class="panel-h"><div><h3>Human half-life of amylin agonists</h3><p class="cap">BGM1812's value is not disclosed. The hatched bar is "compound 10" in BrightGene's amylin patent (274–363 h); that it is BGM1812 is an inference. <span class="ev pub">Published</span><a class="src" href="#r13">13</a><a class="src" href="#r29">29</a><a class="src" href="#r30">30</a><a class="src" href="#r33">33</a><a class="src" href="#r34">34</a></p></div></div>
+        <div id="hl-chart"></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>What comes next, and what a reviewer will ask</h3>
+      <div class="grid2" style="margin-top:10px">
+        <dl class="kv">
+          <dt>Phase 2</dt><dd>NCT07918625: double-blind, placebo, N = 160, four arms, primary endpoint weight at 24 weeks. Start listed 30 Nov 2026, primary completion Aug 2027. Doses and titration not disclosed.<a class="src" href="#r26">26</a></dd>
+          <dt>Oral tablet</dt><dd>Preclinical, same molecule on the Macoral platform, aimed at once-weekly oral dosing.</dd>
+          <dt>Follow-on</dt><dd>BGM1962, an amylin-selective agonist: t½ 36 h in rat, about 200 h in monkey, positioned for monthly dosing; IND in preparation.<a class="src" href="#r16">16</a></dd>
+        </dl>
+        <ul class="tight" style="font-size:13.5px;color:var(--ink-2)">
+          <li><b>Calcium and bone.</b> BGM1812 is more potent at the calcitonin receptor than petrelintide. No calcium or bone-marker data are disclosed. Eloralintide showed no trend in Phase 1; Novo is running a dedicated bone study for cagrilintide.</li>
+          <li><b>Nausea and fatigue.</b> Class effects that track titration speed: eloralintide reached 64% nausea at 6 mg, petrelintide 20% with four-week steps.<a class="src" href="#r29">29</a><a class="src" href="#r30">30</a></li>
+          <li><b>Lean-mass claim.</b> It rests on rat data. In humans, cagrilintide showed no lean sparing in the REDEFINE 1 DXA substudy (fat was 63% of weight lost vs 70% for semaglutide).<a class="src" href="#r37">37</a></li>
+          <li><b>Immunogenicity.</b> Measured in Phase 1, not reported.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BGM2102 ================= -->
+<section id="bgm2102">
+  <header>
+    <span class="tag" style="--k:var(--c2102)"><i></i>BGM2102 · fixed-dose combination</span>
+    <h2>The combination case is additive weight loss in one rat study; everything else is undisclosed</h2>
+    <p class="sub">BGM2102 combines BGM0504 and BGM1812 in one injection, aimed at severe obesity and at maintenance in heavier patients, with a stated target of 20–25% or more weight loss and less muscle loss.</p>
+  </header>
+  <div class="stack">
+    <div class="split">
+      <div class="panel">
+        <div class="panel-h"><div><h3>DIO rat body weight</h3><p class="cap">Redrawn from disclosed numbers; no original figure exists publicly. <span class="ev co">Company</span><a class="src" href="#r8">8</a><a class="src" href="#r13">13</a></p></div>
+          <div class="seg" data-key="src" id="combo-seg"><button data-v="ada" aria-pressed="true">ADA 2025 abstract</button><button data-v="pat" aria-pressed="false">Patent example</button></div></div>
+        <div id="combo-chart"></div>
+        <p class="note" id="combo-add">The single-agent effects sum to −28%, exactly the combination result, so the data support additivity, not synergy. The company says the loss was deeper and more lasting than semaglutide + cagrilintide or amycretin but gives no numbers for those arms.</p>
+      </div>
+      <div class="panel">
+        <h3>Disclosure checklist</h3>
+        <div class="tw" style="margin-top:10px"><table class="t">
+          <tbody>
+            <tr><td>Species, model</td><td>DIO rat</td></tr>
+            <tr><td>Doses</td><td>BGM1812 0.4 mg/kg + BGM0504 0.15 mg/kg. The BGM1812 dose is above the 0.012–0.12 mg/kg range in the same abstract and may be a misprint for 0.04.</td></tr>
+            <tr><td>N, sex, duration, schedule</td><td class="muted">Not disclosed</td></tr>
+            <tr><td>Food intake, body composition</td><td class="muted">Not disclosed; muscle-sparing claim has no data</td></tr>
+            <tr><td>PK of each peptide in combination</td><td class="muted">Not disclosed</td></tr>
+            <tr><td>Dose ratio</td><td>Patent claims BGM0504 : amylin analogue from 10:1 to 1:5 by weight, preferably 2:1 to 1:1 (BGM0504 5–15 mg with analogue 0.6–4.8 mg)<a class="src" href="#r13">13</a></td></tr>
+            <tr><td>Co-formulation pH, stability</td><td class="muted">Not disclosed</td></tr>
+            <tr><td>Toxicology</td><td class="muted">Not disclosed</td></tr>
+            <tr><td>Regulatory</td><td>IND applications "being advanced as planned" in China and the US (Q3 2026). No clearance, registry entry or first-in-human date found. An earlier plan pointed to a US start in Q4 2026.<a class="src" href="#r38">38</a></td></tr>
+          </tbody></table></div>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="panel">
+        <h3>Why the formulation logic holds together</h3>
+        <ul class="tight" style="margin-top:8px;font-size:14px">
+          <li>BGM0504 is formulated at pH 7.2–7.6; BGM1812 is soluble and fibril-free at pH 6.5–7.5. The windows overlap at roughly pH 7.2–7.5.</li>
+          <li>Cagrilintide needs pH 3.5–4.5 and semaglutide needs pH above about 5.9, so CagriSema uses two chambers through one needle.<a class="src" href="#r24">24</a></li>
+          <li>Petrelintide showed no extra degradation when co-formulated with semaglutide at pH 6.7–7.4, which is the closest public precedent.<a class="src" href="#r25">25</a></li>
+          <li>Unknowns specific to this pair: BGM0504 loses solubility in NaCl (0.15–1 mg/mL), so tonicity must come from propylene glycol; whether BGM1812 tolerates that vehicle, and a preservative, is untested in public.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Position among GLP-1/GIP + amylin combinations</h3>
+        <div class="tw" style="margin-top:10px"><table class="t">
+          <thead><tr><th>Combination</th><th>Stage</th><th>Latest data</th></tr></thead>
+          <tbody>
+            <tr><td>Eloralintide + tirzepatide (Lilly)</td><td>Phase 3 started Oct 2026; co-formulation planned</td><td>−23.3% at 48 wk vs −14.8% tirzepatide alone (T2D Phase 2); adverse-event discontinuation 11–27%<a class="src" href="#r35">35</a></td></tr>
+            <tr><td>Petrelintide + CT-388 (Roche/Zealand)</td><td>Phase 2 ZYNERGY, N = 486, start Nov 2026</td><td>Co-administered, not fixed-dose</td></tr>
+            <tr class="hl"><td><b>BGM2102</b></td><td>Preclinical, IND in preparation</td><td>−28% in DIO rats</td></tr>
+            <tr><td>CagriSema (Novo; GLP-1 + amylin)</td><td>NDA filed Dec 2025</td><td>−20.4% at 68 wk; missed non-inferiority vs tirzepatide (20.2% vs 23.6%)<a class="src" href="#r31">31</a></td></tr>
+          </tbody></table></div>
+        <p class="note" style="margin-top:8px">BrightGene's claim to be among the first three clinical GLP-1/GIP + amylin combinations is plausible only if dosing starts soon; Lilly is already in Phase 3.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FORMULATION ================= -->
+<section id="formulation">
+  <header>
+    <span class="tag"><i></i>Formulation and presentation</span>
+    <h2>A propylene glycol, salt-free solution at pH 7.2–7.6, in single-dose and preserved multi-dose versions</h2>
+  </header>
+  <div class="stack">
+    <div class="panel">
+      <div class="tw"><table class="t">
+        <thead><tr><th>Product</th><th>Peptide strength</th><th>Buffer and pH</th><th>Tonicity / stabiliser</th><th>Preservative</th><th>Presentation</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><b>BGM0504, single-dose</b><a class="src" href="#r10">10</a></td><td>2–36 mg/mL claimed; example 20 mg/mL</td><td>Na phosphate 10 mM (7–23 mM); pH 7.2–7.6</td><td>Propylene glycol 14 mg/mL (10–20); no NaCl</td><td>None</td><td>NDA covers 2.5 / 5 / 10 / 15 mg; device not disclosed</td></tr>
+          <tr class="hl"><td><b>BGM0504, multi-dose</b><a class="src" href="#r11">11</a></td><td>Same range</td><td>Same</td><td>Same</td><td>Phenol 5.3–5.5 mg/mL or m-cresol 2.4–3.0 mg/mL</td><td>Cartridge for reusable pen; bioequivalence vs single-dose pen tested (N = 144)</td></tr>
+          <tr><td>Tirzepatide, single-dose<a class="src" href="#r22">22</a></td><td>5–30 mg/mL (2.5–15 mg in 0.5 mL)</td><td>Na phosphate; pH 6.5–7.5</td><td>NaCl 8.2 mg/mL</td><td>None</td><td>Autoinjector or vial</td></tr>
+          <tr><td>Tirzepatide, multi-dose</td><td>4.2–25 mg/mL (0.6 mL per dose)</td><td>Na phosphate</td><td>Glycerin, NaCl</td><td>Benzyl alcohol, phenol</td><td>KwikPen, 4 doses</td></tr>
+          <tr><td>Semaglutide 2.4 mg, single-dose<a class="src" href="#r23">23</a></td><td>0.5–9.6 mg/mL</td><td>Na phosphate; pH about 7.4</td><td>NaCl 8.25 mg/mL</td><td>None</td><td>Autoinjector</td></tr>
+          <tr><td>Semaglutide, multi-dose</td><td>3.2 mg/mL</td><td>Na phosphate; pH about 7.4</td><td>Propylene glycol 14 mg/mL</td><td>Phenol 5.5 mg/mL</td><td>FlexTouch pen</td></tr>
+          <tr><td>Cagrilintide (in CagriSema)<a class="src" href="#r24">24</a></td><td>–</td><td>Glutamate about 5 mM; pH 3.5–4.5</td><td>Polyol</td><td>None</td><td>Dual-chamber with semaglutide</td></tr>
+          <tr><td>Petrelintide<a class="src" href="#r25">25</a></td><td>1 mg/mL (study)</td><td>Stable pH 6.7–7.4</td><td>–</td><td>Compatible with phenol</td><td>Vial (study)</td></tr>
+        </tbody></table></div>
+    </div>
+    <div class="grid3">
+      <div class="panel"><h4>Why no salt</h4><p>BGM0504 dissolves above 30 mg/mL in propylene glycol but only 0.15 mg/mL (first patent) to about 1 mg/mL (second patent) in NaCl, with aggregation. Tirzepatide tolerates NaCl. Moving the lipid to Lys40 appears to have changed the salt sensitivity.</p></div>
+      <div class="panel"><h4>Stability</h4><p>Stable for one month at 2–8 °C. At 40 °C, purity fell from 93.34% to 89.97% in 10 days; the peptide is heat- and light-sensitive. No long-term, in-use or room-temperature excursion data are public. Starting purity of 93% is low for a commercial peptide and worth asking about.</p></div>
+      <div class="panel"><h4>Injection volume</h4><p>At the 20 mg/mL example, 2.5–15 mg would be 0.125–0.75 mL. An independent claim covering 5–30 mg/mL matches 2.5–15 mg in a fixed 0.5 mL, the tirzepatide design. The commercial choice is not disclosed. <span class="ev mod">Inference</span></p></div>
+    </div>
+    <div class="callout"><b>No depot work is visible.</b> No BrightGene patent or programme for a microsphere, in-situ gel or other sustained-release form of BGM0504 or BGM1812 was found. The company's route to longer intervals is molecular (BGM1962, siRNA). The process patent (WO2025092769) reports crude purity of 66–73% for the solid-phase route.</div>
+  </div>
+</section>
+
+<!-- ================= INTERVAL MODEL ================= -->
+<section id="interval">
+  <header>
+    <span class="tag"><i></i>Dosing interval · what-if model</span>
+    <h2>How far can the dosing interval stretch before the peak-to-trough swing gets too wide?</h2>
+    <p class="sub">A one-compartment model with first-order absorption at steady state. It reproduces the observed weekly swing for BGM0504 (model 2.1×, digitised 2.1–2.4×). Use it to see what half-life, or what depot release rate, a two-week or monthly product would need. <span class="ev mod">Model</span></p>
+  </header>
+  <div class="panel">
+    <div class="sim-grid">
+      <div>
+        <div class="field"><span class="ctl-l">Start from</span>
+          <div class="chips" id="sim-presets">
+            <button data-th="5.6" data-ta="0.2">BGM0504</button><button data-th="5" data-ta="0.2">Tirzepatide</button><button data-th="7.4" data-ta="0.4">Cagrilintide</button>
+            <button data-th="10" data-ta="0.6">Petrelintide</button><button data-th="14" data-ta="1">Eloralintide</button><button data-th="5.6" data-ta="12">BGM0504 in a slow depot</button>
+          </div></div>
+        <div class="field"><div class="row"><label for="sim-th" class="ctl-l">Elimination half-life</label><output id="sim-th-o"></output></div><input type="range" id="sim-th" min="2" max="25" step="0.1" value="5.6"></div>
+        <div class="field"><div class="row"><label for="sim-ta" class="ctl-l">Absorption half-life</label><output id="sim-ta-o"></output></div><input type="range" id="sim-ta" min="0.1" max="20" step="0.1" value="0.2"></div>
+        <div class="field"><span class="ctl-l">Dosing interval</span>
+          <div class="seg" data-key="tau" id="sim-tau"><button data-v="7" aria-pressed="true">Weekly</button><button data-v="14" aria-pressed="false">2 weeks</button><button data-v="28" aria-pressed="false">4 weeks</button></div></div>
+      </div>
+      <div class="stack" style="gap:12px">
+        <div id="sim-chart"></div>
+        <div class="stats" id="sim-stats"></div>
+        <div><span class="pill" id="sim-verdict"></span></div>
+      </div>
+    </div>
+    <p class="note" style="margin-top:12px">Shape only: concentrations are normalised to the steady-state peak, so dose and bioavailability cancel out. Presets use published half-lives; absorption half-lives are set to reproduce each molecule's reported Tmax. When absorption is slower than elimination the curve is release-limited (flip-flop), which is how a depot flattens the profile. This is an illustration, not a prediction for any product.</p>
+  </div>
+  <div class="callout" style="margin-top:16px"><b>Reading for BGM0504.</b> As a solution it is a weekly drug: at two weeks the swing is about 5×, at four weeks above 25×. A monthly version needs release-limited absorption with a half-life of roughly 10 days or more. For the amylin component the molecule itself may carry a longer interval, which is why a monthly combination would need component-specific release rates.</div>
+</section>
+
+<!-- ================= LANDSCAPE ================= -->
+<section id="landscape">
+  <header>
+    <span class="tag"><i></i>Competitive landscape</span>
+    <h2>The amylin field moved into Phase 3 during 2026</h2>
+  </header>
+  <div class="stack">
+    <div class="panel">
+      <div class="controls"><span class="ctl-l">Show</span>
+        <div class="seg" data-key="f" id="land-seg"><button data-v="all" aria-pressed="true">All</button><button data-v="amylin" aria-pressed="false">Amylin agonists</button><button data-v="combo" aria-pressed="false">Combinations</button><button data-v="monthly" aria-pressed="false">Monthly / depot</button></div></div>
+      <div class="tw"><table class="t" id="land-table">
+        <thead><tr><th>Asset (sponsor)</th><th>Mechanism</th><th>Stage, Nov 2026</th><th>Interval · human t½</th><th>Best weight-loss data</th><th>Tolerability / notes</th></tr></thead>
+        <tbody>
+          <tr class="hl" data-c="amylin"><td><b>BGM1812</b> (BrightGene)</td><td>Amylin + calcitonin receptor agonist</td><td>Phase 2 starting</td><td>Weekly, possibly 2-weekly · not disclosed</td><td>−8.4 / −9.2% placebo-adjusted, 1–4 wk</td><td>GI mostly grade 1; no rates</td></tr>
+          <tr data-c="amylin"><td>Cagrilintide (Novo)</td><td>Non-selective amylin/calcitonin agonist</td><td>Phase 3 monotherapy</td><td>Weekly · 159–195 h</td><td>−11.8% vs −2.3% at 68 wk (2.4 mg)</td><td>Nausea 24%; pH 4 formulation</td></tr>
+          <tr data-c="amylin"><td>Petrelintide (Zealand/Roche)</td><td>Balanced amylin/calcitonin agonist</td><td>Phase 3 (ZUPREME-3/4/5)</td><td>Weekly · about 10 days</td><td>−10.7% vs −1.7% at 42 wk</td><td>Nausea 20% vs 6%; GI discontinuation 1.5%; neutral pH</td></tr>
+          <tr data-c="amylin"><td>Eloralintide (Lilly)</td><td>AMY1R-selective</td><td>Phase 3</td><td>Weekly · 13–15 days</td><td>−20.1% vs −0.4% at 48 wk (9 mg)</td><td>Nausea up to 64%, fatigue up to 46%</td></tr>
+          <tr data-c="amylin"><td>Lenbelintide / AZD6234 (AstraZeneca)</td><td>Selective amylin agonist</td><td>Phase 3 (SELENE, Aug 2026)</td><td>Weekly</td><td>Phase 2 not found</td><td>–</td></tr>
+          <tr data-c="amylin monthly"><td>ABBV-295 (AbbVie/Gubra)</td><td>Long-acting amylin analogue</td><td>Phase 2</td><td>Weekly to monthly · 10.7–12.3 days</td><td>−7.8 to −9.8% at 12 wk; −7.9% monthly</td><td>Nausea 33% vs 20%</td></tr>
+          <tr data-c="amylin monthly"><td>MET-233i (Pfizer)</td><td>Ultra-long amylin analogue</td><td>Phase 2b</td><td>Monthly intended · 19 days (observed)</td><td>−8.4% placebo-subtracted at day 36</td><td>Combinable in solution with its GLP-1 partner</td></tr>
+          <tr data-c="combo"><td>Zenagamtide / amycretin (Novo)</td><td>Single molecule: GLP-1 + amylin</td><td>Phase 3</td><td>Weekly SC, daily oral</td><td>−24.3% vs −1.1% at 36 wk (60 mg)</td><td>Frequent GI events and withdrawals</td></tr>
+          <tr data-c="combo"><td>CagriSema (Novo)</td><td>Semaglutide + cagrilintide</td><td>NDA filed Dec 2025</td><td>Weekly</td><td>−20.4% vs −3.0% at 68 wk</td><td>GI events 80% vs 40%; dual chamber</td></tr>
+          <tr data-c="combo"><td>Eloralintide + tirzepatide (Lilly)</td><td>GLP-1/GIP + amylin</td><td>Phase 3 (Oct 2026)</td><td>Weekly</td><td>−23.3% at 48 wk (T2D)</td><td>Adverse-event discontinuation 11–27%</td></tr>
+          <tr data-c="combo"><td>Petrelintide + CT-388 (Roche)</td><td>GLP-1/GIP + amylin</td><td>Phase 2 (Nov 2026)</td><td>Weekly</td><td>–</td><td>Co-administered</td></tr>
+          <tr class="hl" data-c="combo"><td><b>BGM2102</b> (BrightGene)</td><td>GLP-1/GIP + amylin, fixed dose</td><td>Preclinical</td><td>Weekly intended</td><td>−28% in DIO rats</td><td>–</td></tr>
+          <tr data-c="monthly"><td>MariTide (Amgen)</td><td>GLP-1 agonist / GIPR antagonist antibody conjugate</td><td>Phase 3</td><td>Monthly or less often</td><td>First Phase 3 data 2027</td><td>–</td></tr>
+          <tr data-c="monthly"><td>MET-097i (Pfizer)</td><td>Ultra-long GLP-1 agonist</td><td>Phase 3 (weekly); monthly planned</td><td>Weekly then monthly</td><td>10–12.3% placebo-adjusted at wk 28 after monthly switch</td><td>–</td></tr>
+          <tr data-c="monthly"><td>CAM2056 (Camurus)</td><td>Semaglutide FluidCrystal depot</td><td>Phase 2b, first patient Nov 2026</td><td>Monthly</td><td>−9.3% at day 85 vs −5.2% weekly semaglutide</td><td>Lilly added amylin agonists to its Camurus licence in Jun 2026<a class="src" href="#r36">36</a></td></tr>
+        </tbody></table></div>
+      <p class="note" style="margin-top:8px">Sources: sponsor releases, registry records and the publications listed under Sources.<a class="src" href="#r29">29</a><a class="src" href="#r30">30</a><a class="src" href="#r31">31</a><a class="src" href="#r32">32</a><a class="src" href="#r33">33</a><a class="src" href="#r34">34</a> Trial durations and estimands differ, so figures are not directly comparable. Chinese amylin programmes are early: CSPC SYH2092 in Phase 1, Jiuyuan JY54 with an accepted IND.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMPANY ================= -->
+<section id="company">
+  <header>
+    <span class="tag"><i></i>Company, deals and IP</span>
+    <h2>A profitable API maker funding an expensive obesity programme, with governance questions in 2026</h2>
+  </header>
+  <div class="stack">
+    <div class="grid2">
+      <div class="panel">
+        <h3>BrightGene in numbers</h3>
+        <div class="stats" style="margin-top:10px">
+          <div class="stat"><b>RMB 1.22bn</b><span>Revenue FY2025 (−4.6%)</span></div>
+          <div class="stat"><b>RMB 994m</b><span>Revenue 9M 2026 (+13.7%)</span></div>
+          <div class="stat"><b>48.5%</b><span>R&amp;D as share of FY2025 revenue</span></div>
+          <div class="stat"><b>RMB 961m</b><span>Cash and trading assets, end 2025</span></div>
+          <div class="stat"><b>51%</b><span>Debt ratio, end 2025</span></div>
+          <div class="stat"><b>RMB 13.5bn</b><span>Market value, 16 Oct 2026</span></div>
+        </div>
+        <p class="note" style="margin-top:10px">Founded 2001. Core business is hard-to-make APIs and generics (echinocandins, entecavir, oseltamivir, eribulin), with 56% of H1 2026 revenue from exports. Plants are inspected by Chinese, US, EU, Japanese and Korean authorities. A BGM0504 fill-finish site in Suzhou and an API site in Taixing are built and validated.<a class="src" href="#r17">17</a><a class="src" href="#r39">39</a></p>
+      </div>
+      <div class="panel">
+        <h3>Events that affect a partnering view</h3>
+        <ul class="tight" style="margin-top:10px;font-size:14px">
+          <li><b>Hong Kong listing terminated</b> on 30 Sep 2026 after two filings; no proceeds. An RMB 500m placement to the controlling shareholder was withdrawn in Oct 2025.<a class="src" href="#r27">27</a></li>
+          <li><b>Controlling shareholder on bail</b> since 18 Jun 2026 in a securities-manipulation investigation that the company says does not involve its own shares.<a class="src" href="#r15">15</a></li>
+          <li><b>US Phase 3 unfunded.</b> Estimated at RMB 2.1bn; the company "will prudently evaluate" how to proceed after its end-of-Phase-2 meeting.<a class="src" href="#r15">15</a></li>
+          <li><b>No ex-China licence</b> has been announced for any of the three assets. Indonesia (T2D Phase 3 via an unnamed partner) and Korea (Phase 3 approved) are the only ex-China activities.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="panel">
+        <h3>China Resources Sanjiu licence, 1 Aug 2025</h3>
+        <dl class="kv" style="margin-top:10px">
+          <dt>Scope</dt><dd>BGM0504 injection, all indications, mainland China</dd>
+          <dt>Rights</dt><dd>Exclusive co-development and commercialisation; BrightGene stays marketing authorisation holder and manufacturer</dd>
+          <dt>Economics</dt><dd>R&amp;D milestones up to RMB 282m; BrightGene pays Sanjiu a service fee on net sales (rate undisclosed); no upfront disclosed</dd>
+          <dt>Excluded</dt><dd>Oral tablet, multi-target products beyond GLP-1/GIP, and combinations, so BGM1812 and BGM2102 are outside. Sanjiu has a right of first cooperation in China.</dd>
+        </dl>
+        <p class="note" style="margin-top:8px"><span class="ev co">Company</span><a class="src" href="#r14">14</a></p>
+      </div>
+      <div class="panel">
+        <h3>Patent estate</h3>
+        <div class="tw" style="margin-top:10px"><table class="t">
+          <thead><tr><th>Family</th><th>Covers</th><th>Priority · status</th></tr></thead>
+          <tbody>
+            <tr><td>WO2022199629 / US 12,215,133 B2<a class="src" href="#r12">12</a></td><td>BGM0504 compound</td><td>Mar 2021 · US granted Feb 2025, expiry about Mar 2042; China granted</td></tr>
+            <tr><td>WO2024061310<a class="src" href="#r10">10</a></td><td>Single-dose formulation</td><td>Sep 2022 · pending in CN, US, EP, JP, KR, AU</td></tr>
+            <tr><td>WO2025190304<a class="src" href="#r11">11</a></td><td>Preserved multi-dose formulation</td><td>Mar 2024 · published Sep 2025</td></tr>
+            <tr><td>WO2025092769</td><td>Solid-phase synthesis process</td><td>Nov 2023</td></tr>
+            <tr><td>WO2026124626<a class="src" href="#r13">13</a></td><td>Amylin analogues and their combination with BGM0504</td><td>Dec 2024 · published Jun 2026; expiry about Dec 2045 if granted</td></tr>
+          </tbody></table></div>
+        <p class="note" style="margin-top:8px">The company states that BGM0504 does not fall within tirzepatide's claimed structure. Tirzepatide's compound patent is reported to run to 2036. No dedicated co-formulation patent for BGM2102 was found. Patent details were read through an automated summary and should be checked against the documents before use.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GAPS ================= -->
+<section id="gaps">
+  <header>
+    <span class="tag"><i></i>Gaps and next steps</span>
+    <h2>What to ask BrightGene for</h2>
+  </header>
+  <div class="gap-list">
+    <div class="gap"><span class="who">BGM0504</span><b>Phase 3 adverse-event table</b>Nausea, vomiting, diarrhoea and injection-site rates by dose, the titration scheme, and the statistical estimand.</div>
+    <div class="gap"><span class="who">BGM0504</span><b>Head-to-head vs tirzepatide</b>NCT06911203 finished in January 2026. Why 25 mg, and what were the results?</div>
+    <div class="gap"><span class="who">BGM0504</span><b>Toxicology package</b>NOAEL, exposure margins, repeat-dose PK and trough levels in animals.</div>
+    <div class="gap"><span class="who">BGM0504</span><b>Commercial presentation</b>Device, concentration and fill volume per strength, shelf life, room-temperature allowance, and the 93% starting purity in the patent example.</div>
+    <div class="gap"><span class="who">BGM1812</span><b>Phase 1 by dose</b>Weight loss per cohort and time point, human t½ and Tmax, nausea and vomiting rates, anti-drug antibodies, calcium and bone markers.</div>
+    <div class="gap"><span class="who">BGM1812</span><b>Non-rodent PK and IV data</b>Monkey PK, bioavailability, dose proportionality, and the Phase 2 doses and titration.</div>
+    <div class="gap"><span class="who">BGM2102</span><b>Full ADA 2025 poster (1993-LB)</b>N, schedule, duration, statistics, comparator doses, and whether 0.4 mg/kg is a misprint.</div>
+    <div class="gap"><span class="who">BGM2102</span><b>Co-formulation data</b>pH, excipients, stability of each peptide in the mixture, dose ratio, and PK of each peptide alone versus combined.</div>
+    <div class="gap"><span class="who">Corporate</span><b>Rights and funding</b>Which ex-China territories are open, the plan for the US Phase 3, and the status of the shareholder investigation.</div>
+  </div>
+  <details class="more" style="margin-top:18px"><summary>Corrections to the first-pass deck</summary>
+    <ul class="tight" style="font-size:13.5px;color:var(--ink-2)">
+      <li>Phase 2a T2D placebo HbA1c change is <b>+0.28%</b>, not −0.28% (paper Table 2; the minus sign comes from a press release).</li>
+      <li>Phase 3 headline: <b>−19.2%</b> is the primary (full analysis set) figure; −19.3% is the per-protocol analysis.</li>
+      <li>The Hong Kong listing document is an application proof for a listing that was terminated on 30 Sep 2026.</li>
+      <li>NCT07743983 is a T2D-remission trial against semaglutide 1 mg, not an obesity trial.</li>
+      <li>BGM2102 first-in-human timing (US Q4 2026, China early 2027) could not be confirmed; the latest filings say IND applications are still being advanced.</li>
+      <li>BGM1812 Phase 2 primary endpoint is at 24 weeks; N = 160.</li>
+      <li>The human PK figure in the deck is from the T2D Phase 2a paper (patients), not the healthy-volunteer Phase 1.</li>
+    </ul>
+  </details>
+</section>
+
+<!-- ================= SOURCES ================= -->
+<section id="sources">
+  <header>
+    <span class="tag"><i></i>Sources and method</span>
+    <h2>Sources</h2>
+    <p class="sub">Journal figures were redrawn from digitised points and checked against published AUC values where available. Company statements are tagged as such. Items found only through secondary reports or automated patent summaries are noted in the text and should be verified before external use.</p>
+  </header>
+  <ol class="refs">
+    <li id="r1">Yuan J, et al. Sci Rep 2024;14:16680. <a href="https://doi.org/10.1038/s41598-024-66998-8">doi:10.1038/s41598-024-66998-8</a> (BGM0504 preclinical; Fig. 10, Suppl. Tables 7–8)</li>
+    <li id="r2">Fan, et al. Diabetes Obes Metab 2025;27(4):2110–2119. <a href="https://doi.org/10.1111/dom.16203">doi:10.1111/dom.16203</a> (Phase 1a)</li>
+    <li id="r3">Jin, et al. Diabetes Obes Metab 2026;28(8):7073–82. <a href="https://doi.org/10.1111/dom.70849">doi:10.1111/dom.70849</a> (Phase 2a T2D; human PK)</li>
+    <li id="r4">Ji, et al. Diabetes Obes Metab 2026;28(12):11463–74. <a href="https://doi.org/10.1111/dom.71193">doi:10.1111/dom.71193</a> (Phase 2 obesity)</li>
+    <li id="r5">BrightGene announcement 2024-080, 14 Oct 2024 (Phase 2 obesity topline). <a href="http://star.sse.com.cn/disclosure/listedinfo/announcement/c/new/2024-10-14/688166_20241014_SSUN.pdf">SSE PDF</a></li>
+    <li id="r6">BrightGene announcement 2026-029, 6 May 2026 (Phase 3 topline). <a href="https://pdf.dfcfw.com/pdf/H2_AN202605051821969501_1.pdf">PDF</a></li>
+    <li id="r7">Zong L, et al. J Med Chem 2025;68:14907–14918. <a href="https://doi.org/10.1021/acs.jmedchem.5c01120">doi:10.1021/acs.jmedchem.5c01120</a> (BGM1812 discovery; Figs. 4–5, Tables 2, 4, 6, 7)</li>
+    <li id="r8">Diabetes 2025;74(Suppl 1):1993-LB. <a href="https://doi.org/10.2337/db25-1993-LB">doi:10.2337/db25-1993-LB</a> (BGM1812 and combination, DIO rat)</li>
+    <li id="r9">BrightGene announcement 2026-063, 7 Aug 2026 (BGM1812 Phase 1). <a href="https://static.cninfo.com.cn/finalpage/2026-08-07/1225462081.PDF">cninfo PDF</a></li>
+    <li id="r10">WO2024061310A1, BGM0504 formulation. <a href="https://patents.google.com/patent/WO2024061310A1/en">Google Patents</a></li>
+    <li id="r11">WO2025190304A1, preserved multi-dose formulation. <a href="https://patents.google.com/patent/WO2025190304A1/en">Google Patents</a></li>
+    <li id="r12">US 12,215,133 B2 (WO2022199629A1), BGM0504 compound. <a href="https://patents.google.com/patent/US12215133B2/en">Google Patents</a></li>
+    <li id="r13">WO2026124626A1, amylin analogues and combination with BGM0504. <a href="https://patents.google.com/patent/WO2026124626A1/en">Google Patents</a></li>
+    <li id="r14">BrightGene announcement 2025-053, 1 Aug 2025 (China Resources Sanjiu agreement). <a href="https://static.cninfo.com.cn/finalpage/2025-08-02/1224366287.PDF">cninfo PDF</a></li>
+    <li id="r15">BrightGene investor-relations record 2026-003, 24 Jun 2026. <a href="https://pdf.dfcfw.com/pdf/H2_AN202606251823850634_1.pdf">PDF</a></li>
+    <li id="r16">BrightGene investor-relations record 2026-001. <a href="https://pdf.dfcfw.com/pdf/H22_AN202602091819835456_1.pdf">PDF</a></li>
+    <li id="r17">Soochow Securities company note, 16 Oct 2026. <a href="https://pdf.dfcfw.com/pdf/H3_AP202610161830626430_1.pdf">PDF</a></li>
+    <li id="r18">SURMOUNT-CN. JAMA 2024. <a href="https://doi.org/10.1001/jama.2024.9217">doi:10.1001/jama.2024.9217</a></li>
+    <li id="r19">GLORY-1. N Engl J Med 2025. <a href="https://doi.org/10.1056/NEJMoa2411528">doi:10.1056/NEJMoa2411528</a></li>
+    <li id="r20">GLORY-2. JAMA 2026. <a href="https://doi.org/10.1001/jama.2026.8142">doi:10.1001/jama.2026.8142</a></li>
+    <li id="r21">STEP 7. Lancet Diabetes Endocrinol 2024. <a href="https://doi.org/10.1016/S2213-8587(23)00388-1">doi:10.1016/S2213-8587(23)00388-1</a>; adverse events from <a href="https://clinicaltrials.gov/study/NCT04251156?tab=results">NCT04251156 results</a></li>
+    <li id="r22">Tirzepatide US prescribing information: <a href="https://pi.lilly.com/us/mounjaro-uspi.pdf">Mounjaro</a>, <a href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/217806s003lbl.pdf">Zepbound</a></li>
+    <li id="r23">Semaglutide US prescribing information: <a href="https://www.novo-pi.com/wegovy.pdf">Wegovy</a></li>
+    <li id="r24">Novo Nordisk US 12,527,844 B2, cagrilintide/semaglutide dual-chamber product. <a href="https://patents.google.com/patent/US12527844B2/en">Google Patents</a></li>
+    <li id="r25">Zealand Pharma, petrelintide–semaglutide co-formulation poster, ObesityWeek 2022. <a href="https://www.zealandpharma.com/media/0gnfxg4b/zp8396-sema-coformulation-obesityweek-2022.pdf">PDF</a></li>
+    <li id="r26">ClinicalTrials.gov: <a href="https://clinicaltrials.gov/study/NCT06704581">NCT06704581</a>, <a href="https://clinicaltrials.gov/study/NCT06911203">NCT06911203</a>, <a href="https://clinicaltrials.gov/study/NCT06716203">NCT06716203</a>, <a href="https://clinicaltrials.gov/study/NCT06716216">NCT06716216</a>, <a href="https://clinicaltrials.gov/study/NCT07743983">NCT07743983</a>, <a href="https://clinicaltrials.gov/study/NCT06714955">NCT06714955</a>, <a href="https://clinicaltrials.gov/study/NCT07918625">NCT07918625</a>, <a href="https://clinicaltrials.gov/study/NCT07294235">NCT07294235</a></li>
+    <li id="r27">H-share listing termination, 30 Sep 2026. <a href="https://stock.10jqka.com.cn/20260930/c680420232.shtml">10jqka</a></li>
+    <li id="r28">Oral BGM0504 Phase 1 topline, 25 Mar 2026. <a href="https://www.biospace.com/press-releases/brightgene-announces-positive-topline-phase-1-results-of-oral-bgm0504-in-obesity-in-china-and-the-united-states">Press release</a>; Phase 2 <a href="https://clinicaltrials.gov/study/NCT07658560">NCT07658560</a></li>
+    <li id="r29">Petrelintide: <a href="https://doi.org/10.1021/acs.jmedchem.5c01185">J Med Chem 2025</a>; Phase 1 <a href="https://doi.org/10.1111/dom.70753">doi:10.1111/dom.70753</a>; ZUPREME-1 <a href="https://doi.org/10.1016/S2213-8587(26)00213-5">doi:10.1016/S2213-8587(26)00213-5</a></li>
+    <li id="r30">Eloralintide: Phase 2 <a href="https://doi.org/10.1016/S0140-6736(25)02155-5">doi:10.1016/S0140-6736(25)02155-5</a>; Phase 1 <a href="https://doi.org/10.1111/dom.70439">doi:10.1111/dom.70439</a>; pharmacology <a href="https://doi.org/10.1016/j.molmet.2025.102271">doi:10.1016/j.molmet.2025.102271</a></li>
+    <li id="r31">CagriSema: REDEFINE 1 <a href="https://doi.org/10.1056/NEJMoa2502081">doi:10.1056/NEJMoa2502081</a>; REDEFINE 4 <a href="https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=916501">Novo Nordisk release</a></li>
+    <li id="r32">Amycretin SC Phase 1b/2a. <a href="https://doi.org/10.1016/S0140-6736(25)01185-7">doi:10.1016/S0140-6736(25)01185-7</a></li>
+    <li id="r33">ABBV-295 Phase 1, EASD 2026. <a href="https://news.abbvie.com/2026-09-30-AbbVie-Presents-Detailed-Phase-1-Data-for-ABBV-295,-a-Long-Acting-Amylin-Analog,-Demonstrating-Favorable-Tolerability-and-Pharmacokinetic-Profile-at-EASD-2026">AbbVie release</a></li>
+    <li id="r34">MET-233i Phase 1. <a href="https://www.biospace.com/press-releases/metsera-announces-positive-phase-1-data-of-first-in-class-once-monthly-amylin-candidate-met-233i">Press release</a></li>
+    <li id="r35">Eloralintide + tirzepatide Phase 2, 30 Sep 2026. <a href="https://www.cnbc.com/2026/09/30/eli-lilly-obesity-drug-amylin-tirzepatide-weight-loss-trial.html">CNBC</a></li>
+    <li id="r36">Camurus: <a href="https://www.inderes.dk/en/releases/camurus-ab-camurus-initiates-phase-2b-study-of-cam2056-monthly-semaglutide-depot-in-obesity">CAM2056 Phase 2b</a>; <a href="https://www.inderes.dk/en/releases/camurus-ab-camurus-announces-expansion-of-lilly-collaboration">Lilly collaboration expansion</a></li>
+    <li id="r37">REDEFINE 1 body-composition substudy, ECO 2026. <a href="https://www.pharmaceutical-technology.com/analyst-comment/eco-2026-redefine-1-cagrisema-body-composition/">Analyst comment</a></li>
+    <li id="r38">BrightGene 2026 half-year report (31 Aug 2026) and Q3 2026 coverage. <a href="https://www.cs.com.cn/ssgs/01/2026/10/29/detail_2026102910048349.html">cs.com.cn</a></li>
+    <li id="r39">BrightGene 2025 annual report summary. <a href="http://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20260319/b8256357dba546eca301a5c1320eb4cd.PDF">cninfo PDF</a></li>
+  </ol>
+</section>
+</main>
+</div>
+<script>
+/* ---------- tiny SVG chart engine (no dependencies) ---------- */
+const NS = 'http://www.w3.org/2000/svg';
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+function svgEl(tag, attrs = {}, parent) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) if (attrs[k] !== undefined && attrs[k] !== null) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+function h(tag, attrs = {}, html) {
+  const e = document.createElement(tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (html !== undefined) e.innerHTML = html;
+  return e;
+}
+const fmtNum = (v, d) => {
+  if (v === null || v === undefined || isNaN(v)) return '–';
+  if (d !== undefined) return v.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
+  const a = Math.abs(v);
+  if (a >= 100) return Math.round(v).toLocaleString('en-US');
+  if (a >= 10) return v.toLocaleString('en-US', { maximumFractionDigits: 1 });
+  if (a >= 1) return v.toLocaleString('en-US', { maximumFractionDigits: 2 });
+  return v.toLocaleString('en-US', { maximumSignificantDigits: 3 });
+};
+const sgn = (v, d = 1) => (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toFixed(d);
+
+/* tooltip (one shared element) */
+const tip = h('div', { class: 'tip', role: 'status' });
+tip.hidden = true;
+document.body.appendChild(tip);
+function showTip(html, cx, cy) {
+  tip.innerHTML = html;
+  tip.hidden = false;
+  const r = tip.getBoundingClientRect(), vw = document.documentElement.clientWidth;
+  let x = cx + 14, y = cy + 14;
+  if (x + r.width > vw - 8) x = cx - r.width - 14;
+  if (x < 8) x = 8;
+  if (y + r.height > window.innerHeight - 8) y = cy - r.height - 14;
+  tip.style.left = x + 'px';
+  tip.style.top = Math.max(8, y) + 'px';
+}
+function hideTip() { tip.hidden = true; }
+
+function niceTicks(lo, hi, n = 5) {
+  const span = hi - lo, step0 = span / n, mag = Math.pow(10, Math.floor(Math.log10(step0)));
+  const step = [1, 2, 2.5, 5, 10].map(m => m * mag).find(s => span / s <= n + 0.5) || 10 * mag;
+  const t = [];
+  for (let v = Math.ceil(lo / step - 1e-9) * step; v <= hi + step * 1e-6; v += step) t.push(+v.toFixed(10));
+  return t;
+}
+function legend(host, items) {
+  const el = h('div', { class: 'legend' });
+  items.forEach(it => {
+    const sw = it.kind === 'bar'
+      ? `<span class="sw sw-bar" style="background:${it.color}"></span>`
+      : `<svg class="sw" width="26" height="10" aria-hidden="true"><line x1="1" y1="5" x2="25" y2="5" stroke="${it.color}" stroke-width="2" stroke-dasharray="${it.dash || ''}"/><circle cx="13" cy="5" r="3" fill="${it.hollow ? 'var(--surface)' : it.color}" stroke="${it.color}" stroke-width="1.5"/></svg>`;
+    el.appendChild(h('span', { class: 'legend-item' }, sw + `<span>${it.name}</span>`));
+  });
+  host.appendChild(el);
+}
+
+/* ---- line chart ----
+ cfg: { series:[{name,color,dash,hollow,points:[[x,y]],label}], x:{label,ticks,min,max,fmt}, y:{label,log,min,max,ticks,fmt,unit},
+        height, refLines:[{y,label}], bands:[{x0,x1,label}], tipTitle:(x)=>str, noLegend } */
+function lineChart(host, cfg) {
+  host.innerHTML = '';
+  host.classList.add('chart');
+  if (!cfg.noLegend && cfg.series.length > 1) legend(host, cfg.series);
+  const W = Math.max(300, host.clientWidth || 640), H = cfg.height || 340;
+  const narrow = W < 480;
+  const m = { t: 14, r: cfg.directLabels && !narrow ? 96 : 16, b: 44, l: 58 };
+  const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, width: '100%', height: H, role: 'img', 'aria-label': cfg.aria || '' }, host);
+  const xs = cfg.series.flatMap(s => s.points.map(p => p[0]));
+  const ys = cfg.series.flatMap(s => s.points.map(p => p[1])).filter(v => !cfg.y.log || v > 0);
+  const x0 = cfg.x.min ?? Math.min(...xs), x1 = cfg.x.max ?? Math.max(...xs);
+  let y0, y1, yt;
+  if (cfg.y.log) {
+    y0 = cfg.y.min ?? Math.pow(10, Math.floor(Math.log10(Math.min(...ys))));
+    y1 = cfg.y.max ?? Math.pow(10, Math.ceil(Math.log10(Math.max(...ys))));
+    yt = []; for (let v = y0; v <= y1 * 1.0001; v *= 10) yt.push(v);
+  } else {
+    y0 = cfg.y.min ?? Math.min(0, Math.min(...ys)); y1 = cfg.y.max ?? Math.max(...ys);
+    yt = cfg.y.ticks || niceTicks(y0, y1, 5);
+    if (cfg.y.max === undefined) y1 = Math.max(y1, yt[yt.length - 1] + (yt[1] - yt[0]) * (y1 > yt[yt.length - 1] ? 1 : 0));
+    if (cfg.y.max === undefined && y1 > yt[yt.length - 1]) yt.push(yt[yt.length - 1] + (yt[1] - yt[0]));
+    y1 = Math.max(y1, yt[yt.length - 1]); y0 = Math.min(y0, yt[0]);
+  }
+  const px = v => m.l + (v - x0) / (x1 - x0) * (W - m.l - m.r);
+  const py = v => cfg.y.log
+    ? H - m.b - (Math.log10(Math.max(v, y0)) - Math.log10(y0)) / (Math.log10(y1) - Math.log10(y0)) * (H - m.t - m.b)
+    : H - m.b - (v - y0) / (y1 - y0) * (H - m.t - m.b);
+  const yf = cfg.y.fmt || (v => fmtNum(v));
+  const xf = cfg.x.fmt || (v => v);
+  (cfg.bands || []).forEach(b => {
+    svgEl('rect', { x: px(b.x0), y: m.t, width: px(b.x1) - px(b.x0), height: H - m.t - m.b, class: 'band' }, svg);
+    if (b.label) svgEl('text', { x: px(b.x0) + 4, y: m.t + 12, class: 'axis-t' }, svg).textContent = b.label;
+  });
+  yt.forEach(v => {
+    svgEl('line', { x1: m.l, x2: W - m.r, y1: py(v), y2: py(v), class: v === 0 ? 'base' : 'grid' }, svg);
+    svgEl('text', { x: m.l - 8, y: py(v) + 4, 'text-anchor': 'end', class: 'axis-t' }, svg).textContent = yf(v);
+  });
+  if (cfg.y.log) yt.slice(0, -1).forEach(v => [2, 5].forEach(k =>
+    svgEl('line', { x1: m.l, x2: W - m.r, y1: py(v * k), y2: py(v * k), class: 'grid minor' }, svg)));
+  let xt = cfg.x.ticks || niceTicks(x0, x1, narrow ? 4 : 7);
+  if (narrow && xt.length > 7) xt = xt.filter((_, i) => i % 2 === 0);
+  xt.forEach(v => {
+    svgEl('line', { x1: px(v), x2: px(v), y1: H - m.b, y2: H - m.b + 4, class: 'base' }, svg);
+    svgEl('text', { x: px(v), y: H - m.b + 17, 'text-anchor': 'middle', class: 'axis-t' }, svg).textContent = xf(v);
+  });
+  svgEl('line', { x1: m.l, x2: W - m.r, y1: H - m.b, y2: H - m.b, class: 'base' }, svg);
+  svgEl('text', { x: (m.l + W - m.r) / 2, y: H - 6, 'text-anchor': 'middle', class: 'axis-l' }, svg).textContent = cfg.x.label || '';
+  const yl = svgEl('text', { x: 13, y: (m.t + H - m.b) / 2, 'text-anchor': 'middle', class: 'axis-l', transform: `rotate(-90 13 ${(m.t + H - m.b) / 2})` }, svg);
+  yl.textContent = cfg.y.label || '';
+  (cfg.refLines || []).forEach(r => {
+    svgEl('line', { x1: m.l, x2: W - m.r, y1: py(r.y), y2: py(r.y), class: 'ref' }, svg);
+    svgEl('text', { x: W - m.r - 4, y: py(r.y) - 5, 'text-anchor': 'end', class: 'axis-t' }, svg).textContent = r.label;
+  });
+  const labelYs = [];
+  cfg.series.forEach(s => {
+    const pts = s.points.filter(p => !cfg.y.log || p[1] > 0);
+    const d = pts.map((p, i) => (i ? 'L' : 'M') + px(p[0]).toFixed(1) + ' ' + py(p[1]).toFixed(1)).join('');
+    svgEl('path', { d, fill: 'none', stroke: s.color, 'stroke-width': 2, 'stroke-dasharray': s.dash || '', 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }, svg);
+    if (!s.noMarkers) pts.forEach(p => svgEl('circle', { cx: px(p[0]), cy: py(p[1]), r: 3, fill: s.hollow ? 'var(--surface)' : s.color, stroke: s.hollow ? s.color : 'var(--surface)', 'stroke-width': 1.25 }, svg));
+    if (cfg.directLabels && !narrow && pts.length) {
+      let ly = py(pts[pts.length - 1][1]) + 4;
+      labelYs.forEach(o => { if (Math.abs(o - ly) < 12) ly = o + (ly >= o ? 12 : -12); });
+      labelYs.push(ly);
+      svgEl('text', { x: px(pts[pts.length - 1][0]) + 8, y: ly, class: 'dlabel' }, svg).textContent = s.label || s.name;
+    }
+  });
+  /* hover layer */
+  const ux = [...new Set(xs)].sort((a, b) => a - b);
+  const cross = svgEl('line', { y1: m.t, y2: H - m.b, class: 'cross', visibility: 'hidden' }, svg);
+  const dots = cfg.series.map(s => svgEl('circle', { r: 5, fill: s.color, stroke: 'var(--surface)', 'stroke-width': 2, visibility: 'hidden' }, svg));
+  const hit = svgEl('rect', { x: m.l, y: m.t, width: W - m.l - m.r, height: H - m.t - m.b, fill: 'transparent', tabindex: 0, class: 'hit' }, svg);
+  function at(x, cx, cy) {
+    cross.setAttribute('x1', px(x)); cross.setAttribute('x2', px(x)); cross.setAttribute('visibility', 'visible');
+    let rows = '';
+    cfg.series.forEach((s, i) => {
+      const p = s.points.find(q => q[0] === x);
+      if (p && (!cfg.y.log || p[1] > 0)) {
+        dots[i].setAttribute('cx', px(x)); dots[i].setAttribute('cy', py(p[1])); dots[i].setAttribute('visibility', 'visible');
+        rows += `<tr><td><span class="dot" style="background:${s.color}"></span>${s.name}</td><td>${(cfg.tipFmt || yf)(p[1], s)}</td></tr>`;
+      } else dots[i].setAttribute('visibility', 'hidden');
+    });
+    showTip(`<div class="tip-h">${cfg.tipTitle ? cfg.tipTitle(x) : xf(x)}</div><table>${rows}</table>${cfg.y.unit ? `<div class="tip-u">${cfg.y.unit}</div>` : ''}`, cx, cy);
+  }
+  let ki = 0;
+  hit.addEventListener('pointermove', e => {
+    const r = svg.getBoundingClientRect(), sx = (e.clientX - r.left) * (W / r.width);
+    let best = ux[0];
+    ux.forEach(v => { if (Math.abs(px(v) - sx) < Math.abs(px(best) - sx)) best = v; });
+    ki = ux.indexOf(best); at(best, e.clientX, e.clientY);
+  });
+  const off = () => { cross.setAttribute('visibility', 'hidden'); dots.forEach(d => d.setAttribute('visibility', 'hidden')); hideTip(); };
+  hit.addEventListener('pointerleave', off);
+  hit.addEventListener('blur', off);
+  hit.addEventListener('keydown', e => {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    e.preventDefault();
+    ki = Math.min(ux.length - 1, Math.max(0, ki + (e.key === 'ArrowRight' ? 1 : -1)));
+    const r = svg.getBoundingClientRect();
+    at(ux[ki], r.left + px(ux[ki]) * r.width / W, r.top + m.t + 20);
+  });
+}
+
+/* ---- bar chart (vertical, grouped; supports negative values) ----
+ cfg: { groups:[{label, sub, bars:[{name,value,color,hatch,tip,err}]}], y:{label,min,max,fmt,ticks}, height, legendItems, valueFmt, slim } */
+function barChart(host, cfg) {
+  host.innerHTML = '';
+  host.classList.add('chart');
+  if (cfg.legendItems) legend(host, cfg.legendItems.map(i => ({ ...i, kind: 'bar' })));
+  const W = Math.max(280, host.clientWidth || 640), H = cfg.height || 300;
+  const narrow = W < 480;
+  const gw0 = (W - 60) / cfg.groups.length;
+  const maxLab = Math.max(...cfg.groups.map(g => Math.max(g.label.length, (g.sub || '').length))) * 6.3;
+  const rot = maxLab > gw0 - 6;
+  const m = { t: 22, r: 10, b: rot ? 22 + Math.max(...cfg.groups.map(g => g.label.length)) * 6.3 * 0.66 : cfg.groups.some(g => g.sub) ? 52 : 38, l: 50 };
+  const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, width: '100%', height: H, role: 'img', 'aria-label': cfg.aria || '' }, host);
+  const vals = cfg.groups.flatMap(g => g.bars.map(b => b.value + (b.err && b.value > 0 ? b.err : 0)));
+  let y0 = cfg.y.min ?? Math.min(0, ...vals), y1 = cfg.y.max ?? Math.max(0, ...vals);
+  const yt = cfg.y.ticks || niceTicks(y0, y1, 5);
+  y0 = Math.min(y0, yt[0]); y1 = Math.max(y1, yt[yt.length - 1]);
+  const py = v => m.t + (y1 - v) / (y1 - y0) * (H - m.t - m.b);
+  const yf = cfg.y.fmt || (v => fmtNum(v));
+  const vf = cfg.valueFmt || yf;
+  yt.forEach(v => {
+    svgEl('line', { x1: m.l, x2: W - m.r, y1: py(v), y2: py(v), class: v === 0 ? 'base' : 'grid' }, svg);
+    svgEl('text', { x: m.l - 8, y: py(v) + 4, 'text-anchor': 'end', class: 'axis-t' }, svg).textContent = yf(v);
+  });
+  const yl = svgEl('text', { x: 12, y: (m.t + H - m.b) / 2, 'text-anchor': 'middle', class: 'axis-l', transform: `rotate(-90 12 ${(m.t + H - m.b) / 2})` }, svg);
+  yl.textContent = cfg.y.label || '';
+  const gw = (W - m.l - m.r) / cfg.groups.length;
+  cfg.groups.forEach((g, gi) => {
+    const n = g.bars.length, inner = gw * (n > 1 ? 0.84 : 0.6), bw = Math.min(cfg.maxBar || 46, inner / n - 2);
+    const start = m.l + gi * gw + (gw - (bw + 2) * n + 2) / 2;
+    g.bars.forEach((b, bi) => {
+      const x = start + bi * (bw + 2), yv = py(b.value), yz = py(0);
+      const top = Math.min(yv, yz), hgt = Math.max(1, Math.abs(yv - yz));
+      const r = Math.min(4, bw / 2, hgt);
+      const d = b.value >= 0
+        ? `M${x} ${yz}V${top + r}q0 ${-r} ${r} ${-r}h${bw - 2 * r}q${r} 0 ${r} ${r}V${yz}Z`
+        : `M${x} ${yz}V${top + hgt - r}q0 ${r} ${r} ${r}h${bw - 2 * r}q${r} 0 ${r} ${-r}V${yz}Z`;
+      const bar = svgEl('path', { d, fill: b.color, class: 'bar' + (b.hatch ? ' hatch' : ''), tabindex: 0 }, svg);
+      if (b.hatch) { bar.setAttribute('fill', 'var(--surface)'); bar.setAttribute('stroke', b.color); bar.setAttribute('stroke-width', 1.5); bar.setAttribute('stroke-dasharray', '4 3'); }
+      if (b.err) {
+        const ye = py(b.value + (b.value >= 0 ? b.err : -b.err));
+        svgEl('line', { x1: x + bw / 2, x2: x + bw / 2, y1: yv, y2: ye, class: 'err' }, svg);
+        svgEl('line', { x1: x + bw / 2 - 4, x2: x + bw / 2 + 4, y1: ye, y2: ye, class: 'err' }, svg);
+      }
+      if (!(cfg.slim && narrow) && bw >= 22) {
+        const ty = b.value >= 0 ? top - 5 - (b.err ? Math.abs(py(b.err) - py(0)) : 0) : top + hgt + 13;
+        svgEl('text', { x: x + bw / 2, y: ty, 'text-anchor': 'middle', class: 'val' }, svg).textContent = (b.approx ? '≈' : '') + vf(b.value);
+      }
+      const html = `<div class="tip-h">${g.tipLabel || (g.label + (g.sub ? ' · ' + g.sub : ''))}</div><table><tr><td><span class="dot" style="background:${b.color}"></span>${b.name}</td><td>${(b.approx ? '≈ ' : '') + vf(b.value)}</td></tr></table>${b.tip ? `<div class="tip-u">${b.tip}</div>` : ''}`;
+      bar.addEventListener('pointermove', e => showTip(html, e.clientX, e.clientY));
+      bar.addEventListener('pointerleave', hideTip);
+      bar.addEventListener('focus', () => { const r2 = bar.getBoundingClientRect(); showTip(html, r2.right, r2.top); });
+      bar.addEventListener('blur', hideTip);
+    });
+    const lx = m.l + gi * gw + gw / 2, ly = H - m.b + 16;
+    const t = svgEl('text', rot ? { x: lx + 4, y: ly - 4, 'text-anchor': 'end', class: 'axis-t cat', transform: `rotate(-40 ${lx + 4} ${ly - 4})` } : { x: lx, y: ly, 'text-anchor': 'middle', class: 'axis-t cat' }, svg); t.textContent = g.label;
+    if (g.sub && !rot) svgEl('text', { x: lx, y: ly + 14, 'text-anchor': 'middle', class: 'axis-t' }, svg).textContent = g.sub;
+  });
+}
+
+/* segmented controls: <div class="seg" data-key="k"><button data-v="a" aria-pressed="true"> */
+function bindSeg(root, state, onChange) {
+  $$('.seg', root).forEach(seg => {
+    const key = seg.dataset.key;
+    $$('button', seg).forEach(b => b.addEventListener('click', () => {
+      state[key] = b.dataset.v;
+      $$('button', seg).forEach(o => o.setAttribute('aria-pressed', o === b));
+      onChange();
+    }));
+  });
+}
+const redraws = [];
+function onResize(fn) { redraws.push(fn); fn(); }
+let rT; window.addEventListener('resize', () => { clearTimeout(rT); rT = setTimeout(() => redraws.forEach(f => f()), 120); });
+
+/* Human PK: T2D patients, Ph2a (Jin 2026). Digitised from the published mean ± SD figure. */
+const HUMAN_PK = {
+  title: 'Humans with type 2 diabetes (Phase 2a), weekly SC', n: 'n = 11–12 per dose', unit: 'mg', tUnit: 'h',
+  src: 'Digitised from the mean concentration–time figure of the Phase 2a T2D paper (Jin 2026). Read-off error is about ±5%; the first hours after dosing are less certain. The paper reports t½ and Tmax in text; absolute Cmax and AUC sit in a supplement that was not accessible.',
+  first: { t: [0, 2, 4, 8, 12, 24, 36, 48, 72, 120, 168], xticks: [0, 24, 48, 72, 96, 120, 144, 168], doses: [
+    { d: 5, c: [100, 195, 290, 400, 445, 487, 473, 452, 411, 300, 207] },
+    { d: 10, c: [200, 330, 500, 760, 860, 1005, 1003, 937, 838, 578, 432] },
+    { d: 15, c: [430, 520, 700, 1005, 1170, 1450, 1473, 1440, 1282, 960, 655] }] },
+  fourth: { t: [0, 2, 4, 8, 12, 24, 36, 48, 72, 120, 168], xticks: [0, 24, 48, 72, 96, 120, 144, 168], doses: [
+    { d: 5, c: [253, 325, 425, 530, 575, 610, 585, 557, 510, 370, 257] },
+    { d: 10, c: [500, 590, 780, 940, 1005, 1128, 1140, 1075, 975, 720, 505] },
+    { d: 15, c: [780, 850, 1020, 1285, 1420, 1585, 1683, 1625, 1462, 1125, 787] }] },
+  table: { head: ['5 mg', '10 mg', '15 mg'], rows: [
+    ['Peak after 4th target dose (ng/mL)', '≈ 610', '≈ 1,140', '≈ 1,680'],
+    ['Trough at 168 h (ng/mL)', '≈ 257', '≈ 505', '≈ 787'],
+    ['Peak ÷ trough', '≈ 2.4', '≈ 2.3', '≈ 2.1'],
+    ['Peak ÷ dose (ng/mL per mg)', '≈ 122', '≈ 114', '≈ 112'],
+    ['Peak, 4th ÷ 1st target dose', '≈ 1.25', '≈ 1.13', '≈ 1.14'],
+    ['Tmax (reported)', 'about 24 h', 'about 24 h', 'about 24 h'],
+    ['t½ after 4th target dose (reported)', '109–160 h across doses', '', '']] },
+  tableNote: 'Rows marked ≈ are read from the digitised curve, not published values. Tmax and t½ are quoted from the paper text.',
+  stats: [['109–160 h', 'Terminal t½ after the 4th target dose (4.5–6.7 days); tirzepatide label: about 5 days'],
+    ['≈ 24 h', 'Tmax at every dose; tirzepatide label: 24 h (8–72 h)'],
+    ['≈ 2.1–2.4×', 'Peak-to-trough swing on weekly dosing (digitised)'],
+    ['0.92', 'Cmax power-model slope after the 1st target dose (90% CI 0.79–1.05); 0.65 after the 4th']]
+};
+
+/* ---------- BGM0504 PK explorer ---------- */
+const C = { b: 'var(--c0504)', bLo: 'var(--c0504-lo)', bHi: 'var(--c0504-hi)', o: 'var(--c1812)', oLo: 'var(--c1812-lo)', oHi: 'var(--c1812-hi)',
+  g: 'var(--c2102)', cmp: 'var(--cmp)', cmp2: 'var(--cmp-2)', cmp3: 'var(--cmp-3)', ink: 'var(--ink-2)' };
+const PK = {
+  rat: {
+    title: 'Sprague-Dawley rat, single SC dose', n: 'n = 6 per group (3 M / 3 F)', unit: 'mg/kg', tUnit: 'h',
+    src: 'Digitised from Yuan 2024, Fig. 10a (sex-averaged). Trapezoidal AUC of the digitised points is within 5% of the published AUC0-last for every dose.',
+    t: [0.5, 1, 2, 4, 8, 12, 24, 48, 72, 96, 120], xticks: [0, 24, 48, 72, 96, 120],
+    doses: [
+      { d: 0.3, c: [65, 115, 180, 300, 570, 720, 814, 320, 100, 31, 11] },
+      { d: 1.5, c: [335, 565, 925, 1500, 2400, 3000, 3830, 1500, 460, 135, 42] },
+      { d: 7.5, c: [2300, 3000, 4800, 7300, 10500, 13000, 15100, 6100, 2100, 680, 250] }],
+    table: {
+      head: ['IV 0.2', 'SC 0.3', 'SC 1.5', 'SC 7.5'],
+      rows: [
+        ['C0 / Cmax (ng/mL)', '4,650 ± 411', '814 ± 111', '3,830 ± 705', '15,100 ± 1,750'],
+        ['Tmax (h)', '–', '24.0 ± 0.0', '24.0 ± 0.0', '20.0 ± 6.2'],
+        ['t½ (h)', '13.6 ± 2.3', '14.5 ± 1.4', '13.4 ± 1.5', '14.7 ± 2.4'],
+        ['Vdss (L/kg)', '0.0648', '–', '–', '–'],
+        ['CL (mL/min/kg)', '0.0680', '–', '–', '–'],
+        ['AUC0-24 (ng·h/mL)', '38,800', '14,100', '63,900', '269,000'],
+        ['AUC0-last (ng·h/mL)', '49,800', '33,200', '153,000', '637,000'],
+        ['AUC0-inf (ng·h/mL)', '50,000', '33,400', '154,000', '643,000'],
+        ['SC bioavailability', '–', '44.5%', '41.1%', '34.3%']]
+    },
+    auc: [33200, 153000, 637000], cmax: [814, 3830, 15100]
+  },
+  monkey: {
+    title: 'Cynomolgus monkey, single SC dose', n: 'n = 6 per group (3 M / 3 F)', unit: 'mg/kg', tUnit: 'h',
+    src: 'Digitised from Yuan 2024, Fig. 10b (sex-averaged; male and female curves overlap). Trapezoidal AUC of the digitised points is within 2% of the published AUC0-last for every dose.',
+    t: [0.5, 1, 4, 6, 8, 12, 24, 48, 72, 96, 120, 168, 240, 312], xticks: [0, 48, 96, 144, 192, 240, 288],
+    doses: [
+      { d: 0.2, c: [45, 105, 520, 760, 980, 1350, 1440, 980, 672, 452, 281, 127, 36, 9.5] },
+      { d: 1, c: [260, 450, 2600, 3630, 4520, 5700, 5970, 4520, 2860, 1850, 1240, 585, 180, 52] },
+      { d: 5, c: [2500, 3800, 14500, 19000, 23500, 29800, 33500, 24000, 16500, 10000, 6800, 3000, 1050, 320] }],
+    table: {
+      head: ['IV 0.1', 'SC 0.2', 'SC 1', 'SC 5'],
+      rows: [
+        ['C0 / Cmax (ng/mL)', '2,860 ± 261', '1,440 ± 109', '5,970 ± 1,090', '33,500 ± 3,060'],
+        ['Tmax (h)', '–', '16.0 ± 6.2', '22.0 ± 14.0', '20.0 ± 6.2'],
+        ['t½ (h)', '37.9 ± 2.5', '38.7 ± 1.8', '41.7 ± 2.9', '43.4 ± 5.9'],
+        ['Vdss (L/kg)', '0.0608', '–', '–', '–'],
+        ['CL (mL/min/kg)', '0.0207', '–', '–', '–'],
+        ['AUC0-24 (ng·h/mL)', '34,600', '26,100', '109,000', '603,000'],
+        ['AUC0-last (ng·h/mL)', '80,400', '113,000', '488,000', '2,720,000'],
+        ['AUC0-inf (ng·h/mL)', '81,100', '113,000', '491,000', '2,740,000'],
+        ['SC bioavailability', '–', '69.7%', '60.5%', '67.6%']]
+    },
+    auc: [113000, 488000, 2720000], cmax: [1440, 5970, 33500]
+  },
+  human: HUMAN_PK
+};
+const pkState = { species: 'monkey', scale: 'log', norm: 'raw', visit: 'first' };
+function powerSlope(x, y) {
+  const lx = x.map(Math.log), ly = y.map(Math.log), n = x.length;
+  const mx = lx.reduce((a, b) => a + b) / n, my = ly.reduce((a, b) => a + b) / n;
+  return lx.reduce((s, v, i) => s + (v - mx) * (ly[i] - my), 0) / lx.reduce((s, v) => s + (v - mx) ** 2, 0);
+}
+function drawPK() {
+  const sp = PK[pkState.species], ramp = [C.bLo, C.b, C.bHi];
+  const isH = pkState.species === 'human';
+  $('#pk-visit').hidden = !isH;
+  const set = isH ? sp[pkState.visit] : sp;
+  const norm = pkState.norm === 'norm';
+  const series = set.doses.map((d, i) => ({
+    name: `${d.d} ${sp.unit}`, label: `${d.d} ${sp.unit}`, color: ramp[i],
+    points: set.t.map((t, j) => [t, norm ? d.c[j] / d.d : d.c[j]]).filter(p => p[1] !== null && !isNaN(p[1]))
+  }));
+  lineChart($('#pk-chart'), {
+    series, directLabels: true, height: 380,
+    aria: `BGM0504 plasma concentration versus time, ${sp.title}`,
+    x: { label: isH ? 'Time after dose (h)' : 'Time after dose (h)', ticks: set.xticks || sp.xticks, min: 0 },
+    y: { label: norm ? `Concentration ÷ dose (ng/mL per ${sp.unit})` : 'Plasma concentration (ng/mL)', log: pkState.scale === 'log',
+      unit: norm ? `ng/mL per ${sp.unit}` : 'ng/mL', min: pkState.scale === 'log' ? undefined : 0 },
+    tipTitle: x => `${x} h after dose`
+  });
+  $('#pk-title').textContent = sp.title + (isH ? ` · ${pkState.visit === 'first' ? 'first dose at target level' : 'fourth dose at target level'}` : '');
+  $('#pk-n').textContent = sp.n;
+  $('#pk-src').textContent = sp.src;
+  /* table */
+  const tb = sp.table;
+  $('#pk-table').innerHTML = `<thead><tr><th>Parameter</th>${tb.head.map(c => `<th class="n">${c}</th>`).join('')}</tr></thead><tbody>` +
+    tb.rows.map(r => `<tr><td>${r[0]}</td>${r.slice(1).map(c => `<td class="n">${c}</td>`).join('')}</tr>`).join('') + '</tbody>';
+  $('#pk-table-note').innerHTML = sp.tableNote || 'Mean ± SEM, sexes combined. Published values, reproduced as reported.';
+  /* insight tiles */
+  const st = $('#pk-stats'); st.innerHTML = '';
+  (sp.stats || (() => {
+    const d = sp.doses.map(x => x.d), b = powerSlope(d, sp.auc), bc = powerSlope(d, sp.cmax);
+    return [
+      [b.toFixed(2), 'AUC power-model slope β (1.00 = dose-proportional)'],
+      [bc.toFixed(2), 'Cmax power-model slope β'],
+      [pkState.species === 'rat' ? '13–15 h' : '38–43 h', 'Terminal t½, flat across a 25-fold dose range'],
+      [pkState.species === 'rat' ? '34–45%' : '61–70%', 'SC bioavailability vs IV']];
+  })()).forEach(s => st.appendChild(h('div', { class: 'stat' }, `<b>${s[0]}</b><span>${s[1]}</span>`)));
+}
+
+/* ---------- BGM1812 rat PK (Zong 2025, Fig. 4A) ---------- */
+const RAT1812 = {
+  t: [0.25, 0.5, 1, 2, 4, 8, 24, 36, 48, 72, 96],
+  s: [
+    { name: 'BGM1812', color: C.o, c: [150, 350, 1100, 1700, 2950, 4650, 5303, 3950, 2800, 1150, 600] },
+    { name: 'Petrelintide', color: C.cmp, dash: '6 4', c: [200, 450, 700, 1000, 1700, 2980, 4850, 3880, 3070, 1530, 850] },
+    { name: 'BGM1802', color: C.cmp3, hollow: true, c: [100, 250, 500, 800, 1370, 2670, 4863, 3950, 3000, 1450, 780] },
+    { name: 'BGM1813', color: C.cmp2, hollow: true, dash: '2 3', c: [150, 400, 750, 1200, 2550, 4850, 5385, 3220, 2580, 1180, 590] }]
+};
+const r1812State = { scale: 'linear', view: 'pk' };
+const SD1812 = { /* Fig. 4B/4C, single 1 mg/kg SC, lean SD rats */
+  bw: { t: [1, 2, 3, 4, 5], BGM1812: [0, -15.7, -20.4, -15.4, -11.2], Petrelintide: [0, -9.5, -13.2, -11.3, -5.3], BGM1802: [0, -11.1, -16.6, -14.5, -10.7], BGM1813: [0, -14.1, -18.3, -12.6, -4.3] },
+  fi: { t: [0, 1, 2, 3, 4], BGM1812: [0, 0.3, 1.2, 14.5, 19.4], Petrelintide: [0, 1.1, 2.2, 15.2, 25.5], BGM1802: [0, 0.4, 1.7, 13.7, 19.7], BGM1813: [0, 0.6, 1.9, 17.1, 24.0] }
+};
+function draw1812() {
+  const v = r1812State.view;
+  $('#r1812-scale').hidden = v !== 'pk';
+  if (v === 'pk') {
+    lineChart($('#r1812-chart'), {
+      series: RAT1812.s.map(s => ({ ...s, points: RAT1812.t.map((t, i) => [t, s.c[i]]) })), height: 340, directLabels: false,
+      aria: 'BGM1812 and comparators plasma concentration in rats',
+      x: { label: 'Time after dose (h)', ticks: [0, 12, 24, 36, 48, 60, 72, 84, 96], min: 0 },
+      y: { label: 'Plasma concentration (ng/mL)', log: r1812State.scale === 'log', unit: 'ng/mL', min: r1812State.scale === 'log' ? 100 : 0 },
+      tipTitle: x => `${x} h after dose`
+    });
+  } else {
+    const d = SD1812[v];
+    lineChart($('#r1812-chart'), {
+      series: RAT1812.s.map(s => ({ ...s, points: d.t.map((t, i) => [t, d[s.name][i]]) })), height: 340,
+      aria: v === 'bw' ? 'Body weight change after a single dose' : 'Daily food intake after a single dose',
+      x: { label: 'Treatment day', ticks: d.t },
+      y: v === 'bw' ? { label: 'Body weight change (%)', min: -25, max: 0, ticks: [-25, -20, -15, -10, -5, 0], unit: '% vs day 1', fmt: x => x.toFixed(0) }
+        : { label: 'Food intake (g/day)', min: 0, max: 30, ticks: [0, 5, 10, 15, 20, 25, 30], unit: 'g/day' },
+      tipFmt: x => v === 'bw' ? sgn(x) + '%' : x.toFixed(1), tipTitle: x => `Day ${x}`
+    });
+  }
+  $('#r1812-cap').textContent = v === 'pk'
+    ? 'Male SD rats, n = 3 per peptide, SC 1 mg/kg in 10 mM PBS pH 7.4. Digitised from Zong 2025, Fig. 4A; trapezoidal AUC of the digitised BGM1812 points (≈266,000) matches the published AUC0-t (264,931 h·ng/mL).'
+    : v === 'bw' ? 'Same single 1 mg/kg dose in lean rats. BGM1812 reaches about −20% by day 3 versus about −13% for petrelintide (p < 0.01 for maximum loss). Digitised from Fig. 4C.'
+      : 'Food intake is almost abolished for two days after one 1 mg/kg dose and recovers on days 3–4. Digitised from Fig. 4B.';
+}
+
+/* ---------- BGM1812 DIO rat (Zong 2025, Fig. 5) ---------- */
+const DIO = {
+  t: [1, 4, 7, 10, 13, 16, 19, 22, 25, 28],
+  s: [
+    { key: 'veh', name: 'Vehicle', color: C.ink, dash: '2 3', noMarkers: true, c: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100], bl: 10, food: 490, lean: -1.3, fat: 1.4, sig: '' },
+    { key: 'p', name: 'Petrelintide 0.04', color: C.cmp, dash: '6 4', c: [100, 95.0, 93.4, 91.5, 91.0, 90.6, 89.7, 90.1, 89.5, 89.1], bl: -2, food: 335, lean: 1.3, fat: -3.4, sig: 'ns' },
+    { key: 'c', name: 'Cagrilintide 0.04', color: C.cmp2, dash: '6 4', hollow: true, c: [100, 93.5, 90.6, 88.8, 88.2, 86.9, 86.3, 86.9, 86.7, 85.8], bl: -6, food: 325, lean: 1.7, fat: -3.9, sig: '*' },
+    { key: 'b1', name: 'BGM1812 0.012', color: C.oLo, c: [100, 95.8, 95.2, 93.6, 92.9, 92.0, 91.2, 91.2, 91.0, 90.7], bl: -2, food: 370, lean: -0.1, fat: -1.2, sig: 'ns' },
+    { key: 'b2', name: 'BGM1812 0.04', color: C.o, c: [100, 92.6, 91.0, 89.0, 88.1, 87.2, 86.2, 85.4, 85.1, 85.0], bl: -7, food: 318, lean: 2.4, fat: -4.6, sig: '**' },
+    { key: 'b3', name: 'BGM1812 0.12', color: C.oHi, c: [100, 89.3, 86.9, 85.0, 83.5, 82.7, 81.8, 81.7, 80.8, 80.3], bl: -13, food: 280, lean: 2.9, fat: -5.3, sig: '***' }]
+};
+const dioState = { view: 'time' };
+function drawDIO() {
+  const host = $('#dio-chart'), v = dioState.view;
+  if (v === 'time') {
+    lineChart(host, {
+      series: DIO.s.map(s => ({ ...s, label: s.name, points: DIO.t.map((t, i) => [t, s.c[i]]) })), height: 360, directLabels: true,
+      aria: 'DIO rat body weight relative to vehicle over 28 days',
+      x: { label: 'Study day (SC dose every 3 days × 10)', ticks: [1, 4, 7, 10, 13, 16, 19, 22, 25, 28], min: 1, max: 28 },
+      y: { label: 'Body weight, % of vehicle', min: 75, max: 100, ticks: [75, 80, 85, 90, 95, 100], unit: '% of vehicle group', fmt: x => x.toFixed(0) },
+      tipFmt: x => x.toFixed(1) + '%', tipTitle: x => `Day ${x}`
+    });
+  } else {
+    const defs = { bl: ['Body weight change from baseline, day 30 (%)', x => sgn(x, 0) + '%', [-20, -15, -10, -5, 0, 5, 10, 15]],
+      lean: ['Lean mass change (percentage points of body weight)', x => sgn(x), [-3, -2, -1, 0, 1, 2, 3, 4]],
+      fat: ['Fat mass change (percentage points of body weight)', x => sgn(x), [-8, -6, -4, -2, 0, 2, 4]] }[v];
+    barChart(host, {
+      height: 340, aria: defs[0], maxBar: 54,
+      groups: DIO.s.map(s => ({ label: s.name.replace(/ (0\.\d+)$/, ''), sub: s.name.match(/0\.\d+$/)?.[0] ? s.name.match(/0\.\d+$/)[0] + ' mg/kg' : '',
+        tipLabel: s.name + (s.key === 'veh' ? '' : ' mg/kg'), bars: [{ name: defs[0], value: s[v], color: s.color, approx: true, tip: 'Read from the published bar chart' }] })),
+      y: { label: defs[0], ticks: defs[2], fmt: x => x.toFixed(0) }, valueFmt: defs[1]
+    });
+  }
+}
+
+/* ---------- dosing-interval model ---------- */
+const simState = { th: 4, ta: 0.6, tau: 7 };
+function simCurve(th, ta, tau, n = 240) {
+  let ke = Math.LN2 / th, ka = Math.LN2 / ta;
+  if (Math.abs(ka - ke) < 1e-6) ka *= 1.001;
+  const f = t => (Math.exp(-ke * t) / (1 - Math.exp(-ke * tau)) - Math.exp(-ka * t) / (1 - Math.exp(-ka * tau))) * ka / (ka - ke);
+  const single = t => (Math.exp(-ke * t) - Math.exp(-ka * t)) * ka / (ka - ke);
+  const pts = []; let mx = 0, mn = Infinity, smx = 0;
+  for (let i = 0; i <= n; i++) { const t = tau * i / n, c = f(t); pts.push([t, c]); mx = Math.max(mx, c); mn = Math.min(mn, c); }
+  for (let i = 0; i <= 4000; i++) smx = Math.max(smx, single(i * (th + ta) * 10 / 4000));
+  return { pts: pts.map(p => [p[0], p[1] / mx * 100]), ptr: mx / mn, acc: mx / smx, trough: mn / mx * 100 };
+}
+function drawSim() {
+  const s = simState, r = simCurve(s.th, s.ta, s.tau);
+  const two = r.pts.concat(r.pts.slice(1).map(p => [p[0] + s.tau, p[1]]));
+  lineChart($('#sim-chart'), {
+    series: [{ name: 'Steady-state concentration', color: C.b, points: two, noMarkers: true }], noLegend: true, height: 300,
+    aria: 'Modelled steady-state concentration over two dosing intervals',
+    x: { label: 'Days (two dosing intervals at steady state)', min: 0, max: s.tau * 2, ticks: s.tau === 7 ? [0, 7, 14] : s.tau === 14 ? [0, 7, 14, 21, 28] : [0, 14, 28, 42, 56] },
+    y: { label: '% of steady-state peak', min: 0, max: 100, ticks: [0, 25, 50, 75, 100], unit: '% of Cmax,ss' },
+    tipFmt: x => x.toFixed(0) + '%', tipTitle: x => `Day ${x.toFixed(1)}`
+  });
+  $('#sim-th-o').textContent = s.th.toFixed(1) + ' d'; $('#sim-ta-o').textContent = s.ta.toFixed(1) + ' d';
+  $('#sim-stats').innerHTML = [
+    [r.ptr >= 100 ? Math.round(r.ptr) + '×' : r.ptr.toFixed(1) + '×', 'Peak-to-trough ratio at steady state'],
+    [r.trough.toFixed(r.trough < 10 ? 1 : 0) + '%', 'Trough as % of peak'],
+    [r.acc.toFixed(2) + '×', 'Accumulation (steady-state peak ÷ first-dose peak)']
+  ].map(x => `<div class="stat"><b>${x[0]}</b><span>${x[1]}</span></div>`).join('');
+  const verdict = r.ptr <= 2.5 ? ['good', 'Flat profile, comparable to marketed weekly incretins'] : r.ptr <= 5 ? ['warn', 'Wider swing than weekly incretins; peak-related GI events become the question'] : ['bad', 'Not viable as a plain solution; needs a slower-release depot or a longer-lived molecule'];
+  $('#sim-verdict').className = 'pill ' + verdict[0]; $('#sim-verdict').textContent = verdict[1];
+}
+
+/* ---------- BGM0504 clinical ---------- */
+const doseRamp = [C.bLo, C.b, C.bHi];
+const TRIALS = {
+  ph3: { cap: 'Phase 3 obesity, 52 weeks, N = 652, 41 sites in China. Full analysis set; the estimand is not disclosed. Baseline 96.2 kg, BMI 33.9.',
+    ylab: 'Body weight change at week 52 (%)', ticks: [-25, -20, -15, -10, -5, 0], fmt: v => sgn(v) + '%',
+    bars: [['Placebo', -3.1, C.cmp3], ['5 mg', -14.3, C.bLo], ['10 mg', -17.3, C.b], ['15 mg', -19.2, C.bHi]] },
+  ph2: { cap: 'Phase 2 obesity, 24 weeks at target dose, N = 120 (30 per arm). Published in Diabetes Obes Metab 2026.',
+    ylab: 'Body weight change at week 24 (%)', ticks: [-25, -20, -15, -10, -5, 0], fmt: v => sgn(v, 2) + '%',
+    bars: [['Placebo', 0.13, C.cmp3], ['5 mg', -10.68, C.bLo], ['10 mg', -16.07, C.b], ['15 mg', -18.33, C.bHi]] },
+  t2d: { cap: 'Phase 2a type 2 diabetes, 12 weeks at target dose, N = 64. Open-label semaglutide 1 mg as reference. Baseline HbA1c 7.8–8.3%.',
+    ylab: 'HbA1c change at week 12 (percentage points)', ticks: [-3, -2.5, -2, -1.5, -1, -0.5, 0, 0.5], fmt: v => sgn(v, 2),
+    bars: [['Placebo', 0.28, C.cmp3], ['Semaglutide 1 mg', -1.43, C.cmp], ['5 mg', -1.72, C.bLo], ['10 mg', -1.94, C.b], ['15 mg', -2.48, C.bHi]] },
+  ph1: { cap: 'Phase 1a healthy volunteers, N = 40: one 2.5 mg dose, or two weekly steps up to the target dose. Values from secondary summaries of Fan 2025; not re-verified against the full text.',
+    ylab: 'Body weight change (%)', ticks: [-12, -10, -8, -6, -4, -2, 0], fmt: v => sgn(v, 2) + '%',
+    bars: [['2.5 mg', -3.24, C.cmp3], ['5 mg', -6.26, C.bLo], ['10 mg', -7.09, C.b], ['15 mg', -8.30, C.bHi]] }
+};
+const effState = { trial: 'ph3' };
+function drawEff() {
+  const t = TRIALS[effState.trial];
+  barChart($('#eff-chart'), { height: 310, aria: t.ylab, maxBar: 64,
+    groups: t.bars.map(b => ({ label: b[0], bars: [{ name: t.ylab, value: b[1], color: b[2] }] })),
+    y: { label: t.ylab, ticks: t.ticks, fmt: v => String(v) }, valueFmt: t.fmt });
+  $('#eff-cap').textContent = t.cap;
+}
+function drawTime() { /* placebo-subtracted, Ph2 obesity, company announcement 2024-080 */
+  lineChart($('#time-chart'), { height: 300, directLabels: true,
+    series: [['5 mg', [0, -5.2, -8.4, -10.8], C.bLo], ['10 mg', [0, -7.0, -12.0, -16.2], C.b], ['15 mg', [0, -9.5, -13.8, -18.5], C.bHi]]
+      .map(s => ({ name: s[0], color: s[2], points: [0, 4, 12, 24].map((w, i) => [w, s[1][i]]) })),
+    x: { label: 'Weeks at target dose (after 2–6 weeks of titration)', ticks: [0, 4, 12, 24], min: 0, max: 24 },
+    y: { label: 'Placebo-subtracted weight change (%)', min: -20, max: 0, ticks: [-20, -15, -10, -5, 0], unit: 'percentage points vs placebo', fmt: v => String(v) },
+    tipFmt: v => sgn(v) + '%', tipTitle: x => x === 0 ? 'Start of target dose' : `Week ${x} at target dose`, aria: 'Phase 2 obesity weight loss over time' });
+}
+function drawResp() {
+  const R = [['≥5%', 87, 93, 100], ['≥10%', 57, 77, 86], ['≥15%', 20, 57, 66], ['≥20%', 3, 27, 35], ['≥25%', null, 13, 20], ['≥30%', null, 3, 7]];
+  barChart($('#resp-chart'), { height: 300, aria: 'Share of participants reaching weight-loss thresholds', slim: true,
+    legendItems: [{ name: '5 mg', color: C.bLo }, { name: '10 mg', color: C.b }, { name: '15 mg', color: C.bHi }],
+    groups: R.map(r => ({ label: r[0], tipLabel: `Lost ${r[0]} of body weight`, bars: [5, 10, 15].map((d, i) => r[i + 1] === null ? null : { name: d + ' mg', value: r[i + 1], color: doseRamp[i] }).filter(Boolean) })),
+    y: { label: 'Participants (%)', min: 0, max: 100, ticks: [0, 25, 50, 75, 100] }, valueFmt: v => v + '%' });
+}
+/* cross-trial benchmark: [label, sub, drug, change, placebo, wk, n, estimand, own] */
+const BENCH = [
+  ['BGM0504 15 mg', 'Ph3 · 52 wk', -19.2, -3.1, 'Full analysis set; estimand not disclosed. Baseline BMI 33.9', 1],
+  ['BGM0504 10 mg', 'Ph3 · 52 wk', -17.3, -3.1, 'Full analysis set; estimand not disclosed', 1],
+  ['Tirzepatide 15 mg', 'SURMOUNT-CN · 52 wk', -17.5, -2.3, 'Treatment-regimen estimand. China, N = 210, baseline BMI 32.3', 0],
+  ['Tirzepatide 10 mg', 'SURMOUNT-CN · 52 wk', -13.6, -2.3, 'Treatment-regimen estimand', 0],
+  ['Mazdutide 9 mg', 'GLORY-2 · 60 wk', -16.65, -1.5, 'China, BMI ≥ 30, N = 461, baseline BMI 34.3', 0],
+  ['Mazdutide 6 mg', 'GLORY-1 · 48 wk', -14.01, 0.3, 'Treatment-policy estimand. China, N = 610, baseline BMI 31.1', 0],
+  ['Semaglutide 2.4 mg', 'STEP 7 · 44 wk', -12.1, -3.6, 'Mostly East Asian, with or without T2D, N = 375', 0]
+];
+const benchState = { mode: 'abs' };
+function drawBench() {
+  const adj = benchState.mode === 'adj';
+  barChart($('#bench-chart'), { height: 340, aria: 'Cross-trial comparison of weight loss', maxBar: 58,
+    groups: BENCH.map(b => ({ label: b[0], sub: b[1], bars: [{ name: adj ? 'Placebo-subtracted' : 'Change from baseline', value: +(adj ? b[2] - b[3] : b[2]).toFixed(2), color: b[5] ? (b[0].includes('15') ? C.bHi : C.b) : C.cmp, tip: b[4] + (adj ? '' : `. Placebo arm: ${sgn(b[3])}%`) }] })),
+    y: { label: adj ? 'Weight change minus placebo (points)' : 'Weight change from baseline (%)', min: -25, max: 0, ticks: [-25, -20, -15, -10, -5, 0], fmt: v => String(v) }, valueFmt: v => sgn(v) + '%' });
+}
+/* GI tolerability: [label, sub, nausea, vomiting, diarrhoea, own, note] */
+const GI = [
+  ['BGM0504 5 mg', 'Ph2 obesity', 13.3, 10.0, null, 1, 'Phase 2 obesity, 24 weeks, n ≈ 30'],
+  ['BGM0504 10 mg', 'Ph2 obesity', 38.7, 22.6, null, 1, 'Phase 2 obesity, 24 weeks, n ≈ 31'],
+  ['BGM0504 15 mg', 'Ph2 obesity', 37.9, 31.0, null, 1, 'Phase 2 obesity, 24 weeks, n ≈ 29'],
+  ['Tirzepatide 10 mg', 'SURMOUNT-CN', 30.0, 11.4, 40.0, 0, '52 weeks; 4-week titration steps'],
+  ['Tirzepatide 15 mg', 'SURMOUNT-CN', 32.4, 19.7, 40.8, 0, '52 weeks; 4-week titration steps'],
+  ['Semaglutide 2.4 mg', 'STEP 7', 24.1, 8.4, 26.1, 0, '44 weeks'],
+  ['Mazdutide 6 mg', 'GLORY-1', 50.5, 43.1, 38.6, 0, '48 weeks; rates from a secondary summary'],
+  ['Mazdutide 9 mg', 'GLORY-2', 46.9, 53.1, 39.4, 0, '60 weeks']
+];
+const giState = { ev: 'n' };
+function drawGI() {
+  const k = { n: 2, v: 3, d: 4 }[giState.ev], nm = { n: 'Nausea', v: 'Vomiting', d: 'Diarrhoea' }[giState.ev];
+  const rows = GI.map(g => g.slice());
+  if (giState.ev === 'd') { rows[0][4] = 38.5; rows[1][4] = 36.4; rows[2][4] = 75.0; rows.slice(0, 3).forEach(r => { r[1] = 'Ph2a T2D'; r[6] = 'Phase 2a T2D, 12 weeks at target, n = 11–13, 2-week titration steps. Obesity-trial diarrhoea rates were not accessible'; }); }
+  barChart($('#gi-chart'), { height: 320, aria: nm + ' incidence across trials', maxBar: 54,
+    groups: rows.map(g => ({ label: g[0], sub: g[1], bars: [{ name: nm, value: g[k], color: g[5] ? doseRamp[[' 5 mg', ' 10 mg', ' 15 mg'].findIndex(d => g[0].endsWith(d))] : C.cmp, tip: g[6] }] })),
+    y: { label: `Participants reporting ${nm.toLowerCase()} (%)`, min: 0, max: 80, ticks: [0, 20, 40, 60, 80] }, valueFmt: v => v.toFixed(1) + '%' });
+}
+/* potency */
+function drawPot() {
+  barChart($('#pot-chart'), { height: 260, aria: 'In vitro potency versus tirzepatide',
+    legendItems: [{ name: 'BGM0504', color: C.b }, { name: 'Tirzepatide', color: C.cmp }],
+    groups: [['GLP-1R', 0.031, 0.086], ['GIPR', 0.182, 0.441], ['HSA binding KD', 73.04, 86.30]].map(g => ({ label: g[0], sub: g[0].startsWith('HSA') ? 'nM (÷100 for scale)' : 'cAMP EC50, nM',
+      bars: [{ name: 'BGM0504', value: g[0].startsWith('HSA') ? g[1] / 100 : g[1], color: C.b, tip: g[0].startsWith('HSA') ? 'KD 73.04 nM by biolayer interferometry' : `EC50 ${g[1]} nM` }, { name: 'Tirzepatide', value: g[0].startsWith('HSA') ? g[2] / 100 : g[2], color: C.cmp, tip: g[0].startsWith('HSA') ? 'KD 86.30 nM' : `EC50 ${g[2]} nM` }] })),
+    y: { label: 'nM (lower = more potent)', min: 0, max: 1, ticks: [0, 0.25, 0.5, 0.75, 1] }, valueFmt: v => fmtNum(v) });
+}
+/* species half-life */
+function drawSpecies() {
+  barChart($('#species-chart'), { height: 260, aria: 'Half-life across species', maxBar: 60,
+    groups: [['SD rat', 14.2, 'SC, mean of three doses (13.4–14.7 h)'], ['Cynomolgus', 41.3, 'SC, mean of three doses (38.7–43.4 h)'], ['Human', 134, 'Midpoint of the reported 109–160 h range after the 4th target dose']]
+      .map(g => ({ label: g[0], bars: [{ name: 'Terminal t½', value: g[1], color: C.b, tip: g[2], approx: g[0] === 'Human' }] })),
+    y: { label: 'Terminal t½ (h)', min: 0, max: 160, ticks: [0, 40, 80, 120, 160] }, valueFmt: v => fmtNum(v) + ' h' });
+}
+/* BGM2102 */
+const comboState = { src: 'ada' };
+function drawCombo() {
+  const d = comboState.src === 'ada'
+    ? [['BGM1812 alone', -13, C.o, '0.4 mg/kg as printed (possibly 0.04)'], ['BGM0504 alone', -15, C.b, '0.15 mg/kg'], ['Combination', -28, C.g, 'ADA 2025 abstract 1993-LB; duration and N not given']]
+    : [['Combination', -22.7, C.g, 'Patent WO2026124626A1: DIO rat, day 13. Read via an automated summary; arm details not checked']];
+  barChart($('#combo-chart'), { height: 300, aria: 'DIO rat weight loss, combination versus single agents', maxBar: 80,
+    groups: d.map(b => ({ label: b[0], bars: [{ name: 'Body weight change', value: b[1], color: b[2], tip: b[3] }] })),
+    y: { label: 'Body weight change (%)', min: -35, max: 0, ticks: [-35, -30, -25, -20, -15, -10, -5, 0], fmt: v => String(v) }, valueFmt: v => sgn(v, v % 1 ? 1 : 0) + '%' });
+  const ref = $('#combo-add'); if (ref) ref.hidden = comboState.src !== 'ada';
+}
+/* optimisation scatter (Zong 2025, Tables 2/4/6) */
+const SERIES = [['BGM1802', 0.831, 0.649, 48.8, 1], ['BGM1804', 0.822, 0.686, 35.9, 1], ['BGM1806', 1.487, 0.698, 27.3, 2], ['BGM1807', 1.291, 2.392, 30.8, 2], ['BGM1808', 1.063, 0.787, 40.7, 2],
+  ['BGM1809', 1.493, 1.643, 55.9, 2], ['BGM1810', 0.980, 1.818, 45.8, 2], ['BGM1811', 1.887, 1.077, 56.1, 2], ['BGM1812', 0.557, 0.454, 66.5, 3], ['BGM1813', 0.906, 0.545, 57.1, 3]];
+function drawOpt() {
+  const host = $('#opt-chart'); host.innerHTML = ''; host.classList.add('chart');
+  const W = Math.max(300, host.clientWidth), H = 320, m = { t: 14, r: 16, b: 44, l: 54 };
+  const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, width: '100%', height: H, role: 'img', 'aria-label': 'Potency ratio versus petrelintide for each analogue' }, host);
+  const lo = 0.4, hi = 2.6, lg = v => (Math.log(v) - Math.log(lo)) / (Math.log(hi) - Math.log(lo));
+  const px = v => m.l + lg(v) * (W - m.l - m.r), py = v => H - m.b - lg(v) * (H - m.t - m.b);
+  svgEl('rect', { x: px(lo), y: py(1), width: px(1) - px(lo), height: py(lo) - py(1), class: 'band' }, svg);
+  svgEl('text', { x: px(lo) + 6, y: py(1) + 15, class: 'axis-t' }, svg).textContent = 'More potent at both receptors';
+  [0.5, 1, 2].forEach(v => {
+    svgEl('line', { x1: px(v), x2: px(v), y1: m.t, y2: H - m.b, class: v === 1 ? 'ref' : 'grid' }, svg);
+    svgEl('line', { x1: m.l, x2: W - m.r, y1: py(v), y2: py(v), class: v === 1 ? 'ref' : 'grid' }, svg);
+    svgEl('text', { x: px(v), y: H - m.b + 16, 'text-anchor': 'middle', class: 'axis-t' }, svg).textContent = v + '×';
+    svgEl('text', { x: m.l - 8, y: py(v) + 4, 'text-anchor': 'end', class: 'axis-t' }, svg).textContent = v + '×';
+  });
+  svgEl('text', { x: (m.l + W - m.r) / 2, y: H - 6, 'text-anchor': 'middle', class: 'axis-l' }, svg).textContent = 'AMY3R EC50 ÷ petrelintide, same run (log scale)';
+  const cy = (m.t + H - m.b) / 2;
+  svgEl('text', { x: 13, y: cy, 'text-anchor': 'middle', class: 'axis-l', transform: `rotate(-90 13 ${cy})` }, svg).textContent = 'CTR EC50 ÷ petrelintide';
+  SERIES.forEach(s => {
+    const lead = s[0] === 'BGM1812';
+    const c = svgEl('circle', { cx: px(s[1]), cy: py(s[2]), r: lead ? 8 : 6, fill: lead ? C.o : 'var(--surface)', stroke: lead ? 'var(--surface)' : C.cmp, 'stroke-width': 2, tabindex: 0, class: 'bar' }, svg);
+    if (lead || s[0] === 'BGM1813' || s[0] === 'BGM1807') svgEl('text', { x: px(s[1]) + 11, y: py(s[2]) + 4, class: 'dlabel' }, svg).textContent = s[0];
+    const html = `<div class="tip-h">${s[0]} · round ${s[4]}</div><table><tr><td>AMY3R ratio</td><td>${s[1].toFixed(2)}×</td></tr><tr><td>CTR ratio</td><td>${s[2].toFixed(2)}×</td></tr><tr><td>Solubility, pH 7.4</td><td>${lead ? '>' : ''}${s[3]} mg/mL</td></tr></table>`;
+    c.addEventListener('pointermove', e => showTip(html, e.clientX, e.clientY)); c.addEventListener('pointerleave', hideTip);
+    c.addEventListener('focus', () => { const r = c.getBoundingClientRect(); showTip(html, r.right, r.top); }); c.addEventListener('blur', hideTip);
+  });
+}
+
+/* ---------- half-life of amylin agonists ---------- */
+function drawHL() {
+  const d = [['Cagrilintide', 7.4, C.cmp, '159–195 h', 0], ['Petrelintide', 9.8, C.cmp, '213–257 h', 0], ['ABBV-295', 11.5, C.cmp, '10.7–12.3 days', 0],
+    ['Eloralintide', 14.1, C.cmp, '310–366 h', 0], ['MET-233i', 19, C.cmp, '"Observed half-life" of 19 days (time from dose to 50% of Cmax)', 0],
+    ['Cpd 10 (patent)', 13.3, C.o, 'Patent WO2026124626A1: about 363 h at 0.6 mg and 274 h at 1.2 mg SC, n = 8 each. Identity with BGM1812 is inferred, not stated', 1]];
+  barChart($('#hl-chart'), { height: 300, aria: 'Human half-life of amylin agonists in days', maxBar: 50,
+    groups: d.map(b => ({ label: b[0], bars: [{ name: 'Human t½ (midpoint)', value: b[1], color: b[2], hatch: !!b[4], tip: b[3], approx: !!b[4] }] })),
+    y: { label: 'Human half-life (days)', min: 0, max: 20, ticks: [0, 5, 10, 15, 20] }, valueFmt: v => fmtNum(v) + ' d' });
+}
+/* ---------- wire up ---------- */
+bindSeg($('#pk'), pkState, drawPK);
+bindSeg($('#eff-seg').parentElement, effState, drawEff);
+bindSeg($('#bench-seg').parentElement, benchState, drawBench);
+bindSeg($('#gi-seg').parentElement, giState, drawGI);
+bindSeg($('#r1812-seg').closest('.panel'), r1812State, draw1812);
+bindSeg($('#dio-seg').parentElement, dioState, drawDIO);
+bindSeg($('#combo-seg').parentElement, comboState, drawCombo);
+const tauState = { tau: '7' };
+bindSeg($('#sim-tau').parentElement, tauState, () => { simState.tau = +tauState.tau; drawSim(); });
+$('#sim-th').addEventListener('input', e => { simState.th = +e.target.value; drawSim(); });
+$('#sim-ta').addEventListener('input', e => { simState.ta = +e.target.value; drawSim(); });
+$$('#sim-presets button').forEach(b => b.addEventListener('click', () => {
+  simState.th = +b.dataset.th; simState.ta = +b.dataset.ta; $('#sim-th').value = simState.th; $('#sim-ta').value = simState.ta; drawSim();
+}));
+simState.th = 5.6; simState.ta = 0.2;
+const landState = { f: 'all' };
+bindSeg($('#land-seg').parentElement, landState, () => $$('#land-table tbody tr').forEach(tr => { tr.hidden = landState.f !== 'all' && !tr.dataset.c.split(' ').includes(landState.f); }));
+[drawPot, drawSpecies, drawPK, drawEff, drawTime, drawResp, drawBench, drawGI, drawOpt, draw1812, drawDIO, drawHL, drawCombo, drawSim].forEach(onResize);
+/* scroll spy */
+const links = $$('.rail a'), secs = links.map(a => $(a.getAttribute('href')));
+const spy = () => {
+  let cur = 0; secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top < 140) cur = i; });
+  links.forEach((a, i) => a.classList.toggle('on', i === cur));
+};
+window.addEventListener('scroll', spy, { passive: true }); spy();
+
+</script>
+</body>
+</html>
