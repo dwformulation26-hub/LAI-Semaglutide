@@ -23,11 +23,11 @@
     "유한양행"
   ],
   "current_status": {
-    "stage": "Preclinical (GLP tox completed end-2025); Phase 1 IND for IVL3021 targeted in 2026",
-    "stage_ko": "전임상(2025년 말 GLP 독성시험 완료); IVL3021 임상 1상 IND는 2026년 목표",
+    "stage": "Preclinical (GLP tox completed end-2025); a single unverified Korean report says InventageLab submitted a Phase 1 clinical trial application for IVL3021 to Australia's HREC on Oct 28, 2026, not yet independently corroborated",
+    "stage_ko": "전임상(2025년 말 GLP 독성시험 완료); 단일 미검증 한국 언론 보도에 따르면 인벤티지랩이 2026년 10월 28일 호주 인체연구 윤리위원회(HREC)에 IVL3021 임상 1상 시험계획 승인을 신청했다고 하나, 아직 독립적으로 교차 확인되지 않았다.",
     "stage_label": "Preclinical",
-    "stage_evidence": "GLP tox completed end-2025; Phase 1 IND for IVL3021 is only targeted for 2026, not yet filed.",
-    "stage_evidence_ko": "2025년 말 GLP 독성시험을 완료했다. IVL3021 임상 1상 IND는 2026년 목표일 뿐 아직 신청되지 않았다.",
+    "stage_evidence": "The Oct 28, 2026 HREC application is reported by only one outlet, short of the Tier 1/two-independent-Tier-2 bar needed to advance stage_label; it is also a submission, not a clearance or dosing start, so it would sit at 'IND filed' at most even if confirmed.",
+    "stage_evidence_ko": "2026년 10월 28일 HREC 신청은 단일 매체 보도로, stage_label을 상향하는 데 필요한 Tier 1 또는 독립적 Tier 2 2건 기준에 미달한다. 또한 이는 승인이나 투여 개시가 아닌 신청 단계이므로, 확인되더라도 최대 'IND 신청' 단계에 해당한다.",
     "molecule_class": [
       "semaglutide",
       "tirzepatide"
@@ -52,10 +52,26 @@
     "partner_ko": "유한양행(세마글루타이드 계열 LAI 공동 개발/상업화 계약, 2024년 1월 5일 체결); Boehringer Ingelheim(LAI 펩타이드 제형 공동 개발, 2024년 9월 19일 체결)",
     "data_point": "IVL3024 (tirzepatide) maintained stable drug exposure for 2 months in minipigs with no initial burst; IVL3021 (semaglutide) showed dose-dependent weight loss in obese rats and sustained weight control after switching from Wegovy (ADA 2026 poster data)",
     "data_point_ko": "IVL3024(터제파타이드)는 미니피그에서 초기 방출(burst) 없이 2개월간 안정적인 약물 노출을 유지했으며, IVL3021(세마글루타이드)은 비만 랫드에서 용량 의존적 체중 감소와 Wegovy 전환 후 지속적인 체중 조절을 보였다(ADA 2026 포스터 데이터)",
-    "last_updated": "2026-06-09",
-    "last_checked": "2026-11-12"
+    "last_updated": "2026-10-28",
+    "last_checked": "2026-11-16"
   },
   "finding_history": [
+    {
+      "id": "f-2026-10-28-001",
+      "date": "2026-10-28",
+      "type": "regulatory",
+      "molecules": ["semaglutide"],
+      "summary": "A Korean report said InventageLab submitted a Phase 1 clinical trial application to Australia's Human Research Ethics Committee (HREC) for IVL3021, the once-monthly semaglutide long-acting injectable. The planned open-label, single-ascending-dose study would run at Nucleus Network, enroll 40 healthy overweight adults over about 12 months from approval, and compare IVL3021 against Wegovy on safety, tolerability, PK and exploratory PD. The company said it expects favorable PK/tolerability data versus Wegovy to support global partnering or licensing talks.",
+      "summary_ko": "한 한국 매체는 인벤티지랩이 월 1회 세마글루타이드 장기지속형 주사제 IVL3021에 대해 호주 인체연구윤리위원회(HREC)에 임상 1상 시험계획을 신청했다고 보도했다. 계획된 공개 라벨, 단회 용량 순차 증량 시험은 Nucleus Network에서 진행되며, 승인일로부터 약 12개월간 건강한 과체중 성인 40명을 등록해 안전성, 내약성, PK 및 탐색적 PD 측면에서 Wegovy와 비교한다. 회사는 Wegovy 대비 우수한 PK/내약성 데이터를 확보하면 글로벌 파트너십 또는 라이선스 아웃 논의가 유리해질 것으로 기대한다고 밝혔다.",
+      "source": {
+        "name": "Hankyung",
+        "publication": "Hankyung",
+        "url": "https://www.hankyung.com/article/202610280868P",
+        "tier": 2
+      },
+      "confidence": "unverified",
+      "verification_note": "Single-source this run -- no independently bylined second outlet or company statement corroborating this specific Oct 28, 2026 HREC submission was found, so it does not meet the Tier 1/two-independent-Tier-2 confirmation bar; stage_label left unchanged at 'Preclinical'. Found via this run's Track A breadth-first query (alias: IVL3021); read from a search-engine summary only. Event predates this run's freshness window (window_start 2026-11-13), so this is a discovered-late item, not headline news."
+    },
     {
       "id": "f-2024-01-05-001",
       "date": "2024-01-05",

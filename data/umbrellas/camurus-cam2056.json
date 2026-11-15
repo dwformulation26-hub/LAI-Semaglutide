@@ -16,11 +16,11 @@
     "Camurus AB"
   ],
   "current_status": {
-    "stage": "Phase 2b in preparation (H2 2026 start), following positive Phase 1b and FDA Type B meeting",
-    "stage_ko": "긍정적인 임상 1b상 결과와 FDA Type B 미팅에 이어 임상 2b상 준비 중(2026년 H2 개시)",
-    "stage_label": "Phase 1",
-    "stage_evidence": "Positive Phase 1b and an FDA Type B meeting completed; Phase 2b is only in preparation, not yet started.",
-    "stage_evidence_ko": "긍정적인 임상 1b상과 FDA Type B 미팅을 완료했다. 임상 2b상은 준비 단계일 뿐 아직 개시되지 않았다.",
+    "stage": "Phase 2b underway: LUNAR-2, a randomized, double-blind, placebo-controlled study, dosed its first patient Nov 3, 2026",
+    "stage_ko": "임상 2b상 진행 중: 무작위배정, 이중맹검, 위약대조 시험인 LUNAR-2가 2026년 11월 3일 첫 환자 투여를 완료했다",
+    "stage_label": "Phase 2",
+    "stage_evidence": "Camurus announced Nov 3, 2026 that the first patient was dosed in LUNAR-2, a randomized, double-blind, placebo-controlled Phase 2b study of CAM2056 -- dosing has begun, which is the bar for Phase 2, superseding the July 2026 'in preparation' status.",
+    "stage_evidence_ko": "Camurus는 2026년 11월 3일 CAM2056의 무작위배정, 이중맹검, 위약대조 임상 2b상 시험인 LUNAR-2에서 첫 환자 투여가 이뤄졌다고 발표했다 -- 투여가 시작됐으므로 임상 2상 기준을 충족하며, 이는 2026년 7월의 '준비 중' 상태를 대체한다.",
     "molecule_class": [
       "semaglutide"
     ],
@@ -32,10 +32,25 @@
     "partner_ko": "Eli Lilly(FluidCrystal 플랫폼 기술이전(라이선스) 공동 개발, 2026년 6월 아밀린 수용체 작용제 포함으로 확대; CAM2056 자체와는 별개)",
     "data_point": "Phase 1b (n=80, overweight/obesity): CAM2056 produced faster and greater body-weight, A1C and fasting-glucose reductions than weekly Wegovy®, dose-dependently, with comparable safety/tolerability (topline Nov 10, 2025)",
     "data_point_ko": "임상 1b상(n=80, 과체중/비만): CAM2056은 주 1회 Wegovy® 대비 체중, A1C, 공복혈당을 용량 의존적으로 더 빠르고 크게 감소시켰으며, 안전성/내약성은 비슷했다(톱라인 2025년 11월 10일)",
-    "last_updated": "2026-07-15",
-    "last_checked": "2026-11-12"
+    "last_updated": "2026-11-03",
+    "last_checked": "2026-11-16"
   },
   "finding_history": [
+    {
+      "id": "f-2026-11-03-001",
+      "date": "2026-11-03",
+      "type": "trial_data_readout",
+      "summary": "Camurus announced that the first patient was dosed in LUNAR-2, a randomized, double-blind, placebo-controlled Phase 2b study of CAM2056 in obesity. The study plans to enroll 150 participants 1:1:1 to CAM2056 10 mg, CAM2056 20 mg, or placebo, dosed every four weeks following an initiation period; the primary objective is to show the 20 mg dose beats placebo on body-weight reduction after 36 weeks. Results are anticipated in the first half of 2028.",
+      "summary_ko": "Camurus는 비만 치료를 위한 CAM2056의 무작위배정, 이중맹검, 위약대조 임상 2b상 시험 LUNAR-2에서 첫 환자 투여가 이뤄졌다고 발표했다. 이 시험은 참가자 150명을 CAM2056 10 mg, CAM2056 20 mg, 위약에 1:1:1로 배정하며, 초기 투여 기간 이후 4주마다 투여한다. 1차 목표는 36주차에 20 mg 용량이 위약 대비 체중 감소에서 우월함을 입증하는 것이다. 결과는 2028년 상반기로 예상된다.",
+      "source": {
+        "name": "Camurus AB – Camurus initiates Phase 2b study of CAM2056 monthly semaglutide depot in obesity",
+        "publication": "Inderes (Camurus company release mirror)",
+        "url": "https://www.inderes.se/en/releases/camurus-ab-camurus-initiates-phase-2b-study-of-cam2056-monthly-semaglutide-depot-in-obesity",
+        "tier": 2
+      },
+      "confidence": "confirmed",
+      "verification_note": "Original camurus.com release page not directly retrievable this run; read via the Inderes company-release mirror, which reproduces the Camurus release in full, plus a corroborating Swedish-language wire summary (Borsvarlden/Finwire) of the same announcement. Found via this run's Track A breadth-first query (alias: CAM2056); event (2026-11-03) predates this run's freshness window (window_start 2026-11-13), so this is a discovered-late item, not headline news."
+    },
     {
       "id": "f-2025-11-10-001",
       "date": "2025-11-10",
