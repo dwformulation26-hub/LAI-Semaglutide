@@ -33,7 +33,7 @@
     "data_point": "Q2 2026: SKYTROFA revenue of EUR 55M, over 20,000 unique patients enrolled, remaining the best-selling long-acting growth hormone in the US by brand value; commercially available or via named-patient programs in more than 30 countries, with full commercial launches planned in 10 additional countries by year-end 2026 (Ascendis Q2 2026 results, Aug 13, 2026)",
     "data_point_ko": "2026년 2분기: SKYTROFA 매출 EUR 55M, 등록된 고유 환자 20,000명 이상, 브랜드 가치 기준 미국 내 최다 판매 장기지속형 성장호르몬 지위 유지. 30개국 이상에서 상업 판매 또는 지정환자 프로그램으로 공급 중이며, 2026년 말까지 10개국에서 추가로 정식 상업 출시 계획(Ascendis 2026년 2분기 실적, 2026년 8월 13일)",
     "last_updated": "2026-08-13",
-    "last_checked": "2026-11-08"
+    "last_checked": "2026-11-15"
   },
   "finding_history": [
     {
@@ -74,6 +74,21 @@
         "tier": 1
       },
       "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-04-22-001",
+      "date": "2026-04-22",
+      "type": "trial_data_readout",
+      "summary": "Long-term extension data from the Phase 3 foresiGHt trial, presented at the AACE 2026 Annual Meeting, showed sustained benefit of SKYTROFA (lonapegsomatropin-tcgd) in adults with growth hormone deficiency through week 90 of the extension: of 248 participants who completed the parent trial, 220 (88.7%) entered the extension and 202 (91.8%) completed 52 weeks; body composition (reduced trunk/visceral fat, increased lean mass) continued to improve across all three prior-treatment groups, with a safety profile consistent with the parent trial.",
+      "summary_ko": "임상 3상 foresiGHt 시험의 장기 연장 데이터가 AACE 2026 연례학회에서 발표됐으며, 성장호르몬 결핍증 성인에서 SKYTROFA(로나페그소마트로핀-tcgd)의 지속적 효과가 연장 시험 90주차까지 확인됐다: 본 시험을 완료한 248명 중 220명(88.7%)이 연장 시험에 진입했고 202명(91.8%)이 연장 시험 52주차를 완료했다. 체성분 개선(체간/내장 지방 감소, 제지방량 증가)이 이전 치료군 3개 그룹 모두에서 90주차까지 지속됐으며, 안전성 프로파일은 본 시험과 일관됐다.",
+      "source": {
+        "name": "Lonapegsomatropin Proves Long-Term Benefit for Adult GHD in Phase 3 foresiGHt Extension Trial",
+        "publication": "ConsultantLive / HCPLive",
+        "url": "https://www.consultantlive.com/view/lonapegsomatropin-proves-long-term-benefit-for-adult-ghd-in-phase-3-foresight-extension-trial",
+        "tier": 2
+      },
+      "confidence": "confirmed",
+      "verification_note": "Corroborated independently by HCPLive's own article on the same AACE 2026 presentation (https://www.hcplive.com/view/lonapegsomatropin-proves-long-term-benefit-for-adult-ghd-in-phase-3-foresight-extension-trial), a distinct publisher (MJH Life Sciences) from ConsultantLive (HMP Global), not a single re-hosted release. Found via this run's Sunday-only Track A search of a non_incretin/Approved-marketed umbrella; event predates this umbrella's own last_checked (2026-11-08), so logged as discovered-late rather than this run's headline."
     }
   ]
 }

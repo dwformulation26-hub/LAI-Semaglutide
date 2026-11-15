@@ -32,10 +32,10 @@
     "dosing_target_ko": "월 1회(1개월) 서방형 피하/근육 류프로렐린 주사제로, 미세화 공정으로 더 가는 바늘을 쓰는 제형이다",
     "partner": "LG Chem (exclusive domestic distribution/marketing)",
     "partner_ko": "LG화학(국내 독점 유통·마케팅)",
-    "data_point": "Apr 2026: Peptron filed for market approval of Leupone (PT105) in Mexico, its first Latin American regulatory filing for the product",
-    "data_point_ko": "2026년 4월: 펩트론이 멕시코에서 Leupone(PT105)의 시판 허가를 신청했으며, 이는 해당 제품의 첫 중남미 허가 신청이다",
-    "last_updated": "2026-04-02",
-    "last_checked": "2026-11-08"
+    "data_point": "Nov 2026: Peptron's April 2026 Mexican filing for Leupone (PT105) converted into a COFEPRIS marketing approval, the product's first Latin American market clearance (marketed there as Lupunia)",
+    "data_point_ko": "2026년 11월: 펩트론의 2026년 4월 멕시코 Leupone(PT105) 허가 신청이 COFEPRIS 시판 허가로 전환됐으며, 해당 제품의 첫 중남미 시장 허가다(현지에서는 '루푸니아'로 판매)",
+    "last_updated": "2026-11-09",
+    "last_checked": "2026-11-15"
   },
   "finding_history": [
     {
@@ -102,6 +102,21 @@
         "tier": 2
       },
       "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-11-09-002",
+      "date": "2026-11-09",
+      "type": "regulatory",
+      "summary": "Peptron announced that Leupone (leuprorelin, PT105) received marketing approval from Mexico's health regulator COFEPRIS, converting the April 2026 Mexican filing into an approval and giving the SmartDepot-based product its first Latin American market clearance; Peptron cited Mexico's recognition of Korea's MFDS as a reference regulatory authority as enabling a streamlined review pathway. In Mexico the product is marketed as Lupunia.",
+      "summary_ko": "펩트론은 Leupone(류프로렐린, PT105)이 멕시코 의약품 규제당국 COFEPRIS로부터 시판 허가를 받았다고 밝혔다. 이는 2026년 4월 멕시코 허가 신청이 승인으로 전환된 것으로, SmartDepot 기반 제품의 첫 중남미 시장 허가다. 펩트론은 멕시코가 한국 식약처를 참조규제기관으로 인정한 점이 간소화된 심사 경로를 가능케 했다고 설명했다. 멕시코에서는 '루푸니아(Lupunia)'로 판매된다.",
+      "source": {
+        "name": "바이오스펙테이터",
+        "publication": "Biospectator",
+        "url": "https://www.biospectator.com/news/view/30345",
+        "tier": 2
+      },
+      "confidence": "unverified",
+      "verification_note": "Single named Korean trade-press source (Biospectator), not independently corroborated by a second outlet or a Peptron disclosure in this run's search; found via this run's Sunday-only Track A search of a non_incretin/Approved-marketed umbrella. Event date (company announcement, per the article's dateline) is within this run's per-record freshness window (umbrella's own last_checked 2026-11-08)."
     }
   ]
 }

@@ -33,7 +33,7 @@
     "data_point": "FY2025: Decapeptyl cited by Ipsen among products facing increased European and Chinese competition/pricing pressure, tempering growth versus the rest of Ipsen's non-Somatuline portfolio (which grew 14.2% overall)",
     "data_point_ko": "FY2025: Ipsen은 Decapeptyl을 유럽과 중국에서 경쟁 및 가격 압박이 커진 제품 중 하나로 꼽았으며, 이로 인해 Ipsen의 Somatuline 외 나머지 포트폴리오(전체 14.2% 성장) 대비 성장세가 둔화됐다",
     "last_updated": "2026-02-12",
-    "last_checked": "2026-11-08"
+    "last_checked": "2026-11-15"
   },
   "finding_history": [
     {
@@ -61,6 +61,21 @@
         "tier": 1
       },
       "confidence": "unverified"
+    },
+    {
+      "id": "f-2026-06-02-001",
+      "date": "2026-06-02",
+      "type": "regulatory",
+      "summary": "France's Vidal drug database lists Decapeptyl L.P. 11.25mg (triptorelin, 3-month-release powder and solvent for injectable suspension) as discontinued from commercialization (\"Arrêt de commercialisation\") effective 2026-06-02. Other Decapeptyl strengths and formulations are not affected by this entry.",
+      "summary_ko": "프랑스 Vidal 의약품 데이터베이스는 Decapeptyl L.P. 11.25mg(트립토렐린, 3개월 지속형 주사용 현탁액 분말 및 용매)가 2026-06-02일자로 판매 중단(\"Arrêt de commercialisation\")됐다고 기재하고 있다. 다른 Decapeptyl 함량 및 제형은 이 항목의 영향을 받지 않는다.",
+      "source": {
+        "name": "Vidal.fr drug database listing",
+        "publication": "Vidal",
+        "url": "https://www.vidal.fr/medicaments/decapeptyl-lp-11-25-mg-pdre-solv-p-susp-inj-lp-im-sc-ro1-229925.html",
+        "tier": 2
+      },
+      "confidence": "unverified",
+      "verification_note": "Single-source French regulatory/pharmacist reference database listing, not independently corroborated by a second outlet; found via this run's Sunday-only Track A search of a non_incretin/Approved-marketed umbrella. Event predates this umbrella's own last_checked (2026-11-08), so logged as discovered-late."
     }
   ]
 }
