@@ -16,11 +16,11 @@
     "SLIM-1"
   ],
   "current_status": {
-    "stage": "Phase 1 (SLIM-1) fully enrolled and dosed as of Aug 2026 (this supersedes an earlier note that the program was only 'advancing toward' Phase 1); topline results expected November 2026",
-    "stage_ko": "임상 1상(SLIM-1)은 2026년 8월 기준 등록 및 투여를 완료했다(프로그램이 임상 1상을 '향해 진행 중'이라던 이전 메모를 대체함). 톱라인 결과는 2026년 11월 발표 예정이다",
+    "stage": "Phase 1 (SLIM-1) completed with positive topline results (Nov 12, 2026): at the low starting dose over 4 weeks, weight loss was similar between the NPM-139 implant and active-comparator Wegovy (0.79% vs. 0.82%), with no treatment-related adverse events on NPM-139 versus 5 of 10 on Wegovy (all gastrointestinal), and a flatter PK profile for NPM-139 (peak concentration ~day 16 vs. ~day 2.4 for Wegovy). Vivani plans a Phase 2 dose-ranging weight-maintenance trial to begin in 2027.",
+    "stage_ko": "임상 1상(SLIM-1)은 긍정적인 톱라인 결과와 함께 완료됐다(2026년 11월 12일). 4주간 진행된 저용량 비교에서 NPM-139 임플란트와 활성 대조약 Wegovy 간 체중 감소율은 비슷했다(0.79% 대 0.82%). NPM-139 투여군에서는 치료 관련 이상반응이 보고되지 않았으나 Wegovy 투여군에서는 10명 중 5명에서 보고됐다(모두 위장관계). NPM-139는 더 평탄한 PK 프로파일을 보였다(최고 혈중농도 도달 시점 약 16일차 대 Wegovy 약 2.4일차). Vivani는 2027년 임상 2상 용량 탐색 체중 유지 시험 개시를 계획하고 있다.",
     "stage_label": "Phase 1",
-    "stage_evidence": "Phase 1 SLIM-1 study fully enrolled and dosed as of Aug 2026; topline results expected November 2026.",
-    "stage_evidence_ko": "임상 1상 SLIM-1 시험은 2026년 8월 기준 등록 및 투여를 완료했다. 톱라인 결과는 2026년 11월 발표 예정이다.",
+    "stage_evidence": "SLIM-1's Nov 12, 2026 topline results confirm the Phase 1 trial is complete, with a direct comparator readout against Wegovy; this does not meet the bar to advance beyond Phase 1, since no Phase 2 study has started.",
+    "stage_evidence_ko": "SLIM-1의 2026년 11월 12일 톱라인 결과는 Wegovy와의 직접 비교 데이터와 함께 임상 1상이 완료됐음을 확인한다. 임상 2상이 아직 시작되지 않았으므로 임상 1상을 넘어선 단계로 상향할 기준은 충족하지 않는다.",
     "molecule_class": [
       "semaglutide"
     ],
@@ -30,10 +30,10 @@
     "dosing_target_ko": "6-12개월 1회",
     "partner": "Novo Nordisk (non-exclusive evaluation agreement, no exclusivity over NPM-139 or NanoPortal)",
     "partner_ko": "Novo Nordisk(비독점 평가 계약, NPM-139 또는 NanoPortal에 대한 독점권 없음)",
-    "data_point": "SLIM-1: open-label, active-controlled Phase 1 (n=20; 10 on low-dose NPM-139 implant, 10 on starting-dose Wegovy 0.25mg/week) over 4 weeks, evaluating safety, PK and tolerability of the miniature semaglutide implant vs. weekly Wegovy injections",
-    "data_point_ko": "SLIM-1: 4주간 진행되는 공개, 활성 대조 임상 1상(n=20; 저용량 NPM-139 임플란트 10명, 시작 용량 Wegovy 0.25mg/주 10명)으로, 주 1회 Wegovy 주사 대비 소형 세마글루타이드 임플란트의 안전성, PK, 내약성을 평가한다",
-    "last_updated": "2026-08-06",
-    "last_checked": "2026-11-16"
+    "data_point": "SLIM-1 topline (Nov 12, 2026): weight loss 0.79% (NPM-139) vs. 0.82% (Wegovy) at 4 weeks; 0/10 NPM-139 participants vs. 5/10 Wegovy participants had treatment-related adverse events (all GI, no serious AEs either arm); peak plasma concentration ~day 16 (NPM-139) vs. ~day 2.4 (Wegovy)",
+    "data_point_ko": "SLIM-1 톱라인(2026년 11월 12일): 4주차 체중 감소율 NPM-139 0.79% 대 Wegovy 0.82%; 치료 관련 이상반응은 NPM-139 10명 중 0명, Wegovy 10명 중 5명에서 발생(모두 위장관계, 양군 모두 중대한 이상반응 없음); 최고 혈중농도 도달 시점은 NPM-139 약 16일차, Wegovy 약 2.4일차",
+    "last_updated": "2026-11-12",
+    "last_checked": "2026-11-19"
   },
   "finding_history": [
     {
@@ -61,6 +61,22 @@
         "tier": 1
       },
       "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-11-12-001",
+      "date": "2026-11-12",
+      "type": "trial_data_readout",
+      "summary": "Vivani Medical announced positive topline results from SLIM-1, a first-in-human Phase 1 trial of NPM-139 (its miniature, ultra-long-acting semaglutide implant) against active-comparator weekly Wegovy in 20 GLP-1-naive participants with obesity or overweight in Australia. No NPM-139 participants reported treatment-related adverse events, versus 5 of 10 on Wegovy (all gastrointestinal); no serious adverse events occurred in either arm. Over this 4-week, low starting-dose comparison, weight loss was similar between arms (0.79% for NPM-139 vs. 0.82% for Wegovy), while NPM-139 showed a flatter PK profile, with peak concentration around day 16 versus about day 2.4 for Wegovy. Vivani plans a Phase 2 dose-ranging weight-maintenance trial to begin in 2027.",
+      "summary_ko": "Vivani Medical은 호주에서 GLP-1 치료 경험이 없는 비만 또는 과체중 참가자 20명을 대상으로 한 최초 인체 임상 1상 SLIM-1에서, 소형 초장기 지속형 세마글루타이드 임플란트 NPM-139를 주 1회 Wegovy 활성 대조약과 비교한 긍정적인 톱라인 결과를 발표했다. NPM-139 투여군에서는 치료 관련 이상반응이 보고되지 않았으나, Wegovy 투여군에서는 10명 중 5명에서 보고됐다(모두 위장관계). 양군 모두 중대한 이상반응은 없었다. 4주간 진행된 이번 저용량 비교에서 체중 감소율은 양군 간 비슷했다(NPM-139 0.79% 대 Wegovy 0.82%). NPM-139는 더 평탄한 PK 프로파일을 보였으며, 최고 혈중농도 도달 시점은 약 16일차로 Wegovy의 약 2.4일차보다 늦었다. Vivani는 2027년 임상 2상 용량 탐색 체중 유지 시험 개시를 계획하고 있다.",
+      "source": {
+        "name": "Vivani Medical press release (via Finviz reproduction of the GlobeNewswire release)",
+        "publication": "GlobeNewswire",
+        "url": "https://finviz.com/news/421636/vivani-medical-announces-positive-top-line-results-from-slim-1-a-first-in-human-phase-1-trial-of-npm-139-semaglutide-implant-and-wegovy-weekly-semaglutide-injections-in-obese-and-overweight-subjects",
+        "tier": 2
+      },
+      "confidence": "confirmed",
+      "date_basis": "stated",
+      "verification_note": "Found via this run's Track A breadth-first query (alias: NPM-139); the primary GlobeNewswire release page was not directly fetched -- read via Finviz's reproduction of the same company press release, corroborated by independent secondary coverage (BiopharmaWatch, Barchart) of the same Nov 12, 2026 announcement. Event predates this run's freshness window (window_start 2026-11-18T06:08:11+09:00), so this is a discovered-late item, not headline news."
     }
   ]
 }

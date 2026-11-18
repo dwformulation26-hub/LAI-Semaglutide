@@ -16,23 +16,23 @@
     "ADOC.PA"
   ],
   "current_status": {
-    "stage": "Preclinical. AdoXLong patent filed Nov 12 2025 with semaglutide as the first application, supported by preliminary in vitro and in vivo results the company describes as compatible with once-monthly injection. Adocia also runs AdoGel, a separate hydrogel depot platform.",
-    "stage_ko": "전임상. AdoXLong 특허는 2025년 11월 12일 세마글루타이드를 첫 적용 대상으로 출원됐으며, 회사가 월 1회 주사와 부합한다고 설명하는 예비 in vitro 및 in vivo 결과가 이를 뒷받침한다. Adocia는 별도의 하이드로겔 데포 플랫폼인 AdoGel도 운영한다.",
+    "stage": "Preclinical. AdoXLong patent filed Nov 12 2025 with semaglutide as the first application. A Nov 14 2026 ObesityWeek poster added animal PK: AdoXL Sema showed an extended half-life versus semaglutide in rats (32h) and farm pigs (153-159h) and weight loss comparable to semaglutide; AdoXLong applied to retatrutide in vitro preserved activity on all three targeted receptors (GLP-1, GIP, glucagon), though this remains in vitro-only and single-source. Adocia also runs AdoGel, a separate hydrogel depot platform.",
+    "stage_ko": "전임상. AdoXLong 특허는 2025년 11월 12일 세마글루타이드를 첫 적용 대상으로 출원됐다. 2026년 11월 14일 ObesityWeek 포스터는 동물 PK 데이터를 추가했다: AdoXL Sema는 랫드(32시간)와 미니피그(153-159시간)에서 세마글루타이드 대비 연장된 반감기를 보였고 세마글루타이드와 비슷한 체중 감소를 나타냈다. AdoXLong을 레타트루타이드에 적용한 in vitro 결과는 3개의 표적 수용체(GLP-1, GIP, 글루카곤) 모두에서 활성이 유지됐으나, 이는 아직 in vitro 단계에 그치며 단일 출처다. Adocia는 별도의 하이드로겔 데포 플랫폼인 AdoGel도 운영한다.",
     "stage_label": "Preclinical",
-    "stage_evidence": "The November 2025 announcement reports preliminary in vitro and in vivo results behind a patent filing, with no clinical study stated, which is squarely preclinical.",
-    "stage_evidence_ko": "2025년 11월 발표는 특허 출원의 근거로 예비 in vitro 및 in vivo 결과를 제시했을 뿐 임상 시험은 언급하지 않았으므로, 명백히 전임상 단계이다.",
+    "stage_evidence": "The Nov 14, 2026 ObesityWeek poster adds extended-half-life animal PK for AdoXL Sema and in vitro-only retatrutide activity data; no clinical study has been announced for either, so this remains squarely preclinical.",
+    "stage_evidence_ko": "2026년 11월 14일 ObesityWeek 포스터는 AdoXL Sema의 연장된 반감기 동물 PK 데이터와 레타트루타이드의 in vitro 활성 데이터를 추가했다. 두 데이터 모두 임상 시험은 아직 발표되지 않았으므로 명백히 전임상 단계이다.",
     "molecule_class": [
       "semaglutide"
     ],
-    "molecule_evidence": "AdoXLong's first named application is a long-acting semaglutide formulation moving weekly dosing to monthly. The platform is stated to work with GIP, amylin and dual or triple agonists too, but those are platform scope rather than named assets, so they are not claimed as classes here.",
-    "molecule_evidence_ko": "AdoXLong의 첫 번째로 명시된 적용 대상은 주 1회 투여를 월 1회로 늘리는 장기지속형 세마글루타이드 제형이다. 플랫폼은 GIP, 아밀린, 이중 또는 삼중 작용제에도 적용 가능하다고 하지만, 이는 명시된 자산이 아닌 플랫폼 범위이므로 여기서 계열로 주장하지 않는다.",
+    "molecule_evidence": "AdoXLong's first named application is a long-acting semaglutide formulation moving weekly dosing to monthly. A Nov 2026 ObesityWeek poster also reports in vitro-only AdoXLong/retatrutide activity data, but this is reported only via secondary press mirrors of one company release and does not yet meet the two-independent-source confirmation bar, so retatrutide is not added as a class this run. The platform is stated to work with GIP, amylin and dual or triple agonists too, but platform breadth alone is not a class claim.",
+    "molecule_evidence_ko": "AdoXLong의 첫 번째로 명시된 적용 대상은 주 1회 투여를 월 1회로 늘리는 장기지속형 세마글루타이드 제형이다. 2026년 11월 ObesityWeek 포스터는 레타트루타이드에 대한 in vitro 활성 데이터도 보고했으나, 이는 하나의 회사 발표를 다룬 2차 언론 보도를 통해서만 확인됐을 뿐 2개 독립 출처 확인 기준을 아직 충족하지 못해 이번 회차에는 레타트루타이드를 계열로 추가하지 않는다. 플랫폼은 GIP, 아밀린, 이중 또는 삼중 작용제에도 적용 가능하다고 하지만, 플랫폼 범위만으로는 계열 주장이 되지 않는다.",
     "dosing_target": "Monthly (AdoXLong Sema); AdoGel described as 1 to 3 months",
     "dosing_target_ko": "월 1회(AdoXLong Sema); AdoGel은 1~3개월로 설명됨",
     "partner": null,
-    "data_point": "AdoXLong is a chemical modification of acylated peptides intended to extend duration of action to at least one month; patent application filed Nov 2025 seeking worldwide protection to 2046 if granted",
-    "data_point_ko": "AdoXLong은 아실화 펩타이드를 화학적으로 변형해 작용 지속 기간을 최소 1개월로 늘리려는 기술이다. 2025년 11월 특허를 출원했으며, 등록될 경우 2046년까지 전 세계적 보호를 추구한다",
-    "last_updated": "2025-11-12",
-    "last_checked": "2026-11-16"
+    "data_point": "ObesityWeek 2026 (Nov 14): AdoXL Sema half-life 32h in rats (>4x semaglutide) and 153h (IV) / 159h (SC) in farm pigs (>3x semaglutide), with weight loss comparable to semaglutide; AdoXLong/retatrutide preserved in vitro activity on GLP-1, GIP and glucagon receptors",
+    "data_point_ko": "ObesityWeek 2026(11월 14일): AdoXL Sema 반감기는 랫드에서 32시간(세마글루타이드의 4배 이상), 미니피그에서 153시간(IV)/159시간(SC)(세마글루타이드의 3배 이상)이었으며, 체중 감소는 세마글루타이드와 비슷했다. AdoXLong/레타트루타이드는 GLP-1, GIP, 글루카곤 수용체에서 in vitro 활성이 유지됐다",
+    "last_updated": "2026-11-14",
+    "last_checked": "2026-11-19"
   },
   "finding_history": [
     {
@@ -60,6 +60,22 @@
         "tier": 2
       },
       "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-11-14-001",
+      "date": "2026-11-14",
+      "type": "trial_data_readout",
+      "summary": "Adocia presented new AdoXLong preclinical data as a poster at ObesityWeek 2026 (Washington DC, Nov 14-17). For AdoXL Sema, the company's AdoXLong application to semaglutide, subcutaneous dosing in rats gave a half-life of 32 hours, over 4 times that of semaglutide, and in farm pigs, half-lives of 153 hours (IV) and 159 hours (SC), over 3 times that of semaglutide; the company reported weight loss comparable to semaglutide. Separately, in vitro testing of AdoXLong applied to retatrutide showed preserved activity on all three targeted receptors (GLP-1, GIP and glucagon); the company says it expects AdoXL retatrutide to show extended in vivo circulation, but this has not yet been tested in animals.",
+      "summary_ko": "Adocia는 ObesityWeek 2026(워싱턴 D.C., 11월 14-17일)에서 새로운 AdoXLong 전임상 데이터를 포스터로 발표했다. 세마글루타이드에 AdoXLong을 적용한 AdoXL Sema는 랫드 피하 투여에서 반감기 32시간(세마글루타이드의 4배 이상)을, 미니피그에서는 반감기 153시간(IV)과 159시간(SC)(세마글루타이드의 3배 이상)을 보였다. 회사는 세마글루타이드와 비슷한 체중 감소를 보고했다. 별도로, 레타트루타이드에 AdoXLong을 적용한 in vitro 시험은 3개의 표적 수용체(GLP-1, GIP, 글루카곤) 모두에서 활성이 유지됨을 보였다. 회사는 AdoXL 레타트루타이드가 연장된 생체 내 순환을 보일 것으로 예상한다고 밝혔으나, 이는 아직 동물에서 시험되지 않았다.",
+      "source": {
+        "name": "Adocia preclinical data presented at ObesityWeek 2026 (Idéal Investisseur coverage of the company release)",
+        "publication": "Idéal Investisseur",
+        "url": "https://www.ideal-investisseur.fr/en/stock-news/adocia-presented-preclinical-data-on-adoxl-sema-designed-for-monthly-injection/29371.html",
+        "tier": 2
+      },
+      "confidence": "unverified",
+      "date_basis": "inferred",
+      "verification_note": "Found via this run's Track A breadth-first query (alias: AdoXLong); the exact presentation date was confirmed with a follow-up search. Event (2026-11-14) predates this run's freshness window (window_start 2026-11-18T06:08:11+09:00), so this is a discovered-late item, not headline news. The retatrutide in vitro result is reported by Adocia itself but only through secondary French financial-press mirrors of one company release (Boursedirect, Idéal Investisseur, ABC Bourse, Option Finance all reproduce the same announcement) -- short of the two-independent-source bar, so retatrutide is not added to molecule_class this run; left for a future run to confirm via an independent outlet or the primary release."
     }
   ]
 }
