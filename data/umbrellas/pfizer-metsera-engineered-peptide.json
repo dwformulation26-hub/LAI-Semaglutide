@@ -48,8 +48,8 @@
     "partner": null,
     "data_point": "Phase 2b VESPER-1 (weekly dosing): 14.1% placebo-adjusted weight loss at week 28, no plateau. Phase 2b VESPER-3 (monthly dosing): 10%/12.3% placebo-adjusted weight loss at week 28 across two cohorts, presented at ADA 2026 (June 6, 2026).",
     "data_point_ko": "임상 2b상 VESPER-1(주 1회 투여): 28주차 위약 대비 체중 감소율 14.1%, 정체기 없음. 임상 2b상 VESPER-3(월 1회 투여): 두 코호트에서 28주차 위약 대비 체중 감소율 10%/12.3%, ADA 2026(2026년 6월 6일)에서 발표.",
-    "last_updated": "2026-08-04",
-    "last_checked": "2026-11-23"
+    "last_updated": "2026-11-11",
+    "last_checked": "2026-11-26"
   },
   "finding_history": [
     {
@@ -113,6 +113,23 @@
       "source": {
         "name": "Pfizer Q2 2026 Form 8-K / earnings materials",
         "url": "https://www.sec.gov/Archives/edgar/data/0000078003/000007800326000094/pfe-6282026xex99.htm",
+        "tier": 1
+      },
+      "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-11-11-001",
+      "date": "2026-11-11",
+      "type": "financing_investor",
+      "molecules": [
+        "other_incretin"
+      ],
+      "summary": "Pfizer and Blackstone Life Sciences announced a strategic funding agreement under which Blackstone-managed funds (including its BXPE strategy) will cover up to $1.5B of development costs through 2028 for berobenatide (PF-08653944), Pfizer's monthly GLP-1 receptor agonist. Blackstone takes no ownership or rights in the drug and Pfizer retains full operational and development control; Blackstone is eligible for milestone payments tied to U.S. approval of a monthly injectable monotherapy for chronic weight management and to certain commercial sales targets, paid out over several years. The $1.5B is a funding cap, not an amount already disbursed.",
+      "summary_ko": "Pfizer와 Blackstone Life Sciences는 Blackstone 운용 펀드(BXPE 전략 포함)가 Pfizer의 월 1회 투여 GLP-1 수용체 작용제 berobenatide(PF-08653944)의 2028년까지 개발 비용 최대 $1.5B를 지원하는 전략적 자금 조달 계약을 발표했다. Blackstone은 이 약물에 대한 소유권이나 권리를 갖지 않으며 Pfizer가 운영 및 개발을 전적으로 통제한다. Blackstone은 만성 체중 관리를 위한 월 1회 주사 단독요법의 미국 승인 및 특정 상업적 매출 목표와 연계된 마일스톤 지급을 여러 해에 걸쳐 받을 수 있다. $1.5B는 지급 상한이며 이미 지급된 금액이 아니다.",
+      "source": {
+        "name": "Pfizer and Blackstone Life Sciences Announce Strategic Funding Agreement",
+        "publication": "Pfizer",
+        "url": "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-and-blackstone-life-sciences-announce-strategic",
         "tier": 1
       },
       "confidence": "confirmed"

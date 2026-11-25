@@ -30,8 +30,8 @@
     "partner": null,
     "data_point": "Preclinical: 20.3-day PK half-life in animal models; combined with semaglutide, extended weight reduction to 26.8% at day 14 vs. 16.8% for semaglutide alone and 28.8% for tirzepatide monotherapy; no organ toxicity observed at day 26",
     "data_point_ko": "전임상: 동물 모델에서 PK 반감기 20.3일; 세마글루타이드 병용 시 14일차 체중 감소를 26.8%까지 확대(세마글루타이드 단독 16.8%, 터제파타이드 단독요법 28.8%); 26일차에 장기 독성은 관찰되지 않았다",
-    "last_updated": "2026-06-01",
-    "last_checked": "2026-11-23"
+    "last_updated": "2026-10-29",
+    "last_checked": "2026-11-26"
   },
   "finding_history": [
     {
@@ -46,6 +46,21 @@
         "tier": 2
       },
       "confidence": "confirmed"
+    },
+    {
+      "id": "f-2026-10-29-001",
+      "date": "2026-10-29",
+      "type": "regulatory",
+      "summary": "Proteina disclosed that it filed a new substance patent application for PRT-1309 in June 2026, and said it plans to expand filing to major markets including the US, Europe and Japan.",
+      "summary_ko": "프로티나는 PRT-1309에 대한 신물질 특허를 2026년 6월에 출원했다고 밝혔으며, 미국, 유럽, 일본 등 주요 시장으로 출원을 확대할 계획이라고 밝혔다.",
+      "source": {
+        "name": "BizWatch – Proteina IP/pipeline report",
+        "publication": "BizWatch",
+        "url": "https://news.bizwatch.co.kr/article/0113/2026/10/29/0013",
+        "tier": 2
+      },
+      "confidence": "unverified",
+      "verification_note": "Single Korean trade-press source; the article gives only the month (June 2026) for the filing, not an exact day, so this finding is logged under its Oct 29, 2026 report date rather than an inferred filing date."
     }
   ]
 }

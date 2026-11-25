@@ -48,7 +48,7 @@
     "data_point": "SC depot Phase II (n=65, 24 weeks): Formulation A1, three monthly 400 mg doses with no weekly lead-in, gave placebo-adjusted weight loss of 7.5% at week 16 and 5.8% at week 24. Phase Ib: observed half-life of about 75 days after a single 100 mg SC dose.",
     "data_point_ko": "피하(SC) 데포 임상 2상(n=65, 24주): 주 1회 도입 투여 없이 400 mg을 월 1회씩 3회 투여한 Formulation A1은 16주차 위약 대비 체중 감소율 7.5%, 24주차 5.8%를 기록했다. 임상 1b상: 100 mg 피하(SC) 단회 투여 후 관찰된 반감기는 약 75일이었다.",
     "last_updated": "2026-10-02",
-    "last_checked": "2026-11-23"
+    "last_checked": "2026-11-26"
   },
   "finding_history": [
     {
@@ -152,6 +152,24 @@
       },
       "confidence": "confirmed",
       "verification_note": "Found via this run's Track B2 EASD 2026 conference-abstract sweep."
+    },
+    {
+      "id": "f-2026-07-27-001",
+      "date": "2026-07-27",
+      "type": "trial_data_readout",
+      "molecules": [
+        "other_incretin"
+      ],
+      "summary": "Ascletis reported preclinical data for ASC37, a once-monthly subcutaneous GLP-1R/GIPR/GCGR triple peptide agonist formulated as a Self-Assembly Lipid Depot (SALD): in non-human primates, a single SC dose gave an observed half-life of about 17 days for ASC37 versus 2.5 days for retatrutide (~7-fold longer), supporting once-monthly or less-frequent dosing. In an 11-day diet-induced obese mouse study with once-daily SC dosing, ASC37 produced 88% greater relative body-weight reduction than tirzepatide at 1 nmol/kg (-14.1% vs -7.5%, p=0.0279), with dose-dependent reductions of 30.1% at 10 nmol/kg and 41.5% at 30 nmol/kg. Ascletis targeted Q3 2026 IND applications for both the once-monthly SC and an oral formulation.",
+      "summary_ko": "Ascletis는 월 1회 피하(SC) 투여 GLP-1R/GIPR/GCGR 삼중 펩타이드 작용제이자 자가조립 지질 데포(Self-Assembly Lipid Depot, SALD) 제형인 ASC37의 전임상 데이터를 공개했다: 비인간 영장류에서 SC 단회 투여 시 ASC37의 관찰 반감기는 약 17일로 레타트루타이드의 2.5일 대비 약 7배 길어 월 1회 이하의 투여 빈도를 뒷받침했다. 1일 1회 SC 투여로 진행된 11일간의 식이유도비만(DIO) 마우스 시험에서 ASC37은 1 nmol/kg 용량에서 터제파타이드 대비 88% 더 큰 상대적 체중 감소를 보였고(-14.1% 대 -7.5%, p=0.0279), 10 nmol/kg에서는 30.1%, 30 nmol/kg에서는 41.5%로 용량 의존적 감소를 나타냈다. Ascletis는 월 1회 SC 제형과 경구 제형 모두에 대해 2026년 3분기(Q3) IND 신청을 목표로 했다.",
+      "source": {
+        "name": "Ascletis press release via BioSpace",
+        "publication": "BioSpace",
+        "url": "https://www.biospace.com/press-releases/ascletis-announces-once-monthly-subcutaneously-administered-glp-1r-gipr-gcgr-triple-peptide-agonist-asc37-demonstrated-superior-weight-loss-in-a-diet-induced-obese-mouse-model",
+        "tier": 1
+      },
+      "confidence": "confirmed",
+      "verification_note": "This July 27, 2026 release was never logged despite ASC37 being added as an alias on this record on 2026-09-14 (class-watchlist.md flags the same gap). Found this run while checking a November 2026 ObesityWeek poster referencing an updated ASC37-vs-retatrutide half-life comparison; this run could not independently verify that poster's specific figures against a primary source, so only this earlier, directly-read release is logged."
     }
   ]
 }

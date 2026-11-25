@@ -17,11 +17,11 @@
     "087010"
   ],
   "current_status": {
-    "stage": "Phase 1 IND submitted to Korea's MFDS (Aug 25, 2026), pending approval; non-exclusive research collaboration with Eli Lilly ongoing",
-    "stage_ko": "식약처에 임상 1상 IND 신청(2026년 8월 25일), 승인 대기 중이다. Eli Lilly와의 비독점 연구 협력은 진행 중이다.",
+    "stage": "Phase 1 IND cleared by Korea's MFDS (announced Nov 19, 2026); first-subject dosing targeted for December 2026, not yet begun. Non-exclusive research collaboration with Eli Lilly ongoing.",
+    "stage_ko": "식약처로부터 임상 1상 IND 승인(2026년 11월 19일 발표), 2026년 12월 첫 대상자 투여를 목표로 하고 있으나 아직 시작되지 않았다. Eli Lilly와의 비독점 연구 협력은 진행 중이다.",
     "stage_label": "IND filed",
-    "stage_evidence": "Phase 1 IND submitted to Korea's MFDS (Aug 25, 2026), pending approval -- not yet cleared or dosing.",
-    "stage_evidence_ko": "식약처에 임상 1상 IND 신청(2026년 8월 25일), 승인 대기 중이다. 아직 승인되거나 투여가 시작되지 않았다.",
+    "stage_evidence": "MFDS cleared the Phase 1 IND (announced Nov 19, 2026), but dosing of the first subject has not yet begun (targeted for December 2026) -- per the stage-scoring rule, this stays IND filed until dosing actually starts.",
+    "stage_evidence_ko": "식약처가 임상 1상 IND를 승인했다고 밝혔다(2026년 11월 19일 발표). 첫 대상자 투여는 아직 시작되지 않았다(2026년 12월 목표). 단계 평가 규칙에 따라 실제 투여가 시작되기 전까지는 IND filed 단계를 유지한다.",
     "molecule_class": [
       "semaglutide"
     ],
@@ -33,8 +33,8 @@
     "partner_ko": "Eli Lilly(SmartDepot 내부 R&D 용도의 비독점 글로벌 라이선스, 평가 기간은 2025년 12월 최대 24개월로 연장)",
     "data_point": "~30% body-weight reduction at week 4 in obese-mouse model; Phase 1 human data showed no vomiting/nausea in 16 healthy adults vs. weekly semaglutide (ADA 2026)",
     "data_point_ko": "비만 마우스 모델에서 4주차 약 30% 체중 감소, 임상 1상 인체 데이터에서 건강한 성인 16명 대상 주 1회 세마글루타이드 대비 구토/메스꺼움 없음(ADA 2026)",
-    "last_updated": "2026-10-01",
-    "last_checked": "2026-11-23"
+    "last_updated": "2026-11-19",
+    "last_checked": "2026-11-26"
   },
   "finding_history": [
     {
@@ -163,6 +163,20 @@
       "confidence": "unverified",
       "verification_note": "Read from a search-engine summary only (koreabiomed.com refused a direct fetch), so the article text and publish date were not checked against the page itself.",
       "date_basis": "inferred"
+    },
+    {
+      "id": "f-2026-11-19-001",
+      "date": "2026-11-19",
+      "type": "regulatory",
+      "summary": "Peptron announced that Korea's MFDS approved the Phase 1 IND for PT403 (once-monthly semaglutide SmartDepot), submitted Aug 25, 2026. The randomized, placebo-controlled, double-blind trial will enroll 22 healthy adults at Chungnam National University Hospital in three dose-escalation cohorts, with a Safety Review Committee reviewing each cohort's safety/tolerability data (single SC dose) before the next cohort doses; Peptron targeted first-subject dosing for December 2026.",
+      "summary_ko": "펩트론은 식약처가 PT403(월 1회 투여 세마글루타이드 SmartDepot, 2026년 8월 25일 신청)의 임상 1상 IND를 승인했다고 발표했다. 무작위배정, 위약대조, 이중눈가림 방식의 이 시험은 충남대학교병원에서 건강한 성인 22명을 대상으로 3개 용량 증량 코호트로 진행되며, 안전성검토위원회(SRC)가 각 코호트의 안전성/내약성 데이터(단회 피하 투여)를 검토한 뒤 다음 코호트로 넘어간다. 펩트론은 2026년 12월 첫 대상자 투여를 목표로 하고 있다.",
+      "source": {
+        "name": "BioSpectator – Peptron PT403 Phase 1 IND approval",
+        "publication": "BioSpectator",
+        "url": "https://www.biospectator.com/news/view/30468",
+        "tier": 2
+      },
+      "confidence": "confirmed"
     }
   ]
 }
